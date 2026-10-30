@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Squared partial traces and the nuclear norm: a multipartite inequality and the first-order Werner bound"
+authors:
+  - family-names: Mishra
+    given-names: Ansh
+  - family-names: Senthilkumar
+    given-names: Aryan
+date-released: 2026-10-30
+license: MIT
+keywords:
+  - partial trace inequalities
+  - NPT bound entanglement
+  - Werner states
+  - linear entropy
+  - Schmidt-number witnesses

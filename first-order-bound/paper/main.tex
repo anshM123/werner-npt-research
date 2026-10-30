@@ -1,0 +1,716 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Tr}{\operatorname{Tr}}
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+
+\title{Squared partial traces and the nuclear norm:\\ a multipartite inequality and the first-order Werner bound}
+\author{Ansh Mishra \and Aryan Senthilkumar}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove that every operator $Z$ on a finite-dimensional tensor product $H_1\otimes\cdots\otimes H_n$ satisfies
+\[
+\sum_{i=1}^n \norm{\Tr_i Z}_2^2\;\le\;(n-1)\norm{Z}_2^2+\norm{Z}_1^2 ,
+\]
+where $\Tr_i$ is the partial trace over the $i$th factor. The inequality is sharp. It needs no positivity and no rank
+assumption. For $n=2$ it follows from a recent bound of Costa Rico and Wolf; for $n\ge3$ it is new.
+
+For operators of rank at most two it gives $\sum_i\norm{\Tr_iC}_2^2\le(n+1)\norm{C}_2^2$. This is Assumption~(i) of
+Chattopadhyay and Sarkar from 2006, i.e.\ the first-order part of the $n$-copy distillability problem for Werner
+states at the endpoint $\alpha=1/2$. Iterating the inequality gives all of their assumed bounds for partial traces over
+$m$ sites. For density matrices it is a Han-type inequality for the linear (Tsallis-2) entropy,
+$\sum_i S_L(\rho_{\hat\imath})\ge(n-1)S_L(\rho)$, which holds even though strong subadditivity fails for this entropy.
+
+An induction on $n$ reduces the inequality to a single statement about block operators. We prove that statement with
+a balanced factorisation and second compound matrices. The method does not reach the endpoint itself: every rank-free
+relaxation of the endpoint inequality we tried fails already for two or three copies. In the remarks we split the
+multiplicative (``no collective gain'') form of the problem into $n$ inequalities, of which ours is the first and the
+endpoint the last. For three copies the other two follow from the two-copy theorem and Tomar's computer-assisted
+three-copy theorem. So, given that theorem, the multiplicative form holds for three copies. We also prove that the
+two-copy inequality has a margin linear in the thickness of the co-range, which answers a question of Tomar, and that
+for normal operators it holds with the sharp constant $1-1/\sqrt2$, better than the $\frac14$ Tomar conjectured.
+\end{abstract}
+
+\section{Introduction}
+
+Let $F$ be the swap on $\mathbb C^d\otimes\mathbb C^d$. For $\alpha\in[-1,1]$ let $\rho_\alpha\propto I-\alpha F$ be the
+Werner state. It has a non-positive partial transpose (NPT) for $\alpha>1/d$ and is one-copy distillable for
+$\alpha>1/2$. Whether the states with $1/d<\alpha\le1/2$ can be distilled from some number of copies is the NPT
+bound-entanglement problem \cite{DSSTT,DCLB,HRZ}.
+
+The two-copy case was settled in 2026 by several groups \cite{FGP,SongChen,FHPV,BGH}. Three copies have since been
+settled at the endpoint with computer assistance in every dimension \cite{Tomar}, and Wu and Zou proved the three-copy
+endpoint inequality for positive semidefinite and for normal operators of rank two, and for operators whose range and
+co-range lie in one plane \cite{WuZou}. The general $n$-copy
+question remains open.
+
+By \cite{CR23,SongChen}, $\rho_{1/2}$ is $n$-copy undistillable if and only if
+\begin{equation}\label{eq:qn}
+q_n(C)\;=\;\sum_{J\subseteq\{1,\dots,n\}}\Big(-\tfrac12\Big)^{|J|}\,\norm{\Tr_J C}_2^2\;\ge\;0
+\end{equation}
+for every operator $C$ on $(\mathbb C^d)^{\otimes n}$ of rank at most two. Here $\Tr_J$ is the partial trace over the
+factors in $J$.
+
+Long before these results, Chattopadhyay and Sarkar \cite{CS} proposed bounds for Schmidt-rank-two vectors $\psi$ in
+$(\mathbb C^d\otimes\mathbb C^d)^{\otimes n}$. Let $\psi$ be the vectorisation of $C$, normalised so that
+$\norm{C}_2=1$. With the unnormalised projector $P^+=\sum_{j,k}|jj\rangle\langle kk|$ (trace $d$) one has
+$\langle\psi|P^+_J\otimes I|\psi\rangle=\norm{\Tr_JC}_2^2$, where $P^+_J$ acts on the pairs in $J$. Their bounds then read
+\begin{equation}\label{eq:CS}
+S_m(C):=\sum_{|J|=m}\norm{\Tr_JC}_2^2\;\le\;\big[\tbinom{n-1}{m}+2\tbinom{n-1}{m-1}\big]\norm{C}_2^2,\qquad m=1,\dots,n,
+\end{equation}
+for every $C$ of rank at most two.
+
+Chattopadhyay and Sarkar presented these bounds as assumptions supported by numerics. Earlier versions of their paper
+claimed more; Pankowski, Piani and the Horodeckis later noted that the proof had gaps \cite{PPHH}. Two cases are now
+known.
+\begin{itemize}
+\item The case $n=2$ is $\norm{\Tr_1C}_2^2+\norm{\Tr_2C}_2^2\le3\norm{C}_2^2$ \cite[Eq.~(32)]{CRW}. It also follows from
+the sharper rank-two inequalities of \cite{FHPV,BGH}.
+\item The case $m=n-1$ involves only one-site marginals. It follows from Corollary~2 of Costa Rico and Wolf \cite{CRW}:
+$\sum_i\norm{\Tr_{\hat\imath}M}_2^2\le(1+r(n-1))\norm{M}_2^2$ for operators $M$ of rank $r$.
+\end{itemize}
+Their separate two-copy assumption (Eq.~(3) of \cite{CS}) follows from the rank-two bipartite bounds of
+\cite{FHPV,BGH}.
+
+The case $m=1$, $\sum_i\norm{\Tr_iC}_2^2\le(n+1)\norm{C}_2^2$, is the first-order part of \eqref{eq:qn}: it is the
+derivative at $t=0$ of the conjectured identity
+$\min_C\sum_J(-t)^{|J|}\norm{\Tr_JC}_2^2=(1-2t)(1-t)^{n-1}\norm{C}_2^2$ for rank-two $C$.
+
+Our main result proves all of \eqref{eq:CS}, in particular the first-order case $m=1$ for every $n\ge3$, as a
+consequence of one inequality that holds for every operator.
+
+Section~\ref{sec:remarks} contains further results; we mention three. The conjectured identity above splits into $n$ inequalities,
+of which ours is the first and \eqref{eq:qn} the last. For three copies the middle one follows from the two-copy
+theorem and Tomar's three-copy theorem. Finally, for two copies we prove that $q_2(C)$ is bounded below by a constant
+times the ``thickness'' of the co-range of $C$ (Proposition~\ref{prop:thick}), which answers a question of
+Tomar~\cite{Tomar2}; when the range and co-range of $C$ lie in one plane, for instance for normal $C$, we obtain the
+sharp constant $1-1/\sqrt2$, which beats the $\frac14$ he conjectured. Tomar proved this constant on a different class
+of planes \cite[Thm.~7.2]{Tomar2}.
+
+Partial-trace norm inequalities have a long history.
+\begin{itemize}
+\item Audenaert proved subadditivity of $q$-entropies for $q>1$ \cite{Aud}.
+\item Rastegin studied unitarily invariant norms of partial traces \cite{Ras}.
+\item Costa Rico and Wolf extended Audenaert's inequality to general matrices and several tensor factors \cite{CRW}.
+Their bounds, such as $\sum_i\norm{M_i}_p\le(n-1)\norm{M}_1+\norm{M}_p$ (their Prop.~9), concern the one-site marginals
+$M_i$. In the notation above they control $S_{n-1}$, whereas the first-order term is $S_1$. For $n=2$ the two kinds of
+marginal coincide. There Prop.~9 with $p=2$, followed by an elementary squaring step, gives the case $n=2$ of
+Theorem~\ref{thm:main} below.
+\item The two-copy proofs rely on sharp bipartite inequalities for operators of bounded rank \cite{FHPV,BGH}.
+\item Wu and Zou proved a sharp rank-free bipartite inequality,
+$\norm{\Tr_KX}_2^2+\norm{\Tr_LX}_2^2\le\norm{X}_1^2+|\Tr X|^2$ \cite[Thm.~1.1]{WuZou}. Neither this nor our $n=2$ case
+implies the other: the identity favours ours, and traceless operators favour theirs.
+\item The first step of our block lemma is the second-compound estimate of Wu and Zou \cite[Lemma~5.1]{WuZou}, in a
+homogeneous form.
+\end{itemize}
+For $n\ge3$ we are not aware of a previous statement of Theorem~\ref{thm:main}, of Lemma~\ref{lem:R}, or of the bounds
+\eqref{eq:CS} with $m<n-1$.
+
+\section{Results}
+
+Throughout, $H=H_1\otimes\cdots\otimes H_n$ with $\dim H_i<\infty$. We write $\norm{\cdot}_2$ for the
+Hilbert--Schmidt norm, $\norm{\cdot}_1$ for the trace (nuclear) norm and $\langle A,B\rangle=\Tr(A^*B)$.
+
+\begin{theorem}\label{thm:main}
+For every operator $Z$ on $H$,
+\begin{equation}\label{eq:main}
+\sum_{i=1}^n\norm{\Tr_iZ}_2^2\;\le\;(n-1)\norm{Z}_2^2+\norm{Z}_1^2 .
+\end{equation}
+Equality holds for $Z=e^{i\theta}P\otimes|c\rangle\langle c|$ with $P\ge0$ on one factor and $c$ a product unit vector
+on the others.
+\end{theorem}
+
+Since $\norm{C}_1^2\le\operatorname{rank}(C)\,\norm{C}_2^2$, Theorem~\ref{thm:main} has an immediate consequence.
+
+\begin{corollary}\label{cor:rank}
+If $\operatorname{rank}C\le r$, then $\sum_i\norm{\Tr_iC}_2^2\le(n+r-1)\norm{C}_2^2$. For $r=2$ this is \eqref{eq:CS}
+with $m=1$, for every $n$ and every local dimension, including nonnormal $C$.
+\end{corollary}
+
+The bound is sharp for every $r$: take $C=I_U\otimes|c\rangle\langle c|$ with $U$ an $r$-dimensional subspace of one
+factor and $c$ a product vector. It is the first-order term of the natural rank-$r$ form of the multiplicativity
+conjecture,
+$\min\{\sum_J(-t)^{|J|}\norm{\Tr_JC}_2^2:\operatorname{rank}C\le r,\ \norm{C}_2=1\}=(1-rt)(1-t)^{n-1}$, whose
+derivative at $t=0$ is $-(n+r-1)$. The case $r=2$, $t=1/2$ is \eqref{eq:qn}, i.e.\ the statement that the map
+$X\mapsto\Tr(X)I-X/2$ is tensor-stably $2$-positive.
+
+In the language of Schmidt-number witnesses \cite{CRW}, Corollary~\ref{cor:rank} says the following. On
+$(\mathbb C^d\otimes\mathbb C^d)^{\otimes n}$ the operator
+\[
+W_r=(n+r-1)\,I-\sum_{i=1}^nP^+_{A_iB_i}\otimes I_{\rm rest}
+\]
+is nonnegative on every vector of Schmidt rank at most $r$ across $A|B$. For $r<d$ it is negative on a vector of
+Schmidt rank $r+1$. Equivalently, $X\mapsto(n+r-1)\Tr(X)\,I-\sum_i\Tr_{\hat\imath}(X)\otimes I_{\hat\imath}$ is
+$r$-positive but not $(r+1)$-positive. For $r=2$ this is the operator of \cite{CS}. Costa Rico and Wolf give the
+analogous family in which only one copy is left untraced \cite{CRW}.
+
+\begin{corollary}\label{cor:allm}
+For every operator $Z$ on $H$ and every $0\le m\le n$,
+\[
+S_m(Z)\le\tbinom{n-1}{m}\norm{Z}_2^2+\tbinom{n-1}{m-1}\norm{Z}_1^2,
+\]
+with $\binom{n-1}{-1}=0$. Equality holds for $Z=P\otimes|c\rangle\langle c|$ as in Theorem~\ref{thm:main}. In particular
+all the bounds \eqref{eq:CS} hold.
+\end{corollary}
+
+\begin{corollary}\label{cor:han}
+For every density matrix $\rho$ on $H$, with $\rho_{\hat\imath}=\Tr_i\rho$ and $S_L(\sigma)=1-\Tr\sigma^2$,
+\[
+\sum_{i=1}^n\Tr\rho_{\hat\imath}^2\le(n-1)\Tr\rho^2+1,
+\qquad\text{equivalently}\qquad
+\sum_{i=1}^nS_L(\rho_{\hat\imath})\ge(n-1)S_L(\rho).
+\]
+\end{corollary}
+
+For the von Neumann entropy this is Han's inequality. Its usual proof uses strong subadditivity, which fails for $S_L$.
+The case $n=2$ is subadditivity of $S_L$ \cite{Aud}. For diagonal $\rho$, Corollary~\ref{cor:han} is the case $q=2$ of
+the classical Han inequality for Tsallis entropies \cite{FYK}.
+
+\begin{corollary}\label{cor:map}
+Let $A_0$ be an auxiliary system. For states $\sigma$ on $A_0\otimes H$ write $\sigma_0$ and $\sigma_{0i}$ for the
+marginals on $A_0$ and on $A_0\otimes H_i$. The map
+\[
+\Lambda(\sigma)=\Tr(\sigma)\,I+(n-1)\,\sigma_0\otimes I_H-\sum_{i=1}^n\sigma_{0i}\otimes I_{H_{\hat\imath}}
+\]
+is positive. Consequently every state on $A_0\otimes H$ satisfies $\sum_i\Tr\sigma_{0i}^2\le(n-1)\Tr\sigma_0^2+1$.
+\end{corollary}
+
+For $n=1$, $\Lambda$ is the reduction map. For $n\ge2$ one checks numerically that $\Lambda$ is not decomposable, so its
+positivity is not a consequence of positivity and partial transposition alone.
+
+\section{The block lemma}
+
+\begin{lemma}\label{lem:R}
+Let $K$ be finite-dimensional and let $Z=\sum_{a,b=1}^d|a\rangle\langle b|\otimes Z_{ab}$ be an operator on
+$\mathbb C^d\otimes K$ with blocks $Z_{ab}$ on $K$. Then
+\begin{equation}\label{eq:R}
+\sum_{a,b}\norm{Z_{ab}}_1^2+\Big\|\sum_aZ_{aa}\Big\|_2^2\;\le\;\sum_{a,b}\norm{Z_{ab}}_2^2+\norm{Z}_1^2 .
+\end{equation}
+\end{lemma}
+
+Equality holds for $Z=|v\rangle\langle v|\otimes W$ with any unit $v$ and any $W$.
+
+\begin{proof}
+If $Z=0$ there is nothing to prove, so let $r=\operatorname{rank}Z\ge1$. Let $Z=U\Sigma V^*$ be a compact singular value
+decomposition, with $\Sigma>0$ diagonal of size $r$. Put $P=U\Sigma^{1/2}$ and $Q=V\Sigma^{1/2}$. Then $Z=PQ^*$ and
+$P^*P=Q^*Q=\Sigma$.
+
+Let $P_a=(\langle a|\otimes I_K)P$ and $Q_b=(\langle b|\otimes I_K)Q$. These are maps from $\mathbb C^r$ to $K$, and
+$Z_{ab}=P_aQ_b^*$. Put $R_a=P_a^*P_a$ and $S_b=Q_b^*Q_b$. Then $\sum_aR_a=\sum_bS_b=\Sigma$. Write
+\[
+\alpha_a=\Tr R_a,\quad p_a=\Tr R_a^2,\quad \beta_b=\Tr S_b,\quad q_b=\Tr S_b^2,
+\]
+so that $0\le p_a\le\alpha_a^2$ and $0\le q_b\le\beta_b^2$. Then $\norm{Z}_1=\Tr\Sigma=\sum_a\alpha_a=\sum_b\beta_b$, and
+therefore $\norm{Z}_1^2=\sum_{a,b}\alpha_a\beta_b$.
+
+\emph{Step 1 (off-diagonal and diagonal blocks alike).}
+\begin{itemize}
+\item For any matrix $M$ with singular values $s_j$,
+$\norm{M}_1^2-\norm{M}_2^2=2\sum_{j<k}s_js_k=2\norm{\wedge^2M}_1$.
+Here $\wedge^2$ is the second compound: for a linear map $A$, $\wedge^2A$ is the induced map on antisymmetric tensors.
+It vanishes when the domain or the range has dimension one.
+\item The compound is multiplicative and commutes with adjoints, also for rectangular maps (the Cauchy--Binet formula).
+So $\wedge^2Z_{ab}=(\wedge^2P_a)(\wedge^2Q_b)^*$.
+\item By H\"older's inequality, $\norm{XY^*}_1\le\norm{X}_2\norm{Y}_2$.
+\item Moreover $\norm{\wedge^2P_a}_2^2=\Tr\wedge^2(P_a^*P_a)=\tfrac12(\alpha_a^2-p_a)$, and likewise for $Q_b$.
+\end{itemize}
+Hence
+\begin{equation}\label{eq:s1}
+\norm{Z_{ab}}_1^2-\norm{Z_{ab}}_2^2\le\sqrt{(\alpha_a^2-p_a)(\beta_b^2-q_b)}\le\alpha_a\beta_b-\sqrt{p_aq_b}.
+\end{equation}
+The first inequality is \cite[Lemma~5.1]{WuZou} in homogeneous form. For the second, both sides are nonnegative, and after
+squaring it reduces to $\alpha_a^2q_b+\beta_b^2p_a\ge2\alpha_a\beta_b\sqrt{p_aq_b}$.
+
+\emph{Step 2 (the diagonal blocks).} By Cauchy--Schwarz,
+\[
+\norm{Z_{aa}}_2^2=\Tr(Q_aP_a^*P_aQ_a^*)=\Tr(R_aS_a)\le\norm{R_a}_2\norm{S_a}_2=\sqrt{p_aq_a}.
+\]
+By the triangle inequality and Cauchy--Schwarz again,
+\begin{equation}\label{eq:s2}
+\Big\|\sum_aZ_{aa}\Big\|_2\le\sum_a(p_aq_a)^{1/4}\le\Big(\sum_a\sqrt{p_a}\Big)^{1/2}\Big(\sum_a\sqrt{q_a}\Big)^{1/2}.
+\end{equation}
+
+\emph{Step 3 (conclusion).} Let $\Delta$ be the right side of \eqref{eq:R} minus the left side. Using
+$\norm{Z}_1^2=\sum_{a,b}\alpha_a\beta_b$, then \eqref{eq:s1} and \eqref{eq:s2},
+\begin{align*}
+\Delta&=\sum_{a,b}\big[\alpha_a\beta_b-\big(\norm{Z_{ab}}_1^2-\norm{Z_{ab}}_2^2\big)\big]-\Big\|\sum_aZ_{aa}\Big\|_2^2\\
+&\ge\sum_{a,b}\sqrt{p_aq_b}-\Big(\sum_a\sqrt{p_a}\Big)\Big(\sum_a\sqrt{q_a}\Big)=0. \qedhere
+\end{align*}
+\end{proof}
+
+\section{Proofs}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+We use induction on $n$. For $n=1$ the claim is $|\Tr Z|^2\le\norm{Z}_1^2$.
+
+For $n\ge2$ write $Z=\sum_{a,b}|a\rangle\langle b|\otimes Z_{ab}$ with respect to an orthonormal basis of $H_n$, with
+blocks $Z_{ab}$ on $H_1\otimes\cdots\otimes H_{n-1}$. Then:
+\begin{itemize}
+\item $\Tr_iZ=\sum_{a,b}|a\rangle\langle b|\otimes\Tr_iZ_{ab}$ for $i<n$;
+\item $\Tr_nZ=\sum_aZ_{aa}$;
+\item $\norm{Z}_2^2=\sum_{a,b}\norm{Z_{ab}}_2^2$.
+\end{itemize}
+The induction hypothesis, applied to each block, gives
+\[
+\sum_{i<n}\norm{\Tr_iZ}_2^2=\sum_{a,b}\sum_{i<n}\norm{\Tr_iZ_{ab}}_2^2\le(n-2)\norm{Z}_2^2+\sum_{a,b}\norm{Z_{ab}}_1^2.
+\]
+Adding $\norm{\Tr_nZ}_2^2$ and applying Lemma~\ref{lem:R}, with $K=H_1\otimes\cdots\otimes H_{n-1}$ and $d=\dim H_n$,
+gives \eqref{eq:main}. Local dimensions may differ, since Lemma~\ref{lem:R} allows any $d$ and $K$.
+
+For the equality case, let $Z=P\otimes|c\rangle\langle c|$ with $P\ge0$ on the first factor. Then:
+\begin{itemize}
+\item $\norm{\Tr_1Z}_2^2=(\Tr P)^2=\norm{P}_1^2$;
+\item $\norm{\Tr_iZ}_2^2=\norm{P}_2^2$ for $i\ge2$;
+\item $\norm{Z}_2=\norm{P}_2$ and $\norm{Z}_1=\norm{P}_1$.
+\end{itemize}
+So both sides of \eqref{eq:main} equal $(n-1)\norm{P}_2^2+\norm{P}_1^2$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:allm}]
+We use induction on $m$, for all $n$ at once. For $m=0$ the claim is trivial, and for $m=1$ it is
+Theorem~\ref{thm:main}. Let $m\ge2$, so $n\ge2$.
+
+Every $J$ with $|J|=m$ satisfies
+\[
+\sum_{i\in J}\norm{\Tr_{J\setminus i}(\Tr_iZ)}_2^2=m\norm{\Tr_JZ}_2^2 .
+\]
+Hence $mS_m(Z)=\sum_{i=1}^nS_{m-1}(\Tr_iZ)$, where each $\Tr_iZ$ is an operator on $n-1$ factors.
+
+Partial traces do not increase the trace norm. Combining this with the induction hypothesis on $n-1$ factors and
+Theorem~\ref{thm:main} gives
+\[
+mS_m(Z)\le\tbinom{n-2}{m-1}\big[(n-1)\norm{Z}_2^2+\norm{Z}_1^2\big]+n\tbinom{n-2}{m-2}\norm{Z}_1^2 .
+\]
+To finish, use $(n-1)\binom{n-2}{m-1}=m\binom{n-1}{m}$ and $\binom{n-2}{m-1}+n\binom{n-2}{m-2}=m\binom{n-1}{m-1}$. The
+second identity follows from $\binom{n-2}{m-1}=\frac{n-m}{m-1}\binom{n-2}{m-2}$.
+
+For the equality case: for $Z=P\otimes|c\rangle\langle c|$, one has
+$S_m(Z)=\binom{n-1}{m-1}\norm{P}_1^2+\binom{n-1}{m}\norm{P}_2^2$. For rank two, $\norm{C}_1^2\le2\norm{C}_2^2$ turns the
+bound into \eqref{eq:CS}.
+\end{proof}
+
+\begin{proof}[Proof of Corollaries~\ref{cor:han} and \ref{cor:map}]
+For $\rho\ge0$ we have $\norm{\rho}_1=\Tr\rho$; this gives Corollary~\ref{cor:han}.
+
+For Corollary~\ref{cor:map} it suffices, by linearity, to take $\sigma=|\psi\rangle\langle\psi|$. For any vector
+$\varphi$ and any set $T$ of factors, the swap trick gives
+$\langle\varphi|\sigma_T\otimes I|\varphi\rangle=\norm{\Tr_T(|\psi\rangle\langle\varphi|)}_2^2$, where $\sigma_T$ is the
+marginal on $T$ and $\Tr_T$ traces out $T$. Hence, with $Z=\Tr_{A_0}(|\psi\rangle\langle\varphi|)$,
+\[
+\langle\varphi|\Lambda(\sigma)|\varphi\rangle=\norm{\psi}^2\norm{\varphi}^2+(n-1)\norm{Z}_2^2-\sum_i\norm{\Tr_iZ}_2^2 .
+\]
+This is nonnegative by Theorem~\ref{thm:main}, since $\norm{Z}_1\le\norm{\psi}\norm{\varphi}$.
+
+The last statement is $\Tr[\sigma\Lambda(\sigma)]\ge0$.
+\end{proof}
+
+\section{Remarks and open problems}\label{sec:remarks}
+
+\emph{Other multipartite forms.} The bipartite inequality of Wu and Zou, with $|\Tr X|^2$ in place of $\norm{X}_2^2$,
+does not extend in the same way. The bound
+$\sum_i\norm{\Tr_iZ}_2^2\le(n-2)\norm{Z}_2^2+\norm{Z}_1^2+|\Tr Z|^2$ fails for $n=3$: a numerical search finds rank-two operators
+on three qubits that violate it by about $2.5\%$ of $\norm{Z}_1^2$.
+
+\emph{A sharper rank-two bound.} For $n=2$ the sharp rank-two inequality of \cite{FHPV,BGH} reads
+$\norm{\Tr_1C}_2^2+\norm{\Tr_2C}_2^2\le2\norm{C}_2^2+\tfrac12|\Tr C|^2$. Numerically, the multipartite version
+\[
+\sum_{i=1}^n\norm{\Tr_iC}_2^2\le n\norm{C}_2^2+\tfrac12|\Tr C|^2\qquad(\operatorname{rank}C\le2)
+\]
+holds in our searches, with equality attained, for $n\le6$ ($d=2$), $n=3,\dots,6,8,10,12$ ($d=3$), $n=4,6$ ($d=4$) and
+$n=3,5$ ($d=5$). For positive $C$ it
+follows from Corollary~\ref{cor:han}, since then
+$(\Tr C)^2\le2\Tr C^2$. It then holds for every normal $C$ of rank two. Write $C=\lambda_1uu^*+\lambda_2vv^*$ with
+orthonormal $u,v$, put $a=|\lambda_1|$, $b=|\lambda_2|$, $r=\Re(\bar\lambda_1\lambda_2)$ and $C_+=a\,uu^*+b\,vv^*$.
+Then $S_1(C)=a^2S_1(uu^*)+b^2S_1(vv^*)+2rc$ with $c=\sum_i\langle\Tr_iuu^*,\Tr_ivv^*\rangle\ge0$. If $r\le0$, the
+rank-one bound $S_1(uu^*)\le n$ gives $S_1(C)\le n\norm{C}_2^2$. If $r>0$, put $\theta=r/(ab)\le1$. Then
+$S_1(C)=(1-\theta)\,(a^2S_1(uu^*)+b^2S_1(vv^*))+\theta\,S_1(C_+)\le n(a^2+b^2)+\theta(a+b)^2/2$, and this is at most
+$n\norm{C}_2^2+\tfrac12|\Tr C|^2=n(a^2+b^2)+\tfrac12(a^2+b^2+2r)$.
+
+The bound also holds whenever the ranges of $C$ and $C^*$ together span at most two dimensions, that is, for
+$C=VMV^*$ with $V:\mathbb C^2\to H$ an isometry and $M$ any $2\times2$ matrix. Write $C=Z_1+iZ_2$ with $Z_1=(C+C^*)/2$ and $Z_2=(C-C^*)/2i$. Both are
+Hermitian of rank at most two. For Hermitian $X,Y$ the numbers $\langle\Tr_JX,\Tr_JY\rangle$ are real, so
+$\norm{\Tr_JC}_2^2=\norm{\Tr_JZ_1}_2^2+\norm{\Tr_JZ_2}_2^2$ for every $J$. Hence
+$F(C)=S_1(C)-n\norm{C}_2^2-\tfrac12|\Tr C|^2$ satisfies $F(C)=F(Z_1)+F(Z_2)\le0$ by the Hermitian case. The same
+splitting shows that for such $C$ the endpoint inequality \eqref{eq:qn} reduces to Hermitian operators of rank two.
+When $\operatorname{ran}C+\operatorname{ran}C^*$ has dimension three or four we do not have a proof; the Hermitian part
+of $C$ can then have rank four, and $F$ can be positive on it.
+
+\emph{Sharp forms with a flatness term.} Let $\sigma_1\ge\sigma_2$ be the singular values of a rank-two $C$. For two
+factors the sharp rank-two inequality can be improved to
+\[
+\norm{\Tr_1C}_2^2+\norm{\Tr_2C}_2^2\le\norm{C}_2^2+\tfrac12\norm{C}_1^2+\tfrac12|\Tr C|^2,
+\qquad\text{i.e.}\qquad q_2(C)\ge\tfrac14(\sigma_1-\sigma_2)^2 .
+\]
+Since $\norm{C}_1^2=\norm{C}_2^2+2\sigma_1\sigma_2$, this is stronger than the bound of \cite{FHPV,BGH} by
+$\tfrac12(\sigma_1-\sigma_2)^2$. It is an equality for every $C=\rho\otimes|c\rangle\langle c|$ with $\rho\ge0$ of rank
+two, not only for flat $\rho$. It follows from the proof in \cite{FHPV}. There $C=x_1y_1^*+x_2y_2^*$ with
+$\langle x_i,x_j\rangle=\langle y_i,y_j\rangle=g_{ij}$ and $\langle y_i,x_i\rangle=\Tr C/2$. To build it, take a
+singular value decomposition $C=U\Sigma V^*$, put $X_0=U\Sigma^{1/2}$ and $Y_0=V\Sigma^{1/2}$, and replace them by
+$X_0Q$ and $Y_0Q$, where the unitary $Q$ makes both diagonal entries of $Q^*Y_0^*X_0Q$ equal to $\Tr C/2$. This is
+possible because the numerical range of a $2\times2$ matrix contains half its trace. Then $G=(g_{ij})=Q^*\Sigma Q$, so
+$g_{11}+g_{22}=\norm{C}_1$ and $\norm{C}_2^2=g_{11}^2+g_{22}^2+2|g_{12}|^2$. For this decomposition we have the identity
+\[
+\norm{C}_2^2+\tfrac12\norm{C}_1^2+\tfrac12|\Tr C|^2-\sum_{i=1,2}\norm{\Tr_iC}_2^2
+=\tfrac12(g_{11}-g_{22})^2+4\sum_{(a,b)}\norm{\Pi(a\otimes b)}^2+\sum_{i=1,2}\norm{\Tr_i(x_2x_1^*-y_2y_1^*)}_2^2 .
+\]
+Here $\Pi=\frac14(I-F_1)(I-F_2)$ on two copies of $H_1\otimes H_2$, $F_i$ swaps factor $i$ between the copies, and
+$(a,b)$ runs over $(x_1,y_1)$, $(x_2,y_2)$, $(x_1,x_2)$, $(y_1,y_2)$. Every term on the right is nonnegative.
+
+To prove the identity, write $\Phi(Z)=(\Tr_1Z,\Tr_2Z)$, so that $\sum_i\norm{\Tr_iC}_2^2=\norm{\Phi(C)}^2$. The swap trick
+gives $\langle\Phi(uv^*),\Phi(st^*)\rangle=\langle u\otimes t|F_1+F_2|v\otimes s\rangle$ for all vectors $u,v,s,t$. Since
+$F_1F_2$ exchanges the two copies, this has two consequences:
+\[
+\langle\Phi(uv^*),\Phi(st^*)\rangle=\langle\Phi(tv^*),\Phi(su^*)\rangle,\qquad
+\norm{\Phi(xy^*)}^2=\norm{x}^2\norm{y}^2+|\langle x,y\rangle|^2-4\norm{\Pi(x\otimes y)}^2 ,
+\]
+the second because $4\Pi=I-F_1-F_2+F_1F_2$. Now expand $\norm{\Phi(C)}^2$. By the first relation the cross term is
+$2\operatorname{Re}\langle\Phi(y_2y_1^*),\Phi(x_2x_1^*)\rangle=\norm{\Phi(x_2x_1^*)}^2+\norm{\Phi(y_2y_1^*)}^2
+-\norm{\Phi(x_2x_1^*-y_2y_1^*)}^2$. Applying the second relation to the four rank-one terms gives
+$\norm{\Phi(C)}^2=g_{11}^2+g_{22}^2+\frac12|\Tr C|^2+2g_{11}g_{22}+2|g_{12}|^2-4\sum_{(a,b)}\norm{\Pi(a\otimes b)}^2
+-\norm{\Phi(x_2x_1^*-y_2y_1^*)}^2$, which is the identity. For
+rank $r$ the same steps, starting from \cite[Eq.~(65)]{FHPV}, give $\norm{C}_2^2+(1-\frac1r)\norm{C}_1^2+\frac1r|\Tr C|^2$
+on the right, which is again an equality for $\rho\otimes|c\rangle\langle c|$ with $\rho\ge0$ of rank $r$.
+
+For $n$ factors the analogues would be
+\[
+q_n(C)\ge2^{-n}(\sigma_1-\sigma_2)^2,\qquad
+S_1(C)\le(n-1)\norm{C}_2^2+\tfrac12\big(\norm{C}_1^2+|\Tr C|^2\big)\qquad(\operatorname{rank}C\le2).
+\]
+Both are equalities for $\rho\otimes(cc^*)^{\otimes(n-1)}$ with $\rho\ge0$ of rank two. In our searches the first holds
+for $3\le n\le10$ at $d=3$, and the second for $n=3,4,6,8,10$ at $d=3$, with spot checks at $d=2,4,5,6$. For rank one the
+first is \cite[Prop.~8]{SongChen}. The second adds $\tfrac12(\sigma_1-\sigma_2)^2$ to the slack of the sharp rank-two
+bound above, and it holds for normal $C$: in the argument for normal $C$ above, Theorem~\ref{thm:main} applied to
+$C_+$ gives $S_1(C)\le n\norm{C}_2^2+2\max(r,0)$, while the right-hand side equals $n\norm{C}_2^2+ab+r$ and $|r|\le ab$.
+We could not prove either statement in general for $n\ge3$: the block induction behind Theorem~\ref{thm:main} fails for
+the second already at $n=3$, whichever factor is split off. Tomar's Conjecture~7.1 \cite{Tomar2} strengthens
+\eqref{eq:qn} in a different direction, with a margin given by the third eigenvalue of the one-copy reductions of the
+co-range. For two copies we prove a margin of that kind below.
+
+The second statement has a natural version for rank at most $r$:
+\[
+S_1(C)\le(n-1)\norm{C}_2^2+\big(1-\tfrac1r\big)\norm{C}_1^2+\tfrac1r|\Tr C|^2 .
+\]
+It is an equality for $\rho\otimes(cc^*)^{\otimes(n-1)}$ with $\rho\ge0$ of rank $r$, and as $r\to\infty$ it becomes
+Theorem~\ref{thm:main}. For $n=2$ it is the bound proved above. For $r=1$ it holds for every $n$: it then reads
+$S_1(xy^*)\le(n-1)\norm{x}^2\norm{y}^2+|\langle y,x\rangle|^2$, that is
+$\sum_i\rho_i\otimes I\le(n-1)(\Tr\rho)\,I+\rho$ for $\rho=xx^*$, where $\rho_i$ is the marginal on factor $i$ and $I$
+acts on the other factors. For $n=2$ this is \cite[Lemma~6.4]{FHPV}. For larger $n$, apply the statement for $n-1$
+factors to the marginal of $\rho$ on the first $n-1$ factors, add $\rho_n\otimes I$, and use the case $n=2$ for the cut
+between the first $n-1$ factors and the last. In our searches the rank-$r$ statement also holds for $r=3,4$ at
+$n=3,4$.
+
+\emph{A thickness margin for two copies.} For a two-dimensional subspace $V\subseteq H_1\otimes H_2$ and $l=1,2$, let
+$\tau_l(V)$ be the sum of all but the two largest eigenvalues of the reduced operator of the projector $P_V$ on factor
+$l$. It is at least the third eigenvalue $\lambda_3^{(l)}(V)$ used by Tomar, and it vanishes exactly when the local
+support of $V$ at factor $l$ has dimension at most two.
+
+\begin{proposition}\label{prop:thick}
+Let $C$ have rank at most two on $H_1\otimes H_2$, and let $V$ be a two-dimensional subspace that contains the range or
+the co-range of $C$. Then
+\[
+q_2(C)\ge\frac{\min\{\tau_1(V),\tau_2(V)\}}{48-8\sqrt2}\,\norm{C}_2^2 .
+\]
+\end{proposition}
+
+In the notation of \cite{Tomar2} this gives $m_2(V)\ge\frac1{37}\min_l\lambda_3^{(l)}(V)$ for every plane $V$. That is
+the case $k=2$ of Tomar's Conjecture~7.1 with a smaller constant: he conjectures $\frac14$, and in our searches the
+best constant at $d=3$ is about $0.29$, in line with Tomar's numerics. For two copies no linear bound of this kind was known
+\cite[Sec.~8]{Tomar2}. In our searches the margin is even linear in the larger tail $\max_l\tau_l(V)$, with infimum
+$(3-\sqrt5)/4\approx0.19$ attained at $V=\operatorname{span}\{|00\rangle,(|01\rangle+|12\rangle)/\sqrt2\}$, where
+$m_2(V)=(3-\sqrt5)/8$; our argument does not give this. The proof uses two lemmas.
+
+\begin{lemma}\label{lem:qubit}
+Let $\mathcal A\ge0$ be an operator on $\mathbb C^2\otimes K$ with blocks $\mathcal A_{jk}$ on $K$, and suppose that
+$\Tr_K\mathcal A=I_2$, that is, $\Tr\mathcal A_{00}=\Tr\mathcal A_{11}=1$ and $\Tr\mathcal A_{01}=0$.
+\begin{itemize}
+\item[(a)] $\lambda_{\max}(\mathcal A)\le1+\tfrac1{\sqrt2}\norm{\mathcal A_{00}-\mathcal A_{11}}_2$.
+\item[(b)] Let $\psi$ be a unit vector with $\langle\psi|\mathcal A|\psi\rangle=1+\eta$ and $\eta\ge0$, let $E$ be the
+projector onto the support of the reduced operator of $\psi\psi^*$ on $K$, and put
+$\varepsilon=\Tr\big((I\otimes(I-E))\mathcal A\big)$. Then
+$\norm{\mathcal A_{00}-\mathcal A_{11}}_2^2\ge2\eta(\eta+\varepsilon)$.
+\end{itemize}
+In particular, if $\lambda=\lambda_{\max}(\mathcal A)\ge1$ and $\tau$ is the sum of all but the two largest eigenvalues
+of $\mathcal A_{00}+\mathcal A_{11}$, then $\norm{\mathcal A_{00}-\mathcal A_{11}}_2^2\ge2(\lambda-1)(\lambda-1+\tau)$.
+\end{lemma}
+
+The last statement follows from (b) with $\psi$ a top eigenvector, because $E$ has rank at most two, so that
+$\varepsilon=\Tr\big((I-E)(\mathcal A_{00}+\mathcal A_{11})\big)\ge\tau$. Part (a) is sharp: equality holds for
+$\mathcal A=\lambda\,\varphi\varphi^*+(2-\lambda)\,\varphi'\varphi'^*$ with
+$1\le\lambda\le2$, $\varphi=(|0\rangle a+|1\rangle b)/\sqrt2$, $\varphi'=(|0\rangle b-|1\rangle a)/\sqrt2$ and $a\perp b$
+unit vectors.
+
+\begin{proof}
+Let $\psi$ be a unit vector, with Schmidt decomposition
+$\psi=\sqrt p\,q_1\otimes a+\sqrt{1-p}\,q_2\otimes b$, where $a,b\in K$ are orthonormal (enlarging $K$ if
+necessary). Conjugating $\mathcal A$ by a diagonal unitary $U$ on $\mathbb C^2$, and replacing $\psi$ by
+$(U\otimes I)\psi$, changes neither the hypotheses, nor the spectrum, nor $\mathcal A_{00}-\mathcal A_{11}$, nor
+$\langle\psi|\mathcal A|\psi\rangle$, $E$ and $\varepsilon$ in (b). So we may assume that
+$q_1=(c,s)$ and, after a phase change of $b$, $q_2=(-s,c)$, where $c=\cos\frac\theta2$, $s=\sin\frac\theta2$ and
+$0\le\theta\le\pi$. Put $r=\sqrt{p(1-p)}$ and
+\[
+Z=\tfrac12I+(p-\tfrac12)\sin\theta\,\sigma_x,\qquad
+Y=\tfrac1{\sqrt2}\big[\cos\theta\,(aa^*-bb^*)-2r\sin\theta\,(ab^*+ba^*)\big].
+\]
+Then $\Tr Z=1$, $Z\ge0$ and $\norm{Y}_2^2=\cos^2\theta+4r^2\sin^2\theta\le1$. We claim that
+$\psi\psi^*\le Z\otimes I+\frac1{\sqrt2}\sigma_z\otimes Y$. Both sides commute with $I\otimes E$, where $E$ is the
+projector onto $\operatorname{span}\{a,b\}$, so we may check the two blocks separately. On
+$\mathbb C^2\otimes\{a,b\}^\perp$ the left side vanishes and the right side is $Z\otimes I\ge0$. On $\mathbb C^2\otimes\operatorname{span}\{a,b\}$, in the basis
+$|0a\rangle,|0b\rangle,|1a\rangle,|1b\rangle$, the right side is
+\[
+P=\begin{pmatrix}c^2&-2rcs&\kappa&0\\-2rcs&s^2&0&\kappa\\\kappa&0&s^2&2rcs\\0&\kappa&2rcs&c^2\end{pmatrix},
+\qquad\kappa=(2p-1)cs,
+\]
+and $\psi=(\sqrt p\,c,\,-\sqrt{1-p}\,s,\,\sqrt p\,s,\,\sqrt{1-p}\,c)$. Using $c^2+s^2=1$ and
+$\kappa^2+4r^2c^2s^2=c^2s^2$, one checks that $P^2=P$ and $P\psi=\psi$. So $P$ is a projector whose range contains
+$\psi$, and $P-\psi\psi^*\ge0$. Hence
+\[
+\langle\psi|\mathcal A|\psi\rangle\le\Tr\big(Z\Tr_K\mathcal A\big)
++\tfrac1{\sqrt2}\Tr\big(Y(\mathcal A_{00}-\mathcal A_{11})\big)\le1+\tfrac1{\sqrt2}\norm{\mathcal A_{00}-\mathcal A_{11}}_2 ,
+\]
+which is (a) when $\psi$ is an eigenvector for $\lambda_{\max}(\mathcal A)$.
+
+For (b) we may assume $\eta>0$. Then $0<p<1$, since $\langle\psi|\mathcal A|\psi\rangle\le1$ when $\psi$ is a product
+vector, and $E$ is the projector onto $\operatorname{span}\{a,b\}$. Put $u=|p-\frac12|\sin\theta$ and $\ell=\frac12-u$,
+the smallest eigenvalue of $Z$; then $u<\frac12$, so $\ell>0$. Since $4r^2=1-(2p-1)^2$, we have
+$\norm{Y}_2^2=\cos^2\theta+4r^2\sin^2\theta=1-4u^2=4\ell(1-\ell)$. Let $\gamma=2\eta/\ell$. By the two blocks above,
+$Z\otimes I+\frac1{\sqrt2}\sigma_z\otimes Y-\psi\psi^*$ equals $P-\psi\psi^*\ge0$ on
+$\mathbb C^2\otimes\operatorname{span}\{a,b\}$ and $Z\otimes I\ge\ell I$ on $\mathbb C^2\otimes\{a,b\}^\perp$. Hence
+$\gamma\big(Z\otimes I+\frac1{\sqrt2}\sigma_z\otimes Y-\psi\psi^*\big)-2\eta\,I\otimes(I-E)\ge0$. Pairing this with
+$\mathcal A$ and using $\Tr(Z\Tr_K\mathcal A)=1$ gives
+$\frac1{\sqrt2}\Tr\big(Y(\mathcal A_{00}-\mathcal A_{11})\big)\ge\eta+2\eta\varepsilon/\gamma=\eta+\ell\varepsilon$. By the
+Cauchy--Schwarz inequality,
+\[
+\norm{\mathcal A_{00}-\mathcal A_{11}}_2^2\ge\frac{2(\eta+\ell\varepsilon)^2}{\norm{Y}_2^2}
+=\frac{(\eta+\ell\varepsilon)^2}{2\ell(1-\ell)}\ge2\eta(\eta+\varepsilon),
+\]
+where the last step is $(\eta+\ell\varepsilon)^2-4\ell(1-\ell)\eta(\eta+\varepsilon)=\big((1-2\ell)\eta-\ell\varepsilon\big)^2$.
+\end{proof}
+
+\begin{lemma}\label{lem:pair}
+Let $w_1,w_2$ be an orthonormal basis of a two-dimensional subspace $V\subseteq H_1\otimes H_2$, and let $\Pi$ be as in
+the identity above. Then
+\[
+4\norm{\Pi(w_1\otimes w_2)}^2\ge\tfrac12\min\{\tau_1(V),\tau_2(V)\}.
+\]
+\end{lemma}
+
+The constant $\frac12$ is best possible. If $\dim H_1=\dim H_2=d\ge3$ and $\sqrt d\,w_1$, $\sqrt d\,w_2$ are unitary
+$d\times d$ matrices that are orthogonal in the Hilbert--Schmidt inner product, then the reduced operators $A_j,B_j$ in
+the proof below all equal $I/d$, and both sides equal $1-2/d$.
+
+\begin{proof}
+For vectors $x_1,x_2$ let $A_j$ and $B_j$ be the reduced operators of $x_jx_j^*$ on $H_1$ and $H_2$. Expanding
+$\Pi=\frac14(I-F_1-F_2+F_1F_2)$ gives
+\begin{equation}\label{eq:pi4}
+4\norm{\Pi(x_1\otimes x_2)}^2=\norm{x_1}^2\norm{x_2}^2+|\langle x_1,x_2\rangle|^2-\Tr A_1A_2-\Tr B_1B_2 .
+\end{equation}
+Now take $x_j=w_j$ and write $\Delta=4\norm{\Pi(w_1\otimes w_2)}^2$. Then $\rho_1=A_1+A_2$ and $\rho_2=B_1+B_2$ are the
+reductions of $P_V$. Let $\mu_1\ge\mu_2\ge\dots$ be the eigenvalues of $\rho_2$. They sum to two, and
+$\tau_2=\sum_{i\ge3}\mu_i$.
+\begin{itemize}
+\item[(i)] By \eqref{eq:pi4}, $\Delta=1-\Tr A_1A_2-\Tr B_1B_2$. Since $\Tr B_j^2=\Tr A_j^2$, this equals
+$1-\frac12\Tr\rho_2^2+\frac12\norm{A_1-A_2}_2^2$.
+\item[(ii)] Since $\mu_i\le\mu_2$ for $i\ge3$ and $\mu_1+\mu_2+\tau_2=2$,
+\[
+2-\Tr\rho_2^2-\tau_2=\mu_1(1-\mu_1)+\mu_2(1-\mu_2)-\sum_{i\ge3}\mu_i^2\ge\mu_1(1-\mu_1)+\mu_2(\mu_1-1)
+=(1-\mu_1)(\mu_1-\mu_2).
+\]
+\item[(iii)] The operator $\mathcal A$ on $\mathbb C^2\otimes H_1$ with blocks
+$\mathcal A_{jk}=\Tr_2(w_{j+1}w_{k+1}^*)$, $j,k\in\{0,1\}$, is the reduced operator of the vector
+$|0\rangle\otimes w_1+|1\rangle\otimes w_2$. So its nonzero eigenvalues are those of $\rho_2$.
+Moreover $\Tr_{H_1}\mathcal A=I_2$, $\mathcal A_{00}-\mathcal A_{11}=A_1-A_2$ and
+$\mathcal A_{00}+\mathcal A_{11}=\rho_1$. By the last statement of Lemma~\ref{lem:qubit},
+$\norm{A_1-A_2}_2^2\ge2(\mu_1-1)(\mu_1-1+\tau_1)$ whenever $\mu_1\ge1$.
+\end{itemize}
+If $\mu_1\le1$, then (i) and (ii) give $\Delta\ge\frac12\tau_2$. If $\mu_1>1$, then (i)--(iii) and
+$\mu_1-\mu_2=2(\mu_1-1)+\tau_2$ give
+\[
+\Delta\ge\tfrac12\tau_2-\tfrac12(\mu_1-1)(\mu_1-\mu_2)+(\mu_1-1)^2+(\mu_1-1)\tau_1
+=\tfrac12(2-\mu_1)\,\tau_2+(\mu_1-1)\,\tau_1 .
+\]
+The right side is at least $\frac12\mu_1\min\{\tau_1,\tau_2\}\ge\frac12\min\{\tau_1,\tau_2\}$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:thick}]
+Since $q_2(C^*)=q_2(C)$, we may assume that $V$ contains the range of $C$. Write $m=\min\{\tau_1(V),\tau_2(V)\}$; note
+$m\le2$. If $\operatorname{rank}C\le1$, then $q_2(C)\ge\frac14\norm{C}_2^2$ by \cite[Prop.~8]{SongChen}, which is
+enough. So let
+$\operatorname{rank}C=2$, so that $V$ is the range of $C$, and take the decomposition $C=x_1y_1^*+x_2y_2^*$ used for
+the identity above. Its Gram matrix $G=(g_{ij})$ has eigenvalues $\sigma_1\ge\sigma_2>0$, and $x_1,x_2$ span $V$. Put
+$s=\frac12(\sigma_1+\sigma_2)$ and $\delta=\frac12(\sigma_1-\sigma_2)$. Since every term on the right of the identity is
+nonnegative, and $2q_2(C)$ is its left side plus $\frac12(\sigma_1-\sigma_2)^2$,
+\[
+q_2(C)\ge\delta^2+2\norm{\Pi(x_1\otimes x_2)}^2 .
+\]
+Write $G=Q^*\operatorname{diag}(\sigma_1,\sigma_2)Q$ with $Q$ unitary. Then
+$x_j=\sum_k\sqrt{\sigma_k}\,Q_{kj}v_k$ for an orthonormal basis $v_1,v_2$ of $V$. Let $\hat w_j=\sum_kQ_{kj}v_k$, which
+is another orthonormal basis of $V$. Since $\Pi(u\otimes v)=\Pi(v\otimes u)$,
+\begin{align*}
+\Pi(x_1\otimes x_2)-s\,\Pi(\hat w_1\otimes\hat w_2)
+&=\delta Q_{11}Q_{12}\Pi(v_1\otimes v_1)-\delta Q_{21}Q_{22}\Pi(v_2\otimes v_2)\\
+&\quad+(\sqrt{\sigma_1\sigma_2}-s)(Q_{11}Q_{22}+Q_{21}Q_{12})\Pi(v_1\otimes v_2).
+\end{align*}
+By \eqref{eq:pi4}, $\norm{\Pi(v_k\otimes v_k)}^2\le\frac12$ and $\norm{\Pi(v_1\otimes v_2)}^2\le\frac14$. Moreover
+$|Q_{11}Q_{12}|,|Q_{21}Q_{22}|\le\frac12$, $|Q_{11}Q_{22}+Q_{21}Q_{12}|\le1$ and $0\le s-\sqrt{\sigma_1\sigma_2}\le\delta$.
+So the difference has norm at most $\beta\delta$ with $\beta=\frac1{\sqrt2}+\frac12$, and $4\beta^2=3+2\sqrt2$. By
+Lemma~\ref{lem:pair}, $\norm{\Pi(\hat w_1\otimes\hat w_2)}\ge\sqrt\nu$ with $\nu=m/8\le\frac14$. Hence, with
+$\zeta=\delta/s\in[0,1]$,
+\[
+q_2(C)\ge\delta^2+2\big(s\sqrt\nu-\beta\delta\big)_+^2=s^2g(\zeta),\qquad g(\zeta)=\zeta^2+2\big(\sqrt\nu-\beta\zeta\big)_+^2,
+\]
+while $\norm{C}_2^2=\sigma_1^2+\sigma_2^2=2s^2(1+\zeta^2)$. If $\beta\zeta\ge\sqrt\nu$, then
+$g(\zeta)/(2(1+\zeta^2))\ge\zeta^2/(2(1+\zeta^2))\ge\nu/(2\beta^2+2\nu)$, since $\zeta^2/(1+\zeta^2)$ increases with
+$\zeta$. If $\beta\zeta<\sqrt\nu$, then $g(\zeta)\ge\min_{z\in\mathbb R}\{z^2+2(\sqrt\nu-\beta z)^2\}=2\nu/(1+2\beta^2)$
+and $1+\zeta^2<1+\nu/\beta^2$. Since $2\beta^2+2\nu\le(1+2\beta^2)(1+\nu/\beta^2)$, in both cases
+\[
+\frac{q_2(C)}{\norm{C}_2^2}\ge\frac{\nu}{(1+2\beta^2)(1+\nu/\beta^2)}
+\ge\frac{\nu}{(\frac52+\sqrt2)(4-2\sqrt2)}=\frac{\nu}{6-\sqrt2}=\frac{m}{48-8\sqrt2},
+\]
+where we used $\nu/\beta^2\le1/(4\beta^2)=3-2\sqrt2$.
+\end{proof}
+
+\emph{Range and co-range in one plane.} For these operators, in particular for normal ones, the argument gives Tomar's
+inequality with the best possible constant. Tomar proved this constant for every operator whose range lies in a plane
+spanned by two vectors with common Schmidt bases \cite[Thm.~7.2]{Tomar2}; here the plane is arbitrary, but the
+co-range must lie in it too. If the range and co-range of $C$ lie in a plane $V$, then
+\[
+q_2(C)\ge\big(1-\tfrac1{\sqrt2}\big)\min_l\lambda_3^{(l)}(V)\,\norm{C}_2^2 ,
+\]
+and $1-1/\sqrt2>\frac14$. First, $q_2(C)=q_2(\operatorname{Re}C)+q_2(\operatorname{Im}C)$ and
+$\norm{C}_2^2=\norm{\operatorname{Re}C}_2^2+\norm{\operatorname{Im}C}_2^2$ for every $C$, because partial traces of
+Hermitian operators are Hermitian and $\Tr(PQ)$ is real for Hermitian $P,Q$ (Wu and Zou use the same splitting for
+three copies \cite[Cor.~6.2]{WuZou}); so it suffices to treat Hermitian $C$ with range in $V$, and rank one is
+immediate. For $C=\omega_1v_1v_1^*+\omega_2v_2v_2^*$ with $v_1,v_2$ orthonormal,
+$\sigma_j=|\omega_j|$, $\sigma_1\ge\sigma_2>0$ and $\omega_1\bar\omega_2=\sigma_1\sigma_2e^{i\varphi}$, a direct
+computation using \eqref{eq:pi4} gives
+\[
+q_2(C)=\sigma_1^2\big(\tfrac14+E_1\big)+\sigma_2^2\big(\tfrac14+E_2\big)+\sigma_1\sigma_2\cos\varphi\,\big(\Delta-\tfrac12\big),
+\]
+where $E_j=1-\Tr\rho_{v_j}^2$ for the reduced operator $\rho_{v_j}$ of $v_jv_j^*$ and
+$\Delta=4\norm{\Pi(v_1\otimes v_2)}^2\in[0,1]$. Since $|\cos\varphi\,(\Delta-\frac12)|\le\frac12$, for any $\kappa$
+and $\mu$ we get $q_2(C)-\kappa\mu\norm{C}_2^2\ge k_1\sigma_1^2+k_2\sigma_2^2-\frac12\sigma_1\sigma_2$ with
+$k_j=\frac14+E_j-\kappa\mu$, which is nonnegative once $k_1,k_2>0$ and $k_1k_2\ge\frac1{16}$. Put
+$e_j=\min\{\frac12,E_j\}$. Weyl's inequality $\lambda_3(P+Q)\le\lambda_2(P)+\lambda_2(Q)$ gives
+$\mu:=\min_l\lambda_3^{(l)}(V)\le s:=e_1+e_2$, and for $\kappa=1-1/\sqrt2$ the identity
+$(\frac14+e_1-\kappa s)(\frac14+e_2-\kappa s)-\frac1{16}=\frac{\sqrt2-1}4s(1-2s)+e_1e_2$ shows $k_1k_2\ge\frac1{16}$
+(for $s>\frac12$ use $e_1e_2\ge\frac12(s-\frac12)$). Tomar's example $C=|00\rangle\langle00|-(\sqrt2-1)v_2v_2^*$ with
+$v_2=(|11\rangle+|22\rangle)/\sqrt2$ attains the constant. In the same way Ky Fan's maximum principle gives
+$\max_l\tau_l(V)\le(1-p_1)+(1-p_2)\le E_1+E_2=:S$ for the largest eigenvalues $p_j$ of $\rho_{v_j}$, and for
+$\kappa=(3-\sqrt5)/4$, where $\frac14-\frac\kappa2=\kappa(1-\kappa)$, the identity
+$(\frac14+E_1-\kappa S)(\frac14+E_2-\kappa S)-\frac1{16}=\kappa(1-\kappa)S(1-S)+E_1E_2$ (with $E_1E_2\ge S-1$ when
+$S>1$) gives $q_2(C)\ge\frac{3-\sqrt5}4\max_l\tau_l(V)\norm{C}_2^2$ on the same class; this is the constant we found
+numerically for general $C$. For $C\ge0$, using $\Delta\ge\frac12\min_l\tau_l(V)$ from Lemma~\ref{lem:pair}, a similar
+computation gives $q_2(C)\ge\frac14\min_l\tau_l(V)\norm{C}_2^2$, with the tails in place of the third eigenvalues. For
+indefinite $C$ the third eigenvalues in the first bound cannot be replaced by the tails: for $v_1=|00\rangle$,
+$v_2=\sum_{i\ge1}|ii\rangle/\sqrt{d-1}$ and $C=v_1v_1^*-tv_2v_2^*$ the smallest ratio $q_2(C)/(\min_l\tau_l\norm{C}_2^2)$
+is $\frac14$ at $d=4$ and $(5-\sqrt{13})/6\approx0.232$ at $d=5$, and it tends to $(3-\sqrt5)/4$ as $d\to\infty$.
+
+\emph{A graded form of the multiplicativity conjecture.} For $0\le k\le n$ put
+\[
+A_k(C)=\sum_{m=0}^{k}\Big(-\tfrac12\Big)^m\tbinom{n-m}{k-m}S_m(C),\qquad S_0(C)=\norm{C}_2^2 .
+\]
+Equivalently, $A_k(C)=\sum_{|S|=k}q^{(S)}(C)$, where $q^{(S)}$ is the form \eqref{eq:qn} for the copies in $S$, the
+other copies being left untraced. With $u=1-2t$ one checks the identity
+\[
+\sum_J(-t)^{|J|}\norm{\Tr_JC}_2^2-(1-2t)(1-t)^{n-1}\norm{C}_2^2
+=\sum_{k=0}^nu^{n-k}(1-u)^k\Big[A_k(C)-\tbinom{n-1}{k}2^{-k}\norm{C}_2^2\Big].
+\]
+This is the expansion that Tomar uses to show that the endpoint inequality propagates to smaller $t$
+\cite[Lemma~2.3(b)]{Tomar}; there every bracket is replaced by $A_k(C)\ge0$, which gives the weaker bound
+$(1-2t)^n\norm{C}_2^2$. The Bernstein weights $u^{n-k}(1-u)^k$ are nonnegative for $0\le t\le1/2$. So the conjectured
+identity of the introduction holds on the whole interval as soon as
+\[
+A_k(C)\ge\tbinom{n-1}{k}2^{-k}\norm{C}_2^2\qquad(k=1,\dots,n,\ \operatorname{rank}C\le2).
+\]
+For $k=1$ this is the case $m=1$ of \eqref{eq:CS}, proved here, and for $k=n$ it is \eqref{eq:qn}. For $n=2$ both
+levels are known, the second being the two-copy theorem, so the identity holds for two copies at every
+$t\in[0,1/2]$. For $n=3$ the middle level, $11S_0-4S_1+S_2\ge0$, also follows from known results. One checks
+\[
+11S_0-4S_1+S_2=\tfrac56\cdot8q_3+\tfrac23\sum_{i=1}^3\Big[2S_0+\tfrac12S_3-\norm{\Tr_iC}_2^2-\norm{\Tr_{jk}C}_2^2\Big]
++\tfrac16\big(2S_0-S_3\big),
+\]
+where $\{j,k\}$ is the complement of $i$ and $S_3=|\Tr C|^2$. The bracket is the slack of the two-copy theorem
+\cite{FHPV,BGH} for the bipartition of the three factors into $\{i\}$ and $\{j,k\}$, and $|\Tr C|^2\le2\norm{C}_2^2$
+for rank two. So, given the three-copy theorem \cite{Tomar}, all three levels hold for $n=3$, and the conjectured
+identity of the introduction holds for three copies at every $t\in[0,1/2]$. For $n\ge4$ no such linear combination
+exists: a linear program over the two- and three-copy theorems applied to all groupings of the copies (with the other
+copies as spectators), the bounds \eqref{eq:CS}, Theorem~\ref{thm:main} and the bound with a flatness term above finds
+none for any level $2\le k\le n$ at $n=4,5$. In our numerics every level holds, with equality at
+$C=P\otimes|c\rangle\langle c|^{\otimes(n-1)}$ for a rank-two projector $P$ on one factor, for all $n\le6$ at $d=3$,
+with spot checks at $d=2$ and $d=4$. Summing the two-copy inequality over all pairs of copies gives only
+$A_2(C)\ge0$, which misses the required constant.
+
+\emph{Below the PPT point.} For $0\le t\le1/d$ the form $\sum_J(-t)^{|J|}\norm{\Tr_JZ}_2^2$ is positive semidefinite in
+$Z$, and there a rank-free version of the conjectured identity seems to hold: for every operator $Z$ on
+$(\mathbb C^d)^{\otimes n}$,
+\[
+\sum_J(-t)^{|J|}\norm{\Tr_JZ}_2^2\ge(1-t)^{n-1}\big(\norm{Z}_2^2-t\norm{Z}_1^2\big)\qquad(0\le t\le1/d).
+\]
+Its derivative at $t=0$ is Theorem~\ref{thm:main}, and it is an equality for $P\otimes|c\rangle\langle c|^{\otimes(n-1)}$
+with $P\ge0$. For rank two and $d=3$ it would give the conjectured identity of the introduction on $[0,1/3]$, for every
+$n$. At $t=1/d$ it says that the part of $Z$ that is traceless on every factor has squared norm at least
+$(1-1/d)^{n-1}(\norm{Z}_2^2-\norm{Z}_1^2/d)$. In our searches it holds for $(d,n)=(2,2),(2,3),(2,4)$ at $t=1/2$, for
+$(3,2)$ and $(3,3)$ at several $t\le1/3$, and for $(4,2)$ at $t=1/5,1/4$. It fails as soon as $t>1/d$: for $d=3$ and
+$n=2$ already at $t=0.34$, with $Z$ of rank three. The one-site induction behind Theorem~\ref{thm:main} reduces it to a
+block inequality, which holds at $t=0$ (it is Lemma~\ref{lem:R}) but fails at $t=1/d$ in a fixed block basis.
+
+\emph{Other Tsallis indices.} The bound $\sum_i\Tr[(\Tr_i\rho)^q]\le(n-1)\Tr\rho^q+(\Tr\rho)^q$ also holds in our
+numerics for $q=3/2$ and $q=3$, at every rank. A Han inequality for all Tsallis entropies with $q>1$ would therefore be
+natural. For $n=2$ it is Audenaert's theorem \cite{Aud}. Our argument is specific to $q=2$.
+
+\section{What the method does not give}
+
+The endpoint inequality \eqref{eq:qn} needs upper bounds on the odd moments $S_m$ and lower bounds on the even ones.
+Corollary~\ref{cor:allm} supplies only the first kind. This is why \cite{CS} needed a further unproved assumption to
+reach undistillability.
+
+The trace-norm mechanism behind Theorem~\ref{thm:main} also does not extend directly. We tested three natural rank-free
+forms of \eqref{eq:qn} numerically. All of them fail already at $d=3$:
+\begin{itemize}
+\item $\Tr[(Z\otimes Z^*)(2(-1)^N-(-3)^N)]\le\norm{Z}_1^2$, where $N$ counts the locally antisymmetric factors of two
+copies. It fails for $n=2$.
+\item $q_n(X)\ge0$ for all $X$ with $\norm{X}_1^2\le2\norm{X}_2^2$. It fails for $n=2$.
+\item $q_n(\rho)\ge0$ for all density matrices with $\Tr\rho^2\ge1/2$. It fails for $n=3$.
+\end{itemize}
+So the rank-two constraint has to be used in an essential way at the endpoint. At first order it does not: the bound of
+Corollary~\ref{cor:rank} only sees the rank through $\norm{C}_1^2\le r\norm{C}_2^2$.
+
+The same contrast appears for positive maps. Inequality \eqref{eq:qn} for all rank-two $C$ says that
+$\mathrm{id}_2\otimes\psi^{\otimes n}$ is positive, where $\psi(X)=\Tr(X)I-X/2$. Corollary~\ref{cor:map} says that the
+first-order part of this map stays positive with an ancilla of any dimension.
+
+\begin{thebibliography}{99}
+\bibitem{DSSTT} D. P. DiVincenzo, P. W. Shor, J. A. Smolin, B. M. Terhal, A. V. Thapliyal, Phys. Rev. A \textbf{61}, 062312 (2000).
+\bibitem{DCLB} W. D\"ur, J. I. Cirac, M. Lewenstein, D. Bru\ss, Phys. Rev. A \textbf{61}, 062313 (2000).
+\bibitem{HRZ} P. Horodecki, \L. Rudnicki, K. \.Zyczkowski, Five open problems in quantum information theory, PRX Quantum \textbf{3}, 010101 (2022).
+\bibitem{FGP} J. Fu, L. Gao, S.-J. Park, arXiv:2607.21367.
+\bibitem{SongChen} Z. Song, L. Chen, arXiv:2607.23416.
+\bibitem{FHPV} T. C. Fraser, F. Huber, B. Pozsgay, I. Vona, On the two-copy distillability of Werner states and a new partial trace inequality, arXiv:2607.24309.
+\bibitem{BGH} K. Bharti, R. Gajjala, T. Haug, Two-copy nondistillability of Werner states: sharp partial-trace inequalities and finite-copy extensions, arXiv:2607.24479.
+\bibitem{WuZou} T. Wu, Q. Zou, Sharp Pl\"ucker geometry for three-copy Werner distillation, arXiv:2608.02647.
+\bibitem{Tomar} T. S. Tomar, Undistillability of Werner states from three, four and five copies, Zenodo 23718035 (2026).
+\bibitem{Tomar2} T. S. Tomar, Equality cases and every-copy results for the Werner endpoint inequality, Zenodo 23718037 (2026).
+\bibitem{CR23} P. Costa Rico, New partial trace inequalities and distillability of Werner states, Lett. Math. Phys. (2025); arXiv:2310.05726.
+\bibitem{CS} I. Chattopadhyay, D. Sarkar, NPT bound entanglement---the problem revisited, arXiv:quant-ph/0609050.
+\bibitem{PPHH} \L. Pankowski, M. Piani, M. Horodecki, P. Horodecki, A few steps more towards NPT bound entanglement, IEEE Trans. Inf. Theory \textbf{56}, 4085 (2010); arXiv:0711.2613.
+\bibitem{Aud} K. M. R. Audenaert, Subadditivity of $q$-entropies for $q>1$, J. Math. Phys. \textbf{48}, 083507 (2007).
+\bibitem{Ras} A. E. Rastegin, Relations for certain symmetric norms and anti-norms before and after partial trace, J. Stat. Phys. \textbf{148}, 1040 (2012).
+\bibitem{CRW} P. Costa Rico, M. M. Wolf, Partial trace relations beyond normal matrices, J. Math. Phys. \textbf{67}, 082203 (2026); arXiv:2507.18278.
+\bibitem{FYK} S. Furuichi, K. Yanagi, K. Kuriyama, Some inequalities on generalized entropies, arXiv:1104.0360.
+\end{thebibliography}
+
+\end{document}

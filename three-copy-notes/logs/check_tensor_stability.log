@@ -1,0 +1,6 @@
+min eigenvalue of F Z1: +7.869e-11
+CCS(Z1): min Tr[Z1 (X(x)X)]/||X||^2 over rank-2 Hermitian X (200 searches): +4.948e-03
+CCS(Z1 (x) Z_W), Werner on C^3: min = -1.598e-02
+CCS(Z1 (x) Z_W), Werner on C^2: min = -1.598e-02
+LU example: min eigenvalue of F Z = -6.676e-16;  CCS(Z) min = +1.044e-10
+LU example: CCS(Z (x) Z_W) min = -2.500e-01

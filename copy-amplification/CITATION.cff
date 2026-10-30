@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "From m copies to n copies: an undistillability budget for Werner states"
+authors:
+  - family-names: Mishra
+    given-names: Ansh
+  - family-names: Senthilkumar
+    given-names: Aryan
+version: "2.0"
+date-released: 2026-10-30
+license: MIT
+keywords:
+  - entanglement distillation
+  - NPT bound entanglement
+  - Werner states
+  - multi-copy undistillability

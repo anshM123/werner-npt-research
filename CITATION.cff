@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Werner states at the NPT endpoint: multi-copy undistillability results"
+authors:
+  - family-names: Mishra
+    given-names: Ansh
+  - family-names: Senthilkumar
+    given-names: Aryan
+date-released: 2026-10-30
+license: MIT
+repository-code: "https://github.com/anshM123/werner-npt-research"
+keywords:
+  - NPT bound entanglement
+  - Werner states
+  - entanglement distillation
+  - partial trace inequalities

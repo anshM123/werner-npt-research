@@ -1,0 +1,456 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Tr}{\operatorname{Tr}}
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+
+\title{A thickness margin for the two-copy Werner inequality}
+\author{Ansh Mishra \and Aryan Senthilkumar}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Werner state $\rho\propto I-F/2$ is two-copy undistillable, which amounts to the inequality
+$q_2(C)=\norm{C}_2^2-\frac12(\norm{\Tr_1C}_2^2+\norm{\Tr_2C}_2^2)+\frac14|\Tr C|^2\ge0$ for every operator $C$ of rank
+at most two on $H_1\otimes H_2$. Its equality cases have co-ranges whose one-copy reductions have rank at most two.
+Tomar conjectured that $q_2(C)\ge\frac14\lambda_3\norm{C}_2^2$, where $\lambda_3$ is the smaller of the third eigenvalues
+of those reductions, and noted that no bound of the form $c\,\lambda_3\norm{C}_2^2$ with $c>0$ was known. We prove one
+with $c=1/(48-8\sqrt2)>1/37$, in every dimension, and with $\lambda_3$ replaced by the larger quantity
+$\tau=\sum_{i\ge3}\lambda_i$. The main new ingredient is a sharp inequality for positive operators $\mathcal A$ on
+$\mathbb C^2\otimes K$ whose qubit marginal is the identity:
+$\lambda_{\max}(\mathcal A)\le1+\norm{\mathcal A_{00}-\mathcal A_{11}}_2/\sqrt2$, together with a refinement that also
+sees the tail of the reduced operator of $\mathcal A$ on $K$. For operators whose range and co-range lie in a common
+plane, in particular for normal ones, we prove Tomar's inequality with the best possible constant $1-1/\sqrt2>\frac14$,
+which Tomar had established on a different class of planes.
+\end{abstract}
+
+\section{Introduction}
+
+Let $F$ be the swap on $\mathbb C^d\otimes\mathbb C^d$ and let $\rho_\alpha\propto I-\alpha F$ be the Werner state. It is
+one-copy distillable for $\alpha>1/2$, and whether the states with $1/d<\alpha\le1/2$ are distillable from some number of
+copies is the NPT bound-entanglement problem \cite{DSSTT,DCLB,HRZ}. At the endpoint $\alpha=1/2$, two-copy
+undistillability is equivalent \cite{CR23,SongChen} to
+\begin{equation}\label{eq:q2}
+q_2(C)=\norm{C}_2^2-\tfrac12\big(\norm{\Tr_1C}_2^2+\norm{\Tr_2C}_2^2\big)+\tfrac14|\Tr C|^2\ge0
+\end{equation}
+for every operator $C$ of rank at most two on $H_1\otimes H_2$, and this was proved in 2026 by several groups
+\cite{FGP,SongChen,FHPV,BGH}. Three copies have since been settled with computer assistance \cite{Tomar}.
+
+Tomar \cite{Tomar2} classified the equality cases of \eqref{eq:q2}: if $q_2(C)=0$ then $C$ has rank two and its co-range
+lies in a product $W_1\otimes W_2$ with $\dim W_l\le2$. For a plane $V\subseteq H_1\otimes H_2$ he puts
+\[
+m_2(V)=\min\{q_2(C):\norm{C}_2=1,\ \operatorname{ran}C\subseteq V\},
+\]
+which is also the minimum over operators with co-range in $V$, since $q_2(C^*)=q_2(C)$; and he lets $\lambda_3^{(l)}(V)$ be the third largest eigenvalue of the reduced operator of the projector $P_V$ on factor
+$l$, which has trace two. So $\min_l\lambda_3^{(l)}(V)=0$ exactly when $V$ has a local support of dimension at most
+two. His Conjecture~7.1 says $m_k(V)\ge2^{-k}\min_l\lambda_3^{(l)}(V)$ for every number $k$ of copies, which would give
+undistillability from every number of copies. About the first case he writes that even for two copies no linear lower
+bound $m_2(V)\ge c\,\lambda_3(V)$ with $c>0$ is known on all planes \cite[Sec.~8]{Tomar2}. We prove such a bound.
+
+For $l=1,2$ let $\tau_l(V)$ be the sum of all but the two largest eigenvalues of the reduced operator of $P_V$ on factor
+$l$. Then $\tau_l(V)\ge\lambda_3^{(l)}(V)$, with $\tau_l(V)=0$ exactly when $\lambda_3^{(l)}(V)=0$.
+
+\begin{theorem}\label{thm:main}
+Let $C$ have rank at most two on $H_1\otimes H_2$, with finite-dimensional factors, and let $V$ be a plane that contains
+the range or the co-range of $C$. Then
+\[
+q_2(C)\ge\frac{\min\{\tau_1(V),\tau_2(V)\}}{48-8\sqrt2}\,\norm{C}_2^2 .
+\]
+In particular $m_2(V)\ge\frac1{37}\min_l\lambda_3^{(l)}(V)$ for every plane $V$.
+\end{theorem}
+
+The constant is not optimal. In our numerical searches the infimum of $m_2(V)/\min_l\lambda_3^{(l)}(V)$ at $d=3$ is
+$1-1/\sqrt2\approx0.293$, the constant Tomar proved on a class of planes \cite[Thm.~7.2]{Tomar2}; at $d=3$ the tails
+$\tau_l$ and the third eigenvalues coincide. For operators whose range and co-range lie in a common plane, in
+particular normal ones, we prove the sharp constant $1-1/\sqrt2$ (Theorem~\ref{thm:normal}), and we show there that
+$\lambda_3$ cannot be replaced by $\tau$ in it. Tomar's class consists of special planes, with no condition on the
+co-range; ours allows every plane but asks for both the range and the co-range to lie in it. So the conjectured constant $\frac14$ appears to be correct for two
+copies, but in general we do not prove it.
+
+The proof has three steps. Section~\ref{sec:sos} recalls a sum-of-squares identity behind the proof of
+Fraser, Huber, Pozsgay and Vona \cite{FHPV}; one of its terms is $4\norm{\Pi(x_1\otimes x_2)}^2$, where $\Pi$
+antisymmetrises both factors and $x_1,x_2$ span the range. Section~\ref{sec:pair} bounds this term from below by the
+thickness of the span when $x_1,x_2$ are orthonormal (Lemma~\ref{lem:pair}), with the best possible constant. Its proof
+rests on the following inequality, which may be of independent interest.
+
+\begin{lemma}\label{lem:qubit}
+Let $\mathcal A\ge0$ be an operator on $\mathbb C^2\otimes K$, with blocks $\mathcal A_{jk}$ on $K$, such that
+$\Tr_K\mathcal A=I_2$; that is, $\Tr\mathcal A_{00}=\Tr\mathcal A_{11}=1$ and $\Tr\mathcal A_{01}=0$.
+\begin{itemize}
+\item[(a)] $\lambda_{\max}(\mathcal A)\le1+\tfrac1{\sqrt2}\norm{\mathcal A_{00}-\mathcal A_{11}}_2$.
+\item[(b)] Let $\psi$ be a unit vector with $\langle\psi|\mathcal A|\psi\rangle=1+\eta$ and $\eta\ge0$, let $E$ be the
+projector onto the support of the reduced operator of $\psi\psi^*$ on $K$, and put
+$\varepsilon=\Tr\big((I\otimes(I-E))\mathcal A\big)$. Then
+\[
+\norm{\mathcal A_{00}-\mathcal A_{11}}_2^2\ge2\eta(\eta+\varepsilon).
+\]
+\end{itemize}
+In particular, if $\lambda=\lambda_{\max}(\mathcal A)\ge1$ and $\tau$ is the sum of all but the two largest eigenvalues
+of $\mathcal A_{00}+\mathcal A_{11}$, then $\norm{\mathcal A_{00}-\mathcal A_{11}}_2^2\ge2(\lambda-1)(\lambda-1+\tau)$.
+\end{lemma}
+
+The last statement follows from (b) with $\psi$ a top eigenvector, because $E$ has rank at most two, so that
+$\varepsilon=\Tr\big((I-E)(\mathcal A_{00}+\mathcal A_{11})\big)\ge\tau$. Part (a) is sharp: equality holds for
+$\mathcal A=\lambda\varphi\varphi^*+(2-\lambda)\varphi'\varphi'^*$ with
+$1\le\lambda\le2$, $\varphi=(|0\rangle a+|1\rangle b)/\sqrt2$, $\varphi'=(|0\rangle b-|1\rangle a)/\sqrt2$ and $a\perp b$
+unit vectors. Since the hypotheses are invariant under unitaries on $\mathbb C^2$, both parts hold with
+$\mathcal A_{00}-\mathcal A_{11}$ replaced by $\Tr_{\mathbb C^2}[(n\cdot\sigma\otimes I)\mathcal A]$ for any unit vector
+$n\in\mathbb R^3$. Section~\ref{sec:proof} then
+removes the orthonormality assumption using the term $\frac14(\sigma_1-\sigma_2)^2$ of the identity.
+
+\section{Proof of Lemma~\ref{lem:qubit}}
+
+Let $\psi$ be a unit vector, with Schmidt decomposition
+$\psi=\sqrt p\,q_1\otimes a+\sqrt{1-p}\,q_2\otimes b$, where $a,b\in K$ are orthonormal (enlarging $K$ if necessary).
+Conjugating $\mathcal A$ by a diagonal unitary $U$ on $\mathbb C^2$, and replacing $\psi$ by $(U\otimes I)\psi$,
+changes neither the hypotheses, nor the spectrum, nor $\mathcal A_{00}-\mathcal A_{11}$, nor
+$\langle\psi|\mathcal A|\psi\rangle$, $E$ and $\varepsilon$ in (b). So we may assume that $q_1=(c,s)$ and, after a phase change of $b$, $q_2=(-s,c)$, where
+$c=\cos\frac\theta2$, $s=\sin\frac\theta2$ and $0\le\theta\le\pi$. Put $r=\sqrt{p(1-p)}$ and
+\[
+Z=\tfrac12I+(p-\tfrac12)\sin\theta\,\sigma_x,\qquad
+Y=\tfrac1{\sqrt2}\big[\cos\theta\,(aa^*-bb^*)-2r\sin\theta\,(ab^*+ba^*)\big].
+\]
+Then $\Tr Z=1$, $Z\ge0$, and $\norm{Y}_2^2=\cos^2\theta+4r^2\sin^2\theta\le1$. We claim that
+\begin{equation}\label{eq:cert}
+\psi\psi^*\le Z\otimes I+\tfrac1{\sqrt2}\sigma_z\otimes Y .
+\end{equation}
+Both sides commute with $I\otimes E$, where $E$ is the projector onto $\operatorname{span}\{a,b\}$. On
+$\mathbb C^2\otimes\{a,b\}^\perp$ the left side vanishes and the right side is $Z\otimes I\ge0$. On
+$\mathbb C^2\otimes\operatorname{span}\{a,b\}$, in the basis $|0a\rangle,|0b\rangle,|1a\rangle,|1b\rangle$, the right
+side is
+\[
+P=\begin{pmatrix}c^2&-2rcs&\kappa&0\\-2rcs&s^2&0&\kappa\\\kappa&0&s^2&2rcs\\0&\kappa&2rcs&c^2\end{pmatrix},
+\qquad\kappa=(2p-1)cs,
+\]
+and $\psi=(\sqrt p\,c,\,-\sqrt{1-p}\,s,\,\sqrt p\,s,\,\sqrt{1-p}\,c)$. Using $c^2+s^2=1$ and
+$\kappa^2+4r^2c^2s^2=c^2s^2$, one checks entry by entry that $P^2=P$ and $P\psi=\psi$. So $P$ is a projector whose
+range contains $\psi$, and $P-\psi\psi^*\ge0$. This proves \eqref{eq:cert}. Pairing it with $\mathcal A\ge0$ gives
+\begin{equation}
+\langle\psi|\mathcal A|\psi\rangle\le\Tr(Z\,\Tr_K\mathcal A)
++\tfrac1{\sqrt2}\Tr\big(Y(\mathcal A_{00}-\mathcal A_{11})\big)
+\le1+\tfrac1{\sqrt2}\norm{\mathcal A_{00}-\mathcal A_{11}}_2 ,
+\end{equation}
+which is (a) when $\psi$ is an eigenvector for $\lambda_{\max}(\mathcal A)$.
+
+For (b) we may assume $\eta>0$. Then $0<p<1$, since $\langle\psi|\mathcal A|\psi\rangle\le1$ when $\psi$ is a product
+vector, and $E$ is the projector onto $\operatorname{span}\{a,b\}$. Put $u=|p-\frac12|\sin\theta$ and $\ell=\frac12-u$,
+the smallest eigenvalue of $Z$; then $u<\frac12$, so $\ell>0$. Since $4r^2=1-(2p-1)^2$,
+\[
+\norm{Y}_2^2=\cos^2\theta+4r^2\sin^2\theta=1-4u^2=4\ell(1-\ell).
+\]
+Let $\gamma=2\eta/\ell$. By the decomposition above, $Z\otimes I+\frac1{\sqrt2}\sigma_z\otimes Y-\psi\psi^*$ equals
+$P-\psi\psi^*\ge0$ on $\mathbb C^2\otimes\operatorname{span}\{a,b\}$ and $Z\otimes I\ge\ell I$ on
+$\mathbb C^2\otimes\{a,b\}^\perp$. Hence
+\[
+\gamma\Big(Z\otimes I+\tfrac1{\sqrt2}\sigma_z\otimes Y-\psi\psi^*\Big)-2\eta\,I\otimes(I-E)\ge0 .
+\]
+Pairing this with $\mathcal A$ and using $\Tr(Z\,\Tr_K\mathcal A)=1$ gives
+$\gamma\big(\frac1{\sqrt2}\Tr(Y(\mathcal A_{00}-\mathcal A_{11}))-\eta\big)\ge2\eta\varepsilon$, that is,
+$\frac1{\sqrt2}\Tr\big(Y(\mathcal A_{00}-\mathcal A_{11})\big)\ge\eta+\ell\varepsilon$. By the Cauchy--Schwarz inequality,
+\[
+\norm{\mathcal A_{00}-\mathcal A_{11}}_2^2\ge\frac{2(\eta+\ell\varepsilon)^2}{\norm{Y}_2^2}
+=\frac{(\eta+\ell\varepsilon)^2}{2\ell(1-\ell)}\ge2\eta(\eta+\varepsilon),
+\]
+where the last step is $(\eta+\ell\varepsilon)^2-4\ell(1-\ell)\eta(\eta+\varepsilon)=\big((1-2\ell)\eta-\ell\varepsilon\big)^2$.
+\qed
+
+\section{The identity}\label{sec:sos}
+
+Write $\Phi(Z)=(\Tr_1Z,\Tr_2Z)$, so that $\norm{\Phi(Z)}^2=\norm{\Tr_1Z}_2^2+\norm{\Tr_2Z}_2^2$. On two copies of
+$H_1\otimes H_2$ let $F_l$ swap factor $l$ between the copies, and put $\Pi=\frac14(I-F_1)(I-F_2)$. The swap trick gives
+$\langle\Phi(uv^*),\Phi(st^*)\rangle=\langle u\otimes t|F_1+F_2|v\otimes s\rangle$ for all vectors $u,v,s,t$. Since
+$F_1F_2$ exchanges the copies, this has two consequences:
+\begin{equation}\label{eq:two}
+\langle\Phi(uv^*),\Phi(st^*)\rangle=\langle\Phi(tv^*),\Phi(su^*)\rangle,\qquad
+\norm{\Phi(xy^*)}^2=\norm{x}^2\norm{y}^2+|\langle x,y\rangle|^2-4\norm{\Pi(x\otimes y)}^2 ,
+\end{equation}
+the second because $4\Pi=I-F_1-F_2+F_1F_2$. Note also $\Pi(x\otimes y)=\Pi(y\otimes x)$.
+
+Let $C$ have rank two and singular values $\sigma_1\ge\sigma_2>0$. Following \cite{FHPV}, take a singular value
+decomposition $C=U\Sigma V^*$, put $X_0=U\Sigma^{1/2}$ and $Y_0=V\Sigma^{1/2}$, and let $X=X_0Q$, $Y=Y_0Q$, where the
+unitary $Q$ makes both diagonal entries of $Q^*Y_0^*X_0Q$ equal to $\Tr C/2$. This is possible because the numerical range
+of a $2\times2$ matrix contains half its trace. With $x_j,y_j$ the columns of $X,Y$ we get $C=x_1y_1^*+x_2y_2^*$,
+$\langle x_i,x_j\rangle=\langle y_i,y_j\rangle=g_{ij}$ with $G=(g_{ij})=Q^*\Sigma Q$, and
+$\langle y_j,x_j\rangle=\Tr C/2$. In particular $g_{11}+g_{22}=\norm{C}_1$ and $\norm{C}_2^2=g_{11}^2+g_{22}^2+2|g_{12}|^2$.
+
+\begin{lemma}[{essentially \cite{FHPV}}]\label{lem:sos}
+For this decomposition,
+\[
+\norm{C}_2^2+\tfrac12\norm{C}_1^2+\tfrac12|\Tr C|^2-\norm{\Phi(C)}^2
+=\tfrac12(g_{11}-g_{22})^2+4\sum_{(a,b)}\norm{\Pi(a\otimes b)}^2+\norm{\Phi(x_2x_1^*-y_2y_1^*)}^2,
+\]
+where $(a,b)$ runs over $(x_1,y_1)$, $(x_2,y_2)$, $(x_1,x_2)$, $(y_1,y_2)$. Consequently
+\begin{equation}\label{eq:q2lower}
+q_2(C)\ge\tfrac14(\sigma_1-\sigma_2)^2+2\norm{\Pi(x_1\otimes x_2)}^2 .
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Expand $\norm{\Phi(C)}^2$. By the first relation in \eqref{eq:two} the cross term is
+$2\Re\langle\Phi(y_2y_1^*),\Phi(x_2x_1^*)\rangle=\norm{\Phi(x_2x_1^*)}^2+\norm{\Phi(y_2y_1^*)}^2
+-\norm{\Phi(x_2x_1^*-y_2y_1^*)}^2$. Applying the second relation to the four rank-one terms gives
+$\norm{\Phi(C)}^2=g_{11}^2+g_{22}^2+\frac12|\Tr C|^2+2g_{11}g_{22}+2|g_{12}|^2-4\sum_{(a,b)}\norm{\Pi(a\otimes b)}^2
+-\norm{\Phi(x_2x_1^*-y_2y_1^*)}^2$, which is the identity. For \eqref{eq:q2lower}, note that $2q_2(C)$ equals the left
+side plus $\norm{C}_2^2-\frac12\norm{C}_1^2=\frac12(\sigma_1-\sigma_2)^2$, and drop all terms on the right except
+$4\norm{\Pi(x_1\otimes x_2)}^2$.
+\end{proof}
+
+The identity implies the sharp form $q_2(C)\ge\frac14(\sigma_1-\sigma_2)^2$ of \eqref{eq:q2}, which is an equality for
+$C=\rho\otimes|c\rangle\langle c|$ with $\rho\ge0$ of rank two. It is implicit in \cite{FHPV}: their Eq.~(65), with
+$\Tr G=\norm{C}_1$, gives the same bound.
+
+\section{Orthonormal pairs}\label{sec:pair}
+
+\begin{lemma}\label{lem:pair}
+Let $w_1,w_2$ be an orthonormal basis of a plane $V\subseteq H_1\otimes H_2$. Then
+\[
+4\norm{\Pi(w_1\otimes w_2)}^2\ge\tfrac12\min\{\tau_1(V),\tau_2(V)\}.
+\]
+\end{lemma}
+
+The constant $\frac12$ is best possible. If $\dim H_1=\dim H_2=d\ge3$ and $\sqrt d\,w_1$, $\sqrt d\,w_2$ are unitary
+$d\times d$ matrices that are orthogonal in the Hilbert--Schmidt inner product, then the reduced operators $A_j,B_j$ in
+the proof below all equal $I/d$, and both sides equal $1-2/d$.
+
+\begin{proof}
+For vectors $x_1,x_2$ let $A_j$ and $B_j$ be the reduced operators of $x_jx_j^*$ on $H_1$ and $H_2$. Expanding $\Pi$
+gives
+\begin{equation}\label{eq:pi4}
+4\norm{\Pi(x_1\otimes x_2)}^2=\norm{x_1}^2\norm{x_2}^2+|\langle x_1,x_2\rangle|^2-\Tr A_1A_2-\Tr B_1B_2 .
+\end{equation}
+Now take $x_j=w_j$ and write $\Delta=4\norm{\Pi(w_1\otimes w_2)}^2$. Then $\rho_1=A_1+A_2$ and $\rho_2=B_1+B_2$ are the
+reductions of $P_V$. Let $\mu_1\ge\mu_2\ge\dots$ be the eigenvalues of $\rho_2$. They sum to two, and
+$\tau_2=\sum_{i\ge3}\mu_i$.
+\begin{itemize}
+\item[(i)] By \eqref{eq:pi4}, $\Delta=1-\Tr A_1A_2-\Tr B_1B_2$. Since $\Tr B_j^2=\Tr A_j^2$, this equals
+$1-\frac12\Tr\rho_2^2+\frac12\norm{A_1-A_2}_2^2$.
+\item[(ii)] Since $\mu_i\le\mu_2$ for $i\ge3$ and $\mu_1+\mu_2+\tau_2=2$,
+\[
+2-\Tr\rho_2^2-\tau_2=\mu_1(1-\mu_1)+\mu_2(1-\mu_2)-\sum_{i\ge3}\mu_i^2\ge\mu_1(1-\mu_1)+\mu_2(\mu_1-1)
+=(1-\mu_1)(\mu_1-\mu_2).
+\]
+\item[(iii)] The operator $\mathcal A$ on $\mathbb C^2\otimes H_1$ with blocks $\mathcal A_{jk}=\Tr_2(w_{j+1}w_{k+1}^*)$,
+$j,k\in\{0,1\}$,
+is the reduced operator of the vector $|0\rangle\otimes w_1+|1\rangle\otimes w_2$. So its nonzero eigenvalues are those
+of $\rho_2$. Moreover $\Tr_{H_1}\mathcal A=I_2$, $\mathcal A_{00}-\mathcal A_{11}=A_1-A_2$ and
+$\mathcal A_{00}+\mathcal A_{11}=\rho_1$. By the last statement of Lemma~\ref{lem:qubit},
+$\norm{A_1-A_2}_2^2\ge2(\mu_1-1)(\mu_1-1+\tau_1)$ whenever $\mu_1\ge1$.
+\end{itemize}
+If $\mu_1\le1$, then (i) and (ii) give $\Delta\ge\frac12\tau_2$. If $\mu_1>1$, then (i)--(iii) and
+$\mu_1-\mu_2=2(\mu_1-1)+\tau_2$ give
+\[
+\Delta\ge\tfrac12\tau_2-\tfrac12(\mu_1-1)(\mu_1-\mu_2)+(\mu_1-1)^2+(\mu_1-1)\tau_1
+=\tfrac12(2-\mu_1)\,\tau_2+(\mu_1-1)\,\tau_1 .
+\]
+The right side is at least $\frac12\mu_1\min\{\tau_1,\tau_2\}\ge\frac12\min\{\tau_1,\tau_2\}$.
+\end{proof}
+
+\section{Proof of Theorem~\ref{thm:main}}\label{sec:proof}
+
+Since $q_2(C^*)=q_2(C)$, we may assume that $V$ contains the range of $C$. Let $m=\min\{\tau_1(V),\tau_2(V)\}$;
+note that $m\le2$. If $C$ has rank at most one, then $q_2(C)\ge\frac14\norm{C}_2^2$ by \cite[Prop.~8]{SongChen}, and
+this is enough. So let $C$ have rank two. Then $V$ is the range of $C$. Take the decomposition of
+Section~\ref{sec:sos}: its columns $x_1,x_2$ span $V$, and $G$ has eigenvalues $\sigma_1\ge\sigma_2>0$. Put
+$s=\frac12(\sigma_1+\sigma_2)$ and $\delta=\frac12(\sigma_1-\sigma_2)$. Then \eqref{eq:q2lower} reads
+\[
+q_2(C)\ge\delta^2+2\norm{\Pi(x_1\otimes x_2)}^2 .
+\]
+
+Since $G=Q^*\Sigma Q$, we have $X=W\Sigma^{1/2}Q$ for an isometry $W$ onto $V$. Let $v_k=We_k$ and
+$\hat w_j=\sum_kQ_{kj}v_k$; both are orthonormal bases of $V$, and $x_j=\sum_k\sqrt{\sigma_k}\,Q_{kj}v_k$. Since
+$\Pi(u\otimes v)=\Pi(v\otimes u)$,
+\begin{align*}
+\Pi(x_1\otimes x_2)-s\,\Pi(\hat w_1\otimes\hat w_2)
+&=\delta Q_{11}Q_{12}\Pi(v_1\otimes v_1)-\delta Q_{21}Q_{22}\Pi(v_2\otimes v_2)\\
+&\quad+(\sqrt{\sigma_1\sigma_2}-s)(Q_{11}Q_{22}+Q_{21}Q_{12})\Pi(v_1\otimes v_2).
+\end{align*}
+By \eqref{eq:pi4}, $\norm{\Pi(v_k\otimes v_k)}^2\le\frac12$ and $\norm{\Pi(v_1\otimes v_2)}^2\le\frac14$. Moreover
+$|Q_{11}Q_{12}|,|Q_{21}Q_{22}|\le\frac12$, $|Q_{11}Q_{22}+Q_{21}Q_{12}|\le1$ and $0\le s-\sqrt{\sigma_1\sigma_2}\le\delta$.
+So the difference has norm at most $\beta\delta$ with $\beta=\frac1{\sqrt2}+\frac12$, and $4\beta^2=3+2\sqrt2$. By
+Lemma~\ref{lem:pair}, $\norm{\Pi(\hat w_1\otimes\hat w_2)}\ge\sqrt\nu$ with $\nu=m/8\le\frac14$. Hence, with
+$\zeta=\delta/s\in[0,1]$,
+\[
+q_2(C)\ge\delta^2+2\big(s\sqrt\nu-\beta\delta\big)_+^2=s^2g(\zeta),\qquad g(\zeta)=\zeta^2+2\big(\sqrt\nu-\beta\zeta\big)_+^2,
+\]
+while $\norm{C}_2^2=\sigma_1^2+\sigma_2^2=2s^2(1+\zeta^2)$. If $\beta\zeta\ge\sqrt\nu$, then
+$g(\zeta)/(2(1+\zeta^2))\ge\zeta^2/(2(1+\zeta^2))\ge\nu/(2\beta^2+2\nu)$, since $\zeta^2/(1+\zeta^2)$ increases with
+$\zeta$. If $\beta\zeta<\sqrt\nu$, then $g(\zeta)\ge\min_{z\in\mathbb R}\{z^2+2(\sqrt\nu-\beta z)^2\}=2\nu/(1+2\beta^2)$
+and $1+\zeta^2<1+\nu/\beta^2$. Since $2\beta^2+2\nu\le(1+2\beta^2)(1+\nu/\beta^2)$, in both cases
+\[
+\frac{q_2(C)}{\norm{C}_2^2}\ge\frac{\nu}{(1+2\beta^2)(1+\nu/\beta^2)}
+\ge\frac{\nu}{(\frac52+\sqrt2)(4-2\sqrt2)}=\frac{\nu}{6-\sqrt2}=\frac{m}{48-8\sqrt2},
+\]
+where we used $\nu/\beta^2\le1/(4\beta^2)=3-2\sqrt2$. \qed
+
+\section{Operators with range and co-range in one plane}\label{sec:normal}
+
+For operators whose range and co-range lie in a common plane, in particular for normal operators, we can prove Tomar's
+inequality with the best possible constant. Tomar proved the same constant for every operator whose range lies in a
+plane spanned by two vectors with common Schmidt bases \cite[Thm.~7.2]{Tomar2}; here the plane is arbitrary, but the
+co-range must lie in it as well. For a unit vector $v\in H_1\otimes H_2$ let $\varrho_v$ be the reduced
+operator of $vv^*$ on either factor (the two have the same nonzero spectrum) and put $\mathcal E(v)=1-\Tr\varrho_v^2$.
+
+\begin{theorem}\label{thm:normal}
+Let $V$ be a plane, and let $C\ne0$ be an operator whose range and co-range lie in $V$; for instance, a normal operator of
+rank two with range $V$. Then
+\begin{itemize}
+\item[(a)] $q_2(C)\ge\big(1-\frac1{\sqrt2}\big)\min_l\lambda_3^{(l)}(V)\,\norm{C}_2^2$, and the constant is best possible
+in every dimension $d\ge3$;
+\item[(b)] $q_2(C)\ge\frac{3-\sqrt5}4\max_l\tau_l(V)\,\norm{C}_2^2$, and the constant is best possible as $d\to\infty$;
+\item[(c)] if $C\ge0$ has rank two, $q_2(C)\ge\frac14\min_l\tau_l(V)\,\norm{C}_2^2$, and $\frac14$ is best possible as
+$d\to\infty$.
+\end{itemize}
+Since $1-1/\sqrt2>\frac14$, Tomar's conjectured inequality $q_2(C)\ge\frac14\min_l\lambda_3^{(l)}(V)\norm{C}_2^2$ holds
+for all these operators.
+\end{theorem}
+
+The examples behind the three sharpness claims are the following. For (a), take Tomar's operator
+$C=v_1v_1^*-(\sqrt2-1)v_2v_2^*$ with $v_1=|00\rangle$ and $v_2=(|11\rangle+|22\rangle)/\sqrt2$: then
+$\lambda_3^{(1)}=\lambda_3^{(2)}=\frac12$ and $q_2(C)=\frac12(1-\frac1{\sqrt2})\norm{C}_2^2$, and embedding $\mathbb C^3$
+into $\mathbb C^d$ changes nothing. For (b) and (c), let $v_1=|00\rangle$ and $v_2=\sum_{i=1}^{d-1}|ii\rangle/\sqrt{d-1}$,
+so that $\tau_1=\tau_2=\vartheta:=(d-2)/(d-1)$ and $\lambda_3^{(l)}=1/(d-1)$. For $C=v_1v_1^*-t\,v_2v_2^*$ the smallest
+value over $t$ of $q_2(C)/\norm{C}_2^2$ is $\frac14\big(1+2\vartheta-\sqrt{1+4\vartheta^2}\big)$; divided by $\vartheta$
+this tends to $(3-\sqrt5)/4$ as $d\to\infty$. For $C=v_1v_1^*+s\,v_2v_2^*$ with $s\to0^+$ the ratio
+$q_2(C)/(\vartheta\norm{C}_2^2)$ tends to $(d-1)/(4(d-2))$, which tends to $\frac14$. The first family also shows that
+in (a) the third eigenvalues cannot be replaced by the tails: its ratio to $\min_l\tau_l$ is $1-1/\sqrt2$ at $d=3$, then
+$\frac14<1-1/\sqrt2$ at $d=4$ and $(5-\sqrt{13})/6\approx0.232$ at $d=5$.
+
+\begin{proof}
+\emph{Reduction to Hermitian operators.} Write $C=X+iY$ with $X=\frac12(C+C^*)$ and $Y=\frac1{2i}(C-C^*)$. Partial
+traces of Hermitian operators are Hermitian, and $\Tr(PQ)$ is real for Hermitian $P,Q$, so all cross terms between $X$
+and $iY$ in $\norm{C}_2^2$, $\norm{\Tr_lC}_2^2$ and $|\Tr C|^2$ vanish. Hence
+\[
+q_2(C)=q_2(X)+q_2(Y),\qquad\norm{C}_2^2=\norm{X}_2^2+\norm{Y}_2^2 ,
+\]
+and $X$, $Y$ are Hermitian with ranges in $V$ (one of them may be zero). Wu and Zou use the same splitting for three
+copies \cite[Cor.~6.2]{WuZou}. So for (a) and (b) it suffices to treat nonzero Hermitian $C$ with range in $V$.
+If such a $C$ has rank one, $C=\omega vv^*$, then $q_2(C)=\omega^2(\frac14+\mathcal E(v))$. This is enough for (a)
+because $\lambda_3^{(l)}(V)\le\frac23$. It is enough for (b) because $(3-\sqrt5)/4<\frac14$ and
+$\tau_l(V)\le1+\mathcal E(v)$, by the argument of the second fact below applied to $v$ and a unit vector of $V$
+orthogonal to it. Otherwise $C$ is normal of rank two with range $V$.
+
+\emph{A formula.} Let $C=\omega_1v_1v_1^*+\omega_2v_2v_2^*$ with $v_1,v_2$ orthonormal,
+$\sigma_1=|\omega_1|\ge\sigma_2=|\omega_2|>0$ and $\omega_1\bar\omega_2=\sigma_1\sigma_2e^{i\varphi}$. Let $A_j$ and $B_j$
+be the reduced operators of $v_jv_j^*$ on $H_1$ and $H_2$, put $\mathcal E_j=\mathcal E(v_j)$, and let
+$\Delta=4\norm{\Pi(v_1\otimes v_2)}^2=1-\Tr A_1A_2-\Tr B_1B_2$, as in \eqref{eq:pi4}. Since
+$\Tr_2C=\omega_1A_1+\omega_2A_2$, $\Tr_1C=\omega_1B_1+\omega_2B_2$, $\Tr A_j^2=\Tr B_j^2$ and $\Tr C=\omega_1+\omega_2$,
+a direct computation gives
+\begin{equation}\label{eq:normal}
+q_2(C)=\sigma_1^2\big(\tfrac14+\mathcal E_1\big)+\sigma_2^2\big(\tfrac14+\mathcal E_2\big)
++\sigma_1\sigma_2\cos\varphi\,\big(\Delta-\tfrac12\big).
+\end{equation}
+
+\emph{Three facts.} First, $0\le\Delta\le1$, because $\Delta$ is a squared norm and $\Tr A_1A_2,\Tr B_1B_2\ge0$; and
+$\Delta\ge\frac12\min_l\tau_l(V)$ by Lemma~\ref{lem:pair}. Second, let $p_j$ be the largest eigenvalue of
+$\varrho_{v_j}$, so that $\mathcal E_j\ge1-p_j$. The reduction of $P_V$ on factor $l$ is the sum of the reductions of
+$v_1v_1^*$ and $v_2v_2^*$, so by Ky Fan's maximum principle (with the projector onto the span of the top eigenvectors of
+the two summands) its two largest eigenvalues add up to at least $p_1+p_2$, and
+$\tau_l(V)\le(1-p_1)+(1-p_2)\le\mathcal E_1+\mathcal E_2$. Third, the second eigenvalue of $\varrho_{v_j}$ is at most
+$\min\{\frac12,1-p_j\}\le e_j:=\min\{\frac12,\mathcal E_j\}$, so Weyl's inequality
+$\lambda_3(P+Q)\le\lambda_2(P)+\lambda_2(Q)$ gives $\lambda_3^{(l)}(V)\le e_1+e_2$.
+
+\emph{Proof of (a) and (b).} Since $|\cos\varphi\,(\Delta-\frac12)|\le\frac12$, \eqref{eq:normal} gives, for any
+$\kappa$ and $\mu$,
+\[
+q_2(C)-\kappa\mu\norm{C}_2^2\ge k_1\sigma_1^2+k_2\sigma_2^2-\tfrac12\sigma_1\sigma_2,\qquad
+k_j=\tfrac14+\mathcal E_j-\kappa\mu ,
+\]
+and the right side is nonnegative as soon as $k_1,k_2>0$ and $k_1k_2\ge\frac1{16}$. For (a) take
+$\kappa=1-\frac1{\sqrt2}$ and $\mu=\min_l\lambda_3^{(l)}(V)$. By the third fact $\mu\le s:=e_1+e_2$, so
+$k_j\ge\frac14+e_j-\kappa s\ge\frac14-\frac\kappa2>0$, and since $\frac14-\frac\kappa2=\frac{\sqrt2-1}4$ and
+$\kappa(1-\kappa)=\frac{\sqrt2-1}2$,
+\[
+\big(\tfrac14+e_1-\kappa s\big)\big(\tfrac14+e_2-\kappa s\big)-\tfrac1{16}=\tfrac{\sqrt2-1}4\,s(1-2s)+e_1e_2 .
+\]
+This is nonnegative if $s\le\frac12$; if $s>\frac12$, then $e_1e_2\ge\frac12(s-\frac12)$ because $e_j\le\frac12$, and
+the right side is at least $(s-\frac12)\big(\frac12-\frac{\sqrt2-1}2s\big)\ge0$ because $s\le1$. For (b) take
+$\kappa=\frac{3-\sqrt5}4$ and $\mu=\max_l\tau_l(V)$. By the second fact $\mu\le S:=\mathcal E_1+\mathcal E_2<2$, so
+$k_j\ge\frac14+\mathcal E_j-\kappa S\ge\frac14-\kappa>0$, and since now $\frac14-\frac\kappa2=\kappa(1-\kappa)$,
+\[
+\big(\tfrac14+\mathcal E_1-\kappa S\big)\big(\tfrac14+\mathcal E_2-\kappa S\big)-\tfrac1{16}
+=\kappa(1-\kappa)\,S(1-S)+\mathcal E_1\mathcal E_2 .
+\]
+This is nonnegative if $S\le1$; if $S>1$, then $\mathcal E_1\mathcal E_2\ge S-1$ because $\mathcal E_j<1$, and the right
+side is at least $(S-1)(1-\kappa(1-\kappa)S)\ge0$.
+
+\emph{Proof of (c).} Here $\varphi=0$. Let $m=\min_l\tau_l(V)$. By \eqref{eq:normal} and $\Delta\ge m/2$,
+\[
+q_2(C)-\tfrac14m\norm{C}_2^2=\tfrac14(\sigma_1-\sigma_2)^2(1-m)+\sigma_1^2\mathcal E_1+\sigma_2^2\mathcal E_2
++\sigma_1\sigma_2\big(\Delta-\tfrac m2\big)\ge\tfrac14(\sigma_1-\sigma_2)^2(1-m)+\sigma_1^2\mathcal E_1 .
+\]
+This is nonnegative: trivially if $m\le1$, and if $m>1$ because the second fact and $1-p_2\le1$ give
+$\mathcal E_1\ge1-p_1\ge m-1$, while $\sigma_1\ge\sigma_1-\sigma_2$.
+\end{proof}
+
+The identity $q_2(C)=q_2(\operatorname{Re}C)+q_2(\operatorname{Im}C)$ holds for every operator $C$, and the same argument
+gives it for the $n$-copy form, as Wu and Zou observed for three copies \cite{WuZou}. It does not settle general $C$, because $\operatorname{Re}C$ and $\operatorname{Im}C$ can
+have rank four when the range and co-range of $C$ differ. For random planes the minimiser in $m_2(V)$ is of this kind:
+in our searches the best operator with range and co-range in $V$ gives about three times $m_2(V)$ at $d=3$ (median
+ratio $3.1$), and about $2.35$ and $2$ times at $d=4$ and $d=5$. For the remaining operators
+Theorem~\ref{thm:main} gives only the constant $1/37$. For three copies, Wu and Zou proved $q_3(C)\ge0$ for positive
+semidefinite and normal $C$ of rank two, and, through this identity, for every $C$ whose range and co-range lie in one
+plane \cite[Cor.~6.2]{WuZou}.
+
+\section{Remarks}
+
+\begin{remark}
+Lemma~\ref{lem:qubit} can be read as a statement about the Choi state of a channel $\mathcal N$ from a qubit to $K$:
+its largest eigenvalue is at most $\frac12+\frac1{2\sqrt2}\norm{\mathcal N(\sigma_n)}_2$ for every direction $n$. For
+$K=\mathbb C^2$ and Bell-diagonal states this follows from positivity of the Bell weights, and it is tight there.
+\end{remark}
+
+\begin{remark}
+Lemma~\ref{lem:pair} is sharp, so the gap between our constant and the numerical one comes from the proof of
+Theorem~\ref{thm:main}: it uses only two of the terms of Lemma~\ref{lem:sos}, and a crude bound for the change of
+basis. At the numerical minimiser of $m_2(V)/\min_l\lambda_3^{(l)}(V)$ the singular values of $C$ are far from equal,
+and the flatness term $\frac14(\sigma_1-\sigma_2)^2$ and all four $\Pi$-terms contribute.
+\end{remark}
+
+\begin{remark}
+By Tomar's description of the equality cases, $m_2(V)=0$ only if both local supports of $V$ have dimension at most two.
+In our searches the margin is in fact linear in the larger tail: at $d=3$ and $d=4$ the infimum of
+$m_2(V)/\max_l\tau_l(V)$ is $(3-\sqrt5)/4\approx0.191$, attained at $V=\operatorname{span}\{|00\rangle,
+(|01\rangle+|12\rangle)/\sqrt2\}$, where $\tau_1=0$, $\tau_2=\frac12$ and $m_2(V)=(3-\sqrt5)/8$. This is the constant
+of Theorem~\ref{thm:normal}(b); here it is attained by an operator whose range is not contained in $V$. For general
+operators the proof of Theorem~\ref{thm:main} cannot give such a bound. For $V_\xi=\operatorname{span}\{|00\rangle+\xi|11\rangle,|10\rangle+\xi|02\rangle\}$ we have
+$\tau_1=0$, and numerically $m_2(V_\xi)/\tau_2(V_\xi)\to\frac12$ as $\xi\to0$. But for every operator that attains
+$m_2(V_\xi)$ the two terms kept in our proof, the flatness term and the term $\Pi(y_1\otimes y_2)$ of the pair spanning
+the co-range $V_\xi$, are of order $\tau_2^2$; the margin sits in the mixed terms $\Pi(x_j\otimes y_j)$ and
+$\Phi(x_2x_1^*-y_2y_1^*)$ of Lemma~\ref{lem:sos}.
+\end{remark}
+
+\begin{remark}
+The argument is specific to two copies, because Lemma~\ref{lem:sos} has no known analogue for three or more. For
+$k\ge3$ copies Tomar's conjecture, and with it the undistillability of $\rho_{1/2}$ from every number of copies, remains
+open.
+\end{remark}
+
+\paragraph{Numerical checks.} A script that checks the certificate of Lemma~\ref{lem:qubit} and tests
+Lemmas~\ref{lem:qubit},~\ref{lem:pair} and Theorems~\ref{thm:main},~\ref{thm:normal} on random instances, together
+with the facts used in the proof of Theorem~\ref{thm:normal}, accompanies this note.
+
+\begin{thebibliography}{99}
+\bibitem{DSSTT} D. P. DiVincenzo, P. W. Shor, J. A. Smolin, B. M. Terhal, A. V. Thapliyal, Phys. Rev. A \textbf{61}, 062312 (2000).
+\bibitem{DCLB} W. D\"ur, J. I. Cirac, M. Lewenstein, D. Bru\ss, Phys. Rev. A \textbf{61}, 062313 (2000).
+\bibitem{HRZ} P. Horodecki, \L. Rudnicki, K. \.Zyczkowski, Five open problems in quantum information theory, PRX Quantum \textbf{3}, 010101 (2022).
+\bibitem{CR23} P. Costa Rico, New partial trace inequalities and distillability of Werner states, Lett. Math. Phys. (2025); arXiv:2310.05726.
+\bibitem{FGP} J. Fu, L. Gao, S.-J. Park, arXiv:2607.21367.
+\bibitem{SongChen} Z. Song, L. Chen, arXiv:2607.23416.
+\bibitem{FHPV} T. C. Fraser, F. Huber, B. Pozsgay, I. Vona, On the two-copy distillability of Werner states and a new partial trace inequality, arXiv:2607.24309.
+\bibitem{BGH} K. Bharti, R. Gajjala, T. Haug, Two-copy nondistillability of Werner states: sharp partial-trace inequalities and finite-copy extensions, arXiv:2607.24479.
+\bibitem{Tomar} T. S. Tomar, Undistillability of Werner states from three, four and five copies, Zenodo 23718035 (2026).
+\bibitem{Tomar2} T. S. Tomar, Equality cases and every-copy results for the Werner endpoint inequality, Zenodo 23718037 (2026).
+\bibitem{WuZou} T. Wu, Q. Zou, Sharp Pl\"ucker geometry for three-copy Werner distillation, arXiv:2608.02647.
+\end{thebibliography}
+
+\end{document}
