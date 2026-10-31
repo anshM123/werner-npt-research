@@ -19,3 +19,5 @@
   rank-2 x: dense q_5 = +10.1117018477, formula +10.1117018477
   rank-3 x: dense q_5 = +19.8158412252, formula +19.8158412252
   hence q_5 >= (A_5 + 3 B_5) ||C||^2 = 0.246528 ||C||^2 for every operator on the code space
+
+(c) one-sided compression to the code space: partial-transpose spectrum in [0.2465277778, 0.4444444444]; 71/288 = 0.2465277778, 4/9 = 0.4444444444

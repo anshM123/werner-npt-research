@@ -70,3 +70,26 @@ for trial, r in itertools.product(range(2), (2, 3)):
     C = V @ x @ V.conj().T
     print(f"  rank-{r} x: dense q_5 = {q(C, 5, 0.5):+.10f}, formula {float(A5) * np.vdot(x, x).real + float(B5) * abs(np.trace(x)) ** 2:+.10f}")
 print(f"  hence q_5 >= (A_5 + 3 B_5) ||C||^2 = {float(A5 + 3 * B5):.6f} ||C||^2 for every operator on the code space")
+
+# (c) one-sided compression: range in the code space, co-range arbitrary.  Build (V^* (x) I)(rho^G)^{(x)5}(V (x) I) on
+#     code (x) B^5 (729 x 729), rho^G = I - (3/2) P_Phi per copy, and print its spectrum range.
+Phi = np.eye(3).reshape(-1) / np.sqrt(3)
+rG4 = (np.eye(9) - 1.5 * np.outer(Phi, Phi)).reshape(3, 3, 3, 3)
+
+
+def apply_rG5(T):
+    for s in range(5):
+        T = np.moveaxis(np.tensordot(rG4, T, axes=([2, 3], [s, 5 + s])), [0, 1], [s, 5 + s])
+    return T
+
+
+Vt = V.reshape([3] * 5 + [3])
+M = np.zeros((729, 729), complex)
+for c in range(3):
+    for b in range(243):
+        xi = np.zeros((3, 243), complex); xi[c, b] = 1
+        T = apply_rG5(np.tensordot(Vt, xi.reshape([3] + [3] * 5), axes=([5], [0])))
+        M[:, c * 243 + b] = np.tensordot(Vt.conj(), T, axes=(list(range(5)), list(range(5)))).reshape(-1)
+ev = np.linalg.eigvalsh((M + M.conj().T) / 2)
+print(f"\n(c) one-sided compression to the code space: partial-transpose spectrum in [{ev[0]:.10f}, {ev[-1]:.10f}];"
+      f" 71/288 = {71 / 288:.10f}, 4/9 = {4 / 9:.10f}")

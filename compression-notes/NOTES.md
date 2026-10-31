@@ -323,7 +323,17 @@ Consequences.
   - Since |Tr x|² ≤ 3‖x‖², q_5(1/2, C) ≥ (A_5 + 3B_5)‖C‖² = (71/288)‖C‖² for every operator C on the code space, of
     any rank.
   - Equivalently, the two-sided compression of ρ^{⊗5} to the code space is PPT, with a margin.
+  - **One-sided version (computed).** The partial transpose of the one-sided compression (V^* ⊗ I) ρ^{⊗5} (V ⊗ I) has
+    spectrum in [71/288, 4/9] to 10 digits (`check_codes.py`, part (c)). So q_5(1/2, C) ≥ (71/288)‖C‖² for every C
+    whose range lies in the code space, whatever its co-range and rank.
   - These operators are thick at every copy.
+- **Three-dimensional blocks.** Section 6 needs only that each block compression be PPT. So Proposition 6 extends to
+  partitions into blocks of at most three copies, with a plane in each, and blocks of five copies, with the code space
+  (or an image of it under local unitaries) in each. If the range of C lies in the product of these block subspaces,
+  then q_n(1/2, C) ≥ 0 for every rank. Unlike Section 6, the block factors here have dimension 3.
+  - At one copy, no 3-dimensional subspace works.
+  - At five copies, a random 3-dimensional subspace also gave a positive smallest eigenvalue (0.243 in one sample), so
+    generic small subspaces behave like the code.
 - **Larger codes.** For a pure [[2d − 1, 1, d]]_3 code, A_n + 3 min(B_n, 0) > 0 for every odd n from 3 to 21
   (`check_codes.py`), and the effective parameter −B_n/A_n tends to 0. We have only checked the five-qutrit code. Codes
   with these parameters may not exist for larger n, so the table describes what such a code would give, not a theorem
