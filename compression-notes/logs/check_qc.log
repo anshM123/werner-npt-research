@@ -1,0 +1,15 @@
+exact formula and trace identity, random rank-2 C:
+  n=2 t=0.3 site 0: q_n(C) - q_n(C_wperp) = 261.2031909476, formula = 261.2031909476;  Tr M_s = 763.29237618, 2 q_n(C) = 763.29237618
+  n=2 t=0.5 site 0: q_n(C) - q_n(C_wperp) = 252.7676253298, formula = 252.7676253298;  Tr M_s = 799.27691688, 2 q_n(C) = 799.27691688
+  n=3 t=0.3 site 0: q_n(C) - q_n(C_wperp) = 3137.6978334732, formula = 3137.6978334732;  Tr M_s = 10129.88263441, 2 q_n(C) = 10129.88263441
+  n=3 t=0.5 site 0: q_n(C) - q_n(C_wperp) = 1961.7063146799, formula = 1961.7063146799;  Tr M_s = 6449.48735770, 2 q_n(C) = 6449.48735770
+  n=4 t=0.3 site 3: q_n(C) - q_n(C_wperp) = 15468.1734650600, formula = 15468.1734650600;  Tr M_s = 58920.22875759, 2 q_n(C) = 58920.22875759
+  n=4 t=0.5 site 2: q_n(C) - q_n(C_wperp) = 17988.8486829358, formula = 17988.8486829358;  Tr M_s = 56426.50576051, 2 q_n(C) = 56426.50576051
+
+canonical rules on the stored two-copy operators (value = max over copies of Delta_s(w_s)/||C||^2):
+  rule_least_weight_fails_n2: rule value -1.0410e-01;  max over all w: +2.8301e-01;  q_2/||C||^2 = +2.8902e-01
+  rule_top_eigenvector_fails_n2: rule value -7.6934e-03;  max over all w: +6.2367e-03;  q_2/||C||^2 = +2.1107e-02
+
+max Delta on the stored adversarial operators:
+  data\qc_adversarial_n3.npy: max Delta/||C||^2 = +1.6715e-05;  q_n/||C||^2 = +1.6617e-03
+  data\qc_adversarial_n4.npy: max Delta/||C||^2 = +3.7902e-05;  q_n/||C||^2 = +1.4886e-04

@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Compressions, black-box averages and large-n checks for the Werner endpoint"
+authors:
+  - family-names: Mishra
+    given-names: Ansh
+  - family-names: Senthilkumar
+    given-names: Aryan
+date-released: 2026-10-31
+license: MIT
+keywords:
+  - NPT bound entanglement
+  - Werner states
+  - entanglement distillation
+  - partial trace inequalities

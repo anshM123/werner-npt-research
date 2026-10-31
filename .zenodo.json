@@ -17,6 +17,6 @@
     "entanglement distillation",
     "partial trace inequalities"
   ],
-  "description": "Partial results on whether the qutrit Werner state at alpha = 1/2 is undistillable from every number of copies (Problem 4 of Horodecki, Rudnicki and Zyczkowski, PRX Quantum 3, 010101 (2022)): a sharp first-order partial-trace bound for every n, a linear thickness margin for two copies, copy-number amplification of undistillability windows, three-copy identities and a margin on diagonal planes, an occupation-sector theorem for the bosonic sector, and notes on passing the endpoint from n-1 to n copies through contractions. The all-copy question remains open.",
+  "description": "Partial results on whether the qutrit Werner state at alpha = 1/2 is undistillable from every number of copies (Problem 4 of Horodecki, Rudnicki and Zyczkowski, PRX Quantum 3, 010101 (2022)): a sharp first-order partial-trace bound for every n, a linear thickness margin for two copies, copy-number amplification of undistillability windows, three-copy identities and a margin on diagonal planes, an occupation-sector theorem for the bosonic sector, notes on passing the endpoint from n-1 to n copies through contractions, and a compression conjecture with large-n checks, a black-box averaging barrier, a monogamy form of the projector case and an activation witness for two-pair Werner mixtures. The all-copy question remains open.",
   "version": "2026-10-31"
 }

@@ -1,0 +1,11 @@
+D=2 n=1: transfer formula +2.6658926562e+03   dense q_n +2.6658926562e+03
+D=2 n=2: transfer formula +1.1878617053e+06   dense q_n +1.1878617053e+06
+D=2 n=3: transfer formula +8.4891717587e+07   dense q_n +8.4891717587e+07
+D=2 n=4: transfer formula +1.3854122549e+10   dense q_n +1.3854122549e+10
+D=3 n=1: transfer formula +3.1425340670e+05   dense q_n +3.1425340670e+05
+D=3 n=2: transfer formula +6.9297845260e+07   dense q_n +6.9297845260e+07
+D=3 n=3: transfer formula +1.4329468834e+10   dense q_n +1.4329468834e+10
+D=3 n=4: transfer formula +4.1951572601e+12   dense q_n +4.1951572601e+12
+
+random D=2 channel: Perron eigenvalue 43.488114+0.000000j (next |ev| 11.983054); eigenvalues of the Perron operator [0.055723 0.121979 0.212831 0.609467]; of its partial transpose [0.055586 0.122606 0.212252 0.609555]
+stored D=2 search output, n = 33, 60 digits: 2^n q_n/||C||^2 = 2.417842998e-11

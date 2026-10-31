@@ -1,0 +1,7 @@
+d=3 n=1: q_n(P_V) = 0.0000000000   monogamy form = 0.0000000000
+d=3 n=2: q_n(P_V) = 1.3354621667   monogamy form = 1.3354621667
+d=3 n=3: q_n(P_V) = 1.1251917737   monogamy form = 1.1251917737
+d=3 n=4: q_n(P_V) = 0.9531241218   monogamy form = 0.9531241218
+d=4 n=1: q_n(P_V) = 0.0000000000   monogamy form = 0.0000000000
+d=4 n=2: q_n(P_V) = 1.2128911161   monogamy form = 1.2128911161
+d=4 n=3: q_n(P_V) = 1.2093727568   monogamy form = 1.2093727568
