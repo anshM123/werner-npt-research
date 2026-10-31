@@ -468,6 +468,20 @@ Numerical picture (`check_removal.py` and our logs):
   triple compressions contain a full Werner copy and are NPT (−0.75). Products fit them only to 0.11, and filterings of
   one or two copies to about 10^{−3}. So k = 0 is not always available.
 
+**Lemma (thin filters).** Let Y = (A ⊗ B) ρ^{⊗m} (A ⊗ B)^*. Suppose that at some copy j the input support of A lies
+in a plane, A = A (P_j ⊗ I) with P_j a rank-two projector on that copy. Then Y ∈ K_{m−1}(D, D′). The same holds
+with B in place of A.
+
+*Proof.* Write ρ^{⊗m} = ρ^{⊗(m−1)} ⊗ ρ_j. The compression σ = (P_j ⊗ I) ρ_j (P_j ⊗ I) is a 2 × 3 operator with
+σ^Γ = P_j ⊗ I − (3/2) |v⟩⟨v|, v = (P_j ⊗ I)Φ, ‖v‖² = 2/3, so σ^Γ ≥ 0. A PPT operator on C² ⊗ C³ is separable,
+σ = Σ_k |u_k⟩⟨u_k| ⊗ |w_k⟩⟨w_k|, and then Y = Σ_k (A_k ⊗ B_k) ρ^{⊗(m−1)} (A_k ⊗ B_k)^* with A_k = A(I ⊗ |u_k⟩) and
+B_k = B(I ⊗ |w_k⟩). ∎
+
+This is thin-copy removal [WZ, T2] at the level of cones. Iterating, a filter that is thin on k copies gives an
+element of K_{m−k}, and the separable block compressions of Section 10 can be removed in the same way. So in L_m(D),
+and in Conjecture F3 of Section 11, only filters whose input support is three-dimensional on every copy, on both
+sides, need to be considered.
+
 **Every n from the cone statements (proved reduction).** Take T to be all copies but one. Then S_T and S′_T have
 dimension at most 6, so τ_T is a 6 × 6 local filtering of ρ^{⊗(n−1)}, and the identity with k = n − 2 gives:
 - EP_{n−1} and L_{n−2}(6) imply EP_n, for every n ≥ 3.
