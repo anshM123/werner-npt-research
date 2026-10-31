@@ -7,7 +7,9 @@
        blocks (n = 2, 4, 5).
    (d) Proposition 11: the identity for the compression to Lambda, the 2-design decomposition of I + |Phi'><Phi'| over
        the 12 vectors of four mutually unbiased bases, the resulting explicit separable decomposition, and a dense
-       check at n = 4."""
+       check at n = 4.
+   (e) Proposition 12: the compression to Q is block diagonal over the nine syndrome sectors of the second side; each
+       block is the identity plus explicit product terms (MUB bases), so it is separable. Dense checks of removal."""
 import itertools
 import numpy as np
 import sympy as sp
@@ -145,3 +147,42 @@ for t in range(100):
     C = B @ cr(27, 2) @ cr(2, 81)
     worst = min(worst, q(C, 4, 0.5) / np.vdot(C, C).real)
 print(f"  n = 4, rank two, range at copies 1, 2 in a local-unitary image of Lambda: smallest q_4/||C||^2 = {worst:.4f} (>= 0)")
+
+# (e) Proposition 12: the compression to Q is separable (sector-wise explicit decomposition), triple removal
+print("\n(e) separability of the compression to Q (Proposition 12):")
+sQ = np.kron(Qn, np.eye(27)).T @ R3 @ np.kron(Qn, np.eye(27))
+Xp = np.roll(np.eye(3), 1, axis=0); Zp = np.diag([1, w, w ** 2])
+Pauli = lambda a, b: np.linalg.matrix_power(Xp, a) @ np.linalg.matrix_power(Zp, b)
+mubs = [np.eye(3)] + [np.array([[w ** (a * k * k + b * k) for b in range(3)] for k in range(3)]) / 3 ** .5 for a in range(3)]
+F9 = np.eye(9)[[3 * (k % 3) + k // 3 for k in range(9)]]
+total = np.zeros((81, 81), complex); nterms = 0
+for a, b in itertools.product(range(3), repeat=2):
+    Bs = np.kron(np.kron(Pauli(a, b), np.eye(3)), np.eye(3)) @ Qn           # sector a,b of the second side: (X^a Z^b (x) I (x) I) Q
+    emb = np.kron(np.eye(3), Bs); M = emb.conj().T @ sQ @ emb
+    if (a, b) == (0, 0):
+        dec = 3 / 8 * np.eye(9) + 1 / 8 * sum(np.kron(np.outer(u, u.conj()), np.outer(u, u.conj())) for mb in mubs for u in mb.T)
+        print(f"  sector (0,0): M = I/2 + F/8: {np.allclose(M, 0.5 * np.eye(9) + F9 / 8)}; = 3/8 I + 1/8 sum over 12 MUB vectors |uu><uu|: deviation {np.abs(dec - M).max():.1e}")
+        nterms += 12
+    else:
+        Pi = 4 * (M - 0.5 * np.eye(9)); dec = None
+        for Bl, Bb in itertools.product(mubs, [m for mb in mubs for m in (mb, mb.conj())]):
+            G = np.kron(Bl, Bb).conj().T @ Pi @ np.kron(Bl, Bb)
+            if np.abs(G - np.diag(np.diag(G))).max() < 1e-10:
+                d = np.round(np.diag(G).real).astype(int)
+                dec = 0.5 * np.eye(9) + 0.25 * sum(np.kron(np.outer(Bl[:, x], Bl[:, x].conj()), np.outer(Bb[:, y], Bb[:, y].conj()))
+                                                   for x in range(3) for y in range(3) if d[3 * x + y] == 1)
+                break
+        nterms += 3
+    total += emb @ dec @ emb.conj().T
+print(f"  sigma_Q = sum over the 9 sectors of (identity + explicit product terms): deviation {np.abs(total - sQ).max():.1e} ({nterms} product terms besides identities)")
+for n, blocks, extra, why in ((4, ["Q"], 1, "EP_1"), (5, ["Q"], 2, "EP_2"), (5, ["L"], 3, "EP_3")):
+    worst = np.inf
+    for t in range(25):
+        S = np.eye(1)
+        for bl in blocks:
+            S = np.kron(S, np.kron(haar(3), haar(3)) @ L2 if bl == "L" else np.kron(np.kron(haar(3), haar(3)), haar(3)) @ Qn)
+        S = np.kron(S, np.eye(3 ** extra))
+        C = S @ cr(S.shape[1], 2) @ cr(2, 3 ** n)
+        worst = min(worst, q(C, n, 0.5) / np.vdot(C, C).real)
+    print(f"  n = {n}, rank two, range in {blocks} (x) (C^3)^(x){extra} (free copies may be entangled with the block): "
+          f"smallest q_n/||C||^2 = {worst:.4f} (>= 0 by removal and {why})", flush=True)

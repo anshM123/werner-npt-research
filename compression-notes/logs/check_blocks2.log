@@ -21,6 +21,13 @@
   explicit separable decomposition reproduces sigma_Lambda: max deviation 4.4e-16
   n = 4, rank two, range at copies 1, 2 in a local-unitary image of Lambda: smallest q_4/||C||^2 = 0.4591 (>= 0)
 
-real	0m1.559s
-user	0m0.015s
-sys	0m0.000s
+(e) separability of the compression to Q (Proposition 12):
+  sector (0,0): M = I/2 + F/8: True; = 3/8 I + 1/8 sum over 12 MUB vectors |uu><uu|: deviation 2.2e-16
+  sigma_Q = sum over the 9 sectors of (identity + explicit product terms): deviation 1.9e-16 (36 product terms besides identities)
+  n = 4, rank two, range in ['Q'] (x) (C^3)^(x)1 (free copies may be entangled with the block): smallest q_n/||C||^2 = 0.4613 (>= 0 by removal and EP_1)
+  n = 5, rank two, range in ['Q'] (x) (C^3)^(x)2 (free copies may be entangled with the block): smallest q_n/||C||^2 = 0.3902 (>= 0 by removal and EP_2)
+  n = 5, rank two, range in ['L'] (x) (C^3)^(x)3 (free copies may be entangled with the block): smallest q_n/||C||^2 = 0.3953 (>= 0 by removal and EP_3)
+
+real	0m1.911s
+user	0m0.000s
+sys	0m0.016s

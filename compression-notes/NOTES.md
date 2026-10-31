@@ -17,8 +17,9 @@ These notes collect several small results about the n-copy endpoint inequality, 
   four-copy endpoint;
 - exact positive spectra for the antisymmetric subspace of two copies and the qutrit [[3, 1, 2]] code. These give
   every-n, every-rank classes containing operators thick at every copy, with ranges of dimension up to 3^{n/2}.
-- a removal lemma for a pair of copies: the compression to the antisymmetric subspace is separable, so a pair where the
-  range is antisymmetric can be removed. This gives the four- and five-copy endpoint for every such operator.
+- removal lemmas for a pair and a triple of copies: the compressions to the antisymmetric subspace and to the
+  [[3, 1, 2]] code space are separable, with explicit decompositions. Iterating them gives the endpoint for every n
+  whenever the range lies in a product of such blocks and planes, with at most three copies left free.
 
 **Nothing here settles the all-copy problem.**
 
@@ -537,9 +538,32 @@ hold, the four- and five-copy endpoint inequalities hold for every such C.
 Remarks.
 - A plane inside some (U ⊗ U′)Λ also has a separable compression, since compressions of separable operators are
   separable. So for these planes, the open question of Section 6 has a positive answer.
-- For Q, products alone fit the compression only to 6 × 10^{−4} with 200 terms in our logs, still improving; we do not
-  know yet whether it is separable. If it is, a triple of copies whose range lies in Q can be removed, so EP_n would
-  follow from EP_{n−3}.
+**Proposition 12 (removing a code triple, and iterating).**
+- (a) The one-sided compression σ_Q of ρ^{⊗3} to the code space Q is separable. On the second side, the 27-dimensional
+  space splits into nine syndrome sectors (X^a Z^b ⊗ I ⊗ I)Q, with a, b ∈ Z_3 and X, Z the qutrit shift and clock.
+  σ_Q is block diagonal in these sectors. Take the basis |j⟩ (logical) ⊗ (X^a Z^b ⊗ I ⊗ I)|k_L⟩ (sector).
+  - In the code sector the block is ½I + ⅛F, with F the swap. Since I + F = Σ_{k=1}^{12} |u_k u_k⟩⟨u_k u_k| over the
+    12 vectors of four mutually unbiased bases (a 2-design), this equals ⅜I + ⅛ Σ_k |u_k u_k⟩⟨u_k u_k|.
+  - In each of the other eight sectors the block is ½I + ¼Π_{ab}, where Π_{ab} is a rank-three projector. It is
+    diagonal in a product of two of the mutually unbiased bases, so it is a sum of three product projectors.
+
+  So σ_Q is separable, with 36 explicit product terms besides identities (`check_blocks2.py`, part (e)).
+- (b) If the range of a rank-two C lies in (U ⊗ U′ ⊗ U″)Q at three copies, tensored with the rest, then EP_{n−3}
+  implies q_n(1/2, C) ≥ 0. The proof is that of Proposition 11. Since EP_1, EP_2 and EP_3 hold, the four-, five- and
+  six-copy endpoint inequalities hold for every such C.
+- (c) Suppose the range of C lies in S_1 ⊗ ⋯ ⊗ S_m ⊗ (C³)^{⊗r}, where the S_i sit on disjoint blocks of copies. Each S_i
+  is a plane at one copy, or a local-unitary image of Λ at two copies or of Q at three copies. Then EP_r implies
+  q_n(1/2, C) ≥ 0. Some blocks may use the co-range instead of the range. Since EP_r holds for r ≤ 3, the endpoint
+  inequality holds for every n, with no unproven input, whenever at most three copies are left outside the blocks.
+  The vectors in the range may be entangled between the blocks and the remaining copies.
+
+*Proof of (c).* Remove the blocks one at a time, as in Proposition 11.
+- After contracting a block with e_k and f̄_k, each vector φ_k still has Schmidt rank at most two. Its range still lies
+  in the product of the remaining blocks tensored with the rest.
+- For a plane at one copy, the compression is a PPT operator on C² ⊗ C³, hence separable; this is thin-copy removal.
+- For a block on the co-range side, use the compression on the second side. It is separable because ρ is invariant
+  under exchanging the two sides.
+- At the end r copies remain, and EP_r applies. ∎
 
 ## References
 
