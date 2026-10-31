@@ -11,7 +11,9 @@
    (e) Proposition 12: the compression to Q is block diagonal over the nine syndrome sectors of the second side; each
        block is the identity plus explicit product terms (MUB bases), so it is separable. Dense checks of removal.
    (f) Proposition 13: the compression to the five-qutrit code space is block diagonal over 81 syndrome sectors, and
-       every 3 x 3 block has purity at most 1/8, hence is separable by the Gurvits-Barnum ball; the same test for Q."""
+       every 3 x 3 block has purity at most 1/8, hence is separable by the Gurvits-Barnum ball; the same test for Q.
+   (g) The qutrit [[4,2,2]] code space (dimension 9 in four copies): partial-transpose spectrum of the compression, and
+       the purity of its syndrome blocks (above the Gurvits-Barnum bound, so separability is undecided)."""
 import itertools
 import numpy as np
 import sympy as sp
@@ -228,3 +230,27 @@ for a, b in itertools.product(range(3), repeat=2):
     Bsec = np.kron(np.kron(Pauli(a, b), np.eye(3)), np.eye(3)) @ Qn; emb = np.kron(np.eye(3), Bsec)
     M = emb.conj().T @ sQ @ emb; M = (M + M.conj().T) / 2; worstQ = max(worstQ, np.trace(M @ M).real / np.trace(M).real ** 2)
 print(f"  [[3,1,2]] code: largest block purity {worstQ:.4f}")
+
+# (g) the qutrit [[4,2,2]] code (stabilisers X^{(x)4}, Z (x) Z^2 (x) Z (x) Z^2): partial-transpose spectrum of the one-sided
+#     compression of rho^{(x)4} to its 9-dimensional code space, and the purity of its syndrome blocks
+print("\n(g) the qutrit [[4,2,2]] code space (dimension 9 in four copies):")
+S1 = pauli_string([(1, 0)] * 4); S2 = pauli_string([(0, 1), (0, 2), (0, 1), (0, 2)])
+P4 = (np.eye(81) + S1 + S1 @ S1) / 3 @ (np.eye(81) + S2 + S2 @ S2) / 3
+ev4, U4 = np.linalg.eigh((P4 + P4.conj().T) / 2); V4 = U4[:, ev4 > 0.5]; k4 = V4.shape[1]
+V4t = V4.T.reshape([k4] + [3] * 4); sig4 = np.zeros((k4, 81, k4, 81), complex)
+for J in itertools.product([0, 1], repeat=4):
+    bra = ''.join('klmn'[c] if J[c] else 'abcd'[c] for c in range(4)); ket = ''.join('fghi'[c] if J[c] else 'abcd'[c] for c in range(4))
+    ops = [V4t.conj(), V4t]; subs = ['x' + bra, 'y' + ket]
+    for c in range(4):
+        if not J[c]:
+            ops.append(np.eye(3)); subs.append('fghi'[c] + 'klmn'[c])
+    sig4 += (-0.5) ** sum(J) * np.einsum(','.join(subs) + '->xfghiyklmn', *ops, optimize=True).reshape(k4, 81, k4, 81)
+sig4 = sig4.reshape(k4 * 81, k4 * 81)
+ev = np.linalg.eigvalsh(pt_B((sig4 + sig4.conj().T) / 2, k4, 81) if 'pt_B' in dir() else sig4.reshape(k4, 81, k4, 81).transpose(0, 3, 2, 1).reshape(k4 * 81, k4 * 81))
+print(f"  code dimension {k4}; partial-transpose spectrum in [{ev[0]:.10f}, {ev[-1]:.10f}] (1/3 = {1/3:.10f}, 43/48 = {43/48:.10f})")
+evs, Us = np.linalg.eig(S1 + 3 * S2); groups = {}
+for i, kk in enumerate(np.round(evs, 6)):
+    groups.setdefault(kk, []).append(i)
+worst = max(np.trace(M @ M).real / np.trace(M).real ** 2 for M in
+            ((lambda e: (e.conj().T @ sig4 @ e))(np.kron(np.eye(k4), np.linalg.qr(Us[:, idx])[0])) for idx in groups.values()))
+print(f"  {len(groups)} syndrome sectors; largest block purity {worst:.5f}, above the Gurvits-Barnum bound 1/80 = {1/80:.5f} (undecided)")

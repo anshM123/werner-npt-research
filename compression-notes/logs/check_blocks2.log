@@ -32,6 +32,10 @@
   five-qutrit code: 81 sectors; block-diagonal residual 5.3e-15; largest block purity 0.1135
   [[3,1,2]] code: largest block purity 0.1164
 
-real	0m3.199s
-user	0m0.015s
-sys	0m0.000s
+(g) the qutrit [[4,2,2]] code space (dimension 9 in four copies):
+  code dimension 9; partial-transpose spectrum in [0.3333333333, 0.8958333333] (1/3 = 0.3333333333, 43/48 = 0.8958333333)
+  9 syndrome sectors; largest block purity 0.01450, above the Gurvits-Barnum bound 1/80 = 0.01250 (undecided)
+
+real	0m4.347s
+user	0m0.000s
+sys	0m0.015s

@@ -521,7 +521,9 @@ consistent with the symmetry: ρ^{⊗2} commutes with U^{⊗4}, and Λ is a U(3)
 - a plane (blocks of at most three copies);
 - a local-unitary image of Λ (two copies);
 - a local-unitary image of Q (three copies);
-- a local-unitary image of the five-qutrit code space (five copies).
+- a local-unitary image of the five-qutrit code space (five copies);
+- a local-unitary image of the qutrit [[4, 2, 2]] code space (four copies, dimension 9; stabilisers X^{⊗4} and
+  Z ⊗ Z² ⊗ Z ⊗ Z²), whose compression has partial-transpose spectrum in [1/3, 43/48] (`check_blocks2.py`, part (g)).
 
 If the range of C lies in the tensor product of the chosen subspaces, then q_n(1/2, C) ≥ 0, whatever the rank and the
 co-range. The proof is that of Proposition 6.
@@ -543,6 +545,9 @@ ranges.
 - At three copies, 200 random 3-dimensional subspaces were all PPT (smallest 3.6 × 10^{−4}), and 95% of random
   4-dimensional ones. Sym³(C³) and the mixed-symmetry subspaces are NPT.
 - Not every 3-dimensional subspace works: C³ ⊗ |00⟩ gives ρ ⊗ (positive), which is NPT.
+- For the [[4, 2, 2]] code, the compression is block diagonal over its 9 syndrome sectors, but the 9 × 9 blocks have
+  purity 0.0145, above the Gurvits–Barnum bound 1/80. So we do not know whether a block of this kind can be removed
+  as in Propositions 11–13.
 
 **Removing an antisymmetric pair.** The compression to Λ is separable, not just PPT. This answers, for Λ, the
 question left open at the end of Section 6, and it gives a removal lemma for a pair of copies. It works like
