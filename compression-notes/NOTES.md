@@ -844,7 +844,8 @@ operators and the filterings (a ⊗ b) ρ (a ⊗ b)^* of one Werner copy.
     filterings and products (81 is the real dimension). So these targets lie in K_1(3) to machine precision; the
     residuals of 10^{−5}–10^{−4} were optimiser floors.
   - The perturbation test also passes at m = 5 and 6 (δ = 0.1: PT-min −0.043 and −0.031, fits 1.0 × 10^{−8}
-    and 7.1 × 10^{−9}).
+    and 7.1 × 10^{−9}), and NPT-keeping adversaries at m = 5 (two seeds) and m = 6 (one seed) end with worst
+    targets that refit to 2–5 × 10^{−9}.
   - Dual side, m = 2 (`check_f3_dual.py`). Every functional that is ≥ 0 on K_1(3) must stay ≥ 0 on all 3 × 3
     filterings of ρ ⊗ ρ. The Tiles state is 0.033 from K_1(3), and the residual of its projection, W = X* − T, is
     such a functional up to the fit error. These are genuinely non-decomposable directions: no functional W with
