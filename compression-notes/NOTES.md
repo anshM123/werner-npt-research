@@ -453,6 +453,18 @@ Numerical picture (`check_removal.py` and our logs):
   triple compressions contain a full Werner copy and are NPT (−0.75). Products fit them only to 0.11, and filterings of
   one or two copies to about 10^{−3}. So k = 0 is not always available.
 
+**Every n from the cone statements (proved reduction).** Take T to be all copies but one. Then S_T and S′_T have
+dimension at most 6, so τ_T is a 6 × 6 local filtering of ρ^{⊗(n−1)}, and the identity with k = n − 2 gives:
+- EP_{n−1} and L_{n−2}(6) imply EP_n, for every n ≥ 3.
+- For m ≥ 2 we have 6 ≤ 3^m, and then L_m(6) follows from KL_m. Embed C^6 in C^{3^m}, apply KL_m to the embedded
+  filtering, and compress each term of the decomposition back to C^6: filterings stay filterings and products stay
+  products.
+- EP_3 is known (Proposition 12(c) uses it). So the endpoint for every n would follow from KL_m for every m ≥ 2, one
+  cone statement per number of copies. KL_1 is not needed for this chain.
+- The chain cannot start at n = 3, where it would need L_1(6). The fits below suggest that L_1(6) is false. That is
+  consistent with the dimension bound 3^m in KL_m, which is then sharp at m = 1, and it does not bear on L_2(6),
+  since 6 ≤ 9.
+
 **Evidence** (`check_cones.py`; numerical, not proofs). Every term of the fitting model lies in the cone, so a small
 residual is an explicit approximate decomposition. Residuals are relative Frobenius norms.
 - Part (a) checks the transfer identity against the dense q_n for n ≤ 5. The bond dimensions are at most 3, 6, 9 and
@@ -501,9 +513,35 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
 - **Uncompressed** (part (d)). ρ ⊗ ρ as a 9 × 9 operator fits K_1(9, 9) only to 0.12, while a random element of
   K_1(9, 9) fits to 1–2 × 10^{−4} at the same budget (10^{−6} with more terms, in our logs). So the dimension bound in
   KL_m is needed.
+- **L_1(6)** (`check_l1_six.py` and our logs). Output dimension 6 already seems to be too much for one copy.
+  - With 16 filterings of ρ and 80 products, an element of K_1(6) built from 3 filterings and 10 products fits only to
+    4 × 10^{−4}. This floor comes from the optimisation: it does not improve with more terms or with column generation.
+  - A Schmidt-rank-4 state fits to 0.61.
+  - Random 6 × 6 filterings of ρ^{⊗2} (partial-transpose minimum −0.001 to −0.002) fit to 1.2–1.7 × 10^{−3}.
+    Filterings pushed to −0.01 fit to 4–7 × 10^{−3}, and those pushed to −0.03 to 0.9–1.6 × 10^{−2}.
+  - Doubling the model leaves these 3–10 times above the floor. Six rounds of column generation move the −0.01 target
+    only from 5.01 to 5.00 × 10^{−3}.
+  - The pair compressions τ_T of random three-copy operators, which are what removal by compression would need at
+    n = 3, fit to 0.7–1.2 × 10^{−2}.
+  - The antisymmetric witness of [FGP, Thm. 2.4] does not detect Schmidt number 3 in these filterings (its maximum is
+    0.3 < 1/2).
+
+  We read this as L_1(6) being false, so the bound 3^m in KL_m is sharp at m = 1. Since the floor comes from the
+  optimisation, this is not a proof. The floor also depends on the target. A genuinely three-copy filtering below
+  has partial-transpose minimum −0.022 and still fits K_1(6) to 6 × 10^{−5}. So only the strongly NPT filterings of two
+  copies resist.
+- **L_2(6)** (our logs). Random 6 × 6 filterings of ρ^{⊗3} are PPT (+0.005), and a gradient path started at random
+  stalls at the PPT boundary. So we built three-copy targets from the two-copy filtering above at −0.030: tensor with a
+  product vector on the third copy, then add δ times a random three-copy filter.
+  - The two-copy cone K_2(6) fits its own random elements to 7 × 10^{−8}, and a single generator (δ = 0) to
+    3.5 × 10^{−4}. That floor comes from random starts on an extreme ray.
+  - δ = 0.1 (minimum −0.029) fits K_2(6) to 2.9 × 10^{−4}, and δ = 0.3 (−0.022) fits to 6 × 10^{−5}. For comparison,
+    K_1(6) gives 9.3 × 10^{−3}, 6.7 × 10^{−3} and 6 × 10^{−5}.
+  - So nothing here argues against L_2(6): the two-copy cone absorbs what the one-copy cone cannot.
 
 **Open.** KL_1, a two-copy statement about 3 × 3 operators, is the smallest open case. A proof would give an every-n
-class of bond dimension 3. For four copies, L_2(6) is enough: a three-copy statement about 6 × 6 operators.
+class of bond dimension 3. For four copies, L_2(6) is enough: a three-copy statement about 6 × 6 operators. For every
+n, L_m(6) for all m ≥ 2 is enough (each follows from KL_m): one statement about 6 × 6 operators per number of copies.
 
 ## 10. Antisymmetric and code blocks
 
@@ -742,6 +780,7 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_cones.py`: Section 9. It checks the site-dependent transfer identity, then runs the decomposition fits
   for KL_1 and KL_2 with their controls, the uncompressed test and the Schmidt-number test. Parts (b)–(e) need PyTorch
   and take about half an hour.
+- `code/check_l1_six.py`: Section 9, the L_1(6) fits (needs PyTorch, about half an hour).
 - `code/check_removal.py`: Section 9, removal by compression. It checks the identity against the dense q_4, shows
   that the conjugated compression gives a different value, and prints the triple margins for random C.
 - `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and

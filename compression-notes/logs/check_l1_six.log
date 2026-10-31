@@ -1,0 +1,9 @@
+(a) controls, 16 filterings + 80 products:
+    element of K_1(6): 4.27e-04;  Schmidt-rank-4 state: 6.12e-01
+(b) filterings of rho (x) rho:
+    16 + 80: element of K_1(6) 3.64e-04 | random filtering 1.50e-03 | NPT filtering (PT minimum -0.0102) 5.14e-03
+    32 + 160: element of K_1(6) 4.45e-04 | random filtering 1.32e-03 | NPT filtering (PT minimum -0.0102) 4.21e-03
+(c) pair compressions at n = 3 (range and co-range of C at copies 1, 2):
+    C 0: PT minimum -0.0092; fit by 16 + 80: 9.31e-03
+    C 1: PT minimum -0.0080; fit by 16 + 80: 7.06e-03
+    C 2: PT minimum -0.0082; fit by 16 + 80: 7.39e-03
