@@ -1,0 +1,31 @@
+== adv_f3_M3_s0.npy
+seed fit J = 6, P = 12: 1.390e-08
+seed fit J = 12, P = 40: 1.341e-08
+PT-min of X: -0.0295
+round 0: columns 270, residual 6.736e-16, best new alignment <R, col> = +1.113e-16
+exact decomposition: X is a nonnegative combination of 82 dictionary columns (one-copy filterings and products) up to 6.7e-16
+== adv_f3_M3_s1.npy
+seed fit J = 6, P = 12: 1.894e-08
+seed fit J = 12, P = 40: 1.239e-08
+PT-min of X: -0.0443
+round 0: columns 270, residual 5.166e-16, best new alignment <R, col> = +4.878e-17
+exact decomposition: X is a nonnegative combination of 81 dictionary columns (one-copy filterings and products) up to 5.2e-16
+== adv_f3_M4_s0.npy
+seed fit J = 6, P = 12: 1.805e-08
+seed fit J = 12, P = 40: 1.835e-08
+PT-min of X: -0.0419
+round 0: columns 270, residual 4.592e-16, best new alignment <R, col> = -3.584e-18
+exact decomposition: X is a nonnegative combination of 83 dictionary columns (one-copy filterings and products) up to 4.6e-16
+== adv_f3_M4_s12.npy
+seed fit J = 6, P = 12: 1.808e-05
+seed fit J = 12, P = 40: 4.062e-06
+PT-min of X: -0.0485
+round 0: columns 270, residual 6.484e-16, best new alignment <R, col> = -6.963e-18
+exact decomposition: X is a nonnegative combination of 81 dictionary columns (one-copy filterings and products) up to 6.5e-16
+== adv_f3_strict_M4_s5.npy
+seed fit J = 6, P = 12: 2.251e-05
+seed fit J = 12, P = 40: 4.434e-05
+PT-min of X: -0.0636
+round 0: columns 270, residual 1.085e-05, best new alignment <R, col> = +7.932e-07
+round 1: columns 302, residual 4.528e-16, best new alignment <R, col> = +6.290e-17
+exact decomposition: X is a nonnegative combination of 82 dictionary columns (one-copy filterings and products) up to 4.5e-16

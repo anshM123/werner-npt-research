@@ -834,9 +834,15 @@ operators and the filterings (a ⊗ b) ρ (a ⊗ b)^* of one Werner copy.
     that refit from fresh starts to 1.3–2.6 × 10^{−8}. An adversary of the same kind finds a robust gap of
     1.3 × 10^{−2} for L_1(5).
   - With the stricter constraint PT-min ≤ −0.05, the adversary drifts to targets close to ρ itself (PT-min
-    about −0.063). These fit to 1–5 × 10^{−4} with one to three filterings plus products, which is the floor
-    of ρ itself (2 × 10^{−4} from random starts, although one filtering represents it exactly). So that test
-    is inconclusive; it shows no gap.
+    about −0.063). Parametric fits stall there at 1–5 × 10^{−4}, the floor of ρ itself (2 × 10^{−4} from random
+    starts, although one filtering represents it exactly), and nine further adversary runs left one four-copy
+    target that parametric fits only brought to 10^{−5}.
+  - Exact decompositions (`check_f3_nnls.py`). Seed a dictionary with the terms of parametric fits plus random
+    columns, solve nonnegative least squares, and add the filterings and products most aligned with the residual.
+    Every saved worst target, including the stubborn four-copy one (PT-min −0.0485) and the near-extreme strict
+    targets (−0.0636, −0.0627), is reproduced to 4–7 × 10^{−16} as a nonnegative combination of 81–83 one-copy
+    filterings and products (81 is the real dimension). So these targets lie in K_1(3) to machine precision; the
+    residuals of 10^{−5}–10^{−4} were optimiser floors.
   - The perturbation test also passes at m = 5 and 6 (δ = 0.1: PT-min −0.043 and −0.031, fits 1.0 × 10^{−8}
     and 7.1 × 10^{−9}).
   - Dual side, m = 2 (`check_f3_dual.py`). Every functional that is ≥ 0 on K_1(3) must stay ≥ 0 on all 3 × 3
@@ -940,6 +946,8 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   identities, and a fit of ρ^{⊗2} by Schmidt-rank-2 terms; the fit needs PyTorch, about two minutes).
 - `code/check_f3.py` (`python check_f3.py 3`, `4`) and `code/check_f3_adversary.py` (`python check_f3_adversary.py 3 16 80 60
   0 0.2`): Conjecture F3 in Section 11 (needs PyTorch; about fifteen and five minutes).
+- `code/check_f3_nnls.py` (`python check_f3_nnls.py adv_f3_M4_s12.npy 12`): exact decompositions of the saved F3
+  adversary targets (`code/adv_f3_*.npy`) in Section 11 (needs PyTorch and SciPy; a few minutes per target).
 - `code/check_f3_dual.py`: the dual-side check of F3 at two copies in Section 11 (needs PyTorch).
 - `code/check_tiles_decomposable.py`: the decomposable-witness SDP for the Tiles state in Section 11 (cvxpy).
 - `code/check_sr3_negativity.py` (`python check_sr3_negativity.py m 12`): Schmidt-rank-3 minima in Section 11.
