@@ -7,7 +7,8 @@ These notes collect several small results about the n-copy endpoint inequality, 
 - a proposition explaining why arguments that do not adapt to the operator stop at the PPT boundary;
 - an exact form of the projector case as a monogamy relation;
 - a transfer-channel description of translation-invariant MPS filters, with a large-n search;
-- an exact activation witness for two-pair Werner mixtures.
+- an exact activation witness for two-pair Werner mixtures;
+- an every-n class built from sums of two block-product operators.
 
 **Nothing here settles the all-copy problem.**
 
@@ -65,7 +66,9 @@ q_n(C) > 0.
 - Gradient (Danskin) adversarial minimisation: n = 3 (nine runs) and n = 4 (twenty-two runs). The value stays positive.
   It tends to 0 only as the adversary is driven to zeros of q_n, where Δ ≈ q_n → 0⁺.
 - The ratio Δ/q_n at the optimum can be small (0.007 at n = 3, 0.03 at n = 4), so the margin is relative, not
-  uniform.
+  uniform. This happens only near thin zeros.
+- Gradient adversaries penalised to keep every copy thick (smallest local eigenvalue at least about 0.02-0.1)
+  find max Δ ≈ q_n/2 at n = 2 and n = 3. QC has a robust relative margin on thick operators.
 
 **Canonical directions that fail.** A proof would be easier with a rule that picks w from C. Two natural rules fail
 at two copies (`data/`):
@@ -210,6 +213,36 @@ On the slice c = (1, x, x, y) this means:
 - **Conditional ratios are not enough.** "Every conditional anti/sym ratio is at most 3" does not imply one-copy
   2-undistillability: c = (1, 3, 3, 0) has two-pair minimum −0.42.
 
+## 6. Sums of two block-product operators
+
+**Proposition 6.** Partition the copies into blocks S_1, …, S_m and let
+
+    C = Σ_{a=1,2} ⊗_j |α_a^{(j)}⟩⟨β_a^{(j)}|,
+
+with arbitrary vectors α_a^{(j)}, β_a^{(j)} on block S_j. Let N^{(j)} be the 2 × 2 Gram matrix of q_{|S_j|}(1/2, ·) on
+the two rank-one factors on block j. Then
+
+    q_n(1/2, C) = Σ_{a,b} Π_j N^{(j)}_{ab}.
+
+If EP holds for every block size that occurs, q_n(1/2, C) ≥ 0. In particular this holds for every n when all blocks
+have at most two copies (by the two-copy theorem), and when all blocks have at most three copies (given the
+three-copy theorem).
+
+*Proof.* The form is a product over blocks, which gives the identity. Every element of span{|α_1⟩⟨β_1|,
+|α_2⟩⟨β_2|} on a block has rank at most two, so N^{(j)} ⪰ 0 by EP for that block. The Hadamard product of positive
+semidefinite matrices is positive semidefinite (Schur), so its entry sum is ≥ 0. ∎
+
+When the vectors are entangled inside blocks of two copies, the reduced ranges are three-dimensional at every copy.
+So this is another explicit class, thick at every copy, on which the endpoint inequality holds for every n with no
+unproven input. Compare `contraction-notes/` (nested class) and:
+- [T2], whose every-copy class has GHZ backbones |0⟩^{⊗k}, |1⟩^{⊗k} with tails at single copies and arbitrary
+  co-range;
+- [BGH, Thm. 8.3], which covers single tensor products, not sums.
+
+The argument is tied to the two-term structure: a general rank-two operator expanded into many product terms gives
+Gram matrices that are not positive semidefinite. `check_blocks.py` checks the identity and positivity for blocks
+2 + 2 and 2 + 2 + 1.
+
 ## References
 
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.
@@ -229,5 +262,6 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_monogamy.py`: Section 3.
 - `code/check_mps.py`: Section 4. It checks Proposition 4 against dense q_n, shows a Perron operator, and re-evaluates a
   stored search output with 60 digits.
+- `code/check_blocks.py`: Section 6.
 - `code/check_activation.py`: Section 5. It checks the closed form and evaluates the two-pair minimum at points of the
   slice.
