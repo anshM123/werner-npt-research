@@ -4,7 +4,10 @@
        S = Lambda (the antisymmetric subspace of two copies, b = 2) and S = Q (the qutrit [[3,1,2]] code, b = 3).
    (b) The same smallest eigenvalue in floating point for a few larger candidate blocks (Section 10, "Larger blocks").
    (c) Dense checks of the product bound for random operators with ranges in products of local-unitary images of the
-       blocks (n = 2, 4, 5)."""
+       blocks (n = 2, 4, 5).
+   (d) Proposition 11: the identity for the compression to Lambda, the 2-design decomposition of I + |Phi'><Phi'| over
+       the 12 vectors of four mutually unbiased bases, the resulting explicit separable decomposition, and a dense
+       check at n = 4."""
 import itertools
 import numpy as np
 import sympy as sp
@@ -118,3 +121,27 @@ for n, blocks, bound in ((2, ["L"], 1 / 4), (4, ["L", "L"], 1 / 16), (5, ["L", "
         C = S @ cr(S.shape[1], r) @ cr(r, 3 ** n)
         worst = min(worst, q(C, n, 0.5) / np.vdot(C, C).real)
     print(f"  n = {n}, blocks {blocks}: smallest value {worst:.4f} (proved bound {bound:.4f})", flush=True)
+
+# (d) Proposition 11: the compression to Lambda is separable, with an explicit decomposition
+print("\n(d) separability of the compression to Lambda (Proposition 11):")
+cyc = {0: (1, 2), 1: (2, 0), 2: (0, 1)}
+A = np.array([(k2(*cyc[z]) - k2(*cyc[z][::-1])) / 2 ** .5 for z in range(3)]).T          # a_z = sum eps_{zxy}|xy>/sqrt2
+Wl = np.kron(A, np.eye(9)); sig = Wl.T @ R2 @ Wl                                          # on Lambda (x) (B1 B2)
+Sw = np.eye(9)[[3 * (k % 3) + k // 3 for k in range(9)]]
+Psym, Panti = (np.eye(9) + Sw) / 2, (np.eye(9) - Sw) / 2
+Phi = np.eye(3).reshape(-1)
+D = np.kron(np.outer(Phi, Phi), np.eye(3))
+form = 0.75 * np.kron(np.eye(3), Panti) + 0.5 * np.kron(np.eye(3), Psym) @ (np.eye(27) + D) @ np.kron(np.eye(3), Psym)
+print(f"  sigma_Lambda = 3/4 I (x) P_anti + 1/2 (I (x) P_sym)(I + D)(I (x) P_sym): max deviation {np.abs(sig - form).max():.1e}")
+w = np.exp(2j * np.pi / 3)
+mub = [np.eye(3)[b] for b in range(3)] + [np.array([w ** (a * k * k + b * k) for k in range(3)]) / 3 ** .5 for a in range(3) for b in range(3)]
+Ssum = sum(np.kron(np.outer(u, u.conj()), np.outer(u.conj(), u)) for u in mub)
+print(f"  sum over the 12 MUB vectors of |u><u| (x) |conj u><conj u| = I + |Phi'><Phi'|: max deviation {np.abs(Ssum - np.eye(9) - np.outer(Phi, Phi)).max():.1e}")
+sep = 0.75 * np.kron(np.eye(3), Panti) + 0.5 * sum(np.kron(np.outer(u, u.conj()), Psym @ np.kron(np.outer(u.conj(), u), np.eye(3)) @ Psym) for u in mub)
+print(f"  explicit separable decomposition reproduces sigma_Lambda: max deviation {np.abs(sep - sig).max():.1e}")
+worst = np.inf
+for t in range(100):
+    B = np.kron(np.kron(haar(3), haar(3)) @ L2, np.eye(9))
+    C = B @ cr(27, 2) @ cr(2, 81)
+    worst = min(worst, q(C, 4, 0.5) / np.vdot(C, C).real)
+print(f"  n = 4, rank two, range at copies 1, 2 in a local-unitary image of Lambda: smallest q_4/||C||^2 = {worst:.4f} (>= 0)")

@@ -15,6 +15,12 @@
   n = 4, blocks ['L', 'L']: smallest value 0.4578 (proved bound 0.0625)
   n = 5, blocks ['L', 'Q']: smallest value 0.3970 (proved bound 0.1250)
 
-real	0m2.489s
+(d) separability of the compression to Lambda (Proposition 11):
+  sigma_Lambda = 3/4 I (x) P_anti + 1/2 (I (x) P_sym)(I + D)(I (x) P_sym): max deviation 2.2e-16
+  sum over the 12 MUB vectors of |u><u| (x) |conj u><conj u| = I + |Phi'><Phi'|: max deviation 9.0e-16
+  explicit separable decomposition reproduces sigma_Lambda: max deviation 4.4e-16
+  n = 4, rank two, range at copies 1, 2 in a local-unitary image of Lambda: smallest q_4/||C||^2 = 0.4591 (>= 0)
+
+real	0m1.559s
 user	0m0.015s
 sys	0m0.000s

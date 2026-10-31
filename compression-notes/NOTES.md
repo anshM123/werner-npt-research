@@ -17,6 +17,8 @@ These notes collect several small results about the n-copy endpoint inequality, 
   four-copy endpoint;
 - exact positive spectra for the antisymmetric subspace of two copies and the qutrit [[3, 1, 2]] code. These give
   every-n, every-rank classes containing operators thick at every copy, with ranges of dimension up to 3^{n/2}.
+- a removal lemma for a pair of copies: the compression to the antisymmetric subspace is separable, so a pair where the
+  range is antisymmetric can be removed. This gives the four- and five-copy endpoint for every such operator.
 
 **Nothing here settles the all-copy problem.**
 
@@ -507,6 +509,38 @@ ranges.
   4-dimensional ones. Sym³(C³) and the mixed-symmetry subspaces are NPT.
 - Not every 3-dimensional subspace works: C³ ⊗ |00⟩ gives ρ ⊗ (positive), which is NPT.
 
+**Removing an antisymmetric pair.** The compression to Λ is separable, not just PPT. This answers, for Λ, the
+question left open at the end of Section 6, and it gives a removal lemma for a pair of copies. It works like
+thin-copy removal [WZ, T2], but here C can be thick at every copy.
+
+**Proposition 11.** Let C have rank at most two on n ≥ 3 copies. Suppose that for two copies s ≠ s′ and unitaries
+U, U′, the range of C lies in (U ⊗ U′)Λ at copies s, s′, tensored with the full space of the other copies. If
+EP_{n−2} holds, then q_n(1/2, C) ≥ 0. The same holds with the co-range in place of the range. Since EP_2 and EP_3
+hold, the four- and five-copy endpoint inequalities hold for every such C.
+
+*Proof.*
+- **The compression.** Let a_z = Σ_{xy} ε_{zxy}|xy⟩/√2 (z = 0, 1, 2) be the basis of Λ. Expand
+  ρ^{⊗2} = Σ_J (−1/2)^{|J|} F_J and use the determinant formula for ε_{zab} ε_{z′cd}. This gives
+      σ_Λ = (P_Λ ⊗ I) ρ^{⊗2} (P_Λ ⊗ I) = ¾ I_Λ ⊗ P_anti + ½ (I_Λ ⊗ P_sym)(I + D)(I_Λ ⊗ P_sym).
+  Here P_sym and P_anti are the symmetric and antisymmetric projectors of the second side's two copies. The operator
+  D = |Φ′⟩⟨Φ′| ⊗ I has Φ′ = Σ_z |z⟩|z⟩ between Λ (in the basis a_z) and the second side's first copy.
+- **Separability.** I + |Φ′⟩⟨Φ′| = Σ_{k=1}^{12} |u_k⟩⟨u_k| ⊗ |ū_k⟩⟨ū_k|, summed over the 12 vectors of four mutually
+  unbiased bases of C³. This is the partial transpose of Σ_k |u_k⟩⟨u_k|^{⊗2} = I + F, which holds because these
+  vectors form a 2-design. The term I_Λ ⊗ P_anti is a product, and the projector I_Λ ⊗ P_sym acts on the second side
+  only. So σ_Λ is separable across Λ | (second side), with this explicit decomposition. Local unitaries preserve
+  ρ^{⊗2}, so the same holds for (U ⊗ U′)Λ.
+- **Removal.** Write the compression as Σ_k |e_k⟩⟨e_k| ⊗ |f_k⟩⟨f_k|. As in Section 6, the partial transpose commutes
+  with the compression on the first side, and ψ_C lies in (U ⊗ U′)Λ ⊗ (rest). So
+      q_n(C) = ⟨ψ_C|(σ ⊗ ρ^{⊗(n−2)})^Γ|ψ_C⟩ = Σ_k ⟨φ_k|(ρ^{⊗(n−2)})^Γ|φ_k⟩,   φ_k = (⟨e_k| ⊗ ⟨f̄_k|) ψ_C.
+  Each φ_k has Schmidt rank at most two, so every term is nonnegative by EP_{n−2}. ∎
+
+Remarks.
+- A plane inside some (U ⊗ U′)Λ also has a separable compression, since compressions of separable operators are
+  separable. So for these planes, the open question of Section 6 has a positive answer.
+- For Q, products alone fit the compression only to 6 × 10^{−4} with 200 terms in our logs, still improving; we do not
+  know yet whether it is separable. If it is, a triple of copies whose range lies in Q can be removed, so EP_n would
+  follow from EP_{n−3}.
+
 ## References
 
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.
@@ -537,4 +571,4 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   for KL_1 and KL_2 with their controls, the uncompressed test and the Schmidt-number test. Parts (b)–(e) need PyTorch
   and take about half an hour.
 - `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and
-  checks the product bound against the dense q_n.
+  checks the product bound against the dense q_n. It also checks the separable decomposition of Proposition 11.
