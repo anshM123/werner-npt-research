@@ -1,0 +1,7 @@
+q_4 (dense) = 24970.9018398414;  <psi|W^G|psi> = 24970.9018398414
+  compression P_S (x) P_S'      : <psi|(tau (x) rho)^G|psi> = 24970.9018398414
+  compression P_S (x) P_conj(S'): <psi|(tau (x) rho)^G|psi> = 4996.2957370917
+random C at n = 4, smallest normalised PT eigenvalue of tau_T for each triple:
+  +0.515, +0.534, +0.503, +0.534
+  +0.515, +0.473, +0.489, +0.446
+  +0.529, +0.459, +0.519, +0.536

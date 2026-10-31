@@ -411,6 +411,33 @@ Remarks.
 - **No induction in m.** A filter from 3^{m+1} to 3^m dimensions need not factor through 3^{m−1} dimensions at any
   cut, so KL_{m−1} does not give KL_m.
 
+**Removal by compression.** The following identity is a common form of Proposition 9(b), of Propositions 11 and 12
+in Section 10, and of thin-copy removal. For a set T of b copies, let S_T and S′_T be the range and co-range of C at
+T: the spans of (I_T ⊗ ⟨r|) y_a and (I_T ⊗ ⟨r|) z_a, where C = Σ_a |y_a⟩⟨z_a| and r runs over a basis of the other
+copies. Then
+
+    q_n(1/2, C) = ⟨ψ_C| (τ_T ⊗ ρ^{⊗(n−b)})^Γ |ψ_C⟩,   τ_T = (P_{S_T} ⊗ P_{S′_T}) ρ^{⊗b} (P_{S_T} ⊗ P_{S′_T}).
+
+Here ψ_C = Σ_a y_a ⊗ conj(z_a). Its second side lies in conj(S′_T), and moving that projector through the partial
+transpose turns it into P_{S′_T}; compressing to conj(S′_T) instead gives a different, wrong value
+(`check_removal.py`). As in Proposition 11, if τ_T lies in K_k (with K_0 the separable cone), then EP_{n−b+k}
+implies q_n(1/2, C) ≥ 0. The dimensions of S_T and S′_T are at most 2·3^{n−b}. For n = 4 and b = 3, τ_T is a 6 × 6
+local filtering of three copies, and k = 2 is L_2(6) for that one filtering. So the four-copy endpoint needs, for each
+C, only one triple for which this holds.
+
+Numerical picture (`check_removal.py` and our logs):
+- For random C at n = 4, every triple gives a τ_T that is PPT with margin: the smallest normalised partial-transpose
+  eigenvalue is about 0.5. Products alone fit τ_T to 10^{−8}, so k = 0 applies and EP_1 suffices for such C.
+- At n = 5, random C give margins of about 0.8 for the best block of four copies.
+- At n = 3 the analogous pair compressions are NPT, so this route does not reduce EP_3 to EP_1.
+- Near the zeros of q_4 the triple compressions sit on the PPT boundary. In one near-minimiser, with
+  q_4/‖C‖² = 3 × 10^{−6}, the triple that leaves out a nearly thin copy is separable (margin 0.2). In another, all four
+  triples are slightly NPT (down to −0.025). There the fits by filterings of one or two copies are no worse than
+  5 × 10^{−4}, the error floor for such targets (see the calibration below), so the test is inconclusive.
+- For C = |y_1⟩⟨y_1| + |y_2⟩⟨y_2| with y_1 = Φ_12 ⊗ Φ_34, maximally entangled across copies on each side, all four
+  triple compressions contain a full Werner copy and are NPT (−0.75). Products fit them only to 0.11, and filterings of
+  one or two copies to about 10^{−3}. So k = 0 is not always available.
+
 **Evidence** (`check_cones.py`; numerical, not proofs). Every term of the fitting model lies in the cone, so a small
 residual is an explicit approximate decomposition. Residuals are relative Frobenius norms.
 - Part (a) checks the transfer identity against the dense q_n for n ≤ 5. The bond dimensions are at most 3, 6, 9 and
@@ -594,5 +621,7 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_cones.py`: Section 9. It checks the site-dependent transfer identity, then runs the decomposition fits
   for KL_1 and KL_2 with their controls, the uncompressed test and the Schmidt-number test. Parts (b)–(e) need PyTorch
   and take about half an hour.
+- `code/check_removal.py`: Section 9, removal by compression. It checks the identity against the dense q_4, shows
+  that the conjugated compression gives a different value, and prints the triple margins for random C.
 - `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and
   checks the product bound against the dense q_n. It also checks the separable decomposition of Proposition 11.
