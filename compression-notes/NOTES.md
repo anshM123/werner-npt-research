@@ -573,7 +573,8 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
       targets.
   - So nothing here argues against L_2(6): the two-copy cone absorbs what the one-copy cone cannot.
 
-**Remark (Schmidt number of two and three copies).** ρ^{⊗2} and ρ^{⊗3} have Schmidt number 2.
+**Remark (Schmidt number of two and three copies).** ρ^{⊗2} and ρ^{⊗3} have Schmidt number 2. (That the Schmidt
+number need not grow under tensor powers is known [TH]; the point here is the Werner endpoint.)
 - Twirling by U_1 ⊗ ⋯ ⊗ U_n on both sides is a mixture of local unitaries, so it does not raise the Schmidt number.
   It maps a state τ to the unique operator in span{F_J} with the same values of Tr(τ F_J).
 - Let W(s) be the normalised Werner state on C³ ⊗ C³ with ⟨F⟩ = s. It is affine in s and separable for s ≥ 0, and
@@ -810,6 +811,7 @@ range lies in the code space form a slice of the b-copy problem where a negative
   and finite-copy extensions, arXiv:2607.24479.
 - [FGP] Fu, Gao, Park, A solution to 2-copy distillability of Werner states, arXiv:2607.21367.
 - [SC] Z. Song, L. Chen, A partial-trace matrix inequality and Werner-state distillability, arXiv:2607.23416.
+- [TH] B. M. Terhal, P. Horodecki, Schmidt number for density matrices, Phys. Rev. A 61, 040301(R) (2000).
 - [GB] L. Gurvits, H. Barnum, Largest separable balls around the maximally mixed bipartite quantum state, Phys. Rev. A
   66, 062311 (2002).
 
