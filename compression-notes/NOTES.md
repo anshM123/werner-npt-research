@@ -478,6 +478,13 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
     stays at 0.43.
   - In our logs, an adversarial search that moves the filter to maximise the fit residual never got past
     1.1 × 10^{−4}, and its worst points refit to 4 × 10^{−8}.
+  - A possible handle for a proof (our logs). NPT targets at −0.01 fit as a single filtering of ρ plus 12 products,
+    to 1–5 × 10^{−8}. The filtering carries 44–57% of the trace. The remainder is full rank and PPT, with its smallest
+    partial-transpose eigenvalue at 10^{−4}–10^{−3} of its trace, so it sits on the PPT boundary.
+    - The filtering is not a contraction of the target's own filters: a a^* is 0.16–0.33 away from every A(I ⊗ |u⟩)
+      and A(|u⟩ ⊗ I) (normalised Frobenius distance).
+    - A proof of KL_1 along these lines would need a rule for (a, b), and a reason why the remainder is separable
+      rather than only PPT.
   - Every element of K_1 has Schmidt number at most 2, so it satisfies Y ≤ 2 Tr_B(Y) ⊗ I. Over two-copy filterings,
     the smallest eigenvalue of 2 Tr_B(Y) ⊗ I − Y was driven to 0 (−3 × 10^{−16}), never below.
   - Filters of rank at most two need no test: the output lives on C² ⊗ C³, is PPT by EP_2, and so is separable. For
