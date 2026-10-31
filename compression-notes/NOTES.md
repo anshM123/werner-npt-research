@@ -587,6 +587,12 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
       fresh starts to 3.0 × 10^{−4} (2.9 × 10^{−4} with twice the terms), which is the floor for near-extreme NPT
       targets.
   - So nothing here argues against L_2(6): the two-copy cone absorbs what the one-copy cone cannot.
+  - The next links, K_M(6) = K_2(6) for M = 3 and 4 (`check_chain_six.py`, `check_chain_six_nnls.py`). Pad the
+    two-copy NPT filtering with contractions on the extra copies and move the filters by δ = 0.1 toward random
+    M-copy filters (PT-min −0.028 and −0.027). Parametric fits by K_2(6) stall at 0.7–2.7 × 10^{−4}, the near-extreme
+    floor. Column generation over filterings of ρ^{⊗2} and products then reproduces the four-copy target exactly
+    (residual 2.9 × 10^{−15}, 1296 active columns, the real dimension). The three-copy target reaches 3 × 10^{−6}
+    after 60 rounds and is still decreasing.
 
 **Remark (Schmidt number of two and three copies).** ρ^{⊗2} and ρ^{⊗3} have Schmidt number 2. (That the Schmidt
 number need not grow under tensor powers is known [TH]; the point here is the Werner endpoint.)
@@ -975,6 +981,8 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   and PyTorch; the adversary takes about half an hour).
 - `code/check_congruence_lp.py` (`python check_congruence_lp.py 60 30 1200`) and `code/check_congruence_certificate.py`:
   the congruence question in Section 11 (needs PyTorch and SciPy; about twenty minutes each).
+- `code/check_chain_six.py` (`python check_chain_six.py 4`) and `code/check_chain_six_nnls.py`: the next links of
+  the 6 × 6 chain in Section 9 (saved targets `chain_target_M3.npy`, `chain_target_M4.npy` and fit terms).
 - `code/check_removal.py`: Section 9, removal by compression. It checks the identity against the dense q_4, shows
   that the conjugated compression gives a different value, and prints the triple margins for random C.
 - `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and

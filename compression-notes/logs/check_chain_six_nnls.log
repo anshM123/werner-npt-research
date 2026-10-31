@@ -1,0 +1,8 @@
+== three copies (60 rounds; a longer run is in progress)
+round 57: columns 4224, active 1230, residual 4.883e-06, best alignment +7.411e-08
+round 58: columns 4272, active 1228, residual 3.943e-06, best alignment +4.474e-08
+round 59: columns 4320, active 1239, residual 3.136e-06, best alignment +3.020e-08
+== four copies
+round 35: columns 3165, active 1273, residual 1.491e-07, best alignment +4.305e-09
+round 36: columns 3189, active 1296, residual 2.912e-15, best alignment +1.352e-17
+exact decomposition
