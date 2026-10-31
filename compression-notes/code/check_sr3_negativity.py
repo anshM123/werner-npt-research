@@ -51,4 +51,5 @@ for t in range(2000):
         C = Y @ Z.T; vals.append(float(value(Y, Z) / (C.abs() ** 2).sum()))
 vals = np.array(vals)
 print(f"m = {m}: random SR-3 vectors: min {vals.min():+.4f}, fraction negative {np.mean(vals < 0):.4f}; "
-      f"single-copy prediction -(1/2)(1/2)^{m - 1} = {-0.5 * 0.5 ** (m - 1):+.5f} at Phi (x) |00..>", flush=True)
+      f"global minimum eigenvalue of (rho^Gamma)^m: -1/2 (Phi on one copy, product states orthogonal to Phi elsewhere)",
+      flush=True)

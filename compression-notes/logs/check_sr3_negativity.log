@@ -10,7 +10,7 @@ m = 1, restart 8: min -0.50000; per-copy Phi-content [1.]
 m = 1, restart 9: min -0.50000; per-copy Phi-content [1.]
 m = 1, restart 10: min -0.50000; per-copy Phi-content [1.]
 m = 1, restart 11: min -0.50000; per-copy Phi-content [1.]
-m = 1: random SR-3 vectors: min +0.0725, fraction negative 0.0000; single-copy prediction -(1/2)(1/2)^0 = -0.50000 at Phi (x) |00..>
+m = 1: random SR-3 vectors: min +0.0725, fraction negative 0.0000; global minimum eigenvalue of (rho^Gamma)^m: -1/2 (Phi on one copy, product states orthogonal to Phi elsewhere)
 m = 2, restart 0: min -0.50000; per-copy Phi-content [0. 1.]
 m = 2, restart 1: min -0.50000; per-copy Phi-content [0. 1.]
 m = 2, restart 2: min -0.50000; per-copy Phi-content [1. 0.]
@@ -23,7 +23,7 @@ m = 2, restart 8: min -0.50000; per-copy Phi-content [0. 1.]
 m = 2, restart 9: min -0.50000; per-copy Phi-content [1. 0.]
 m = 2, restart 10: min -0.50000; per-copy Phi-content [1. 0.]
 m = 2, restart 11: min -0.50000; per-copy Phi-content [1. 0.]
-m = 2: random SR-3 vectors: min +0.4351, fraction negative 0.0000; single-copy prediction -(1/2)(1/2)^1 = -0.25000 at Phi (x) |00..>
+m = 2: random SR-3 vectors: min +0.4351, fraction negative 0.0000; global minimum eigenvalue of (rho^Gamma)^m: -1/2 (Phi on one copy, product states orthogonal to Phi elsewhere)
 m = 3, restart 0: min -0.50000; per-copy Phi-content [0. 1. 0.]
 m = 3, restart 1: min -0.50000; per-copy Phi-content [0. 0. 1.]
 m = 3, restart 2: min -0.50000; per-copy Phi-content [0. 0. 1.]
@@ -36,4 +36,4 @@ m = 3, restart 8: min -0.50000; per-copy Phi-content [0. 1. 0.]
 m = 3, restart 9: min -0.50000; per-copy Phi-content [0. 1. 0.]
 m = 3, restart 10: min -0.50000; per-copy Phi-content [0. 1. 0.]
 m = 3, restart 11: min -0.50000; per-copy Phi-content [0. 0. 1.]
-m = 3: random SR-3 vectors: min +0.5069, fraction negative 0.0000; single-copy prediction -(1/2)(1/2)^2 = -0.12500 at Phi (x) |00..>
+m = 3: random SR-3 vectors: min +0.5069, fraction negative 0.0000; global minimum eigenvalue of (rho^Gamma)^m: -1/2 (Phi on one copy, product states orthogonal to Phi elsewhere)
