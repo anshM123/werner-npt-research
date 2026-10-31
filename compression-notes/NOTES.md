@@ -258,7 +258,14 @@ theorem.
 
 **Open.** If the block compression σ_j were separable (not just PPT), then a block where C is "thin" could be removed,
 as single thin copies are. That would reduce n copies to n − 2 for operators thin at a two-copy block. A 2 × 9 PPT
-state need not be separable, so this is open.
+state need not be separable, so this is open. Partial answers and evidence:
+- **Planes thin at both copies.** If V lies in V_1 ⊗ V_2 for planes V_1, V_2 of the two copies, then σ_V is a local
+  compression of σ_{V_1} ⊗ σ_{V_2}. Each factor is a PPT operator on C² ⊗ C³, hence separable, so σ_V is separable.
+- **Planes in an antisymmetric subspace.** For planes inside a local-unitary image of Λ, see Section 10.
+- **Numerical evidence (our logs).** For random planes, products alone fit σ_V to 10^{−8}, while a PPT entangled
+  2 × 4 state (Horodecki's) embedded in 2 × 9 stays at 10^{−2}. A local search that minimises the smallest
+  partial-transpose eigenvalue of σ_V drives it to 0. Every plane it found on that boundary was thin at both copies,
+  so it is separable by the first point. The planes thick at a copy that we sampled had a positive margin.
 
 `check_blocks.py` checks the Schur identity, and positivity for ranges in products of block planes with arbitrary
 co-range (ranks 4 and 8).
