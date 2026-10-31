@@ -14,7 +14,9 @@ These notes collect several small results about the n-copy endpoint inequality, 
   boundary;
 - a reduction of the 2m-copy endpoint to a statement about m + 1 copies (a cone of bond operators that is invariant
   under the transfer channels), with numerical evidence for that statement at m = 1, 2. At m = 2 it would give the
-  four-copy endpoint.
+  four-copy endpoint;
+- exact positive spectra for the antisymmetric subspace of two copies and the qutrit [[3, 1, 2]] code. These give
+  every-n, every-rank classes containing operators thick at every copy, with ranges of dimension up to 3^{n/2}.
 
 **Nothing here settles the all-copy problem.**
 
@@ -458,6 +460,53 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
 **Open.** KL_1, a two-copy statement about 3 × 3 operators, is the smallest open case. A proof would give an every-n
 class of bond dimension 3. For four copies, L_2(6) is enough: a three-copy statement about 6 × 6 operators.
 
+## 10. Antisymmetric and code blocks
+
+Section 6 needs only that the one-sided compression of each block be PPT, as Section 8 already used. Two small
+blocks have this property with a margin, and both are thick at every copy.
+
+**Proposition 10.**
+- (a) Let Λ ⊂ C³ ⊗ C³ be the antisymmetric subspace of two copies on one side, spanned by |ij⟩ − |ji⟩ (dimension 3).
+  The partial transpose of the one-sided compression (P_Λ ⊗ I) ρ^{⊗2} (P_Λ ⊗ I) has spectrum 1/4 (×8), 3/4 (×9) and
+  1 (×10). So q_2(1/2, C) ≥ ¼‖C‖² for every operator C whose range lies in Λ, whatever its rank and co-range.
+- (b) Let Q ⊂ (C³)^{⊗3} be the code space of the qutrit [[3, 1, 2]] code, spanned by Σ_k |k, k + j, k + 2j⟩ for
+  j = 0, 1, 2 (indices mod 3). The partial transpose of the one-sided compression of ρ^{⊗3} to Q has spectrum
+  1/2 (×56), 3/4 (×24) and 7/8 (×1). So q_3(1/2, C) ≥ ½‖C‖² when the range of C lies in Q.
+
+*Proof.* Both spectra are exact rational computations (`check_blocks2.py`, part (a)). As in Section 6, the partial
+transpose on the second side commutes with compressions on the first. So for a unit vector ψ in S ⊗ H, which is
+ψ_C for an operator C with range in S, ⟨ψ|(ρ^{⊗b})^Γ|ψ⟩ is at least the smallest eigenvalue. ∎
+
+The multiplicities in (a) are the dimensions 10, 8 + 1 and 8 of the pieces of C³ ⊗ C³ ⊗ C³ under U(3), which is
+consistent with the symmetry: ρ^{⊗2} commutes with U^{⊗4}, and Λ is a U(3)-irreducible subspace.
+
+**Consequence (every n, every rank).** Partition the copies into blocks. In each block choose one of the following:
+- a plane (blocks of at most three copies);
+- a local-unitary image of Λ (two copies);
+- a local-unitary image of Q (three copies);
+- a local-unitary image of the five-qutrit code space (five copies).
+
+If the range of C lies in the tensor product of the chosen subspaces, then q_n(1/2, C) ≥ 0, whatever the rank and the
+co-range. The proof is that of Proposition 6.
+- Local unitaries U_1 ⊗ ⋯ ⊗ U_b applied on both sides preserve ρ^{⊗b}, so each block compression is unitarily
+  equivalent to that of the chosen subspace.
+- Tensor products of PPT operators are PPT.
+
+If there are no plane blocks, the margins multiply. For example, q_n(1/2, C) ≥ 4^{−n/2}‖C‖² when n is even and every
+block is Λ. Generic operators in this class are thick at every copy. With Λ blocks the range has dimension 3^{n/2}.
+
+Products of planes on single copies have larger ranges, of dimension 2^n, but they are thin at every copy and follow
+from thin-copy removal. Among the classes in these notes that are thick at every copy, the Λ blocks give the largest
+ranges.
+
+**Larger blocks** (`check_blocks2.py`, part (b), and our logs; numerical).
+- At two copies, Λ looks maximal. Adding |00⟩, Σ_i|ii⟩/√3 or (|01⟩ + |10⟩)/√2 to Λ makes the compression NPT. So do
+  Sym²(C³) and random 4-dimensional subspaces; the best 4-dimensional subspace found had smallest eigenvalue −10^{−4}.
+- At three copies, Q ⊕ C·ε is still PPT (smallest eigenvalue 0.041). Here ε is the totally antisymmetric vector.
+- At three copies, 200 random 3-dimensional subspaces were all PPT (smallest 3.6 × 10^{−4}), and 95% of random
+  4-dimensional ones. Sym³(C³) and the mixed-symmetry subspaces are NPT.
+- Not every 3-dimensional subspace works: C³ ⊗ |00⟩ gives ρ ⊗ (positive), which is NPT.
+
 ## References
 
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.
@@ -487,3 +536,5 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_cones.py`: Section 9. It checks the site-dependent transfer identity, then runs the decomposition fits
   for KL_1 and KL_2 with their controls, the uncompressed test and the Schmidt-number test. Parts (b)–(e) need PyTorch
   and take about half an hour.
+- `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and
+  checks the product bound against the dense q_n.

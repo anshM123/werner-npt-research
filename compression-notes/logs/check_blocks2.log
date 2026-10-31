@@ -1,0 +1,20 @@
+(a) exact partial-transpose spectra of one-sided compressions:
+  Lambda (antisymmetric subspace of two copies): 1/4 (x8), 3/4 (x9), 1 (x10)
+  Q (qutrit [[3,1,2]] code, three copies): 1/2 (x56), 3/4 (x24), 7/8 (x1)
+
+(b) smallest partial-transpose eigenvalue of other candidate blocks:
+  Lambda + |00>: -0.2500
+  Lambda + sum_i |ii>/sqrt3: -0.0833
+  Lambda + (|01> + |10>)/sqrt2: -0.2500
+  Sym^2(C^3): -0.2500
+  Q + totally antisymmetric vector: +0.0414
+  C^3 (x) |00> (three copies): -0.5000
+
+(c) dense q_n / ||C||^2 for random C with range in a product of blocks (any rank, arbitrary co-range):
+  n = 2, blocks ['L']: smallest value 0.5679 (proved bound 0.2500)
+  n = 4, blocks ['L', 'L']: smallest value 0.4578 (proved bound 0.0625)
+  n = 5, blocks ['L', 'Q']: smallest value 0.3970 (proved bound 0.1250)
+
+real	0m2.489s
+user	0m0.015s
+sys	0m0.000s
