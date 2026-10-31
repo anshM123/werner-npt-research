@@ -1,0 +1,21 @@
+(a) exact coefficients:
+  n =  3: A_n =                    1/2 (0.500000), B_n = +0.125000, A_n + 3 min(B_n, 0) = +0.500000
+  n =  5: A_n =                    4/9 (0.444444), B_n = -0.065972, A_n + 3 min(B_n, 0) = +0.246528
+  n =  7: A_n =                 55/216 (0.254630), B_n = +0.036748, A_n + 3 min(B_n, 0) = +0.254630
+  n =  9: A_n =                   5/24 (0.208333), B_n = -0.021484, A_n + 3 min(B_n, 0) = +0.143880
+  n = 11: A_n =               163/1296 (0.125772), B_n = +0.012906, A_n + 3 min(B_n, 0) = +0.125772
+  n = 13: A_n =               769/7776 (0.098894), B_n = -0.007893, A_n + 3 min(B_n, 0) = +0.075214
+  n = 15: A_n =             5741/93312 (0.061525), B_n = +0.004889, A_n + 3 min(B_n, 0) = +0.061525
+  n = 17: A_n =           39635/839808 (0.047195), B_n = -0.003057, A_n + 3 min(B_n, 0) = +0.038025
+  n = 19: A_n =         150965/5038848 (0.029960), B_n = +0.001925, A_n + 3 min(B_n, 0) = +0.029960
+  n = 21: A_n =          56909/2519424 (0.022588), B_n = -0.001220, A_n + 3 min(B_n, 0) = +0.018929
+
+(b) five-qutrit code: generators commute: True
+  smallest weight of a nontrivial stabiliser element: 4 (purity needs >= 3)
+  code dimension: 3
+  max |Tr_(S^c)(v_i v_j^*) - delta_ij I/3^|S||| over |S| <= 2 and all i, j: 1.67e-16
+  rank-2 x: dense q_5 = +5.3968240496, formula +5.3968240496
+  rank-3 x: dense q_5 = +26.3732207043, formula +26.3732207043
+  rank-2 x: dense q_5 = +10.1117018477, formula +10.1117018477
+  rank-3 x: dense q_5 = +19.8158412252, formula +19.8158412252
+  hence q_5 >= (A_5 + 3 B_5) ||C||^2 = 0.246528 ||C||^2 for every operator on the code space

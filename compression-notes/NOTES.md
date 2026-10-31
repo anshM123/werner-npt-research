@@ -9,7 +9,9 @@ These notes collect several small results about the n-copy endpoint inequality, 
 - a transfer-channel description of translation-invariant MPS filters, with a large-n search;
 - an exact activation witness for two-pair Werner mixtures;
 - an every-n positivity statement for operators whose range lies in a product of planes over two-copy blocks;
-- a lemma that a filter on one copy can lower the form in at most one direction, with a corollary about first zeros.
+- a lemma that a filter on one copy can lower the form in at most one direction, with a corollary about first zeros;
+- an exact formula on the code spaces of pure qutrit codes, which shows the five-qutrit code space is far from the
+  boundary.
 
 **Nothing here settles the all-copy problem.**
 
@@ -293,6 +295,42 @@ one-copy 2-undistillable by the local searches of Section 5, which is what the p
 The proposition does not rule out a counterexample. It says that a failure, if there is one, is one-dimensional in
 the filter at each copy, and that a first zero is nondegenerate in the filter directions other than I.
 
+## 8. Code spaces
+
+Local searches are drawn towards the thin zeros, so we test a structured, highly entangled family directly:
+operators supported on the code space of a qutrit error-correcting code. Let V : C^K → (C³)^{⊗n} be the encoding
+isometry of a code that is pure up to distance d: for every code state, the reduced state on any set of fewer than d
+copies is maximally mixed.
+
+**Proposition 8.** For x ∈ M_K and every set L of copies:
+- if |L^c| < d, then ‖Tr_L(V x V^*)‖² = 3^{−|L^c|} |Tr x|²;
+- if |L| < d, then ‖Tr_L(V x V^*)‖² = 3^{−|L|} ‖x‖².
+
+So when n = 2d − 1 (every set or its complement has fewer than d copies),
+
+    q_n(1/2, V x V^*) = A_n ‖x‖² + B_n |Tr x|²,   A_n = Σ_{l<d} C(n,l) (−1/6)^l,   B_n = Σ_{l≥d} C(n,l) (−1/2)^l 3^{l−n}.
+
+*Proof.* Write v_i = V e_i.
+- If |L^c| < d, then Tr_L(V y y^* V^*) = ‖y‖² I/3^{|L^c|} for every y. By polarisation, Tr_L(V x V^*) = Tr(x) I/3^{|L^c|}.
+- If |L| < d, the swap trick gives ‖Tr_L(V x V^*)‖² = Σ x̄_{ij} x_{kl} Tr[Tr_{L^c}(v_j v_l^*) Tr_{L^c}(v_k v_i^*)]. By the
+  first case applied to L, Tr_{L^c}(v_j v_l^*) = δ_{jl} I/3^{|L|}. So the sum is 3^{−|L|} Σ |x_{ij}|². ∎
+
+Consequences.
+- **The five-qutrit code.** The stabilisers are the cyclic shifts of X Z Z^† X^† I. This code has dimension 3, and no
+  nontrivial stabiliser element has weight below 3. Moreover Tr_{S^c}(v_i v_j^*) = δ_{ij} I/3^{|S|} for every set S
+  of at most two copies and every pair of basis vectors (to 2 × 10^{−16}), so it is a pure [[5, 1, 3]]_3 code. Here
+  A_5 = 4/9 and B_5 = −19/288.
+  - Since |Tr x|² ≤ 3‖x‖², q_5(1/2, C) ≥ (A_5 + 3B_5)‖C‖² = (71/288)‖C‖² for every operator C on the code space, of
+    any rank.
+  - Equivalently, the two-sided compression of ρ^{⊗5} to the code space is PPT, with a margin.
+  - These operators are thick at every copy.
+- **Larger codes.** For a pure [[2d − 1, 1, d]]_3 code, A_n + 3 min(B_n, 0) > 0 for every odd n from 3 to 21
+  (`check_codes.py`), and the effective parameter −B_n/A_n tends to 0. We have only checked the five-qutrit code. Codes
+  with these parameters may not exist for larger n, so the table describes what such a code would give, not a theorem
+  for every n.
+
+So operators that are highly entangled in the code sense sit far from the boundary. Every zero we know is thin.
+
 ## References
 
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.
@@ -317,3 +355,5 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   slice.
 - `code/check_signature.py`: Section 7. It prints the eigenvalues of the filter form for random operators and for the
   activation example.
+- `code/check_codes.py`: Section 8. It computes A_n and B_n exactly, builds the five-qutrit code, and checks the formula
+  against the dense q_5.
