@@ -8,7 +8,7 @@ These notes collect several small results about the n-copy endpoint inequality, 
 - an exact form of the projector case as a monogamy relation;
 - a transfer-channel description of translation-invariant MPS filters, with a large-n search;
 - an exact activation witness for two-pair Werner mixtures;
-- an every-n class built from sums of two block-product operators.
+- an every-n positivity statement for operators whose range lies in a product of planes over two-copy blocks.
 
 **Nothing here settles the all-copy problem.**
 
@@ -213,35 +213,44 @@ On the slice c = (1, x, x, y) this means:
 - **Conditional ratios are not enough.** "Every conditional anti/sym ratio is at most 3" does not imply one-copy
   2-undistillability: c = (1, 3, 3, 0) has two-pair minimum −0.42.
 
-## 6. Sums of two block-product operators
+## 6. Ranges inside products of block planes
 
-**Proposition 6.** Partition the copies into blocks S_1, …, S_m and let
+**Proposition 6.** Partition the copies into blocks S_1, …, S_m, each of at most two copies, and choose a plane V_j in
+the space of block j (it may be entangled across the two copies). If the range of C lies in ⊗_j V_j, then
+q_n(1/2, C) ≥ 0, whatever the rank and co-range of C. The same holds with co-range in place of range. With blocks of
+at most three copies, it holds given the three-copy theorem.
 
-    C = Σ_{a=1,2} ⊗_j |α_a^{(j)}⟩⟨β_a^{(j)}|,
+*Proof.* Two facts combine:
+- EP for k copies is equivalent to this: the one-sided compression (P_V ⊗ I) ρ^{⊗k} (P_V ⊗ I) to any plane V is PPT.
+  Indeed, a vector has Schmidt rank at most two iff it lies in V ⊗ H for some plane V on the first side, and the
+  partial transpose on the second side commutes with compressions on the first. So each block compression σ_j is
+  PPT by the two-copy theorem.
+- Tensor products of PPT operators are PPT, so ⊗_j σ_j, which is the compression of ρ^{⊗n} to ⊗_j V_j, is PPT.
 
-with arbitrary vectors α_a^{(j)}, β_a^{(j)} on block S_j. Let N^{(j)} be the 2 × 2 Gram matrix of q_{|S_j|}(1/2, ·) on
-the two rank-one factors on block j. Then
+Its partial transpose is the compression of B^{⊗n}, so ⟨ψ_C|B^{⊗n}|ψ_C⟩ ≥ 0 for every ψ_C in (⊗_j V_j) ⊗ H, that is
+q_n(1/2, C) ≥ 0. ∎
 
-    q_n(1/2, C) = Σ_{a,b} Π_j N^{(j)}_{ab}.
+**Special case (Schur form).** For C = Σ_{a=1,2} ⊗_j |α_a^{(j)}⟩⟨β_a^{(j)}| the range lies in
+⊗_j span{α_1^{(j)}, α_2^{(j)}}, and directly q_n(1/2, C) = Σ_{a,b} Π_j N^{(j)}_{ab}. Here N^{(j)} is the positive
+semidefinite 2 × 2 Gram matrix of q_{|S_j|} on the two rank-one factors, and the Schur product theorem applies.
 
-If EP holds for every block size that occurs, q_n(1/2, C) ≥ 0. In particular this holds for every n when all blocks
-have at most two copies (by the two-copy theorem), and when all blocks have at most three copies (given the
-three-copy theorem).
-
-*Proof.* The form is a product over blocks, which gives the identity. Every element of span{|α_1⟩⟨β_1|,
-|α_2⟩⟨β_2|} on a block has rank at most two, so N^{(j)} ⪰ 0 by EP for that block. The Hadamard product of positive
-semidefinite matrices is positive semidefinite (Schur), so its entry sum is ≥ 0. ∎
-
-When the vectors are entangled inside blocks of two copies, the reduced ranges are three-dimensional at every copy.
-So this is another explicit class, thick at every copy, on which the endpoint inequality holds for every n with no
-unproven input. Compare `contraction-notes/` (nested class) and:
+When the planes are entangled inside two-copy blocks, the rank-two members of this class have three-dimensional
+reduced ranges at every copy. So this is another explicit class, thick at every copy, on which the endpoint inequality
+holds for every n with no unproven input. Compare `contraction-notes/` (nested class) and:
 - [T2], whose every-copy class has GHZ backbones |0⟩^{⊗k}, |1⟩^{⊗k} with tails at single copies and arbitrary
   co-range;
 - [BGH, Thm. 8.3], which covers single tensor products, not sums.
 
-The argument is tied to the two-term structure: a general rank-two operator expanded into many product terms gives
-Gram matrices that are not positive semidefinite. `check_blocks.py` checks the identity and positivity for blocks
-2 + 2 and 2 + 2 + 1.
+With single-copy blocks, Proposition 6 is the elementary fact that compressing a Werner copy to a plane on one side
+gives a PPT state. The new content is that two-copy blocks with entangled planes can be used, thanks to the two-copy
+theorem.
+
+**Open.** If the block compression σ_j were separable (not just PPT), then a block where C is "thin" could be removed,
+as single thin copies are. That would reduce n copies to n − 2 for operators thin at a two-copy block. A 2 × 9 PPT
+state need not be separable, so this is open.
+
+`check_blocks.py` checks the Schur identity, and positivity for ranges in products of block planes with arbitrary
+co-range (ranks 4 and 8).
 
 ## References
 

@@ -4,3 +4,11 @@ blocks [2, 2] #2: q_n = +0.96841215, Schur form = +0.96841215, q_n/||C||^2 = +0.
 blocks [2, 2, 1] #0: q_n = +0.82599358, Schur form = +0.82599358, q_n/||C||^2 = +0.4131, min eig of the N^(j): [np.float64(0.574197), np.float64(0.546006), np.float64(0.833467)], smallest local eigenvalue / trace per copy: [np.float64(0.1053), np.float64(0.1443), np.float64(0.0901), np.float64(0.1359), np.float64(0.0791)]
 blocks [2, 2, 1] #1: q_n = +0.86224034, Schur form = +0.86224034, q_n/||C||^2 = +0.4311, min eig of the N^(j): [np.float64(0.576729), np.float64(0.626232), np.float64(0.706052)], smallest local eigenvalue / trace per copy: [np.float64(0.1335), np.float64(0.1931), np.float64(0.1781), np.float64(0.165), np.float64(0.1652)]
 blocks [2, 2, 1] #2: q_n = +0.79324647, Schur form = +0.79324647, q_n/||C||^2 = +0.3963, min eig of the N^(j): [np.float64(0.463804), np.float64(0.634602), np.float64(0.712523)], smallest local eigenvalue / trace per copy: [np.float64(0.1592), np.float64(0.1309), np.float64(0.1089), np.float64(0.1456), np.float64(0.084)]
+
+range in a product of block planes, arbitrary co-range (rank up to 2^m):
+blocks [2, 2] #0: rank 4, q_n/||C||^2 = +0.49985
+blocks [2, 2] #1: rank 4, q_n/||C||^2 = +0.47270
+blocks [2, 2] #2: rank 4, q_n/||C||^2 = +0.50618
+blocks [2, 2, 1] #0: rank 8, q_n/||C||^2 = +0.40610
+blocks [2, 2, 1] #1: rank 8, q_n/||C||^2 = +0.40465
+blocks [2, 2, 1] #2: rank 8, q_n/||C||^2 = +0.39987

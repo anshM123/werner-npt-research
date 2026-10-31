@@ -49,3 +49,17 @@ for blocks in ([2, 2], [2, 2, 1]):
               f"q_n/||C||^2 = {q(C, n, t) / np.vdot(C, C).real:+.4f}, min eig of the N^(j): "
               f"{[round(np.linalg.eigvalsh((N + N.conj().T) / 2)[0], 6) for N in Ns]}, "
               f"smallest local eigenvalue / trace per copy: {local_spectra(C, n)}", flush=True)
+
+# general form: range of C inside (x)_j V_j (V_j a plane in each two-copy block), arbitrary co-range, any rank
+print("\nrange in a product of block planes, arbitrary co-range (rank up to 2^m):")
+for blocks in ([2, 2], [2, 2, 1]):
+    n = sum(blocks)
+    for trial in range(3):
+        P = np.eye(1)
+        for k in blocks:
+            V = np.linalg.qr(rng.standard_normal((d ** k, 2)) + 1j * rng.standard_normal((d ** k, 2)))[0]
+            P = np.kron(P, V @ V.conj().T)
+        G = rng.standard_normal((d ** n, d ** n)) + 1j * rng.standard_normal((d ** n, d ** n))
+        C = P @ G                                     # range inside (x)_j V_j, generic co-range
+        print(f"blocks {blocks} #{trial}: rank {np.linalg.matrix_rank(C)}, q_n/||C||^2 = {q(C, n, t) / np.vdot(C, C).real:+.5f}",
+              flush=True)
