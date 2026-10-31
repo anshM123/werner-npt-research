@@ -18,7 +18,7 @@ These notes collect several small results about the n-copy endpoint inequality, 
 - exact positive spectra for the antisymmetric subspace of two copies and the qutrit [[3, 1, 2]] code. These give
   every-n, every-rank classes containing operators thick at every copy, with ranges of dimension up to 3^{n/2}.
 - removal lemmas for blocks of two, three, four and five copies: the compressions to the antisymmetric subspace, the
-  [[3, 1, 2]] code space, the [[4, 2, 2]] code space and the five-qutrit code space are separable. Iterating them gives
+  [[3, 1, 2]], [[4, 2, 2]] and [[5, 3, 2]] code spaces and the five-qutrit code space are separable. Iterating them gives
   the endpoint for every n whenever the range lies in a product of such blocks and planes, with at most three copies
   left free;
 - an exact formula for the partial-transpose spectrum of the compression to any qutrit stabiliser code, as weight sums
@@ -598,7 +598,8 @@ Remarks.
   six-copy endpoint inequalities hold for every such C.
 - (c) Suppose the range of C lies in S_1 ⊗ ⋯ ⊗ S_m ⊗ (C³)^{⊗r}, where the S_i sit on disjoint blocks of copies. Each S_i
   is a plane at one copy, or a local-unitary image of Λ at two copies, of Q at three copies, of the [[4, 2, 2]] code
-  space at four copies (Proposition 14) or of the five-qutrit code space at five copies (Proposition 13). Then EP_r
+  space at four copies, of the [[5, 3, 2]] code space at five copies (Proposition 14) or of the five-qutrit code space
+  at five copies (Proposition 13). Then EP_r
   implies
   q_n(1/2, C) ≥ 0. Some blocks may use the co-range instead of the range. Since EP_r holds for r ≤ 3, the endpoint
   inequality holds for every n, with no unproven input, whenever at most three copies are left outside the blocks.
@@ -638,10 +639,12 @@ of N(S). They split into 9^k classes E·S.
 - (b) Let L ⊇ S be a maximal set of commuting Paulis (|L| = 3^b). In a fixed sector, the uniform distribution on the
   3^k classes contained in a coset E_0 L is the spectrum of a separable block. So a sector block is separable whenever
   its weights p are a nonnegative combination of these uniform distributions.
-- (c) For the [[4, 2, 2]] code, this holds in all nine sectors, with exact rational coefficients. So σ_Q is separable.
-  If the range (or the co-range) of a rank-two C lies in a local-unitary image of the [[4, 2, 2]] code space at four
-  copies, tensored with the rest, then EP_{n−4} implies q_n(1/2, C) ≥ 0. With at most three free copies, this gives the
-  endpoint at up to seven copies for such operators, and the block can be used in Proposition 12(c).
+- (c) For the [[4, 2, 2]] code and for the [[5, 3, 2]] code (stabilisers X^{⊗5} and Z ⊗ Z ⊗ Z ⊗ Z ⊗ Z², dimension 27),
+  this holds in every sector, with exact rational coefficients. So both compressions are separable. If the range (or
+  the co-range) of a rank-two C lies in a local-unitary image of one of these code spaces, tensored with the rest,
+  then EP_{n−4} (respectively EP_{n−5}) implies q_n(1/2, C) ≥ 0. With at most three free copies, this gives the
+  endpoint at up to seven (respectively eight) copies for such operators, and both blocks can be used in
+  Proposition 12(c).
 - (d) For the codes [[b, b − 2, 2]] with stabilisers X^{⊗b} and Z^{c_1} ⊗ ⋯ ⊗ Z^{c_b} (all c_i ≠ 0 and Σ c_i ≡ 0 mod 3),
   the compression is PPT if and only if b ≤ 6.
 
@@ -668,8 +671,15 @@ of N(S). They split into 9^k classes E·S.
     coset.
 - **(c)** For the [[4, 2, 2]] code there are 40 such sets L, so each sector has 360 cosets. A linear program finds
   a nonnegative combination of them equal to p in every sector. We then solve for the coefficients exactly on the
-  support, and check positivity and the identity in rational arithmetic (`check_code_blocks.py`, part (b)). Removal
-  is as in Proposition 11.
+  support, and check positivity and the identity in rational arithmetic (`check_code_blocks.py`, part (b)).
+  - For [[5, 3, 2]] (1120 sets L, 30240 cosets per sector) we use a margin instead of an exact LP. Put d = 3^k.
+    Averaging the cosets through one class over all L gives (𝟙 + d e_i)/(d(d + 1)), because a nonzero logical vector
+    lies in a fraction 1/(d + 1) of the sets L. So every r ≥ 0 with (d² + d) min r ≥ Σ r is a nonnegative combination
+    of cosets.
+  - The LP is solved for p − 10^{−3}·𝟙. Its coefficients are rounded to rationals, the remainder r is computed exactly,
+    and r passes this test in every sector (`check_code_blocks_margin.py`; the same check also certifies [[4, 2, 2]]
+    and the five-qutrit code).
+  - Removal is as in Proposition 11.
 - **(d)** S consists of the nine operators s_{x,y} = X^{x(1, …, 1)} Z^{y c}, and all eight non-identity ones have full
   weight.
   - On copy i, E_i s_{x,y} is the identity for exactly one pair (x, y), since c_i ≠ 0. So the classes E·S correspond
@@ -681,8 +691,9 @@ of N(S). They split into 9^k classes E·S.
 
 The formula in (a) reproduces the dense spectra of the [[3, 1, 2]] and [[4, 2, 2]] compressions to 5 × 10^{−15}
 (`check_code_blocks.py`, part (a)). The weights for [[4, 2, 2]] are 1/3, 7/12, 17/24, 5/6 and 43/48, and the
-compression is not inside the Gurvits–Barnum ball. The test in (b) also certifies the [[3, 1, 2]] code again. We
-have not tested [[5, 3, 2]] (PPT, smallest weight 1/6) or [[6, 4, 2]] (smallest weight 0).
+compression is not inside the Gurvits–Barnum ball. The test in (b) also certifies the [[3, 1, 2]] code again. For
+[[5, 3, 2]] the weights are 1/6, 5/12, 13/24, 2/3, 35/48, 19/24 and 85/96. We have not tested [[6, 4, 2]], whose
+smallest weight is 0.
 
 ## References
 
@@ -723,3 +734,5 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_code_blocks.py`: Proposition 14. It checks the weight formula against dense spectra, builds the exact
   separability certificates for the [[3, 1, 2]] and [[4, 2, 2]] codes (needs SymPy), and computes the minimum weights
   of the [[b, b − 2, 2]] family.
+- `code/check_code_blocks_margin.py` (with `code/stab_fast.py`): Proposition 14(c) by the margin method, for
+  [[4, 2, 2]], [[5, 3, 2]] and the five-qutrit code. It takes about five minutes.
