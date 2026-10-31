@@ -28,6 +28,10 @@
   n = 5, rank two, range in ['Q'] (x) (C^3)^(x)2 (free copies may be entangled with the block): smallest q_n/||C||^2 = 0.3902 (>= 0 by removal and EP_2)
   n = 5, rank two, range in ['L'] (x) (C^3)^(x)3 (free copies may be entangled with the block): smallest q_n/||C||^2 = 0.3953 (>= 0 by removal and EP_3)
 
-real	0m1.911s
-user	0m0.000s
-sys	0m0.016s
+(f) Gurvits-Barnum purity test of the sector blocks (separable if Tr M^2/(Tr M)^2 <= 1/(9 - 1) = 0.125):
+  five-qutrit code: 81 sectors; block-diagonal residual 5.3e-15; largest block purity 0.1135
+  [[3,1,2]] code: largest block purity 0.1164
+
+real	0m3.199s
+user	0m0.015s
+sys	0m0.000s

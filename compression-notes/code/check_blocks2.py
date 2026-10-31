@@ -9,7 +9,9 @@
        the 12 vectors of four mutually unbiased bases, the resulting explicit separable decomposition, and a dense
        check at n = 4.
    (e) Proposition 12: the compression to Q is block diagonal over the nine syndrome sectors of the second side; each
-       block is the identity plus explicit product terms (MUB bases), so it is separable. Dense checks of removal."""
+       block is the identity plus explicit product terms (MUB bases), so it is separable. Dense checks of removal.
+   (f) Proposition 13: the compression to the five-qutrit code space is block diagonal over 81 syndrome sectors, and
+       every 3 x 3 block has purity at most 1/8, hence is separable by the Gurvits-Barnum ball; the same test for Q."""
 import itertools
 import numpy as np
 import sympy as sp
@@ -186,3 +188,43 @@ for n, blocks, extra, why in ((4, ["Q"], 1, "EP_1"), (5, ["Q"], 2, "EP_2"), (5, 
         worst = min(worst, q(C, n, 0.5) / np.vdot(C, C).real)
     print(f"  n = {n}, rank two, range in {blocks} (x) (C^3)^(x){extra} (free copies may be entangled with the block): "
           f"smallest q_n/||C||^2 = {worst:.4f} (>= 0 by removal and {why})", flush=True)
+
+# (f) the five-qutrit code: the compression is block diagonal over the 81 syndrome sectors of the second side, and every
+#     3 x 3 block has purity Tr M^2 / (Tr M)^2 <= 1/8, so it is separable (Gurvits-Barnum); same test for Q
+print("\n(f) Gurvits-Barnum purity test of the sector blocks (separable if Tr M^2/(Tr M)^2 <= 1/(9 - 1) = 0.125):")
+base5 = [(1, 0), (0, 1), (0, 2), (2, 0), (0, 0)]
+def pauli_string(lst):
+    M = np.eye(1)
+    for a, b in lst:
+        M = np.kron(M, Pauli(a, b))
+    return M
+G5 = [pauli_string(base5[-k:] + base5[:-k]) for k in range(4)]
+P5 = np.eye(243, dtype=complex)
+for g in G5:
+    P5 = P5 @ sum(np.linalg.matrix_power(g, k) for k in range(3)) / 3
+ev5, U5 = np.linalg.eigh((P5 + P5.conj().T) / 2); V5 = U5[:, ev5 > 0.5]
+Vt = V5.T.reshape([3] + [3] * 5); sig5 = np.zeros((3, 243, 3, 243), complex)
+Lt, Pt_, Qt = 'abcde', 'fghij', 'klmno'
+for J in itertools.product([0, 1], repeat=5):
+    bra = ''.join(Qt[c] if J[c] else Lt[c] for c in range(5)); ket = ''.join(Pt_[c] if J[c] else Lt[c] for c in range(5))
+    ops = [Vt.conj(), Vt]; subs = ['x' + bra, 'y' + ket]
+    for c in range(5):
+        if not J[c]:
+            ops.append(np.eye(3)); subs.append(Pt_[c] + Qt[c])
+    sig5 += (-0.5) ** sum(J) * np.einsum(','.join(subs) + '->x' + Pt_ + 'y' + Qt, *ops, optimize=True).reshape(3, 243, 3, 243)
+sig5 = sig5.reshape(729, 729)
+evs, Us = np.linalg.eig(G5[0] + 3 * G5[1] + 9 * G5[2] + 27 * G5[3])
+groups = {}
+for i, kk in enumerate(np.round(evs, 6)):
+    groups.setdefault(kk, []).append(i)
+blocks = [np.linalg.qr(Us[:, idx])[0] for idx in groups.values()]
+recon = np.zeros_like(sig5); worst = 0
+for Bsec in blocks:
+    emb = np.kron(np.eye(3), Bsec); M = emb.conj().T @ sig5 @ emb; M = (M + M.conj().T) / 2
+    worst = max(worst, np.trace(M @ M).real / np.trace(M).real ** 2); recon += emb @ M @ emb.conj().T
+print(f"  five-qutrit code: {len(blocks)} sectors; block-diagonal residual {np.abs(recon - sig5).max():.1e}; largest block purity {worst:.4f}")
+worstQ = 0
+for a, b in itertools.product(range(3), repeat=2):
+    Bsec = np.kron(np.kron(Pauli(a, b), np.eye(3)), np.eye(3)) @ Qn; emb = np.kron(np.eye(3), Bsec)
+    M = emb.conj().T @ sQ @ emb; M = (M + M.conj().T) / 2; worstQ = max(worstQ, np.trace(M @ M).real / np.trace(M).real ** 2)
+print(f"  [[3,1,2]] code: largest block purity {worstQ:.4f}")

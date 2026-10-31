@@ -17,8 +17,8 @@ These notes collect several small results about the n-copy endpoint inequality, 
   four-copy endpoint;
 - exact positive spectra for the antisymmetric subspace of two copies and the qutrit [[3, 1, 2]] code. These give
   every-n, every-rank classes containing operators thick at every copy, with ranges of dimension up to 3^{n/2}.
-- removal lemmas for a pair and a triple of copies: the compressions to the antisymmetric subspace and to the
-  [[3, 1, 2]] code space are separable, with explicit decompositions. Iterating them gives the endpoint for every n
+- removal lemmas for blocks of two, three and five copies: the compressions to the antisymmetric subspace, the
+  [[3, 1, 2]] code space and the five-qutrit code space are separable. Iterating them gives the endpoint for every n
   whenever the range lies in a product of such blocks and planes, with at most three copies left free.
 
 **Nothing here settles the all-copy problem.**
@@ -582,11 +582,14 @@ Remarks.
     diagonal in a product of two of the mutually unbiased bases, so it is a sum of three product projectors.
 
   So σ_Q is separable, with 36 explicit product terms besides identities (`check_blocks2.py`, part (e)).
+  A shorter proof: every block M has purity Tr M²/(Tr M)² ≤ 0.117 < 1/8, so it is separable by the theorem of
+  Gurvits and Barnum [GB] (a state on C³ ⊗ C³ with Tr ρ² ≤ 1/8 is separable).
 - (b) If the range of a rank-two C lies in (U ⊗ U′ ⊗ U″)Q at three copies, tensored with the rest, then EP_{n−3}
   implies q_n(1/2, C) ≥ 0. The proof is that of Proposition 11. Since EP_1, EP_2 and EP_3 hold, the four-, five- and
   six-copy endpoint inequalities hold for every such C.
 - (c) Suppose the range of C lies in S_1 ⊗ ⋯ ⊗ S_m ⊗ (C³)^{⊗r}, where the S_i sit on disjoint blocks of copies. Each S_i
-  is a plane at one copy, or a local-unitary image of Λ at two copies or of Q at three copies. Then EP_r implies
+  is a plane at one copy, or a local-unitary image of Λ at two copies, of Q at three copies or of the five-qutrit code
+  space at five copies (Proposition 13). Then EP_r implies
   q_n(1/2, C) ≥ 0. Some blocks may use the co-range instead of the range. Since EP_r holds for r ≤ 3, the endpoint
   inequality holds for every n, with no unproven input, whenever at most three copies are left outside the blocks.
   The vectors in the range may be entangled between the blocks and the remaining copies.
@@ -599,6 +602,17 @@ Remarks.
   under exchanging the two sides.
 - At the end r copies remain, and EP_r applies. ∎
 
+**Proposition 13 (removing a five-qutrit code block).** The one-sided compression of ρ^{⊗5} to the code space of the
+five-qutrit code of Section 8 is separable. So if the range of a rank-two C lies in a local-unitary image of that code
+space at five copies, tensored with the rest, then EP_{n−5} implies q_n(1/2, C) ≥ 0. With at most three free copies
+(Proposition 12(c)), this gives the endpoint at up to eight copies for such operators.
+
+*Proof.* On the second side, the 243-dimensional space splits into the 81 syndrome sectors of the code (the joint
+eigenspaces of the four stabiliser generators), each of dimension 3. The compression is block diagonal in them; the
+blocks are 3 × 3 operators on (logical) ⊗ (sector). Every block has purity Tr M²/(Tr M)² ≤ 0.1135 < 1/8, so it is
+separable by [GB], and so is their sum. The code-sector block is (4/9)I − (19/288)F, the coefficients of
+Proposition 8 (`check_blocks2.py`, part (f)). Removal is as in Proposition 11. ∎
+
 ## References
 
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.
@@ -607,6 +621,8 @@ Remarks.
   and finite-copy extensions, arXiv:2607.24479.
 - [FGP] Fu, Gao, Park, A solution to 2-copy distillability of Werner states, arXiv:2607.21367.
 - [SC] Z. Song, L. Chen, A partial-trace matrix inequality and Werner-state distillability, arXiv:2607.23416.
+- [GB] L. Gurvits, H. Barnum, Largest separable balls around the maximally mixed bipartite quantum state, Phys. Rev. A
+  66, 062311 (2002).
 
 ## Code
 
@@ -631,4 +647,5 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_removal.py`: Section 9, removal by compression. It checks the identity against the dense q_4, shows
   that the conjugated compression gives a different value, and prints the triple margins for random C.
 - `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and
-  checks the product bound against the dense q_n. It also checks the separable decomposition of Proposition 11.
+  checks the product bound against the dense q_n. It also checks the separable decompositions of Propositions 11 and
+  12 and the purity test of Proposition 13.
