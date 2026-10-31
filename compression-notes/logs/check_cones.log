@@ -1,0 +1,34 @@
+(a) site-dependent transfer identity:
+  n = 2: bond dimensions [2, 3, 1] (range), [2, 3, 1] (co-range), max 3; transfer +3.435505690772e+02, dense q_n +3.435505690772e+02
+  n = 3: bond dimensions [2, 6, 3, 1] (range), [2, 6, 3, 1] (co-range), max 6; transfer +3.766542692769e+03, dense q_n +3.766542692769e+03
+  n = 4: bond dimensions [2, 6, 9, 3, 1] (range), [2, 6, 9, 3, 1] (co-range), max 9; transfer +2.364623019140e+04, dense q_n +2.364623019140e+04
+  n = 5: bond dimensions [2, 6, 18, 9, 3, 1] (range), [2, 6, 18, 9, 3, 1] (co-range), max 18; transfer +2.067237878016e+05, dense q_n +2.067237878016e+05
+
+(b) KL_1 (two copies -> 3 x 3; KL_1 model = 6 filterings of rho + 12 products):
+  in-cone control (sum of 4 filterings of rho): 8.2e-08
+  out-of-cone control (antisymmetric projector, 1-distillable): 4.3e-01
+  a random filtering of rho^(x)2 is separable: products only (20) 1.2e-07
+  NPT filtering, lambda_min(Y^G)/Tr Y = -0.0101: products only (20) 2.3e-02; one filtering of rho 1.4e-01; KL_1 model 4.5e-07
+  NPT filtering, lambda_min(Y^G)/Tr Y = -0.0306: products only (20) 7.5e-02; one filtering of rho 1.0e-01; KL_1 model 2.0e-07
+
+(c) KL_2 (three copies -> 9 x 9; KL_2 model = 96 filterings of rho^(x)2 + 240 products):
+  out-of-cone control (P_a (x) P, 2-distillable): 4.3e-01
+  Tiles (x) |00><00| (PPT entangled): 6.6e-02
+  a random filtering of rho^(x)3 is separable: products only (700) 1.8e-06
+  NPT filtering, lambda_min(Y^G)/Tr Y = -0.0031: products only (400) 2.1e-02; one filtering of rho^(x)2 4.3e-01; KL_2 model 4.8e-05
+  NPT filtering, lambda_min(Y^G)/Tr Y = -0.0159: products only (400) 9.9e-02; one filtering of rho^(x)2 3.5e-01; KL_2 model 7.1e-05
+
+(d) without the dimension bound (9 x 9 filterings of one rho; 60 filterings + 120 products):
+  in-cone control: 1.4e-04
+  rho (x) rho itself: 1.2e-01
+
+(e) Schmidt-number check for KL_1: min over filterings of lambda_min(2 Tr_B(Y) (x) I - Y) / Tr Y
+  smallest value found: -2.84e-16 (a negative value would refute KL_1)
+
+(f) Calibration: the error floor of the fits on extreme targets. A single 6 x 6 filtering of rho^(x)2 is a generator
+    of K_2, so it is in the cone exactly. Large models started at random fit it poorly; a one-term model fits it.
+  48 filterings + 96 products, random start: 6.2e-04; one filtering: 3.6e-07
+
+real	12m35.453s
+user	0m0.015s
+sys	0m0.015s
