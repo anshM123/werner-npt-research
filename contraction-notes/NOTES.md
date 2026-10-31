@@ -2,8 +2,8 @@
 
 Ansh Mishra and Aryan Senthilkumar, October 2026.
 
-These notes record two small positive results and one negative one about passing the endpoint inequality from n − 1
-copies to n copies. They do not settle the all-copy problem.
+These notes record small positive results and one negative one about passing the endpoint inequality from n − 1
+copies to n copies. The main one is an explicit class, thick at every copy, on which the inequality holds for every n. They do not settle the all-copy problem.
 
 ## Setting
 
@@ -59,6 +59,17 @@ combine into ⟨v_k, W v_k⟩, which leaves the stated remainder. ∎
 
 On the class, n copies follow from the full (n − 1)-copy statement. The argument is one step only: five copies would
 need the full four-copy statement.
+
+**Corollary 3 (a nested class, every n).** Let K_1 be the operators of rank at most two on one copy. For n ≥ 2 let
+K_n be the operators that, after a unitary on each copy and a permutation of the copies, have the form above with
+tail operator X in K_{n−1}. Then q_n(t, C) ≥ 0 for every C in K_n, every n ≥ 1 and every 0 ≤ t ≤ 1/2.
+
+*Proof.* Induction on n. For n = 1, q_1(t, X) ≥ (1 − 2t)‖X‖² because |Tr X|² ≤ 2‖X‖² for rank two. For n ≥ 2,
+Theorem 1 gives q_n(t, C) ≥ (1 − t) q_{n−1}(t, X) ≥ 0. ∎
+
+Corollary 3 uses no unproven input. Random members of K_n are thick at every copy: the reductions of the range and of
+the co-range have rank three, and τ_s = Tr(P_s Q_s) = 3 > 2, at every copy we checked (`check_nested.py`, n ≤ 4). So
+thin-copy removal reduces nothing here. K_n is a measure-zero family, but it contains P ⊗ |c⟩⟨c|^{⊗(n−1)}.
 
 **Remarks.**
 - **The class is not covered by earlier results.** A generic member has three-dimensional local supports on the
@@ -159,5 +170,6 @@ Python 3 with NumPy. Outputs are in `logs/`.
 - `code/werner.py`: shared helpers.
 - `code/check_aligned.py`: Section 1. It checks the crossed pairing and the identity of Theorem 1 on random members,
   for n = 2, 3, 4 and t ∈ {0.1, 0.3, 0.45, 0.5}.
+- `code/check_nested.py`: Corollary 3. It checks positivity and thickness of random members of K_n, for n = 2, 3, 4.
 - `code/check_zero_family.py`: Section 2. It computes Hessians at P ⊗ |a⟩⟨b| for random entangled a, b, at n = 3, 4.
 - `code/check_sci_counterexample.py`: Section 3. It re-checks the stored operator against SCI.
