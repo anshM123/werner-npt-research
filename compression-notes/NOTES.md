@@ -839,6 +839,13 @@ operators and the filterings (a ⊗ b) ρ (a ⊗ b)^* of one Werner copy.
     is inconclusive; it shows no gap.
   - The perturbation test also passes at m = 5 and 6 (δ = 0.1: PT-min −0.043 and −0.031, fits 1.0 × 10^{−8}
     and 7.1 × 10^{−9}).
+  - Dual side, m = 2 (`check_f3_dual.py`). Every functional that is ≥ 0 on K_1(3) must stay ≥ 0 on all 3 × 3
+    filterings of ρ ⊗ ρ. The Tiles state is 0.033 from K_1(3), and the residual of its projection, W = X* − T, is
+    such a functional up to the fit error. These are genuinely non-decomposable directions: no functional W with
+    W ⊗ ρ decomposable separates Tiles from K_1(3) (`check_tiles_decomposable.py`; the SDP optimum is 0, and
+    positive with 5% noise). Over unit filters, the minimum of ⟨W, X⟩/Tr X is the same for one and for two copies:
+    −1.5 × 10^{−8} (Tiles) and −4 × 10^{−9} (Tiles with 5% noise). The worst two-copy filtering is a filtering of
+    one copy, as F3 requires.
   - F3 also needs every PPT 3 × 3 filtering to lie in K_1(3); a PPT-entangled filtering of Tiles type would
     violate it. An adversary that keeps the target strictly PPT and maximises the residual of a fit by products
     alone (`check_ppt_filterings.py`) ends with worst targets fitting to 4–6 × 10^{−9} (m = 2, two seeds;
@@ -926,6 +933,8 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   identities, and a fit of ρ^{⊗2} by Schmidt-rank-2 terms; the fit needs PyTorch, about two minutes).
 - `code/check_f3.py` (`python check_f3.py 3`, `4`) and `code/check_f3_adversary.py` (`python check_f3_adversary.py 3 16 80 60
   0 0.2`): Conjecture F3 in Section 11 (needs PyTorch; about fifteen and five minutes).
+- `code/check_f3_dual.py`: the dual-side check of F3 at two copies in Section 11 (needs PyTorch).
+- `code/check_tiles_decomposable.py`: the decomposable-witness SDP for the Tiles state in Section 11 (cvxpy).
 - `code/check_ppt_filterings.py` (`python check_ppt_filterings.py 2 40 80 0`): the PPT-filtering adversary in Section 11.
 - `code/check_one_sided.py` (`python check_one_sided.py 2 4`) and `code/check_one_sided_adversary.py`
   (`python check_one_sided_adversary.py 2 120 0 60`): one-sided separability in Section 11 (needs cvxpy with Clarabel

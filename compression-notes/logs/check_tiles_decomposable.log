@@ -1,0 +1,4 @@
+[Tiles] min <W, target> over W with W (x) rho decomposable: +0.00000
+   spectrum of W: [0.  0.  0.  0.  0.2 0.2 0.2 0.2 0.2]
+[Tiles + 5% noise] min <W, target> over W with W (x) rho decomposable: +0.00556
+   spectrum of W: [0.  0.  0.  0.  0.2 0.2 0.2 0.2 0.2]

@@ -1,0 +1,4 @@
+[Tiles] distance to K_1(3) (fit): 0.0331; <W, T> = -1.0931e-03
+[Tiles] v_1(W) = -1.5236e-08 (one-copy filterings), v_2(W) = -1.5236e-08 (two-copy filterings)
+[Tiles + 5% noise] distance to K_1(3) (fit): 0.0207; <W, T> = -4.2911e-04
+[Tiles + 5% noise] v_1(W) = -3.7852e-09 (one-copy filterings), v_2(W) = -3.7852e-09 (two-copy filterings)
