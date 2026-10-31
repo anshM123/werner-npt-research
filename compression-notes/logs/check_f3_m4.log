@@ -1,0 +1,6 @@
+control in K_1(3): fit 1.35e-08
+control antisymmetric projector (outside): fit 4.26e-01
+m = 4, delta 0.0: PT-min -0.0667, K_1(3) fit 2.13e-04
+m = 4, delta 0.1: PT-min -0.0513, K_1(3) fit 1.33e-08
+m = 4, delta 0.2: PT-min -0.0170, K_1(3) fit 5.46e-09
+m = 4, delta 0.3: PT-min +0.0174, K_1(3) fit 7.08e-09

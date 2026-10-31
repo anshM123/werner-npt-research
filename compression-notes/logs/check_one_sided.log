@@ -1,0 +1,7 @@
+n = 2, span{|00>,|11>}: PT-min -1.73e-18, rank 18, bosonic 4-ext+PPT: optimal, inner eps -2.66e-08
+n = 2, span{(|01>-|10>)/r2,|22>}: PT-min +1.17e-02, rank 18, bosonic 4-ext+PPT: optimal, inner eps -2.11e-01
+n = 2, span{Phi3,|01>}: PT-min +1.09e-02, rank 18, bosonic 4-ext+PPT: optimal, inner eps -1.97e-01
+n = 2, random 0: PT-min +9.65e-03, rank 18, bosonic 4-ext+PPT: optimal, inner eps -1.74e-01
+n = 2, random 1: PT-min +9.68e-03, rank 18, bosonic 4-ext+PPT: optimal, inner eps -1.74e-01
+n = 2, random 2: PT-min +7.16e-03, rank 18, bosonic 4-ext+PPT: optimal, inner eps -1.29e-01
+n = 2, random 3: PT-min +9.26e-03, rank 18, bosonic 4-ext+PPT: optimal, inner eps -1.67e-01

@@ -1,0 +1,10 @@
+labels ['sss', 'ssa', 'sas', 'saa', 'ass', 'asa', 'aas', 'aaa']
+w = [ 27.    40.5   40.5   60.75  -9.   -13.5  -13.5  -20.25]
+Tr Q = [108.  54.  54.  27.  36.  18.  18.   9.]
+round 0: LP value -2.25000e+00 | c = [0.      0.      0.      0.      0.      0.      0.      0.11111] | oracle min -9.259e-03
+round 1: LP value -7.50000e-01 | c = [ 0.       0.       0.       0.       0.       0.05556  0.      -0.     ] | oracle min -6.944e-03
+round 2: LP value -7.50000e-01 | c = [ 0.       0.       0.       0.       0.       0.       0.05556 -0.     ] | oracle min -6.944e-03
+round 3: LP value -6.49641e-01 | c = [0.00372 0.      0.      0.      0.      0.01095 0.01115 0.0223 ] | oracle min -2.083e-03
+round 4: LP value -1.73077e-01 | c = [0.00427 0.      0.0057  0.      0.      0.      0.      0.02564] | oracle min -1.306e-03
+round 5: LP value -1.68919e-01 | c = [0.0035  0.      0.00601 0.      0.      0.00601 0.      0.02102] | oracle min -2.304e-19
+no violated cut found: candidate dual certificate (CD would be FALSE if the oracle is right)
