@@ -1,0 +1,45 @@
+== adv_lmD_m1_D5_s0.npy
+seed fit J = 16, P = 80: 1.310e-02
+seed fit J = 32, P = 200: 1.299e-02
+D = 5, PT-min of X: -0.0113
+round 0: columns 1128, residual 1.299e-02, best new alignment <R, col> = +5.176e-06
+round 1: columns 1215, residual 1.299e-02, best new alignment <R, col> = +5.248e-06
+round 2: columns 1307, residual 1.299e-02, best new alignment <R, col> = +3.725e-06
+round 3: columns 1391, residual 1.299e-02, best new alignment <R, col> = +2.845e-06
+round 4: columns 1479, residual 1.299e-02, best new alignment <R, col> = +3.115e-06
+round 5: columns 1569, residual 1.298e-02, best new alignment <R, col> = +3.208e-06
+round 6: columns 1659, residual 1.298e-02, best new alignment <R, col> = +2.472e-06
+round 7: columns 1746, residual 1.298e-02, best new alignment <R, col> = +3.031e-06
+round 8: columns 1832, residual 1.297e-02, best new alignment <R, col> = +1.956e-06
+round 9: columns 1922, residual 1.297e-02, best new alignment <R, col> = +2.402e-06
+round 10: columns 2008, residual 1.296e-02, best new alignment <R, col> = +2.495e-06
+round 11: columns 2085, residual 1.296e-02, best new alignment <R, col> = +2.021e-06
+round 12: columns 2168, residual 1.296e-02, best new alignment <R, col> = +1.956e-06
+round 13: columns 2252, residual 1.295e-02, best new alignment <R, col> = +1.685e-06
+round 14: columns 2334, residual 1.294e-02, best new alignment <R, col> = +1.423e-06
+round 15: columns 2414, residual 1.294e-02, best new alignment <R, col> = +1.882e-06
+round 16: columns 2495, residual 1.293e-02, best new alignment <R, col> = +1.733e-06
+round 17: columns 2579, residual 1.292e-02, best new alignment <R, col> = +1.279e-06
+round 18: columns 2649, residual 1.292e-02, best new alignment <R, col> = +1.509e-06
+round 19: columns 2720, residual 1.291e-02, best new alignment <R, col> = +1.252e-06
+round 20: columns 2806, residual 1.290e-02, best new alignment <R, col> = +1.627e-06
+round 21: columns 2885, residual 1.290e-02, best new alignment <R, col> = +1.426e-06
+round 22: columns 2958, residual 1.289e-02, best new alignment <R, col> = +1.224e-06
+round 23: columns 3035, residual 1.288e-02, best new alignment <R, col> = +1.345e-06
+round 24: columns 3115, residual 1.287e-02, best new alignment <R, col> = +1.303e-06
+round 25: columns 3191, residual 1.286e-02, best new alignment <R, col> = +1.072e-06
+round 26: columns 3267, residual 1.285e-02, best new alignment <R, col> = +1.107e-06
+round 27: columns 3340, residual 1.285e-02, best new alignment <R, col> = +8.620e-07
+round 28: columns 3415, residual 1.284e-02, best new alignment <R, col> = +9.686e-07
+round 29: columns 3496, residual 1.283e-02, best new alignment <R, col> = +1.066e-06
+round 30: columns 3562, residual 1.282e-02, best new alignment <R, col> = +1.519e-06
+round 31: columns 3626, residual 1.282e-02, best new alignment <R, col> = +7.366e-07
+round 32: columns 3693, residual 1.281e-02, best new alignment <R, col> = +6.484e-07
+round 33: columns 3757, residual 1.281e-02, best new alignment <R, col> = +6.534e-07
+round 34: columns 3826, residual 1.280e-02, best new alignment <R, col> = +7.202e-07
+round 35: columns 3889, residual 1.280e-02, best new alignment <R, col> = +6.782e-07
+round 36: columns 3945, residual 1.279e-02, best new alignment <R, col> = +6.609e-07
+round 37: columns 4010, residual 1.279e-02, best new alignment <R, col> = +5.217e-07
+round 38: columns 4067, residual 1.278e-02, best new alignment <R, col> = +7.029e-07
+round 39: columns 4132, residual 1.278e-02, best new alignment <R, col> = +6.263e-07
+== adv_lmD_m1_D6_s0.npy

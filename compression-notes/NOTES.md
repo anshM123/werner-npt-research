@@ -95,6 +95,20 @@ at two copies (`data/`):
   q_2 = 0.289, where the best w gives +0.283;
 - the top eigenvector of M_s: value −0.0077, where the best w gives +0.0062.
 
+**No basis average works at zeros (proved).** By the trace identity, QC would follow if at some copy some
+orthonormal basis had Σ_k q_{n−1}(⟨e_k|C|e_k⟩) ≤ 4 q_n(C). This fails for every n ≥ 2 on the zero
+C = |0^n⟩⟨0^n| − (−1)^n |1^n⟩⟨1^n|.
+- At any copy and in any orthonormal basis, C_kk = |a_k|² |0^{n−1}⟩⟨0^{n−1}| − (−1)^n |b_k|² |1^{n−1}⟩⟨1^{n−1}|, with
+  a_k = ⟨e_k|0⟩ and b_k = ⟨e_k|1⟩. Expanding the partial traces gives q_{n−1}(C_kk) = 2^{−(n−1)} (|a_k|² + |b_k|²)².
+- Since Σ_k (|a_k|² + |b_k|²) = 2, Cauchy–Schwarz gives Σ_k Δ_s(e_k) = −(1/2) Σ_k q_{n−1}(C_kk) ≤ −(1/3) 2^{−(n−2)}.
+- QC itself holds at C: w = |2⟩ gives Δ_s(w) = 0 (`check_block_average.py`).
+
+An adversary over rank-two C that maximises over copies and bases finds nothing worse than this family at n = 2
+(−1/12 per unit norm). The mechanism is general: at a zero the maximum of Δ is 0 and is attained only in thin
+directions, so any average that puts weight elsewhere is negative. Averaged rules that draw w from a C-dependent
+distribution (an angular Gaussian with covariance a power of the local support operator) also failed at two copies
+in our tests.
+
 **Remark (first zeros).** Suppose EP_{n−1} holds and EP_n fails. Then [T2, Thm. 6.3] gives t* < 1/2 and C* of rank two
 minimising q_n(t*, ·)/‖·‖² with value 0. The filtered operators (Q + aP)C*(Q + bP), with P = |w⟩⟨w| at copy s and
 Q = I − P, have rank at most two. So the value at a = b = 1 is a double zero, and expanding gives
@@ -919,6 +933,7 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   adversarial operators in `data/`.
 - `code/check_qc_fast.py`: the five-copy QC adversary of Section 1 (needs PyTorch; `python check_qc_fast.py 5 120`, about
   fifteen minutes).
+- `code/check_block_average.py`: the remark on basis averages in Section 1.
 - `code/check_averaging.py`: Section 2. It averages exactly over the four mutually unbiased bases of C³ (a 2-design).
 - `code/check_monogamy.py`: Section 3.
 - `code/check_mps.py`: Section 4. It checks Proposition 4 against dense q_n, shows a Perron operator, and re-evaluates a
