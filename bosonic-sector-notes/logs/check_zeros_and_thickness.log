@@ -1,0 +1,16 @@
+(a) zeros at n = 3
+  q/||C||^2 = -2.8e-16   singular values [0.7071 0.7071]   marginal of P_ran + P_coran (normalised) [0.5 0.5 0. ]
+  q/||C||^2 = -7.3e-17   singular values [0.7071 0.7071]   marginal of P_ran + P_coran (normalised) [0.5 0.5 0. ]
+  q/||C||^2 = +2.4e-16   singular values [0.7071 0.7071]   marginal of P_ran + P_coran (normalised) [0.5 0.5 0. ]
+  q/||C||^2 = +9.3e-17   singular values [0.7071 0.7071]   marginal of P_ran + P_coran (normalised) [ 0.5  0.5 -0. ]
+  q/||C||^2 = -1.1e-16   singular values [0.7071 0.7071]   marginal of P_ran + P_coran (normalised) [0.5 0.5 0. ]
+  q/||C||^2 = +1.1e-16   singular values [0.7071 0.7071]   marginal of P_ran + P_coran (normalised) [0.5 0.5 0. ]
+  q/||C||^2 = +1.1e-16   singular values [0.7071 0.7071]   marginal of P_ran + P_coran (normalised) [ 0.5  0.5 -0. ]
+  q/||C||^2 = -1.8e-16   singular values [0.7071 0.7071]   marginal of P_ran + P_coran (normalised) [ 0.5  0.5 -0. ]
+(b) thickness-constrained minima and their best qubit compressions
+  n=2 tau=0.01: thickness 0.0053  R(C) +0.01031  min_z R(C_z) +0.00007  gap -1.02e-02
+  n=2 tau=0.06: thickness 0.0578  R(C) +0.08000  min_z R(C_z) +0.00907  gap -7.09e-02
+  n=2 tau=0.15: thickness 0.1495  R(C) +0.12490  min_z R(C_z) +0.05200  gap -7.29e-02
+  n=3 tau=0.01: thickness 0.0075  R(C) +0.00750  min_z R(C_z) +0.00000  gap -7.50e-03
+  n=3 tau=0.06: thickness 0.0585  R(C) +0.05403  min_z R(C_z) +0.00035  gap -5.37e-02
+  n=3 tau=0.15: thickness 0.1497  R(C) +0.07949  min_z R(C_z) +0.03938  gap -4.01e-02

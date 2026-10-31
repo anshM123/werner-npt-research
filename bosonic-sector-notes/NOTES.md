@@ -1,0 +1,163 @@
+# The bosonic sector of the Werner endpoint
+
+Ansh Mishra and Aryan Senthilkumar, 30 October 2026
+
+These notes study the all-copy endpoint form on operators whose range and co-range lie in the symmetric subspace. We
+call this the bosonic sector. Results are labelled **proved** or **numerical**. The scripts in `code/` check every
+formula and claim below, and their output is in `logs/`.
+
+## Setting
+
+For an operator C on (C^3)^{⊗n} and 0 ≤ t ≤ 1/2, let
+
+    q_n(t, C) = Σ_J (−t)^{|J|} ‖Tr_J C‖_2²,
+
+with J running over subsets of the n sites. The qutrit Werner state at α = 1/2 is n-copy undistillable if and only if
+q_n(1/2, C) ≥ 0 for every C of rank at most two.
+
+The bosonic sector is the set of C with P C P = C, where P projects onto Sym^n(C^3). It is the natural test class
+for every n at once. The all-copy statement is still open even here.
+
+## 1. Formulas (proved)
+
+**(a) Annihilation form.** Let a_i : Sym^m → Sym^{m−1} be the annihilation operators in the occupation basis, and
+A(C) = Σ_i a_i C a_i^*. For bosonic C every partial trace over j sites equals ((n−j)!/n!) A^j C, so
+
+    q_n(t, C) = Σ_j (−t)^j (n−j)!/(j! n!) ‖A^j C‖².
+
+**(b) SU(3) spectrum.**
+- End(Sym^n C^3) is the direct sum of the irreducible components V_(k,k), k = 0, …, n, each of dimension (k+1)^3
+  and multiplicity one.
+- A^*A acts on the V_(k,k) component of End(Sym^m) as μ_{m,k} = (m−k)(m+k+2).
+- Hence q_n(t, C) = Σ_k γ_{n,k}(t) ‖Π_k C‖², with
+
+      γ_{n,k}(t) = Σ_j (−t)^j C(n−k, j) C(n+k+2, j) / C(n, j).
+
+- At t = 1/2:
+  - γ_{n,n} = 1;
+  - γ_{n,n−1} = −1/(2n) and γ_{n,n−2} = 1/(2(n−1));
+  - γ_{n,0} = 2^{−n−2} (1 + (−1)^n (2n+3)).
+- The sign of γ_{n,k} is (−1)^{n−k}. We checked this for n ≤ 39.
+- So the form is indefinite on End(Sym^n), and a proof must use the rank.
+
+**(c) Pair form.** Pair site i of the range with site i of the co-range, so that |C⟩⟩ ∈ (C^3 ⊗ C^3)^{⊗n}. Put
+φ = Σ_i |ii⟩/√3 and B = I − 3t |φ⟩⟨φ|. For every C on (C^3)^{⊗n},
+
+    q_n(t, C) = ⟨⟨C| B^{⊗n} |C⟩⟩,
+
+because ‖Tr_J C‖² = 3^{|J|} ⟨⟨C| (|φ⟩⟨φ|)^{⊗J} ⊗ I |C⟩⟩. For bosonic C, |C⟩⟩ lies in Sym^n(C^9), on which B^{⊗n} acts as
+the symmetric power of B.
+
+Check: `code/check_formulas.py`.
+
+## 2. Occupation-sector positivity (proved, every n)
+
+Fix a unit vector z ∈ C^3 and put K = z^⊥. Let E_l be the projector onto the part of Sym^n(C^3) with exactly l
+particles in mode z, that is, onto z^l · Sym^{n−l}(K).
+
+**Theorem.** Let 0 ≤ t ≤ 1/2 and let C ∈ End(Sym^n C^3) have any rank.
+1. If the range of C lies in some E_l, then q_n(t, C) ≥ 0.
+2. The same holds if the co-range lies in some E_m.
+3. More generally, q_n(t, C) ≥ 0 whenever, among the blocks E_l C E_m, at most one is nonzero on each diagonal
+   l − m = δ.
+
+*Proof.*
+- **Basis.** Let 0, 1 be an orthonormal basis of K. Take the orthonormal basis of C^3 ⊗ C^3
+
+      f = (|00⟩ + |11⟩)/√2,  g = |zz⟩,  s_1 = (|00⟩ − |11⟩)/√2,  s_2 = |01⟩,  s_3 = |10⟩,
+      s_4 = |0z⟩,  s_5 = |1z⟩,  s_6 = |z0⟩,  s_7 = |z1⟩.
+
+  Then φ = √(2/3) f + √(1/3) g. So B is the identity on the span of the s_k, and on span{f, g} it is
+
+      B_T = [[1 − 2t, −√2 t], [−√2 t, 1 − t]].
+
+- **Action of B^{⊗n}.** Use the occupation basis |a, b, σ⟩ of Sym^n(C^9): a copies of f, b copies of g, and σ the
+  occupations of s_1, …, s_7. Then B^{⊗n} maps |a, b, σ⟩ into the span of the |a′, b′, σ⟩ with a′ + b′ = a + b,
+  through the symmetric power of B_T.
+- **Statement 1.** The z-number on the range side of |a, b, σ⟩ is b + σ_6 + σ_7. If the range of C lies in E_l, then
+  |C⟩⟩ is a combination of basis states with b + σ_6 + σ_7 = l. On these states b′ = b and a′ = a, so B^{⊗n} acts
+  diagonally. Its entries are the coefficients of f^a g^b in (B_ff f + B_gf g)^a (B_fg f + B_gg g)^b:
+
+      d(a, b) = Σ_j C(a, j) C(b, j) (1 − 2t)^{a−j} (2t²)^j (1 − t)^{b−j}.
+
+  For 0 ≤ t ≤ 1/2 every term is nonnegative. Hence q_n(t, C) = Σ d(a, b) |⟨⟨a, b, σ|C⟩⟩|² ≥ 0.
+- **Statement 2** follows from q_n(t, C^*) = q_n(t, C).
+- **Statement 3.** q_n is invariant under C ↦ U^{⊗n} C U^{*⊗n} with U = diag(1, 1, e^{iθ}) in the basis (0, 1, z).
+  The block E_l C E_m picks up the phase e^{iθ(l−m)}. So blocks on different diagonals are orthogonal for the
+  q-form, and q_n(t, C) is the sum of the values on the single blocks. ∎
+
+At t = 1/2 the entries are d(a, b) = C(b, a) 2^{−b}, and they vanish when a > b.
+
+Remarks.
+- **The case l = 0 needs no symmetry.** Let S_z = {X ∈ End(C^3) : ⟨z|X|z⟩ = 0}. Then B(X) = ‖X‖² − t|Tr X|²
+  satisfies B(X) ≥ (1 − 2t)‖X‖² on S_z, since Tr X = Tr X_KK and |Tr X_KK|² ≤ 2‖X_KK‖². Hence
+  q_n(t, C) ≥ (1 − 2t)^n ‖C‖² for every C in S_{z_1} ⊗ ⋯ ⊗ S_{z_n}, of any rank. This includes every C whose range
+  or co-range lies in a product of qubits K_1 ⊗ ⋯ ⊗ K_n.
+- **For l ≥ 1 the sectors contain thick operators.** Their range has a one-site marginal of full rank. An example at
+  n = 2 is the range span{Sym(z ⊗ e_0), Sym(z ⊗ e_1)}.
+- **The argument is genuinely bosonic.** For distinguishable sites, the subspace "exactly l of the range sites equal
+  z" is not positive. At n = 2, l = 1, t = 1/2, the exchange between (f at site 1, g at site 2) and (g at site 1,
+  f at site 2) gives the block [[0, 1/2], [1/2, 0]]. Symmetrisation keeps only the combination with eigenvalue +1/2.
+- **Blocks on one diagonal do interfere.** Two blocks on the same diagonal already give a negative eigenvalue at
+  n = 2, namely −1/4. So the theorem does not give the bosonic sector by itself. Rank two is needed exactly to control
+  this interference (Section 4).
+
+Check: `code/check_sector_theorem.py`.
+- It checks the diagonal structure directly for n ≤ 3: the largest off-diagonal entry is 6 × 10^{-17}, and the
+  diagonal agrees with d(a, b) to 4 × 10^{-16}.
+- It computes the minimum eigenvalue on every sector E_l for n ≤ 5.
+- It checks all two- and three-block patterns for n ≤ 4.
+
+## 3. Numerical observations
+
+These come from local optimisation, so they are evidence, not certificates.
+- **The minimum is 0.** Over rank-two bosonic C, the minimum of q_n(1/2, C)/‖C‖² is 0, to within 10^{-15}, for
+  n = 2, …, 6. An earlier run also gave 0 at n = 7.
+- **The zeros found are qubit-supported.**
+  - At n = 3, every zero found has two equal singular values, and the one-site marginal of range plus co-range has
+    spectrum (1/2, 1/2, 0).
+  - Inside Sym^n(K) the form equals ‖P^{⊗n} C‖², where P projects onto the traceless operators on K, so it is
+    positive semidefinite there.
+  - So every rank-two C built only from SU(2) spins l with l ≢ n (mod 2) is a zero. These form a continuous family,
+    which contains |0^n⟩⟨0^n| − (−1)^n |1^n⟩⟨1^n|.
+- **The worst case is qubit-supported along the whole Werner family.**
+  - For t ∈ {1/3, 0.4, 0.45, 0.48, 0.49, 1/2}, the minimum over all rank-two bosonic C equals the minimum over
+    qubit-supported ones to six digits. This holds for n ≤ 4 here, and for n = 5 in an earlier run.
+  - Near t = 1/2 the minimum is about n 2^{1−n} (1 − 2t). That is the value at |0^n⟩⟨0^n| − (−1)^n |1^n⟩⟨1^n|.
+- **The margin is linear in thickness.**
+  - Restrict to operators whose thickness is at least τ. Thickness here is the smallest eigenvalue of the one-site
+    marginal of (P_ran + P_coran)/4.
+  - The minimum then grows roughly linearly in τ: about 2τ at n = 2 and about τ at n = 3, for small τ.
+  - In each minimiser the best qubit compression C_z = E_0 C E_0 has a smaller ratio q/‖·‖². This is consistent with
+    the compression inequality min_z q(C_z)/‖C_z‖² ≤ q(C)/‖C‖², which would imply the bosonic sector.
+
+What does not work:
+- **Splitting Σ γ_k ‖Π_k C‖² into nonnegative adjacent pairs.** Only the top pair, ‖Π_n C‖² ≥ ‖Π_{n−1} C‖²/(2n),
+  survives numerically for rank two.
+- **Decomposable certificates.** One could try q_n written as a positive combination of the one-copy forms
+  q_1(A^* C A), plus a positive semidefinite form. At n = 2, no such term with A ≠ 0 vanishes on the whole zero set.
+  - The zeros include |uu⟩⟨uu| − |vv⟩⟨vv| for every orthonormal pair u, v.
+  - On these, A^* C A is the difference of two rank-one positive operators. It is a multiple of a rank-two projector
+    only if it is 0.
+  - That forces A^*|uu⟩ = 0 for every u, so A = 0.
+- **U(1) charge sectors** are indefinite.
+- **Spaces of forms through m generic points** are not positive unless they are 2-dimensional.
+
+Checks: `code/check_numerics.py`, `code/check_zeros_and_thickness.py` and `code/check_negative_results.py`.
+
+## 4. What is open
+
+The bosonic sector itself: is q_n(1/2, C) ≥ 0 for every rank-two C ∈ End(Sym^n C^3) and every n?
+
+By Section 2, for each z the only possible source of negativity is interference between occupation blocks on the same
+diagonal. For each spectator configuration σ, this interference is the quadratic form of the symmetric power
+Sym^N(B_T) on the vector of amplitudes ⟨⟨a, N − a, σ|C⟩⟩. At t = 1/2 the eigenvalues of this power are (−1/2)^j. The
+rank-two condition has to keep these vectors away from the eigenvectors with j odd.
+
+## Code
+
+The scripts need Python 3 with NumPy and SciPy.
+- `code/bosonic.py`: shared helpers.
+- `code/check_formulas.py`: Section 1.
+- `code/check_sector_theorem.py`: Section 2.
+- `code/check_numerics.py`, `code/check_zeros_and_thickness.py` and `code/check_negative_results.py`: Section 3.

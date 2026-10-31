@@ -1,0 +1,22 @@
+(a) charge sectors: minimum eigenvalue for each delta = l - m
+  n=1: delta = -n..n -> [1.0, -0.5, 1.0]
+  n=2: delta = -n..n -> [1.0, -0.25, -0.25, -0.25, 1.0]
+  n=3: delta = -n..n -> [1.0, -0.16667, -0.16667, -0.25, -0.16667, -0.16667, 1.0]
+  n=4: delta = -n..n -> [1.0, -0.125, -0.125, -0.125, -0.125, -0.125, -0.125, -0.125, 1.0]
+(b) forms through m generic points: minimum eigenvalue over 30 random point sets
+  n=2 m=1 (dim 5): -0.2500
+  n=2 m=2 (dim 4): -0.2500
+  n=2 m=3 (dim 3): -0.2483
+  n=2 m=4 (dim 2): +0.0019
+  n=3 m=1 (dim 9): -0.2348
+  n=3 m=2 (dim 8): -0.2268
+  n=3 m=3 (dim 7): -0.2159
+  n=3 m=4 (dim 6): -0.1982
+  n=3 m=5 (dim 5): -0.1869
+  n=3 m=6 (dim 4): -0.1697
+  n=3 m=7 (dim 3): -0.1407
+  n=3 m=8 (dim 2): +0.0120
+(c) pairs over rank-2 C (local minimisation)
+  n=2: (k, k-1, min) [(2, 1, np.float64(0.0))]
+  n=3: (k, k-1, min) [(3, 2, np.float64(0.0)), (1, 0, np.float64(-0.05))]
+  n=4: (k, k-1, min) [(4, 3, np.float64(0.0)), (2, 1, np.float64(-0.03061))]

@@ -1,0 +1,16 @@
+(a) annihilation formula vs partial traces, random rank-2 C, t = 1/2 and t = 0.37
+  n=2 t=0.5: formula 87.5936662166  direct 87.5936662166  diff 0.0e+00
+  n=2 t=0.37: formula 97.0064679963  direct 97.0064679963  diff 0.0e+00
+  n=3 t=0.5: formula 287.1121233214  direct 287.1121233214  diff 1.1e-13
+  n=3 t=0.37: formula 325.0870625694  direct 325.0870625694  diff 1.1e-13
+  n=4 t=0.5: formula 796.3424260025  direct 796.3424260025  diff 5.7e-13
+  n=4 t=0.37: formula 908.7675269639  direct 908.7675269639  diff 1.0e-12
+(b) spectrum of the q-form on End(Sym^n), t = 1/2
+  n=1: max |eig - predicted| = 1.1e-16;  gamma_(n,k), k = 0..n: ['-1/2', '1']
+  n=2: max |eig - predicted| = 1.8e-15;  gamma_(n,k), k = 0..n: ['1/2', '-1/4', '1']
+  n=3: max |eig - predicted| = 1.8e-15;  gamma_(n,k), k = 0..n: ['-1/4', '1/4', '-1/6', '1']
+  n=4: max |eig - predicted| = 2.6e-15;  gamma_(n,k), k = 0..n: ['3/16', '-3/32', '1/6', '-1/8', '1']
+  n=5: max |eig - predicted| = 3.8e-15;  gamma_(n,k), k = 0..n: ['-3/32', '3/40', '-1/20', '1/8', '-1/10', '1']
+  n=6: max |eig - predicted| = 4.2e-15;  gamma_(n,k), k = 0..n: ['1/16', '-1/32', '1/24', '-1/32', '1/10', '-1/12', '1']
+(c) closed forms
+  closed forms and sign pattern (-1)^(n-k) hold for n = 2..39: True

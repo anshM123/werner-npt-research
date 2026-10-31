@@ -1,0 +1,25 @@
+(a) min over rank-2 bosonic C of q_n/||C||^2 at t = 1/2
+  n= 2 (dim Sym^n =   6): -2.23e-16
+  n= 3 (dim Sym^n =  10): -1.42e-16
+  n= 4 (dim Sym^n =  15): -1.05e-17
+  n= 5 (dim Sym^n =  21): -4.35e-16
+  n= 6 (dim Sym^n =  28): +6.05e-16
+(b) Werner family: all rank-2 bosonic C vs qubit-supported C
+  n=2 t=0.3333: all +0.333333   qubit-supported +0.333333   n 2^(1-n) (1-2t) = 0.333333
+  n=2 t=0.4000: all +0.200000   qubit-supported +0.200000   n 2^(1-n) (1-2t) = 0.200000
+  n=2 t=0.4500: all +0.100000   qubit-supported +0.100000   n 2^(1-n) (1-2t) = 0.100000
+  n=2 t=0.4800: all +0.040000   qubit-supported +0.040000   n 2^(1-n) (1-2t) = 0.040000
+  n=2 t=0.4900: all +0.020000   qubit-supported +0.020000   n 2^(1-n) (1-2t) = 0.020000
+  n=2 t=0.5000: all -0.000000   qubit-supported -0.000000   n 2^(1-n) (1-2t) = 0.000000
+  n=3 t=0.3333: all +0.234931   qubit-supported +0.234931   n 2^(1-n) (1-2t) = 0.250000
+  n=3 t=0.4000: all +0.152000   qubit-supported +0.152000   n 2^(1-n) (1-2t) = 0.150000
+  n=3 t=0.4500: all +0.075250   qubit-supported +0.075250   n 2^(1-n) (1-2t) = 0.075000
+  n=3 t=0.4800: all +0.030016   qubit-supported +0.030016   n 2^(1-n) (1-2t) = 0.030000
+  n=3 t=0.4900: all +0.015002   qubit-supported +0.015002   n 2^(1-n) (1-2t) = 0.015000
+  n=3 t=0.5000: all -0.000000   qubit-supported -0.000000   n 2^(1-n) (1-2t) = 0.000000
+  n=4 t=0.3333: all +0.159980   qubit-supported +0.159980   n 2^(1-n) (1-2t) = 0.166667
+  n=4 t=0.4000: all +0.099293   qubit-supported +0.099293   n 2^(1-n) (1-2t) = 0.100000
+  n=4 t=0.4500: all +0.050500   qubit-supported +0.050500   n 2^(1-n) (1-2t) = 0.050000
+  n=4 t=0.4800: all +0.020032   qubit-supported +0.020032   n 2^(1-n) (1-2t) = 0.020000
+  n=4 t=0.4900: all +0.010004   qubit-supported +0.010004   n 2^(1-n) (1-2t) = 0.010000
+  n=4 t=0.5000: all +0.000000   qubit-supported -0.000000   n 2^(1-n) (1-2t) = 0.000000

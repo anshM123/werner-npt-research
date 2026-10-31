@@ -1,0 +1,15 @@
+(a) diagonal structure on fixed Alice z-number
+  t=0.5: max off-diagonal 5.6e-17, max |diagonal - d(a,b)| 2.7e-16, min diagonal -2.7e-16
+  t=0.41: max off-diagonal 3.5e-17, max |diagonal - d(a,b)| 4.4e-16, min diagonal +5.8e-03
+(b) pair-vectorised form vs partial traces (n = 3, random C)
+  partial traces 813.7694357025   <<C|B^(x)3|C>> 813.7694357025
+(c) range in one occupation sector E_l (z = e2): minimum eigenvalue of the form
+  n=1: l = 0..n -> [0.0, 0.5]
+  n=2: l = 0..n -> [-0.0, 0.25, 0.25]
+  n=3: l = 0..n -> [-0.0, 0.166667, 0.25, 0.125]
+  n=4: l = 0..n -> [-0.0, 0.0625, 0.166667, 0.125, 0.0625]
+  n=5: l = 0..n -> [-0.0, 0.0375, 0.075, 0.125, 0.0625, 0.03125]
+(d) block patterns {(l,m)}: one block per diagonal vs a repeated diagonal
+  n=2: one block per diagonal: min eig -5.2e-16;  repeated diagonal: min eig -0.2500
+  n=3: one block per diagonal: min eig -7.2e-16;  repeated diagonal: min eig -0.2348
+  n=4: one block per diagonal: min eig -1.3e-15;  repeated diagonal: min eig -0.1250
