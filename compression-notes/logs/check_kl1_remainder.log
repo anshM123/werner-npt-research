@@ -1,0 +1,11 @@
+target (PT-min -0.0104): fit 2.1e-08; Tr parts: filtering 0.480, remainder 0.520
+   remainder spectrum [0.0064 0.0094 0.0224 0.032  0.0679 0.0975 0.1404 0.214  0.4101]
+   remainder PT spectrum [0.001  0.0093 0.0232 0.0418 0.0704 0.089  0.1351 0.222  0.4083]
+target (PT-min -0.0112): fit 1.4e-08; Tr parts: filtering 0.439, remainder 0.561
+   remainder spectrum [0.004  0.0111 0.0239 0.0313 0.0476 0.096  0.1446 0.1969 0.4447]
+   remainder PT spectrum [1.000e-04 8.000e-03 1.930e-02 3.820e-02 5.290e-02 9.670e-02 1.460e-01
+ 1.945e-01 4.443e-01]
+target (PT-min -0.0108): fit 4.8e-08; Tr parts: filtering 0.574, remainder 0.426
+   remainder spectrum [0.0017 0.0047 0.0105 0.023  0.0424 0.055  0.08   0.1954 0.5873]
+   remainder PT spectrum [4.000e-04 3.600e-03 8.700e-03 1.920e-02 3.790e-02 5.600e-02 8.920e-02
+ 2.002e-01 5.847e-01]

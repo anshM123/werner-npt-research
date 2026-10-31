@@ -478,9 +478,10 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
     stays at 0.43.
   - In our logs, an adversarial search that moves the filter to maximise the fit residual never got past
     1.1 × 10^{−4}, and its worst points refit to 4 × 10^{−8}.
-  - A possible handle for a proof (our logs). NPT targets at −0.01 fit as a single filtering of ρ plus 12 products,
+  - A possible handle for a proof. NPT targets at −0.01 fit as a single filtering of ρ plus 12 products,
     to 1–5 × 10^{−8}. The filtering carries 44–57% of the trace. The remainder is full rank and PPT, with its smallest
-    partial-transpose eigenvalue at 10^{−4}–10^{−3} of its trace, so it sits on the PPT boundary.
+    partial-transpose eigenvalue at 10^{−4}–10^{−3} of its trace, so it sits on the PPT boundary
+    (`check_kl1_structure.py`, `check_kl1_remainder.py`).
     - The filtering is not a contraction of the target's own filters: a a^* is 0.16–0.33 away from every A(I ⊗ |u⟩)
       and A(|u⟩ ⊗ I) (normalised Frobenius distance).
     - A proof of KL_1 along these lines would need a rule for (a, b), and a reason why the remainder is separable
@@ -819,6 +820,9 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_lm6_adversary.py` (`python check_lm6_adversary.py m 16 80 60 0` for m = 1, 2) and
   `code/check_l2six_adversary_npt.py` (`python check_l2six_adversary_npt.py 16 80 60 0.3`): the primal adversaries for
   L_1(6) and L_2(6) in Section 9 (needs PyTorch).
+- `code/check_kl1_structure.py` and `code/check_kl1_remainder.py`: Section 9, the structure of KL_1 decompositions (one
+  filtering of ρ plus products; contraction gaps; spectrum of the remainder). Needs PyTorch, a few minutes each; the
+  second imports the first.
 - `code/check_removal.py`: Section 9, removal by compression. It checks the identity against the dense q_4, shows
   that the conjugated compression gives a different value, and prints the triple margins for random C.
 - `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and
