@@ -1,7 +1,7 @@
 """Section 2: the zeros C0 = P (x) |a><b| at t = 1/2 (P = |0><0| + |1><1| on the first site, a, b any unit vectors on the
    other n-1 sites).  f(Y, Z) = q_n(Y Z^dagger) with Y = [|0>a, |1>a], Z = [|0>b, |1>b] has zero gradient there; we print
    the smallest eigenvalues of its Hessian (finite differences of the exact gradient) for random a, b, n = 3, 4.
-   Proposition 2 says they are >= 0 (up to rounding) whenever q_{n-1} >= 0 on rank two, which is known for n - 1 <= 3."""
+   Proposition 4 says they are >= 0 (up to rounding) whenever q_{n-1} >= 0 on rank two, which is known for n - 1 <= 3."""
 import sys
 import numpy as np
 from werner import d, applyB, unpack, pack

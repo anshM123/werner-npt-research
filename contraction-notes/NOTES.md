@@ -53,7 +53,7 @@ with q = q_{n−1}(t, ·). Expand q(2A + X) = 4q(A) + 4 Re q(A, X) + q(X), and w
 by the crossed pairing. Since q(|x⟩⟨y|) = ⟨x ⊗ y|W|x ⊗ y⟩, the terms q(|α_k⟩⟨b|) + 4t² q(|a⟩⟨β_k|) − 4t Re ⟨a ⊗ β_k|W|α_k ⊗ b⟩
 combine into ⟨v_k, W v_k⟩, which leaves the stated remainder. ∎
 
-**Corollary.** At t = 1/2, the endpoint inequality holds on the aligned class for four copies:
+**Corollary 2.** At t = 1/2, the endpoint inequality holds on the aligned class for four copies:
 - in dimensions three and four, by the three-copy theorem [Zen; Liu; MB];
 - in every dimension, given Tomar's computer-assisted three-copy theorem [T1].
 
@@ -86,7 +86,7 @@ thin-copy removal reduces nothing here. K_n is a measure-zero family, but it con
 At t = 1/2, q_1(P) = 0 for the rank-two projector P = |0⟩⟨0| + |1⟩⟨1|. So C_0 = P ⊗ |a⟩⟨b| is a zero of q_n for all
 vectors a, b on the other copies, including entangled ones.
 
-**Proposition 2.** Let n ≥ 2, and assume q_{n−1}(1/2, ·) ≥ 0 on operators of rank at most two. Then along every smooth
+**Proposition 4.** Let n ≥ 2, and assume q_{n−1}(1/2, ·) ≥ 0 on operators of rank at most two. Then along every smooth
 curve C(ε) = (Y_0 + εY_1 + …)(Z_0 + εZ_1 + …)^* of rank-two operators through C_0 = Y_0 Z_0^*, the second derivative of
 q_n(1/2, C(ε)) at ε = 0 is nonnegative.
 
