@@ -510,6 +510,16 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
       to six digits).
   - We read this as no detected gap, but it is the weakest part of the evidence. L_2(6), which is what EP_4 needs, is
     implied by KL_2: a 6 × 6 filtering is a compression of a 9 × 9 one, and K_2 is closed under filtering.
+  - A primal adversary for KL_2 (`check_lmD_adversary.py` with m = 2, D = 9) drives a model of 16 filterings and 80
+    products to 2.8 × 10^{−2}. That is the size of the model, not a gap (`check_kl2_refit.py`):
+
+    | Model size | Element of K_2(9) | Adversarial target |
+    |---|---|---|
+    | 16 filterings + 80 products | 1.1 × 10^{−3} | 1.6 × 10^{−2} |
+    | 32 + 200 | 5.0 × 10^{−4} | 4.7 × 10^{−4} |
+    | 48 + 400 | 3.2 × 10^{−4} | 1.3 × 10^{−4} |
+
+    So for two copies the dimension 3^2 = 9 shows no gap.
 - **Uncompressed** (part (d)). ρ ⊗ ρ as a 9 × 9 operator fits K_1(9, 9) only to 0.12, while a random element of
   K_1(9, 9) fits to 1–2 × 10^{−4} at the same budget (10^{−6} with more terms, in our logs). So the dimension bound in
   KL_m is needed.
@@ -531,8 +541,12 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
     partial-transpose minimum −0.015. Its worst target refits from fresh starts to 6.1 × 10^{−2}, and to 5.9 × 10^{−2}
     with twice the terms: 150 times the floor.
 
-  We read this as L_1(6) being false, so the bound 3^m in KL_m is sharp at m = 1. It is numerical, not a proof. The
-  floor depends on the target. A genuinely three-copy filtering below
+  - The same adversary at other output dimensions (`check_lmD_adversary.py`) finds no gap for D = 4: the worst target
+    refits to 2.5 × 10^{−4}, the floor for near-extreme targets. It finds a robust gap for D = 5: 1.3 × 10^{−2}, the
+    same with twice the terms. So for one copy, L_1(D) holds for D ≤ 4 and fails for D ≥ 5.
+
+  We read this as L_1(6) being false. The threshold for one copy lies between 4 and 5, slightly above 3^1. This is
+  numerical, not a proof, and the floor depends on the target. A genuinely three-copy filtering below
   has partial-transpose minimum −0.022 and still fits K_1(6) to 6 × 10^{−5}. So only the strongly NPT filterings of two
   copies resist.
 - **L_2(6)** (our logs). Random 6 × 6 filterings of ρ^{⊗3} are PPT (+0.005), and a gradient path started at random
@@ -792,6 +806,9 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   for KL_1 and KL_2 with their controls, the uncompressed test and the Schmidt-number test. Parts (b)–(e) need PyTorch
   and take about half an hour.
 - `code/check_l1_six.py`: Section 9, the L_1(6) fits (needs PyTorch, about half an hour).
+- `code/check_lmD_adversary.py` (`python check_lmD_adversary.py m D 16 80 60 0`) and `code/check_kl2_refit.py`: the
+  dimension threshold and the KL_2 adversary in Section 9 (needs PyTorch; `check_kl2_refit.py` reads the saved worst
+  target `adv_lmD_m2_D9_s0.npy`).
 - `code/check_lm6_adversary.py` (`python check_lm6_adversary.py m 16 80 60 0` for m = 1, 2) and
   `code/check_l2six_adversary_npt.py` (`python check_l2six_adversary_npt.py 16 80 60 0.3`): the primal adversaries for
   L_1(6) and L_2(6) in Section 9 (needs PyTorch).

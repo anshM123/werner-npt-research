@@ -1,0 +1,3 @@
+budget 16 + 80: calibration (element of K_2(9)) 1.10e-03 | adversarial target 1.63e-02
+budget 32 + 200: calibration (element of K_2(9)) 4.96e-04 | adversarial target 4.70e-04
+budget 48 + 400: calibration (element of K_2(9)) 3.20e-04 | adversarial target 1.26e-04

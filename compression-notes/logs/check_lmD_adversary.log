@@ -1,0 +1,27 @@
+--- adv_lmD_m1_D4.log
+m = 1, D = 4, seed 0, step 0: residual 9.454e-05 (PT-min +0.0006); best so far 9.454e-05
+m = 1, D = 4, seed 0, step 10: residual 1.646e-04 (PT-min -0.0005); best so far 2.803e-04
+m = 1, D = 4, seed 0, step 20: residual 8.511e-05 (PT-min -0.0016); best so far 4.311e-04
+m = 1, D = 4, seed 0, step 30: residual 2.320e-04 (PT-min -0.0026); best so far 4.311e-04
+m = 1, D = 4, seed 0, step 40: residual 7.482e-05 (PT-min -0.0035); best so far 4.311e-04
+m = 1, D = 4, seed 0, step 50: residual 2.377e-04 (PT-min -0.0038); best so far 4.891e-04
+m = 1, D = 4, seed 0, step 59: residual 4.989e-04 (PT-min -0.0042); best so far 4.989e-04
+m = 1, D = 4, seed 0: worst target re-fitted from fresh starts: 16 + 80: 2.548e-04; 32 + 160: 2.779e-04
+--- adv_lmD_m1_D5.log
+m = 1, D = 5, seed 0, step 0: residual 4.067e-04 (PT-min -0.0002); best so far 4.067e-04
+m = 1, D = 5, seed 0, step 10: residual 1.030e-03 (PT-min -0.0024); best so far 1.041e-03
+m = 1, D = 5, seed 0, step 20: residual 9.943e-04 (PT-min -0.0046); best so far 1.125e-03
+m = 1, D = 5, seed 0, step 30: residual 1.627e-03 (PT-min -0.0062); best so far 1.627e-03
+m = 1, D = 5, seed 0, step 40: residual 2.843e-03 (PT-min -0.0075); best so far 2.843e-03
+m = 1, D = 5, seed 0, step 50: residual 6.451e-03 (PT-min -0.0091); best so far 6.451e-03
+m = 1, D = 5, seed 0, step 59: residual 1.376e-02 (PT-min -0.0113); best so far 1.376e-02
+m = 1, D = 5, seed 0: worst target re-fitted from fresh starts: 16 + 80: 1.327e-02; 32 + 160: 1.321e-02
+--- adv_lmD_m2_D9.log
+m = 2, D = 9, seed 0, step 0: residual 6.022e-03 (PT-min +0.0006); best so far 6.022e-03
+m = 2, D = 9, seed 0, step 10: residual 1.414e-02 (PT-min +0.0003); best so far 1.414e-02
+m = 2, D = 9, seed 0, step 20: residual 1.731e-02 (PT-min -0.0004); best so far 1.731e-02
+m = 2, D = 9, seed 0, step 30: residual 2.202e-02 (PT-min -0.0013); best so far 2.202e-02
+m = 2, D = 9, seed 0, step 40: residual 2.430e-02 (PT-min -0.0023); best so far 2.430e-02
+m = 2, D = 9, seed 0, step 50: residual 2.602e-02 (PT-min -0.0029); best so far 2.602e-02
+m = 2, D = 9, seed 0, step 59: residual 2.812e-02 (PT-min -0.0032); best so far 2.812e-02
+m = 2, D = 9, seed 0: worst target re-fitted from fresh starts: 16 + 80: 2.194e-02; 32 + 160: 1.003e-03
