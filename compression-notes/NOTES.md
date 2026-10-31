@@ -79,6 +79,11 @@ q_n(C) > 0.
   value +6 × 10^{−3}) and n = 3 (three runs, smallest +0.19).
 - Gradient (Danskin) adversarial minimisation: n = 3 (nine runs) and n = 4 (twenty-two runs). The value stays positive.
   It tends to 0 only as the adversary is driven to zeros of q_n, where Δ ≈ q_n → 0⁺.
+- Five copies (`check_qc_fast.py`). Fix a copy s and put Q[(a,b),(c,d)] = q_{n−1}(X_ab, X_cd) for the 3 × 3 blocks X_ab of
+  C at s. Then q_n(C) and q_n(C_{w⊥}) are 9 × 9 expressions in Q and the projector (checked against dense q_n at n = 3,
+  4), which makes the inner maximisation over w cheap. Four Danskin runs of 120 steps at n = 5 found no violation.
+  The two random starts stay at +0.175 (q_5 ≈ 0.30). The two starts near a zero are driven to Δ ≈ 4 × 10^{−5} and
+  2 × 10^{−5}, with q_5 ≈ 10^{−4} and 6 × 10^{−5}.
 - The ratio Δ/q_n at the optimum can be small (0.007 at n = 3, 0.03 at n = 4), so the margin is relative, not
   uniform. This happens only near thin zeros.
 - Gradient adversaries penalised to keep every copy thick (smallest local eigenvalue at least about 0.02-0.1)
@@ -721,6 +726,8 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/werner.py`: shared helpers (as in `contraction-notes/`).
 - `code/check_qc.py`: Section 1. It checks Proposition 1 and the trace identity, the two failing rules and the
   adversarial operators in `data/`.
+- `code/check_qc_fast.py`: the five-copy QC adversary of Section 1 (needs PyTorch; `python check_qc_fast.py 5 120`, about
+  fifteen minutes).
 - `code/check_averaging.py`: Section 2. It averages exactly over the four mutually unbiased bases of C³ (a 2-design).
 - `code/check_monogamy.py`: Section 3.
 - `code/check_mps.py`: Section 4. It checks Proposition 4 against dense q_n, shows a Perron operator, and re-evaluates a

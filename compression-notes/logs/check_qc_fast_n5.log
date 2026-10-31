@@ -1,0 +1,20 @@
+  n = 5, random seed 0, it 0: max Delta/||C||^2 = +2.6172e-01, q_n/||C||^2 = +4.0380e-01
+  n = 5, random seed 0, it 50: max Delta/||C||^2 = +2.1436e-01, q_n/||C||^2 = +3.5781e-01
+  n = 5, random seed 0, it 100: max Delta/||C||^2 = +1.8593e-01, q_n/||C||^2 = +3.1377e-01
+  n = 5, random seed 0, it 119: max Delta/||C||^2 = +1.7515e-01, q_n/||C||^2 = +2.9661e-01
+n = 5, random seed 0: smallest max-Delta seen +1.7515e-01
+  n = 5, nearzero seed 1, it 0: max Delta/||C||^2 = +8.4740e-03, q_n/||C||^2 = +1.8173e-02
+  n = 5, nearzero seed 1, it 50: max Delta/||C||^2 = +2.6412e-04, q_n/||C||^2 = +7.8955e-04
+  n = 5, nearzero seed 1, it 100: max Delta/||C||^2 = +6.5860e-05, q_n/||C||^2 = +1.6268e-04
+  n = 5, nearzero seed 1, it 119: max Delta/||C||^2 = +4.5458e-05, q_n/||C||^2 = +9.8537e-05
+n = 5, nearzero seed 1: smallest max-Delta seen +4.0833e-05
+  n = 5, random seed 2, it 0: max Delta/||C||^2 = +2.6395e-01, q_n/||C||^2 = +4.0366e-01
+  n = 5, random seed 2, it 50: max Delta/||C||^2 = +2.1489e-01, q_n/||C||^2 = +3.5860e-01
+  n = 5, random seed 2, it 100: max Delta/||C||^2 = +1.8595e-01, q_n/||C||^2 = +3.1446e-01
+  n = 5, random seed 2, it 119: max Delta/||C||^2 = +1.7555e-01, q_n/||C||^2 = +2.9713e-01
+n = 5, random seed 2: smallest max-Delta seen +1.7555e-01
+  n = 5, nearzero seed 3, it 0: max Delta/||C||^2 = +7.9015e-03, q_n/||C||^2 = +1.7176e-02
+  n = 5, nearzero seed 3, it 50: max Delta/||C||^2 = +3.2641e-04, q_n/||C||^2 = +9.6314e-04
+  n = 5, nearzero seed 3, it 100: max Delta/||C||^2 = +4.0396e-05, q_n/||C||^2 = +1.0652e-04
+  n = 5, nearzero seed 3, it 119: max Delta/||C||^2 = +2.3316e-05, q_n/||C||^2 = +6.4392e-05
+n = 5, nearzero seed 3: smallest max-Delta seen +2.3316e-05
