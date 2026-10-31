@@ -695,6 +695,15 @@ compression is not inside the Gurvits–Barnum ball. The test in (b) also certif
 [[5, 3, 2]] the weights are 1/6, 5/12, 13/24, 2/3, 35/48, 19/24 and 85/96. We have not tested [[6, 4, 2]], whose
 smallest weight is 0.
 
+**NPT code blocks still give no counterexample** (numerical). For b ≥ 7 the compression is NPT, so operators whose
+range lies in the code space form a slice of the b-copy problem where a negative value is not ruled out by (d).
+- By (a), on this slice q_b(1/2, C) = Σ_E p(E) |⟨Φ_E|ψ_C⟩|². Applying logical Paulis to one Bell vector turns it
+  into Σ_{u,v} p(E_0 · X̃^u Z̃^v) |Tr((X^u Z^v)^† M)|², where M is a rank-two operator on the 3^k-dimensional logical
+  space and X̃_j, Z̃_j are logical Paulis.
+- For [[7, 5, 2]] (c = (1, 1, 1, 1, 1, 2, 2); 243 logical dimensions), the weight −1/6 occurs on 4–5% of the
+  classes of each sector. We minimised q/‖C‖² over rank-two M (Adam, eight restarts in each of the nine sectors).
+  The smallest value found is +0.114, so this slice stays well away from zero (`search_npt_code_block.py`).
+
 ## References
 
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.
@@ -736,3 +745,5 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   of the [[b, b − 2, 2]] family.
 - `code/check_code_blocks_margin.py` (with `code/stab_fast.py`): Proposition 14(c) by the margin method, for
   [[4, 2, 2]], [[5, 3, 2]] and the five-qutrit code. It takes about five minutes.
+- `code/search_npt_code_block.py`: the search on the [[7, 5, 2]] slice after Proposition 14 (needs PyTorch;
+  `python search_npt_code_block.py 7`, about ten minutes).

@@ -1,0 +1,10 @@
+  [[7,5,2]] c = [1, 1, 1, 1, 1, 2, 2], sector (0, 0): p in [-0.1667, +0.8880], negative fraction 0.0488; best normalised q = +0.114838
+  [[7,5,2]] c = [1, 1, 1, 1, 1, 2, 2], sector (0, 1): p in [-0.1667, +0.8021], negative fraction 0.0366; best normalised q = +0.113739
+  [[7,5,2]] c = [1, 1, 1, 1, 1, 2, 2], sector (0, 2): p in [-0.1667, +0.8021], negative fraction 0.0366; best normalised q = +0.113739
+  [[7,5,2]] c = [1, 1, 1, 1, 1, 2, 2], sector (1, 0): p in [-0.1667, +0.8021], negative fraction 0.0366; best normalised q = +0.121233
+  [[7,5,2]] c = [1, 1, 1, 1, 1, 2, 2], sector (1, 1): p in [-0.1667, +0.8021], negative fraction 0.0366; best normalised q = +0.113739
+  [[7,5,2]] c = [1, 1, 1, 1, 1, 2, 2], sector (1, 2): p in [-0.1667, +0.8021], negative fraction 0.0366; best normalised q = +0.113739
+  [[7,5,2]] c = [1, 1, 1, 1, 1, 2, 2], sector (2, 0): p in [-0.1667, +0.8021], negative fraction 0.0366; best normalised q = +0.121229
+  [[7,5,2]] c = [1, 1, 1, 1, 1, 2, 2], sector (2, 1): p in [-0.1667, +0.8021], negative fraction 0.0366; best normalised q = +0.113739
+  [[7,5,2]] c = [1, 1, 1, 1, 1, 2, 2], sector (2, 2): p in [-0.1667, +0.8021], negative fraction 0.0366; best normalised q = +0.113739
+b = 7: minimum over sectors +0.113739
