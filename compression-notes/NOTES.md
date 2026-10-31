@@ -526,8 +526,13 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
   - The antisymmetric witness of [FGP, Thm. 2.4] does not detect Schmidt number 3 in these filterings (its maximum is
     0.3 < 1/2).
 
-  We read this as L_1(6) being false, so the bound 3^m in KL_m is sharp at m = 1. Since the floor comes from the
-  optimisation, this is not a proof. The floor also depends on the target. A genuinely three-copy filtering below
+  - A primal adversary settles the comparison (`check_lm6_adversary.py`). It takes ascent steps on the filters, holding
+    the fit fixed (envelope gradient), then refits. Within 60 steps it reaches residual 6 × 10^{−2}, at
+    partial-transpose minimum −0.015. Its worst target refits from fresh starts to 6.1 × 10^{−2}, and to 5.9 × 10^{−2}
+    with twice the terms: 150 times the floor.
+
+  We read this as L_1(6) being false, so the bound 3^m in KL_m is sharp at m = 1. It is numerical, not a proof. The
+  floor depends on the target. A genuinely three-copy filtering below
   has partial-transpose minimum −0.022 and still fits K_1(6) to 6 × 10^{−5}. So only the strongly NPT filterings of two
   copies resist.
 - **L_2(6)** (our logs). Random 6 × 6 filterings of ρ^{⊗3} are PPT (+0.005), and a gradient path started at random
@@ -537,6 +542,12 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
     3.5 × 10^{−4}. That floor comes from random starts on an extreme ray.
   - δ = 0.1 (minimum −0.029) fits K_2(6) to 2.9 × 10^{−4}, and δ = 0.3 (−0.022) fits to 6 × 10^{−5}. For comparison,
     K_1(6) gives 9.3 × 10^{−3}, 6.7 × 10^{−3} and 6 × 10^{−5}.
+  - The same adversary for L_2(6) finds nothing beyond the floor (`check_lm6_adversary.py`,
+    `check_l2six_adversary_npt.py`).
+    - From a random start it stays at 10^{−5}–10^{−4}, and its worst target refits to 4 × 10^{−8}.
+    - Started from the δ = 0.3 target, it climbs to 1.4 × 10^{−3} while it tracks. But the worst target refits from
+      fresh starts to 3.0 × 10^{−4} (2.9 × 10^{−4} with twice the terms), which is the floor for near-extreme NPT
+      targets.
   - So nothing here argues against L_2(6): the two-copy cone absorbs what the one-copy cone cannot.
 
 **Open.** KL_1, a two-copy statement about 3 × 3 operators, is the smallest open case. A proof would give an every-n
@@ -781,6 +792,9 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   for KL_1 and KL_2 with their controls, the uncompressed test and the Schmidt-number test. Parts (b)–(e) need PyTorch
   and take about half an hour.
 - `code/check_l1_six.py`: Section 9, the L_1(6) fits (needs PyTorch, about half an hour).
+- `code/check_lm6_adversary.py` (`python check_lm6_adversary.py m 16 80 60 0` for m = 1, 2) and
+  `code/check_l2six_adversary_npt.py` (`python check_l2six_adversary_npt.py 16 80 60 0.3`): the primal adversaries for
+  L_1(6) and L_2(6) in Section 9 (needs PyTorch).
 - `code/check_removal.py`: Section 9, removal by compression. It checks the identity against the dense q_4, shows
   that the conjugated compression gives a different value, and prints the triple margins for random C.
 - `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and

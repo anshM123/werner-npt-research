@@ -1,0 +1,8 @@
+m = 2, seed 30, step 0: residual 1.619e-04 (PT-min -0.0220); best so far 1.619e-04
+m = 2, seed 30, step 10: residual 3.886e-04 (PT-min -0.0237); best so far 5.555e-04
+m = 2, seed 30, step 20: residual 5.852e-04 (PT-min -0.0244); best so far 6.710e-04
+m = 2, seed 30, step 30: residual 1.139e-03 (PT-min -0.0246); best so far 1.180e-03
+m = 2, seed 30, step 40: residual 1.032e-03 (PT-min -0.0245); best so far 1.322e-03
+m = 2, seed 30, step 50: residual 1.081e-03 (PT-min -0.0244); best so far 1.322e-03
+m = 2, seed 30, step 59: residual 9.934e-04 (PT-min -0.0239); best so far 1.409e-03
+m = 2, seed 30: worst target re-fitted from fresh starts: 16 + 80: 3.036e-04; 32 + 160: 2.921e-04
