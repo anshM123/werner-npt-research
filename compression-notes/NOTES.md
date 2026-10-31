@@ -8,7 +8,8 @@ These notes collect several small results about the n-copy endpoint inequality, 
 - an exact form of the projector case as a monogamy relation;
 - a transfer-channel description of translation-invariant MPS filters, with a large-n search;
 - an exact activation witness for two-pair Werner mixtures;
-- an every-n positivity statement for operators whose range lies in a product of planes over two-copy blocks.
+- an every-n positivity statement for operators whose range lies in a product of planes over two-copy blocks;
+- a lemma that a filter on one copy can lower the form in at most one direction, with a corollary about first zeros.
 
 **Nothing here settles the all-copy problem.**
 
@@ -252,6 +253,46 @@ state need not be separable, so this is open.
 `check_blocks.py` checks the Schur identity, and positivity for ranges in products of block planes with arbitrary
 co-range (ranks 4 and 8).
 
+## 7. At most one negative filter direction
+
+For an operator C, a copy s and G ∈ M_3, write G_s C for G applied to copy s from the left.
+
+**Proposition 7.** Let n ≥ 2 and 0 ≤ t ≤ 1/2, and assume EP_{n−1}(t). For every C of rank at most two and every copy
+s, the Hermitian form Q_s(G) = q_n(t, G_s C) on M_3 has at most one negative eigenvalue. The same holds for right
+filters, G ↦ q_n(t, C G_s).
+
+*Proof.* If det G = 0, the range of G_s C at copy s lies in a plane, so q_n(t, G_s C) ≥ 0 by [T2, Lemma 6.1]. If Q_s
+had two negative eigenvalues, it would be negative definite on a two-dimensional subspace L of M_3. On L, det is a
+binary cubic form, so it has a nonzero zero over C. That zero is a singular G ≠ 0 with Q_s(G) < 0, a
+contradiction. ∎
+
+So if EP_{n−1} holds and q_n(C) < 0, then at every copy the filters G with q_n(t, G_s C) < 0 form, up to scalars, a
+complex-hyperbolic ball in PGL(3). This ball contains I and avoids every singular matrix.
+
+**Corollary (first zeros).** Suppose EP_{n−1} holds at t = 1/2 and EP_n fails there. Let t* < 1/2 and C* be the first
+zero of [T2, Sec. 6]:
+- q_n(t*, ·) ≥ 0 on operators of rank at most two;
+- q_n(t*, C*) = 0;
+- the local supports of the range and co-range of C* are three-dimensional at every copy.
+
+Then for every copy s, Q_s is positive semidefinite with kernel exactly C·I, for left and for right filters.
+
+*Proof.* G_s C* has rank at most two, so Q_s ≥ 0, and Q_s(I) = 0.
+- Write the weight −t at each copy as (1 − 2t)·0 + 2t·(−1/2). This expresses q_{n−1}(t, X) as a positive combination
+  of terms, one for each set S of copies. The term for S sums q_{|S|}(1/2, ·) over the contractions of X on the other
+  copies, so it is nonnegative by EP_{|S|}(1/2), which follows from EP_{n−1}(1/2). The term for S = ∅ is
+  (1 − 2t)^{n−1}‖X‖². So q_{n−1}(t*, X) ≥ (1 − 2t*)^{n−1}‖X‖² for X of rank at most two.
+- If the kernel had dimension at least two, it would contain a nonzero singular G. Then G_s C* ≠ 0, because the range of C* at
+  copy s is all of C³.
+- [T2, Lemma 6.1] with this margin gives q_n(t*, G_s C*) ≥ (1 − 2t*)^n ‖G_s C*‖² > 0, a contradiction. ∎
+
+**The bound is attained.** In the activation example of Section 5 at c = (1, 2, 2, 6.75), Q(C_0) < 0. There the
+filter form at the Werner copy has exactly one negative eigenvalue (`check_signature.py`). The other factor σ_c is
+one-copy 2-undistillable by the local searches of Section 5, which is what the proof needs.
+
+The proposition does not rule out a counterexample. It says that a failure, if there is one, is one-dimensional in
+the filter at each copy, and that a first zero is nondegenerate in the filter directions other than I.
+
 ## References
 
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.
@@ -274,3 +315,5 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_blocks.py`: Section 6.
 - `code/check_activation.py`: Section 5. It checks the closed form and evaluates the two-pair minimum at points of the
   slice.
+- `code/check_signature.py`: Section 7. It prints the eigenvalues of the filter form for random operators and for the
+  activation example.
