@@ -17,9 +17,12 @@ These notes collect several small results about the n-copy endpoint inequality, 
   four-copy endpoint;
 - exact positive spectra for the antisymmetric subspace of two copies and the qutrit [[3, 1, 2]] code. These give
   every-n, every-rank classes containing operators thick at every copy, with ranges of dimension up to 3^{n/2}.
-- removal lemmas for blocks of two, three and five copies: the compressions to the antisymmetric subspace, the
-  [[3, 1, 2]] code space and the five-qutrit code space are separable. Iterating them gives the endpoint for every n
-  whenever the range lies in a product of such blocks and planes, with at most three copies left free.
+- removal lemmas for blocks of two, three, four and five copies: the compressions to the antisymmetric subspace, the
+  [[3, 1, 2]] code space, the [[4, 2, 2]] code space and the five-qutrit code space are separable. Iterating them gives
+  the endpoint for every n whenever the range lies in a product of such blocks and planes, with at most three copies
+  left free;
+- an exact formula for the partial-transpose spectrum of the compression to any qutrit stabiliser code, as weight sums
+  over cosets of the stabiliser group, and a separability test by stabiliser product states.
 
 **Nothing here settles the all-copy problem.**
 
@@ -523,7 +526,8 @@ consistent with the symmetry: ρ^{⊗2} commutes with U^{⊗4}, and Λ is a U(3)
 - a local-unitary image of Q (three copies);
 - a local-unitary image of the five-qutrit code space (five copies);
 - a local-unitary image of the qutrit [[4, 2, 2]] code space (four copies, dimension 9; stabilisers X^{⊗4} and
-  Z ⊗ Z² ⊗ Z ⊗ Z²), whose compression has partial-transpose spectrum in [1/3, 43/48] (`check_blocks2.py`, part (g)).
+  Z ⊗ Z² ⊗ Z ⊗ Z²), whose compression has partial-transpose spectrum in [1/3, 43/48] (`check_blocks2.py`, part (g))
+  and is separable (Proposition 14).
 
 If the range of C lies in the tensor product of the chosen subspaces, then q_n(1/2, C) ≥ 0, whatever the rank and the
 co-range. The proof is that of Proposition 6.
@@ -546,8 +550,8 @@ ranges.
   4-dimensional ones. Sym³(C³) and the mixed-symmetry subspaces are NPT.
 - Not every 3-dimensional subspace works: C³ ⊗ |00⟩ gives ρ ⊗ (positive), which is NPT.
 - For the [[4, 2, 2]] code, the compression is block diagonal over its 9 syndrome sectors, but the 9 × 9 blocks have
-  purity 0.0145, above the Gurvits–Barnum bound 1/80. So we do not know whether a block of this kind can be removed
-  as in Propositions 11–13.
+  purity 0.0145, above the Gurvits–Barnum bound 1/80. Proposition 14 shows separability by another route.
+- The codes [[b, b − 2, 2]] give PPT blocks only for b ≤ 6 (Proposition 14(d)).
 
 **Removing an antisymmetric pair.** The compression to Λ is separable, not just PPT. This answers, for Λ, the
 question left open at the end of Section 6, and it gives a removal lemma for a pair of copies. It works like
@@ -593,8 +597,9 @@ Remarks.
   implies q_n(1/2, C) ≥ 0. The proof is that of Proposition 11. Since EP_1, EP_2 and EP_3 hold, the four-, five- and
   six-copy endpoint inequalities hold for every such C.
 - (c) Suppose the range of C lies in S_1 ⊗ ⋯ ⊗ S_m ⊗ (C³)^{⊗r}, where the S_i sit on disjoint blocks of copies. Each S_i
-  is a plane at one copy, or a local-unitary image of Λ at two copies, of Q at three copies or of the five-qutrit code
-  space at five copies (Proposition 13). Then EP_r implies
+  is a plane at one copy, or a local-unitary image of Λ at two copies, of Q at three copies, of the [[4, 2, 2]] code
+  space at four copies (Proposition 14) or of the five-qutrit code space at five copies (Proposition 13). Then EP_r
+  implies
   q_n(1/2, C) ≥ 0. Some blocks may use the co-range instead of the range. Since EP_r holds for r ≤ 3, the endpoint
   inequality holds for every n, with no unproven input, whenever at most three copies are left outside the blocks.
   The vectors in the range may be entangled between the blocks and the remaining copies.
@@ -617,6 +622,67 @@ eigenspaces of the four stabiliser generators), each of dimension 3. The compres
 blocks are 3 × 3 operators on (logical) ⊗ (sector). Every block has purity Tr M²/(Tr M)² ≤ 0.1135 < 1/8, so it is
 separable by [GB], and so is their sum. The code-sector block is (4/9)I − (19/288)F, the coefficients of
 Proposition 8 (`check_blocks2.py`, part (f)). Removal is as in Proposition 11. ∎
+
+**Stabiliser codes in general.** Write qutrit Pauli operators, up to phase, as X^a Z^b with a, b ∈ F_3^b, and wt(P)
+for the number of copies where P is not the identity. Let S be a stabiliser group on b copies with |S| = 3^{b−k}, N(S)
+the Paulis that commute with S, and Q the code space (dimension 3^k). The Paulis E with a given syndrome form a coset
+of N(S). They split into 9^k classes E·S.
+
+**Proposition 14 (stabiliser code blocks).**
+- (a) The one-sided compression σ_Q = (P_Q ⊗ I) ρ^{⊗b} (P_Q ⊗ I) is block diagonal over the syndrome sectors of the
+  second side. In each sector, the partial transpose of its block is diagonal in a basis of maximally entangled
+  vectors labelled by the classes E·S with that syndrome. The eigenvalue at E·S is
+
+      p(E·S) = |S|^{−1} Σ_{s ∈ S} (−1/2)^{b − wt(Es)}.
+
+- (b) Let L ⊇ S be a maximal set of commuting Paulis (|L| = 3^b). In a fixed sector, the uniform distribution on the
+  3^k classes contained in a coset E_0 L is the spectrum of a separable block. So a sector block is separable whenever
+  its weights p are a nonnegative combination of these uniform distributions.
+- (c) For the [[4, 2, 2]] code, this holds in all nine sectors, with exact rational coefficients. So σ_Q is separable.
+  If the range (or the co-range) of a rank-two C lies in a local-unitary image of the [[4, 2, 2]] code space at four
+  copies, tensored with the rest, then EP_{n−4} implies q_n(1/2, C) ≥ 0. With at most three free copies, this gives the
+  endpoint at up to seven copies for such operators, and the block can be used in Proposition 12(c).
+- (d) For the codes [[b, b − 2, 2]] with stabilisers X^{⊗b} and Z^{c_1} ⊗ ⋯ ⊗ Z^{c_b} (all c_i ≠ 0 and Σ c_i ≡ 0 mod 3),
+  the compression is PPT if and only if b ≤ 6.
+
+*Proof.*
+- **(a)** One copy gives ρ = I − F/2 = (5/6) I ⊗ I − (1/6) Σ_{P ≠ I} P ⊗ P^†, summed over the eight non-identity Paulis,
+  because F = (1/3) Σ_P P ⊗ P^†. So ρ^{⊗b} = Σ_P c(P) P ⊗ P^† with c(P) = (5/6)^b (−1/5)^{wt(P)}.
+  - P_Q P P_Q is 0 unless P ∈ N(S), and then it equals P P_Q. So σ_Q = Σ_{P ∈ N(S)} c(P) P P_Q ⊗ P^†.
+  - These P preserve the syndrome sectors on the second side, so σ_Q is block diagonal.
+  - In a sector with isometry B, the partial transpose of the block is Σ_{P ∈ N(S)} c(P) G(P), where
+    G(P) = (P|_Q) ⊗ conj(B^† P B). The unitaries G(P) commute, since the two commutation phases cancel, and
+    G(s) is a scalar for s ∈ S.
+  - Their joint eigenvectors are labelled by the characters χ_E(P) = ω^{⟨E, P⟩} (ω = e^{2πi/3}, ⟨·,·⟩ the symplectic
+    form), for E with the given syndrome, one for each class E·S. Applying a logical Pauli on Q permutes them, and
+    each is maximally entangled.
+  - The eigenvalue at E·S is Σ_{P ∈ N(S)} c(P) χ_E(P). Poisson summation over N(S), whose symplectic complement is S,
+    turns this into |S|^{−1} Σ_{s ∈ S} ĉ(Es). Here ĉ(E) = Σ_P c(P) χ_E(P) factorises over copies. On one copy,
+    Σ_P (−1/5)^{wt(P)} χ_E(P) is −3/5 for E = I and 6/5 otherwise, so ĉ(E) = (−1/2)^{b − wt(E)}.
+- **(b)** Let a be a common eigenvector of the operators P|_Q with P ∈ L (a stabiliser state of the code), and f a
+  common eigenvector of the operators conj(B^† P B) with P ∈ L.
+  - Averaging (a ⊗ f)(a ⊗ f)^* over conjugation by all G(P) is a mixture of local unitaries. So it gives a separable
+    operator, diagonal in the basis of (a), with weights |⟨Φ_{E·S}|a ⊗ f⟩|².
+  - Since a ⊗ f is an eigenvector of G(P) for every P ∈ L, these weights vanish outside the classes of one coset E_0 L.
+  - Writing the basis vectors as logical Paulis applied to one of them shows the weights are equal to 3^{−k} on that
+    coset.
+- **(c)** For the [[4, 2, 2]] code there are 40 such sets L, so each sector has 360 cosets. A linear program finds
+  a nonnegative combination of them equal to p in every sector. We then solve for the coefficients exactly on the
+  support, and check positivity and the identity in rational arithmetic (`check_code_blocks.py`, part (b)). Removal
+  is as in Proposition 11.
+- **(d)** S consists of the nine operators s_{x,y} = X^{x(1, …, 1)} Z^{y c}, and all eight non-identity ones have full
+  weight.
+  - On copy i, E_i s_{x,y} is the identity for exactly one pair (x, y), since c_i ≠ 0. So the classes E·S correspond
+    to distributions of the b copies over the nine cells (x, y), and p = (1/9) Σ_{cells} (−1/2)^{N_cell}, where N_cell
+    is the number of copies in that cell. Every distribution occurs.
+  - Since (−1/2)^m ≥ 1 − (3/2)m for every integer m ≥ 0, with equality for m ∈ {0, 1}, we get p ≥ 1 − b/6, with
+    equality when no cell holds two copies (possible for b ≤ 9).
+  - For b ≥ 7, put one copy in each of seven cells and the rest in an eighth. Then 9p ≤ 7(−1/2) + 1 + 1 < 0. ∎
+
+The formula in (a) reproduces the dense spectra of the [[3, 1, 2]] and [[4, 2, 2]] compressions to 5 × 10^{−15}
+(`check_code_blocks.py`, part (a)). The weights for [[4, 2, 2]] are 1/3, 7/12, 17/24, 5/6 and 43/48, and the
+compression is not inside the Gurvits–Barnum ball. The test in (b) also certifies the [[3, 1, 2]] code again. We
+have not tested [[5, 3, 2]] (PPT, smallest weight 1/6) or [[6, 4, 2]] (smallest weight 0).
 
 ## References
 
@@ -654,3 +720,6 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and
   checks the product bound against the dense q_n. It also checks the separable decompositions of Propositions 11 and
   12 and the purity test of Proposition 13.
+- `code/check_code_blocks.py`: Proposition 14. It checks the weight formula against dense spectra, builds the exact
+  separability certificates for the [[3, 1, 2]] and [[4, 2, 2]] codes (needs SymPy), and computes the minimum weights
+  of the [[b, b − 2, 2]] family.
