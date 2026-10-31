@@ -106,8 +106,9 @@ C = |0^n⟩⟨0^n| − (−1)^n |1^n⟩⟨1^n|.
 An adversary over rank-two C that maximises over copies and bases finds nothing worse than this family at n = 2
 (−1/12 per unit norm). The mechanism is general: at a zero the maximum of Δ is 0 and is attained only in thin
 directions, so any average that puts weight elsewhere is negative. Averaged rules that draw w from a C-dependent
-distribution (an angular Gaussian with covariance a power of the local support operator) also failed at two copies
-in our tests.
+distribution (an angular Gaussian with covariance ρ_s^p, ρ_s the local support operator) also fail at two copies:
+p = −1/2, −1 and −2 give average gains of −0.0097, −0.0171 and −0.035 on adversarial operators
+(`check_qc_averaged_rule.py`).
 
 **Remark (first zeros).** Suppose EP_{n−1} holds and EP_n fails. Then [T2, Thm. 6.3] gives t* < 1/2 and C* of rank two
 minimising q_n(t*, ·)/‖·‖² with value 0. The filtered operators (Q + aP)C*(Q + bP), with P = |w⟩⟨w| at copy s and
@@ -934,6 +935,7 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_qc_fast.py`: the five-copy QC adversary of Section 1 (needs PyTorch; `python check_qc_fast.py 5 120`, about
   fifteen minutes).
 - `code/check_block_average.py`: the remark on basis averages in Section 1.
+- `code/check_qc_averaged_rule.py`: the averaged-rule adversary in Section 1 (needs PyTorch).
 - `code/check_averaging.py`: Section 2. It averages exactly over the four mutually unbiased bases of C³ (a 2-design).
 - `code/check_monogamy.py`: Section 3.
 - `code/check_mps.py`: Section 4. It checks Proposition 4 against dense q_n, shows a Perron operator, and re-evaluates a
