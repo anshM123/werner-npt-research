@@ -2,7 +2,7 @@
 
 Ansh Mishra and Aryan Senthilkumar
 
-This repository collects our results, as of 30 October 2026, on the question of whether NPT bound entanglement exists.
+This repository collects our results, as of 31 October 2026, on the question of whether NPT bound entanglement exists.
 That is Problem 4 of Horodecki, Rudnicki and Życzkowski, PRX Quantum 3, 010101 (2022). The standard route to it is the
 qutrit Werner state ρ ∝ I − F/2: is it undistillable from every number of copies? At the endpoint α = 1/2, n-copy
 undistillability is equivalent (Costa Rico; Qi–Gupur–Wu–Guo; Song–Chen) to
@@ -24,6 +24,7 @@ local runs at three copies. What follows are partial results, each with its stat
 | [`copy-amplification/`](copy-amplification) | m-copy undistillability is a budget that can be spent across copies. Combined with Tomar's certificates, this gives the widest known windows valid for every n at fixed d (the only ones that stay above 1/d); at d = 3, 4 they are the best known for every n ≥ 6. | Proved, partly conditional on deposited (unrefereed) computer certificates; not refereed |
 | [`bosonic-sector-notes/`](bosonic-sector-notes) | Operators whose range and co-range lie in the symmetric subspace, every n. The endpoint form has an exact SU(3) spectrum. It is nonnegative, indeed at least (1−2t)^n‖C‖², for every n and every rank, on operators whose range lies in one occupation sector z^l·Sym^{n−l}(z^⊥). Numerically, the minimum over rank-two operators is 0 (n ≤ 7), attained at qubit-supported operators. | Sector theorem proved; the full bosonic sector is open |
 | [`three-copy-notes/`](three-copy-notes) | Three copies, rank-two projectors. Exact identities: a monogamy form, a triple-cross-product form and an entanglement form of the endpoint. The margin q_3(P_V) ≥ ¾ λ_3(V) is proved on diagonal planes in every dimension (proof corrected after an audit). The sharp three-copy margin is conjectured for all planes, with numerical evidence. A remark shows that crossed Cauchy–Schwarz is not tensor-stable. | Identities and diagonal theorem proved; general margin conjectured |
+| [`contraction-notes/`](contraction-notes) | Passing the endpoint from n − 1 to n copies through contractions. An exact identity shows that an "aligned" class of rank-two operators (common backbone on the other copies, arbitrary tails) is nonnegative at n copies whenever n − 1 copies are; with the three-copy theorem this gives four copies on the class. The zeros P ⊗ |a⟩⟨b| have nonnegative second variation for every n, given n − 1. A natural site-contraction inequality is false (an explicit three-copy operator). | Identity and second-variation statement proved; the counterexample is numerical |
 
 Each folder has its own README or notes, the LaTeX source and PDF where there is a paper, and verification scripts.
 The scripts need Python 3 with NumPy and SciPy. copy-amplification also needs SymPy and Matplotlib, and two of its
@@ -36,7 +37,8 @@ scripts need PyTorch.
 - The endpoint for every n on the bosonic sector (range and co-range in Sym^n(C^3)). Section 4 of
   `bosonic-sector-notes/NOTES.md` isolates the remaining obstruction: interference between occupation blocks on one
   diagonal.
-- Four copies at the exact endpoint. Tomar proves α ≤ 0.4979 for qutrits.
+- Four copies at the exact endpoint. Tomar proves α ≤ 0.4979 for qutrits. `contraction-notes/` covers one class
+  of operators that are thick at a copy.
 - Tomar's two-copy constant 1/4 for operators whose range and co-range differ. We prove 1/37 in general, and the
   sharp constant for the plane class.
 

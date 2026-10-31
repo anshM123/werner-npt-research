@@ -1,0 +1,4 @@
+rank check: singular values / ||C|| = [0.980481 0.196615 0.       0.      ]
+R_3(C) = 0.101905  (defining sum; via B: 0.101905)
+min over contractions of R_2, per site (200 starts each): [0.207658 0.207449 0.207236]
+R_3(C) - (1/2) min = -1.714e-03   (negative: the inequality fails at this C)

@@ -1,0 +1,4 @@
+n=3, random entangled a, b #0: |gradient| = 0.0e+00; smallest Hessian eigenvalues [-0. -0. -0. -0.]; number below -1e-8: 0
+n=3, random entangled a, b #1: |gradient| = 0.0e+00; smallest Hessian eigenvalues [-0. -0. -0. -0.]; number below -1e-8: 0
+n=4, random entangled a, b #0: |gradient| = 0.0e+00; smallest Hessian eigenvalues [-0. -0. -0. -0.]; number below -1e-8: 0
+n=4, random entangled a, b #1: |gradient| = 0.0e+00; smallest Hessian eigenvalues [-0. -0. -0. -0.]; number below -1e-8: 0
