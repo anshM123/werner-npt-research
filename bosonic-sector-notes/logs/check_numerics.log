@@ -4,22 +4,29 @@
   n= 4 (dim Sym^n =  15): -1.05e-17
   n= 5 (dim Sym^n =  21): -4.35e-16
   n= 6 (dim Sym^n =  28): +6.05e-16
-(b) Werner family: all rank-2 bosonic C vs qubit-supported C
-  n=2 t=0.3333: all +0.333333   qubit-supported +0.333333   n 2^(1-n) (1-2t) = 0.333333
-  n=2 t=0.4000: all +0.200000   qubit-supported +0.200000   n 2^(1-n) (1-2t) = 0.200000
-  n=2 t=0.4500: all +0.100000   qubit-supported +0.100000   n 2^(1-n) (1-2t) = 0.100000
-  n=2 t=0.4800: all +0.040000   qubit-supported +0.040000   n 2^(1-n) (1-2t) = 0.040000
-  n=2 t=0.4900: all +0.020000   qubit-supported +0.020000   n 2^(1-n) (1-2t) = 0.020000
-  n=2 t=0.5000: all -0.000000   qubit-supported -0.000000   n 2^(1-n) (1-2t) = 0.000000
-  n=3 t=0.3333: all +0.234931   qubit-supported +0.234931   n 2^(1-n) (1-2t) = 0.250000
-  n=3 t=0.4000: all +0.152000   qubit-supported +0.152000   n 2^(1-n) (1-2t) = 0.150000
-  n=3 t=0.4500: all +0.075250   qubit-supported +0.075250   n 2^(1-n) (1-2t) = 0.075000
-  n=3 t=0.4800: all +0.030016   qubit-supported +0.030016   n 2^(1-n) (1-2t) = 0.030000
-  n=3 t=0.4900: all +0.015002   qubit-supported +0.015002   n 2^(1-n) (1-2t) = 0.015000
-  n=3 t=0.5000: all -0.000000   qubit-supported -0.000000   n 2^(1-n) (1-2t) = 0.000000
-  n=4 t=0.3333: all +0.159980   qubit-supported +0.159980   n 2^(1-n) (1-2t) = 0.166667
-  n=4 t=0.4000: all +0.099293   qubit-supported +0.099293   n 2^(1-n) (1-2t) = 0.100000
-  n=4 t=0.4500: all +0.050500   qubit-supported +0.050500   n 2^(1-n) (1-2t) = 0.050000
-  n=4 t=0.4800: all +0.020032   qubit-supported +0.020032   n 2^(1-n) (1-2t) = 0.020000
-  n=4 t=0.4900: all +0.010004   qubit-supported +0.010004   n 2^(1-n) (1-2t) = 0.010000
-  n=4 t=0.5000: all +0.000000   qubit-supported -0.000000   n 2^(1-n) (1-2t) = 0.000000
+  n= 7 (dim Sym^n =  36): -6.25e-17
+(b) Werner family: all rank-2 bosonic C vs qubit-supported C; (1-t)^n - t^n is the value at the GHZ operator
+  n=2 t=0.3333: all +0.333333   qubit-supported +0.333333   (1-t)^n - t^n = 0.333333
+  n=2 t=0.4000: all +0.200000   qubit-supported +0.200000   (1-t)^n - t^n = 0.200000
+  n=2 t=0.4500: all +0.100000   qubit-supported +0.100000   (1-t)^n - t^n = 0.100000
+  n=2 t=0.4800: all +0.040000   qubit-supported +0.040000   (1-t)^n - t^n = 0.040000
+  n=2 t=0.4900: all +0.020000   qubit-supported +0.020000   (1-t)^n - t^n = 0.020000
+  n=2 t=0.5000: all -0.000000   qubit-supported -0.000000   (1-t)^n - t^n = 0.000000
+  n=3 t=0.3333: all +0.234931   qubit-supported +0.234931   (1-t)^n - t^n = 0.259259
+  n=3 t=0.4000: all +0.152000   qubit-supported +0.152000   (1-t)^n - t^n = 0.152000
+  n=3 t=0.4500: all +0.075250   qubit-supported +0.075250   (1-t)^n - t^n = 0.075250
+  n=3 t=0.4800: all +0.030016   qubit-supported +0.030016   (1-t)^n - t^n = 0.030016
+  n=3 t=0.4900: all +0.015002   qubit-supported +0.015002   (1-t)^n - t^n = 0.015002
+  n=3 t=0.5000: all +0.000000   qubit-supported -0.000000   (1-t)^n - t^n = 0.000000
+  n=4 t=0.3333: all +0.159980   qubit-supported +0.159980   (1-t)^n - t^n = 0.185185
+  n=4 t=0.4000: all +0.099293   qubit-supported +0.099293   (1-t)^n - t^n = 0.104000
+  n=4 t=0.4500: all +0.050500   qubit-supported +0.050500   (1-t)^n - t^n = 0.050500
+  n=4 t=0.4800: all +0.020032   qubit-supported +0.020032   (1-t)^n - t^n = 0.020032
+  n=4 t=0.4900: all +0.010004   qubit-supported +0.010004   (1-t)^n - t^n = 0.010004
+  n=4 t=0.5000: all -0.000000   qubit-supported -0.000000   (1-t)^n - t^n = 0.000000
+  n=5 t=0.3333: all +0.107849   qubit-supported +0.107849   (1-t)^n - t^n = 0.127572
+  n=5 t=0.4000: all +0.060480   qubit-supported +0.060480   (1-t)^n - t^n = 0.067520
+  n=5 t=0.4500: all +0.031876   qubit-supported +0.031876   (1-t)^n - t^n = 0.031876
+  n=5 t=0.4800: all +0.012540   qubit-supported +0.012540   (1-t)^n - t^n = 0.012540
+  n=5 t=0.4900: all +0.006255   qubit-supported +0.006255   (1-t)^n - t^n = 0.006255
+  n=5 t=0.5000: all +0.000000   qubit-supported +0.000000   (1-t)^n - t^n = 0.000000

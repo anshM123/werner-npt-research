@@ -2,7 +2,7 @@
 
 Ansh Mishra and Aryan Senthilkumar
 
-This repository contains a short paper, with verification code, on multi-copy undistillability of Werner states. The
+This folder contains a short paper, with verification code, on multi-copy undistillability of Werner states. The
 question behind it is whether there exist NPT states that cannot be distilled from any number of copies. This is
 Problem 4 of P. Horodecki, Ł. Rudnicki and K. Życzkowski, *Five open problems in quantum information theory*, PRX
 Quantum **3**, 010101 (2022).
@@ -14,7 +14,8 @@ Undistillability of the states in between is known in the following cases:
 - **two copies at the endpoint α = 1/2, in every dimension:** settled in July 2026 by four independent groups (Fu–Gao–Park,
   Song–Chen, Fraser–Huber–Pozsgay–Vona, Bharti–Gajjala–Haug);
 - **three copies at the endpoint for d = 3 and d = 4:** settled by exact computer certificates (an anonymous Zenodo
-  deposit and A.-X. Liu), replayed by MacCormack and Bao, who also formalised the d = 3 case in Lean;
+  deposit, and A.-X. Liu with C.-F. Qiao), replayed by MacCormack and Bao, who also formalised the d = 3 case in
+  Lean and proved the sharp three-copy curve (1 − 2α)(1 − α)² for d ≤ 4;
 - **three copies for α ≤ 37/80 in every dimension:** MacCormack and Bao;
 - **three copies at the endpoint in every dimension, four and five copies close to it:** T. S. Tomar (Zenodo, October
   2026), by exact computer certificates.
@@ -52,8 +53,8 @@ Consequences:
 - In every dimension, the two-copy theorem alone gives four-copy undistillability for 1/d < α ≤ (d+4)/(5d+2).
 - With Tomar's three-copy endpoint theorem as input, ρ_α is n-copy undistillable for α ≤ (n+d−2)/(nd−d+2), for
   every n ≥ 3 and every d.
-- With Tomar's five-copy qutrit bound (α₀ = 47/100) as input, qutrit Werner states are six-copy undistillable for
-  α ≤ 0.4469. Together with the correlated factors below, they are n-copy undistillable for
+- With Tomar's five-copy qutrit bound (α₀ = 47/100) as input and correlated separable factors, qutrit Werner states
+  are six-copy undistillable for α ≤ 0.4469; the budget alone gives 1087/2441 ≈ 0.4453. Together with the correlated factors below, they are n-copy undistillable for
   α ≤ (851n + 1272)/(2553n − 1272) for every n ≥ 24, that is 1/3 + 0.664/n.
 - For ququarts, his every-dimension five-copy bound (9/20) gives α ≤ (12913n + 39648)/(51652n − 39648) for n ≥ 24,
   that is 1/4 + 0.960/n.
@@ -65,7 +66,8 @@ A + vB is separable, then ⊗_i(A + u_iB) is one-copy undistillable whenever Σ_
 
 A corollary holds for every number of copies at once. Call a site of a filter *thin* if its local supports overlap
 in at most two dimensions (Tr(P_i Q_i) ≤ 2). A Werner factor with α ≤ 1/2 at a thin site becomes separable after
-compression, so only thick sites spend budget. Hence, for every n, no filter with at most t thick sites distills
+compression, so only thick sites spend budget. (This thin-site copy removal is Wu–Zou's Thm. 7.2 for three copies and
+Tomar's Lemma 6.1, Zenodo 23718037, for every number of copies; the combination with the budget is new.) Hence, for every n, no filter with at most t thick sites distills
 ρ_α^{⊗n} when α lies in the t-copy window; for qutrits this means α ≤ (t+1)/(3t−1).
 
 More precisely, a site whose local supports overlap by τ costs (1 + α₀)(ατ − 1)₊ / ((α₀τ − 1)(1 + α)). That cost is zero
@@ -98,7 +100,7 @@ antisymmetric", where products of single-site separable factors give at most 1/4
 
 Twirling every site and symmetrising over sites reduce the question to convolutions of small distributions, i.e. to a
 linear program. Exact rational certificates (`code/correlated/`) then give:
-- four qutrit copies up to α = 0.45756 from the three-copy theorem, and up to 0.41603 from the two-copy theorem
+- four qutrit copies up to α = 0.45776 from the three-copy theorem, and up to 0.41603 from the two-copy theorem
   alone (budget: 5/11 and 7/17);
 - four ququart copies up to 0.43574 (budget: 3/7);
 - certificates for n = 4, 6, 8, 10, 12, 16 and 24 copies, and for ququarts up to n = 24 (the excess over the
@@ -139,7 +141,8 @@ budget windows are still the only ones that stay above 1/d for every n.
 
 - The proofs are complete and elementary.
   - The budget part has been checked independently twice, step by step and in exact rational arithmetic, the second
-    time on about 31,000 randomized instances of the cone lemma.
+    time on about 31,000 randomized instances of the cone lemma (that check's code is not in this repository;
+    `code/pipage_constructor.py` runs 400 instances per seed).
   - The correlated-factor part was checked independently once more. That check re-verified all certificates with
     separate code and re-derived the reduction, the ceiling and the uniform-in-d arguments.
   - The paper has not been refereed.

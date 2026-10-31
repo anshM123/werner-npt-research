@@ -13,3 +13,6 @@
   n=2: one block per diagonal: min eig -5.2e-16;  repeated diagonal: min eig -0.2500
   n=3: one block per diagonal: min eig -7.2e-16;  repeated diagonal: min eig -0.2348
   n=4: one block per diagonal: min eig -1.3e-15;  repeated diagonal: min eig -0.1250
+(e) sector minima away from the endpoint (t = 0.4), n = 2, 3
+  n=2, t=0.4: minimum eigenvalue on each sector E_l, l = 0..n: [0.2, 0.4, 0.36];  (1-2t)^n = 0.0400
+  n=3, t=0.4: minimum eigenvalue on each sector E_l, l = 0..n: [0.104, 0.25333, 0.36, 0.216];  (1-2t)^n = 0.0080

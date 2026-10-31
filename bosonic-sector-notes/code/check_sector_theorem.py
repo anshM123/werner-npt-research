@@ -4,7 +4,8 @@
        occupation basis with entries d(a,b) = sum_j C(a,j) C(b,j) (1-2t)^{a-j} (2t^2)^j (1-t)^{b-j}  (n <= 3).
    (b) q_n(t,C) = <<C| B^{(x)n} |C>> for a random C on (C^3)^{(x)3}.
    (c) Minimum eigenvalue of the q-form on Hom(Sym^n, E_l) (range in one occupation sector), n <= 5.
-   (d) Block patterns: at most one block per diagonal l - m gives a PSD form; a repeated diagonal can be negative."""
+   (d) Block patterns: at most one block per diagonal l - m gives a PSD form; a repeated diagonal can be negative.
+   (e) Sector minima at t = 0.4 for n = 2, 3, against the bound (1-2t)^n."""
 import itertools
 import numpy as np
 from math import comb, sqrt
@@ -84,3 +85,12 @@ for n in (2, 3, 4):
             if len(set(diag)) == len(diag): good = min(good, v)
             else: bad = min(bad, v)
     print(f"  n={n}: one block per diagonal: min eig {good:+.1e};  repeated diagonal: min eig {bad:+.4f}")
+
+print("(e) sector minima away from the endpoint (t = 0.4), n = 2, 3")
+for n in (2, 3):
+    Q, D, occ = qform(n, 0.4)
+    mins = []
+    for l in range(n + 1):
+        idx = [r * D + c for r in range(D) for c in range(D) if occ[r] == l]
+        mins.append(round(float(np.linalg.eigvalsh(Q[np.ix_(idx, idx)])[0]), 5))
+    print(f"  n={n}, t=0.4: minimum eigenvalue on each sector E_l, l = 0..n: {mins};  (1-2t)^n = {0.2 ** n:.4f}")

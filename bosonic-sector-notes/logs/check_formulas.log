@@ -13,4 +13,4 @@
   n=5: max |eig - predicted| = 3.8e-15;  gamma_(n,k), k = 0..n: ['-3/32', '3/40', '-1/20', '1/8', '-1/10', '1']
   n=6: max |eig - predicted| = 4.2e-15;  gamma_(n,k), k = 0..n: ['1/16', '-1/32', '1/24', '-1/32', '1/10', '-1/12', '1']
 (c) closed forms
-  closed forms and sign pattern (-1)^(n-k) hold for n = 2..39: True
+  closed forms and the strict sign pattern (-1)^(n-k) hold for n = 2..39: True

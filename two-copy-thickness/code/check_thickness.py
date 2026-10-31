@@ -15,7 +15,7 @@
    max tau and (3 - sqrt5)/4, (c) for C >= 0 with tau and 1/4,
    the facts and product identities used in the proofs, the Re/Im identity, operators C = VMV*, and the examples behind
    the sharpness claims, including the one showing
-   that tau cannot replace lambda_3 in (a) for d >= 5.
+   that tau cannot replace lambda_3 in (a) from d = 4 on.
 
 Plain NumPy; runs in about a minute.
 """

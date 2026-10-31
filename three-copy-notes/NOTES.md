@@ -13,7 +13,9 @@ For an operator C on (C^d)^{⊗3} let
     q_3(C) = Σ_J (−1/2)^{|J|} ‖Tr_J C‖_2²,
 
 with J running over subsets of the three sites. The qutrit Werner state at α = 1/2 is three-copy undistillable if and
-only if q_3(C) ≥ 0 for every C of rank at most two. This is known, by Tomar's computer-assisted proof. Wu and Zou
+only if q_3(C) ≥ 0 for every C of rank at most two. This is known. For d = 3 it was first certified by exact computer
+certificates (an anonymous Zenodo deposit, 4 October 2026), which MacCormack and Bao replayed and formalised in Lean;
+Tomar's computer-assisted proof covers every d. Wu and Zou
 (arXiv:2608.02647) proved it for positive semidefinite and normal C, and for every C whose range and co-range lie in
 one plane.
 
@@ -69,12 +71,15 @@ where g_(3) is the third largest entry of g. Moreover
 
 *Proof.* Every partial trace kills the off-diagonal terms of P_V. So all one- and two-site marginals are diagonal,
 with squared norm Σ_j g_j², and the formula for q_3 follows. By Schur–Horn, g ranges over
-{0 ≤ g_j ≤ 1, Σ g_j = 2}, and the claim becomes Σ g_j² + g_(3) ≤ 2. Order g_1 ≥ g_2 ≥ …, and put t = g_(3) and
-r = Σ_{j≥3} g_j, so that Σ_{j≥3} g_j² ≤ t r.
-- If g_1 + g_2 = 2 − r ≥ 1, then g_1² + g_2² ≤ 1 + (1 − r)².
-  - For r ≤ 1/2 (where t ≤ r) the total is at most 2 − r + 2r² ≤ 2.
-  - For r ≥ 1/2 (where t ≤ g_2 ≤ 1 − r) the total is at most 3 − 2r ≤ 2.
-- If g_1 + g_2 = s < 1, the total is at most s²/2 + 3s/2 < 2. ∎
+{0 ≤ g_j ≤ 1, Σ g_j = 2}, and the claim becomes f(g) = Σ g_j² + g_(3) ≤ 2.
+- By symmetry we may order g_1 ≥ g_2 ≥ …. On this ordered chamber g_(3) = g_3 is linear, so f is strictly convex,
+  and its maximum is attained only at vertices.
+- The chamber is the slice Σ g_j = 2 of the simplex {1 ≥ g_1 ≥ … ≥ g_d ≥ 0}, whose vertices are (1^a, 0^{d−a}). Its
+  vertices are therefore (1, 1, 0, …); (1, 1/b, …, 1/b, 0, …) with b ≥ 2 entries 1/b; and (2/b, …, 2/b, 0, …) with
+  b ≥ 3 entries 2/b.
+- At these vertices f equals 2, 1 + 2/b and 6/b, all at most 2. ∎
+
+The maximum 2 is attained exactly at (1, 1, 0, …), (1, 1/2, 1/2, 0, …) and (2/3, 2/3, 2/3, 0, …).
 
 Equality holds, with λ_3 > 0, for g = (2/3, 2/3, 2/3, 0, …) (the plane span{GHZ, GHZ_ω}) and for
 g = (1, 1/2, 1/2, 0, …) (the plane span{(|000⟩ − |111⟩)/√2, |222⟩}). In Tomar's units this is a ratio of 3 on this
@@ -86,12 +91,16 @@ family, against his conjectured 1. Check: `code/check_diagonal_family.py`.
 
 Evidence (numerical):
 - **The two equality planes of Section 2 are local minima** of q_3/λ_3 = 3/4 over all planes. Local searches from
-  perturbations at scales 10^{-3} to 0.15 never go lower (`code/check_local_minima.py`).
+  perturbations at scales 10^{-3} to 0.15 never go lower (`code/check_local_minima.py`). The objective is
+  nonsmooth, since λ_3 is a minimum over sites of a third eigenvalue, so this is weak evidence.
 - **Symmetric planes** (V ⊂ Sym³(C³)): the minimum found is 0.75017.
 - **Searches over all planes** stay at 0.758 or above.
 - **Searches started next to thin planes** move away from them, so the bound appears linear down to λ_3 = 0.
+- The three items above come from exploratory searches that are not scripted in this folder.
 - **Only the minimum over sites works.** The analogous bound with max_l λ_3^{(l)} fails: there are exact zeros of
-  q_3(P_V) that are thick at two sites and thin at the third.
+  q_3(P_V) that are thick at two sites and thin at the third. For example, take V = U ⊗ ψ with U a plane at the
+  first site and ψ an entangled vector of Schmidt rank three on the other two. Then q_3(P_V) = q_1(P_U) q_2(ψψ*) = 0
+  (cf. Tomar 23718037, Lemma 2.7(b)).
 
 Equivalent forms, from Section 1:
 - monogamy: Σ_l C_l ≤ (3/2)(1 − min_l λ_3(ψ_l));
@@ -99,16 +108,17 @@ Equivalent forms, from Section 1:
 - entanglement: E_x Σ_l S_L(x_l) − ‖u ⊠ v‖² ≥ λ_3(V).
 
 Remarks on a proof:
-- **Wu and Zou's proof of q_3 ≥ 0 has three inequalities:** their Theorem 1.1, their Lemma 5.1, and an AM–GM step.
-  The total slack of these three equals the left side of the conjecture, up to a factor.
+- **Wu and Zou's proof of q_3 ≥ 0 for these operators** combines their Theorem 1.1, their Lemma 5.1, a
+  Cauchy–Schwarz step over the three cuts, and an AM–GM step. In our numerics the total slack of these steps equals
+  the left side of the conjecture, up to a factor. This and the next item are not scripted in this folder.
 - **No single step carries the margin.** At span{GHZ, GHZ_ω} the whole margin sits in the slack of Theorem 1.1. At
   span{(|000⟩ − |111⟩)/√2, |222⟩} it sits in the AM–GM step. A proof must bound the three slacks jointly.
 - **The best simple bound is short of the target.** A correlation-complementarity argument (anticommuting
   σ_i^R ⊗ O operators, with traceless HS-unit O of operator norm ≤ √((d−1)/d)) gives Σ_l C_l ≤ 3(d − 1)/d. That is
-  exactly 3/2 at d = 2, but only 2 at d = 3.
+  exactly 3/2 at d = 2, but only 2 at d = 3. We only sketch this argument here.
 
 For Hermitian rank-two C with range in a plane (not only projectors), the numerical minimum of
-2³ q_3(C)/(‖C‖² λ_3) is about 1.40, again above Tomar's conjectured 1.
+2³ q_3(C)/(‖C‖² λ_3) is about 1.40 in exploratory searches (not scripted here), again above Tomar's conjectured 1.
 
 ## 4. Remark: crossed Cauchy–Schwarz is not tensor-stable
 
@@ -131,6 +141,9 @@ So any all-copy argument for the plane class must use the specific Werner weight
 ## References
 
 - T. S. Tomar, Equality cases and every-copy results for the Werner endpoint inequality, Zenodo 23718037 (2026),
-  Conjecture 7.1 and Theorem 6.3.
+  Conjecture 7.1 and Lemma 2.7.
 - T. S. Tomar, Undistillability of Werner states from three, four and five copies, Zenodo 23718035 (2026).
 - T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.
+- Anonymous, Three-copy undistillability of the boundary qutrit Werner state, Zenodo 10.5281/zenodo.23134454 (2026).
+- I. MacCormack, N. Bao, Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in
+  every dimension (2026), github.com/physical-superintelligence/oqp-batch-2026.

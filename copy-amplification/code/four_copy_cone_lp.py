@@ -5,7 +5,7 @@ Per site write a twirled Werner operator by its (P^s, P^a) eigenvalues normalise
    target rho_alpha    ~ P^s + rho P^a, rho = (1 + alpha)/(1 - alpha).
 A product of per-site operators with at most m endpoint factors and separable others is undistillable whenever the
 m-copy endpoint theorem holds (separable factors are absorbed into the local filters; d = 3: m <= 3 by the
-published three-copy certificates).  Mixtures of undistillable operators are undistillable.  Hence rho_alpha^{(x)n}
+deposited (unrefereed) three-copy certificates).  Mixtures of undistillable operators are undistillable.  Hence rho_alpha^{(x)n}
 is n-copy undistillable if (1, rho, rho^2, ..., rho^n) lies in the cone of symmetrised generator moment vectors
    ( e_k(r_1..r_n) / C(n, k) )_{k = 0..n},   r_i in {3} u [0, bmax],   at most m of the r_i equal to 3.
 (Necessity of this form: the products are diagonal in the parity basis Pi_A; symmetrising over site permutations

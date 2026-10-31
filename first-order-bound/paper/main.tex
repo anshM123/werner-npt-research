@@ -27,7 +27,7 @@ We prove that every operator $Z$ on a finite-dimensional tensor product $H_1\oti
 \sum_{i=1}^n \norm{\Tr_i Z}_2^2\;\le\;(n-1)\norm{Z}_2^2+\norm{Z}_1^2 ,
 \]
 where $\Tr_i$ is the partial trace over the $i$th factor. The inequality is sharp. It needs no positivity and no rank
-assumption. For $n=2$ it follows from a recent bound of Costa Rico and Wolf; for $n\ge3$ it is new.
+assumption. For $n=2$ it follows from a recent bound of Costa Rico and Wolf; for $n\ge3$ we believe it is new.
 
 For operators of rank at most two it gives $\sum_i\norm{\Tr_iC}_2^2\le(n+1)\norm{C}_2^2$. This is Assumption~(i) of
 Chattopadhyay and Sarkar from 2006, i.e.\ the first-order part of the $n$-copy distillability problem for Werner
@@ -40,7 +40,7 @@ a balanced factorisation and second compound matrices. The method does not reach
 relaxation of the endpoint inequality we tried fails already for two or three copies. In the remarks we split the
 multiplicative (``no collective gain'') form of the problem into $n$ inequalities, of which ours is the first and the
 endpoint the last. For three copies the other two follow from the two-copy theorem and Tomar's computer-assisted
-three-copy theorem. So, given that theorem, the multiplicative form holds for three copies. We also prove that the
+three-copy theorem. So, given that theorem, the multiplicative form holds for three copies in every dimension; for local dimension at most four this was proved earlier by MacCormack and Bao, through an identity of the same kind. We also prove that the
 two-copy inequality has a margin linear in the thickness of the co-range, which answers a question of Tomar, and that
 for normal operators it holds with the sharp constant $1-1/\sqrt2$, better than the $\frac14$ Tomar conjectured.
 \end{abstract}
@@ -53,12 +53,12 @@ $\alpha>1/2$. Whether the states with $1/d<\alpha\le1/2$ can be distilled from s
 bound-entanglement problem \cite{DSSTT,DCLB,HRZ}.
 
 The two-copy case was settled in 2026 by several groups \cite{FGP,SongChen,FHPV,BGH}. Three copies have since been
-settled at the endpoint with computer assistance in every dimension \cite{Tomar}, and Wu and Zou proved the three-copy
+settled at the endpoint with computer assistance: for $d=3$ and $d=4$ by exact certificates \cite{AnonD3,LiuD4}, which MacCormack and Bao replayed, formalising $d=3$ in Lean and proving the sharp three-copy curve for $d\le4$ \cite{MB}; and in every dimension by Tomar \cite{Tomar}. Earlier, Wu and Zou proved the three-copy
 endpoint inequality for positive semidefinite and for normal operators of rank two, and for operators whose range and
 co-range lie in one plane \cite{WuZou}. The general $n$-copy
 question remains open.
 
-By \cite{CR23,SongChen}, $\rho_{1/2}$ is $n$-copy undistillable if and only if
+By \cite[Thm.~1]{CR23} (see also \cite[Thm.~V.1]{QGWG}; restated as \cite[Thm.~1]{SongChen}), $\rho_{1/2}$ is $n$-copy undistillable if and only if
 \begin{equation}\label{eq:qn}
 q_n(C)\;=\;\sum_{J\subseteq\{1,\dots,n\}}\Big(-\tfrac12\Big)^{|J|}\,\norm{\Tr_J C}_2^2\;\ge\;0
 \end{equation}
@@ -189,7 +189,7 @@ marginals on $A_0$ and on $A_0\otimes H_i$. The map
 is positive. Consequently every state on $A_0\otimes H$ satisfies $\sum_i\Tr\sigma_{0i}^2\le(n-1)\Tr\sigma_0^2+1$.
 \end{corollary}
 
-For $n=1$, $\Lambda$ is the reduction map. For $n\ge2$ one checks numerically that $\Lambda$ is not decomposable, so its
+For $n=1$, $\Lambda$ is the reduction map. For $n\ge2$ one checks numerically (not scripted here) that $\Lambda$ is not decomposable, so its
 positivity is not a consequence of positivity and partial transposition alone.
 
 \section{The block lemma}
@@ -319,6 +319,8 @@ The last statement is $\Tr[\sigma\Lambda(\sigma)]\ge0$.
 \end{proof}
 
 \section{Remarks and open problems}\label{sec:remarks}
+The numerical statements in this section (``in our searches'', ``numerically'', ``we found'') come from exploratory local optimisation. Unless a script in \texttt{code/} is named, they are not part of the scripted checks.
+
 
 \emph{Other multipartite forms.} The bipartite inequality of Wu and Zou, with $|\Tr X|^2$ in place of $\norm{X}_2^2$,
 does not extend in the same way. The bound
@@ -408,7 +410,7 @@ It is an equality for $\rho\otimes(cc^*)^{\otimes(n-1)}$ with $\rho\ge0$ of rank
 Theorem~\ref{thm:main}. For $n=2$ it is the bound proved above. For $r=1$ it holds for every $n$: it then reads
 $S_1(xy^*)\le(n-1)\norm{x}^2\norm{y}^2+|\langle y,x\rangle|^2$, that is
 $\sum_i\rho_i\otimes I\le(n-1)(\Tr\rho)\,I+\rho$ for $\rho=xx^*$, where $\rho_i$ is the marginal on factor $i$ and $I$
-acts on the other factors. For $n=2$ this is \cite[Lemma~6.4]{FHPV}. For larger $n$, apply the statement for $n-1$
+acts on the other factors. For $n=2$ this is \cite[Prop.~1]{CR23} (see also \cite[Prop.~11]{CRW} and \cite[Lemma~6.4]{FHPV}). For larger $n$, apply the statement for $n-1$
 factors to the marginal of $\rho$ on the first $n-1$ factors, add $\rho_n\otimes I$, and use the case $n=2$ for the cut
 between the first $n-1$ factors and the last. In our searches the rank-$r$ statement also holds for $r=3,4$ at
 $n=3,4$.
@@ -603,7 +605,7 @@ q_2(C)=\sigma_1^2\big(\tfrac14+E_1\big)+\sigma_2^2\big(\tfrac14+E_2\big)+\sigma_
 where $E_j=1-\Tr\rho_{v_j}^2$ for the reduced operator $\rho_{v_j}$ of $v_jv_j^*$ and
 $\Delta=4\norm{\Pi(v_1\otimes v_2)}^2\in[0,1]$. Since $|\cos\varphi\,(\Delta-\frac12)|\le\frac12$, for any $\kappa$
 and $\mu$ we get $q_2(C)-\kappa\mu\norm{C}_2^2\ge k_1\sigma_1^2+k_2\sigma_2^2-\frac12\sigma_1\sigma_2$ with
-$k_j=\frac14+E_j-\kappa\mu$, which is nonnegative once $k_1,k_2>0$ and $k_1k_2\ge\frac1{16}$. Put
+$k_j=\frac14+E_j-\kappa\mu$, which is nonnegative once $k_1,k_2>0$ and $k_1k_2\ge\frac1{16}$ (the two-copy note shows $k_j\ge\frac14-\frac\kappa2>0$). Put
 $e_j=\min\{\frac12,E_j\}$. Weyl's inequality $\lambda_3(P+Q)\le\lambda_2(P)+\lambda_2(Q)$ gives
 $\mu:=\min_l\lambda_3^{(l)}(V)\le s:=e_1+e_2$, and for $\kappa=1-1/\sqrt2$ the identity
 $(\frac14+e_1-\kappa s)(\frac14+e_2-\kappa s)-\frac1{16}=\frac{\sqrt2-1}4s(1-2s)+e_1e_2$ shows $k_1k_2\ge\frac1{16}$
@@ -614,7 +616,7 @@ $\kappa=(3-\sqrt5)/4$, where $\frac14-\frac\kappa2=\kappa(1-\kappa)$, the identi
 $(\frac14+E_1-\kappa S)(\frac14+E_2-\kappa S)-\frac1{16}=\kappa(1-\kappa)S(1-S)+E_1E_2$ (with $E_1E_2\ge S-1$ when
 $S>1$) gives $q_2(C)\ge\frac{3-\sqrt5}4\max_l\tau_l(V)\norm{C}_2^2$ on the same class; this is the constant we found
 numerically for general $C$. For $C\ge0$, using $\Delta\ge\frac12\min_l\tau_l(V)$ from Lemma~\ref{lem:pair}, a similar
-computation gives $q_2(C)\ge\frac14\min_l\tau_l(V)\norm{C}_2^2$, with the tails in place of the third eigenvalues. For
+computation gives $q_2(C)\ge\frac14\min_l\tau_l(V)\norm{C}_2^2$, with the tails in place of the third eigenvalues (the two-copy note, Theorem~5(c), gives the full proof). For
 indefinite $C$ the third eigenvalues in the first bound cannot be replaced by the tails: for $v_1=|00\rangle$,
 $v_2=\sum_{i\ge1}|ii\rangle/\sqrt{d-1}$ and $C=v_1v_1^*-tv_2v_2^*$ the smallest ratio $q_2(C)/(\min_l\tau_l\norm{C}_2^2)$
 is $\frac14$ at $d=4$ and $(5-\sqrt{13})/6\approx0.232$ at $d=5$, and it tends to $(3-\sqrt5)/4$ as $d\to\infty$.
@@ -646,7 +648,7 @@ $t\in[0,1/2]$. For $n=3$ the middle level, $11S_0-4S_1+S_2\ge0$, also follows fr
 where $\{j,k\}$ is the complement of $i$ and $S_3=|\Tr C|^2$. The bracket is the slack of the two-copy theorem
 \cite{FHPV,BGH} for the bipartition of the three factors into $\{i\}$ and $\{j,k\}$, and $|\Tr C|^2\le2\norm{C}_2^2$
 for rank two. So, given the three-copy theorem \cite{Tomar}, all three levels hold for $n=3$, and the conjectured
-identity of the introduction holds for three copies at every $t\in[0,1/2]$. For $n\ge4$ no such linear combination
+identity of the introduction holds for three copies at every $t\in[0,1/2]$. For local dimension at most four this three-copy statement is due to MacCormack and Bao \cite[Thm.~1.2]{MB}, whose Proposition~3.1 is an exact identity of the same kind; what is new here is every $d$, given Tomar's theorem, the graded formulation for every $n$, and the linear program below. For $n\ge4$ no such linear combination
 exists: a linear program over the two- and three-copy theorems applied to all groupings of the copies (with the other
 copies as spectators), the bounds \eqref{eq:CS}, Theorem~\ref{thm:main} and the bound with a flatness term above finds
 none for any level $2\le k\le n$ at $n=4,5$. In our numerics every level holds, with equality at
@@ -673,6 +675,8 @@ numerics for $q=3/2$ and $q=3$, at every rank. A Han inequality for all Tsallis 
 natural. For $n=2$ it is Audenaert's theorem \cite{Aud}. Our argument is specific to $q=2$.
 
 \section{What the method does not give}
+As in Section~\ref{sec:remarks}, the numerical statements in this section come from exploratory searches that are not part of the scripted checks.
+
 
 The endpoint inequality \eqref{eq:qn} needs upper bounds on the odd moments $S_m$ and lower bounds on the even ones.
 Corollary~\ref{cor:allm} supplies only the first kind. This is why \cite{CS} needed a further unproved assumption to
@@ -704,13 +708,17 @@ first-order part of this map stays positive with an ancilla of any dimension.
 \bibitem{WuZou} T. Wu, Q. Zou, Sharp Pl\"ucker geometry for three-copy Werner distillation, arXiv:2608.02647.
 \bibitem{Tomar} T. S. Tomar, Undistillability of Werner states from three, four and five copies, Zenodo 23718035 (2026).
 \bibitem{Tomar2} T. S. Tomar, Equality cases and every-copy results for the Werner endpoint inequality, Zenodo 23718037 (2026).
-\bibitem{CR23} P. Costa Rico, New partial trace inequalities and distillability of Werner states, Lett. Math. Phys. (2025); arXiv:2310.05726.
+\bibitem{CR23} P. Costa Rico, New partial trace inequalities and distillability of Werner states, Lett. Math. Phys. \textbf{115}, 47 (2025); arXiv:2310.05726.
+\bibitem{QGWG} S.-Y. Qi, G. Gupur, Y.-C. Wu, G.-P. Guo, Unveiling NPT bound problem: from distillability sets to inequalities and multivariable insights, Phys. Rev. A \textbf{110}, 012406 (2024); arXiv:2402.18037.
+\bibitem{AnonD3} Anonymous, Three-copy undistillability of the boundary qutrit Werner state (2026), Zenodo 10.5281/zenodo.23134454.
+\bibitem{LiuD4} A.-X. Liu, C.-F. Qiao, Three-copy undistillability of the boundary two-ququart Werner state (2026), github.com/GLiuax/d4-three-copy-werner.
+\bibitem{MB} I. MacCormack, N. Bao, Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in every dimension (2026), github.com/physical-superintelligence/oqp-batch-2026.
 \bibitem{CS} I. Chattopadhyay, D. Sarkar, NPT bound entanglement---the problem revisited, arXiv:quant-ph/0609050.
 \bibitem{PPHH} \L. Pankowski, M. Piani, M. Horodecki, P. Horodecki, A few steps more towards NPT bound entanglement, IEEE Trans. Inf. Theory \textbf{56}, 4085 (2010); arXiv:0711.2613.
 \bibitem{Aud} K. M. R. Audenaert, Subadditivity of $q$-entropies for $q>1$, J. Math. Phys. \textbf{48}, 083507 (2007).
 \bibitem{Ras} A. E. Rastegin, Relations for certain symmetric norms and anti-norms before and after partial trace, J. Stat. Phys. \textbf{148}, 1040 (2012).
 \bibitem{CRW} P. Costa Rico, M. M. Wolf, Partial trace relations beyond normal matrices, J. Math. Phys. \textbf{67}, 082203 (2026); arXiv:2507.18278.
-\bibitem{FYK} S. Furuichi, K. Yanagi, K. Kuriyama, Some inequalities on generalized entropies, arXiv:1104.0360.
+\bibitem{FYK} S. Furuichi, N. Minculete, F.-C. Mitroi, Some inequalities on generalized entropies, J. Inequal. Appl. \textbf{2012}, 226 (2012); arXiv:1104.0360.
 \end{thebibliography}
 
 \end{document}

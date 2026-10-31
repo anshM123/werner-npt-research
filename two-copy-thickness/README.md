@@ -57,8 +57,9 @@ the range and the co-range of C to lie in it.
 
 ## Status
 
-- Each step was checked by an independent re-derivation, with symbolic checks of the certificate and adversarial
-  numerical searches (SDP, local optimisation, random sampling) for every lemma. No counterexample was found.
+- Each step was checked by an independent re-derivation, with symbolic checks of the certificate. The scripts in
+  `code/` run a grid check and random sampling; the adversarial searches (SDP, local optimisation) done during the
+  independent check are not part of this folder. No counterexample was found.
 - The note has not been refereed.
 
 ## Contents
@@ -72,4 +73,4 @@ the range and the co-range of C to lie in it.
 
 ## License
 
-MIT (see `LICENSE`).
+MIT (see `../LICENSE`).

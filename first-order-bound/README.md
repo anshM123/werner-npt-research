@@ -2,7 +2,7 @@
 
 Ansh Mishra and Aryan Senthilkumar
 
-This repository contains a short paper, with verification code, on a new inequality for partial traces and what it
+This folder contains a short paper, with verification code, on a new inequality for partial traces and what it
 says about multi-copy distillability of Werner states.
 
 ## The inequality
@@ -78,7 +78,8 @@ For three copies the middle inequality is an explicit nonnegative combination of
 - |Tr C|² ≤ 2‖C‖₂².
 
 So, given T. S. Tomar's computer-assisted three-copy theorem, the "no collective gain" conjecture holds for three
-copies on the whole range. For four or more copies a linear program finds no such combination.
+copies on the whole range, in every dimension. For local dimension at most four, MacCormack and Bao proved this
+earlier (their Theorem 1.2), through an identity of the same kind (their Proposition 3.1). For four or more copies a linear program finds no such combination.
 
 ## What this does not do
 

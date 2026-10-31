@@ -3,28 +3,31 @@
 Ansh Mishra and Aryan Senthilkumar
 
 This repository collects our results, as of 30 October 2026, on the question of whether NPT bound entanglement exists.
-Concretely: is the qutrit Werner state ρ ∝ I − F/2 undistillable from every number of copies? (This is Problem 4 of
-Horodecki, Rudnicki and Życzkowski, PRX Quantum 3, 010101 (2022).) At the endpoint α = 1/2, n-copy undistillability
-is equivalent to
+That is Problem 4 of Horodecki, Rudnicki and Życzkowski, PRX Quantum 3, 010101 (2022). The standard route to it is the
+qutrit Werner state ρ ∝ I − F/2: is it undistillable from every number of copies? At the endpoint α = 1/2, n-copy
+undistillability is equivalent (Costa Rico; Qi–Gupur–Wu–Guo; Song–Chen) to
 
     q_n(C) = Σ_J (−1/2)^{|J|} ‖Tr_J C‖_2² ≥ 0   for every operator C of rank at most two on (C^d)^{⊗n}.
 
 **This repository does not solve the problem.** The all-copy statement is still open: we have neither a proof for
-every n nor a counterexample. Every numerical search we ran ends exactly at the product value, for n ≤ 11 copies at
-d = 3, 7 at d = 4, 6 at d = 5 and 5 at d = 6. What follows are partial results, each with its status.
+every n nor a counterexample. In our exploratory searches (local optimisation; that code is not part of this
+repository) the minimum of q_n over rank-two C at α = 1/2 was always 0, and never negative, for n ≤ 11 copies at
+d = 3, 7 at d = 4, 6 at d = 5 and 5 at d = 6. The scripted searches here cover the bosonic sector for n ≤ 7 and
+local runs at three copies. What follows are partial results, each with its status.
 
 ## Contents
 
 | Folder | Result | Status |
 |---|---|---|
-| [`first-order-bound/`](first-order-bound) | Σ_i ‖Tr_i Z‖² ≤ (n−1)‖Z‖² + ‖Z‖₁² for every operator Z on n factors (sharp). This settles Chattopadhyay–Sarkar's first-order assumption (2006). The paper (13 pp) also has sharp rank-two bounds, a graded form of the "no collective gain" conjecture, and the three-copy case of that conjecture given Tomar's theorem. | Proved; checked independently; not refereed |
+| [`first-order-bound/`](first-order-bound) | Σ_i ‖Tr_i Z‖² ≤ (n−1)‖Z‖² + ‖Z‖₁² for every operator Z on n factors (sharp). This settles Chattopadhyay–Sarkar's first-order assumption (2006). The paper (13 pp) also has sharp rank-two bounds, a graded form of the "no collective gain" conjecture, and the three-copy case of that conjecture in every dimension given Tomar's theorem (MacCormack and Bao proved it earlier for local dimension at most four). | Proved; checked independently; not refereed |
 | [`two-copy-thickness/`](two-copy-thickness) | A margin linear in thickness for two copies: q_2(C) ≥ min_l τ_l ‖C‖²/(48 − 8√2), so m_2(V) ≥ min_l λ_3/37. This answers an open question of Tomar. For operators whose range and co-range lie in one plane, including all normal C, Tomar's inequality holds with the best possible constant 1 − 1/√2 > 1/4. (Tomar proved that constant on a different class of planes.) | Proved; checked independently; not refereed |
-| [`copy-amplification/`](copy-amplification) | m-copy undistillability is a budget that can be spent across copies. Combined with Tomar's certificates, this gives the best known n-copy undistillability windows at fixed d. | Proved, partly conditional on published computer certificates; not refereed |
-| [`bosonic-sector-notes/`](bosonic-sector-notes) | Operators whose range and co-range lie in the symmetric subspace, every n. The endpoint form has an exact SU(3) spectrum. It is positive, for every n and every rank, on operators whose range lies in one occupation sector z^l·Sym^{n−l}(z^⊥). Numerically, the minimum over rank-two operators is 0 (n ≤ 7), attained at qubit-supported operators. | Sector theorem proved; the full bosonic sector is open |
-| [`three-copy-notes/`](three-copy-notes) | Three copies, rank-two projectors. Exact identities: a monogamy form, a triple-cross-product form and an entanglement form of the endpoint. The margin q_3(P_V) ≥ ¾ λ_3(V) is proved on diagonal planes in every dimension. The sharp three-copy margin is conjectured for all planes, with numerical evidence. A remark shows that crossed Cauchy–Schwarz is not tensor-stable. | Identities and diagonal theorem proved; general margin conjectured |
+| [`copy-amplification/`](copy-amplification) | m-copy undistillability is a budget that can be spent across copies. Combined with Tomar's certificates, this gives the widest known windows valid for every n at fixed d (the only ones that stay above 1/d); at d = 3, 4 they are the best known for every n ≥ 6. | Proved, partly conditional on deposited (unrefereed) computer certificates; not refereed |
+| [`bosonic-sector-notes/`](bosonic-sector-notes) | Operators whose range and co-range lie in the symmetric subspace, every n. The endpoint form has an exact SU(3) spectrum. It is nonnegative, indeed at least (1−2t)^n‖C‖², for every n and every rank, on operators whose range lies in one occupation sector z^l·Sym^{n−l}(z^⊥). Numerically, the minimum over rank-two operators is 0 (n ≤ 7), attained at qubit-supported operators. | Sector theorem proved; the full bosonic sector is open |
+| [`three-copy-notes/`](three-copy-notes) | Three copies, rank-two projectors. Exact identities: a monogamy form, a triple-cross-product form and an entanglement form of the endpoint. The margin q_3(P_V) ≥ ¾ λ_3(V) is proved on diagonal planes in every dimension (proof corrected after an audit). The sharp three-copy margin is conjectured for all planes, with numerical evidence. A remark shows that crossed Cauchy–Schwarz is not tensor-stable. | Identities and diagonal theorem proved; general margin conjectured |
 
 Each folder has its own README or notes, the LaTeX source and PDF where there is a paper, and verification scripts.
-The scripts need Python 3 with NumPy; some also need SciPy.
+The scripts need Python 3 with NumPy and SciPy. copy-amplification also needs SymPy and Matplotlib, and two of its
+scripts need PyTorch.
 
 ## What is open
 

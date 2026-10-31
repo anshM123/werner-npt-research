@@ -33,5 +33,5 @@ for n in range(2, 40):
     ok &= gamma(n, n - 1) == Fraction(-1, 2 * n)
     ok &= gamma(n, n - 2) == Fraction(1, 2 * (n - 1))
     ok &= gamma(n, 0) == Fraction(1 + (-1) ** n * (2 * n + 3), 2 ** (n + 2))
-    ok &= all((gamma(n, k) > 0) == ((n - k) % 2 == 0) for k in range(n + 1))
-print("  closed forms and sign pattern (-1)^(n-k) hold for n = 2..39:", ok)
+    ok &= all(gamma(n, k) * (-1) ** (n - k) > 0 for k in range(n + 1))
+print("  closed forms and the strict sign pattern (-1)^(n-k) hold for n = 2..39:", ok)

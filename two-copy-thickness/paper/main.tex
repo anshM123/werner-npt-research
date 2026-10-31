@@ -39,12 +39,12 @@ which Tomar had established on a different class of planes.
 Let $F$ be the swap on $\mathbb C^d\otimes\mathbb C^d$ and let $\rho_\alpha\propto I-\alpha F$ be the Werner state. It is
 one-copy distillable for $\alpha>1/2$, and whether the states with $1/d<\alpha\le1/2$ are distillable from some number of
 copies is the NPT bound-entanglement problem \cite{DSSTT,DCLB,HRZ}. At the endpoint $\alpha=1/2$, two-copy
-undistillability is equivalent \cite{CR23,SongChen} to
+undistillability is equivalent \cite[Thm.~1]{CR23} (see also \cite[Thm.~V.1]{QGWG} and \cite[Thm.~1]{SongChen}) to
 \begin{equation}\label{eq:q2}
 q_2(C)=\norm{C}_2^2-\tfrac12\big(\norm{\Tr_1C}_2^2+\norm{\Tr_2C}_2^2\big)+\tfrac14|\Tr C|^2\ge0
 \end{equation}
 for every operator $C$ of rank at most two on $H_1\otimes H_2$, and this was proved in 2026 by several groups
-\cite{FGP,SongChen,FHPV,BGH}. Three copies have since been settled with computer assistance \cite{Tomar}.
+\cite{FGP,SongChen,FHPV,BGH}. Three copies have since been settled with computer assistance: for $d=3$ and $d=4$ by exact certificates \cite{AnonD3,LiuD4}, replayed and in part formalised by MacCormack and Bao \cite{MB}, and in every dimension by Tomar \cite{Tomar}.
 
 Tomar \cite{Tomar2} classified the equality cases of \eqref{eq:q2}: if $q_2(C)=0$ then $C$ has rank two and its co-range
 lies in a product $W_1\otimes W_2$ with $\dim W_l\le2$. For a plane $V\subseteq H_1\otimes H_2$ he puts
@@ -69,7 +69,7 @@ q_2(C)\ge\frac{\min\{\tau_1(V),\tau_2(V)\}}{48-8\sqrt2}\,\norm{C}_2^2 .
 In particular $m_2(V)\ge\frac1{37}\min_l\lambda_3^{(l)}(V)$ for every plane $V$.
 \end{theorem}
 
-The constant is not optimal. In our numerical searches the infimum of $m_2(V)/\min_l\lambda_3^{(l)}(V)$ at $d=3$ is
+The constant is not optimal. In our numerical searches (exploratory, not scripted here; Tomar's numerics in \cite[Sec.~7]{Tomar2} agree) the infimum of $m_2(V)/\min_l\lambda_3^{(l)}(V)$ at $d=3$ is
 $1-1/\sqrt2\approx0.293$, the constant Tomar proved on a class of planes \cite[Thm.~7.2]{Tomar2}; at $d=3$ the tails
 $\tau_l$ and the third eigenvalues coincide. For operators whose range and co-range lie in a common plane, in
 particular normal ones, we prove the sharp constant $1-1/\sqrt2$ (Theorem~\ref{thm:normal}), and we show there that
@@ -395,7 +395,7 @@ $\mathcal E_1\ge1-p_1\ge m-1$, while $\sigma_1\ge\sigma_1-\sigma_2$.
 The identity $q_2(C)=q_2(\operatorname{Re}C)+q_2(\operatorname{Im}C)$ holds for every operator $C$, and the same argument
 gives it for the $n$-copy form, as Wu and Zou observed for three copies \cite{WuZou}. It does not settle general $C$, because $\operatorname{Re}C$ and $\operatorname{Im}C$ can
 have rank four when the range and co-range of $C$ differ. For random planes the minimiser in $m_2(V)$ is of this kind:
-in our searches the best operator with range and co-range in $V$ gives about three times $m_2(V)$ at $d=3$ (median
+in our searches (exploratory, not scripted here) the best operator with range and co-range in $V$ gives about three times $m_2(V)$ at $d=3$ (median
 ratio $3.1$), and about $2.35$ and $2$ times at $d=4$ and $d=5$. For the remaining operators
 Theorem~\ref{thm:main} gives only the constant $1/37$. For three copies, Wu and Zou proved $q_3(C)\ge0$ for positive
 semidefinite and normal $C$ of rank two, and, through this identity, for every $C$ whose range and co-range lie in one
@@ -418,7 +418,7 @@ and the flatness term $\frac14(\sigma_1-\sigma_2)^2$ and all four $\Pi$-terms co
 
 \begin{remark}
 By Tomar's description of the equality cases, $m_2(V)=0$ only if both local supports of $V$ have dimension at most two.
-In our searches the margin is in fact linear in the larger tail: at $d=3$ and $d=4$ the infimum of
+In our searches (exploratory, not scripted here) the margin is in fact linear in the larger tail: at $d=3$ and $d=4$ the infimum of
 $m_2(V)/\max_l\tau_l(V)$ is $(3-\sqrt5)/4\approx0.191$, attained at $V=\operatorname{span}\{|00\rangle,
 (|01\rangle+|12\rangle)/\sqrt2\}$, where $\tau_1=0$, $\tau_2=\frac12$ and $m_2(V)=(3-\sqrt5)/8$. This is the constant
 of Theorem~\ref{thm:normal}(b); here it is attained by an operator whose range is not contained in $V$. For general
@@ -443,11 +443,15 @@ with the facts used in the proof of Theorem~\ref{thm:normal}, accompanies this n
 \bibitem{DSSTT} D. P. DiVincenzo, P. W. Shor, J. A. Smolin, B. M. Terhal, A. V. Thapliyal, Phys. Rev. A \textbf{61}, 062312 (2000).
 \bibitem{DCLB} W. D\"ur, J. I. Cirac, M. Lewenstein, D. Bru\ss, Phys. Rev. A \textbf{61}, 062313 (2000).
 \bibitem{HRZ} P. Horodecki, \L. Rudnicki, K. \.Zyczkowski, Five open problems in quantum information theory, PRX Quantum \textbf{3}, 010101 (2022).
-\bibitem{CR23} P. Costa Rico, New partial trace inequalities and distillability of Werner states, Lett. Math. Phys. (2025); arXiv:2310.05726.
+\bibitem{CR23} P. Costa Rico, New partial trace inequalities and distillability of Werner states, Lett. Math. Phys. \textbf{115}, 47 (2025); arXiv:2310.05726.
 \bibitem{FGP} J. Fu, L. Gao, S.-J. Park, arXiv:2607.21367.
 \bibitem{SongChen} Z. Song, L. Chen, arXiv:2607.23416.
 \bibitem{FHPV} T. C. Fraser, F. Huber, B. Pozsgay, I. Vona, On the two-copy distillability of Werner states and a new partial trace inequality, arXiv:2607.24309.
 \bibitem{BGH} K. Bharti, R. Gajjala, T. Haug, Two-copy nondistillability of Werner states: sharp partial-trace inequalities and finite-copy extensions, arXiv:2607.24479.
+\bibitem{QGWG} S.-Y. Qi, G. Gupur, Y.-C. Wu, G.-P. Guo, Unveiling NPT bound problem: from distillability sets to inequalities and multivariable insights, Phys. Rev. A \textbf{110}, 012406 (2024); arXiv:2402.18037.
+\bibitem{AnonD3} Anonymous, Three-copy undistillability of the boundary qutrit Werner state (2026), Zenodo 10.5281/zenodo.23134454.
+\bibitem{LiuD4} A.-X. Liu, C.-F. Qiao, Three-copy undistillability of the boundary two-ququart Werner state (2026), github.com/GLiuax/d4-three-copy-werner.
+\bibitem{MB} I. MacCormack, N. Bao, Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in every dimension (2026), github.com/physical-superintelligence/oqp-batch-2026.
 \bibitem{Tomar} T. S. Tomar, Undistillability of Werner states from three, four and five copies, Zenodo 23718035 (2026).
 \bibitem{Tomar2} T. S. Tomar, Equality cases and every-copy results for the Werner endpoint inequality, Zenodo 23718037 (2026).
 \bibitem{WuZou} T. Wu, Q. Zou, Sharp Pl\"ucker geometry for three-copy Werner distillation, arXiv:2608.02647.

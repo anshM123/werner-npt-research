@@ -39,7 +39,7 @@ of copies at fixed $d$.
 \begin{itemize}
 \item With the computer-assisted three-copy endpoint theorem of Tomar, Werner states are $n$-copy undistillable for
 $\alpha\le(n+d-2)/(nd-d+2)$, for every $n\ge3$ and every $d$.
-\item With the computer-assisted five-copy qutrit bound of Tomar, qutrit Werner states are six-copy undistillable for $\alpha\le0.4469$,
+\item With the computer-assisted five-copy qutrit bound of Tomar and correlated separable factors, qutrit Werner states are six-copy undistillable for $\alpha\le0.4469$,
 and $n$-copy undistillable for $\alpha\le(851n+1272)/(2553n-1272)$ for every $n\ge24$.
 \item In every dimension, the two-copy theorem alone gives four-copy undistillability for $1/d<\alpha\le(d+4)/(5d+2)$.
 \end{itemize}
@@ -106,7 +106,7 @@ all $C$ of rank at most two \cite{SongChen}.
 Known inputs, none of them refereed yet:
 \begin{itemize}
 \item $m=2$ in every $d$, with four independent proofs \cite{FGP,SongChen,FHPV,BGH};
-\item $m=3$ for $d=3,4$, by exact certificates \cite{AnonD3,LiuD4}, replayed and Lean-formalised at $d=3$ in \cite{MB};
+\item $m=3$ for $d=3,4$, by exact certificates \cite{AnonD3,LiuD4}. MacCormack and Bao replayed both, formalised $d=3$ in Lean, and proved the sharp three-copy curve $(1-2\alpha)(1-\alpha)^2$ for $d\le4$ \cite[Thm.~1.2]{MB};
 \item $m=3$ in every $d$ at $\alpha_0=37/80$ \cite[Thm.~1.3]{MB};
 \item $m=3$ at the endpoint in every $d$; $m=4$ at $\alpha_0=79/160$ and $m=5$ at $\alpha_0=9/20$ in every $d$; and
 $m=4,5$ at $\alpha_0=4979/10000$ and $47/100$ for $d=3$ \cite{Tomar}. These use exact certificates, partly checked
@@ -180,7 +180,7 @@ $\sum_j(1-s_j)_+\le m$.
 \end{itemize}
 \end{proof}
 \begin{remark}
-The proof is constructive. Run in exact rational arithmetic on 800 random instances with $n\le7$, it returns
+The proof is constructive. Run in exact rational arithmetic on 400 random instances with $n\le7$ for each random seed (\texttt{code/pipage\_constructor.py}), it returns
 nonnegative weights, only generators with $|E|\le m$, and an exact identity. For identical $s_i=1/t$ the lemma reads
 $(1+tw)^n\in K(n,m)$ iff $t\le n/(n-m)$. That case also has a direct proof through the integral Taylor remainder and
 an integration-by-parts recursion for Beta moments.
@@ -225,7 +225,7 @@ $\rho_{\alpha_1}\otimes\cdots\otimes\rho_{\alpha_n}$ with all $\alpha_i\le\alpha
 \begin{remark}[mixed dimensions]
 Sites may have different local dimensions $d_i$. Site $i$ then uses $\kappa_{\rm PPT}(d_i)=(d_i-1)/(d_i+1)$, and the
 $m$-copy input is needed only in dimension $\max_id_i$. The reason is that compressing a Werner state to a subspace
-gives the Werner state with the same $\alpha$ \cite[Lemma~2.4(b)]{MB}.
+gives the Werner state with the same $\alpha$ (cf.\ the dual statement \cite[Lemma~2.4(b)]{MB}).
 \end{remark}
 
 \begin{corollary}[identical copies]\label{cor:identical}
@@ -294,7 +294,7 @@ site-symmetrised such terms, with rational weights. Hence $\rho_\alpha$ is $n$-c
 \toprule
 input & $n=4$ & $n=6$ & $n=8$ & $n=10$ & $n=12$ & $n=24$\\
 \midrule
-$d=3$, three copies & $0.45756$ & $0.41616$ & $0.39543$ & $0.38299$ & $0.37451$ & $0.35403$\\
+$d=3$, three copies & $0.45776$ & $0.41616$ & $0.39543$ & $0.38299$ & $0.37451$ & $0.35403$\\
 \quad budget & $5/11\approx0.45455$ & $0.41176$ & $0.39130$ & $0.37931$ & $0.37143$ & $0.35211$\\
 $d=3$, two copies & $0.41603$ & $0.38850$ & $0.37469$ & $0.36622$ & $0.36070$ & $0.34712$\\
 \quad budget & $7/17\approx0.41176$ & $0.38462$ & $0.37143$ & $0.36364$ & $0.35849$ & $0.34579$\\
@@ -474,7 +474,7 @@ $t\ge3$.
 \begin{proof}
 At a thin site, the compression $P_i\otimes\bar Q_i-\alpha_i|\omega\rangle\langle\omega|$ of $1-\alpha_i\Omega$
 satisfies $\|\omega\|^2=\tau_i\le2$. It is therefore within Hilbert--Schmidt distance $1$ of the identity, and
-separable by Gurvits--Barnum, as in Wu--Zou's Thm.~7.2 \cite{WZ}. Contracting the thin sites leaves Schmidt-rank-two
+separable by Gurvits--Barnum \cite{GB}. This thin-site copy removal is Wu--Zou's Thm.~7.2 \cite{WZ} for three copies and Tomar's Lemma~6.1 \cite{Tomar2} for every number of copies; what is new here is its combination with the budget. Contracting the thin sites leaves Schmidt-rank-two
 filters on the thick sites, and Theorem~\ref{thm:budget} applies there.
 \end{proof}
 Consequently, near the PPT boundary any distilling filter must be thick at more than $m/\beta(\alpha)$ sites, which
@@ -584,9 +584,11 @@ proofs. Tomar's direct four-copy bounds, $79/160$ in every $d$ and $0.4979$ at $
 \bibitem{FHPV} T. C. Fraser, F. Huber, B. Pozsgay, I. Vona, arXiv:2607.24309.
 \bibitem{BGH} K. Bharti, R. Gajjala, T. Haug, arXiv:2607.24479.
 \bibitem{Wat} J. Watrous, Many copies may be required for entanglement distillation, Phys. Rev. Lett. \textbf{93}, 010502 (2004).
-\bibitem{QGWG} S.-Y. Qi, G. Gupur, Y.-C. Wu, G.-P. Guo, Unveiling NPT bound problem: from distillability sets to inequalities and multivariable insights, arXiv:2402.18037.
+\bibitem{QGWG} S.-Y. Qi, G. Gupur, Y.-C. Wu, G.-P. Guo, Unveiling NPT bound problem: from distillability sets to inequalities and multivariable insights, Phys. Rev. A \textbf{110}, 012406 (2024); arXiv:2402.18037.
 \bibitem{AnonD3} Anonymous, Three-copy undistillability of the boundary qutrit Werner state (2026), Zenodo 10.5281/zenodo.23134454.
-\bibitem{LiuD4} A.-X. Liu, Three-copy undistillability of the boundary two-ququart Werner state (2026), github.com/GLiuax/d4-three-copy-werner.
+\bibitem{LiuD4} A.-X. Liu, C.-F. Qiao, Three-copy undistillability of the boundary two-ququart Werner state (2026), github.com/GLiuax/d4-three-copy-werner.
+\bibitem{GB} L. Gurvits, H. Barnum, Largest separable balls around the maximally mixed bipartite quantum state, Phys. Rev. A \textbf{66}, 062311 (2002).
+\bibitem{Tomar2} T. S. Tomar, Equality cases and every-copy results for the Werner endpoint inequality, Zenodo 23718037 (2026).
 \bibitem{MB} I. MacCormack, N. Bao, Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in every dimension (2026), github.com/physical-superintelligence/oqp-batch-2026.
 \bibitem{WZ} T. Wu, Q. Zou, Sharp Pl\"ucker geometry for three-copy Werner distillation, arXiv:2608.02647.
 \bibitem{Tomar} T. S. Tomar, Undistillability of Werner states from three, four and five copies (2026), Zenodo

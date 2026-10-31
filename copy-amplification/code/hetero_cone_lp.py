@@ -2,7 +2,8 @@
     z^E (1+z)^C = prod_{i in E} z_i prod_{i in C} (1 + z_i),   E, C disjoint, |E| <= m ?
 Coefficient matching on the Boolean lattice: for every S, sum_{(E,C): E <= S <= E u C} w(E,C) = prod_{i in S} t_i.
 Necessary (weighted top-two coefficients): sum_i (1 - 1/t_i) <= m (all t_i >= 1).
-Conjecture: also sufficient.  We test random points on and slightly beyond the boundary.
+Sufficiency is Lemma cone (a) of the paper, which is proved.  We test random points on and slightly beyond the
+boundary.
 usage: hetero_cone_lp.py n m trials
 """
 import itertools
