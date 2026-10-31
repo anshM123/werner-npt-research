@@ -486,8 +486,9 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
       and A(|u⟩ ⊗ I) (normalised Frobenius distance).
     - A proof of KL_1 along these lines would need a rule for (a, b), and a reason why the remainder is separable
       rather than only PPT.
-  - Every element of K_1 has Schmidt number at most 2, so it satisfies Y ≤ 2 Tr_B(Y) ⊗ I. Over two-copy filterings,
-    the smallest eigenvalue of 2 Tr_B(Y) ⊗ I − Y was driven to 0 (−3 × 10^{−16}), never below.
+  - Schmidt number does not separate the cones (correction: an earlier version listed the 2-reduction test
+    Y ≤ 2 Tr_B(Y) ⊗ I, never violated over two-copy filterings, as evidence for KL_1; it tests nothing). The reason is
+    that ρ ⊗ ρ, and also ρ^{⊗3}, have Schmidt number 2, so all their filterings do too (Remark below).
   - Filters of rank at most two need no test: the output lives on C² ⊗ C³, is PPT by EP_2, and so is separable. For
     full-rank filters the output is positive definite, so the range criterion says nothing. Positive definiteness and
     2-undistillability alone do not imply membership: the Tiles state plus a small multiple of the identity is
@@ -514,8 +515,8 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
     - Filterings that minimise λ_min(Y^Γ)/Tr Y converge to −1/15, the smallest value we found on generators of K_2.
       They turn out to have rank 9, with flat rank-3 reductions: they are filterings of a single copy, so they lie
       in K_2 trivially. So this test does not probe KL_2.
-    - The 2-reduction test above, applied at 9 × 9, was not violated by two-copy or three-copy filterings (minimum 0
-      to six digits).
+    - The 2-reduction test, applied at 9 × 9, was not violated by two-copy or three-copy filterings (minimum 0 to six
+      digits). By the Remark below this holds automatically, so it is not evidence.
   - We read this as no detected gap, but it is the weakest part of the evidence. L_2(6), which is what EP_4 needs, is
     implied by KL_2: a 6 × 6 filtering is a compression of a 9 × 9 one, and K_2 is closed under filtering.
   - A primal adversary for KL_2 (`check_lmD_adversary.py` with m = 2, D = 9) drives a model of 16 filterings and 80
@@ -571,6 +572,27 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
       fresh starts to 3.0 × 10^{−4} (2.9 × 10^{−4} with twice the terms), which is the floor for near-extreme NPT
       targets.
   - So nothing here argues against L_2(6): the two-copy cone absorbs what the one-copy cone cannot.
+
+**Remark (Schmidt number of two and three copies).** ρ^{⊗2} and ρ^{⊗3} have Schmidt number 2.
+- Twirling by U_1 ⊗ ⋯ ⊗ U_n on both sides is a mixture of local unitaries, so it does not raise the Schmidt number.
+  It maps a state τ to the unique operator in span{F_J} with the same values of Tr(τ F_J).
+- Let W(s) be the normalised Werner state on C³ ⊗ C³ with ⟨F⟩ = s. It is affine in s and separable for s ≥ 0, and
+  ρ/Tr ρ = W(−1/5). W(−1) = P_a/3 has Schmidt number 2, because every antisymmetric vector in C³ ⊗ C³ has Schmidt
+  rank 2.
+- Two copies: both sides of
+
+      ρ^{⊗2}/Tr = 0.24 W(−1) ⊗ W(0) + 0.24 W(0) ⊗ W(−1) + 0.04 W(1) ⊗ W(1) + 0.48 W(0) ⊗ W(0)
+
+  are twirl-invariant with ⟨F_1⟩ = ⟨F_2⟩ = −1/5 and ⟨F_1 F_2⟩ = 1/25, so they are equal.
+- Three copies: weight 0.288 on each permutation of (−1, 0, 0), 0.024 on each permutation of (−1, 1, 1) and 0.064
+  on (1, 1, 1) gives the moments (−1/5)^{|J|}.
+- Every term has at most one factor W(−1), so its Schmidt number is at most 2.
+
+So all filterings of up to three copies, and the cones K_1, K_2, K_3, consist of Schmidt-number-2 operators, and
+Schmidt-number tests cannot separate these cones (`check_schmidt_number.py`; a direct fit of ρ^{⊗2} by Schmidt-rank-2
+terms reaches 2 × 10^{−8}, against 0.26 for a Schmidt-number-3 control). Mixtures of this product form stop working
+at six copies: each term has at most one antisymmetric factor, so the expected number of copies found in the
+antisymmetric subspace is at most (n + 1)/2, while for ρ^{⊗n} it is 3n/5.
 
 **Open.** KL_1, a two-copy statement about 3 × 3 operators, is the smallest open case. A proof would give an every-n
 class of bond dimension 3. For four copies, L_2(6) is enough: a three-copy statement about 6 × 6 operators. For every
@@ -823,6 +845,8 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_kl1_structure.py` and `code/check_kl1_remainder.py`: Section 9, the structure of KL_1 decompositions (one
   filtering of ρ plus products; contraction gaps; spectrum of the remainder). Needs PyTorch, a few minutes each; the
   second imports the first.
+- `code/check_schmidt_number.py`: the Remark on the Schmidt number of two and three copies in Section 9 (the
+  identities, and a fit of ρ^{⊗2} by Schmidt-rank-2 terms; the fit needs PyTorch, about two minutes).
 - `code/check_removal.py`: Section 9, removal by compression. It checks the identity against the dense q_4, shows
   that the conjugated compression gives a different value, and prints the triple margins for random C.
 - `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and

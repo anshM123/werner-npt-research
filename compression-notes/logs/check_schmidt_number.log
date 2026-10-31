@@ -1,0 +1,7 @@
+Tr(W(s) F) for s = -1, -0.2, 0, 1: [-1.0, -0.2, 0.0, 1.0]
+rho/Tr rho = W(-1/5): True
+two copies: max |difference| = 3.5e-18
+three copies: max |difference| = 8.7e-19
+Schmidt ranks of 1000 random antisymmetric vectors: [np.int64(2)]
+fit by Schmidt-rank-2 terms: control with Schmidt number > 2 (fidelity 1/2 with Phi_9): 2.61e-01
+fit by Schmidt-rank-2 terms: rho (x) rho: 2.46e-08
