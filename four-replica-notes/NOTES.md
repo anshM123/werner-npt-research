@@ -10,7 +10,7 @@ Ansh Mishra and Aryan Senthilkumar
 
 The main numerical findings:
 - **Rank-two projectors (four copies).** A four-replica relaxation is exact at n ≤ 4. The letter-resolved version of
-  Section 4 has a strictly feasible reduced dual at n = 4 (smallest eigenvalue 3.2e-4, residual 9e-10), so an exact
+  Section 3 has a strictly feasible reduced dual at n = 4 (smallest eigenvalue 3.2e-4, residual 9e-10), so an exact
   certificate looks within reach.
 - **Hermitian rank-two operators.** A letter-resolved relaxation matches the conjectured sharp margin
   2^{−n}(σ₁ − σ₂)² at n = 4 on a grid of ratios.
