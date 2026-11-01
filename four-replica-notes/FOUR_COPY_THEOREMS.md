@@ -6,13 +6,15 @@ Ansh Mishra and Aryan Senthilkumar
 
     q_4(C) ≥ 0.        (Theorem 3)
 
-In particular, q_4(P_u + P_v) ≥ 0 and q_4(P_u − P_v) ≥ 0 for every orthonormal pair u, v (Theorems 1 and 2).
+In particular, q_4(P_u + P_v) ≥ 0 and q_4(P_u − P_v) ≥ 0 for every orthonormal pair u, v (Theorems 1 and 2). The same
+holds for every C of rank at most two whose range and co-range lie in one plane, in particular for every normal C
+(plane-class corollary, Section 2).
 
 **How.** Each proof is an exact rational dual certificate for a semidefinite relaxation. Each certificate is checked
 in exact arithmetic by a short verification script that imports none of the code that produced it.
 
 **What this does not prove.** It does not cover:
-- non-Hermitian rank-two operators, so it is not the full four-copy endpoint;
+- rank-two operators whose range and co-range are different planes, so it is not the full four-copy endpoint;
 - any number of copies other than four.
 
 The proofs are computer-assisted. They have been checked independently by us, but they have not been refereed.
@@ -207,8 +209,22 @@ where V is the support of Tr_R ψψ*. So Theorem 1 is equivalent to:
 for every such ψ. In words, a maximally mixed qubit cannot be correlated with single qutrits and with triples beyond
 this budget, which grows with its correlations with pairs.
 
-**What it does not cover.** Non-Hermitian rank-two C at four copies, which is the full four-copy endpoint, is still
-open. Tomar's relaxation for general C gives −1.31e-3 there.
+### A plane-class corollary
+
+**Corollary.** Let C have rank at most two on (C³)^⊗4, with range and co-range in one plane V. Then q_4(C) ≥ 0. This
+covers every normal C of rank at most two, whose range and co-range are both the span of its eigenvectors, and also
+non-normal operators such as |u⟩⟨v| with u ⊥ v in V.
+
+*Proof.* Write C = H + iK with H = (C + C*)/2 and K = (C − C*)/(2i). For Hermitian H and K the polarised form
+Σ_J (−1/2)^{|J|} Tr[(Tr_J H)(Tr_J K)] is real, so the cross terms cancel and q_n(C) = q_n(H) + q_n(K) for every n
+[WZ, Cor. 6.2]. If C = Y M Y* with Y an isometry from C² onto V and M a 2 × 2 matrix, then H = Y ((M + M*)/2) Y* and
+K = Y ((M − M*)/(2i)) Y* are Hermitian of rank at most two. Theorem 3 applies to both. ∎
+
+`code/check_plane_class.py` checks the identity and the rank statement on 200 random non-normal M at four copies
+(largest deviation 4e-16).
+
+**What it does not cover.** Rank-two C at four copies whose range and co-range are different planes. This is the rest
+of the full four-copy endpoint, and it is still open. Tomar's relaxation for general C gives −1.31e-3 there.
 
 ## 3. Zeros
 
