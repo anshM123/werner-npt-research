@@ -228,9 +228,9 @@ over a, b with the crossed labels is ⟨ω|X^Γ|ω⟩. ∎
   - η_D stays positive: the best values are 7.0 × 10^{−8}, 2.8 × 10^{−8}, 6.7 × 10^{−9}, 4.4 × 10^{−8} and
     5.7 × 10^{−8}, approached from above. At D = 8 and 9 the Perron operator is clearly NPT (partial-transpose
     minimum −7.3 × 10^{−3} and −3.6 × 10^{−3}) but not 2-distillable.
-  - For the D = 8 optimum, the explicit operator C with the minimising ω gives q_n(1/2, C)/‖C‖² = 0.92, 0.55, 0.48
-    and 0.41 at n = 1, …, 4 (the transfer formula agrees with dense q_n to eleven digits), and the ratio falls slowly
-    to 0.082 at n = 48, staying positive.
+  - For the D = 8 optimum, the explicit operator C with the minimising ω gives q_n(1/2, C)/‖C‖² = 0.88, 0.60, 0.45
+    and 0.37 at n = 1, …, 4 (the transfer formula agrees with dense q_n to eleven digits), and the ratio falls slowly
+    to 0.077 at n = 48, staying positive.
   - So no counterexample appears in this class. This is a search, not a proof.
 
 ## 5. Activation of two-pair Werner mixtures

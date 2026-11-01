@@ -30,6 +30,7 @@ for k in range(2000):
     if np.linalg.norm(Xn - X) < 1e-15: break
     X = Xn
 XG = torch.tensor(pt(X))
+torch.manual_seed(0)
 best = (np.inf, None)
 for r in range(40):
     U = torch.randn(D, 2, dtype=torch.complex128, requires_grad=True); V = torch.randn(D, 2, dtype=torch.complex128, requires_grad=True)
