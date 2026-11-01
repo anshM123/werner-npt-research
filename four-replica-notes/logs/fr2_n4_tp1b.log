@@ -1,0 +1,12 @@
+n=4 t=+1: build 201s (1331 parameters, 1902 PSD blocks)
+   zero k=1 #0: reconstruction 2.2e-17, q -6.9e-18, moment res 3.3e-15, identity res 2.1e-14, min eig -3.0e-16
+   zero k=1 #1: reconstruction 2.8e-17, q -1.5e-16, moment res 2.2e-15, identity res 2.4e-14, min eig -4.0e-16
+   zero k=3 #0: reconstruction 1.1e-16, q -7.6e-17, moment res 3.3e-15, identity res 1.3e-13, min eig -9.4e-16
+   zero k=3 #1: reconstruction 1.2e-16, q -9.7e-17, moment res 5.0e-15, identity res 1.3e-13, min eig -5.4e-16
+   rotated zero k=1 #0: reconstruction 2.9e-17, q -2.4e-16, min eig -2.3e-16
+   rotated zero k=3 #0: reconstruction 4.2e-17, q -1.6e-17, min eig -5.3e-16
+   interpolating zero #0 (theta 1.43): reconstruction 5.1e-17, q -2.6e-16, min eig -2.2e-16
+   interpolating zero #1 (theta 1.44): reconstruction 3.3e-17, q 4.0e-16, min eig -3.3e-16
+   zeros used: 8; 677s
+   [structured, COV] reduced rows 48145 -> 29986, null dirs 40 (|c on null| 1.9e-08); status Solved, iters 11, primal q 6.4903e-12, dual q -5.4734e-14, ||A^T z + c|| 1.3e-07, min eig reduced dual blocks 2.7e-03; 61s
+   [structured, all] reduced rows 81541 -> 36692, null dirs 40 (|c on null| 1.6e-08); status Solved, iters 11, primal q -4.1271e-12, dual q -9.6589e-15, ||A^T z + c|| 2.2e-07, min eig reduced dual blocks 3.3e-04; 74s

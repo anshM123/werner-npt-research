@@ -1,0 +1,10 @@
+n=4 t=-1: build 233s (1331 parameters, 1902 PSD blocks)
+   zero k=2 #0: reconstruction 6.9e-17, q 1.4e-16, moment res 3.9e-15, identity res 5.2e-14, min eig -2.5e-16
+   zero k=2 #1: reconstruction 7.7e-17, q 2.9e-35, moment res 5.8e-15, identity res 7.4e-14, min eig -5.3e-16
+   zero k=2 #2: reconstruction 6.6e-17, q 2.8e-16, moment res 2.1e-15, identity res 6.4e-14, min eig -5.2e-16
+   zero k=4 #0: reconstruction 1.4e-16, q -5.6e-16, moment res 2.4e-15, identity res 1.3e-13, min eig -1.5e-15
+   zero k=4 #1: reconstruction 1.4e-16, q -6.7e-16, moment res 4.6e-15, identity res 1.3e-13, min eig -5.8e-16
+   zero k=4 #2: reconstruction 1.7e-16, q -5.6e-16, moment res 2.1e-15, identity res 1.3e-13, min eig -7.2e-16
+   structured zeros: 6; 235s
+   [structured, all] reduced rows 81541 -> 53699, null dirs 7 (|c on null| 2.1e-09); status AlmostSolved, iters 20, primal q 1.8745e-09, dual q -2.3759e-14, ||A^T z + c|| 4.9e-05, min eig reduced dual blocks 1.3e-10; 245s
+   [structured, PT] reduced rows 29889 -> 16276, null dirs 12 (|c on null| 3.5e-09); status AlmostSolved, iters 20, primal q 1.4783e-09, dual q -5.7471e-12, ||A^T z + c|| 2.1e-05, min eig reduced dual blocks 5.0e-10; 68s

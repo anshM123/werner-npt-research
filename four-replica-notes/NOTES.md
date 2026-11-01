@@ -9,9 +9,12 @@ Ansh Mishra and Aryan Senthilkumar
 - explicit failures of the natural four-copy versions of the three-copy proofs.
 
 The main numerical findings:
-- **Rank-two projectors (four copies).** A four-replica relaxation is exact at n ≤ 4. The letter-resolved version of
-  Section 3 has a strictly feasible reduced dual at n = 4 (smallest eigenvalue 3.2e-4, residual 9e-10), so an exact
-  certificate looks within reach.
+- **Rank-two projectors (four copies).** A four-replica relaxation is exact at n ≤ 4. After facial reduction, the
+  letter-resolved version of Section 3 has a strictly feasible reduced dual at n = 4, at both zero directions:
+  - projectors: margin 2.7e-3 with the covariance block only, residual 1e-7;
+  - opposite signs: margin 1.9e-3.
+
+  So exact certificates look within reach.
 - **Hermitian rank-two operators.** A letter-resolved relaxation matches the conjectured sharp margin
   2^{−n}(σ₁ − σ₂)² at n = 4 on a grid of 13 ratios.
 
@@ -125,14 +128,26 @@ t = −0.9, −0.75, −0.1, 0.1, 0.75, 0.9 give 6.25108e-4, 3.90637e-3, 5.06256
 - **Control above the endpoint.** At w = 0.55 the relaxation returns −0.117 (t = 1) and −0.200 (t = −1), below the
   values −0.0182 and −0.0405 of explicit operators (`logs/audit_above_endpoint.log`). So it is not trivially
   nonnegative.
-- **Facial reduction at the zeros** (`fr_herm4.py`). Every dual certificate of value 0 must vanish on the ranges of
+- **Zeros.** Suppose u = a ⊗ φ and v = a′ ⊗ χ, with a ⊥ a′ on one copy. Splitting the sum over J by whether that
+  copy is traced gives
+
+      q_n(P_u + t P_v) = ½ q_{n−1}(P_φ − t P_χ).
+
+  Iterating this gives every zero family used below, including interpolating ones and U(2) rotations of the pair
+  (`zero_rot.py`, `zero_interp.py`). All of them have rational points.
+- **Facial reduction at the zeros** (`fr_herm4.py`, `fr2_herm4.py`). Every dual certificate of value 0 must vanish on the ranges of
   all PSD blocks at the zeros. So we compress every block to its kernel at known zeros and re-solve.
   - t = 1 (rank-two projectors): 3 structured zeros (P_1 ⊗ ψ) and 2 found by local search. Of 2169 blocks, 1280
     are kept (dimension 10749 → 5116). The reduced problem is **Solved**: primal 1.1e-13, dual −9.4e-15, residual
     9.3e-10, **smallest eigenvalue of the reduced dual blocks 3.2e-4**. This dual is strictly feasible with a margin far
     above the residual, so an exact rational certificate should exist. It would prove EP_4 for every rank-two
     projector.
-  - t = −1: with the structured zeros alone the reduced dual is still degenerate (2.4e-11).
+  - t = −1 (opposite signs): with the structured zeros alone the reduced dual is still degenerate (2.4e-11). Adding
+    three zeros found by local search (12 zeros in all, including new interpolating families) gives **Solved**:
+    primal 3.7e-12, dual −9.8e-15, residual 1.0e-7, **smallest reduced dual eigenvalue 1.9e-3**.
+  - t = 1 again, with only the identities and the covariance block (no partial transposes, no ≤ I bound): Solved,
+    residual 1.3e-7, smallest reduced dual eigenvalue 2.7e-3. So an exact projector certificate needs only the S_4
+    blocks, the identities and the covariance blocks.
   - At n = 3 both signs give strictly feasible reduced duals (2.0e-3 and 5.6e-3).
 - **One certificate for all ratios** (`lift2.py`). Lift every cone row to a 2 × 2 block, with variables
   X = (X11, X12, X22) and E ≥ 0, Tr E = 1, and minimise m_uu·X11 + 2m_uv·X12 + m_vv·X22. Since (x ⊗ vvᵀ, vvᵀ) is
@@ -222,12 +237,18 @@ numerically.
 ## 7. Status
 
 Numerical certificates only: SDP bounds at solver precision, with no rational rounding. A rigorous four-copy theorem
-for rank-two projectors needs exact problem data:
-- rational (seminormal) irreps of S_4 with their Gram matrices;
+for rank-two projectors needs exact problem data. The first step is done: exact rational per-site irreducible modules
+with Gram matrices, for the S_4 algebra, for B_{3,1}(3) and for S_3. They are built with python-flint from integer
+Casimir eigenspaces and highest-weight coordinate subspaces, and checked against the numerical data
+(`exact_site.py`, `exact_maps.py`). The remaining steps are:
 - exact fixed subspaces and identity rows;
-- exact constraint maps for the blocks the certificate uses;
+- exact constraint maps for the blocks the certificate uses (at t = 1: X ≥ 0, moments, identities and covariance
+  blocks only);
 - exact kernels at rational zero configurations;
-- rounding of the strictly feasible reduced dual.
+- rounding of the strictly feasible reduced dual (margin 2.7e-3 against residuals about 1e-7), then an exact LDLᵀ.
+
+We estimate a few hours for an n = 2 pilot and a few days for n = 4. Degenerate eigenvector bases differ between
+processes, so the exact pipeline must use canonical exact bases throughout.
 
 The general rank-two case at four copies needs cross terms twirl(|α₁⟩⟨α₂| ⊗ |β₂⟩⟨β₁|). We estimate about 5–10k
 parameters at n = 3 and about 50k at n = 4, beyond our machine. The Hermitian case at n = 5 would need about 6k
@@ -243,14 +264,16 @@ parameters and more than 20 GB. The endpoint for every n is open.
 | `code/relaxations/lift_identity.py` | Section 2: covariance blocks as partial transposes of Tomar's blocks |
 | `code/relaxations/herm2.py`, `validate_herm2.py`, `ablate_herm2.py` | Two-letter relaxation (rows form), n ≤ 3 |
 | `code/relaxations/herm4.py`, `validate_herm4.py`, `grid_herm4.py`, `check_n4.py` | Symmetry-reduced two-letter relaxation, the n = 4 grid, dual bounds and validation |
-| `code/relaxations/fr_herm4.py` | Facial reduction at the zeros |
+| `code/relaxations/fr_herm4.py`, `fr2_herm4.py`, `zero_rot.py`, `zero_interp.py` | Facial reduction at the zeros, and generators of zero families |
+| `code/relaxations/exact_site.py`, `exact_maps.py` | Exact rational per-site irreps and maps (python-flint) |
 | `code/relaxations/local_herm.py`, `local_min.py` | Local searches for the true minima |
 | `code/relaxations/lift2.py` | The all-ratio lifted certificate |
 | `code/relaxations/audit_above_endpoint.py`, `ablate_n4.py` | The control at w = 0.55, and constraint ablations |
 | `code/clicks/` | Section 5 |
 | `code/three_copy_mechanisms/` | Section 6 |
 
-The scripts need Python 3 with NumPy, SciPy and Clarabel; the searches in Sections 5 and 6 also use PyTorch.
+The scripts need Python 3 with NumPy, SciPy and Clarabel. The searches in Sections 5 and 6 also use PyTorch, and
+the exact scripts use python-flint.
 
 ## References
 
