@@ -351,10 +351,10 @@ Complex pairs follow by the same realification argument as for projectors.
 
 **Checks.**
 - `verify4m.py` imports no pipeline code. It computes q_4(P_u − P_v) with its own integer partial-trace routine and
-  passes at 7 exact true points:
+  passes at 9 exact true points:
   - two from the build;
-  - five made afterwards from fresh seeds by `points4m_audit.py`: three generic pairs, and two perturbed spin-flip
-    zeros with q_4 = 0.30 and 0.38.
+  - seven made afterwards from fresh seeds by `points4m_audit.py`: three generic pairs, two perturbed spin-flip zeros
+    (q_4 = 0.30, 0.38), a perturbed k2 zero (q_4 = 5.1e-6) and a perturbed inner zero (q_4 = 1.8e-8).
 - Two negative controls are rejected.
 - 7.0M face numerators were recomputed with Python integers.
 - A full rerun gives byte-identical files.
@@ -365,7 +365,7 @@ covering all ratios. The lifted relaxation above provides it numerically; it is 
 
 To check (from `code/exact4m/`):
 
-    python verify4m.py p_ent p_ent2 b_ent1 b_ent2 b_ent3 b_nsf1 b_nsf2
+    python verify4m.py p_ent p_ent2 b_ent1 b_ent2 b_ent3 b_nsf1 b_nsf2 b_nk21 b_nin1
 
 ## 4. Positive operators with a fixed spectrum, one letter
 

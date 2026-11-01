@@ -1,0 +1,10 @@
+loaded: 1331 parameters, 147 equalities, 272 face blocks, 272 dual blocks (certificate cert4m.pkl); 1s
+(a) e . y = 0: True;  c = E^T y + sum_k F_k^*(S_k) exactly: True (0 nonzero residual coordinates); 3s
+(b) exact LDL^T: all 272 dual blocks PSD: True (sizes up to 32, smallest pivot 3.955e-04); S entries up to 605/605 bits, y up to 604/605 bits; 4s
+(c) b_nk21: u.v = 0: True; q_4(P_u - P_v) recomputed from P = 0.000005121238 (stored value agrees: True); c.x(P) == q_4(P_u - P_v): True; E x(P) == e: True; identity at the point: True; all 272 terms >= 0: True; all 272 face blocks PSD at the point (exact LDL^T): True; 10s
+VERIFIED
+loaded: 1331 parameters, 147 equalities, 272 face blocks, 272 dual blocks (certificate cert4m.pkl); 0s
+(a) e . y = 0: True;  c = E^T y + sum_k F_k^*(S_k) exactly: True (0 nonzero residual coordinates); 3s
+(b) exact LDL^T: all 272 dual blocks PSD: True (sizes up to 32, smallest pivot 3.955e-04); S entries up to 605/605 bits, y up to 604/605 bits; 4s
+(c) b_nin1: u.v = 0: True; q_4(P_u - P_v) recomputed from P = 0.000000018220 (stored value agrees: True); c.x(P) == q_4(P_u - P_v): True; E x(P) == e: True; identity at the point: True; all 272 terms >= 0: True; all 272 face blocks PSD at the point (exact LDL^T): True; 16s
+VERIFIED

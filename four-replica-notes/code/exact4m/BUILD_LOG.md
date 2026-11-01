@@ -133,6 +133,8 @@ E7 (2026-11-01 09:01) independent audit of the saved certificate.
   points4m_audit.py from fresh seeds (../../logs/exact4m/audit_*.log): b_ent1-3 (generic entangled pairs,
   q_4(P_u - P_v) = 0.939, 0.946, 1.000) and b_nsf1, b_nsf2 (a spin-flip zero scaled by 4 plus a small integer
   perturbation, then v orthogonalised against u exactly; q_4 = 0.299, 0.384).  VERIFIED at all seven points.
+  Then (09:11) b_nk21 (perturbed k2 zero, q_4 = 5.12e-6) and b_nin1 (perturbed inner zero, q_4 = 1.82e-8; vectors with
+  entries up to 1.7e14, 11-13 primes per family): VERIFIED (../../logs/exact4m/audit_verify4m_more.log).  Nine points.
   The repository copy of verify4m.py, reading facedata4mr.pkl.gz, gives the same output.
 
 Reproduce (from this folder; ../relaxations must be present):
