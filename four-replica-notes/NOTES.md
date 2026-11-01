@@ -209,8 +209,8 @@ and EP_n for Hermitian C is |g(u,v)| ≤ √(g(u,u) g(v,v)). The margin conjectu
   - (`code/three_copy_mechanisms/`, `logs/levelwise_n3.log`, `jquick_n4.log`, `cutwise_I1_a2.log`,
     `plucker_n4_*.log`.)
 - **Costa Rico's opposite-sign proof** amounts to the uniform bound g(u,v) ≤ 1. Since g(w,w) ≥ 1, that bound at n
-  copies would give the opposite-sign case at n copies. It holds at n = 2 (g = 1 − 2(t₁ + t₂)) and at n = 3, but its
-  maximum is exactly 5 at n = 4 and at least 7 at n = 5 (`logs/os_n4.log`, `os_n5.log`).
+  copies would give the opposite-sign case at n copies. It holds at n = 2, where g = 1 − 2(t₁ + t₂) with t_i = Tr ρ^u_i ρ^v_i ≥ 0,
+  and at n = 3. But its maximum is exactly 5 at n = 4 and at least 7 at n = 5 (`logs/os_n4.log`, `os_n5.log`).
 
 So from four copies on, both signs need the full coupling √(g(u,u) g(v,v)). The relaxation of Section 3 supplies it
 numerically.
