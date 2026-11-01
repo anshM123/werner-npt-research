@@ -1,0 +1,5 @@
+target G(A1,B1) + G(A2,B2): Tr X = 1.690945e+00; max entrywise error bound on X 1.22e-14
+atoms 81 (filterings 1, products 80); eps = 1.0e-06
+remainder Z: Tr Z >= 1.690945e-06 (eps Tr X = 1.691e-06 expected), ||Z||_2 <= 5.636486e-07, max error bound 3.59e-14
+purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.1111112046;  Gurvits-Barnum threshold 1/(N-1) = 0.1250000000
+CERTIFIED: X = (one filtering of rho) + 80 products + a separable remainder, so X is in {lam G(E, F) + Sep} (binary merger holds for this pair).

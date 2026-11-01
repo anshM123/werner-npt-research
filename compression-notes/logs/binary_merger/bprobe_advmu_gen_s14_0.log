@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "code/binary_merger/boundary_probe.py", line 13, in <module>
+    Z = np.load(fn, allow_pickle=True)
+  File "<local path>
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'advmu_gen_s14.npz'

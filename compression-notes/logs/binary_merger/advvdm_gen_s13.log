@@ -1,0 +1,19 @@
+code/binary_merger/adv_vdm.py:103: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:823.)
+  worst.append((mu, it, [p.detach().numpy().copy() for p in ps], float(tau), lam))
+step 0: rule margin +0.002188 (lam 0.000), best margin mu* >= +0.002188, rule remainder product-fit 1.6e-03, PT-min +0.0022, w 1.657, min filter cond 6.39e-02; worst rule margin +0.002188  [2s]
+step 10: rule margin +0.000033 (lam 0.000), best margin mu* >= +0.000033, rule remainder product-fit 8.4e-03, PT-min +0.0000, w 1.907, min filter cond 4.33e-03; worst rule margin +0.000026  [7s]
+step 20: rule margin +0.000014 (lam 0.000), best margin mu* >= +0.000014, rule remainder product-fit 1.0e-02, PT-min +0.0000, w 2.049, min filter cond 5.49e-03; worst rule margin -0.000004  [13s]
+step 30: rule margin +0.000000 (lam 0.000), best margin mu* >= +0.000000, rule remainder product-fit 1.4e-02, PT-min +0.0000, w 2.166, min filter cond 1.04e-03; worst rule margin -0.000004  [18s]
+step 40: rule margin +0.000000 (lam 0.000), best margin mu* >= +0.000000, rule remainder product-fit 1.3e-02, PT-min +0.0000, w 2.257, min filter cond 1.07e-03; worst rule margin -0.000004  [24s]
+step 50: rule margin +0.000000 (lam 0.000), best margin mu* >= +0.000000, rule remainder product-fit 1.1e-02, PT-min +0.0000, w 2.318, min filter cond 1.64e-03; worst rule margin -0.000004  [29s]
+step 60: rule margin +0.000000 (lam 0.000), best margin mu* >= +0.000000, rule remainder product-fit 1.3e-02, PT-min +0.0000, w 2.354, min filter cond 1.35e-03; worst rule margin -0.000004  [35s]
+step 70: rule margin +0.000000 (lam 0.000), best margin mu* >= +0.000000, rule remainder product-fit 1.3e-02, PT-min +0.0000, w 2.374, min filter cond 4.60e-04; worst rule margin -0.000004  [40s]
+step 80: rule margin +0.000000 (lam 0.000), best margin mu* >= +0.000000, rule remainder product-fit 1.2e-02, PT-min +0.0000, w 2.384, min filter cond 2.59e-04; worst rule margin -0.000004  [46s]
+step 90: rule margin +0.000000 (lam 0.000), best margin mu* >= +0.000000, rule remainder product-fit 9.7e-03, PT-min +0.0000, w 2.390, min filter cond 2.62e-04; worst rule margin -0.000004  [52s]
+step 100: rule margin +0.000000 (lam 0.000), best margin mu* >= +0.000000, rule remainder product-fit 1.2e-02, PT-min +0.0000, w 2.395, min filter cond 5.87e-05; worst rule margin -0.000004  [57s]
+step 110: rule margin +0.000000 (lam 0.000), best margin mu* >= +0.000000, rule remainder product-fit 1.1e-02, PT-min +0.0000, w 2.400, min filter cond 1.09e-04; worst rule margin -0.000004  [62s]
+step 119: rule margin +0.000000 (lam 0.000), best margin mu* >= +0.000000, rule remainder product-fit 1.1e-02, PT-min +0.0000, w 2.407, min filter cond 1.15e-03; worst rule margin -0.000004  [67s]
+worst targets for the rule:
+  #0 (step 13): rule margin -0.000004, mu* >= -0.000004, rule remainder product-fit nan, PT-min -0.0000
+  #1 (step 12): rule margin -0.000003, mu* >= -0.000003, rule remainder product-fit nan, PT-min -0.0000

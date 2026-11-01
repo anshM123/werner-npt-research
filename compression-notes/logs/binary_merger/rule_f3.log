@@ -1,0 +1,10 @@
+code\adv_f3_filters_M2_s41.npz: PT-min -0.0295; rule margin +0.002518 (lam 0.808); best margin over atoms >= +0.003075; rule remainder product-fit 6.2e-16
+code\adv_f3_filters_M2_s42.npz: PT-min -0.0491; rule margin +0.000353 (lam 0.950); best margin over atoms >= +0.000424; rule remainder product-fit 5.0e-16
+code\adv_f3_filters_M3_s31.npz: PT-min -0.0447; rule margin +0.002415 (lam 0.905); best margin over atoms >= +0.003299; rule remainder product-fit 4.5e-16
+code\adv_f3_filters_M3_s41.npz: PT-min -0.0326; rule margin +0.001623 (lam 0.815); best margin over atoms >= +0.001778; rule remainder product-fit 4.6e-16
+code\adv_f3_filters_M3_s42.npz: PT-min -0.0209; rule margin +0.001919 (lam 0.778); best margin over atoms >= +0.002203; rule remainder product-fit 5.3e-16
+code\adv_f3_filters_M4_s31.npz: PT-min -0.0473; rule margin +0.005537 (lam 0.882); best margin over atoms >= +0.006215; rule remainder product-fit 5.0e-16
+code\adv_f3_filters_M5_s31.npz: PT-min -0.0419; rule margin +0.004909 (lam 0.846); best margin over atoms >= +0.005416; rule remainder product-fit 4.9e-16
+code\adv_f3_filters_M6_s34.npz: PT-min -0.0304; rule margin +0.021822 (lam 0.790); best margin over atoms >= +0.021849; rule remainder product-fit 6.6e-16
+code\adv_f3_filters_M6_s35.npz: PT-min -0.0301; rule margin +0.021927 (lam 0.789); best margin over atoms >= +0.021967; rule remainder product-fit 6.2e-16
+commuting boundary target (scan comm #0): PT-min -0.0628; rule margin -0.000118 (lam 0.972); best margin over atoms >= -0.000203; rule remainder product-fit nan

@@ -1,0 +1,4 @@
+nearsing_s5.npz[0]: PT-min +0.00001, lambda_min 0.00002; min over SR-2 psi of <psi|X^G|psi> = +1.413e-05
+   delta 1e-02: one-atom fit param 1.74e-08, VP 3.87e-16 (atom wt 0.000)  [5s]
+   delta 3e-03: one-atom fit param 1.12e-08, VP 3.05e-16 (atom wt 0.000)  [6s]
+   delta 1e-03: one-atom fit param 2.38e-05, VP 3.87e-16 (atom wt 0.000)  [16s]

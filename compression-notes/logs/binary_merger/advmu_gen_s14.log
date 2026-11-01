@@ -1,0 +1,23 @@
+stress adversary mode gen, seed 14, lr 0.02, cond 0.05: start mu* +0.00892, lambda_min(X) 0.0107, PT-min +0.0064
+code/binary_merger/adv_mu.py:86: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:823.)
+  lamv = float(2 * torch.sigmoid(sl))
+step 0: mu +0.00892, nu +0.8298, lam 0.391, w 0.780, PT-min +0.0064, lambda_min(X) 0.0107, min filter cond 3.40e-02; worst nu +0.8298 (step 0)  [0s]
+step 10: mu +0.00015, nu +0.0102, lam 0.418, w 0.921, PT-min -0.0035, lambda_min(X) 0.0144, min filter cond 1.60e-02; worst nu +0.0102 (step 10)  [2s]
+step 20: mu +0.00012, nu +0.0071, lam 0.365, w 0.991, PT-min -0.0037, lambda_min(X) 0.0162, min filter cond 5.95e-02; worst nu +0.0025 (step 12)  [3s]
+step 30: mu +0.00005, nu +0.0028, lam 0.246, w 1.029, PT-min -0.0043, lambda_min(X) 0.0171, min filter cond 5.17e-02; worst nu +0.0025 (step 12)  [5s]
+step 40: mu +0.00001, nu +0.0003, lam 0.424, w 1.048, PT-min -0.0046, lambda_min(X) 0.0172, min filter cond 4.95e-02; worst nu +0.0003 (step 40)  [7s]
+step 50: mu +0.00000, nu +0.0003, lam 0.426, w 1.057, PT-min -0.0046, lambda_min(X) 0.0175, min filter cond 4.69e-02; worst nu +0.0001 (step 42)  [7s]
+step 60: mu +0.00000, nu +0.0001, lam 0.274, w 1.061, PT-min -0.0047, lambda_min(X) 0.0178, min filter cond 4.57e-02; worst nu +0.0001 (step 60)  [9s]
+step 70: mu +0.00000, nu +0.0000, lam 0.283, w 1.063, PT-min -0.0048, lambda_min(X) 0.0180, min filter cond 4.92e-02; worst nu +0.0000 (step 70)  [11s]
+step 80: mu +0.00000, nu +0.0000, lam 0.284, w 1.063, PT-min -0.0048, lambda_min(X) 0.0181, min filter cond 4.92e-02; worst nu +0.0000 (step 78)  [11s]
+step 90: mu +0.00000, nu +0.0000, lam 0.277, w 1.064, PT-min -0.0048, lambda_min(X) 0.0180, min filter cond 4.81e-02; worst nu +0.0000 (step 86)  [13s]
+step 100: mu +0.00000, nu +0.0000, lam 0.284, w 1.064, PT-min -0.0048, lambda_min(X) 0.0180, min filter cond 4.79e-02; worst nu +0.0000 (step 94)  [15s]
+step 110: mu +0.00000, nu +0.0000, lam 0.284, w 1.064, PT-min -0.0048, lambda_min(X) 0.0180, min filter cond 4.80e-02; worst nu +0.0000 (step 110)  [15s]
+step 120: mu +0.00000, nu +0.0000, lam 0.284, w 1.064, PT-min -0.0048, lambda_min(X) 0.0180, min filter cond 4.81e-02; worst nu +0.0000 (step 117)  [17s]
+step 130: mu +0.00000, nu +0.0000, lam 0.284, w 1.064, PT-min -0.0048, lambda_min(X) 0.0180, min filter cond 4.82e-02; worst nu +0.0000 (step 130)  [18s]
+step 140: mu +0.00000, nu +0.0000, lam 0.284, w 1.064, PT-min -0.0048, lambda_min(X) 0.0180, min filter cond 4.81e-02; worst nu +0.0000 (step 140)  [19s]
+step 149: mu +0.00000, nu +0.0000, lam 0.284, w 1.064, PT-min -0.0048, lambda_min(X) 0.0180, min filter cond 4.81e-02; worst nu +0.0000 (step 147)  [21s]
+worst targets: mu* from many starts, then the full one-atom fit
+  worst #0 (step 147, tracked nu +0.0000): mu* >= +0.00000 (nu +0.0000), PT-min -0.0048, lambda_min 0.0180; one-atom fit: param 1.01e-04, VP 8.27e-06 (atom wt 0.314)
+  worst #1 (step 148, tracked nu +0.0000): mu* >= +0.00000 (nu +0.0000), PT-min -0.0048, lambda_min 0.0180; one-atom fit: param 9.97e-05, VP 3.63e-06 (atom wt 0.269)

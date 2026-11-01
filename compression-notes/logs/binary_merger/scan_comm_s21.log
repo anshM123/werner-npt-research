@@ -1,0 +1,6 @@
+comm #0: w 0.27, PT-min -0.0628, lambda_min 0.0566; one-atom fit 2.78e-04 (atom wt 0.965); mu* >= -0.00020 (lam 0.962)  [44s]
+comm #1: w 4.37, PT-min -0.0017, lambda_min 0.0124; one-atom fit 1.66e-04 (atom wt 0.199); mu* >= -0.00006 (lam 0.203)  [150s]
+comm #2: w 4.88, PT-min -0.0212, lambda_min 0.0117; one-atom fit 6.76e-05 (atom wt 0.382); mu* >= -0.00010 (lam 0.966)  [252s]
+comm #3: w 0.36, PT-min -0.0440, lambda_min 0.0490; one-atom fit 2.09e-04 (atom wt 0.760); mu* >= -0.00020 (lam 0.758)  [327s]
+comm #4: w 1.65, PT-min -0.0069, lambda_min 0.0254; one-atom fit 1.68e-04 (atom wt 0.483); mu* >= -0.00005 (lam 0.485)  [426s]
+comm #5: w 2.32, PT-min -0.0216, lambda_min 0.0211; one-atom fit 1.27e-04 (atom wt 0.528); mu* >= -0.00018 (lam 0.650)  [519s]

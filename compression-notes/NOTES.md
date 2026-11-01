@@ -964,6 +964,49 @@ operators and the filterings (a ⊗ b) ρ (a ⊗ b)^* of one Werner copy.
     alone (`check_ppt_filterings.py`) ends with worst targets fitting to 4–6 × 10^{−9} (m = 2, two seeds;
     m = 3, one seed). The Tiles state with 2% noise stays at 5.7 × 10^{−2}.
 
+**Binary merger.** Write G(A, B) = (A ⊗ B) ρ (A ⊗ B)^* for 3 × 3 matrices A, B.
+- Exact facts.
+  - Product operators are filterings: for A = |a⟩⟨i|, B = |b⟩⟨j| with i ≠ j, G(A, B) = |ab⟩⟨ab|. So
+    K_1(3) = cone{G(A, B)}. The cone is closed, since ρ ≥ I/2 gives Tr G(A, B) ≥ ‖A‖²‖B‖²/2.
+  - If A or B has rank at most two, G(A, B) is separable. The compression of ρ to C² ⊗ C³ is PPT: the only
+    candidate negative direction is the compressed |Φ⟩, where the partial transpose has eigenvalue
+    1 − (3/2)(2/3) = 0. PPT operators on C² ⊗ C³ are separable.
+  - The one-filtering conjecture is equivalent to *binary merger*: every sum of two filterings,
+    G(A_1, B_1) + G(A_2, B_2), equals G(E, F) + S with S separable. Merging repeatedly reduces any finite sum
+    (Carathéodory) to one filtering plus a separable operator. By the previous fact only invertible filters
+    matter, and then a local congruence reduces the question to ρ + G(C, D).
+  - Every filtering with invertible filters has exactly one negative partial-transpose eigenvalue. With
+    P = AA^* ⊗ conj(BB^*) and v = (A ⊗ conj B)|Ω⟩ = vec(AB^*) (Ω = Σ_i |ii⟩), one has G^Γ = P − vv^*/2 and
+    ⟨v|P^{−1}|v⟩ = ⟨Ω|Ω⟩ = 3.
+- Adversarial tests (`binary_merger/`; logs in `logs/binary_merger/`).
+  - Scanned 150 structured two-atom targets (near-unitary, unitary, ill-conditioned, Gaussian, C = I). Every
+    target fits one filtering plus products to at most 7 × 10^{−16}.
+  - Adversaries drove the best PPT margin over all choices of the merged atom toward zero. They reached the
+    boundary of K_1(3), where X^Γ vanishes on a Schmidt-rank-two vector, and never went below it.
+  - At those boundary targets, fits stall at 10^{−7}–10^{−4}. These look like optimiser floors: X + δI/9 fits to
+    machine precision for every δ ≥ 10^{−3} tried.
+  - Calibration: targets of the right form fit to about 4 × 10^{−16}. The antisymmetric projector stays at 0.43,
+    and Tiles with 2% noise stays at 5.7 × 10^{−2}.
+  - No counterexample was found.
+- Certified instances (`binary_merger/verify_bm_cert.py`). Four NPT sums of two filterings are certified, by the
+  rounding-bound method of Section 9, to equal one filtering of ρ, plus 80 product operators, plus a remainder
+  inside the Gurvits–Barnum ball. The remainder purity is 0.111111 against the threshold 1/8.
+  - The targets have partial-transpose minima −0.022 to −0.052.
+  - The second filters are nearly singular, with smallest/largest singular value down to 0.013.
+  - These are statements about four operators.
+- A constructive rule (`binary_merger/rules_test.py`, `binary_merger/rule_f3.py`).
+  - Step 1: bring X to the local normal form Y = (a ⊗ b) X (a ⊗ b)^*, whose two marginals are multiples of I.
+  - Step 2: let W be the unitary polar part of the 3 × 3 matrix of the negative eigenvector of Y^Γ.
+  - Step 3: take E = a^{−1}W and F = b^{−1}, and choose λ to maximise the PPT margin of X − λG(E, F).
+  - Results: the remainder is PPT and fits products to machine precision on 24 of 24 random NPT two-atom targets,
+    and on all nine saved F3 targets (M = 2 to 6).
+  - For comparison, the canonical eigenvector rule above works on 1 of the 24.
+  - The rule is not universal. A gradient adversary against it finds targets next to the boundary where its margin
+    is −0.002 to −0.026, while the best atom's margin stays near 0. These targets still fit the one-filtering form
+    once moved by δ = 10^{−3} into the interior.
+- Status: the one-filtering form of K_1(3) is supported numerically and on certified instances. It is not proved,
+  and it concerns one copy only, so it does not by itself imply F3 or EP_n.
+
 **Remark (a family containing the endpoint).** For 1 ≤ k ≤ d let Λ_{1/k}(X) = Tr(X) I − X/k on M_d. Its Choi
 operator is the partial transpose of the Werner operator I − F/k, and Λ_{1/k} is k-positive but not
 (k + 1)-positive. The endpoint EP_n is the statement that Λ_{1/2}^{⊗n} is 2-positive at d = 3. The natural family is:
@@ -1090,6 +1133,15 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_f3_certificate.py` (search; needs PyTorch and SciPy): the certified F3 instances in Section 11. Data:
   `adv_f3_filters_M*_s*.npz` (filters, written by `check_f3_adversary.py`) and `f3_cert_atoms_M*_s*.npz`.
 - `code/check_k_family.py` (`python check_k_family.py 4 3 2 4`): the k-family remark in Section 11 (needs PyTorch).
+- `code/binary_merger/`: the binary-merger paragraph of Section 11. Run the scripts from inside that folder; they
+  need PyTorch and SciPy.
+  - `verify_bm_cert.py` (NumPy only): the rigorous check. Example:
+    `python verify_bm_cert.py cert_target_nf4a.npz cert_atoms_nf4a.npz`. Tags: nf5a, nf4a, nf4c, ill4.
+  - `cert_search.py`: the search step.
+  - `rules_test.py` (`python rules_test.py 31 12`): the candidate merging rules.
+  - `rule_f3.py`: the normal-form rule on the saved F3 targets.
+  - `scan_bm.py`, `adv_mu.py`, `adv_vdm.py`, `boundary_probe.py`: the scans and adversaries.
+  - `verify_claims.py`: the exact facts.
 - `code/check_f3_one_filtering.py` (needs PyTorch; about ten minutes): one filtering suffices, Section 11. The
   one-filtering certificates are `f3one_cert_atoms_M*_s*.npz`.
 - `code/check_cone_nnls.py` (`python check_cone_nnls.py adv_lmD_m1_D5_s0.npy 40`): the dictionary check of the

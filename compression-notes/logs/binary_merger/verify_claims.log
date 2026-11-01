@@ -1,0 +1,9 @@
+claim 1: G(|a><i|, |b><j|) = |ab><ab| (i != j), = |ab><ab|/2 (i = j); max rel. error 1.4e-16
+claim 2: PT formula max rel. error 7.2e-16; v = vec(A B^*) error 2.0e-15
+   atoms with random filters: #negative PT eigenvalues = [1]; <v|(P (x) conj Q)^-1|v> in [3.000000000000, 3.000000000000] (= 3: every atom has the same 'negativity strength')
+claim 4: Tr(W G) = p_W(A,B): max rel. error 2.9e-14; = vec(A)^* M_W(B) vec(A) with M_W Hermitian (asym 3.2e-14) and quadratic in B: 7.9e-14
+   min eigenvalue of M_I(B) over 200 random B: +3.488e+00 (>= 0);  of M_F(B): -3.748e+00 (F not in K*)
+claim 3 (normal form identity): max rel. error 4.0e-13
+   rank-2 filter atoms: min PT eigenvalue / Tr = -1.49e-16 (PPT; separable via the 2 x 3 compression of rho)
+   symmetries: U(x)U covariance 3.2e-14; right unitary invariance G(CV, DV) = G(C, D): 4.5e-14
+   <z|G(A,B)^Gamma|z> = ||A^* Z B||^2 - |Tr(A^* Z B)|^2 / 2: max rel. error 6.5e-16

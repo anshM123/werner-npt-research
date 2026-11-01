@@ -1,0 +1,4 @@
+target ill4 (scan_ill_s21_4.npz[0], mode nf): PT-min -0.0218, lambda_min 0.0447
+   PPT margin mu* >= +0.00007
+   fit of X/Tr X - (eps/9) I, eps = 1e-06: residual 4.269e-16 (abs 1.660e-16), atom weight 0.6419, active products 80
+   saved cert_target_ill4.npz, cert_atoms_ill4.npz

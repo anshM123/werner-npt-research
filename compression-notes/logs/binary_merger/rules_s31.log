@@ -1,0 +1,16 @@
+#1: PT-min -0.0149 | neg: mu -0.00354, sep-fit nan | vdm: mu +0.00725, sep-fit 5.5e-16 | mid: mu -0.01489, sep-fit nan | mu-max: mu +0.00775, sep-fit 5.0e-16  [5s]
+#2: PT-min -0.0187 | neg: mu -0.00651, sep-fit nan | vdm: mu +0.00216, sep-fit 5.3e-16 | mid: mu -0.01875, sep-fit nan | mu-max: mu +0.00258, sep-fit 4.8e-16  [9s]
+#3: PT-min -0.0314 | neg: mu -0.00542, sep-fit nan | vdm: mu +0.00312, sep-fit 5.3e-16 | mid: mu -0.03143, sep-fit nan | mu-max: mu +0.00408, sep-fit 4.3e-16  [13s]
+#4: PT-min -0.0072 | neg: mu -0.00455, sep-fit nan | vdm: mu +0.00502, sep-fit 8.5e-16 | mid: mu -0.00563, sep-fit nan | mu-max: mu +0.00610, sep-fit 4.5e-16  [18s]
+#5: PT-min -0.0162 | neg: mu -0.00248, sep-fit nan | vdm: mu +0.00426, sep-fit 4.9e-16 | mid: mu -0.01621, sep-fit nan | mu-max: mu +0.00540, sep-fit 3.9e-16  [21s]
+#6: PT-min -0.0207 | neg: mu -0.00656, sep-fit nan | vdm: mu +0.00388, sep-fit 5.3e-16 | mid: mu -0.02074, sep-fit nan | mu-max: mu +0.00517, sep-fit 4.6e-16  [26s]
+#7: PT-min -0.0289 | neg: mu -0.00506, sep-fit nan | vdm: mu +0.00191, sep-fit 4.5e-16 | mid: mu -0.02891, sep-fit nan | mu-max: mu +0.00340, sep-fit 5.8e-16  [30s]
+#8: PT-min -0.0219 | neg: mu -0.00503, sep-fit nan | vdm: mu +0.00770, sep-fit 6.2e-16 | mid: mu -0.02189, sep-fit nan | mu-max: mu +0.00885, sep-fit 5.5e-16  [34s]
+#9: PT-min -0.0076 | neg: mu -0.00300, sep-fit nan | vdm: mu +0.00484, sep-fit 9.5e-16 | mid: mu -0.00758, sep-fit nan | mu-max: mu +0.00536, sep-fit 4.6e-16  [39s]
+#10: PT-min -0.0216 | neg: mu +0.00028, sep-fit 3.6e-03 | vdm: mu +0.00620, sep-fit 9.9e-16 | mid: mu -0.02165, sep-fit nan | mu-max: mu +0.00718, sep-fit 4.8e-16  [43s]
+#11: PT-min -0.0112 | neg: mu -0.00786, sep-fit nan | vdm: mu +0.00670, sep-fit 5.3e-16 | mid: mu -0.01122, sep-fit nan | mu-max: mu +0.00748, sep-fit 4.5e-16  [48s]
+#12: PT-min -0.0115 | neg: mu +0.00862, sep-fit 6.0e-16 | vdm: mu +0.01210, sep-fit 6.3e-16 | mid: mu -0.01153, sep-fit nan | mu-max: mu +0.01451, sep-fit 5.5e-16  [53s]
+rule neg: PPT-feasible on 2/12, separable remainder (fit < 1e-10) on 1/12; worst mu -0.00786
+rule vdm: PPT-feasible on 12/12, separable remainder (fit < 1e-10) on 12/12; worst mu +0.00191
+rule mid: PPT-feasible on 0/12, separable remainder (fit < 1e-10) on 0/12; worst mu -0.03143
+rule mu: PPT-feasible on 12/12, separable remainder (fit < 1e-10) on 12/12; worst mu +0.00258

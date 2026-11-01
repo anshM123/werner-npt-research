@@ -1,0 +1,4 @@
+target nf4a (advmu_nf_s4.npz[0], mode nf): PT-min -0.0465, lambda_min 0.0539
+   PPT margin mu* >= +0.00043
+   fit of X/Tr X - (eps/9) I, eps = 1e-06: residual 4.760e-16 (abs 1.913e-16), atom weight 0.7661, active products 80
+   saved cert_target_nf4a.npz, cert_atoms_nf4a.npz

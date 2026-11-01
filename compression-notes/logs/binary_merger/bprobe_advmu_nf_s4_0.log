@@ -1,0 +1,5 @@
+advmu_nf_s4.npz[0]: PT-min -0.04651, lambda_min 0.05387; min over SR-2 psi of <psi|X^G|psi> = +4.253e-04
+   delta 1e-02: one-atom fit param 1.87e-08, VP 5.04e-16 (atom wt 0.758)  [6s]
+   delta 3e-03: one-atom fit param 1.83e-08, VP 4.47e-16 (atom wt 0.755)  [8s]
+   delta 1e-03: one-atom fit param 2.24e-08, VP 5.03e-16 (atom wt 0.757)  [17s]
+   delta 3e-04: one-atom fit param 2.06e-08, VP 4.36e-16 (atom wt 0.770)  [14s]
