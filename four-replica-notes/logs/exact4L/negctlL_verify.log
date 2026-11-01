@@ -1,0 +1,5 @@
+=== verifyL.py --cert certL_neg_y.pkl exact4/p_ent
+loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120, largest 65), certificate certL_neg_y.pkl; (0) c+, c-, d consistent with fu, fv, fuv: True; 3s
+(a) identity +: e . y+ = 0: False; exact in all 1331 coordinates: False (1154 nonzero residuals); 9s
+(a) identity -: e . y- = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 12s
+(a) identity Z: e . yZ = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 16s

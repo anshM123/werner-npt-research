@@ -1,0 +1,27 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+[dataL] faces: t=+1 zeros ['z_k1_a', 'z_k1_b', 'z_k3_a', 'z_k3_b', 'z_rk1_a', 'z_rk1_b', 'z_rk3_a', 'z_rk3_b', 'z_rint_a', 'z_rint_b', 'z_rint_c']; t=-1 zeros ['z_k2_a', 'z_k2_b', 'z_k4_a', 'z_k4_b', 'z_in_a', 'z_in_b', 'z_in_c', 'z_in_d', 'z_sf_a', 'z_sf_b', 'z_sf_c', 'z_sf_d', 'z_sf_e', 'z_sf_f', 'z_sf_g', 'z_sf_h']; class compressions U identical in both; 5.7s
+[dataL] reference face data loaded: 256 t=+1 blocks (7745 block-groups), 272 t=-1 blocks (8036 block-groups); 10.2s
+[dataL] pass uu: 152 COV blocks (max d+ + d- = 72); |Hhat| <= 2^65: 3 primes; 12.7s
+   entry uuuu (family uuuu); 14.7s
+   entry uuuv (family uuuv); 27.5s
+   entry uuvu (family uuuv); 39.9s
+   entry uuvv (family uuvv); 67.5s
+[dataL] pass uu done: running exact comparison with the saved face data: t=+1 2273 block-groups equal, 0 mismatches; t=-1 2421 equal, 0 mismatches; 111.4s
+[dataL] pass uv: 78 COV blocks (max d+ + d- = 129); |Hhat| <= 2^64: 3 primes; 111.6s
+   entry uvuu (family uuuv); 128.6s
+   entry uvuv (family uuvv); 155.4s
+   entry uvvu (family uuvv); 182.9s
+   entry uvvv (family uvvv); 198.6s
+[dataL] pass uv done: running exact comparison with the saved face data: t=+1 5374 block-groups equal, 0 mismatches; t=-1 5511 equal, 0 mismatches; 323.5s
+[dataL] pass vv: 152 COV blocks (max d+ + d- = 72); |Hhat| <= 2^65: 3 primes; 323.6s
+   entry vvuu (family uuvv); 352.4s
+   entry vvuv (family uvvv); 365.9s
+   entry vvvu (family uvvv); 380.1s
+   entry vvvv (family vvvv); 382.1s
+[dataL] pass vv done: running exact comparison with the saved face data: t=+1 7647 block-groups equal, 0 mismatches; t=-1 7932 equal, 0 mismatches; 433.8s
+[dataL] exact comparison of the F+ / F- parts with ../exact4/facedata4.pkl and ../exact4m/facedata4m.pkl: t=+1 7745 of 7745 block-groups equal (0 mismatches), t=-1 8036 of 8036 equal (0 mismatches): True; COV numerators up to 46 bits; 434.4s
+[dataL] cross data: 490 blocks with d+ + d- > 0 (382 COV, 108 X); 242 with G not identically zero; 57952701 numerator entries; 434.4s
+[dataL] exact checks at the zeros: G_k(x_z) = 0 for all 490 blocks at all 27 zeros (0 failures); F+_k(x_z) = 0 at the 11 t=+1 zeros (0 failures); F-_k(x_z) = 0 at the 16 t=-1 zeros (0 failures): True.  Not required and not zero: F+_k(x_z) != 0 at some t=-1 zero for 139 of 256 t=+1 face blocks, F-_k(x_z) != 0 at some t=+1 zero for 170 of 272 t=-1 face blocks; 479.9s
+saved facedataL.pkl (490 blocks); 482.3s
+[peakmem] python facedataL.py: exit 0, wall 486s, peak working set 6.34 GB, peak private 7.02 GB
+EXIT 0

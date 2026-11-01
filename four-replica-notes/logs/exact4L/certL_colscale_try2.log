@@ -1,0 +1,48 @@
+[0] data: 1331 parameters, 147 equalities, 286 lifted blocks (178 COV, 108 X), total dimension 3120, largest 65; 1s
+[1] float lifted problem: 36040 rows x 3996 columns, nnz 14.4M; 22 scalar blocks, 264 PSD blocks (largest 65), sum svec^2 20.7M; 3s
+    Gram matrix built; 16s
+    rank 3893 of 3996 columns (103 null directions; null vectors touching Y+ / Y- / Z: 73 / 73 / 30); relative objective component on the null space 3.8e-15; column norms 1.6e-03 .. 1.9e+01; |c_j| / norm_j up to 1.4e+05; scaled Gram eigenvalues (non-null) 1.2e-06 .. 1; 27s
+    solver input (colscale): 36040 x 3893, nnz 14.1M; 27s
+-------------------------------------------------------------
+           Clarabel.rs v0.11.1  -  Clever Acronym                
+
+                   (c) Paul Goulart                          
+                University of Oxford, 2022                   
+-------------------------------------------------------------
+
+problem:
+  variables     = 3893
+  constraints   = 36040
+  nnz(P)        = 0
+  nnz(A)        = 14114191
+  cones (total) = 267
+    :        Zero = 1,  numel = 442
+    : Nonnegative = 1,  numel = 22
+    : PSDTriangle = 265,  numel = (3,3,3,3,...,36)
+
+settings:
+  linear algebra: direct / faer, precision: 64 bit (24 threads)
+  max iter = 500, time limit = Inf,  max step = 0.990
+  tol_feas = 1.0e-10, tol_gap_abs = 1.0e-10, tol_gap_rel = 1.0e-10,
+
+
+  iter refine: on, reltol = 1.0e-13, abstol = 1.0e-12,
+               max iter = 10, stop ratio = 5.0
+  equilibrate: on, min_scale = 1.0e-4, max_scale = 1.0e4
+               max iter = 10
+
+
+---------------------------------------------------------------------------------------------
+  0  +4.7893e-15  +6.2114e-17  4.73e-15  8.89e-01  2.74e-01  1.00e+00  3.46e+03   ------   
+  1  +4.7893e-15  +6.2114e-17  4.73e-15  8.89e-01  2.74e-01  1.00e+00  3.46e+03  0.00e+00  
+---------------------------------------------------------------------------------------------
+Terminated with status = NumericalError
+solve time = 14.2231819s
+[2] float solve: status NumericalError, iterations 1, primal +4.789e-15, dual +6.211e-17, ||A^T z + c|| 4.3e+05 (selected columns), 5.2e+05 (all columns); solve 16s
+    smallest lifted dual eigenvalue (Jacobi-normalised blocks) 7.654e+01 at COVuv(2, 3, 3, 3)1|3 (r+ 22, r- 24); blocks with eigenvalue < 1e-6: 0; smallest ++ part 3.274e+03, -- part 1.312e+03; eps-block dual [3498.2650725, -0.0, 3498.2650725], normalisation multiplier -6.21e-17
+    polish 1: max |dz| 1.4e+05; ||A^T z + c|| now 2.0e-08
+    polish 2: max |dz| 1.4e-06; ||A^T z + c|| now 5.6e-10
+    after polish: smallest lifted dual eigenvalue -6.955e+04; 43s
+n=4 lifted: FAILED (lifted dual not strictly feasible: face not minimal or solve inaccurate)
+  static reg : on, ϵ1 = 1.0e-8, ϵ2 = 4.9e-32  dynamic reg: on, ϵ = 1.0e-13, δ = 2.0e-7iter    pcost        dcost       gap       pres      dres      k/t        μ       step      [peakmem] python certL.py --mode colscale: exit 0, wall 45s, peak working set 4.71 GB, peak private 6.34 GB
+EXIT 0

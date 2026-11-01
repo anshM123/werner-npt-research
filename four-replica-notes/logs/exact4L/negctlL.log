@@ -1,0 +1,3 @@
+certL_neg_y.pkl: y+_0 = -2.979446e+02 -> -2.979436e+02
+certL_neg_S.pkl: block COVuv(2, 2, 3, 3)2|2 (r+ 33, r- 32), diagonal entry 34 = 9.526899e+00 negated
+certL_neg_B.pkl: block COVuv(2, 2, 3, 3)2|2, cross entry B[0, 0] -> 1.200931e-01 (+ 1/1024)

@@ -1,23 +1,24 @@
-# Four copies at the qutrit Werner endpoint: rank-two operators with eigenvalues of equal modulus
+# Four copies at the qutrit Werner endpoint: Hermitian rank-two operators
 
 Ansh Mishra and Aryan Senthilkumar
 
-**What this proves.** For every orthonormal pair u, v in (C³)^⊗4:
+**What this proves.** For every Hermitian operator C of rank at most two on (C³)^⊗4,
 
-    q_4(P_u + P_v) ≥ 0   and   q_4(P_u − P_v) ≥ 0.        (Theorems 1 and 2)
+    q_4(C) ≥ 0.        (Theorem 3)
+
+In particular, q_4(P_u + P_v) ≥ 0 and q_4(P_u − P_v) ≥ 0 for every orthonormal pair u, v (Theorems 1 and 2).
 
 **How.** Each proof is an exact rational dual certificate for a semidefinite relaxation. Each certificate is checked
 in exact arithmetic by a short verification script that imports none of the code that produced it.
 
 **What this does not prove.** It does not cover:
-- rank-two operators whose eigenvalues have unequal moduli;
-- non-Hermitian rank-two operators;
+- non-Hermitian rank-two operators, so it is not the full four-copy endpoint;
 - any number of copies other than four.
 
 The proofs are computer-assisted. They have been checked independently by us, but they have not been refereed.
 
 This file collects the statements, the definitions and the argument. The working notes are in `NOTES.md` (Section 3),
-with the build logs in `code/exact4/BUILD_LOG.md` and `code/exact4m/BUILD_LOG.md`.
+with the build logs in `code/exact4/BUILD_LOG.md`, `code/exact4m/BUILD_LOG.md` and `code/exact4L/BUILD_LOG.md`.
 
 ## 0. Setting
 
@@ -37,8 +38,8 @@ Qi–Gupur–Wu–Guo; Song–Chen).
   evidence at the endpoint [Cl].
 - For every n the question is open.
 
-A Hermitian C of rank two is a P_u + b P_v with u ⊥ v. Up to scaling and swapping u and v, Theorems 1 and 2 are the
-cases b = 1 and b = −1, i.e. eigenvalues of equal modulus.
+A Hermitian C of rank two is a P_u + b P_v with u ⊥ v. Theorem 3 covers all real a, b. Theorems 1 and 2 are the
+cases of equal modulus, a = b and a = −b; they were proved first, with separate certificates.
 
 Writing W = ⊗_i (F_i − ½ I) on H ⊗ H, with F_i the swap of copy i, one has q_n(C) = Tr[(C ⊗ C†) W]. So
 
@@ -145,6 +146,55 @@ Code: `code/exact4m/`.
 - Entries: up to 605 bits.
 - The spin-flip zeros are essential: without them the face is strictly larger and the reduced dual is degenerate.
 
+### Theorem 3: every Hermitian operator of rank at most two
+
+**Theorem 3 (computer-assisted).** q_4(C) ≥ 0 for every Hermitian C of rank at most two on (C³)^⊗4. Equivalently,
+q_4(a P_u + b P_v) ≥ 0 for all real a, b and every orthonormal pair u, v.
+
+Code: `code/exact4L/` (build log `code/exact4L/BUILD_LOG.md`); logs: `logs/exact4L/`.
+
+**One certificate for all ratios.** The certificate is matrix valued. It shows that the 2 × 2 matrix
+[[f_uu·x, f_uv·x], [f_uv·x, f_vv·x]] is positive semidefinite on a lifted relaxation.
+- Variables: Y₊, Y₋, Z ∈ R^1331, and ε₊, ε₋, ζ.
+- Equalities: E Y₊ = e ε₊, E Y₋ = e ε₋, E Z = e ζ.
+- Normalisation: [[ε₊, ζ], [ζ, ε₋]] ⪰ 0 and (ε₊ + ε₋)/2 = 1.
+- For every block k:
+
+      L_k = [[F₊,k(Y₊), G_k(Z)], [G_k(Z)ᵀ, F₋,k(Y₋)]] ⪰ 0.
+
+  Here F±,k are the reduced constraints of Theorems 1 and 2, and G_k = N₊,kᵀ W_k N₋,k are the cross data between the two
+  faces.
+- Objective: ¼(c₊·Y₊ + c₋·Y₋ + 2d·Z), with d = (f_uu − f_vv)/16.
+
+For an orthonormal pair, set x = x(u, v) and
+
+    Y₊ = (a+b)² x,   Y₋ = (a−b)² x,   Z = (a² − b²) x,   ε₊ = (a+b)²,   ε₋ = (a−b)²,   ζ = a² − b².
+
+This point is feasible, since L_k = MᵀW_k(x)M with M = [(a+b)N₊, (a−b)N₋]. Its objective is q_4(aP_u + bP_v).
+
+**Certificate.** y₊, y₋, y_Z ∈ Q^147 and S_k = [[A_k, B_k], [B_kᵀ, C_k]] ⪰ 0 with, exactly,
+
+    c₊/4 = Eᵀy₊ + Σ_k F₊,k*(A_k),   c₋/4 = Eᵀy₋ + Σ_k F₋,k*(C_k),   d/2 = Eᵀy_Z + Σ_k 2 G_k*(B_k),
+    e·y₊ = e·y₋ = e·y_Z = 0.
+
+Then the objective equals Σ_k Tr(S_k L_k) ≥ 0 on the lifted relaxation.
+
+**Structure.** The cross data vanish at every zero of both kinds. Their ranges lie in the spans of the two
+one-sign problems. So each lifted block lives on exactly the reduced spaces of Theorems 1 and 2 (1556 + 1564 = 3120
+dimensions in all, 286 blocks, the largest of size 65).
+
+**Numbers.**
+- The float solve (Clarabel with faer) has smallest normalised lifted dual eigenvalue 9.6e-4.
+- The exact correction is three square solves of size 1291, 1298 and 1301.
+- Every S_k is PSD by exact LDLᵀ, with no zero pivots (smallest pivot 1.1e-5).
+- Entries have up to about 1055 bits.
+
+Theorem 3 contains Theorems 1 and 2 (the ratios (1, 1) and (1, −1)). The three certificates were built and checked
+separately.
+
+**What it does not cover.** Non-Hermitian rank-two C at four copies, which is the full four-copy endpoint, is still
+open. Tomar's relaxation for general C gives −1.31e-3 there.
+
 ## 3. Zeros
 
 **Contraction identity.** If u = a ⊗ φ and v = a′ ⊗ χ with a ⊥ a′ on one copy, then
@@ -191,13 +241,20 @@ points. `verify4m.py` imports no pipeline code at all. They check, in exact rati
    - the identity holds at the point with every term ≥ 0;
    - every reduced block F_k(x(P)) is PSD.
 
-**Test points.** Theorem 1 passes at 8 points and Theorem 2 at 9. Of these, 6 and 7 respectively were generated after
-the certificates were built, from fresh seeds. They include near-zeros with q_4 = 2.4e-7 and 6.4e-5 (Theorem 1), and
-5.1e-6 and 1.8e-8 (Theorem 2).
+**Test points.**
+- Theorem 1 passes at 8 points and Theorem 2 at 9. Of these, 6 and 7 respectively were generated after the
+  certificates were built, from fresh seeds. They include near-zeros with q_4 = 2.4e-7 and 6.4e-5 (Theorem 1), and
+  5.1e-6 and 1.8e-8 (Theorem 2).
+- Theorem 3 is checked by `verifyL.py`. That script imports no pipeline code, and recomputes q_4(aP_u + bP_v) from the
+  81 × 81 matrix for each ratio. It passes:
+  - at 11 entangled points × 7 ratios (77 cases);
+  - in a separate audit run, at 8 further points (6 of them near-zeros) × 11 ratios, including (1000, ±999)
+    (88 cases; `logs/exact4L/audit_verifyL.log`).
 
 **Other checks.**
 - Negative controls (one multiplier changed; one dual diagonal entry negated) are rejected.
-- Face data were recomputed with Python integers only: 5.2M and 7.0M entries.
+- Face data were recomputed with Python integers only: 5.2M, 7.0M and, for the cross data of Theorem 3, 15.2M
+  entries.
 - The engine agrees with the separately certified two- and three-copy code at random rational points: objective, all
   moments, all identity images, and the covariance blocks tested.
 - A full rebuild reproduces the files byte for byte.
@@ -206,8 +263,10 @@ the certificates were built, from fresh seeds. They include near-zeros with q_4 
 
     cd code/exact4   && python verify4.py  p_ent p_ent2
     cd code/exact4m  && python verify4m.py p_ent p_ent2
+    cd code/exact4L  && python verifyL.py exact4/p_ent exact4m/b_ent1
 
-Each takes under a minute (Python 3, numpy, gmpy2; python-flint for `verify4.py`).
+The first two take under a minute each, the third about a minute for these two points and 2–3 minutes for its default
+11 points (Python 3, numpy, gmpy2; python-flint for `verify4.py`).
 
 **What a referee has to trust.** Steps 1 and 2 are a complete proof that c·x ≥ 0 on the set {E x = e, F_k(x) ⪰ 0}.
 What remains is that this set contains every true point, which is the validity of the constraint data.

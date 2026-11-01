@@ -1,0 +1,9 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+exact variable space n=4: 1331 parameters, 150 groups; 4.6s
+[lin] fu, fv, fuv and 120 moment rows; 10.4s
+[lin] identity rows: 6186 raw rows, rank mod 1048573: 146; 13.4s
+[lin] equalities: 147 independent (identity rows alone: exact rank 146); max E entry 37 bits; 14.2s
+[lin] exact comparison: c+ == ../exact4/lin4.pkl c: True; c- == ../exact4m/lin4m.pkl c: True; c+ == lin4m cplus: True; E identical in both: True; e identical: True; moment rows identical: True; c+ - c- == fuv/4: True; d has 90 nonzero coordinates
+saved linL.pkl; 14.4s
+[peakmem] python build_linL.py: exit 0, wall 15s, peak working set 0.43 GB, peak private 1.14 GB
+EXIT 0

@@ -1,0 +1,103 @@
+loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120, largest 65), certificate certL.pkl; (0) c+, c-, d consistent with fu, fv, fuv: True; 1s
+(a) identity +: e . y+ = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 5s
+(a) identity -: e . y- = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 9s
+(a) identity Z: e . yZ = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 13s
+(b) exact LDL^T: all 286 lifted dual blocks PSD: True (smallest pivot 1.114e-05); S entries up to 1054/1056 bits, y up to 1047/1049 bits; 78s
+(c) exact4/a_near1: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 88s
+      (1,0): q4 2.732813e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 2.732783e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 2.402624e-07 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 1.093119e+00 obj==q4 True id True y True terms>=0 True
+      (1000,999): q4 5.163066e-01 obj==q4 True id True y True terms>=0 True
+      (1000,-999): q4 1.092026e+06 obj==q4 True id True y True terms>=0 True
+      (7,-2): q4 2.213573e+01 obj==q4 True id True y True terms>=0 True
+      (13,29): q4 6.995871e+01 obj==q4 True id True y True terms>=0 True
+      (-17,4): q4 1.205168e+02 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.732848e-01 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.372464e+00 obj==q4 True id True y True terms>=0 True
+(c) exact4/a_near4: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 96s
+      (1,0): q4 2.758828e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 2.758299e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 6.449136e-05 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 1.103361e+00 obj==q4 True id True y True terms>=0 True
+      (1000,999): q4 6.475558e+01 obj==q4 True id True y True terms>=0 True
+      (1000,-999): q4 1.102258e+06 obj==q4 True id True y True terms>=0 True
+      (7,-2): q4 2.234465e+01 obj==q4 True id True y True terms>=0 True
+      (13,29): q4 7.062577e+01 obj==q4 True id True y True terms>=0 True
+      (-17,4): q4 1.216555e+02 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.760647e-01 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.413297e+00 obj==q4 True id True y True terms>=0 True
+(c) exact4m/b_nsf1: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 100s
+      (1,0): q4 3.217558e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 3.287446e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 1.001722e+00 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 2.992785e-01 obj==q4 True id True y True terms>=0 True
+      (1000,999): q4 1.000714e+06 obj==q4 True id True y True terms>=0 True
+      (1000,-999): q4 2.989726e+05 obj==q4 True id True y True terms>=0 True
+      (7,-2): q4 1.216391e+01 obj==q4 True id True y True terms>=0 True
+      (13,29): q4 4.632616e+02 obj==q4 True id True y True terms>=0 True
+      (-17,4): q4 7.436426e+01 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.318212e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 2.226791e+00 obj==q4 True id True y True terms>=0 True
+(c) exact4m/b_nsf2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 105s
+      (1,0): q4 3.142862e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 3.253453e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 8.952501e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 3.840131e-01 obj==q4 True id True y True terms>=0 True
+      (1000,999): q4 8.943441e+05 obj==q4 True id True y True terms>=0 True
+      (1000,-999): q4 3.836183e+05 obj==q4 True id True y True terms>=0 True
+      (7,-2): q4 1.312275e+01 obj==q4 True id True y True terms>=0 True
+      (13,29): q4 4.230980e+02 obj==q4 True id True y True terms>=0 True
+      (-17,4): q4 7.865219e+01 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.093727e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 2.475539e+00 obj==q4 True id True y True terms>=0 True
+(c) exact4m/b_nk21: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 116s
+      (1,0): q4 2.036696e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 2.036971e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 8.147283e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 5.121238e-06 obj==q4 True id True y True terms>=0 True
+      (1000,999): q4 8.139137e+05 obj==q4 True id True y True terms>=0 True
+      (1000,-999): q4 5.292319e+00 obj==q4 True id True y True terms>=0 True
+      (7,-2): q4 5.091537e+00 obj==q4 True id True y True terms>=0 True
+      (13,29): q4 3.593047e+02 obj==q4 True id True y True terms>=0 True
+      (-17,4): q4 3.441908e+01 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 1.833099e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 8.148587e-01 obj==q4 True id True y True terms>=0 True
+(c) exact4m/b_nin1: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 130s
+      (1,0): q4 2.353002e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 2.353015e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 9.412034e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 1.822028e-08 obj==q4 True id True y True terms>=0 True
+      (1000,999): q4 9.402625e+05 obj==q4 True id True y True terms>=0 True
+      (1000,-999): q4 2.521826e-01 obj==q4 True id True y True terms>=0 True
+      (7,-2): q4 5.882492e+00 obj==q4 True id True y True terms>=0 True
+      (13,29): q4 4.150712e+02 obj==q4 True id True y True terms>=0 True
+      (-17,4): q4 3.976567e+01 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.117706e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 9.412088e-01 obj==q4 True id True y True terms>=0 True
+(c) exact4/a_ent1: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 134s
+      (1,0): q4 4.758507e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 4.856723e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 9.401863e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 9.828597e-01 obj==q4 True id True y True terms>=0 True
+      (1000,999): q4 9.392368e+05 obj==q4 True id True y True terms>=0 True
+      (1000,-999): q4 9.818675e+05 obj==q4 True id True y True terms>=0 True
+      (7,-2): q4 2.555809e+01 obj==q4 True id True y True terms>=0 True
+      (13,29): q4 4.808253e+02 obj==q4 True id True y True terms>=0 True
+      (-17,4): q4 1.467425e+02 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.346402e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.910911e+00 obj==q4 True id True y True terms>=0 True
+(c) exact4m/b_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 137s
+      (1,0): q4 4.861224e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 4.525589e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 9.315358e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 9.458268e-01 obj==q4 True id True y True terms>=0 True
+      (1000,999): q4 9.306383e+05 obj==q4 True id True y True terms>=0 True
+      (1000,-999): q4 9.449150e+05 obj==q4 True id True y True terms>=0 True
+      (7,-2): q4 2.573027e+01 obj==q4 True id True y True terms>=0 True
+      (13,29): q4 4.600628e+02 obj==q4 True id True y True terms>=0 True
+      (-17,4): q4 1.482162e+02 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.382758e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.580589e+00 obj==q4 True id True y True terms>=0 True
+(c) summary: 88 of 88 (point, ratio) cases passed
+VERIFIED

@@ -1,0 +1,4 @@
+[spanL] loaded: 256 t=+1 face blocks, 272 t=-1 face blocks, 490 lifted blocks; 5s
+[spanL] 490 lifted blocks (242 with nonzero cross data); total dimension 9216 -> 3120 (separate spans of F+ / F- alone: 1556 / 1564); 286 blocks kept (largest 65, svec 35595, 242 with both parts); B entries <= 3 bits, numerators <= 48 bits; row-space completeness checked exactly; 243s
+[peakmem] python spanL.py: exit 0, wall 246s, peak working set 4.23 GB, peak private 4.97 GB
+EXIT 0

@@ -1,0 +1,4 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+crosscheckL: 25 COV blocks with cross data, 15189529 cross numerator entries recomputed with Python integers: all equal to the CRT values; reduced cross data B+ Ghat B-^T (1124 block-groups): all equal; 180s
+[peakmem] python crosscheckL.py 25: exit 0, wall 182s, peak working set 6.45 GB, peak private 7.15 GB
+EXIT 0

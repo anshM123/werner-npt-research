@@ -2,11 +2,11 @@
 
 Ansh Mishra and Aryan Senthilkumar
 
-**This folder does not prove the endpoint for every n, or for general rank-two C at four copies.** It proves two
-four-copy cases, with computer-assisted exact certificates (Section 3): q_4(P_u + P_v) ≥ 0 and q_4(P_u − P_v) ≥ 0 for
-every orthonormal pair u, v. Its results are:
-- exact rational certificates at four copies for rank-two projectors and for opposite signs of equal modulus (not
-  externally refereed);
+**This folder does not prove the endpoint for every n, or for general (non-Hermitian) rank-two C at four copies.**
+It proves, with computer-assisted exact certificates (Section 3; summary in `FOUR_COPY_THEOREMS.md`), that
+q_4(C) ≥ 0 for every Hermitian C of rank at most two. Its results are:
+- exact rational certificates at four copies: one for rank-two projectors, one for opposite signs of equal modulus,
+  and one matrix-valued certificate for all ratios, i.e. every Hermitian rank-two operator (not externally refereed);
 - a lemma that explains the opposite-sign zeros: on qubit subspaces q_n is 2^n times the weight of C on Pauli strings
   acting on every copy, and spin flips give zeros;
 - semidefinite relaxations of the endpoint inequality at four copies, with what they certify numerically;
@@ -179,8 +179,15 @@ t = −0.9, −0.75, −0.1, 0.1, 0.75, 0.9 give 6.25108e-4, 3.90637e-3, 5.06256
     - Clarabel (faer) returns Solved: primal 4.5e-11, residual 3.8e-10, smallest lifted dual eigenvalue **9.24e-4**, and
       no degenerate block (`lift_fr3.py`, `logs/lift_fr3_n4_cov.log`; zero points in `lift_fr2_zeros.npz`, made by
       `lift_fr2.py`).
-    - This is the condition for rounding to an exact certificate for every Hermitian rank-two operator at four copies.
-      That certificate is not exact yet.
+    - This is the condition for rounding to an exact certificate.
+  - **Exact version (`code/exact4L/`).** The exact cross data G_k = N₊ᵀW_kN₋ vanish at every zero of both kinds.
+    Their ranges lie in the reduced spaces of the two one-sign problems, so each lifted block lives on those spaces:
+    286 blocks, 1556 + 1564 = 3120 dimensions in all.
+    - The float solve (whitened per variable group, faer) has smallest normalised lifted dual eigenvalue 9.6e-4.
+    - Three exact corrections (sizes 1291, 1298, 1301) make the identities for Y₊, Y₋ and Z exact.
+    - All 286 blocks are PSD by exact LDLᵀ (smallest pivot 1.1e-5).
+    - `verifyL.py` passes 77 + 88 (point, ratio) cases.
+    - **So q_4(C) ≥ 0 for every Hermitian C of rank at most two (computer-assisted).**
 
 ### Exact certificates at two and three copies (pipeline validation)
 
@@ -449,12 +456,11 @@ numerically.
 
 ## 7. Status
 
-- **Exact (computer-assisted).** The four-copy endpoint for rank-two projectors and for opposite signs of equal
-  modulus (Section 3), and the pipeline checks at two and three copies.
+- **Exact (computer-assisted).** The four-copy endpoint for every Hermitian rank-two operator, with separate
+  certificates for projectors and for opposite signs of equal modulus (Section 3), and the pipeline checks at two and
+  three copies.
 - **Proved by hand.** The qubit-sector formula for q_n and the spin-flip zeros (Section 3).
 - **Numerical only** (SDP bounds at solver precision):
-  - the all-ratio lifted certificate at four copies, i.e. every Hermitian rank-two operator (strictly feasible after
-    facial reduction at both zero directions, margin 9.24e-4);
   - everything at five copies.
 
 Degenerate eigenvector bases differ between processes, so every exact step uses canonical exact bases.
@@ -478,6 +484,7 @@ parameters and more than 20 GB. The endpoint for every n is open.
 | `code/relaxations/exact_core.py`, `exact_coreN.py`, `exact_pilot_n2.py`, `exact_pilot_n3.py` | Exact certificates at n = 2, 3 |
 | `code/relaxations/tm1_zeros.py`, `tm1_qubit.py`, `tm1_analyze.py`, `check_spinflip_zeros.py`, `fr_tm1_qubit.py` | Opposite-sign zeros by local search, their qubit spin-flip structure, and facial reduction with them |
 | `code/exact4m/` | The exact certificate at n = 4 for opposite signs, P_u − P_v (same structure as `code/exact4/`, plus `negctl4m.py` for the negative controls) |
+| `code/exact4L/` | The exact all-ratio (lifted) certificate at n = 4, every Hermitian rank-two operator: cross data (`facedataL.py`), spans (`spanL.py`), certificate (`certL.py`), checks (`verifyL.py`, `verifyL_audit.py`, `crosscheckL.py`, `negctlL.py`). The rebuild needs `facedata4.pkl` and `facedata4m.pkl` from the rebuilds of `code/exact4` and `code/exact4m`; `verifyL.py` needs only the shipped files |
 | `code/exact4/` | The exact certificate at n = 4 for rank-two projectors: engine (`core4.py`, `engine4.py`, `symm4.py`), data (`build_lin4.py`, `points4.py`, `face4.py`, `facedata4.py`, `span4.py`), certificate (`cert4.py`), checks (`verify4.py`, `crosscheck4.py`, `test_engine.py`, `points4_audit.py`); saved data and certificate as pickles |
 | `code/relaxations/local_herm.py`, `local_min.py` | Local searches for the true minima |
 | `code/relaxations/lift2.py`, `lift2s.py` | The all-ratio lifted certificate (Clarabel; lean assembly with SCS) |
