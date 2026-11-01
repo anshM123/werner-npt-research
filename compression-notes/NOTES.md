@@ -962,6 +962,23 @@ operators and the filterings (a ⊗ b) ρ (a ⊗ b)^* of one Werner copy.
     alone (`check_ppt_filterings.py`) ends with worst targets fitting to 4–6 × 10^{−9} (m = 2, two seeds;
     m = 3, one seed). The Tiles state with 2% noise stays at 5.7 × 10^{−2}.
 
+**Remark (a family containing the endpoint).** For 1 ≤ k ≤ d let Λ_{1/k}(X) = Tr(X) I − X/k on M_d. Its Choi
+operator is the partial transpose of the Werner operator I − F/k, and Λ_{1/k} is k-positive but not
+(k + 1)-positive. The endpoint EP_n is the statement that Λ_{1/2}^{⊗n} is 2-positive at d = 3. The natural family is:
+Λ_{1/k}^{⊗n} is k-positive for every n, i.e. the Schmidt-number witness I − Φ/k stays k-block-positive under tensor
+powers (Φ = Σ_{ij} |ii⟩⟨jj|).
+- The ends are trivial: k = 1 is the reduction map, which is completely co-positive, and k = d gives a completely
+  positive map.
+- Equivalently, with a k-dimensional ancilla q and any pure state ψ on C^k ⊗ (C^d)^{⊗n},
+  Σ_J (−1/k)^{|J|} ψ_{qJ} ⊗ I_{J^c} ≥ 0; with k = 2 this is the qubit-ancilla form of EP_n.
+- Numerically the family holds at two copies for (d, k) = (3, 2), (4, 2), (4, 3), (5, 3), (5, 4) and at three copies
+  for (3, 2), (4, 2), (4, 3) (`check_k_family.py`). The test minimises the smooth form ⟨φ|Ω(ψ)|φ⟩ jointly over ψ and
+  φ from random and structured starts, and it is validated by the control weight 1/k + 0.02, where the minimum must be
+  negative (it is −0.02 in every case). A first version that minimised λ_min directly missed the controls for d ≥ 4,
+  so only validated runs are reported.
+- So the qutrit endpoint is the first nontrivial member of a family that looks true in every dimension. We have no
+  proof for any member with 1 < k < d.
+
 **One-sided separability.** Conjecture: for every plane V of (C³)^{⊗n}, the one-sided compression
 (P_V ⊗ I) ρ^{⊗n} (P_V ⊗ I), with the qubit V on one side and all of Bob's copies on the other, is separable.
 - EP_n is exactly the statement that these compressions are PPT, so the conjecture strengthens it.
@@ -1070,6 +1087,7 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   `chain_cert_atoms_*.npz` (atom parameters and weights); fit terms `chain_seeds_M3_d025.pkl` for the δ = 0.25 target.
 - `code/check_f3_certificate.py` (search; needs PyTorch and SciPy): the certified F3 instances in Section 11. Data:
   `adv_f3_filters_M*_s*.npz` (filters, written by `check_f3_adversary.py`) and `f3_cert_atoms_M*_s*.npz`.
+- `code/check_k_family.py` (`python check_k_family.py 4 3 2 4`): the k-family remark in Section 11 (needs PyTorch).
 - `code/check_f3_one_filtering.py` (needs PyTorch; about ten minutes): one filtering suffices, Section 11. The
   one-filtering certificates are `f3one_cert_atoms_M*_s*.npz`.
 - `code/check_cone_nnls.py` (`python check_cone_nnls.py adv_lmD_m1_D5_s0.npy 40`): the dictionary check of the
