@@ -218,6 +218,20 @@ over a, b with the crossed labels is ⟨ω|X^Γ|ω⟩. ∎
     (for example +2.4 × 10^{−11} at n = 33).
 - At D = 2 we maximised the NPT-ness of the Perron operators X_*, Y_* over the bond matrices. The smallest
   partial-transpose eigenvalue was driven to about +10^{−12}, never below.
+- **Perron-operator test at D = 5, …, 9** (`check_perron_operator.py`, `check_perron_verify.py`). Bond dimension 2 is
+  protected exactly (above), and D = 3 and 4 would be protected by KL_1 and L_1(4) through the induction of
+  Section 9. L_1(5) fails, so D ≥ 5 is the natural place for a large-n counterexample. By the Corollary, one exists if
+  some Schmidt-rank-two ω has ⟨ω|X_*^Γ|ω⟩ < 0, that is, if η_D(X_*) = min λ_min((U ⊗ V)^* X_*^Γ (U ⊗ V)) < 0 over
+  isometries U, V : C² → C^D.
+  - We minimised η_D jointly over the bond matrices and U, V (gradient through the power iteration for X_*, trace
+    one), with a careful inner minimisation every 50 steps. One run of 1500 steps for each D = 5, 6, 7, 8, 9.
+  - η_D stays positive: the best values are 7.0 × 10^{−8}, 2.8 × 10^{−8}, 6.7 × 10^{−9}, 4.4 × 10^{−8} and
+    5.7 × 10^{−8}, approached from above. At D = 8 and 9 the Perron operator is clearly NPT (partial-transpose
+    minimum −7.3 × 10^{−3} and −3.6 × 10^{−3}) but not 2-distillable.
+  - For the D = 8 optimum, the explicit operator C with the minimising ω gives q_n(1/2, C)/‖C‖² = 0.92, 0.55, 0.48
+    and 0.41 at n = 1, …, 4 (the transfer formula agrees with dense q_n to eleven digits), and the ratio falls slowly
+    to 0.082 at n = 48, staying positive.
+  - So no counterexample appears in this class. This is a search, not a proof.
 
 ## 5. Activation of two-pair Werner mixtures
 
@@ -1060,6 +1074,8 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   one-filtering certificates are `f3one_cert_atoms_M*_s*.npz`.
 - `code/check_cone_nnls.py` (`python check_cone_nnls.py adv_lmD_m1_D5_s0.npy 40`): the dictionary check of the
   L_1(D) threshold in Section 9 (needs PyTorch and SciPy).
+- `code/check_perron_operator.py` (`python check_perron_operator.py D 1 1500`) and `code/check_perron_verify.py`: the
+  Perron-operator test in Section 4 (needs PyTorch; the verifier also uses mpmath).
 - `code/check_removal.py`: Section 9, removal by compression. It checks the identity against the dense q_4, shows
   that the conjugated compression gives a different value, and prints the triple margins for random C.
 - `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and
