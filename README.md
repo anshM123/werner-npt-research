@@ -47,7 +47,7 @@ scripts need PyTorch.
   Section 10 of the same notes proves the four-copy endpoint for every operator whose range at some pair of copies
   lies in a local-unitary image of the antisymmetric subspace, or at some triple in the [[3,1,2]] code space.
   `four-replica-notes/` gives numerical four-copy evidence for Hermitian rank-two operators: SDP lower bounds that
-  match the sharp margin at seven ratios. It also gives a strictly feasible reduced SDP certificate for rank-two
+  match the sharp margin at 13 ratios. It also gives a strictly feasible reduced SDP certificate for rank-two
   projectors, which has not yet been rounded to an exact one.
 - Tomar's two-copy constant 1/4 for operators whose range and co-range differ. We prove 1/37 in general, and the
   sharp constant for the plane class.
