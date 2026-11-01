@@ -192,6 +192,21 @@ dimensions in all, 286 blocks, the largest of size 65).
 Theorem 3 contains Theorems 1 and 2 (the ratios (1, 1) and (1, −1)). The three certificates were built and checked
 separately.
 
+### A monogamy corollary
+
+Proposition 3 of `compression-notes/` rewrites the projector case as a monogamy relation. Let ψ be a pure state of a
+qubit R and four qutrits, with ψ_R = I/2. For a set J of qutrits put c_J = ‖ψ_{JR} − ψ_J ⊗ I/2‖₂², the
+Hilbert–Schmidt correlation between R and J; then c_{1234} = 3/4. The four-copy identity reads
+
+    q_4(P_V) = (16/3) [ 27/64 + (3/8) Σ_{|J|=2} c_J − (9/16) Σ_{|J|=1} c_J − (3/8) Σ_{|J|=3} c_J ],
+
+where V is the support of Tr_R ψψ*. So Theorem 1 is equivalent to:
+
+    (9/16) Σ_{|J|=1} c_J + (3/8) Σ_{|J|=3} c_J ≤ 27/64 + (3/8) Σ_{|J|=2} c_J
+
+for every such ψ. In words, a maximally mixed qubit cannot be correlated with single qutrits and with triples beyond
+this budget, which grows with its correlations with pairs.
+
 **What it does not cover.** Non-Hermitian rank-two C at four copies, which is the full four-copy endpoint, is still
 open. Tomar's relaxation for general C gives −1.31e-3 there.
 
