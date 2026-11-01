@@ -1,0 +1,4 @@
+n=4 lifted FR (+-) (COV, faer): build 221s; zeros 11 (t=+1), 14 (t=-1), max |q| 1.2e-15 / 1.2e-15
+   lifted reduced (+-): face dim 5709 -> 2941 after spans; 29495 rows, nnz 25.5M, 394 PSD blocks (largest 65), sum k^2 16.9M; 660s
+   rank 3893 of 3996 columns; relative |c on null| 8.7e-11
+   lifted FR (+-) (COV): status Solved, iters 10, primal +4.542e-11, dual +4.185e-11, ||A^T z + c|| 3.8e-10; min eig lifted dual blocks 9.24e-04 (at ('X', 2, 1, 2, 1)); blocks with eig < 1e-6: 0 of 394; min eig ++ parts 1.01e-03, -- parts 4.73e-03; dual E-block [0.0, 0.0, 0.0]; solve 100s

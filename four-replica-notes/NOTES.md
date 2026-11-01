@@ -169,6 +169,18 @@ t = −0.9, −0.75, −0.1, 0.1, 0.75, 0.9 give 6.25108e-4, 3.90637e-3, 5.06256
     reproduces the Clarabel values at n = 2 and n = 3.
   - So at four copies one numerical certificate covers every Hermitian rank-two operator, for all ratios and both
     signs, to solver accuracy.
+  - **Facially reduced at both zero directions, it is strictly feasible.**
+    - A lifted zero is (x ⊗ wwᵀ, wwᵀ), with x a zero at direction w = (1, ±1). So the lifted face of each block is
+      (w₊ ⊗ K₊) + (w₋ ⊗ K₋), where K± are the faces at t = ±1.
+    - In the coordinates Y± = X11 ± 2X12 + X22 and Z = X11 − X22, the reduced block is
+      [[N₊ᵀW(Y₊)N₊, N₊ᵀW(Z)N₋], [N₋ᵀW(Z)N₊, N₋ᵀW(Y₋)N₋]].
+    - With 11 projector zeros and 14 opposite-sign zeros (including spin flips), covariance blocks only, and each block
+      cut to the span of its data, we get 394 blocks (largest 65).
+    - Clarabel (faer) returns Solved: primal 4.5e-11, residual 3.8e-10, smallest lifted dual eigenvalue **9.24e-4**, and
+      no degenerate block (`lift_fr3.py`, `logs/lift_fr3_n4_cov.log`; zero points in `lift_fr2_zeros.npz`, made by
+      `lift_fr2.py`).
+    - This is the condition for rounding to an exact certificate for every Hermitian rank-two operator at four copies.
+      That certificate is not exact yet.
 
 ### Exact certificates at two and three copies (pipeline validation)
 
@@ -439,7 +451,8 @@ numerically.
   modulus (Section 3), and the pipeline checks at two and three copies.
 - **Proved by hand.** The qubit-sector formula for q_n and the spin-flip zeros (Section 3).
 - **Numerical only** (SDP bounds at solver precision):
-  - the all-ratio lifted certificate at four copies, i.e. every Hermitian rank-two operator;
+  - the all-ratio lifted certificate at four copies, i.e. every Hermitian rank-two operator (strictly feasible after
+    facial reduction at both zero directions, margin 9.24e-4);
   - everything at five copies.
 
 Degenerate eigenvector bases differ between processes, so every exact step uses canonical exact bases.
@@ -466,6 +479,7 @@ parameters and more than 20 GB. The endpoint for every n is open.
 | `code/exact4/` | The exact certificate at n = 4 for rank-two projectors: engine (`core4.py`, `engine4.py`, `symm4.py`), data (`build_lin4.py`, `points4.py`, `face4.py`, `facedata4.py`, `span4.py`), certificate (`cert4.py`), checks (`verify4.py`, `crosscheck4.py`, `test_engine.py`, `points4_audit.py`); saved data and certificate as pickles |
 | `code/relaxations/local_herm.py`, `local_min.py` | Local searches for the true minima |
 | `code/relaxations/lift2.py`, `lift2s.py` | The all-ratio lifted certificate (Clarabel; lean assembly with SCS) |
+| `code/relaxations/lift_fr.py`, `lift_fr2.py`, `lift_fr3.py` | The lifted certificate facially reduced at both zero directions; `lift_fr3.py` is the (+, −) form with data spans that fits in memory |
 | `code/relaxations/audit_above_endpoint.py`, `ablate_n4.py` | The control at w = 0.55, and constraint ablations |
 | `code/clicks/` | Section 5 |
 | `code/three_copy_mechanisms/` | Section 6 |
