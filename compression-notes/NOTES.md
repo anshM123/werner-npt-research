@@ -583,6 +583,10 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
     refits to 2.5 × 10^{−4}, the floor for near-extreme targets. It finds a robust gap for D = 5: 1.3 × 10^{−2}, the
     same with twice the terms. So for one copy, L_1(D) holds for D ≤ 4 and fails for D ≥ 5.
 
+  - A dictionary check of the worst targets agrees (`check_cone_nnls.py`: nonnegative least squares over the fit
+    terms and random columns, then column generation). The D = 4 target is reproduced to 6 × 10^{−8}, with no
+    improving column left. The D = 5 and D = 6 targets stay at 1.28 × 10^{−2} and 5.8 × 10^{−2} after 40 rounds.
+
   We read this as L_1(6) being false. The threshold for one copy lies between 4 and 5, slightly above 3^1. This is
   numerical, not a proof, and the floor depends on the target. A genuinely three-copy filtering below
   has partial-transpose minimum −0.022 and still fits K_1(6) to 6 × 10^{−5}. So only the strongly NPT filterings of two
@@ -604,9 +608,20 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
   - The next links, K_M(6) = K_2(6) for M = 3 and 4 (`check_chain_six.py`, `check_chain_six_nnls.py`). Pad the
     two-copy NPT filtering with contractions on the extra copies and move the filters by δ = 0.1 toward random
     M-copy filters (PT-min −0.028 and −0.027). Parametric fits by K_2(6) stall at 0.7–2.7 × 10^{−4}, the near-extreme
-    floor. Column generation over filterings of ρ^{⊗2} and products then reproduces the four-copy target exactly
-    (residual 2.9 × 10^{−15}, 1296 active columns, the real dimension). The three-copy target reaches 3 × 10^{−6}
-    after 60 rounds and is still decreasing.
+    floor. Column generation over filterings of ρ^{⊗2} and products then reproduces both targets exactly: residual
+    2.9 × 10^{−15} for four copies and 2.0 × 10^{−15} for three copies (64 rounds), with 1296 active columns, the
+    real dimension.
+  - **A certified link.** The four-copy decomposition is checked rigorously (`check_chain_certificate.py`,
+    `check_chain_certificate_verify.py`). The filters A, B and the parameters of every atom are floating-point
+    numbers, hence exact rationals. The weights are fitted to X/Tr X − (ε/36) I with ε = 10^{−6}, so that the
+    remainder Z = X − Σ_i w_i G_i is close to a multiple of the identity. The verifier recomputes X and every atom
+    with entrywise rounding bounds. It finds Tr Z ≥ 1.9765 × 10^{−7} and ‖Z‖_2²/(Tr Z)² ≤ 0.02782 < 1/35, so Z is
+    separable by the Gurvits–Barnum ball [GB].
+    - So this four-copy NPT filtering (partial-transpose minimum −0.027 of the trace) is a nonnegative combination
+      of 358 filterings of ρ^{⊗2}, 938 products and a separable remainder: it lies in K_2(6).
+    - This is a computer-assisted theorem about one operator, not a statement about other filterings.
+    - Inverting the exact 1296-column system does not give a certificate: ‖M^{−1}‖_∞ ≈ 5 × 10^8. The shift by εI
+      makes the check independent of that conditioning.
 
 **Remark (Schmidt number of two and three copies).** ρ^{⊗2} and ρ^{⊗3} have Schmidt number 2. (That the Schmidt
 number need not grow under tensor powers is known [TH]; the point here is the Werner endpoint.)
@@ -996,7 +1011,13 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_congruence_lp.py` (`python check_congruence_lp.py 60 30 1200`) and `code/check_congruence_certificate.py`:
   the congruence question in Section 11 (needs PyTorch and SciPy; about twenty minutes each).
 - `code/check_chain_six.py` (`python check_chain_six.py 4`) and `code/check_chain_six_nnls.py`: the next links of
-  the 6 × 6 chain in Section 9 (saved targets `chain_target_M3.npy`, `chain_target_M4.npy` and fit terms).
+  the 6 × 6 chain in Section 9 (saved targets `chain_target_M3.npy`, `chain_target_M4.npy` and fit terms; logs
+  `check_chain_six_nnls.log` for four copies and `check_chain_six_nnls_M3.log` for three).
+- `code/check_chain_certificate.py` (search; needs PyTorch and SciPy) and `code/check_chain_certificate_verify.py`
+  (`python check_chain_certificate_verify.py 4`; NumPy only, about a second): the certified link in Section 9. The
+  data are `chain_cert_target_M4.npz` (the filters) and `chain_cert_atoms_M4.npz` (atom parameters and weights).
+- `code/check_cone_nnls.py` (`python check_cone_nnls.py adv_lmD_m1_D5_s0.npy 40`): the dictionary check of the
+  L_1(D) threshold in Section 9 (needs PyTorch and SciPy).
 - `code/check_removal.py`: Section 9, removal by compression. It checks the identity against the dense q_4, shows
   that the conjugated compression gives a different value, and prints the triple margins for random C.
 - `code/check_blocks2.py`: Section 10. It computes the two spectra exactly (SymPy), tests larger candidate blocks and

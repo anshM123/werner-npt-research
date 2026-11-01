@@ -1,0 +1,55 @@
+== step 1: eps = 0 (no seed file)
+target: PT-min/Tr -0.0271, Tr 0.197680
+seed fit 16 + 80: 7.78e-05
+seed fit 32 + 160: 5.94e-05
+round 0: atoms 1488, active 444, residual 4.947e-05
+round 1: atoms 1536, active 432, residual 4.680e-05
+round 2: atoms 1584, active 434, residual 4.566e-05
+round 3: atoms 1632, active 445, residual 4.464e-05
+round 4: atoms 1680, active 443, residual 4.391e-05
+round 5: atoms 1728, active 464, residual 4.305e-05
+round 6: atoms 1776, active 475, residual 4.222e-05
+round 7: atoms 1824, active 483, residual 4.139e-05
+round 8: atoms 1872, active 496, residual 4.059e-05
+round 9: atoms 1920, active 498, residual 3.986e-05
+round 10: atoms 1968, active 509, residual 3.893e-05
+round 11: atoms 2016, active 521, residual 3.812e-05
+round 12: atoms 2064, active 535, residual 3.726e-05
+round 13: atoms 2112, active 551, residual 3.622e-05
+round 14: atoms 2160, active 557, residual 3.563e-05
+round 15: atoms 2208, active 560, residual 3.528e-05
+round 16: atoms 2256, active 566, residual 3.429e-05
+round 17: atoms 2304, active 578, residual 3.339e-05
+round 18: atoms 2352, active 609, residual 3.184e-05
+round 19: atoms 2400, active 634, residual 3.015e-05
+round 20: atoms 2448, active 653, residual 2.872e-05
+round 21: atoms 2496, active 677, residual 2.682e-05
+round 22: atoms 2544, active 700, residual 2.523e-05
+round 23: atoms 2592, active 721, residual 2.325e-05
+round 24: atoms 2640, active 730, residual 2.121e-05
+round 25: atoms 2688, active 752, residual 1.969e-05
+round 26: atoms 2736, active 784, residual 1.765e-05
+round 27: atoms 2784, active 810, residual 1.549e-05
+round 28: atoms 2832, active 831, residual 1.315e-05
+round 29: atoms 2880, active 866, residual 1.095e-05
+round 30: atoms 2928, active 887, residual 9.061e-06
+round 31: atoms 2976, active 908, residual 7.568e-06
+round 32: atoms 3024, active 947, residual 6.266e-06
+round 33: atoms 3072, active 970, residual 5.098e-06
+round 34: atoms 3120, active 1015, residual 3.918e-06
+round 35: atoms 3168, active 1050, residual 2.977e-06
+round 36: atoms 3216, active 1084, residual 2.010e-06
+round 37: atoms 3264, active 1105, residual 1.276e-06
+round 38: atoms 3312, active 1174, residual 7.790e-07
+round 39: atoms 3360, active 1209, residual 3.979e-07
+round 40: atoms 3408, active 1271, residual 8.466e-08
+round 41: atoms 3438, active 1296, residual 2.742e-15
+saved 1296 active atoms; final residual 2.742e-15
+== step 2: eps = 1e-6, seeded with the step-1 atoms
+M = 4: target PT-min/Tr -0.0271, min eigenvalue/Tr +7.269e-04; eps = 1.0e-06
+seeded with 1296 atoms from cert_atoms.npz
+round 0: atoms 2496, active 1256, residual 7.148e-08
+round 1: atoms 2524, active 1291, residual 7.927e-09
+round 2: atoms 2541, active 1295, residual 1.245e-09
+round 3: atoms 2559, active 1296, residual 2.703e-15
+saved 1296 active atoms; final residual 2.703e-15

@@ -1,7 +1,8 @@
 """Sections 9 and 11: distance of a D x D operator X from K_1(D) = cone{products, (a(x)b) rho (a(x)b)^*, a, b : C^3 -> C^D}
 by a dictionary.  Seed with the terms of parametric fits (16 + 80 and 32 + 200), add 400 random filterings and products,
 solve nonnegative least squares, then add the columns most aligned with the residual (48 local searches per round).
-Used for the worst targets of the L_1(D) adversary: D = 4 is reproduced to ~1e-7, D = 5 and 6 plateau at 1.3e-2, 6.0e-2.
+Used for the worst targets of the L_1(D) adversary: D = 4 is reproduced to 6e-8, D = 5 and 6 stay at 1.28e-2 and 5.8e-2
+after 40 rounds.
 usage: python check_cone_nnls.py target.npy rounds   (needs PyTorch and SciPy; D = 4 takes about twenty minutes)
 """
 import sys, numpy as np, torch

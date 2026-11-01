@@ -1,0 +1,5 @@
+M = 4: Tr X = 1.976805e-01; max entrywise error bound on X 1.51e-12
+atoms 1296 (filterings 358, products 938); eps = 1.0e-06
+remainder Z: Tr Z >= 1.976543e-07 (eps Tr X / 36 = 1.977e-07 expected for Tr Z), ||Z||_2 <= 3.296841e-08, max error bound 1.53e-12
+purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.0278216895;  Gurvits-Barnum threshold 1/(N-1) = 0.0285714286
+CERTIFIED: X = sum of 1296 nonnegative multiples of filterings of rho^2 and products + a separable remainder, so X lies in K_2(6).
