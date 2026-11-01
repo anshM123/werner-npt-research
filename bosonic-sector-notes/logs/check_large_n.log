@@ -1,0 +1,95 @@
+n=12 D=91 start  0 (rand ): q/||C||^2 = +3.958e-13  its 529
+n=12 D=91 start  1 (qubit): q/||C||^2 = +4.048e-14  its 235
+n=12 D=91 start  2 (ghz  ): q/||C||^2 = +7.400e-13  its 545
+n=12 D=91 start  3 (rand ): q/||C||^2 = +1.966e-13  its 866
+n=12 D=91 start  4 (qubit): q/||C||^2 = +3.976e-14  its 183
+n=12 D=91 start  5 (ghz  ): q/||C||^2 = +5.958e-14  its 673
+n=12 D=91 start  6 (rand ): q/||C||^2 = +1.517e-13  its 664
+n=12 D=91 start  7 (qubit): q/||C||^2 = +7.966e-15  its 117
+n=12 D=91 start  8 (ghz  ): q/||C||^2 = +3.211e-13  its 493
+n=12 D=91 start  9 (rand ): q/||C||^2 = +3.340e-12  its 704
+n=12 D=91 start 10 (qubit): q/||C||^2 = +4.379e-14  its 204
+n=12 D=91 start 11 (ghz  ): q/||C||^2 = +2.488e-13  its 395
+n=12 D=91 start 12 (rand ): q/||C||^2 = +1.039e-13  its 397
+n=12 D=91 start 13 (qubit): q/||C||^2 = +7.884e-14  its 335
+n=12 D=91 start 14 (ghz  ): q/||C||^2 = +3.127e-13  its 635
+n=12 D=91 start 15 (rand ): q/||C||^2 = +7.735e-14  its 761
+n=12 D=91 start 16 (qubit): q/||C||^2 = +3.816e-14  its 144
+n=12 D=91 start 17 (ghz  ): q/||C||^2 = +2.144e-13  its 477
+n=12: MIN over 18 starts = +7.966e-15 (qubit)
+n=16 D=153 start  0 (rand ): q/||C||^2 = +1.997e-11  its 2506
+n=16 D=153 start  1 (qubit): q/||C||^2 = +4.001e-12  its 1123
+n=16 D=153 start  2 (ghz  ): q/||C||^2 = +2.735e-12  its 2044
+n=16 D=153 start  3 (rand ): q/||C||^2 = +7.528e-12  its 1366
+n=16 D=153 start  4 (qubit): q/||C||^2 = +2.310e-12  its 1177
+n=16 D=153 start  5 (ghz  ): q/||C||^2 = +6.877e-12  its 1574
+n=16 D=153 start  6 (rand ): q/||C||^2 = +5.559e-12  its 4063
+n=16 D=153 start  7 (qubit): q/||C||^2 = +6.198e-13  its 655
+n=16 D=153 start  8 (ghz  ): q/||C||^2 = +9.616e-12  its 1952
+n=16 D=153 start  9 (rand ): q/||C||^2 = +6.232e-12  its 3269
+n=16 D=153 start 10 (qubit): q/||C||^2 = +3.593e-12  its 882
+n=16 D=153 start 11 (ghz  ): q/||C||^2 = +4.412e-12  its 2094
+n=16 D=153 start 12 (rand ): q/||C||^2 = +1.144e-05  its 1830
+n=16 D=153 start 13 (qubit): q/||C||^2 = +5.823e-14  its 300
+n=16 D=153 start 14 (ghz  ): q/||C||^2 = +1.526e-05  its 669
+n=16 D=153 start 15 (rand ): q/||C||^2 = +1.144e-05  its 1824
+n=16 D=153 start 16 (qubit): q/||C||^2 = +2.472e-13  its 1147
+n=16 D=153 start 17 (ghz  ): q/||C||^2 = +6.983e-12  its 2280
+n=16: MIN over 18 starts = +5.823e-14 (qubit)
+n=20 D=231 start  0 (rand ): q/||C||^2 = +7.186e-07  its 5714
+n=20 D=231 start  1 (qubit): q/||C||^2 = +2.726e-13  its 370
+n=20 D=231 start  2 (ghz  ): q/||C||^2 = +1.611e-10  its 5176
+n=20 D=231 start  3 (rand ): q/||C||^2 = +7.182e-07  its 5434
+n=20 D=231 start  4 (qubit): q/||C||^2 = +6.957e-12  its 700
+n=20 D=231 start  5 (ghz  ): q/||C||^2 = +9.538e-07  its 1757
+n=20 D=231 start  6 (rand ): q/||C||^2 = +9.533e-07  its 2631
+n=20 D=231 start  7 (qubit): q/||C||^2 = +1.764e-10  its 3837
+n=20 D=231 start  8 (ghz  ): q/||C||^2 = +7.213e-07  its 6000
+n=20 D=231 start  9 (rand ): q/||C||^2 = +7.183e-07  its 5642
+n=20 D=231 start 10 (qubit): q/||C||^2 = +1.075e-11  its 951
+n=20 D=231 start 11 (ghz  ): q/||C||^2 = +7.183e-07  its 4980
+n=20 D=231 start 12 (rand ): q/||C||^2 = +7.183e-07  its 4286
+n=20 D=231 start 13 (qubit): q/||C||^2 = +3.894e-12  its 932
+n=20 D=231 start 14 (ghz  ): q/||C||^2 = +9.529e-07  its 3295
+n=20 D=231 start 15 (rand ): q/||C||^2 = +7.182e-07  its 5116
+n=20 D=231 start 16 (qubit): q/||C||^2 = +1.154e-10  its 2987
+n=20 D=231 start 17 (ghz  ): q/||C||^2 = +9.537e-07  its 1942
+n=20: MIN over 18 starts = +2.726e-13 (qubit)
+n=24 D=325 start  0 (rand ): q/||C||^2 = +6.271e-08  its 6000
+n=24 D=325 start  1 (qubit): q/||C||^2 = +1.501e-09  its 4727
+n=24 D=325 start  2 (ghz  ): q/||C||^2 = +3.031e-08  its 5915
+n=24 D=325 start  3 (rand ): q/||C||^2 = +6.248e-08  its 6000
+n=24 D=325 start  4 (qubit): q/||C||^2 = +1.598e-10  its 1560
+n=24 D=325 start  5 (ghz  ): q/||C||^2 = +6.424e-08  its 1420
+n=24 D=325 start  6 (rand ): q/||C||^2 = +6.618e-08  its 5848
+n=24 D=325 start  7 (qubit): q/||C||^2 = +2.831e-11  its 1736
+n=24 D=325 start  8 (ghz  ): q/||C||^2 = +6.367e-08  its 1184
+n=24 D=325 start  9 (rand ): q/||C||^2 = +6.296e-08  its 5554
+n=24 D=325 start 10 (qubit): q/||C||^2 = +7.180e-10  its 3537
+n=24 D=325 start 11 (ghz  ): q/||C||^2 = +6.271e-08  its 1053
+n=24 D=325 start 12 (rand ): q/||C||^2 = +6.962e-08  its 4464
+n=24 D=325 start 13 (qubit): q/||C||^2 = +1.851e-11  its 1856
+n=24 D=325 start 14 (ghz  ): q/||C||^2 = +6.413e-08  its 1746
+n=24 D=325 start 15 (rand ): q/||C||^2 = +5.794e-08  its 6000
+n=24 D=325 start 16 (qubit): q/||C||^2 = +9.102e-12  its 540
+n=24 D=325 start 17 (ghz  ): q/||C||^2 = +6.251e-08  its 1458
+n=24: MIN over 18 starts = +9.102e-12 (qubit)
+n=30 D=496 start  0 (rand ): q/||C||^2 = +3.394e-08  its 2602
+n=30 D=496 start  1 (qubit): q/||C||^2 = +7.809e-10  its 1443
+n=30 D=496 start  2 (ghz  ): q/||C||^2 = +3.720e-08  its 3269
+n=30 D=496 start  3 (rand ): q/||C||^2 = +3.115e-08  its 2210
+n=30 D=496 start  4 (qubit): q/||C||^2 = +2.947e-10  its 737
+n=30 D=496 start  5 (ghz  ): q/||C||^2 = +1.351e-08  its 1088
+n=30 D=496 start  6 (rand ): q/||C||^2 = +3.743e-08  its 2593
+n=30 D=496 start  7 (qubit): q/||C||^2 = +9.828e-10  its 2221
+n=30 D=496 start  8 (ghz  ): q/||C||^2 = +1.492e-08  its 830
+n=30 D=496 start  9 (rand ): q/||C||^2 = +2.529e-08  its 3078
+n=30 D=496 start 10 (qubit): q/||C||^2 = +1.051e-09  its 1306
+n=30 D=496 start 11 (ghz  ): q/||C||^2 = +3.970e-08  its 5409
+n=30 D=496 start 12 (rand ): q/||C||^2 = +3.033e-08  its 2835
+n=30 D=496 start 13 (qubit): q/||C||^2 = +9.626e-09  its 2655
+n=30 D=496 start 14 (ghz  ): q/||C||^2 = +1.041e-08  its 688
+n=30 D=496 start 15 (rand ): q/||C||^2 = +3.149e-08  its 2943
+n=30 D=496 start 16 (qubit): q/||C||^2 = +1.985e-09  its 1372
+n=30 D=496 start 17 (ghz  ): q/||C||^2 = +2.010e-08  its 585
+n=30: MIN over 18 starts = +2.947e-10 (qubit)

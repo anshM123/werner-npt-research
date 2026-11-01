@@ -129,6 +129,14 @@ Check: `code/check_sector_theorem.py`.
 These come from local optimisation, so they are evidence, not certificates.
 - **The minimum is 0.** Over rank-two bosonic C, the minimum of q_n(1/2, C)/‖C‖² is 0, to within 10^{-15}, for
   n = 2, …, 7.
+- **Large n.**
+  - With the closed formula of Section 1 and sparse bosonic annihilators (`code/check_large_n.py`), local
+    minimisation from 18 starts per n stays nonnegative. The starts are random, near the qubit zeros, and Dicke- or
+    GHZ-type pairs.
+  - The minima are 8e-15, 6e-14, 3e-13, 9e-12 and 3e-10 for n = 12, 16, 20, 24 and 30 (dimension of Sym^n(C³) up to
+    496). Each comes from a start near the qubit zeros (`logs/check_large_n.log`).
+  - The formula agrees with direct partial traces at n = 5 to 3e-15 (`code/check_large_n_formula.py`,
+    `logs/check_large_n_formula.log`).
 - **The zeros found are qubit-supported.**
   - At n = 3, every zero found has two equal singular values, and the one-site marginal of range plus co-range has
     spectrum (1/2, 1/2, 0).
@@ -207,3 +215,4 @@ The scripts need Python 3 with NumPy and SciPy.
 - `code/check_formulas.py`: Section 1.
 - `code/check_sector_theorem.py`: Section 2.
 - `code/check_numerics.py`, `code/check_zeros_and_thickness.py` and `code/check_negative_results.py`: Section 3.
+- `code/check_large_n.py`, `code/check_large_n_formula.py`: Section 3, large n.
