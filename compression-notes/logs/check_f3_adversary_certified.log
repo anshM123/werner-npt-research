@@ -1,0 +1,45 @@
+== python check_f3_adversary.py 3 16 80 60 31 0.2
+F3 M = 3, seed 31, step 0: residual 5.257e-09 (PT-min -0.0317); best so far 5.257e-09
+F3 M = 3, seed 31, step 10: residual 5.117e-09 (PT-min -0.0316); best so far 9.575e-09
+F3 M = 3, seed 31, step 20: residual 8.460e-09 (PT-min -0.0396); best so far 1.375e-08
+F3 M = 3, seed 31, step 30: residual 9.758e-09 (PT-min -0.0274); best so far 1.708e-07
+F3 M = 3, seed 31, step 40: residual 1.099e-08 (PT-min -0.0405); best so far 1.708e-07
+F3 M = 3, seed 31, step 50: residual 7.594e-07 (PT-min -0.0451); best so far 9.316e-06
+F3 M = 3, seed 31, step 59: residual 6.106e-06 (PT-min -0.0456); best so far 4.582e-05
+F3 M = 3, seed 31: worst target re-fitted from fresh starts: 16 + 80: 2.731e-08; 32 + 160: 1.826e-08
+== python check_f3_adversary.py 4 16 80 60 31 0.2
+F3 M = 4, seed 31, step 0: residual 6.574e-09 (PT-min -0.0390); best so far 6.574e-09
+F3 M = 4, seed 31, step 10: residual 8.273e-09 (PT-min -0.0356); best so far 1.224e-08
+F3 M = 4, seed 31, step 20: residual 1.077e-08 (PT-min -0.0448); best so far 1.468e-08
+F3 M = 4, seed 31, step 30: residual 1.877e-08 (PT-min -0.0395); best so far 5.944e-06
+F3 M = 4, seed 31, step 40: residual 8.088e-09 (PT-min -0.0282); best so far 5.944e-06
+F3 M = 4, seed 31, step 50: residual 7.602e-09 (PT-min -0.0227); best so far 5.944e-06
+F3 M = 4, seed 31, step 59: residual 5.344e-07 (PT-min -0.0351); best so far 5.944e-06
+F3 M = 4, seed 31: worst target re-fitted from fresh starts: 16 + 80: 1.242e-08; 32 + 160: 1.070e-08
+== python check_f3_adversary.py 5 16 80 60 31 0.2
+F3 M = 5, seed 31, step 0: residual 5.364e-09 (PT-min +0.0183); best so far 0.000e+00
+F3 M = 5, seed 31, step 10: residual 9.321e-09 (PT-min -0.0233); best so far 9.321e-09
+F3 M = 5, seed 31, step 20: residual 1.162e-08 (PT-min -0.0404); best so far 1.162e-08
+F3 M = 5, seed 31, step 30: residual 1.190e-08 (PT-min -0.0437); best so far 3.602e-08
+F3 M = 5, seed 31, step 40: residual 3.040e-08 (PT-min -0.0421); best so far 4.941e-07
+F3 M = 5, seed 31, step 50: residual 2.226e-07 (PT-min -0.0401); best so far 1.196e-06
+F3 M = 5, seed 31, step 59: residual 1.377e-08 (PT-min -0.0391); best so far 1.196e-06
+F3 M = 5, seed 31: worst target re-fitted from fresh starts: 16 + 80: 1.271e-08; 32 + 160: 9.546e-09
+== python check_f3_adversary.py 6 16 80 60 34 0.1
+F3 M = 6, seed 34, step 0: residual 5.834e-09 (PT-min +0.0668); best so far 0.000e+00
+F3 M = 6, seed 34, step 10: residual 9.656e-06 (PT-min +0.0012); best so far 0.000e+00
+F3 M = 6, seed 34, step 20: residual 8.151e-05 (PT-min +0.0003); best so far 0.000e+00
+F3 M = 6, seed 34, step 30: residual 7.634e-05 (PT-min +0.0001); best so far 0.000e+00
+F3 M = 6, seed 34, step 40: residual 5.989e-05 (PT-min +0.0001); best so far 0.000e+00
+F3 M = 6, seed 34, step 50: residual 6.713e-05 (PT-min +0.0000); best so far 0.000e+00
+F3 M = 6, seed 34, step 59: residual 4.545e-05 (PT-min +0.0000); best so far 0.000e+00
+F3 M = 6, seed 34: worst target re-fitted from fresh starts: 16 + 80: 5.093e-09; 32 + 160: 7.087e-09
+== python check_f3_adversary.py 6 16 80 60 35 0.1
+F3 M = 6, seed 35, step 0: residual 6.004e-09 (PT-min +0.0776); best so far 0.000e+00
+F3 M = 6, seed 35, step 10: residual 1.618e-06 (PT-min +0.0012); best so far 0.000e+00
+F3 M = 6, seed 35, step 20: residual 8.937e-05 (PT-min +0.0002); best so far 0.000e+00
+F3 M = 6, seed 35, step 30: residual 8.950e-05 (PT-min +0.0001); best so far 0.000e+00
+F3 M = 6, seed 35, step 40: residual 7.992e-05 (PT-min +0.0001); best so far 0.000e+00
+F3 M = 6, seed 35, step 50: residual 7.226e-05 (PT-min +0.0000); best so far 0.000e+00
+F3 M = 6, seed 35, step 59: residual 6.421e-05 (PT-min +0.0000); best so far 0.000e+00
+F3 M = 6, seed 35: worst target re-fitted from fresh starts: 16 + 80: 7.260e-09; 32 + 160: 5.796e-09

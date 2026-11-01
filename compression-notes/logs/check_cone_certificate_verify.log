@@ -1,0 +1,42 @@
+== python check_cone_certificate_verify.py chain_cert_target_M4.npz chain_cert_atoms_M4.npz 4 2
+D = 6, M = 4, atoms of 2 copies: Tr X = 1.976805e-01; max entrywise error bound on X 1.51e-12
+atoms 1296 (filterings 358, products 938); eps = 1.0e-06
+remainder Z: Tr Z >= 1.976543e-07 (eps Tr X = 1.977e-07 expected for Tr Z), ||Z||_2 <= 3.296841e-08, max error bound 1.53e-12
+purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.0278216895;  Gurvits-Barnum threshold 1/(N-1) = 0.0285714286
+CERTIFIED: X = sum of 1296 nonnegative multiples of filterings of rho^2 and products + a separable remainder, so X lies in K_2(6).
+== python check_cone_certificate_verify.py chain_cert_target_M3.npz chain_cert_atoms_M3.npz 3 2
+D = 6, M = 3, atoms of 2 copies: Tr X = 3.778256e-01; max entrywise error bound on X 1.15e-13
+atoms 1296 (filterings 477, products 819); eps = 1.0e-06
+remainder Z: Tr Z >= 3.778231e-07 (eps Tr X = 3.778e-07 expected for Tr Z), ||Z||_2 <= 6.297277e-08, max error bound 1.48e-13
+purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.0277797626;  Gurvits-Barnum threshold 1/(N-1) = 0.0285714286
+CERTIFIED: X = sum of 1296 nonnegative multiples of filterings of rho^2 and products + a separable remainder, so X lies in K_2(6).
+== python check_cone_certificate_verify.py adv_f3_filters_M3_s31.npz f3_cert_atoms_M3_s31.npz 3 1
+D = 3, M = 3, atoms of 1 copies: Tr X = 9.522918e-01; max entrywise error bound on X 8.32e-13
+atoms 81 (filterings 5, products 76); eps = 1.0e-06
+remainder Z: Tr Z >= 9.522873e-07 (eps Tr X = 9.523e-07 expected for Tr Z), ||Z||_2 <= 3.174325e-07, max error bound 8.47e-13
+purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.1111135274;  Gurvits-Barnum threshold 1/(N-1) = 0.1250000000
+CERTIFIED: X = sum of 81 nonnegative multiples of filterings of rho^1 and products + a separable remainder, so X lies in K_1(3).
+== python check_cone_certificate_verify.py adv_f3_filters_M4_s31.npz f3_cert_atoms_M4_s31.npz 4 1
+D = 3, M = 4, atoms of 1 copies: Tr X = 6.561197e-01; max entrywise error bound on X 8.97e-12
+atoms 81 (filterings 2, products 79); eps = 1.0e-06
+remainder Z: Tr Z >= 6.560581e-07 (eps Tr X = 6.561e-07 expected for Tr Z), ||Z||_2 <= 2.187322e-07, max error bound 8.98e-12
+purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.1111580736;  Gurvits-Barnum threshold 1/(N-1) = 0.1250000000
+CERTIFIED: X = sum of 81 nonnegative multiples of filterings of rho^1 and products + a separable remainder, so X lies in K_1(3).
+== python check_cone_certificate_verify.py adv_f3_filters_M5_s31.npz f3_cert_atoms_M5_s31.npz 5 1
+D = 3, M = 5, atoms of 1 copies: Tr X = 4.924498e+00; max entrywise error bound on X 5.21e-10
+atoms 81 (filterings 5, products 76); eps = 1.0e-06
+remainder Z: Tr Z >= 4.921586e-06 (eps Tr X = 4.924e-06 expected for Tr Z), ||Z||_2 <= 1.642834e-06, max error bound 5.21e-10
+purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.1114236016;  Gurvits-Barnum threshold 1/(N-1) = 0.1250000000
+CERTIFIED: X = sum of 81 nonnegative multiples of filterings of rho^1 and products + a separable remainder, so X lies in K_1(3).
+== python check_cone_certificate_verify.py adv_f3_filters_M6_s34.npz f3_cert_atoms_M6_s34.npz 6 1
+D = 3, M = 6, atoms of 1 copies: Tr X = 3.316020e-02; max entrywise error bound on X 6.15e-10
+atoms 81 (filterings 3, products 78); eps = 1.0e-04
+remainder Z: Tr Z >= 3.311754e-06 (eps Tr X = 3.316e-06 expected for Tr Z), ||Z||_2 <= 1.106873e-06, max error bound 6.15e-10
+purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.1117068759;  Gurvits-Barnum threshold 1/(N-1) = 0.1250000000
+CERTIFIED: X = sum of 81 nonnegative multiples of filterings of rho^1 and products + a separable remainder, so X lies in K_1(3).
+== python check_cone_certificate_verify.py adv_f3_filters_M6_s35.npz f3_cert_atoms_M6_s35.npz 6 1
+D = 3, M = 6, atoms of 1 copies: Tr X = 3.274811e-02; max entrywise error bound on X 6.06e-10
+atoms 81 (filterings 1, products 80); eps = 1.0e-04
+remainder Z: Tr Z >= 3.270593e-06 (eps Tr X = 3.275e-06 expected for Tr Z), ||Z||_2 <= 1.093120e-06, max error bound 6.06e-10
+purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.1117075436;  Gurvits-Barnum threshold 1/(N-1) = 0.1250000000
+CERTIFIED: X = sum of 81 nonnegative multiples of filterings of rho^1 and products + a separable remainder, so X lies in K_1(3).

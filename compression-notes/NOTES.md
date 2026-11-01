@@ -203,7 +203,12 @@ over a, b with the crossed labels is ⟨ω|X^Γ|ω⟩. ∎
 **Corollary.** Suppose T is primitive with Perron eigenvalue μ and right and left Perron eigen-operators X_*, Y_*
 (both positive semidefinite). Then q_n/μ^n → ⟨Y_*, |rr′⟩⟨rr′|⟩ ⟨ω|X_*^Γ|ω⟩.
 - If EP_n holds for every n, every such X_* is 2-undistillable as a state on C^D ⊗ C^D; for D = 2 it is PPT.
-- Conversely, an NPT Perron operator at D = 2 would give counterexamples at every large n.
+- Conversely, an NPT Perron operator at D = 2 would give counterexamples at every large n. In fact there is none,
+  for any bond tensors. At D = 2, T maps separable operators on C² ⊗ C² to separable ones: the image of a product
+  operator is a 2 × 2 local filtering of one Werner copy, which is PPT by EP_1 and therefore separable. So every
+  T^n(|r r′⟩⟨r r′|) and every X_* is separable, and q_n ≥ 0 for every n when the bond dimension is 2 (this is the
+  case m = 0 of the induction in Section 9, where the cone is the separable cone; the maximisation below could only
+  return a nonnegative value).
 
 **Searches** (our logs; `check_mps.py` checks Proposition 4 and re-evaluates one search output).
 - Translation-invariant MPS rank-two filters with D = 2, 3, 4. The right boundary vectors were also allowed to depend
@@ -611,15 +616,17 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
     floor. Column generation over filterings of ρ^{⊗2} and products then reproduces both targets exactly: residual
     2.9 × 10^{−15} for four copies and 2.0 × 10^{−15} for three copies (64 rounds), with 1296 active columns, the
     real dimension.
-  - **A certified link.** The four-copy decomposition is checked rigorously (`check_chain_certificate.py`,
-    `check_chain_certificate_verify.py`). The filters A, B and the parameters of every atom are floating-point
+  - **Certified links.** Both decompositions are checked rigorously (`check_chain_certificate.py`,
+    `check_cone_certificate_verify.py`). The filters A, B and the parameters of every atom are floating-point
     numbers, hence exact rationals. The weights are fitted to X/Tr X − (ε/36) I with ε = 10^{−6}, so that the
     remainder Z = X − Σ_i w_i G_i is close to a multiple of the identity. The verifier recomputes X and every atom
-    with entrywise rounding bounds. It finds Tr Z ≥ 1.9765 × 10^{−7} and ‖Z‖_2²/(Tr Z)² ≤ 0.02782 < 1/35, so Z is
-    separable by the Gurvits–Barnum ball [GB].
-    - So this four-copy NPT filtering (partial-transpose minimum −0.027 of the trace) is a nonnegative combination
-      of 358 filterings of ρ^{⊗2}, 938 products and a separable remainder: it lies in K_2(6).
-    - This is a computer-assisted theorem about one operator, not a statement about other filterings.
+    with entrywise rounding bounds. It finds ‖Z‖_2²/(Tr Z)² ≤ 0.02778 (three copies) and ≤ 0.02782 (four copies),
+    both below 1/35, so Z is separable by the Gurvits–Barnum ball [GB].
+    - So the three-copy target (partial-transpose minimum −0.028 of the trace) is a nonnegative combination of 477
+      filterings of ρ^{⊗2}, 819 products and a separable remainder, and the four-copy target (−0.027) of 358
+      filterings, 938 products and a separable remainder. Both lie in K_2(6). The three-copy one is an instance of
+      L_2(6), the statement that gives EP_4 (Proposition 9(b)).
+    - These are computer-assisted theorems about two operators, not statements about other filterings.
     - Inverting the exact 1296-column system does not give a certificate: ‖M^{−1}‖_∞ ≈ 5 × 10^8. The shift by εI
       makes the check independent of that conditioning.
 
@@ -893,6 +900,13 @@ operators and the filterings (a ⊗ b) ρ (a ⊗ b)^* of one Werner copy.
     targets (−0.0636, −0.0627), is reproduced to 4–7 × 10^{−16} as a nonnegative combination of 81–83 one-copy
     filterings and products (81 is the real dimension). So these targets lie in K_1(3) to machine precision; the
     residuals of 10^{−5}–10^{−4} were optimiser floors.
+  - **Certified instances** (`check_f3_certificate.py`, `check_cone_certificate_verify.py`). The adversary now also
+    saves the filters of its worst target. Fresh runs at m = 3, 4, 5 (seed 31; PT-min −0.045, −0.047, −0.042) and
+    two six-copy starting points at δ = 0.1 (seeds 34, 35; PT-min −0.030; at six copies the NPT-keeping steps never
+    beat the start) are certified by the method of Section 9, with ε = 10^{−6} (10^{−4} at six copies, where the
+    rounding bounds are larger). The remainders satisfy ‖Z‖_2²/(Tr Z)² ≤ 0.1118 < 1/8. So each of these five
+    targets is, rigorously, a nonnegative combination of one to five filterings of one Werner copy, 76–80 products
+    and a separable remainder. These are computer-assisted statements about five operators, not a proof of F3.
   - The perturbation test also passes at m = 5 and 6 (δ = 0.1: PT-min −0.043 and −0.031, fits 1.0 × 10^{−8}
     and 7.1 × 10^{−9}), and NPT-keeping adversaries at m = 5 (two seeds) and m = 6 (one seed) end with worst
     targets that refit to 2–5 × 10^{−9}.
@@ -1013,9 +1027,14 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
 - `code/check_chain_six.py` (`python check_chain_six.py 4`) and `code/check_chain_six_nnls.py`: the next links of
   the 6 × 6 chain in Section 9 (saved targets `chain_target_M3.npy`, `chain_target_M4.npy` and fit terms; logs
   `check_chain_six_nnls.log` for four copies and `check_chain_six_nnls_M3.log` for three).
-- `code/check_chain_certificate.py` (search; needs PyTorch and SciPy) and `code/check_chain_certificate_verify.py`
-  (`python check_chain_certificate_verify.py 4`; NumPy only, about a second): the certified link in Section 9. The
-  data are `chain_cert_target_M4.npz` (the filters) and `chain_cert_atoms_M4.npz` (atom parameters and weights).
+- `code/check_cone_certificate_verify.py` (`python check_cone_certificate_verify.py target.npz atoms.npz M m`; NumPy
+  only, seconds): the rigorous check of a cone certificate (Sections 9 and 11). `logs/check_cone_certificate_verify.log`
+  runs it on all seven saved certificates.
+- `code/check_chain_certificate.py` (search; needs PyTorch and SciPy): the certified chain links in Section 9. Data:
+  `chain_cert_target_M3.npz`, `chain_cert_target_M4.npz` (filters) and `chain_cert_atoms_M3.npz`,
+  `chain_cert_atoms_M4.npz` (atom parameters and weights).
+- `code/check_f3_certificate.py` (search; needs PyTorch and SciPy): the certified F3 instances in Section 11. Data:
+  `adv_f3_filters_M*_s*.npz` (filters, written by `check_f3_adversary.py`) and `f3_cert_atoms_M*_s*.npz`.
 - `code/check_cone_nnls.py` (`python check_cone_nnls.py adv_lmD_m1_D5_s0.npy 40`): the dictionary check of the
   L_1(D) threshold in Section 9 (needs PyTorch and SciPy).
 - `code/check_removal.py`: Section 9, removal by compression. It checks the identity against the dense q_4, shows

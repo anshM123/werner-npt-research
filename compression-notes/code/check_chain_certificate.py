@@ -1,15 +1,16 @@
 """Section 9: certified membership of the 6 x 6 chain targets in K_2(6) (search step; the check is
-check_chain_certificate_verify.py).
+check_cone_certificate_verify.py).
 Target: X = (A (x) B) rho^{(x)M} (A (x) B)^*, with A, B : (C^3)^{(x)M} -> C^6 the chain filters (the two-copy NPT 6 x 6
 filtering from the seed-4 gradient path, padded with e_0 on the extra copies and moved by delta = 0.1 toward random
 M-copy filters, generator seed 9).  A, B are float64, hence exact dyadic rationals; they are saved.
 Column generation for K_2(6) on the shifted target T = X/Tr X - (eps/36) I: the weights are found for T, so that the
-remainder X - sum w_i G_i is close to (eps Tr X/36) I and can be certified separable (check_chain_certificate_verify.py).
+remainder X - sum w_i G_i is close to (eps Tr X/36) I and can be certified separable (check_cone_certificate_verify.py).
 Atoms: filterings (a (x) b) rho^{(x)2} (a (x) b)^* (a, b : C^9 -> C^6) and products |x y><x y|, saved by parameters.
 usage: python check_chain_certificate.py M eps rounds [seed_atoms.npz | fit_terms.pkl]   (needs PyTorch and SciPy)
-The four-copy atoms were found in two steps: eps = 0 (41 rounds, 1296 active atoms; the saved file is then the
-seed), and eps = 1e-6 seeded with those atoms (4 rounds).  The three-copy run is seeded with the fit terms
-chain_seeds_M3.pkl of check_chain_six.py."""
+then: python check_cone_certificate_verify.py chain_cert_target_M{M}.npz chain_cert_atoms_M{M}.npz M 2
+The three-copy certificate: python check_chain_certificate.py 3 1e-6 150 chain_seeds_M3.pkl (65 rounds).  The
+four-copy atoms were found in two steps with an earlier version that weighted the off-diagonal coordinates by 1
+instead of sqrt 2: eps = 0 (41 rounds, 1296 active atoms), then eps = 1e-6 seeded with those atoms (4 rounds)."""
 import sys, itertools, numpy as np, torch
 from scipy.optimize import nnls
 torch.set_default_dtype(torch.float64)
@@ -102,7 +103,7 @@ for _ in range(600):
     add('p', g.standard_normal(D) + 1j * g.standard_normal(D), g.standard_normal(D) + 1j * g.standard_normal(D))
 def vecr(Mx):
     iu = np.triu_indices(Mx.shape[0], 1)
-    return np.concatenate([np.diag(Mx).real, Mx[iu].real, Mx[iu].imag])
+    return np.concatenate([np.diag(Mx).real, np.sqrt(2) * Mx[iu].real, np.sqrt(2) * Mx[iu].imag])   # Frobenius-isometric
 torch.manual_seed(123)
 nT = np.linalg.norm(T)
 for rd in range(ROUNDS):

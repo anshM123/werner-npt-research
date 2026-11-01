@@ -5,6 +5,7 @@ then refreshed).  A penalty keeps the target NPT (partial-transpose minimum at m
 refitted from fresh random starts at the end.  The run starts from the single-copy filtering (all copies but one
 contracted) moved by delta0 toward random filters (delta0 < 0: random start).
 usage: python check_f3_adversary.py M J P outer seed delta0   (e.g. 3 16 80 60 0 0.2; needs PyTorch, a few minutes)
+The worst target is saved as a matrix and, by its filters, as adv_f3_filters_M{M}_s{seed}.npz.
 """
 import sys, numpy as np, torch
 torch.set_default_dtype(torch.float64)
@@ -57,7 +58,7 @@ p = [(0.4 * torch.randn(*s, dtype=torch.complex128)).requires_grad_() for s in (
 with torch.no_grad(): X = target(A, B)
 r = refit(p, X, 3000)
 optA = torch.optim.Adam([A, B], lr=0.01)
-best = (0.0, X.detach().clone())
+best = (0.0, X.detach().clone(), A.detach().clone(), B.detach().clone())
 for it in range(OUTER):
     X = target(A, B)
     with torch.no_grad(): Mp = model(p)
@@ -67,7 +68,7 @@ for it in range(OUTER):
     optA.zero_grad(); (-obj).backward(); optA.step()
     with torch.no_grad(): X = target(A, B)
     r = refit(p, X.detach(), 300)
-    if r > best[0] and float(torch.linalg.eigvalsh(pt(X.detach()))[0]) < -0.005: best = (r, X.detach().clone())
+    if r > best[0] and float(torch.linalg.eigvalsh(pt(X.detach()))[0]) < -0.005: best = (r, X.detach().clone(), A.detach().clone(), B.detach().clone())
     if it % 10 == 0 or it == OUTER - 1:
         ptm = float(torch.linalg.eigvalsh(pt(X.detach()))[0])
         print(f"F3 M = {M}, seed {SEED}, step {it}: residual {r:.3e} (PT-min {ptm:+.4f}); best so far {best[0]:.3e}", flush=True)
@@ -82,3 +83,4 @@ def fresh(X, J, P, RS=3):
 print(f"F3 M = {M}, seed {SEED}: worst target re-fitted from fresh starts: {J} + {P}: {fresh(Xw, J, P):.3e}; "
       f"{2 * J} + {2 * P}: {fresh(Xw, 2 * J, 2 * P):.3e}", flush=True)
 np.save(f"adv_f3_M{M}_s{SEED}.npy", Xw.numpy())
+np.savez(f"adv_f3_filters_M{M}_s{SEED}.npz", A=best[2].numpy(), B=best[3].numpy())   # exact filters, for check_f3_certificate.py
