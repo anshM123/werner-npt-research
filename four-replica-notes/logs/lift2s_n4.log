@@ -1,0 +1,3 @@
+n=4: scalar (81696, 1331), N = 1331; build 216s
+   lifted (315884, 3996), nnz 140.7M, PSD blocks 2170 (max 144); lift 7s
+n=4 LIFTED via SCS (indirect=False): status solved, iters 2325, primal -6.572094e-08, dual +1.815873e-09, ||A2^T y + c||_inf 2.5e-06, E = [[0.5, 0.1128], [0.1128, 0.5]]; solve 3311s

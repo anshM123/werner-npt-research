@@ -17,7 +17,8 @@ The main numerical findings:
 
   So exact certificates look within reach.
 - **Hermitian rank-two operators.** A letter-resolved relaxation matches the conjectured sharp margin
-  2^{−n}(σ₁ − σ₂)² at n = 4 on a grid of 13 ratios.
+  2^{−n}(σ₁ − σ₂)² at n = 4 on a grid of 13 ratios. A single lifted certificate covers all ratios at once (SCS, value
+  ≈ 0 to 1e-7).
 
 Throughout, d = 3, ρ = I − F/2 and q_n(C) = Σ_J (−1/2)^{|J|} ‖Tr_J C‖² for C of rank at most two on (C³)^⊗n. The
 endpoint inequality at n copies (EP_n) is q_n(C) ≥ 0 for all such C.
@@ -156,8 +157,12 @@ t = −0.9, −0.75, −0.1, 0.1, 0.75, 0.9 give 6.25108e-4, 3.90637e-3, 5.06256
   feasible, a value ≥ 0 certifies [[m_uu·x, m_uv·x], [m_uv·x, m_vv·x]] ≥ 0 on the whole relaxation, that is, every
   ratio and sign at once.
   - The lifted value is 4.4e-8 at n = 2 and 4.8e-7 at n = 3 (`logs/lift2_n2.log`, `logs/lift2_n3.log`).
-  - At n = 4 the lifted problem has 1.4e8 nonzeros and dense scaling blocks of total size 8e8. Our solver ran out
-    of memory on it (over 18 GB), so at n = 4 the evidence is the seven-ratio grid above.
+  - At n = 4 the lifted problem has 1.4e8 nonzeros. The interior-point solver ran out of memory on its dense
+    scaling blocks (total size 8e8). The first-order solver SCS, on a leaner assembly (`lift2s.py`), solved it:
+    2325 iterations, primal −6.6e-8, dual +1.8e-9, residual 2.5e-6 (`logs/lift2s_n4.log`). The same assembly
+    reproduces the Clarabel values at n = 2 and n = 3.
+  - So at four copies one numerical certificate covers every Hermitian rank-two operator, for all ratios and both
+    signs, to solver accuracy.
 
 ### Exact certificates at two and three copies (pipeline validation)
 
@@ -308,7 +313,7 @@ parameters and more than 20 GB. The endpoint for every n is open.
 | `code/relaxations/exact_site.py`, `exact_maps.py` | Exact rational per-site irreps and maps (python-flint) |
 | `code/relaxations/exact_core.py`, `exact_coreN.py`, `exact_pilot_n2.py`, `exact_pilot_n3.py` | Exact certificates at n = 2, 3 |
 | `code/relaxations/local_herm.py`, `local_min.py` | Local searches for the true minima |
-| `code/relaxations/lift2.py` | The all-ratio lifted certificate |
+| `code/relaxations/lift2.py`, `lift2s.py` | The all-ratio lifted certificate (Clarabel; lean assembly with SCS) |
 | `code/relaxations/audit_above_endpoint.py`, `ablate_n4.py` | The control at w = 0.55, and constraint ablations |
 | `code/clicks/` | Section 5 |
 | `code/three_copy_mechanisms/` | Section 6 |
