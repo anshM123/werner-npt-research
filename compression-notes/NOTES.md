@@ -224,10 +224,12 @@ over a, b with the crossed labels is ⟨ω|X^Γ|ω⟩. ∎
   some Schmidt-rank-two ω has ⟨ω|X_*^Γ|ω⟩ < 0, that is, if η_D(X_*) = min λ_min((U ⊗ V)^* X_*^Γ (U ⊗ V)) < 0 over
   isometries U, V : C² → C^D.
   - We minimised η_D jointly over the bond matrices and U, V (gradient through the power iteration for X_*, trace
-    one), with a careful inner minimisation every 50 steps. One run of 1500 steps for each D = 5, 6, 7, 8, 9.
+    one), with a careful inner minimisation every 50 steps. One run of 1500 steps for each D = 5, 6, 7, 8, 9, and a
+    second seed (1000 steps) for D = 5, 7, 9.
   - η_D stays positive: the best values are 7.0 × 10^{−8}, 2.8 × 10^{−8}, 6.7 × 10^{−9}, 4.4 × 10^{−8} and
-    5.7 × 10^{−8}, approached from above. At D = 8 and 9 the Perron operator is clearly NPT (partial-transpose
-    minimum −7.3 × 10^{−3} and −3.6 × 10^{−3}) but not 2-distillable.
+    5.7 × 10^{−8} (second seeds: 5.4 × 10^{−8}, 3.3 × 10^{−8}, 3.7 × 10^{−8}), approached from above. At D = 8 and 9
+    the Perron operator is clearly NPT (partial-transpose minimum −7.3 × 10^{−3} and −3.6 × 10^{−3}) but not
+    2-distillable.
   - For the D = 8 optimum, the explicit operator C with the minimising ω gives q_n(1/2, C)/‖C‖² = 0.88, 0.60, 0.45
     and 0.37 at n = 1, …, 4 (the transfer formula agrees with dense q_n to eleven digits), and the ratio falls slowly
     to 0.077 at n = 48, staying positive.
