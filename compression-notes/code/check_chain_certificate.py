@@ -6,16 +6,18 @@ M-copy filters, generator seed 9).  A, B are float64, hence exact dyadic rationa
 Column generation for K_2(6) on the shifted target T = X/Tr X - (eps/36) I: the weights are found for T, so that the
 remainder X - sum w_i G_i is close to (eps Tr X/36) I and can be certified separable (check_cone_certificate_verify.py).
 Atoms: filterings (a (x) b) rho^{(x)2} (a (x) b)^* (a, b : C^9 -> C^6) and products |x y><x y|, saved by parameters.
-usage: python check_chain_certificate.py M eps rounds [seed_atoms.npz | fit_terms.pkl]   (needs PyTorch and SciPy)
+usage: python check_chain_certificate.py M eps rounds [seed_atoms.npz | fit_terms.pkl | -] [delta, default 0.1]   (needs PyTorch and SciPy)
 then: python check_cone_certificate_verify.py chain_cert_target_M{M}.npz chain_cert_atoms_M{M}.npz M 2
-The three-copy certificate: python check_chain_certificate.py 3 1e-6 150 chain_seeds_M3.pkl (65 rounds).  The
+The three-copy certificates: python check_chain_certificate.py 3 1e-6 150 chain_seeds_M3.pkl (65 rounds) and
+python check_chain_certificate.py 3 1e-6 160 chain_seeds_M3_d025.pkl 0.25 (41 rounds; output tag _d025).  The
 four-copy atoms were found in two steps with an earlier version that weighted the off-diagonal coordinates by 1
 instead of sqrt 2: eps = 0 (41 rounds, 1296 active atoms), then eps = 1e-6 seeded with those atoms (4 rounds)."""
 import sys, itertools, numpy as np, torch
 from scipy.optimize import nnls
 torch.set_default_dtype(torch.float64)
 M, EPS, ROUNDS = int(sys.argv[1]), float(sys.argv[2]), int(sys.argv[3])
-SEEDFILE = sys.argv[4] if len(sys.argv) > 4 else None
+DELTA = float(sys.argv[5]) if len(sys.argv) > 5 else 0.1
+SEEDFILE = sys.argv[4] if len(sys.argv) > 4 and sys.argv[4] != "-" else None
 D = 6
 F = np.zeros((9, 9))
 for i in range(3):
@@ -47,8 +49,9 @@ u = torch.zeros(3 ** (M - 2), dtype=torch.complex128); u[0] = 1
 A0 = torch.einsum('ax,y->axy', A2.detach(), u).reshape(D, 3 ** M); B0 = torch.einsum('ax,y->axy', B2.detach(), u).reshape(D, 3 ** M)
 g2 = torch.Generator().manual_seed(9)
 RA = torch.randn(D, 3 ** M, dtype=torch.complex128, generator=g2); RB = torch.randn(D, 3 ** M, dtype=torch.complex128, generator=g2)
-A = (A0 / torch.linalg.norm(A0) + 0.1 * RA / torch.linalg.norm(RA)).numpy(); B = (B0 / torch.linalg.norm(B0) + 0.1 * RB / torch.linalg.norm(RB)).numpy()
-np.savez(f"chain_cert_target_M{M}.npz", A=A, B=B)
+A = (A0 / torch.linalg.norm(A0) + DELTA * RA / torch.linalg.norm(RA)).numpy(); B = (B0 / torch.linalg.norm(B0) + DELTA * RB / torch.linalg.norm(RB)).numpy()
+TAG = "" if DELTA == 0.1 else f"_d{str(DELTA).replace('.', '')[1:]}"
+np.savez(f"chain_cert_target_M{M}{TAG}.npz", A=A, B=B)
 X = filt(torch.tensor(A), torch.tensor(B), M).numpy(); X = (X + X.conj().T) / 2
 Xn = X / np.trace(X).real
 print(f"M = {M}: target PT-min/Tr {np.linalg.eigvalsh(pt(torch.tensor(Xn)).numpy())[0]:+.4f}, min eigenvalue/Tr "
@@ -128,7 +131,7 @@ for rd in range(ROUNDS):
     for kind, p, q in new: add(kind, p, q)
 act = np.where(coef > 0)[0]
 zf, zp = np.zeros((D, 9), complex), np.zeros(D, complex)
-np.savez(f"chain_cert_atoms_M{M}.npz", kinds=np.array([atoms[i][0] for i in act]),
+np.savez(f"chain_cert_atoms_M{M}{TAG}.npz", kinds=np.array([atoms[i][0] for i in act]),
          P=np.array([atoms[i][1] if atoms[i][0] == 'f' else zf for i in act]),
          Q=np.array([atoms[i][2] if atoms[i][0] == 'f' else zf for i in act]),
          x=np.array([atoms[i][1] if atoms[i][0] == 'p' else zp for i in act]),

@@ -626,7 +626,9 @@ residual is an explicit approximate decomposition. Residuals are relative Froben
       filterings of ρ^{⊗2}, 819 products and a separable remainder, and the four-copy target (−0.027) of 358
       filterings, 938 products and a separable remainder. Both lie in K_2(6). The three-copy one is an instance of
       L_2(6), the statement that gives EP_4 (Proposition 9(b)).
-    - These are computer-assisted theorems about two operators, not statements about other filterings.
+    - A second three-copy target, moved by δ = 0.25 instead of 0.1 (partial-transpose minimum −0.018), is certified
+      the same way: 377 filterings of ρ^{⊗2}, 919 products and a separable remainder (‖Z‖_2²/(Tr Z)² ≤ 0.02778).
+    - These are computer-assisted theorems about three operators, not statements about other filterings.
     - Inverting the exact 1296-column system does not give a certificate: ‖M^{−1}‖_∞ ≈ 5 × 10^8. The shift by εI
       makes the check independent of that conditioning.
 
@@ -1047,10 +1049,10 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   `check_chain_six_nnls.log` for four copies and `check_chain_six_nnls_M3.log` for three).
 - `code/check_cone_certificate_verify.py` (`python check_cone_certificate_verify.py target.npz atoms.npz M m`; NumPy
   only, seconds): the rigorous check of a cone certificate (Sections 9 and 11). `logs/check_cone_certificate_verify.log`
-  runs it on all twelve saved certificates.
+  runs it on all thirteen saved certificates.
 - `code/check_chain_certificate.py` (search; needs PyTorch and SciPy): the certified chain links in Section 9. Data:
-  `chain_cert_target_M3.npz`, `chain_cert_target_M4.npz` (filters) and `chain_cert_atoms_M3.npz`,
-  `chain_cert_atoms_M4.npz` (atom parameters and weights).
+  `chain_cert_target_M3.npz`, `chain_cert_target_M3_d025.npz`, `chain_cert_target_M4.npz` (filters) and the matching
+  `chain_cert_atoms_*.npz` (atom parameters and weights); fit terms `chain_seeds_M3_d025.pkl` for the δ = 0.25 target.
 - `code/check_f3_certificate.py` (search; needs PyTorch and SciPy): the certified F3 instances in Section 11. Data:
   `adv_f3_filters_M*_s*.npz` (filters, written by `check_f3_adversary.py`) and `f3_cert_atoms_M*_s*.npz`.
 - `code/check_f3_one_filtering.py` (needs PyTorch; about ten minutes): one filtering suffices, Section 11. The

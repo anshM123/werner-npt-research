@@ -1,0 +1,45 @@
+== python check_chain_certificate.py 3 1e-6 160 chain_seeds_M3_d025.pkl 0.25
+M = 3: target PT-min/Tr -0.0180, min eigenvalue/Tr +7.527e-04; eps = 1.0e-06
+seeded with 288 fit terms from chain_seeds_M3_d0.25.pkl
+round 0: atoms 1488, active 413, residual 1.448e-05
+round 1: atoms 1536, active 415, residual 1.379e-05
+round 2: atoms 1584, active 425, residual 1.321e-05
+round 3: atoms 1632, active 438, residual 1.254e-05
+round 4: atoms 1680, active 460, residual 1.192e-05
+round 5: atoms 1728, active 500, residual 1.131e-05
+round 6: atoms 1776, active 529, residual 1.072e-05
+round 7: atoms 1824, active 552, residual 1.020e-05
+round 8: atoms 1872, active 585, residual 9.686e-06
+round 9: atoms 1920, active 615, residual 9.219e-06
+round 10: atoms 1968, active 645, residual 8.742e-06
+round 11: atoms 2016, active 664, residual 8.223e-06
+round 12: atoms 2064, active 692, residual 7.742e-06
+round 13: atoms 2112, active 706, residual 7.277e-06
+round 14: atoms 2160, active 726, residual 6.855e-06
+round 15: atoms 2208, active 765, residual 6.435e-06
+round 16: atoms 2256, active 795, residual 5.982e-06
+round 17: atoms 2304, active 820, residual 5.612e-06
+round 18: atoms 2352, active 846, residual 5.207e-06
+round 19: atoms 2400, active 872, residual 4.794e-06
+round 20: atoms 2448, active 889, residual 4.408e-06
+round 21: atoms 2496, active 886, residual 4.092e-06
+round 22: atoms 2544, active 903, residual 3.773e-06
+round 23: atoms 2592, active 943, residual 3.457e-06
+round 24: atoms 2640, active 979, residual 3.126e-06
+round 25: atoms 2688, active 983, residual 2.817e-06
+round 26: atoms 2736, active 1019, residual 2.535e-06
+round 27: atoms 2784, active 1036, residual 2.223e-06
+round 28: atoms 2832, active 1054, residual 1.913e-06
+round 29: atoms 2880, active 1085, residual 1.637e-06
+round 30: atoms 2928, active 1108, residual 1.321e-06
+round 31: atoms 2975, active 1136, residual 1.088e-06
+round 32: atoms 3018, active 1168, residual 8.201e-07
+round 33: atoms 3058, active 1185, residual 6.312e-07
+round 34: atoms 3090, active 1213, residual 4.624e-07
+round 35: atoms 3118, active 1234, residual 3.088e-07
+round 36: atoms 3142, active 1267, residual 1.451e-07
+round 37: atoms 3166, active 1290, residual 4.317e-08
+round 38: atoms 3185, active 1289, residual 1.882e-08
+round 39: atoms 3192, active 1294, residual 9.899e-09
+round 40: atoms 3202, active 1296, residual 1.874e-15
+saved 1296 active atoms; final residual 1.874e-15
