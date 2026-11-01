@@ -135,8 +135,8 @@ t = −0.9, −0.75, −0.1, 0.1, 0.75, 0.9 give 6.25108e-4, 3.90637e-3, 5.06256
 
   Iterating this gives every zero family used below, including interpolating ones and U(2) rotations of the pair
   (`zero_rot.py`, `zero_interp.py`). All of them have rational points.
-- **Facial reduction at the zeros** (`fr_herm4.py`, `fr2_herm4.py`). Every dual certificate of value 0 must vanish on the ranges of
-  all PSD blocks at the zeros. So we compress every block to its kernel at known zeros and re-solve.
+- **Facial reduction at the zeros** (`fr_herm4.py`, `fr2_herm4.py`). Every dual certificate of value 0 must vanish on
+  the ranges of all PSD blocks at the zeros. So we compress every block to its kernel at known zeros and re-solve.
   - t = 1 (rank-two projectors): 3 structured zeros (P_1 ⊗ ψ) and 2 found by local search. Of 2169 blocks, 1280
     are kept (dimension 10749 → 5116). The reduced problem is **Solved**: primal 1.1e-13, dual −9.4e-15, residual
     9.3e-10, **smallest eigenvalue of the reduced dual blocks 3.2e-4**. This dual is strictly feasible with a margin far
@@ -228,8 +228,9 @@ and EP_n for Hermitian C is |g(u,v)| ≤ √(g(u,u) g(v,v)). The margin conjectu
   - (`code/three_copy_mechanisms/`, `logs/levelwise_n3.log`, `jquick_n4.log`, `cutwise_I1_a2.log`,
     `plucker_n4_*.log`.)
 - **Costa Rico's opposite-sign proof** amounts to the uniform bound g(u,v) ≤ 1. Since g(w,w) ≥ 1, that bound at n
-  copies would give the opposite-sign case at n copies. It holds at n = 2, where g = 1 − 2(t₁ + t₂) with t_i = Tr ρ^u_i ρ^v_i ≥ 0,
-  and at n = 3. But its maximum is exactly 5 at n = 4 and at least 7 at n = 5 (`logs/os_n4.log`, `os_n5.log`).
+  copies would give the opposite-sign case at n copies. It holds at n = 2, where g = 1 − 2(t₁ + t₂) with t_i = Tr
+  ρ^u_i ρ^v_i ≥ 0, and at n = 3. But its maximum is exactly 5 at n = 4 and at least 7 at n = 5 (`logs/os_n4.log`,
+  `os_n5.log`).
 
 So from four copies on, both signs need the full coupling √(g(u,u) g(v,v)). The relaxation of Section 3 supplies it
 numerically.
