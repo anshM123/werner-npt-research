@@ -1,0 +1,15 @@
+== 14 zeros: 6 spin-flip (without z_sf_g, z_sf_h)
+[face] X blocks: dimension 709 -> 493; 4.2s
+[face] COV blocks: dimension 5028 -> 4119 (182 blocks with W(x*) = 0); kernel bases up to 3 bits; 19.0s
+== 12 zeros: 4 spin-flip (z_sf_a..d)
+[face] X blocks: dimension 709 -> 493; 4.4s
+[face] COV blocks: dimension 5028 -> 4119 (182 blocks with W(x*) = 0); kernel bases up to 3 bits; 19.2s
+== 8 zeros: structured only (no spin-flip)
+[face] X blocks: dimension 709 -> 552; 4.5s
+[face] COV blocks: dimension 5028 -> 4285 (204 blocks with W(x*) = 0); kernel bases up to 3 bits; 19.3s
+== 14 zeros: 2 inner (without z_in_c, z_in_d)
+[face] X blocks: dimension 709 -> 493; 4.1s
+[face] COV blocks: dimension 5028 -> 4119 (182 blocks with W(x*) = 0); kernel bases up to 3 bits; 19.0s
+== 8 zeros: spin-flip only
+[face] X blocks: dimension 709 -> 507; 4.2s
+[face] COV blocks: dimension 5028 -> 4205 (182 blocks with W(x*) = 0); kernel bases up to 3 bits; 15.4s

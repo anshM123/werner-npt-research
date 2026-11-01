@@ -1,0 +1,20 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+[face] 16 zeros: z_k2_a, z_k2_b, z_k4_a, z_k4_b, z_in_a, z_in_b, z_in_c, z_in_d, z_sf_a, z_sf_b, z_sf_c, z_sf_d, z_sf_e, z_sf_f, z_sf_g, z_sf_h; x* integer, up to 59 bits; 4.1s
+[face] X blocks: dimension 709 -> 493; 4.2s
+[face] COV: 385 class blocks; |Yhat(x*)| <= 2^105, |What| <= 2^129: 5 primes; 5.6s
+   entry uuuu (family uuuu); 5.8s
+   entry uuuv (family uuuv); 6.6s
+   entry uuvu (family uuuv); 7.4s
+   entry uuvv (family uuvv); 9.4s
+   entry uvuu (family uuuv); 10.1s
+   entry uvuv (family uuvv); 12.0s
+   entry uvvu (family uuvv); 13.9s
+   entry uvvv (family uvvv); 14.6s
+   entry vvuu (family uuvv); 16.5s
+   entry vvuv (family uvvv); 17.1s
+   entry vvvu (family uvvv); 17.8s
+   entry vvvv (family vvvv); 17.9s
+[face] COV blocks: dimension 5028 -> 4119 (182 blocks with W(x*) = 0); kernel bases up to 3 bits; 18.7s
+saved face4m.pkl; 18.8s
+[peakmem] python face4m.py z_k2_a z_k2_b z_k4_a z_k4_b z_in_a z_in_b z_in_c z_in_d z_sf_a z_sf_b z_sf_c z_sf_d z_sf_e z_sf_f z_sf_g z_sf_h: exit 0, wall 19s, peak working set 0.56 GB, peak private 0.65 GB
+EXIT 0

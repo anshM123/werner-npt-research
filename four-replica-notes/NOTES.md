@@ -2,10 +2,13 @@
 
 Ansh Mishra and Aryan Senthilkumar
 
-**This folder does not prove the endpoint for every n, or for general rank-two C at four copies.** It proves one
-four-copy case, with a computer-assisted exact certificate: q_4(P) ≥ 0 for every rank-two projector P (Section 3,
-"Exact certificate at four copies"). Its results are:
-- an exact rational certificate at four copies for rank-two projectors (not externally refereed);
+**This folder does not prove the endpoint for every n, or for general rank-two C at four copies.** It proves two
+four-copy cases, with computer-assisted exact certificates (Section 3): q_4(P_u + P_v) ≥ 0 and q_4(P_u − P_v) ≥ 0 for
+every orthonormal pair u, v. Its results are:
+- exact rational certificates at four copies for rank-two projectors and for opposite signs of equal modulus (not
+  externally refereed);
+- a lemma that explains the opposite-sign zeros: on qubit subspaces q_n is 2^n times the weight of C on Pauli strings
+  acting on every copy, and spin flips give zeros;
 - semidefinite relaxations of the endpoint inequality at four copies, with what they certify numerically;
 - one exact identity about one of their constraints;
 - a first-order reformulation on a slice;
@@ -17,8 +20,8 @@ The main numerical findings:
   - projectors: margin 2.7e-3 with the covariance block only, residual 1e-7;
   - opposite signs: margin 1.9e-3.
 
-  For projectors we rounded this dual to an exact rational certificate, so q_4(P) ≥ 0 holds for every rank-two
-  projector P (computer-assisted). The opposite-sign case is still numerical.
+  For both we rounded the dual to an exact rational certificate (computer-assisted). For opposite signs this needed
+  a zero family we identified tonight: qubit spin-flip pairs.
 - **Hermitian rank-two operators.** A letter-resolved relaxation matches the conjectured sharp margin
   2^{−n}(σ₁ − σ₂)² at n = 4 on a grid of 13 ratios. A single lifted certificate covers all ratios at once (SCS, value
   ≈ 0 to 1e-7).
@@ -264,6 +267,94 @@ call. The n = 2 and n = 3 runs are not affected.
 This takes about a minute and ends in VERIFIED. The saved files are Python pickles. The full rebuild in `BUILD_LOG.md`
 regenerates all of them from scratch (it also needs scipy and Clarabel), in about 15 minutes on a laptop.
 
+### Zeros on qubit subspaces
+
+**Lemma.** Let Q_1, …, Q_n ⊂ C³ be two-dimensional, and let C have range and co-range in Q_1 ⊗ … ⊗ Q_n. Expand
+C = Σ_μ c_μ σ_μ in Pauli strings, in a basis of each Q_i. Then
+
+    q_n(C) = 2^n Σ_{μ ∈ {x,y,z}^n} |c_μ|².
+
+*Proof.* Tr_J σ_μ vanishes unless μ_j = 0 for every j ∈ J, and then it is 2^{|J|} times the Pauli string on the other
+copies. So ‖Tr_J C‖² = 2^n Σ_{μ: μ_J = 0} 2^{|J|} |c_μ|². In q_n each string μ gets the weight
+Σ_{J ⊆ Z(μ)} (−1)^{|J|}, where Z(μ) is the set of copies with μ_j = 0. This is 1 if Z(μ) is empty and 0 otherwise.
+
+So on such operators q_n ≥ 0, with equality exactly when C has no Pauli string acting on every copy. (This is the
+familiar fact that the Werner state restricted to two qubit subspaces is the separable boundary state.)
+
+**Spin-flip zeros.** Let J = σ_y K be the spin flip on each Q_i and v = J^⊗n ū. The full-weight correlations
+⟨σ_μ⟩ of v are (−1)^n times those of u. Hence:
+- for even n, P_u − P_v is a zero whenever ⟨u, J^⊗n ū⟩ = 0, which makes u ⊥ v;
+- for odd n, P_u + P_v is a zero for every u in the sector, and u ⊥ v holds automatically.
+
+`check_spinflip_zeros.py` checks both cases at n = 2, …, 5 on random complex qubit subspaces
+(`logs/check_spinflip_zeros.log`).
+
+At four copies these are exactly the opposite-sign zeros that local search finds. All 8 of 8 restarts
+(`tm1_zeros.py`, seeds 200–207) give pairs with:
+- u, v supported on Q_1 ⊗ … ⊗ Q_4;
+- no full-weight Pauli part;
+- |⟨v, J^⊗4 ū⟩| = 1.
+
+See `tm1_qubit.py` and `logs/tm1_qubit_n4.log`. This was the zero family missing from the facial reduction at
+t = −1.
+
+With 6 real spin-flip zeros added to the structured ones (k2, k4, inner), the opposite-sign reduced problem becomes
+strictly feasible with **only the covariance blocks** (`fr_tm1_qubit.py`, `logs/fr_tm1_qubit_n4.log`):
+
+| zeros | constraints | smallest reduced-dual eigenvalue |
+|---|---|---|
+| structured only | all | 2.1e-10 (degenerate) |
+| structured + spin-flip | all | 2.2e-3 |
+| structured only | covariance only | 5.4e-10 (degenerate) |
+| structured + spin-flip | covariance only | **3.9e-2** |
+| structured + spin-flip | partial transposes only | 2.3e-9 (degenerate) |
+
+Complex spin-flip zeros lie on the face of the real ones (to 4.9e-16), so real integer zeros suffice for exact work.
+
+### Exact certificate at four copies: opposite signs
+
+**Theorem (computer-assisted).** q_4(P_u − P_v) ≥ 0 for every orthonormal pair u, v in (C³)^⊗4.
+
+The pipeline is that of the projector case, with the objective (fu + fv − 2fuv)/16 in place of (fu + fv + 2fuv)/16.
+Code: `code/exact4m/` (build log `code/exact4m/BUILD_LOG.md`); logs: `logs/exact4m/`.
+
+**Zeros.** 16 exact integer zeros:
+- k2: products orthogonal on two copies, sharing an entangled ψ on the other two;
+- k4: products orthogonal on all four copies;
+- inner: a ⊗ φ, a′ ⊗ χ, with (φ, χ) a rational rotation of an orthogonal product pair on three copies;
+- spin-flip: 8 zeros.
+
+Each has objective exactly 0, and q_4(P_u − P_v) = 0 computed directly from the 81 × 81 matrix. The face (X blocks
+709 → 493, covariance blocks 5028 → 4119) is saturated: 4 of the spin-flip zeros already give it. Without them the face
+is strictly larger.
+
+**Certificate.**
+- After vacuous directions are removed there are 272 blocks, the largest of size 32.
+- The float dual has smallest normalised eigenvalue 0.09999.
+- An exact 1298 × 1298 correction makes the identity c = Eᵀy + Σ_k F_k*(S_k), with e·y = 0, hold exactly in all 1331
+  coordinates.
+- Every S_k is PSD by exact LDLᵀ (smallest pivot 3.96e-4). Entries have up to 605 bits.
+
+Complex pairs follow by the same realification argument as for projectors.
+
+**Checks.**
+- `verify4m.py` imports no pipeline code. It computes q_4(P_u − P_v) with its own integer partial-trace routine and
+  passes at 7 exact true points:
+  - two from the build;
+  - five made afterwards from fresh seeds by `points4m_audit.py`: three generic pairs, and two perturbed spin-flip
+    zeros with q_4 = 0.30 and 0.38.
+- Two negative controls are rejected.
+- 7.0M face numerators were recomputed with Python integers.
+- A full rerun gives byte-identical files.
+
+Together with the projector theorem: **q_4(P_u ± P_v) ≥ 0 for every orthonormal pair.** That is the four-copy endpoint
+for every Hermitian rank-two C whose two nonzero eigenvalues have equal modulus. Unequal moduli need one certificate
+covering all ratios. The lifted relaxation above provides it numerically; it is not exact yet.
+
+To check (from `code/exact4m/`):
+
+    python verify4m.py p_ent p_ent2 b_ent1 b_ent2 b_ent3 b_nsf1 b_nsf2
+
 ## 4. Positive operators with a fixed spectrum, one letter
 
 These results use C = λ P_u + (1 − λ) P_v with the one-letter relaxation of Section 1, adapted to the spectrum (cubic
@@ -344,12 +435,11 @@ numerically.
 
 ## 7. Status
 
-- **Exact (computer-assisted).** The four-copy endpoint for rank-two projectors (Section 3), and the pipeline checks
-  at two and three copies.
+- **Exact (computer-assisted).** The four-copy endpoint for rank-two projectors and for opposite signs of equal
+  modulus (Section 3), and the pipeline checks at two and three copies.
+- **Proved by hand.** The qubit-sector formula for q_n and the spin-flip zeros (Section 3).
 - **Numerical only** (SDP bounds at solver precision):
-  - the opposite-sign case at four copies (strictly feasible after facial reduction, margin 1.9e-3; one of its zero
-    families was found by local search and has no rational parametrisation yet);
-  - the all-ratio lifted certificate at four copies;
+  - the all-ratio lifted certificate at four copies, i.e. every Hermitian rank-two operator;
   - everything at five copies.
 
 Degenerate eigenvector bases differ between processes, so every exact step uses canonical exact bases.
@@ -371,6 +461,8 @@ parameters and more than 20 GB. The endpoint for every n is open.
 | `code/relaxations/fr_herm4.py`, `fr2_herm4.py`, `zero_rot.py`, `zero_interp.py` | Facial reduction at the zeros, and generators of zero families |
 | `code/relaxations/exact_site.py`, `exact_maps.py` | Exact rational per-site irreps and maps (python-flint) |
 | `code/relaxations/exact_core.py`, `exact_coreN.py`, `exact_pilot_n2.py`, `exact_pilot_n3.py` | Exact certificates at n = 2, 3 |
+| `code/relaxations/tm1_zeros.py`, `tm1_qubit.py`, `tm1_analyze.py`, `check_spinflip_zeros.py`, `fr_tm1_qubit.py` | Opposite-sign zeros by local search, their qubit spin-flip structure, and facial reduction with them |
+| `code/exact4m/` | The exact certificate at n = 4 for opposite signs, P_u − P_v (same structure as `code/exact4/`, plus `negctl4m.py` for the negative controls) |
 | `code/exact4/` | The exact certificate at n = 4 for rank-two projectors: engine (`core4.py`, `engine4.py`, `symm4.py`), data (`build_lin4.py`, `points4.py`, `face4.py`, `facedata4.py`, `span4.py`), certificate (`cert4.py`), checks (`verify4.py`, `crosscheck4.py`, `test_engine.py`, `points4_audit.py`); saved data and certificate as pickles |
 | `code/relaxations/local_herm.py`, `local_min.py` | Local searches for the true minima |
 | `code/relaxations/lift2.py`, `lift2s.py` | The all-ratio lifted certificate (Clarabel; lean assembly with SCS) |
@@ -393,6 +485,10 @@ Main runs, from `code/relaxations/`:
 and from `code/exact4/`:
 
     python verify4.py p_ent p_ent2                                 # logs/exact4/verify4.log (VERIFIED)
+
+and from `code/exact4m/`:
+
+    python verify4m.py p_ent p_ent2                                # logs/exact4m/verify4m.log (VERIFIED)
 
 The scripts need Python 3 with NumPy, SciPy and Clarabel. The searches in Sections 5 and 6 also use PyTorch, and
 the exact scripts use python-flint.

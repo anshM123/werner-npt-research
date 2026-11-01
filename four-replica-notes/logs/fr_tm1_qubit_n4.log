@@ -1,0 +1,28 @@
+n=4 t=-1: build 209s (1331 parameters, 1902 PSD blocks)
+   k=2 #0: reconstruction 1.1e-16, q -1.0e-15, min eig -4.1e-16
+   k=2 #1: reconstruction 1.1e-16, q -1.0e-15, min eig -4.1e-16
+   k=4 #0: reconstruction 1.7e-16, q 5.0e-16, min eig -5.9e-16
+   k=4 #1: reconstruction 2.1e-16, q 4.6e-16, min eig -5.2e-16
+   inner #0: q_4 direct 5.3e-16, reconstruction 1.6e-16, q 4.3e-16, min eig -2.6e-16
+   inner #1: q_4 direct -2.2e-16, reconstruction 1.5e-16, q -1.3e-15, min eig -8.5e-16
+   inner #2: q_4 direct -2.5e-16, reconstruction 2.1e-16, q -1.5e-16, min eig -4.6e-16
+   inner #3: q_4 direct -3.9e-16, reconstruction 1.2e-16, q -7.0e-16, min eig -2.4e-16
+   spinflip real #0: <u,v> 1.6e-16, q_4 direct 2.2e-16, reconstruction 8.3e-17, q -7.7e-16, min eig -9.2e-17
+   spinflip real #1: <u,v> 1.9e-16, q_4 direct -2.5e-16, reconstruction 1.1e-16, q -9.2e-16, min eig -4.6e-16
+   spinflip real #2: <u,v> 6.3e-17, q_4 direct -6.2e-16, reconstruction 1.0e-16, q -6.4e-16, min eig -3.9e-16
+   spinflip real #3: <u,v> 2.0e-17, q_4 direct -4.5e-16, reconstruction 1.1e-16, q -2.4e-16, min eig -1.6e-16
+   spinflip real #4: <u,v> 3.1e-17, q_4 direct 3.2e-16, reconstruction 9.0e-17, q -5.7e-16, min eig -3.9e-16
+   spinflip real #5: <u,v> 1.4e-16, q_4 direct 5.6e-17, reconstruction 1.3e-16, q -6.5e-16, min eig -3.7e-16
+   spinflip complex #0: <u,v> 6.8e-17, q_4 direct -6.7e-16, reconstruction 9.7e-17, q -7.7e-16, min eig -2.8e-16
+   spinflip complex #1: <u,v> 1.3e-16, q_4 direct 2.1e-17, reconstruction 9.7e-17, q -6.1e-16, min eig -7.1e-17
+   spinflip complex #2: <u,v> 5.7e-17, q_4 direct 3.5e-16, reconstruction 9.0e-17, q -5.7e-16, min eig -1.1e-16
+   spinflip complex #3: <u,v> 1.4e-16, q_4 direct 3.0e-16, reconstruction 1.2e-16, q -6.5e-16, min eig -2.5e-16
+   zeros built; 1189s
+   complex spin-flip zeros on the real face: max |N^T W(x) N| = 4.9e-16
+   [structured only, all] reduced rows 81541 -> 44869, null dirs 11 (|c on null| 5.6e-09); status AlmostSolved, iters 19, primal q 2.8707e-09, dual q 3.2992e-12, ||A^T z + c|| 4.6e-05, min eig reduced dual blocks 2.1e-10; 141s
+   [structured + 6 real spin-flip, all] reduced rows 81541 -> 38272, null dirs 33 (|c on null| 1.6e-08); status Solved, iters 11, primal q -9.7648e-13, dual q -9.8255e-15, ||A^T z + c|| 9.9e-08, min eig reduced dual blocks 2.2e-03; 75s
+   [structured only, COV] reduced rows 48145 -> 33627, null dirs 11 (|c on null| 1.3e-08); status Solved, iters 15, primal q 2.9678e-10, dual q 4.7184e-14, ||A^T z + c|| 6.3e-06, min eig reduced dual blocks 5.4e-10; 84s
+   [structured + 6 real spin-flip, COV] reduced rows 48145 -> 30715, null dirs 33 (|c on null| 3.0e-08); status Solved, iters 9, primal q 4.0706e-11, dual q -4.7767e-14, ||A^T z + c|| 8.9e-07, min eig reduced dual blocks 3.9e-02; 53s
+   [structured only, PT] reduced rows 29889 -> 11135, null dirs 19 (|c on null| 8.9e-09); status AlmostSolved, iters 16, primal q 8.0795e-10, dual q -4.8916e-12, ||A^T z + c|| 4.8e-07, min eig reduced dual blocks 5.3e-10; 47s
+   [structured + 6 real spin-flip, PT] reduced rows 29889 -> 7497, null dirs 79 (|c on null| 1.1e-08); status Solved, iters 11, primal q -1.9039e-10, dual q -1.0825e-14, ||A^T z + c|| 4.4e-08, min eig reduced dual blocks 2.3e-09; 24s
+   (stopped by hand at 08:16 after the COV and PT results; complex zeros were already shown to lie on the real face)

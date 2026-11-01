@@ -1,0 +1,8 @@
+tm1z/U_n4_t-1_s200.npy: leak outside Q 3.2e-11; full-weight Pauli weight of P_u - P_v 7.85e-18 (total 0.125); |<v, Y conj u>| = 1.000000; <u, Y conj u> = 2.15e-09
+tm1z/U_n4_t-1_s201.npy: leak outside Q 2.7e-12; full-weight Pauli weight of P_u - P_v 2.53e-20 (total 0.125); |<v, Y conj u>| = 1.000000; <u, Y conj u> = 9.90e-11
+tm1z/U_n4_t-1_s202.npy: leak outside Q 1.3e-09; full-weight Pauli weight of P_u - P_v 3.10e-19 (total 0.125); |<v, Y conj u>| = 1.000000; <u, Y conj u> = 9.06e-10
+tm1z/U_n4_t-1_s203.npy: leak outside Q 1.5e-10; full-weight Pauli weight of P_u - P_v 2.12e-19 (total 0.125); |<v, Y conj u>| = 1.000000; <u, Y conj u> = 4.54e-10
+tm1z/U_n4_t-1_s204.npy: leak outside Q 4.3e-09; full-weight Pauli weight of P_u - P_v 4.93e-19 (total 0.125); |<v, Y conj u>| = 1.000000; <u, Y conj u> = 2.19e-10
+tm1z/U_n4_t-1_s205.npy: leak outside Q 1.2e-11; full-weight Pauli weight of P_u - P_v 1.26e-23 (total 0.125); |<v, Y conj u>| = 1.000000; <u, Y conj u> = 9.05e-13
+tm1z/U_n4_t-1_s206.npy: leak outside Q 1.3e-09; full-weight Pauli weight of P_u - P_v 1.75e-19 (total 0.125); |<v, Y conj u>| = 1.000000; <u, Y conj u> = 2.64e-10
+tm1z/U_n4_t-1_s207.npy: leak outside Q 2.1e-07; full-weight Pauli weight of P_u - P_v 2.91e-18 (total 0.125); |<v, Y conj u>| = 1.000000; <u, Y conj u> = 2.79e-09

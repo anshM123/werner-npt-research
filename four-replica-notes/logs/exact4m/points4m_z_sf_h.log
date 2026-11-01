@@ -1,0 +1,8 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+   z_sf_h: family uuuu: 1 primes; 22s
+   z_sf_h: family uuuv: 1 primes; 39s
+   z_sf_h: family uuvv: 1 primes; 56s
+   z_sf_h: family uvvv: 1 primes; 72s
+   z_sf_h: family vvvv: 1 primes; 88s
+z_sf_h (sf, seed 138): |u|^2 8, |v|^2 8, max|entry| 1; in variable space True; moments exact True; equalities exact True; objective (t = -1) 0 (exact 0); q_4(P_u - P_v) direct 0; objective == q_4(P_u - P_v): True; t = +1 check: cplus.x == q_4(P_u + P_v) = 1.078125: True; x up to 38 bits; 88s
+[peakmem] C:\Python314\python.exe points4m.py sf 138 z_sf_h: exit 0, wall 89s, peak working set 0.20 GB, peak private 0.22 GB

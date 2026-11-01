@@ -1,0 +1,20 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+[data] 379 COV face blocks (max r 64, svec 45495); |Fhat| <= 2^65: 3 primes; 5.2s
+   entry uuuu (family uuuu); 5.8s
+   entry uuuv (family uuuv); 9.3s
+   entry uuvu (family uuuv); 12.7s
+   entry uuvv (family uuvv); 20.3s
+   entry uvuu (family uuuv); 23.8s
+   entry uvuv (family uuvv); 31.9s
+   entry uvvu (family uuvv); 39.8s
+   entry uvvv (family uvvv); 43.3s
+   entry vvuu (family uuvv); 50.6s
+   entry vvuv (family uvvv); 53.9s
+   entry vvvu (family uvvv); 57.1s
+   entry vvvv (family vvvv); 57.6s
+[data] COV: 168 nonzero face blocks after CRT; 73.2s
+[data] X: 104 nonzero face blocks; 73.3s
+[data] exact face check: F_k(x_z) = 0 for all 272 blocks and 16 zeros: True (0 failures); 93.5s
+saved facedata4m.pkl (272 blocks, COV numerators up to 46 bits); 97.1s
+[peakmem] python facedata4m.py: exit 0, wall 98s, peak working set 3.24 GB, peak private 3.34 GB
+EXIT 0

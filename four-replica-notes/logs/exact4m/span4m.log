@@ -1,0 +1,3 @@
+[span] 272 face blocks, 165 with vacuous directions; total size 2784 -> 1564; 272 blocks kept (largest 32, svec 9592); B entries <= 3 bits, COV numerators <= 48 bits; row-space completeness checked exactly; 26s
+[peakmem] python span4m.py: exit 0, wall 26s, peak working set 1.52 GB, peak private 1.64 GB
+EXIT 0

@@ -1,0 +1,24 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+exact variable space n=4: 1331 parameters, 150 groups; 3.3s
+[lin] objective and 120 moment rows; 7.8s
+   identity ORTHuuuv03: 7.9s
+   identity ORTHuuuv13: 7.9s
+   identity ORTHuuuv23: 8.0s
+   identity ORTHuuvv02: 8.0s
+   identity ORTHuuvv03: 8.1s
+   identity ORTHuuvv12: 8.2s
+   identity ORTHuuvv13: 8.3s
+   identity ORTHuvvv01: 8.4s
+   identity ORTHuvvv02: 8.4s
+   identity ORTHuvvv03: 8.5s
+   identity MARGuuu: 8.5s
+   identity MARGuuv: 8.7s
+   identity MARGuvv: 8.8s
+   identity MARGvvv: 8.9s
+[lin] identity rows: 6186 raw rows, max |entry| 905969664; 8.9s
+[lin] identity rank mod 1048573: 146; 9.4s
+[lin] equalities: 147 independent (identity rows alone: exact rank 146); max E entry 37 bits; 10.0s
+[lin] objective t = -1: 689 nonzero coordinates (599 differ from the t = +1 objective)
+saved lin4m.pkl; 10.1s
+[peakmem] python build_lin4m.py: exit 0, wall 11s, peak working set 0.40 GB, peak private 0.49 GB
+EXIT 0

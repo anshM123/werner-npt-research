@@ -1,0 +1,4 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+crosscheck: 25 covariance face blocks, 7030009 numerator entries recomputed with Python integers: all equal to the CRT values; reduced data B Fhat B^T: all equal; 49s
+[peakmem] python crosscheck4m.py 25: exit 0, wall 51s, peak working set 5.65 GB, peak private 5.75 GB
+EXIT 0
