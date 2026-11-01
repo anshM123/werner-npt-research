@@ -1,0 +1,5 @@
+[face] 11 zeros: z_k1_a, z_k1_b, z_k3_a, z_k3_b, z_rk1_a, z_rk1_b, z_rk3_a, z_rk3_b, z_rint_a, z_rint_b, z_rint_c; x* integer, up to 88 bits; 4.7s
+[face] X blocks: dimension 709 -> 537; 4.7s
+[face] COV: 385 class blocks; |Yhat(x*)| <= 2^134, |What| <= 2^158: 6 primes; 6.1s
+[face] COV blocks: dimension 5028 -> 4067 (168 blocks with W(x*) = 0); kernel bases up to 3 bits; 25.1s
+saved face4.pkl; 25.1s

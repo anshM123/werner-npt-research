@@ -1,3 +1,5 @@
 * text=auto eol=lf
 *.pdf binary
 *.json text eol=lf
+*.pkl binary
+*.gz binary

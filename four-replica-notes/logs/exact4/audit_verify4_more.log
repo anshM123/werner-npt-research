@@ -1,0 +1,10 @@
+loaded: 1331 parameters, 147 equalities, 256 face blocks, 256 dual blocks; 0s
+(a) e . y = 0: True;  c = E^T y + sum_k F_k^*(S_k) exactly: True; 4s
+(b) exact LDL^T: all 256 dual blocks PSD: True (sizes up to 33, smallest pivot 9.375e-05); S entries up to 1061/1061 bits, y up to 1053/1055 bits; 5s
+(c) a_ent1: q_4(P) recomputed from P = 0.940186326566; c.x(P) == q_4(P): True; E x(P) == e: True; identity at the point: True; all 256 terms >= 0: True; all 256 face blocks PSD at the point (exact LDL^T): True; 8s
+(c) a_ent2: q_4(P) recomputed from P = 0.908206256943; c.x(P) == q_4(P): True; E x(P) == e: True; identity at the point: True; all 256 terms >= 0: True; all 256 face blocks PSD at the point (exact LDL^T): True; 10s
+(c) a_ent3: q_4(P) recomputed from P = 1.006039123597; c.x(P) == q_4(P): True; E x(P) == e: True; identity at the point: True; all 256 terms >= 0: True; all 256 face blocks PSD at the point (exact LDL^T): True; 13s
+(c) a_ent4: q_4(P) recomputed from P = 1.000937939820; c.x(P) == q_4(P): True; E x(P) == e: True; identity at the point: True; all 256 terms >= 0: True; all 256 face blocks PSD at the point (exact LDL^T): True; 15s
+(c) a_near1: q_4(P) recomputed from P = 0.000000240262; c.x(P) == q_4(P): True; E x(P) == e: True; identity at the point: True; all 256 terms >= 0: True; all 256 face blocks PSD at the point (exact LDL^T): True; 23s
+(c) a_near4: q_4(P) recomputed from P = 0.000064491357; c.x(P) == q_4(P): True; E x(P) == e: True; identity at the point: True; all 256 terms >= 0: True; all 256 face blocks PSD at the point (exact LDL^T): True; 28s
+VERIFIED

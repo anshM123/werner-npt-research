@@ -1,0 +1,7 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+   z_rk1_b: family uuuu: 4 primes; 59s
+   z_rk1_b: family uuuv: 4 primes; 115s
+   z_rk1_b: family uuvv: 4 primes; 171s
+   z_rk1_b: family uvvv: 4 primes; 227s
+   z_rk1_b: family vvvv: 4 primes; 282s
+z_rk1_b (rk1, seed 22): in variable space True; moments exact True; equalities exact True; objective 0 (exact 0); q_4(P) direct 0; objective == q_4(P): True; x up to 50 bits; 282s

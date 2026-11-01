@@ -1,0 +1,12 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+exact variable space n=4: 1331 parameters, 150 groups; 3.0s
+built both: ours N=1331, exact_coreN N=1331; 30.3s
+conversion to our basis exact: True
+objective: ours -633863.396667480469, exact_coreN -633863.396667480469, equal True
+moment functionals: 0 compared, 0 mismatches; 31.5s
+identity images: 0 (map, target) pairs compared, 0 mismatches; 31.5s
+   COVuu(0, 0, 1, 2): exact_coreN block computed; 35.4s
+   COVuv(0, 1, 2, 3): exact_coreN block computed; 44.6s
+covariance raw blocks: 2 compared, 0 mismatches; 44.6s
+n=4: ENGINE AGREES with exact_coreN (0 failures)
+EXIT 0

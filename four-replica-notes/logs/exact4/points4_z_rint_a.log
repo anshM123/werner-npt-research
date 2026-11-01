@@ -1,0 +1,7 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+   z_rint_a: family uuuu: 5 primes; 72s
+   z_rint_a: family uuuv: 5 primes; 142s
+   z_rint_a: family uuvv: 5 primes; 213s
+   z_rint_a: family uvvv: 5 primes; 282s
+   z_rint_a: family vvvv: 5 primes; 339s
+z_rint_a (rint, seed 31): in variable space True; moments exact True; equalities exact True; objective 0 (exact 0); q_4(P) direct 0; objective == q_4(P): True; x up to 59 bits; 339s

@@ -1,0 +1,7 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+   a_ent3: family uuuu: 3 primes; 43s
+   a_ent3: family uuuv: 3 primes; 82s
+   a_ent3: family uuvv: 4 primes; 134s
+   a_ent3: family uvvv: 4 primes; 186s
+   a_ent3: family vvvv: 5 primes; 250s
+a_ent3 (ent, seed 303): in variable space True; moments exact True; equalities exact True; objective 1.0060391236 (exact nonzero); q_4(P) direct 1.0060391236; objective == q_4(P): True; x up to 112 bits; 251s

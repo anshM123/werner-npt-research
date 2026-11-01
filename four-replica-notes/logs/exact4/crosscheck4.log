@@ -1,0 +1,5 @@
+crosscheck: 25 covariance face blocks, 5165549 numerator entries recomputed with Python integers: all equal to the CRT values; reduced data B Fhat B^T: all equal; 40s
+
+real	0m41.701s
+user	0m0.000s
+sys	0m0.000s

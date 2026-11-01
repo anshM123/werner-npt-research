@@ -1,0 +1,14 @@
+[0] data: 1331 parameters, 147 equalities, 256 face blocks (158 COV, 98 X), max size 33; 0s
+    float block data built; 4s
+[1] float problem: 9469 rows x 1331 columns (28 scalar blocks, 228 PSD blocks); 7s
+    null directions of the reduced constraints: 40 (objective component on them 1.2e-06)
+[2] float solve: status Solved, iterations 16, primal -8.926e-12, dual -4.718e-16, ||A^T z + c|| 3.9e-09, smallest reduced-dual eigenvalue 2.481e-01; solve 23s; 33s
+[3] rounded dual: identity residual 1.2e-04, dual objective residual 2.7e-12; 34s
+    equation matrix 1332 x 9347; pivoted QR ...
+    column subset: equation rank 1291 of 1332 (diag R ratio at cut 1.3e-03, next 2.2e-15); 55 y's, 1236 dual entries; 36s
+    exact square solve (1291 x 1291) in 2s; correction bits up to 1061
+[4] exact correction: max |delta| 6.0e-05; identity c = E^T y + sum_k F_k^*(S_k) exact: True; e . y = 0: True; 40s
+[5] exact LDL^T: all 256 blocks PSD True (smallest pivot 9.38e-05); rational sizes up to 1061 / 1061 bits; LDL 2s; 42s
+[6] entangled true point: in variable space True; equalities hold True; c.x(P) == q_4(P): True (0.9987157017); c.x(P) == y.E x(P) + sum_k Tr(S_k F_k(x(P))): True; y.E x(P) = 0; all 256 terms >= 0: True (smallest 8.41e-06); 43s
+n=4 t=+1: exact identity c = E^T y + sum_k F_k^*(S_k), e.y = 0, 256 PSD blocks (exact LDL^T), max 1061/1061 bits, entangled true-point check passed -> CERTIFIED
+EXIT 0

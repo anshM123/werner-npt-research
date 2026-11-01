@@ -1,0 +1,16 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+   a_near3: family uuuu: 7 primes; 92s
+   a_near3: family uuuv: 10 primes; 220s
+   a_near3: family uuvv: 13 primes; 368s
+   a_near3: family uvvv: 15 primes; 536s
+Traceback (most recent call last):
+  File "points4_audit.py", line 219, in <module>
+    main()
+    ~~~~^^
+  File "points4_audit.py", line 195, in main
+    m, norm, k = moments_int([L[ch] for ch in c], n); npr.append(k)
+                 ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "points4_audit.py", line 80, in moments_int
+    assert prod > 4 * bound, "not enough primes"
+           ^^^^^^^^^^^^^^^^
+AssertionError: not enough primes

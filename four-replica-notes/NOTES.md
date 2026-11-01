@@ -2,8 +2,10 @@
 
 Ansh Mishra and Aryan Senthilkumar
 
-**This folder does not prove the endpoint for every n, or for four copies.** (Its exact certificates are at two and
-three copies, where the endpoint is already known.) Its results are:
+**This folder does not prove the endpoint for every n, or for general rank-two C at four copies.** It proves one
+four-copy case, with a computer-assisted exact certificate: q_4(P) ≥ 0 for every rank-two projector P (Section 3,
+"Exact certificate at four copies"). Its results are:
+- an exact rational certificate at four copies for rank-two projectors (not externally refereed);
 - semidefinite relaxations of the endpoint inequality at four copies, with what they certify numerically;
 - one exact identity about one of their constraints;
 - a first-order reformulation on a slice;
@@ -15,7 +17,8 @@ The main numerical findings:
   - projectors: margin 2.7e-3 with the covariance block only, residual 1e-7;
   - opposite signs: margin 1.9e-3.
 
-  So exact certificates look within reach.
+  For projectors we rounded this dual to an exact rational certificate, so q_4(P) ≥ 0 holds for every rank-two
+  projector P (computer-assisted). The opposite-sign case is still numerical.
 - **Hermitian rank-two operators.** A letter-resolved relaxation matches the conjectured sharp margin
   2^{−n}(σ₁ − σ₂)² at n = 4 on a grid of 13 ratios. A single lifted certificate covers all ratios at once (SCS, value
   ≈ 0 to 1e-7).
@@ -196,10 +199,70 @@ The steps:
 
 Both runs end in CERTIFIED, and we re-ran both independently.
 
-The four-copy version would be a new theorem: q_4(P) ≥ 0 for every rank-two projector P on (C³)^⊗4. It needs the data
-modulo a few primes with rational reconstruction, the covariance blocks compressed by fixed rational bases, exact
-moments of rationally rotated zeros, and an exact 1332 × 1332 correction. The floating-point face with real rational
-zero families is already strictly feasible at n = 4 (3.3e-3, covariance blocks only).
+### Exact certificate at four copies: rank-two projectors
+
+**Theorem (computer-assisted).** q_4(P) ≥ 0 for every rank-two orthogonal projector P on (C³)^⊗4.
+
+To our knowledge this case was open. At three copies it follows from [WZ]. Numerical evidence for four copies of
+Werner states goes back to [Cl]. The proof is an exact rational dual
+certificate for the two-letter relaxation above, restricted to the face of its known zeros. It has been checked
+independently but not externally refereed. Code: `code/exact4/` (build log `code/exact4/BUILD_LOG.md`); logs:
+`logs/exact4/`.
+
+**What is exact.**
+- *Relaxation data at n = 4.* There are 1331 parameters. The 120 moments and the identities give 147 independent
+  equalities E x = e; the identities have exact rank 146, equal to the floating-point rank. The objective is c. There
+  are 256 face-reduced PSD blocks F_k: 98 replica blocks and 158 covariance blocks, the largest of size 33.
+- *The face.* 11 exact rational zeros (the k1 and k3 product families, their rational rotations, and rotated
+  interpolating zeros). Each has objective exactly 0, and q_4(P) = 0 computed directly from P. The face is the exact
+  common kernel of the blocks at these zeros. Nine of the zeros already give the same face.
+- *The certificate.* A vector y and blocks S_k with c = Eᵀy + Σ_k F_k*(S_k) exactly in all 1331 coordinates and
+  e·y = 0. Every S_k is PSD by exact LDLᵀ (smallest pivot 9.4e-5). Entries have up to about 1060 bits.
+
+So every feasible x has c·x = y·e + Σ_k Tr(S_k F_k(x)) ≥ 0.
+
+Every real rank-two projector gives a feasible point x(P), averaged over permutations of the copies, with
+c·x(P) = q_4(P). For complex P, the real part of x(P) is the average of the points for P and P̄. Both are feasible
+with value q_4(P), because every constraint map has rational coefficients. Hence q_4(P) ≥ 0.
+
+**How it was computed.** The pipeline is the one used at n = 3, with these changes:
+- the data are computed modulo 27-bit primes and recovered by the Chinese remainder theorem with a-priori bounds;
+- the covariance blocks are compressed by exact rational symmetry-adapted bases;
+- blocks are cut to the span of their data by LLL-reduced integer bases;
+- the float dual is rounded to a 2^−40 grid, then corrected by an exact 1291 × 1291 solve (largest change 6e-5).
+
+The float face-reduced dual (Clarabel, 16 iterations) has smallest normalised eigenvalue 0.248. After the 13 exact
+points (about 8 minutes in parallel), the build takes about 3 minutes, with a peak of 3.9 GB.
+
+**Independent checks.**
+- `verify4.py` reads only the saved data and certificate. It re-checks the identity and the LDLᵀ. At exact entangled
+  true points it checks:
+  - c·x(P) = q_4(P), with q_4(P) recomputed from the 81 × 81 matrix P;
+  - E x(P) = e;
+  - the identity at the point, with every term ≥ 0;
+  - every face block is PSD there.
+
+  It passes at eight points. Two were made during the build. Six were made afterwards, from fresh seeds, by a separate
+  script (`points4_audit.py`): four generic points, and two near-zeros with q_4 = 2.4e-7 and 6.4e-5. Two further
+  near-zeros exceeded that script's fixed prime list and were not completed (`logs/exact4/audit_pt_a_near2.log`,
+  `..._near3.log`).
+- `crosscheck4.py` recomputes 25 covariance face blocks (5.2M entries) with Python integers only, without primes.
+- `test_engine.py` compares the n = 4 engine with the separately certified n = 2, 3 code (`exact_coreN.py`) at random
+  rational points. It covers the objective, all 120 moments, all 210 identity images and 10 covariance blocks, with no
+  mismatches.
+- Negative controls: `verify4.py` rejects a certificate with one multiplier changed, and one with a dual diagonal entry
+  negated.
+
+**A pitfall.** The modular moment routine `exact_coreN.moments_modp` sums up to 243 products in one einsum at n = 4.
+With 28-bit primes this can overflow int64 silently. `points4.py` uses 27-bit primes and asserts the bound on every
+call. The n = 2 and n = 3 runs are not affected.
+
+**To check it** (from `code/exact4/`; needs numpy, gmpy2 and python-flint):
+
+    python verify4.py p_ent p_ent2 a_ent1 a_ent2 a_ent3 a_ent4 a_near1 a_near4
+
+This takes about a minute and ends in VERIFIED. The saved files are Python pickles. The full rebuild in `BUILD_LOG.md`
+regenerates all of them from scratch (it also needs scipy and Clarabel), in about 15 minutes on a laptop.
 
 ## 4. Positive operators with a fixed spectrum, one letter
 
@@ -281,19 +344,15 @@ numerically.
 
 ## 7. Status
 
-Numerical certificates only: SDP bounds at solver precision, with no rational rounding. A rigorous four-copy theorem
-for rank-two projectors needs exact problem data. The first step is done: exact rational per-site irreducible modules
-with Gram matrices, for the S_4 algebra, for B_{3,1}(3) and for S_3. They are built with python-flint from integer
-Casimir eigenspaces and highest-weight coordinate subspaces, and checked against the numerical data
-(`exact_site.py`, `exact_maps.py`). The remaining steps are:
-- exact fixed subspaces and identity rows;
-- exact constraint maps for the blocks the certificate uses (at t = 1: X ≥ 0, moments, identities and covariance
-  blocks only);
-- exact kernels at rational zero configurations;
-- rounding of the strictly feasible reduced dual (margin 2.7e-3 against residuals about 1e-7), then an exact LDLᵀ.
+- **Exact (computer-assisted).** The four-copy endpoint for rank-two projectors (Section 3), and the pipeline checks
+  at two and three copies.
+- **Numerical only** (SDP bounds at solver precision):
+  - the opposite-sign case at four copies (strictly feasible after facial reduction, margin 1.9e-3; one of its zero
+    families was found by local search and has no rational parametrisation yet);
+  - the all-ratio lifted certificate at four copies;
+  - everything at five copies.
 
-We estimate a few hours for an n = 2 pilot and a few days for n = 4. Degenerate eigenvector bases differ between
-processes, so the exact pipeline must use canonical exact bases throughout.
+Degenerate eigenvector bases differ between processes, so every exact step uses canonical exact bases.
 
 The general rank-two case at four copies needs cross terms twirl(|α₁⟩⟨α₂| ⊗ |β₂⟩⟨β₁|). We estimate about 5–10k
 parameters at n = 3 and about 50k at n = 4, beyond our machine. The Hermitian case at n = 5 would need about 6k
@@ -312,6 +371,7 @@ parameters and more than 20 GB. The endpoint for every n is open.
 | `code/relaxations/fr_herm4.py`, `fr2_herm4.py`, `zero_rot.py`, `zero_interp.py` | Facial reduction at the zeros, and generators of zero families |
 | `code/relaxations/exact_site.py`, `exact_maps.py` | Exact rational per-site irreps and maps (python-flint) |
 | `code/relaxations/exact_core.py`, `exact_coreN.py`, `exact_pilot_n2.py`, `exact_pilot_n3.py` | Exact certificates at n = 2, 3 |
+| `code/exact4/` | The exact certificate at n = 4 for rank-two projectors: engine (`core4.py`, `engine4.py`, `symm4.py`), data (`build_lin4.py`, `points4.py`, `face4.py`, `facedata4.py`, `span4.py`), certificate (`cert4.py`), checks (`verify4.py`, `crosscheck4.py`, `test_engine.py`, `points4_audit.py`); saved data and certificate as pickles |
 | `code/relaxations/local_herm.py`, `local_min.py` | Local searches for the true minima |
 | `code/relaxations/lift2.py`, `lift2s.py` | The all-ratio lifted certificate (Clarabel; lean assembly with SCS) |
 | `code/relaxations/audit_above_endpoint.py`, `ablate_n4.py` | The control at w = 0.55, and constraint ablations |
@@ -330,6 +390,10 @@ Main runs, from `code/relaxations/`:
     python ablate_n4.py ORTH,MARG,PT                               # logs/ablate_n4_pt.log
     python exact_pilot_n3.py                                       # logs/exact_pilot_n3.log (CERTIFIED)
 
+and from `code/exact4/`:
+
+    python verify4.py p_ent p_ent2                                 # logs/exact4/verify4.log (VERIFIED)
+
 The scripts need Python 3 with NumPy, SciPy and Clarabel. The searches in Sections 5 and 6 also use PyTorch, and
 the exact scripts use python-flint.
 
@@ -343,4 +407,5 @@ the exact scripts use python-flint.
 - [BGH] K. Bharti, R. Gajjala, T. Haug, Two-copy nondistillability of Werner states: sharp partial-trace inequalities
   and finite-copy extensions, arXiv:2607.24479.
 - [FHPV] Fraser, Huber, Pozsgay, Vona, arXiv:2607.24309.
+- [Cl] L. Clarisse, The distillability problem revisited, Quantum Inf. Comput. 6, 539 (2006); arXiv:quant-ph/0510035.
 - `first-order-bound/` in this repository: the margin conjecture q_n(C) ≥ 2^{−n}(σ₁ − σ₂)².

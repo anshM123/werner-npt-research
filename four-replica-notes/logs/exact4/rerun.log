@@ -1,0 +1,43 @@
+Sun Nov  1 06:58:35 EST 2026
+exact variable space n=4: 1331 parameters, 150 groups; 3.0s
+[lin] objective and 120 moment rows; 7.0s
+[lin] identity rows: 6186 raw rows, max |entry| 905969664; 8.0s
+[lin] identity rank mod 1048573: 146; 8.7s
+[lin] equalities: 147 independent (identity rows alone: exact rank 146); max E entry 37 bits; 9.2s
+saved lin4.pkl; 9.3s
+[peakmem] python build_lin4.py: exit 0, wall 10s, peak working set 0.41 GB, peak private 1.12 GB
+[face] 11 zeros: z_k1_a, z_k1_b, z_k3_a, z_k3_b, z_rk1_a, z_rk1_b, z_rk3_a, z_rk3_b, z_rint_a, z_rint_b, z_rint_c; x* integer, up to 88 bits; 4.2s
+[face] X blocks: dimension 709 -> 537; 4.2s
+[face] COV: 385 class blocks; |Yhat(x*)| <= 2^134, |What| <= 2^158: 6 primes; 5.7s
+[face] COV blocks: dimension 5028 -> 4067 (168 blocks with W(x*) = 0); kernel bases up to 3 bits; 23.8s
+saved face4.pkl; 23.8s
+[peakmem] python face4.py z_k1_a z_k1_b z_k3_a z_k3_b z_rk1_a z_rk1_b z_rk3_a z_rk3_b z_rint_a z_rint_b z_rint_c: exit 0, wall 24s, peak working set 0.61 GB, peak private 1.28 GB
+[data] 379 COV face blocks (max r 65, svec 44783); |Fhat| <= 2^64: 3 primes; 5.2s
+[data] COV: 158 nonzero face blocks after CRT; 71.4s
+[data] X: 98 nonzero face blocks; 71.5s
+[data] exact face check: F_k(x_z) = 0 for all 256 blocks and 11 zeros: True (0 failures); 90.7s
+saved facedata4.pkl (256 blocks, COV numerators up to 45 bits); 94.2s
+[peakmem] python facedata4.py: exit 0, wall 95s, peak working set 3.26 GB, peak private 3.94 GB
+[span] 256 face blocks, 155 with vacuous directions; total size 2764 -> 1556; 256 blocks kept (largest 33, svec 9322); B entries <= 3 bits, COV numerators <= 46 bits; row-space completeness checked exactly; 25s
+[peakmem] python span4.py: exit 0, wall 26s, peak working set 1.51 GB, peak private 2.25 GB
+[0] data: 1331 parameters, 147 equalities, 256 face blocks (158 COV, 98 X), max size 33; 0s
+    float block data built; 4s
+[1] float problem: 9469 rows x 1331 columns (28 scalar blocks, 228 PSD blocks); 7s
+    null directions of the reduced constraints: 40 (objective component on them 1.2e-06)
+[2] float solve: status Solved, iterations 16, primal -8.926e-12, dual -4.718e-16, ||A^T z + c|| 3.9e-09, smallest reduced-dual eigenvalue 2.481e-01; solve 21s; 30s
+[3] rounded dual: identity residual 1.2e-04, dual objective residual 2.7e-12; 30s
+    equation matrix 1332 x 9347; pivoted QR ...
+    column subset: equation rank 1291 of 1332 (diag R ratio at cut 1.3e-03, next 2.2e-15); 55 y's, 1236 dual entries; 33s
+    exact square solve (1291 x 1291) in 2s; correction bits up to 1061
+[4] exact correction: max |delta| 6.0e-05; identity c = E^T y + sum_k F_k^*(S_k) exact: True; e . y = 0: True; 36s
+[5] exact LDL^T: all 256 blocks PSD True (smallest pivot 9.38e-05); rational sizes up to 1061 / 1061 bits; LDL 2s; 38s
+[6] entangled true point: in variable space True; equalities hold True; c.x(P) == q_4(P): True (0.9987157017); c.x(P) == y.E x(P) + sum_k Tr(S_k F_k(x(P))): True; y.E x(P) = 0; all 256 terms >= 0: True (smallest 8.41e-06); 39s
+n=4 t=+1: exact identity c = E^T y + sum_k F_k^*(S_k), e.y = 0, 256 PSD blocks (exact LDL^T), max 1061/1061 bits, entangled true-point check passed -> CERTIFIED
+[peakmem] python cert4.py: exit 0, wall 40s, peak working set 2.23 GB, peak private 3.67 GB
+loaded: 1331 parameters, 147 equalities, 256 face blocks, 256 dual blocks; 0s
+(a) e . y = 0: True;  c = E^T y + sum_k F_k^*(S_k) exactly: True; 4s
+(b) exact LDL^T: all 256 dual blocks PSD: True (sizes up to 33, smallest pivot 9.375e-05); S entries up to 1061/1061 bits, y up to 1053/1055 bits; 5s
+(c) p_ent: q_4(P) recomputed from P = 0.998715701733; c.x(P) == q_4(P): True; E x(P) == e: True; identity at the point: True; all 256 terms >= 0: True; all 256 face blocks PSD at the point (exact LDL^T): True; 7s
+VERIFIED
+[peakmem] python verify4.py: exit 0, wall 8s, peak working set 0.51 GB, peak private 1.22 GB
+Sun Nov  1 07:02:01 EST 2026

@@ -1,0 +1,5 @@
+[data] 379 COV face blocks (max r 65, svec 44783); |Fhat| <= 2^64: 3 primes; 5.2s
+[data] COV: 158 nonzero face blocks after CRT; 74.2s
+[data] X: 98 nonzero face blocks; 74.2s
+[data] exact face check: F_k(x_z) = 0 for all 256 blocks and 11 zeros: True (0 failures); 93.9s
+saved facedata4.pkl (256 blocks, COV numerators up to 45 bits); 97.5s
