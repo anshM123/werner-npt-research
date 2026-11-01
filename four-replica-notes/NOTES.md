@@ -133,8 +133,9 @@ t = −0.9, −0.75, −0.1, 0.1, 0.75, 0.9 give 6.25108e-4, 3.90637e-3, 5.06256
 
       q_n(P_u + t P_v) = ½ q_{n−1}(P_φ − t P_χ).
 
-  Iterating this gives every zero family used below, including interpolating ones and U(2) rotations of the pair
-  (`zero_rot.py`, `zero_interp.py`). All of them have rational points.
+  This is the case X_01 = X_10 = 0 of the one-copy contraction formula in `contraction-notes/`. Iterating it
+  gives every zero family used below, including interpolating ones and U(2) rotations of the pair (`zero_rot.py`,
+  `zero_interp.py`). All of them have rational points.
 - **Facial reduction at the zeros** (`fr_herm4.py`, `fr2_herm4.py`). Every dual certificate of value 0 must vanish on
   the ranges of all PSD blocks at the zeros. So we compress every block to its kernel at known zeros and re-solve.
   - t = 1 (rank-two projectors): 3 structured zeros (P_1 ⊗ ψ) and 2 found by local search. Of 2169 blocks, 1280
