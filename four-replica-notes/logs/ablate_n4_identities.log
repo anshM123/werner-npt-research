@@ -1,0 +1,4 @@
+n=4 cons=ORTH+MARG: build 21s, N = 1331
+n=4 cons=ORTH+MARG t=+1.0: status NumericalError, value +0.000000e+00 (true min 0.000000e+00); solve 0s
+n=4 cons=ORTH+MARG t=-1.0: status NumericalError, value +0.000000e+00 (true min 0.000000e+00); solve 0s
+n=4 cons=ORTH+MARG t=+0.5: status NumericalError, value +0.000000e+00 (true min 1.562500e-02); solve 0s

@@ -274,6 +274,17 @@ parameters and more than 20 GB. The endpoint for every n is open.
 | `code/clicks/` | Section 5 |
 | `code/three_copy_mechanisms/` | Section 6 |
 
+Main runs, from `code/relaxations/`:
+
+    python rep4.py 4 --cons QTR1                                   # logs/n4_qtr1only.log
+    python rep4.py 4 --cons LE,PT1,PT2,PT1LE,PT2LE,QTR1,QTR2,PROJ  # logs/n4_full.log
+    python rep4.py 5 --cons QTR1,PROJ                              # logs/n5_qtr1_proj.log
+    python grid_herm4.py 4 -1,1,-0.5,0.5,-0.25,0.25,0              # logs/herm4_n4_grid.log
+    python check_n4.py 2                                           # logs/check_n4.log
+    python lift2.py 3                                              # logs/lift2_n3.log
+    python audit_above_endpoint.py 0.55                            # logs/audit_above_endpoint.log
+    python ablate_n4.py ORTH,MARG,PT                               # logs/ablate_n4_pt.log
+
 The scripts need Python 3 with NumPy, SciPy and Clarabel. The searches in Sections 5 and 6 also use PyTorch, and
 the exact scripts use python-flint.
 

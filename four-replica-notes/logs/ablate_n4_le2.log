@@ -1,0 +1,4 @@
+n=4 cons=ORTH+MARG+LE2: build 92s, N = 1331
+n=4 cons=ORTH+MARG+LE2 t=+1.0: status AlmostSolved, value -6.000000e-01 (true min 0.000000e+00); solve 11s
+n=4 cons=ORTH+MARG+LE2 t=-1.0: status Solved, value -1.551930e+00 (true min 0.000000e+00); solve 19s
+n=4 cons=ORTH+MARG+LE2 t=+0.5: status AlmostSolved, value -2.593750e-01 (true min 1.562500e-02); solve 12s

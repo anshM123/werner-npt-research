@@ -1,0 +1,4 @@
+n=4 cons=ORTH+MARG+PT: build 159s, N = 1331
+n=4 cons=ORTH+MARG+PT t=+1.0: status AlmostSolved, value -2.246562e-04 (true min 0.000000e+00); solve 58s
+n=4 cons=ORTH+MARG+PT t=-1.0: status Solved, value -1.404687e-08 (true min 0.000000e+00); solve 33s
+n=4 cons=ORTH+MARG+PT t=+0.5: status Solved, value +1.554717e-02 (true min 1.562500e-02); solve 57s
