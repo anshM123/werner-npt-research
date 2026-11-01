@@ -50,7 +50,7 @@ A0 = torch.einsum('ax,y->axy', A2.detach(), u).reshape(D, 3 ** M); B0 = torch.ei
 g2 = torch.Generator().manual_seed(9)
 RA = torch.randn(D, 3 ** M, dtype=torch.complex128, generator=g2); RB = torch.randn(D, 3 ** M, dtype=torch.complex128, generator=g2)
 A = (A0 / torch.linalg.norm(A0) + DELTA * RA / torch.linalg.norm(RA)).numpy(); B = (B0 / torch.linalg.norm(B0) + DELTA * RB / torch.linalg.norm(RB)).numpy()
-TAG = "" if DELTA == 0.1 else f"_d{str(DELTA).replace('.', '')[1:]}"
+TAG = "" if DELTA == 0.1 else f"_d{str(DELTA).replace('.', '')}"
 np.savez(f"chain_cert_target_M{M}{TAG}.npz", A=A, B=B)
 X = filt(torch.tensor(A), torch.tensor(B), M).numpy(); X = (X + X.conj().T) / 2
 Xn = X / np.trace(X).real
