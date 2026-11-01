@@ -13,7 +13,7 @@ The main numerical findings:
   Section 3 has a strictly feasible reduced dual at n = 4 (smallest eigenvalue 3.2e-4, residual 9e-10), so an exact
   certificate looks within reach.
 - **Hermitian rank-two operators.** A letter-resolved relaxation matches the conjectured sharp margin
-  2^{−n}(σ₁ − σ₂)² at n = 4 on a grid of ratios.
+  2^{−n}(σ₁ − σ₂)² at n = 4 on a grid of 13 ratios.
 
 Throughout, d = 3, ρ = I − F/2 and q_n(C) = Σ_J (−1/2)^{|J|} ‖Tr_J C‖² for C of rank at most two on (C³)^⊗n. The
 endpoint inequality at n copies (EP_n) is q_n(C) ≥ 0 for all such C.
@@ -108,6 +108,10 @@ every feasible point given exact problem data.
 | 0.25 | 3.515890e-2 | 3.515886e-2 | 6.1e-5 | 3.50e-2 | 9/256 |
 | 0.5 | 1.562519e-2 | 1.562519e-2 | 5.4e-6 | 1.56e-2 | 1/64 |
 | 1 | −4.24e-7 | −4.36e-7 | 2.2e-5 | −4.0e-5 | 0 |
+
+Six more ratios (primal values; `logs/herm4_n4_dense_grid.log`) also match (1 − |t|)²/16 to within 1.3e-6:
+t = −0.9, −0.75, −0.1, 0.1, 0.75, 0.9 give 6.25108e-4, 3.90637e-3, 5.06256e-2, 5.06253e-2, 3.90750e-3 and
+6.25126e-4. That makes 13 ratios in [−1, 1].
 
 - **The minimum is (1 − |t|)²/16.**
   - For t > 0 it is attained by the products diag(1, t, 0) ⊗ |x⟩⟨x|^⊗3.
