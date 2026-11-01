@@ -43,3 +43,47 @@ F3 M = 6, seed 35, step 40: residual 7.992e-05 (PT-min +0.0001); best so far 0.0
 F3 M = 6, seed 35, step 50: residual 7.226e-05 (PT-min +0.0000); best so far 0.000e+00
 F3 M = 6, seed 35, step 59: residual 6.421e-05 (PT-min +0.0000); best so far 0.000e+00
 F3 M = 6, seed 35: worst target re-fitted from fresh starts: 16 + 80: 7.260e-09; 32 + 160: 5.796e-09
+== python check_f3_adversary.py 2 1 80 80 41 0.2   (model: one filtering + 80 products)
+F3 M = 2, seed 41, step 0: residual 4.310e-06 (PT-min -0.0444); best so far 4.310e-06
+F3 M = 2, seed 41, step 10: residual 1.087e-08 (PT-min -0.0234); best so far 4.310e-06
+F3 M = 2, seed 41, step 20: residual 1.413e-08 (PT-min -0.0446); best so far 4.943e-06
+F3 M = 2, seed 41, step 30: residual 1.700e-06 (PT-min -0.0459); best so far 4.943e-06
+F3 M = 2, seed 41, step 40: residual 1.036e-05 (PT-min -0.0449); best so far 1.361e-05
+F3 M = 2, seed 41, step 50: residual 2.277e-06 (PT-min -0.0432); best so far 1.823e-05
+F3 M = 2, seed 41, step 60: residual 2.246e-05 (PT-min -0.0369); best so far 4.995e-05
+F3 M = 2, seed 41, step 70: residual 1.058e-05 (PT-min -0.0331); best so far 4.995e-05
+F3 M = 2, seed 41, step 79: residual 1.753e-05 (PT-min -0.0287); best so far 8.008e-05
+F3 M = 2, seed 41: worst target re-fitted from fresh starts: 1 + 80: 1.956e-08; 2 + 160: 2.148e-08
+== python check_f3_adversary.py 2 1 80 80 42 0.2   (model: one filtering + 80 products)
+F3 M = 2, seed 42, step 0: residual 1.578e-07 (PT-min -0.0447); best so far 1.578e-07
+F3 M = 2, seed 42, step 10: residual 1.242e-08 (PT-min -0.0355); best so far 1.578e-07
+F3 M = 2, seed 42, step 20: residual 1.727e-08 (PT-min -0.0333); best so far 2.984e-06
+F3 M = 2, seed 42, step 30: residual 1.403e-08 (PT-min -0.0300); best so far 2.984e-06
+F3 M = 2, seed 42, step 40: residual 8.575e-07 (PT-min -0.0223); best so far 2.984e-06
+F3 M = 2, seed 42, step 50: residual 6.067e-06 (PT-min -0.0370); best so far 6.067e-06
+F3 M = 2, seed 42, step 60: residual 6.651e-07 (PT-min -0.0447); best so far 6.398e-05
+F3 M = 2, seed 42, step 70: residual 1.587e-04 (PT-min -0.0471); best so far 1.587e-04
+F3 M = 2, seed 42, step 79: residual 4.647e-05 (PT-min -0.0494); best so far 2.458e-04
+F3 M = 2, seed 42: worst target re-fitted from fresh starts: 1 + 80: 5.155e-08; 2 + 160: 3.794e-08
+== python check_f3_adversary.py 3 1 80 80 41 0.2   (model: one filtering + 80 products)
+F3 M = 3, seed 41, step 0: residual 6.131e-09 (PT-min -0.0213); best so far 6.131e-09
+F3 M = 3, seed 41, step 10: residual 8.193e-09 (PT-min -0.0264); best so far 8.193e-09
+F3 M = 3, seed 41, step 20: residual 1.349e-08 (PT-min -0.0437); best so far 4.303e-06
+F3 M = 3, seed 41, step 30: residual 1.280e-08 (PT-min -0.0421); best so far 8.439e-06
+F3 M = 3, seed 41, step 40: residual 3.780e-07 (PT-min -0.0427); best so far 8.439e-06
+F3 M = 3, seed 41, step 50: residual 1.170e-08 (PT-min -0.0372); best so far 8.439e-06
+F3 M = 3, seed 41, step 60: residual 1.736e-05 (PT-min -0.0329); best so far 2.782e-05
+F3 M = 3, seed 41, step 70: residual 9.983e-06 (PT-min -0.0328); best so far 5.129e-05
+F3 M = 3, seed 41, step 79: residual 1.017e-05 (PT-min -0.0324); best so far 8.863e-05
+F3 M = 3, seed 41: worst target re-fitted from fresh starts: 1 + 80: 1.304e-08; 2 + 160: 2.032e-08
+== python check_f3_adversary.py 3 1 80 80 42 0.2   (model: one filtering + 80 products)
+F3 M = 3, seed 42, step 0: residual 6.548e-09 (PT-min -0.0241); best so far 6.548e-09
+F3 M = 3, seed 42, step 10: residual 7.213e-09 (PT-min -0.0275); best so far 5.815e-07
+F3 M = 3, seed 42, step 20: residual 2.072e-08 (PT-min -0.0326); best so far 5.815e-07
+F3 M = 3, seed 42, step 30: residual 1.196e-08 (PT-min -0.0294); best so far 4.554e-06
+F3 M = 3, seed 42, step 40: residual 1.362e-08 (PT-min -0.0254); best so far 6.800e-06
+F3 M = 3, seed 42, step 50: residual 1.430e-06 (PT-min -0.0231); best so far 6.800e-06
+F3 M = 3, seed 42, step 60: residual 1.238e-07 (PT-min -0.0217); best so far 9.724e-06
+F3 M = 3, seed 42, step 70: residual 6.029e-08 (PT-min -0.0250); best so far 8.889e-05
+F3 M = 3, seed 42, step 79: residual 2.053e-05 (PT-min -0.0461); best so far 8.889e-05
+F3 M = 3, seed 42: worst target re-fitted from fresh starts: 1 + 80: 2.005e-08; 2 + 160: 1.600e-08

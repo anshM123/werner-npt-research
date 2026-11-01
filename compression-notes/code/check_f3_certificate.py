@@ -1,12 +1,13 @@
 """Section 11: certified F3 instances (search step).  For saved adversary filters A, B : (C^3)^{(x)M} -> C^3, find nonnegative weights and
 atoms of K_1(3) (filterings (a (x) b) rho (a (x) b)^* with a, b in M_3, and products) such that X - sum w_i G_i is close
 to (eps Tr X / 9) I; check_cone_certificate_verify.py then certifies the remainder separable (Gurvits-Barnum ball, N = 9).
-usage: python check_f3_certificate.py M seed eps rounds   (reads adv_f3_filters_M{M}_s{seed}.npz; needs PyTorch, SciPy)
+usage: python check_f3_certificate.py M seed eps rounds [one]   ('one': a single filtering of rho plus products; reads adv_f3_filters_M{M}_s{seed}.npz; needs PyTorch, SciPy)
 then: python check_cone_certificate_verify.py adv_f3_filters_M{M}_s{seed}.npz f3_cert_atoms_M{M}_s{seed}.npz M 1"""
 import sys, itertools, numpy as np, torch
 from scipy.optimize import nnls
 torch.set_default_dtype(torch.float64)
 M, SEED, EPS, ROUNDS = int(sys.argv[1]), int(sys.argv[2]), float(sys.argv[3]), int(sys.argv[4])
+ONE = len(sys.argv) > 5 and sys.argv[5] == 'one'     # one-filtering form: one filtering of rho + products only
 D = 3; N = D * D
 F = np.zeros((9, 9))
 for i in range(3):
@@ -54,14 +55,14 @@ def param_fit(J, P, RS, seed):
             rr = float(torch.linalg.norm(model() - Xt) / torch.linalg.norm(Xt))
             if rr < best[0]: best = (rr, [q.detach().numpy().copy() for q in p])
     return best
-for (J, P, RS, sd) in [(16, 80, 4, 1), (32, 160, 3, 2)]:
+for (J, P, RS, sd) in ([(1, 80, 8, 1)] if ONE else [(16, 80, 4, 1), (32, 160, 3, 2)]):
     rr, pp = param_fit(J, P, RS, sd)
     print(f"seed fit {J} + {P}: {rr:.2e}", flush=True)
     for j in range(J): add('f', pp[0][j], pp[1][j])
     for k in range(P): add('p', pp[2][k], pp[3][k])
 g = np.random.default_rng(1)
 for _ in range(400):
-    add('f', g.standard_normal((D, 3)) + 1j * g.standard_normal((D, 3)), g.standard_normal((D, 3)) + 1j * g.standard_normal((D, 3)))
+    if not ONE: add('f', g.standard_normal((D, 3)) + 1j * g.standard_normal((D, 3)), g.standard_normal((D, 3)) + 1j * g.standard_normal((D, 3)))
     add('p', g.standard_normal(D) + 1j * g.standard_normal(D), g.standard_normal(D) + 1j * g.standard_normal(D))
 def vecr(Mx):
     iu = np.triu_indices(Mx.shape[0], 1)
@@ -80,7 +81,7 @@ for rd in range(ROUNDS):
         for it in range(300):
             K = torch.kron(a, b); Yg = K @ Rt @ K.conj().T; v = -torch.trace(Rt_ @ Yg).real / torch.trace(Yg).real
             o.zero_grad(); v.backward(); o.step()
-        if -v.item() > 0: new.append(('f', a.detach().numpy(), b.detach().numpy()))
+        if -v.item() > 0 and not ONE: new.append(('f', a.detach().numpy(), b.detach().numpy()))
         x = torch.randn(D, dtype=torch.complex128, requires_grad=True); y = torch.randn(D, dtype=torch.complex128, requires_grad=True)
         o = torch.optim.Adam([x, y], lr=0.03)
         for it in range(200):
@@ -90,7 +91,7 @@ for rd in range(ROUNDS):
     for kind, p, q in new: add(kind, p, q)
 act = np.where(coef > 0)[0]
 zf, zp = np.zeros((D, 3), complex), np.zeros(D, complex)
-np.savez(f"f3_cert_atoms_M{M}_s{SEED}.npz", kinds=np.array([atoms[i][0] for i in act]),
+np.savez((f"f3one_cert_atoms_M{M}_s{SEED}.npz" if ONE else f"f3_cert_atoms_M{M}_s{SEED}.npz"), kinds=np.array([atoms[i][0] for i in act]),
          P=np.array([atoms[i][1] if atoms[i][0] == 'f' else zf for i in act]),
          Q=np.array([atoms[i][2] if atoms[i][0] == 'f' else zf for i in act]),
          x=np.array([atoms[i][1] if atoms[i][0] == 'p' else zp for i in act]),

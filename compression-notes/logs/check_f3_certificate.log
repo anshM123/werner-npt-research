@@ -28,3 +28,33 @@ seed fit 16 + 80: 5.45e-09
 seed fit 32 + 160: 5.88e-09
 round 0: atoms 1088, active 81, residual 4.181e-16
 saved 81 active atoms; final residual 4.181e-16
+== python check_f3_certificate.py 3 31 1e-6 300 one
+F3 target M = 3, seed 31: PT-min/Tr -0.0447, min eigenvalue/Tr +2.552e-02; eps = 1.0e-06
+seed fit 1 + 80: 2.79e-08
+seed fit 1 + 160: 2.11e-08
+round 0: atoms 642, active 81, residual 7.488e-16
+saved 81 active atoms; final residual 7.488e-16
+== python check_f3_certificate.py 4 31 1e-6 300 one
+F3 target M = 4, seed 31: PT-min/Tr -0.0473, min eigenvalue/Tr +4.369e-02; eps = 1.0e-06
+seed fit 1 + 80: 1.28e-08
+seed fit 1 + 160: 1.70e-08
+round 0: atoms 642, active 81, residual 7.976e-16
+saved 81 active atoms; final residual 7.976e-16
+== python check_f3_certificate.py 5 31 1e-6 300 one
+F3 target M = 5, seed 31: PT-min/Tr -0.0419, min eigenvalue/Tr +3.922e-02; eps = 1.0e-06
+seed fit 1 + 80: 8.45e-09
+seed fit 1 + 160: 1.16e-08
+round 0: atoms 642, active 81, residual 4.507e-16
+saved 81 active atoms; final residual 4.507e-16
+== python check_f3_certificate.py 6 34 1e-4 300 one
+F3 target M = 6, seed 34: PT-min/Tr -0.0304, min eigenvalue/Tr +7.398e-02; eps = 1.0e-04
+seed fit 1 + 80: 3.63e-09
+seed fit 1 + 160: 5.47e-09
+round 0: atoms 642, active 81, residual 5.992e-16
+saved 81 active atoms; final residual 5.992e-16
+== python check_f3_certificate.py 6 35 1e-4 300 one
+F3 target M = 6, seed 35: PT-min/Tr -0.0301, min eigenvalue/Tr +7.419e-02; eps = 1.0e-04
+seed fit 1 + 80: 3.23e-09
+seed fit 1 + 160: 5.04e-09
+round 0: atoms 642, active 81, residual 8.988e-16
+saved 81 active atoms; final residual 8.988e-16

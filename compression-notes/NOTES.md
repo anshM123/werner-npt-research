@@ -907,6 +907,24 @@ operators and the filterings (a ⊗ b) ρ (a ⊗ b)^* of one Werner copy.
     rounding bounds are larger). The remainders satisfy ‖Z‖_2²/(Tr Z)² ≤ 0.1118 < 1/8. So each of these five
     targets is, rigorously, a nonnegative combination of one to five filterings of one Werner copy, 76–80 products
     and a separable remainder. These are computer-assisted statements about five operators, not a proof of F3.
+  - **One filtering suffices** (`check_f3_one_filtering.py`). Every NPT element of K_1(3) we tested is one filtering of
+    ρ plus a separable operator.
+    - Sums of two or three random NPT filterings of ρ fit by one filtering + 80 products to 0.5–2.4 × 10^{−7}, the
+      same level as with all of their own filterings.
+    - So do the F3 targets: the five certified ones (one filtering + 60 products: 0.4–1.9 × 10^{−7}, no better with
+      two or three filterings), and the worst targets of adversaries that maximise the residual of exactly this model
+      (m = 2, 3, two seeds each; refits 1–5 × 10^{−8}).
+    - The five certified targets are certified in this form too (`python check_f3_certificate.py M seed eps rounds
+      one`): one filtering of ρ, 80 products and a separable remainder, with the same verifier.
+    - The fitted filtering's partial-transpose negative vector (a ⊗ b̄)|Φ⟩ overlaps the negative eigenvector of X^Γ
+      by 0.95–0.998.
+    - Why one is enough for the negativity: a 2-undistillable operator X on C³ ⊗ C³ has at most one negative
+      partial-transpose eigenvalue. If there were two, the negative eigenspace would be a pencil sZ_1 + tZ_2 of
+      3 × 3 matrices. det(sZ_1 + tZ_2) is a binary cubic, so it vanishes at some (s, t) ≠ 0, which gives a vector of
+      Schmidt rank at most two on which X^Γ is negative.
+    - We therefore conjecture that K_1(3) consists exactly of the operators λ (a ⊗ b) ρ (a ⊗ b)^* + S with S
+      separable. F3 would then say that every 3 × 3 local filtering of ρ^{⊗m} is one filtering of one copy plus a
+      separable operator.
   - The perturbation test also passes at m = 5 and 6 (δ = 0.1: PT-min −0.043 and −0.031, fits 1.0 × 10^{−8}
     and 7.1 × 10^{−9}), and NPT-keeping adversaries at m = 5 (two seeds) and m = 6 (one seed) end with worst
     targets that refit to 2–5 × 10^{−9}.
@@ -1029,12 +1047,14 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   `check_chain_six_nnls.log` for four copies and `check_chain_six_nnls_M3.log` for three).
 - `code/check_cone_certificate_verify.py` (`python check_cone_certificate_verify.py target.npz atoms.npz M m`; NumPy
   only, seconds): the rigorous check of a cone certificate (Sections 9 and 11). `logs/check_cone_certificate_verify.log`
-  runs it on all seven saved certificates.
+  runs it on all twelve saved certificates.
 - `code/check_chain_certificate.py` (search; needs PyTorch and SciPy): the certified chain links in Section 9. Data:
   `chain_cert_target_M3.npz`, `chain_cert_target_M4.npz` (filters) and `chain_cert_atoms_M3.npz`,
   `chain_cert_atoms_M4.npz` (atom parameters and weights).
 - `code/check_f3_certificate.py` (search; needs PyTorch and SciPy): the certified F3 instances in Section 11. Data:
   `adv_f3_filters_M*_s*.npz` (filters, written by `check_f3_adversary.py`) and `f3_cert_atoms_M*_s*.npz`.
+- `code/check_f3_one_filtering.py` (needs PyTorch; about ten minutes): one filtering suffices, Section 11. The
+  one-filtering certificates are `f3one_cert_atoms_M*_s*.npz`.
 - `code/check_cone_nnls.py` (`python check_cone_nnls.py adv_lmD_m1_D5_s0.npy 40`): the dictionary check of the
   L_1(D) threshold in Section 9 (needs PyTorch and SciPy).
 - `code/check_removal.py`: Section 9, removal by compression. It checks the identity against the dense q_4, shows

@@ -1,0 +1,11 @@
+sum of 2 filterings, PT-min -0.0107: 1 filt + 80 prod 7.46e-08; 2 filt + 80 prod 1.08e-07
+sum of 3 filterings, PT-min -0.0121: 1 filt + 80 prod 6.96e-08; 3 filt + 80 prod 6.66e-08
+sum of 2 filterings, PT-min -0.0173: 1 filt + 80 prod 1.33e-07; 2 filt + 80 prod 1.87e-07
+sum of 3 filterings, PT-min -0.0152: 1 filt + 80 prod 9.24e-08; 3 filt + 80 prod 9.20e-08
+sum of 2 filterings, PT-min -0.0148: 1 filt + 80 prod 2.44e-07; 2 filt + 80 prod 1.82e-07
+sum of 3 filterings, PT-min -0.0118: 1 filt + 80 prod 5.02e-08; 3 filt + 80 prod 5.63e-08
+M3_s31: PT-min -0.0447; fit 1 filt + 60 prod 1.87e-07, 2 filt 2.12e-07, 3 filt 2.05e-07; single filtering carries 0.823 of the trace; |<v|z>| = 0.9495
+M4_s31: PT-min -0.0473; fit 1 filt + 60 prod 1.05e-07, 2 filt 1.18e-07, 3 filt 1.23e-07; single filtering carries 0.774 of the trace; |<v|z>| = 0.9862
+M5_s31: PT-min -0.0419; fit 1 filt + 60 prod 1.34e-07, 2 filt 1.26e-07, 3 filt 8.89e-08; single filtering carries 0.731 of the trace; |<v|z>| = 0.9796
+M6_s34: PT-min -0.0304; fit 1 filt + 60 prod 4.67e-08, 2 filt 5.00e-08, 3 filt 2.42e-08; single filtering carries 0.510 of the trace; |<v|z>| = 0.9973
+M6_s35: PT-min -0.0301; fit 1 filt + 60 prod 3.59e-08, 2 filt 5.59e-08, 3 filt 8.64e-09; single filtering carries 0.508 of the trace; |<v|z>| = 0.9984
