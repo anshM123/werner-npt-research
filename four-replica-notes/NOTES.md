@@ -290,8 +290,10 @@ C = Σ_μ c_μ σ_μ in Pauli strings, in a basis of each Q_i. Then
 copies. So ‖Tr_J C‖² = 2^n Σ_{μ: μ_J = 0} 2^{|J|} |c_μ|². In q_n each string μ gets the weight
 Σ_{J ⊆ Z(μ)} (−1)^{|J|}, where Z(μ) is the set of copies with μ_j = 0. This is 1 if Z(μ) is empty and 0 otherwise.
 
-So on such operators q_n ≥ 0, with equality exactly when C has no Pauli string acting on every copy. (This is the
-familiar fact that the Werner state restricted to two qubit subspaces is the separable boundary state.)
+So on such operators q_n ≥ 0, with equality exactly when C has no Pauli string acting on every copy. (Positivity
+is the familiar fact that the Werner state restricted to two qubit subspaces is the separable boundary state. At two
+copies Tomar shows that every zero lies in such a product of planes [T2]; the formula says which operators there are
+zeros, for every n.)
 
 **Spin-flip zeros.** Let J = σ_y K be the spin flip on each Q_i and v = J^⊗n ū. The full-weight correlations
 ⟨σ_μ⟩ of v are (−1)^n times those of u. Hence:

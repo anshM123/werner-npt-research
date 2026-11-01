@@ -171,6 +171,9 @@ copies. So ‖Tr_J C‖² = 2^n Σ_{μ: μ_J = 0} 2^{|J|} |c_μ|². In q_n the s
 - for even n, P_u − P_v is a zero whenever ⟨u, J^⊗n ū⟩ = 0;
 - for odd n, P_u + P_v is a zero for every u.
 
+At two copies, Tomar shows that every zero has range and co-range in a product of two-dimensional single-copy
+subspaces [T2]. The lemma says exactly which operators on such products are zeros, for every n.
+
 At four copies, 8 of 8 local searches for zeros of q_4(P_u − P_v) land on spin-flip pairs (`code/relaxations/tm1_*`).
 Real integer points are easy to write down. With Y|x⟩ = (−1)^{w(x)} |x̄⟩ (σ_y^⊗4 in a real form), take u integer
 with uᵀYu = 0 and v = Yu.
@@ -219,4 +222,5 @@ What remains is that this set contains every true point, which is the validity o
 - [Cl] L. Clarisse, The distillability problem revisited, Quantum Inf. Comput. 6, 539 (2006); arXiv:quant-ph/0510035.
 - [FHPV] Fraser, Huber, Pozsgay, Vona, arXiv:2607.24309.
 - [T1] T. S. Tomar, Undistillability of Werner states from three, four and five copies, Zenodo 23718035 (2026).
+- [T2] T. S. Tomar, Equality cases and every-copy results for the Werner endpoint inequality, Zenodo 23718037 (2026).
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.
