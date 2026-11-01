@@ -58,3 +58,15 @@ seed fit 1 + 80: 3.23e-09
 seed fit 1 + 160: 5.04e-09
 round 0: atoms 642, active 81, residual 8.988e-16
 saved 81 active atoms; final residual 8.988e-16
+== python check_f3_certificate.py 2 41 1e-6 300 one
+F3 target M = 2, seed 41: PT-min/Tr -0.0295, min eigenvalue/Tr +1.666e-02; eps = 1.0e-06
+seed fit 1 + 80: 2.00e-08
+seed fit 1 + 160: 1.47e-08
+round 0: atoms 642, active 81, residual 5.876e-16
+saved 81 active atoms; final residual 5.876e-16
+== python check_f3_certificate.py 2 42 1e-6 300 one
+F3 target M = 2, seed 42: PT-min/Tr -0.0491, min eigenvalue/Tr +2.226e-02; eps = 1.0e-06
+seed fit 1 + 80: 5.48e-08
+seed fit 1 + 160: 3.58e-08
+round 0: atoms 642, active 81, residual 7.206e-16
+saved 81 active atoms; final residual 7.206e-16

@@ -76,3 +76,15 @@ atoms 1296 (filterings 377, products 919); eps = 1.0e-06
 remainder Z: Tr Z >= 4.354718e-07 (eps Tr X = 4.355e-07 expected for Tr Z), ||Z||_2 <= 7.258112e-08, max error bound 1.57e-13
 purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.0277796790;  Gurvits-Barnum threshold 1/(N-1) = 0.0285714286
 CERTIFIED: X = sum of 1296 nonnegative multiples of filterings of rho^2 and products + a separable remainder, so X lies in K_2(6).
+== python check_cone_certificate_verify.py adv_f3_filters_M2_s41.npz f3one_cert_atoms_M2_s41.npz 2 1
+D = 3, M = 2, atoms of 1 copies: Tr X = 7.746515e-01; max entrywise error bound on X 5.60e-14
+atoms 81 (filterings 1, products 80); eps = 1.0e-06
+remainder Z: Tr Z >= 7.746511e-07 (eps Tr X = 7.747e-07 expected for Tr Z), ||Z||_2 <= 2.582174e-07, max error bound 6.70e-14
+purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.1111114274;  Gurvits-Barnum threshold 1/(N-1) = 0.1250000000
+CERTIFIED: X = sum of 81 nonnegative multiples of filterings of rho^1 and products + a separable remainder, so X lies in K_1(3).
+== python check_cone_certificate_verify.py adv_f3_filters_M2_s42.npz f3one_cert_atoms_M2_s42.npz 2 1
+D = 3, M = 2, atoms of 1 copies: Tr X = 8.068620e-01; max entrywise error bound on X 5.45e-14
+atoms 81 (filterings 1, products 80); eps = 1.0e-06
+remainder Z: Tr Z >= 8.068616e-07 (eps Tr X = 8.069e-07 expected for Tr Z), ||Z||_2 <= 2.689542e-07, max error bound 6.48e-14
+purity bound ||Z||_2^2 / (Tr Z)^2 <= 0.1111114047;  Gurvits-Barnum threshold 1/(N-1) = 0.1250000000
+CERTIFIED: X = sum of 81 nonnegative multiples of filterings of rho^1 and products + a separable remainder, so X lies in K_1(3).

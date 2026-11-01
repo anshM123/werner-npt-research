@@ -917,7 +917,8 @@ operators and the filterings (a ⊗ b) ρ (a ⊗ b)^* of one Werner copy.
       two or three filterings), and the worst targets of adversaries that maximise the residual of exactly this model
       (m = 2, 3, two seeds each; refits 1–5 × 10^{−8}).
     - The five certified targets are certified in this form too (`python check_f3_certificate.py M seed eps rounds
-      one`): one filtering of ρ, 80 products and a separable remainder, with the same verifier.
+      one`): one filtering of ρ, 80 products and a separable remainder, with the same verifier. So are the worst
+      targets of the two-copy adversaries against this model (instances of KL_1; PT-min −0.030 and −0.049).
     - The fitted filtering's partial-transpose negative vector (a ⊗ b̄)|Φ⟩ overlaps the negative eigenvector of X^Γ
       by 0.95–0.998.
     - Why one is enough for the negativity: a 2-undistillable operator X on C³ ⊗ C³ has at most one negative
@@ -1049,7 +1050,7 @@ Python 3 with NumPy and SciPy; `check_mps.py` also uses mpmath. Outputs are in `
   `check_chain_six_nnls.log` for four copies and `check_chain_six_nnls_M3.log` for three).
 - `code/check_cone_certificate_verify.py` (`python check_cone_certificate_verify.py target.npz atoms.npz M m`; NumPy
   only, seconds): the rigorous check of a cone certificate (Sections 9 and 11). `logs/check_cone_certificate_verify.log`
-  runs it on all thirteen saved certificates.
+  runs it on all fifteen saved certificates.
 - `code/check_chain_certificate.py` (search; needs PyTorch and SciPy): the certified chain links in Section 9. Data:
   `chain_cert_target_M3.npz`, `chain_cert_target_M3_d025.npz`, `chain_cert_target_M4.npz` (filters) and the matching
   `chain_cert_atoms_*.npz` (atom parameters and weights); fit terms `chain_seeds_M3_d025.pkl` for the δ = 0.25 target.
