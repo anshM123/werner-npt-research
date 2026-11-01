@@ -2,7 +2,7 @@
 
 Ansh Mishra and Aryan Senthilkumar
 
-This repository collects our results, as of 31 October 2026, on the question of whether NPT bound entanglement exists.
+This repository collects our results, as of 1 November 2026, on the question of whether NPT bound entanglement exists.
 That is Problem 4 of Horodecki, Rudnicki and Życzkowski, PRX Quantum 3, 010101 (2022). The standard route to it is the
 qutrit Werner state ρ ∝ I − F/2: is it undistillable from every number of copies? At the endpoint α = 1/2, n-copy
 undistillability is equivalent (Costa Rico; Qi–Gupur–Wu–Guo; Song–Chen) to
@@ -10,7 +10,9 @@ undistillability is equivalent (Costa Rico; Qi–Gupur–Wu–Guo; Song–Chen) 
     q_n(C) = Σ_J (−1/2)^{|J|} ‖Tr_J C‖_2² ≥ 0   for every operator C of rank at most two on (C^d)^{⊗n}.
 
 **This repository does not solve the problem.** The all-copy statement is still open: we have neither a proof for
-every n nor a counterexample. In our exploratory searches (local optimisation; that code is not part of this
+every n nor a counterexample. The newest results are two four-copy theorems at the endpoint, both computer-assisted.
+They state that q_4(P_u + P_v) ≥ 0 and q_4(P_u − P_v) ≥ 0 for all orthonormal u, v (see
+[`four-replica-notes/FOUR_COPY_THEOREMS.md`](four-replica-notes/FOUR_COPY_THEOREMS.md)). In our exploratory searches (local optimisation; that code is not part of this
 repository) the minimum of q_n over rank-two C at α = 1/2 was always 0, and never negative, for n ≤ 11 copies at
 d = 3, 7 at d = 4, 6 at d = 5 and 5 at d = 6. The scripted searches here cover the bosonic sector for n ≤ 7 and
 local runs at three copies. What follows are partial results, each with its status.
