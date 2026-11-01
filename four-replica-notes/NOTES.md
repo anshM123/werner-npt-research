@@ -135,8 +135,8 @@ every feasible point given exact problem data.
   feasible, a value ≥ 0 certifies [[m_uu·x, m_uv·x], [m_uv·x, m_vv·x]] ≥ 0 on the whole relaxation, that is, every
   ratio and sign at once.
   - The lifted value is 4.4e-8 at n = 2 and 4.8e-7 at n = 3 (`logs/lift2_n2.log`, `logs/lift2_n3.log`).
-  - At n = 4 the lifted problem has 1.4e8 nonzeros and dense scaling blocks of total size 8e8, which we have not
-    solved.
+  - At n = 4 the lifted problem has 1.4e8 nonzeros and dense scaling blocks of total size 8e8. Our solver ran out
+    of memory on it (over 18 GB), so at n = 4 the evidence is the seven-ratio grid above.
 
 ## 4. Positive operators with a fixed spectrum, one letter
 
