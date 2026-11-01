@@ -1,0 +1,21 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+[1] exact data n=3: 255 parameters, 64 identity rows, 139 PSD blocks; 33s
+    equalities: 65 independent
+    exact zero k1: objective 0, moments/identities exact, min block eig -8.2e-17; 37s
+    exact zero k1: objective 0, moments/identities exact, min block eig -4.0e-17; 42s
+    exact zero k3: objective 0, moments/identities exact, min block eig -1.5e-16; 46s
+    exact zero k3: objective 0, moments/identities exact, min block eig -1.5e-16; 50s
+    exact zero rot: objective 0, moments/identities exact, min block eig -8.3e-17; 57s
+    exact zero rot: objective 0, moments/identities exact, min block eig -1.3e-16; 65s
+    exact zero rot: objective 0, moments/identities exact, min block eig -1.3e-16; 72s
+    exact zero rot: objective 0, moments/identities exact, min block eig -8.3e-17; 79s
+[2] 8 exact zeros; face: block dimension 1648 -> 1257, 70 blocks kept; 80s
+    Gram eigenvalues around the null threshold: largest null 1.2e-16, smallest kept 2.7e-07
+    null directions of the reduced constraints: 16 (objective component on them 2.0e-08)
+[3] float solve: status Solved, primal 3.495e-13, dual -1.665e-15, ||A^T z + c|| 9.3e-07, smallest reduced-dual eigenvalue 2.42e-01; 96s
+[4] rounded dual: identity residual 9.3e-07, dual objective residual 1.4e-15; 97s
+    column subset: equation rank 239 of 256; 239 unknowns corrected
+[5] exact correction: max |delta| 5.0e-08; identity exact True; 104s
+[6] exact LDL^T: all 70 blocks PSD True (smallest pivot 1.22e-02); rational sizes up to 315 / 317 bits; 109s
+[7] check on an entangled true point: in variable space True; equalities hold True; c.x(P) == q_3(P): True (1.1192799822); c.x(P) == y.E x(P) + sum_k Tr(S_k M_k(x(P))): True; y.E x(P) = 0; all 70 terms >= 0: True; 117s
+n=3 t=+1: exact identity c = E^T y + sum_k M_k^*(N_k S_k N_k^T), e.y = 0, 70 PSD blocks (exact LDL^T), max 315/317 bits -> CERTIFIED

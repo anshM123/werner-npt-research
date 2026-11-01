@@ -2,7 +2,8 @@
 
 Ansh Mishra and Aryan Senthilkumar
 
-**This folder does not prove the endpoint for every n, or for four copies.** Its results are:
+**This folder does not prove the endpoint for every n, or for four copies.** (Its exact certificates are at two and
+three copies, where the endpoint is already known.) Its results are:
 - semidefinite relaxations of the endpoint inequality at four copies, with what they certify numerically;
 - one exact identity about one of their constraints;
 - a first-order reformulation on a slice;
@@ -158,6 +159,43 @@ t = −0.9, −0.75, −0.1, 0.1, 0.75, 0.9 give 6.25108e-4, 3.90637e-3, 5.06256
   - At n = 4 the lifted problem has 1.4e8 nonzeros and dense scaling blocks of total size 8e8. Our solver ran out
     of memory on it (over 18 GB), so at n = 4 the evidence is the seven-ratio grid above.
 
+### Exact certificates at two and three copies (pipeline validation)
+
+For rank-two projectors (t = 1) we turned the two-letter relaxation into exact rational certificates at n = 2 and
+n = 3 (`exact_pilot_n2.py`, `exact_pilot_n3.py`, with `exact_site.py`, `exact_maps.py`, `exact_core.py`,
+`exact_coreN.py`; python-flint and gmpy2). Both statements are known; the point is that the pipeline works end to end.
+The steps:
+1. **Exact variable space and data.** Per-site irreducible modules come from integer Casimir eigenspaces intersected
+   with U(3) highest-weight coordinate subspaces, with rational Gram matrices. The swap identities are imposed by an
+   exact basis of the fixed subspace, and site symmetry by exact linear conditions. The maps for the moments, the
+   identities, the covariance blocks and the objective are exact.
+2. **Exact zeros.** We use u = a ⊗ ψ, v = a′ ⊗ ψ, with a and a′ rows of rational orthogonal matrices (Cayley
+   transforms). At n = 3 we add orthogonal products and rationally rotated interpolating zeros. Every zero is checked
+   to have objective exactly 0, and the face is the exact common kernel.
+3. **Float, then exact.** A floating-point solve of the face-reduced problem gives the dual, which we round to a 2^{−40}
+   grid. An exact least-norm correction then makes c = Eᵀy + Σ_k M_k*(N_k S_k N_k^T) and e·y = 0 hold exactly.
+4. **Exact positivity.** An exact LDLᵀ shows every reduced dual block S_k is PSD.
+5. **Independent check.** On an exact entangled projector, c·x(P) = q_n(P) = y·E x(P) + Σ_k Tr(S_k M_k(x(P))), with
+   y·E x(P) = 0 and every term ≥ 0.
+
+| | n = 2 | n = 3 |
+|---|---|---|
+| parameters / identity rank | 55 / 32 | 255 / 64 |
+| reduced blocks | 51 | 70 |
+| smallest reduced-dual eigenvalue (float) | 0.093 | 0.242 |
+| exact correction size | 4.6e-8 | 5.0e-8 |
+| smallest exact LDLᵀ pivot | 0.121 | 1.22e-2 |
+| largest rational (numerator / denominator bits) | 1198 / 1193 | 315 / 317 |
+| run time | 4.5 s | 117 s |
+| log | `logs/exact_pilot_n2.log` | `logs/exact_pilot_n3.log` |
+
+Both runs end in CERTIFIED, and we re-ran both independently.
+
+The four-copy version would be a new theorem: q_4(P) ≥ 0 for every rank-two projector P on (C³)^⊗4. It needs the data
+modulo a few primes with rational reconstruction, the covariance blocks compressed by fixed rational bases, exact
+moments of rationally rotated zeros, and an exact 1332 × 1332 correction. The floating-point face with real rational
+zero families is already strictly feasible at n = 4 (3.3e-3, covariance blocks only).
+
 ## 4. Positive operators with a fixed spectrum, one letter
 
 These results use C = λ P_u + (1 − λ) P_v with the one-letter relaxation of Section 1, adapted to the spectrum (cubic
@@ -268,6 +306,7 @@ parameters and more than 20 GB. The endpoint for every n is open.
 | `code/relaxations/herm4.py`, `validate_herm4.py`, `grid_herm4.py`, `check_n4.py` | Symmetry-reduced two-letter relaxation, the n = 4 grid, dual bounds and validation |
 | `code/relaxations/fr_herm4.py`, `fr2_herm4.py`, `zero_rot.py`, `zero_interp.py` | Facial reduction at the zeros, and generators of zero families |
 | `code/relaxations/exact_site.py`, `exact_maps.py` | Exact rational per-site irreps and maps (python-flint) |
+| `code/relaxations/exact_core.py`, `exact_coreN.py`, `exact_pilot_n2.py`, `exact_pilot_n3.py` | Exact certificates at n = 2, 3 |
 | `code/relaxations/local_herm.py`, `local_min.py` | Local searches for the true minima |
 | `code/relaxations/lift2.py` | The all-ratio lifted certificate |
 | `code/relaxations/audit_above_endpoint.py`, `ablate_n4.py` | The control at w = 0.55, and constraint ablations |
@@ -284,6 +323,7 @@ Main runs, from `code/relaxations/`:
     python lift2.py 3                                              # logs/lift2_n3.log
     python audit_above_endpoint.py 0.55                            # logs/audit_above_endpoint.log
     python ablate_n4.py ORTH,MARG,PT                               # logs/ablate_n4_pt.log
+    python exact_pilot_n3.py                                       # logs/exact_pilot_n3.log (CERTIFIED)
 
 The scripts need Python 3 with NumPy, SciPy and Clarabel. The searches in Sections 5 and 6 also use PyTorch, and
 the exact scripts use python-flint.

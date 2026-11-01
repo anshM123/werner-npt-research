@@ -1,0 +1,11 @@
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+[1] exact data: 55 parameters, 32 identity rows, 63 PSD blocks; 3.4s
+    equalities: 120 moment rows and 32 identity rows, 33 independent
+[2] 4 exact zeros (objective 0, moments and identities exact); face: block dimension 355 -> 315, 51 blocks kept; 3.5s
+[3] float solve: status AlmostSolved, primal -4.409e-08, dual -1.110e-16, ||A^T z + c|| 1.5e-05; 3.7s
+    smallest eigenvalue of the reduced dual blocks: 9.29e-02
+[4] rounding (2^-40 grid): residual before correction 1.5e-05; rank of the equations 55 of 56; correction size 4.6e-08; identity exact after correction: True; 3.8s
+[5] exact LDL^T: all 51 reduced dual blocks PSD: True (smallest pivot 1.21e-01); dual objective e.y = 0; 4.4s
+    rational sizes: certificate entries up to 1198 numerator bits / 1193 denominator bits; data entries up to 11 / 18 bits
+[6] check on an entangled true point: c.x(P) = 2840221/1988018 = q_2(P) = 2840221/1988018: True; y.E x(P) = 0; c.x(P) == y.E x(P) + sum_k Tr(S_k M_k): True; all 51 terms >= 0: True (smallest 0.00e+00)
+n=2 t=+1 pilot: c = E^T y + sum_k M_k^*(N_k S_k N_k^T) exactly, e.y = 0, all S_k PSD (exact LDL^T), 51 blocks, max 1198/1193 bits -> CERTIFIED
