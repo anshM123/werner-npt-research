@@ -13,8 +13,8 @@ Lifted problem in (+, -) coordinates (float reference: ../relaxations/lift_fr3.p
   block k:  L_k = [[F+_k(Y+), G_k(Z)], [G_k(Z)^T, F-_k(Y-)]] >= 0,  F+-_k(x) = N+-_k^T W_k(x) N+-_k,  G_k(x) = N+_k^T W_k(x) N-_k;
   objective (1/4) (c+ . Y+ + c- . Y- + 2 d . Z),  c+- = (fu + fv +- 2 fuv)/16,  d = (fu - fv)/16.
 Lifted true point for a pair (u, v) and a ratio (a, b): Y+ = (a+b)^2 x, Y- = (a-b)^2 x, Z = (a^2 - b^2) x,
-eps+ = (a+b)^2, eps- = (a-b)^2, zeta = a^2 - b^2 (x = x(u, v)); then L_k = M^T W_k(x) M with M = [(a+b) N+_k, (a-b) N-_k],
-so L_k >= 0, and the objective is
+eps+ = (a+b)^2, eps- = (a-b)^2, zeta = a^2 - b^2 (x = x(u, v)); then L_k = M^T W_k(x) M with M = [(a+b) N+_k, (a-b) N-_k]
+(after the span reduction of E3, M = [(a+b) N+_k B+_k^T, (a-b) N-_k B-_k^T]), so L_k >= 0, and the objective is
   (1/4) [(a+b)^2 (fu + fv + 2 fuv) + (a-b)^2 (fu + fv - 2 fuv) + 2 (a^2 - b^2)(fu - fv)] . x / 16
   = (1/4) [4 a^2 fu + 4 b^2 fv + 8 a b fuv] . x / 16 = (a^2 fu + b^2 fv + 2 a b fuv) . x / 16 = q_4(a P_u + b P_v).
 Certificate: y+, y-, yZ in Q^147 and S_k = [[A_k, B_k], [B_k^T, C_k]] >= 0 with, exactly,
@@ -102,3 +102,102 @@ E5 (2026-11-01 09:45) n = 4, lifted (all ratios): CERTIFIED (certL.py, default -
   In-pipeline check at ../exact4/pts/p_ent (exact): E x = e, c+ . x = stored q_4(P_u + P_v); for the ratios (1,0),
   (1,1), (1,-1), (2,1) the lifted objective equals y-terms (= 0) + sum_k Tr(S_k L_k) with all 286 terms >= 0.
   Saved certL.pkl (y+, y-, yZ and S_k as (num, den)) and float_dualL.pkl; md5 in logs/md5_first_run.txt.
+  PSD margin of the rounding + correction (diagonally normalised blocks, float evaluation of the exact certificate):
+  smallest eigenvalue 2.09e-4 (COVuv(2,2,2,2)4), largest change of a normalised entry by rounding + correction 1.5e-6.
+
+E6 (2026-11-01 09:51) independent verification, cross-check, negative controls.
+  verifyL.py (reads only linL.pkl, facedataLr.pkl, the certificate and the point files; imports numpy, gmpy2 and the
+  standard library only; 140 s, 2.03 GB private):
+    (0) c+ = (fu + fv + 2 fuv)/16, c- = (fu + fv - 2 fuv)/16, d = (fu - fv)/16 exactly (from the saved fu, fv, fuv);
+    (a) all three identities exact in all 1331 coordinates, e . y+ = e . y- = e . yZ = 0;
+    (b) all 286 lifted dual blocks PSD by exact LDL^T (smallest pivot 1.114e-5); S up to 1054/1056 bits, y up to
+        1047/1049 bits;
+    (c) 11 entangled true points (../exact4/pts p_ent, p_ent2, a_ent1-4; ../exact4m/pts p_ent, p_ent2, b_ent1-3) x
+        7 ratios (1,0), (0,1), (1,1), (1,-1), (2,1), (1,-3), (3,5): u . v = 0, E x = e, every joint block
+        H_k(x) = [[F+(x), G(x)], [G(x)^T, F-(x)]] PSD (exact fraction-free elimination of the integer matrix; this
+        gives L_k >= 0 at every ratio), q_4(a P_u + b P_v) recomputed from the 81 x 81 integer matrix
+        a |v|^2 u u^T + b |u|^2 v v^T with the verifier's own partial traces, lifted objective == q_4, identity at the
+        lifted point with y-terms = 0 and all 286 terms >= 0: 77 of 77 cases passed -> VERIFIED (verifyL.log).
+    Extra points (verifyL_near.log): the near-zero audit points a_near1 (q_4(P_u + P_v) = 2.40e-7), a_near4 (6.4e-5),
+    b_nin1 (q_4(P_u - P_v) = 1.82e-8), b_nk21 (5.1e-6), b_nsf1, b_nsf2, same 7 ratios: 42 of 42 passed -> VERIFIED.
+    The q_4 routine of verifyL.py agrees with the stored values (exact4: q_4(P_u + P_v), exact4m: q_4(P_u - P_v) and
+    q_4(P_u + P_v)) and with fu . x / 16 = q_4(P_u), fv . x / 16 = q_4(P_v) at p_ent (both folders) and a_near1.
+  crosscheckL.py 25 (182 s, 7.15 GB private): 25 random COV blocks with cross data, 15,189,529 cross numerators
+  recomputed with Python integers only (no primes): all equal to the CRT values; the reduced cross data equal
+  B+ Ghat B-^T (D / den) in all 1124 block-groups.
+  Negative controls (negctlL.py, then verifyL.py --cert <file> exact4/p_ent; negctlL_verify.log):
+    certL_neg_y.pkl  (y+_0 + 1/1024): e . y+ = 0 fails, identity + fails in 1154 coordinates, 6 of 7 ratio checks
+                     fail at p_ent (only (1,-1), where y+ has weight 0, passes) -> VERIFICATION FAILED;
+    certL_neg_S.pkl  (largest C-diagonal entry of COVuv(2,2,3,3)2|2 (r+ 33, r- 32), 9.53, negated): identity -
+                     fails in 282 coordinates, block not PSD -> VERIFICATION FAILED;
+    certL_neg_B.pkl  (cross entry B[0,0] of the same block + 1/1024): identity Z fails in 288 coordinates
+                     -> VERIFICATION FAILED.
+  For the last two the identity AT p_ent still held.  Explanation, checked exactly (affineL.py, 8 s): 43 of the
+  3120 diagonal functionals of the lifted blocks vanish on the whole affine space E x = e (f = lambda^T E with
+  lambda . e = 0; screened mod 134217689, all 43 confirmed in exact arithmetic), in 14 COV blocks, among them +0, +1,
+  +14, -0, -1, -23 of COVuv(2,2,3,3)2|2: the corrupted entries sit in rows that vanish at every feasible point
+  (B[0,0] in row +0 / column -0, the negated entry at -1), so they do not show at any true point.  (These are the face
+  directions killed by the equalities noted in EXACT4M_NOTES.md.  On the lifted feasible set such a diagonal entry is
+  lambda . E Y = (lambda . e) eps = 0, so the lifted primal has no strictly feasible point; possibly a contributor to
+  the interior-point difficulties of E4, not investigated further.  The lifted dual is strictly feasible, which is all
+  the certificate needs.)
+
+E7 (2026-11-01 10:07) reproducibility and final runs.
+  Full rerun build_linL -> facedataL -> spanL -> certL -> verifyL (logs/rerunL.sh, logs/rerunL.log; 09:52 - 10:06) on
+  copies of these scripts in a separate scratch folder whose ../exact4, ../exact4m and per-site code folder were directory links to the
+  real folders (read only), so the saved files here were not overwritten by the rerun: same numbers
+  throughout (Clarabel again Solved in 19 iterations, smallest lifted dual eigenvalue 9.607e-4, CERTIFIED, VERIFIED
+  77 of 77), and linL.pkl, facedataL.pkl, facedataLr.pkl, float_dualL.pkl and certL.pkl are byte-identical to the
+  first run (md5 in logs/md5_first_run.txt and at the end of logs/rerunL.log).
+  verifyL.py was then edited cosmetically (a loop variable renamed; the copy used in the rerun differs only in that
+  name) and verifyL.log, verifyL_near.log and negctlL_verify.log were regenerated with the final file (09:54 - 10:00):
+  identical results (77 of 77 and 42 of 42 VERIFIED; the three corrupted certificates FAIL).  The earlier logs are kept
+  in logs/pre_rename/.
+  Peak memory (private bytes) / wall: build_linL 1.14 GB / 15 s, facedataL 7.02 GB / 486 s (277 s in the rerun),
+  spanL 4.97 GB / 246 s (126 s), certL 10.16 GB / 452 s (387 s; Clarabel 289 s / 215 s), verifyL 2.03 GB / 83-140 s,
+  crosscheckL 7.15 GB / 182 s, affineL 2.03 GB / 8 s.  Nothing was killed.
+
+Statement certified
+-------------------
+  q_4(a P_u + b P_v) >= 0 for all real a, b and all orthonormal u, v in (C^3)^(x)4; equivalently q_4(C) >= 0 for every
+  Hermitian operator C of rank <= 2 on (C^3)^(x)4 (spectral decomposition C = a P_u + b P_v; rank <= 1: b = 0 with
+  any unit v orthogonal to u).
+  Real pairs: x = x(u, v) satisfies E x = e and W_k(x) >= 0 for every block (validity of the relaxation, as in
+  ../exact4 and ../exact4m; the lifted blocks are compressions of the same W_k), so for real (a, b) the lifted point
+  is feasible (L_k = M^T W_k(x) M) and its objective is q_4(a P_u + b P_v) (algebra in the header, checked exactly at
+  17 true points x 7 ratios); by the exact identities it equals sum_k Tr(S_k L_k) >= 0.
+  Complex pairs: by the realification argument of the t = +1 and t = -1 runs (EXACT4_NOTES.md E5, EXACT4M_NOTES.md
+  E5): the real part x_R of the twirled two-letter moments of (u, v) is the average of the true points of (u, v) and
+  (conj u, conj v), so E x_R = e and W_k(x_R) >= 0; for real (a, b) its lifted point is feasible and has objective
+  (q_4(a P_u + b P_v) + q_4(conj(a P_u + b P_v)))/2 = q_4(a P_u + b P_v).
+  By-product: the (+,+) and (-,-) parts are themselves certificates for t = +1 and t = -1 (c+- = E^T (4 y+-) +
+  sum_k F+-_k^*(4 A_k or 4 C_k), A_k, C_k >= 0 as principal submatrices of S_k), consistent with ../exact4, ../exact4m.
+
+Files
+-----
+  build_linL.py -> linL.pkl;  facedataL.py -> facedataL.pkl;  spanL.py -> facedataLr.pkl;  certL.py -> certL.pkl,
+  float_dualL.pkl;  verifyL.py (independent check);  crosscheckL.py;  affineL.py -> affineL.pkl;  negctlL.py ->
+  certL_neg_y.pkl, certL_neg_S.pkl, certL_neg_B.pkl (deliberately corrupted copies);  *.log;  logs/ (failed float
+  attempts of E4, first-run log and md5, rerun script and log, pre-rename verification logs).
+  core4.py, engine4.py, symm4.py, peakmem.py: unchanged copies from ../exact4 (md5 identical).
+
+Reproduce (from this folder; ../exact4 (lin4.pkl, face4.pkl, facedata4.pkl, pts/), ../exact4m (lin4m.pkl, face4m.pkl,
+facedata4m.pkl, pts/) and ../relaxations must be present; they are only read):
+  python build_linL.py                                                                   (linL.pkl)
+  python facedataL.py                                                                    (facedataL.pkl)
+  python spanL.py                                                                        (facedataLr.pkl)
+  python certL.py                                                    (certL.pkl; CERTIFIED line; default --mode whiten)
+  python verifyL.py                                         (11 entangled points x 7 ratios; VERIFIED)
+  python verifyL.py exact4/a_near1 exact4/a_near4 exact4m/b_nin1 exact4m/b_nk21 exact4m/b_nsf1 exact4m/b_nsf2
+  python crosscheckL.py 25 ; python affineL.py
+  python negctlL.py ; python verifyL.py --cert certL_neg_y.pkl exact4/p_ent ; python verifyL.py --cert certL_neg_S.pkl
+         exact4/p_ent ; python verifyL.py --cert certL_neg_B.pkl exact4/p_ent                (all three must FAIL)
+
+STATUS: n = 4, all ratios (a, b): CERTIFIED.  Exact identities c+/4 = E^T y+ + sum_k F+_k^*(A_k), c-/4 = E^T y- +
+sum_k F-_k^*(C_k), d/2 = E^T yZ + sum_k 2 G_k^*(B_k) and e . y+ = e . y- = e . yZ = 0 (all 3 x 1332 equations), all 286
+lifted dual blocks S_k = [[A_k, B_k], [B_k^T, C_k]] PSD by exact LDL^T, independent exact checks (verifyL.py) at 11
+entangled and 6 near-zero true points x 7 ratios passed (119 cases), cross data cross-checked, negative controls
+rejected, byte-identical rerun.  Statement: q_4(C) >= 0 for every Hermitian C of rank <= 2 on (C^3)^(x)4 (complex
+pairs via realification).  Computer-assisted; not externally refereed.  Validity rests on the exact constraint data
+(F+ and F- parts identical to the certified data of ../exact4 and ../exact4m; cross data from the same code path,
+cross-checked here).

@@ -52,11 +52,11 @@ def psd_int(M):
         if p == 0:
             if any(A[i][j] != 0 for j in range(i + 1, n)): return False
             continue
-        Ai = A[i]
+        Ri = A[i]
         for j in range(i + 1, n):
             Aj = A[j]; aji = Aj[i]
             for l in range(j, n):
-                q, rem = divmod(p * Aj[l] - aji * Ai[l], prev)
+                q, rem = divmod(p * Aj[l] - aji * Ri[l], prev)
                 assert rem == 0, "inexact Bareiss division"
                 Aj[l] = q
             for l in range(j + 1, n): A[l][j] = Aj[l]

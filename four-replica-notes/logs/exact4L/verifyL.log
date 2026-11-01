@@ -1,9 +1,9 @@
 loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120, largest 65), certificate certL.pkl; (0) c+, c-, d consistent with fu, fv, fuv: True; 1s
-(a) identity +: e . y+ = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 6s
-(a) identity -: e . y- = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 10s
-(a) identity Z: e . yZ = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 14s
-(b) exact LDL^T: all 286 lifted dual blocks PSD: True (smallest pivot 1.114e-05); S entries up to 1054/1056 bits, y up to 1047/1049 bits; 100s
-(c) exact4/p_ent: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 104s
+(a) identity +: e . y+ = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 5s
+(a) identity -: e . y- = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 7s
+(a) identity Z: e . yZ = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 9s
+(b) exact LDL^T: all 286 lifted dual blocks PSD: True (smallest pivot 1.114e-05); S entries up to 1054/1056 bits, y up to 1047/1049 bits; 56s
+(c) exact4/p_ent: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 58s
       (1,0): q4 4.610880e-01 obj==q4 True id True y True terms>=0 True
       (0,1): q4 5.186178e-01 obj==q4 True id True y True terms>=0 True
       (1,1): q4 9.987157e-01 obj==q4 True id True y True terms>=0 True
@@ -11,7 +11,7 @@ loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120
       (2,1): q4 2.400990e+00 obj==q4 True id True y True terms>=0 True
       (1,-3): q4 5.071618e+00 obj==q4 True id True y True terms>=0 True
       (3,5): q4 1.740039e+01 obj==q4 True id True y True terms>=0 True
-(c) exact4/p_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 108s
+(c) exact4/p_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 61s
       (1,0): q4 5.089816e-01 obj==q4 True id True y True terms>=0 True
       (0,1): q4 4.682054e-01 obj==q4 True id True y True terms>=0 True
       (1,1): q4 9.389678e-01 obj==q4 True id True y True terms>=0 True
@@ -19,7 +19,7 @@ loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120
       (2,1): q4 2.427693e+00 obj==q4 True id True y True terms>=0 True
       (1,-3): q4 4.837488e+00 obj==q4 True id True y True terms>=0 True
       (3,5): q4 1.571268e+01 obj==q4 True id True y True terms>=0 True
-(c) exact4/a_ent1: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 112s
+(c) exact4/a_ent1: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 63s
       (1,0): q4 4.758507e-01 obj==q4 True id True y True terms>=0 True
       (0,1): q4 4.856723e-01 obj==q4 True id True y True terms>=0 True
       (1,1): q4 9.401863e-01 obj==q4 True id True y True terms>=0 True
@@ -27,7 +27,7 @@ loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120
       (2,1): q4 2.346402e+00 obj==q4 True id True y True terms>=0 True
       (1,-3): q4 4.910911e+00 obj==q4 True id True y True terms>=0 True
       (3,5): q4 1.610441e+01 obj==q4 True id True y True terms>=0 True
-(c) exact4/a_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 115s
+(c) exact4/a_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 65s
       (1,0): q4 4.835477e-01 obj==q4 True id True y True terms>=0 True
       (0,1): q4 4.702487e-01 obj==q4 True id True y True terms>=0 True
       (1,1): q4 9.082063e-01 obj==q4 True id True y True terms>=0 True
@@ -35,7 +35,7 @@ loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120
       (2,1): q4 2.313259e+00 obj==q4 True id True y True terms>=0 True
       (1,-3): q4 4.852556e+00 obj==q4 True id True y True terms>=0 True
       (3,5): q4 1.542429e+01 obj==q4 True id True y True terms>=0 True
-(c) exact4/a_ent3: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 118s
+(c) exact4/a_ent3: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 68s
       (1,0): q4 5.078435e-01 obj==q4 True id True y True terms>=0 True
       (0,1): q4 5.002184e-01 obj==q4 True id True y True terms>=0 True
       (1,1): q4 1.006039e+00 obj==q4 True id True y True terms>=0 True
@@ -43,7 +43,7 @@ loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120
       (2,1): q4 2.527547e+00 obj==q4 True id True y True terms>=0 True
       (1,-3): q4 5.015878e+00 obj==q4 True id True y True terms>=0 True
       (3,5): q4 1.704571e+01 obj==q4 True id True y True terms>=0 True
-(c) exact4/a_ent4: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 122s
+(c) exact4/a_ent4: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 70s
       (1,0): q4 4.943796e-01 obj==q4 True id True y True terms>=0 True
       (0,1): q4 5.152068e-01 obj==q4 True id True y True terms>=0 True
       (1,1): q4 1.000938e+00 obj==q4 True id True y True terms>=0 True
@@ -51,7 +51,7 @@ loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120
       (2,1): q4 2.475428e+00 obj==q4 True id True y True terms>=0 True
       (1,-3): q4 5.157186e+00 obj==q4 True id True y True terms>=0 True
       (3,5): q4 1.719986e+01 obj==q4 True id True y True terms>=0 True
-(c) exact4m/p_ent: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 125s
+(c) exact4m/p_ent: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 72s
       (1,0): q4 4.555601e-01 obj==q4 True id True y True terms>=0 True
       (0,1): q4 4.912058e-01 obj==q4 True id True y True terms>=0 True
       (1,1): q4 9.731449e-01 obj==q4 True id True y True terms>=0 True
@@ -59,7 +59,7 @@ loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120
       (2,1): q4 2.366204e+00 obj==q4 True id True y True terms>=0 True
       (1,-3): q4 4.797275e+00 obj==q4 True id True y True terms>=0 True
       (3,5): q4 1.677587e+01 obj==q4 True id True y True terms>=0 True
-(c) exact4m/p_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 129s
+(c) exact4m/p_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 75s
       (1,0): q4 4.801795e-01 obj==q4 True id True y True terms>=0 True
       (0,1): q4 4.919184e-01 obj==q4 True id True y True terms>=0 True
       (1,1): q4 9.469267e-01 obj==q4 True id True y True terms>=0 True
@@ -67,7 +67,7 @@ loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120
       (2,1): q4 2.362294e+00 obj==q4 True id True y True terms>=0 True
       (1,-3): q4 4.982959e+00 obj==q4 True id True y True terms>=0 True
       (3,5): q4 1.624201e+01 obj==q4 True id True y True terms>=0 True
-(c) exact4m/b_ent1: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 133s
+(c) exact4m/b_ent1: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 77s
       (1,0): q4 4.540039e-01 obj==q4 True id True y True terms>=0 True
       (0,1): q4 4.649967e-01 obj==q4 True id True y True terms>=0 True
       (1,1): q4 8.990466e-01 obj==q4 True id True y True terms>=0 True
@@ -75,7 +75,7 @@ loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120
       (2,1): q4 2.241104e+00 obj==q4 True id True y True terms>=0 True
       (1,-3): q4 4.698835e+00 obj==q4 True id True y True terms>=0 True
       (3,5): q4 1.541164e+01 obj==q4 True id True y True terms>=0 True
-(c) exact4m/b_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 136s
+(c) exact4m/b_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 80s
       (1,0): q4 4.861224e-01 obj==q4 True id True y True terms>=0 True
       (0,1): q4 4.525589e-01 obj==q4 True id True y True terms>=0 True
       (1,1): q4 9.315358e-01 obj==q4 True id True y True terms>=0 True
@@ -83,7 +83,7 @@ loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120
       (2,1): q4 2.382758e+00 obj==q4 True id True y True terms>=0 True
       (1,-3): q4 4.580589e+00 obj==q4 True id True y True terms>=0 True
       (3,5): q4 1.558189e+01 obj==q4 True id True y True terms>=0 True
-(c) exact4m/b_ent3: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 138s
+(c) exact4m/b_ent3: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 82s
       (1,0): q4 5.049115e-01 obj==q4 True id True y True terms>=0 True
       (0,1): q4 4.868193e-01 obj==q4 True id True y True terms>=0 True
       (1,1): q4 9.831746e-01 obj==q4 True id True y True terms>=0 True
@@ -93,5 +93,5 @@ loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120
       (3,5): q4 1.658634e+01 obj==q4 True id True y True terms>=0 True
 (c) summary: 77 of 77 (point, ratio) cases passed
 VERIFIED
-[peakmem] python verifyL.py: exit 0, wall 140s, peak working set 1.31 GB, peak private 2.03 GB
+[peakmem] python verifyL.py: exit 0, wall 83s, peak working set 1.31 GB, peak private 2.03 GB
 EXIT 0

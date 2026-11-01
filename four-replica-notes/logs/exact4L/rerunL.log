@@ -1,0 +1,191 @@
+Sun Nov  1 09:51:56 EST 2026
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+exact variable space n=4: 1331 parameters, 150 groups; 3.0s
+[lin] fu, fv, fuv and 120 moment rows; 7.0s
+[lin] identity rows: 6186 raw rows, rank mod 1048573: 146; 8.7s
+[lin] equalities: 147 independent (identity rows alone: exact rank 146); max E entry 37 bits; 9.1s
+[lin] exact comparison: c+ == ../exact4/lin4.pkl c: True; c- == ../exact4m/lin4m.pkl c: True; c+ == lin4m cplus: True; E identical in both: True; e identical: True; moment rows identical: True; c+ - c- == fuv/4: True; d has 90 nonzero coordinates
+saved linL.pkl; 9.4s
+[peakmem] python build_linL.py: exit 0, wall 10s, peak working set 0.43 GB, peak private 1.14 GB
+B31 central element eigenvalues: [np.float64(-4.0), np.float64(-2.0), np.float64(-0.0), np.float64(3.0)]
+[dataL] faces: t=+1 zeros ['z_k1_a', 'z_k1_b', 'z_k3_a', 'z_k3_b', 'z_rk1_a', 'z_rk1_b', 'z_rk3_a', 'z_rk3_b', 'z_rint_a', 'z_rint_b', 'z_rint_c']; t=-1 zeros ['z_k2_a', 'z_k2_b', 'z_k4_a', 'z_k4_b', 'z_in_a', 'z_in_b', 'z_in_c', 'z_in_d', 'z_sf_a', 'z_sf_b', 'z_sf_c', 'z_sf_d', 'z_sf_e', 'z_sf_f', 'z_sf_g', 'z_sf_h']; class compressions U identical in both; 4.2s
+[dataL] reference face data loaded: 256 t=+1 blocks (7745 block-groups), 272 t=-1 blocks (8036 block-groups); 6.8s
+[dataL] pass uu: 152 COV blocks (max d+ + d- = 72); |Hhat| <= 2^65: 3 primes; 7.8s
+[dataL] pass uu done: running exact comparison with the saved face data: t=+1 2273 block-groups equal, 0 mismatches; t=-1 2421 equal, 0 mismatches; 61.7s
+[dataL] pass uv: 78 COV blocks (max d+ + d- = 129); |Hhat| <= 2^64: 3 primes; 61.8s
+[dataL] pass uv done: running exact comparison with the saved face data: t=+1 5374 block-groups equal, 0 mismatches; t=-1 5511 equal, 0 mismatches; 191.4s
+[dataL] pass vv: 152 COV blocks (max d+ + d- = 72); |Hhat| <= 2^65: 3 primes; 191.5s
+[dataL] pass vv done: running exact comparison with the saved face data: t=+1 7647 block-groups equal, 0 mismatches; t=-1 7932 equal, 0 mismatches; 252.1s
+[dataL] exact comparison of the F+ / F- parts with ../exact4/facedata4.pkl and ../exact4m/facedata4m.pkl: t=+1 7745 of 7745 block-groups equal (0 mismatches), t=-1 8036 of 8036 equal (0 mismatches): True; COV numerators up to 46 bits; 252.4s
+[dataL] cross data: 490 blocks with d+ + d- > 0 (382 COV, 108 X); 242 with G not identically zero; 57952701 numerator entries; 252.4s
+[dataL] exact checks at the zeros: G_k(x_z) = 0 for all 490 blocks at all 27 zeros (0 failures); F+_k(x_z) = 0 at the 11 t=+1 zeros (0 failures); F-_k(x_z) = 0 at the 16 t=-1 zeros (0 failures): True.  Not required and not zero: F+_k(x_z) != 0 at some t=-1 zero for 139 of 256 t=+1 face blocks, F-_k(x_z) != 0 at some t=+1 zero for 170 of 272 t=-1 face blocks; 273.7s
+saved facedataL.pkl (490 blocks); 275.1s
+[peakmem] python facedataL.py: exit 0, wall 277s, peak working set 6.34 GB, peak private 7.02 GB
+[spanL] loaded: 256 t=+1 face blocks, 272 t=-1 face blocks, 490 lifted blocks; 4s
+[spanL] 490 lifted blocks (242 with nonzero cross data); total dimension 9216 -> 3120 (separate spans of F+ / F- alone: 1556 / 1564); 286 blocks kept (largest 65, svec 35595, 242 with both parts); B entries <= 3 bits, numerators <= 48 bits; row-space completeness checked exactly; 124s
+[peakmem] python spanL.py: exit 0, wall 126s, peak working set 4.23 GB, peak private 4.97 GB
+[0] data: 1331 parameters, 147 equalities, 286 lifted blocks (178 COV, 108 X), total dimension 3120, largest 65; 1s
+[1] float lifted problem: 36040 rows x 3996 columns, nnz 14.4M; 22 scalar blocks, 264 PSD blocks (largest 65), sum svec^2 20.7M; 3s
+    Gram matrix built; 19s
+    rank 3893 of 3996 columns (103 null directions; null vectors touching Y+ / Y- / Z: 73 / 73 / 30); relative objective component on the null space 3.8e-15; column norms 1.6e-03 .. 1.9e+01; |c_j| / norm_j up to 1.4e+05; scaled Gram eigenvalues (non-null) 1.2e-06 .. 1; 58s
+    whitening +: rank 1291 of 1331
+    whitening -: rank 1298 of 1331
+    whitening Z: rank 1301 of 1331
+    solver input (whiten): 36040 x 3893, nnz 46.2M; 89s
+-------------------------------------------------------------
+           Clarabel.rs v0.11.1  -  Clever Acronym                
+
+                   (c) Paul Goulart                          
+                University of Oxford, 2022                   
+-------------------------------------------------------------
+
+problem:
+  variables     = 3893
+  constraints   = 36040
+  nnz(P)        = 0
+  nnz(A)        = 46249116
+  cones (total) = 267
+    :        Zero = 1,  numel = 442
+    : Nonnegative = 1,  numel = 22
+    : PSDTriangle = 265,  numel = (3,3,3,3,...,36)
+
+settings:
+  linear algebra: direct / faer, precision: 64 bit (24 threads)
+  max iter = 500, time limit = Inf,  max step = 0.990
+  tol_feas = 1.0e-10, tol_gap_abs = 1.0e-10, tol_gap_rel = 1.0e-10,
+
+
+  iter refine: on, reltol = 1.0e-13, abstol = 1.0e-12,
+               max iter = 10, stop ratio = 5.0
+  equilibrate: on, min_scale = 1.0e-4, max_scale = 1.0e4
+               max iter = 10
+
+
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+Terminated with status = Solved
+solve time = 215.3300074s
+[2] float solve: status Solved, iterations 19, primal +4.874e-10, dual +5.610e-10, ||A^T z + c|| 8.0e-08 (selected columns), 9.4e-08 (all columns); solve 248s
+    smallest lifted dual eigenvalue (Jacobi-normalised blocks) 9.607e-04 at Xuuvv(3, 3, 3, 3) (r+ 21, r- 21); blocks with eigenvalue < 1e-6: 0; smallest ++ part 6.620e-02, -- part 4.259e-02; eps-block dual [0.0, 0.0, 0.0], normalisation multiplier -5.61e-10
+    polish 1: max |dz| 1.9e-08; ||A^T z + c|| now 3.8e-10
+    polish 2: max |dz| 1.4e-10; ||A^T z + c|| now 3.5e-10
+    after polish: smallest lifted dual eigenvalue 9.607e-04; 307s
+[3] rounded dual, identity +: residual 2.1e-05, e . y residual -4.4e-13
+[3] rounded dual, identity -: residual 1.4e-05, e . y residual -8.8e-13
+[3] rounded dual, identity Z: residual 5.5e-06, e . y residual 2.0e-13
+[4] identity +: 9347 columns, equation rank 1291 of 1332 (diag R ratio at cut 1.3e-03, next 2.3e-15); 55 y's, 1236 dual entries; exact square solve 1291 x 1291 in 2s; max |delta| 1.0e-05, correction bits up to 1056; 316s
+[4] identity -: 9663 columns, equation rank 1298 of 1332 (diag R ratio at cut 1.3e-03, next 2.1e-15); 57 y's, 1241 dual entries; exact square solve 1298 x 1298 in 1s; max |delta| 6.9e-06, correction bits up to 610; 322s
+[4] identity Z: 16633 columns, equation rank 1301 of 1332 (diag R ratio at cut 1.6e-03, next 1.6e-15); 54 y's, 1247 dual entries; exact square solve 1301 x 1301 in 2s; max |delta| 3.3e-06, correction bits up to 724; 333s
+[5] identity + exact in all 1331 coordinates and e . y = 0: True
+[5] identity - exact in all 1331 coordinates and e . y = 0: True
+[5] identity Z exact in all 1331 coordinates and e . yZ = 0: True
+[6] exact LDL^T: all 286 lifted dual blocks PSD True (smallest pivot 1.11e-05, zero pivots 0); rational sizes up to 1054 / 1056 bits; LDL 46s; 383s
+[7] p_ent, ratio (1,0): lifted objective 0.4610879630; identity at the lifted point True; y-terms 0; all 286 terms >= 0: True (smallest 6.96e-06)
+[7] p_ent, ratio (1,1): lifted objective 0.9987157017; identity at the lifted point True; y-terms 0; all 286 terms >= 0: True (smallest 0.00e+00)
+[7] p_ent, ratio (1,-1): lifted objective 0.9606957587; identity at the lifted point True; y-terms 0; all 286 terms >= 0: True (smallest 0.00e+00)
+[7] p_ent, ratio (2,1): lifted objective 2.4009895621; identity at the lifted point True; y-terms 0; all 286 terms >= 0: True (smallest 6.96e-06)
+n=4 lifted: exact identities (+, -, Z) with e.y = 0, 286 PSD lifted blocks (exact LDL^T), max 1054/1056 bits, entangled true-point check passed -> CERTIFIED
+  static reg : on, ϵ1 = 1.0e-8, ϵ2 = 4.9e-32  dynamic reg: on, ϵ = 1.0e-13, δ = 2.0e-7iter    pcost        dcost       gap       pres      dres      k/t        μ       step      [peakmem] python certL.py: exit 0, wall 387s, peak working set 8.15 GB, peak private 10.16 GB
+loaded: 1331 parameters, 147 equalities, 286 lifted blocks (total dimension 3120, largest 65), certificate certL.pkl; (0) c+, c-, d consistent with fu, fv, fuv: True; 1s
+(a) identity +: e . y+ = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 5s
+(a) identity -: e . y- = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 7s
+(a) identity Z: e . yZ = 0: True; exact in all 1331 coordinates: True (0 nonzero residuals); 9s
+(b) exact LDL^T: all 286 lifted dual blocks PSD: True (smallest pivot 1.114e-05); S entries up to 1054/1056 bits, y up to 1047/1049 bits; 56s
+(c) exact4/p_ent: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 58s
+      (1,0): q4 4.610880e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 5.186178e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 9.987157e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 9.606958e-01 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.400990e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 5.071618e+00 obj==q4 True id True y True terms>=0 True
+      (3,5): q4 1.740039e+01 obj==q4 True id True y True terms>=0 True
+(c) exact4/p_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 61s
+      (1,0): q4 5.089816e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 4.682054e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 9.389678e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 1.015406e+00 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.427693e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.837488e+00 obj==q4 True id True y True terms>=0 True
+      (3,5): q4 1.571268e+01 obj==q4 True id True y True terms>=0 True
+(c) exact4/a_ent1: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 63s
+      (1,0): q4 4.758507e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 4.856723e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 9.401863e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 9.828597e-01 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.346402e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.910911e+00 obj==q4 True id True y True terms>=0 True
+      (3,5): q4 1.610441e+01 obj==q4 True id True y True terms>=0 True
+(c) exact4/a_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 66s
+      (1,0): q4 4.835477e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 4.702487e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 9.082063e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 9.993866e-01 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.313259e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.852556e+00 obj==q4 True id True y True terms>=0 True
+      (3,5): q4 1.542429e+01 obj==q4 True id True y True terms>=0 True
+(c) exact4/a_ent3: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 68s
+      (1,0): q4 5.078435e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 5.002184e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 1.006039e+00 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 1.010085e+00 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.527547e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 5.015878e+00 obj==q4 True id True y True terms>=0 True
+      (3,5): q4 1.704571e+01 obj==q4 True id True y True terms>=0 True
+(c) exact4/a_ent4: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 71s
+      (1,0): q4 4.943796e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 5.152068e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 1.000938e+00 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 1.018235e+00 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.475428e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 5.157186e+00 obj==q4 True id True y True terms>=0 True
+      (3,5): q4 1.719986e+01 obj==q4 True id True y True terms>=0 True
+(c) exact4m/p_ent: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 73s
+      (1,0): q4 4.555601e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 4.912058e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 9.731449e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 9.203869e-01 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.366204e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.797275e+00 obj==q4 True id True y True terms>=0 True
+      (3,5): q4 1.677587e+01 obj==q4 True id True y True terms>=0 True
+(c) exact4m/p_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 76s
+      (1,0): q4 4.801795e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 4.919184e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 9.469267e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 9.972691e-01 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.362294e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.982959e+00 obj==q4 True id True y True terms>=0 True
+      (3,5): q4 1.624201e+01 obj==q4 True id True y True terms>=0 True
+(c) exact4m/b_ent1: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 78s
+      (1,0): q4 4.540039e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 4.649967e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 8.990466e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 9.389544e-01 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.241104e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.698835e+00 obj==q4 True id True y True terms>=0 True
+      (3,5): q4 1.541164e+01 obj==q4 True id True y True terms>=0 True
+(c) exact4m/b_ent2: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 81s
+      (1,0): q4 4.861224e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 4.525589e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 9.315358e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 9.458268e-01 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.382758e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.580589e+00 obj==q4 True id True y True terms>=0 True
+      (3,5): q4 1.558189e+01 obj==q4 True id True y True terms>=0 True
+(c) exact4m/b_ent3: u.v = 0 True; E x = e True; all 286 joint blocks H_k(x) PSD True; 83s
+      (1,0): q4 5.049115e-01 obj==q4 True id True y True terms>=0 True
+      (0,1): q4 4.868193e-01 obj==q4 True id True y True terms>=0 True
+      (1,1): q4 9.831746e-01 obj==q4 True id True y True terms>=0 True
+      (1,-1): q4 1.000287e+00 obj==q4 True id True y True terms>=0 True
+      (2,1): q4 2.489353e+00 obj==q4 True id True y True terms>=0 True
+      (1,-3): q4 4.911953e+00 obj==q4 True id True y True terms>=0 True
+      (3,5): q4 1.658634e+01 obj==q4 True id True y True terms>=0 True
+(c) summary: 77 of 77 (point, ratio) cases passed
+VERIFIED
+[peakmem] python verifyL.py: exit 0, wall 84s, peak working set 1.31 GB, peak private 2.03 GB
+1d9341d0363666e20270b48d392f64f8 *linL.pkl
+02f0f5219e9c29d370ecf9cea4f5945c *facedataL.pkl
+21c0d894c269be48908c981e20e40852 *facedataLr.pkl
+59e89e62c2962d0ef081ca2403a81121 *float_dualL.pkl
+2dfea4eeda9c21307667b97fc89e897f *certL.pkl
+Sun Nov  1 10:06:44 EST 2026
+EXIT 0

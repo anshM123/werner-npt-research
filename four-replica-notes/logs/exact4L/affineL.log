@@ -1,0 +1,16 @@
+[affine] 3120 diagonal functionals of the lifted blocks; 43 vanish on E x = e modulo 134217689, 43 confirmed exactly, in 14 blocks; 7s
+   COVuu(2, 2, 2, 2)+4: +0 +6 -0 -7
+   COVuu(2, 2, 2, 3)+3|1: +0 -1
+   COVuu(2, 2, 3, 3)+2|2: +0 -0
+   COVuu(2, 3, 3, 3)+1|3: +2 -2
+   COVuu(3, 3, 3, 3)+4: +1 -1
+   COVuv(2, 2, 2, 2)4: +0 +1 +10 -0 -1 -11
+   COVuv(2, 2, 3, 3)2|2: +0 +1 +14 -0 -1 -23
+   COVuv(2, 3, 3, 3)1|3: +7
+   COVuv(3, 3, 3, 3)4: +0 +1 -0 -1 -11
+   COVvv(2, 2, 2, 2)+4: +0 +5 -0 -6
+   COVvv(2, 2, 2, 3)+3|1: +0 -1
+   COVvv(2, 2, 3, 3)+2|2: +0 +15 -0
+   COVvv(2, 3, 3, 3)+1|3: +2 -2
+   COVvv(3, 3, 3, 3)+4: +1 -1
+[peakmem] python affineL.py: exit 0, wall 8s, peak working set 1.30 GB, peak private 2.03 GB
