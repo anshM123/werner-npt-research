@@ -1,0 +1,17 @@
+[herm4 n=4] 1331 parameters {'uuuu': 47, 'uuuv': 303, 'uuvv': 631, 'uvvv': 303, 'vvvv': 47}, 267 W-blocks (max 12); 0.3s
+   identities: rank 146 (ORTHuuuv03: +16 (kept sv >= 9.9e-01, dropped <= 5.7e-15); ORTHuuuv13: +0 (kept sv >= inf, dropped <= 4.9e-15); ORTHuuuv23: +0 (kept sv >= inf, dropped <= 6.8e-15); ORTHuuvv02: +38 (kept sv >= 9.9e-01, dropped <= 6.2e-14); ORTHuuvv03: +0 (kept sv >= inf, dropped <= 6.2e-14); ORTHuuvv12: +0 (kept sv >= inf, dropped <= 7.1e-14); ORTHuuvv13: +0 (kept sv >= inf, dropped <= 7.1e-14); ORTHuvvv01: +16 (kept sv >= 9.9e-01, dropped <= 1.9e-14); ORTHuvvv02: +0 (kept sv >= inf, dropped <= 1.9e-14); ORTHuvvv03: +0 (kept sv >= inf, dropped <= 1.9e-14); MARGuuu: +10 (kept sv >= 1.0e+00, dropped <= 3.2e-15); MARGuuv: +28 (kept sv >= 4.3e-01, dropped <= 1.6e-12); MARGuvv: +28 (kept sv >= 2.8e-01, dropped <= 2.5e-12); MARGvvv: +10 (kept sv >= 9.8e-01, dropped <= 2.2e-15)); 22.2s
+      PT uuuu: 144 blocks so far; 26.0s
+      PT uuuv: 483 blocks so far; 47.9s
+      PT uuvv: 906 blocks so far; 111.9s
+      PT uvvv: 1245 blocks so far; 140.2s
+      PT vvvv: 1389 blocks so far; 144.8s
+      COV done: 1620 blocks; 209.6s
+   PSD blocks: 1902 ({'PT1': 564, 'PT2': 825, 'COV': 231, 'LE2': 282}), max size 72, 80210 svec rows, 70.5M stored entries; 259.0s
+build done in 259s; parameters 1331, identity rank 146, svec rows 80210, stored entries 70.5M
+n=4 t=-1.00: status AlmostSolved, iters 20, q relaxation -7.51560786e-08 (c.x -7.51560786e-08), moment res 2.7e-12, identity res 1.1e-12, min eig X:-8.3e-10, PT1:-3.9e-10, PT2:-5.6e-10, COV:-1.8e-10, LE2:-3.1e-09; solve 111s
+n=4 t=+1.00: status AlmostSolved, iters 22, q relaxation -4.23890501e-07 (c.x -4.23890501e-07), moment res 1.0e-11, identity res 2.9e-12, min eig X:-5.9e-09, PT1:-1.1e-09, PT2:-3.6e-09, COV:-1.2e-09, LE2:-7.8e-09; solve 111s
+n=4 t=-0.50: status AlmostSolved, iters 24, q relaxation 1.56256303e-02 (c.x 1.56256303e-02), moment res 9.6e-13, identity res 4.2e-13, min eig X:-3.6e-09, PT1:-1.2e-09, PT2:-3.7e-09, COV:-6.7e-10, LE2:-4.8e-09; solve 118s
+n=4 t=+0.50: status AlmostSolved, iters 25, q relaxation 1.56251946e-02 (c.x 1.56251946e-02), moment res 1.1e-11, identity res 2.3e-12, min eig X:-2.0e-09, PT1:-2.6e-10, PT2:-1.0e-09, COV:-3.2e-10, LE2:-1.8e-09; solve 124s
+n=4 t=-0.25: status AlmostSolved, iters 25, q relaxation 3.51574956e-02 (c.x 3.51574956e-02), moment res 8.0e-12, identity res 1.2e-12, min eig X:-4.6e-09, PT1:-2.2e-09, PT2:-5.9e-09, COV:-1.5e-09, LE2:-2.0e-08; solve 117s
+n=4 t=+0.25: status AlmostSolved, iters 27, q relaxation 3.51589011e-02 (c.x 3.51589011e-02), moment res 3.2e-11, identity res 3.6e-12, min eig X:-1.8e-08, PT1:-3.7e-09, PT2:-8.2e-09, COV:-3.2e-09, LE2:-2.5e-08; solve 136s
+n=4 t=+0.00: status AlmostSolved, iters 17, q relaxation 6.25000140e-02 (c.x 6.25000140e-02), moment res 8.6e-13, identity res 1.0e-12, min eig X:-1.8e-10, PT1:-2.9e-10, PT2:-2.2e-10, COV:-2.9e-10, LE2:-1.5e-09; solve 82s

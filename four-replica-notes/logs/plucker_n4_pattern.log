@@ -1,0 +1,5 @@
+start 0: max(LHS-RHS) +0.62774
+start 1: max(LHS-RHS) +0.20441
+start 2: max(LHS-RHS) +0.94738
+start 3: max(LHS-RHS) +0.92908
+d=3 n=4 variant=pattern: max LHS-RHS = +0.947376

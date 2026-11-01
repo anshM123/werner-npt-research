@@ -1,0 +1,11 @@
+build 230s (1331 parameters)
+   zero 0: reconstruction 2.3e-17, q = -2.4e-16, moment res 1.3e-15, identity res 1.6e-14, min eig -1.4e-16
+   zero 1: reconstruction 2.1e-17, q = 8.3e-17, moment res 2.1e-15, identity res 1.9e-14, min eig -1.6e-16
+   zero 2: reconstruction 2.4e-17, q = -1.8e-16, moment res 1.3e-15, identity res 1.5e-14, min eig -2.8e-16
+   local-search zero (seed 100, q -5.4e-17): reconstruction 3.5e-17, q = -6.4e-17, min eig -1.8e-16; 390s
+   local-search zero (seed 101, q 2.7e-16): reconstruction 4.8e-17, q = 3.1e-16, min eig -3.5e-16; 537s
+   blocks kept 1280, dropped 889; block dimension 10749 -> 5116; reduced A (36847, 1331); 568s
+   null directions 40, max |Ad v| / |Ad| = 9.5e-13, smallest kept eigenvalue ratio 1.6e-09
+   rank of reduced A 1291 / 1331; |objective on null(A)| = 1.1e-08
+   reduced problem (tol 1e-09): status Solved, iters 12, primal q 1.2130e-11, dual q -1.9873e-14, ||A^T z + c|| 9.3e-08, min eig reduced dual blocks 3.2e-04; 92s
+   reduced problem (tol 1e-11): status Solved, iters 13, primal q 1.1387e-13, dual q -9.4369e-15, ||A^T z + c|| 9.3e-10, min eig reduced dual blocks 3.2e-04; 101s

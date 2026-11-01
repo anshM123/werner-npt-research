@@ -1,0 +1,5 @@
+n=3 d=3 j=1 start 0: max violation L_j = -8.327e-17  (p=[0.3289 0.375  0.1711 0.125 ], A_u=0.2039, A_v=0.2039)
+n=3 d=3 j=1 start 1: max violation L_j = +5.551e-17  (p=[0.4238 0.375  0.0762 0.125 ], A_u=0.2988, A_v=0.2988)
+n=3 d=3 j=1 start 2: max violation L_j = -4.441e-16  (p=[0.3344 0.375  0.1656 0.125 ], A_u=0.2094, A_v=0.2094)
+n=3 d=3 j=1 start 3: max violation L_j = -1.388e-16  (p=[0.347 0.375 0.153 0.125], A_u=0.2220, A_v=0.2220)
+n=3 d=3 j=1: MAX over starts of [3p_3 - p_2 - sqrt(A A')] = +5.551e-17

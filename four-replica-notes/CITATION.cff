@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Four-replica relaxations at the qutrit Werner endpoint"
+authors:
+  - family-names: Mishra
+    given-names: Ansh
+  - family-names: Senthilkumar
+    given-names: Aryan
+date-released: 2026-11-01
+license: MIT
+keywords:
+  - NPT bound entanglement
+  - Werner states
+  - entanglement distillation
+  - semidefinite relaxations
+  - partial trace inequalities

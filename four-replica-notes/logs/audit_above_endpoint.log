@@ -1,0 +1,3 @@
+build 706s (w = 0.55)
+n=4 w=0.55 t=+1: status AlmostSolved, relaxation -1.172248e-01, explicit operator -1.822500e-02  (OK: relaxation <= explicit)
+n=4 w=0.55 t=-1: status AlmostSolved, relaxation -2.000000e-01, explicit operator -4.050000e-02  (OK: relaxation <= explicit)

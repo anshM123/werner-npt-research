@@ -1,0 +1,8 @@
+﻿[herm2 n=3] 1217 parameters {'uuuu': 114, 'uuuv': 280, 'uuvv': 429, 'uvvv': 280, 'vvvv': 114}, 436 W-blocks (max 6); 0.1s
+   equalities: 93448 rows, rank 1026; 237.9s
+   PSD blocks: 1874 ({'PTu': 1221, 'PTv': 201, 'COV': 162, 'LE2': 290}), max size 36; 248.5s
+n=3 C=0.5u-0.5v: status AlmostSolved, q relaxation 3.017302e-09 (local-search/product ref at n=3: 0.0), min eig -4.1e-12, solve 20.6s
+n=3 C=0.8u-0.2v: status AlmostSolved, q relaxation 4.500000e-02 (local-search/product ref at n=3: 0.045), min eig -2.8e-12, solve 24.7s
+n=3 C=0.6u+0.4v: status AlmostSolved, q relaxation 5.000092e-03 (local-search/product ref at n=3: 0.005), min eig -8.0e-10, solve 33.8s
+n=3 C=0.5u+0.5v: status AlmostSolved, q relaxation 3.166982e-08 (local-search/product ref at n=3: 0.0), min eig -1.2e-09, solve 27.8s
+n=3 C=0.75u+0.25v: status AlmostSolved, q relaxation 3.125002e-02 (local-search/product ref at n=3: 0.03125), min eig -1.4e-10, solve 38.3s

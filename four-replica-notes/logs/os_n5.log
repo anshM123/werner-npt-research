@@ -1,0 +1,4 @@
+n=5 start 0: g(u,v) = 5.00000000
+n=5 start 1: g(u,v) = 7.00000000
+n=5 start 2: g(u,v) = 7.00000000
+n=5: MAX g(u,v) over 3 starts = 7.00000000  (OS_n: <= 1)

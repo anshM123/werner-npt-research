@@ -1,0 +1,5 @@
+n=4 start 0: g(u,v) = 5.00000000
+n=4 start 1: g(u,v) = 5.00000000
+n=4 start 2: g(u,v) = 5.00000000
+n=4 start 3: g(u,v) = 5.00000000
+n=4: MAX g(u,v) over 4 starts = 5.00000000  (OS_n: <= 1)

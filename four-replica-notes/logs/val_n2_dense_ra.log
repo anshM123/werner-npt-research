@@ -1,0 +1,10 @@
+n=2 rank=2: relaxation built (23 params) in 0.4s; constraints ['QTR1', 'QTR2', 'Q01TR1', 'Q23TR1', 'QT1R1']
+  trial 0 (complex P): reconstruction residual 8.9e-16; moment residual 6.2e-15; PROJ residual 0.0e+00; objective/R^2 = 1.272933259574, direct q_n(P) = 1.272933259574 (diff 6.7e-16); 0.0s
+     min eigenvalue per constraint at the true point: {'Z': '-2.12e-17', 'QTR1': '-1.10e-16', 'QTR2': '-1.22e-16', 'Q01TR1': '-1.51e-16', 'Q23TR1': '-9.80e-17', 'QT1R1': '-2.78e-16'}
+  dense twirl built (6561 dim) in 1.7s
+     Z: dense vs block spectrum max diff 1.6e-16  (dense min -1.587e-16)
+     QTR1: dense vs block spectrum max diff 7.9e-16 (dense min eig -6.370e-17, asym 7.8e-18); 22s
+     QTR2: dense vs block spectrum max diff 6.7e-16 (dense min eig -1.893e-16, asym 1.1e-17); 32s
+     Q01TR1: dense vs block spectrum max diff 5.3e-15 (dense min eig -5.742e-16, asym 4.9e-17); 44s
+     Q23TR1: dense vs block spectrum max diff 6.4e-15 (dense min eig -5.394e-16, asym 3.1e-17); 56s
+     QT1R1: dense vs block spectrum max diff 2.5e-16 (dense min eig -8.746e-17, asym 7.8e-18); 66s

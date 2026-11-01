@@ -1,0 +1,2 @@
+n=5 rank=2 w=0.5 cons=QTR1: status AlmostSolved, iters 40, obj -2.9884424106e-02 -> q_n relaxation = -7.4711060265e-03  (build 682.9s, solve 597.7s)
+   min eig per constraint: {'Z': '-6.58e-09', 'QTR1': '-3.24e-09'}  moment res 5.8e-09, eq res 0.0e+00

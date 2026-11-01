@@ -1,0 +1,7 @@
+n=2: scalar problem (1925, 55), N = 55; build 1s
+   lifted problem (6968, 168), nnz 0.1M (scalar nnz 0.0M)
+   dense PSD scaling blocks: scalar sum k^2 = 0.1M (max m 18), lifted sum k^2 = 1.1M (max m 36)
+n=2 LIFTED (all ratios at once): status AlmostSolved, iters 16, primal +4.443304e-08, dual +4.437508e-08, ||A2^T z + c2||_inf 3.3e-07, E = [[0.5, 0.0759], [0.0759, 0.5]]; solve 1s
+   scalar check C = (1.0, 1.0): AlmostSolved, value +1.009285e-07
+   scalar check C = (1.0, -1.0): AlmostSolved, value +4.399054e-08
+   scalar check C = (1.0, 0.5): AlmostSolved, value +6.250032e-02

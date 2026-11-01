@@ -1,0 +1,14 @@
+n=2 rank=2: relaxation built (23 params) in 0.6s; constraints ['LE', 'PT1', 'PT2', 'PT1LE', 'PT2LE', 'QQ', 'QQQ', 'QQQQ', 'PROJ']
+  trial 0 (complex P): reconstruction residual 8.9e-16; moment residual 6.2e-15; PROJ residual 8.2e-16; objective/R^2 = 1.272933259574, direct q_n(P) = 1.272933259574 (diff 6.7e-16); 0.0s
+     min eigenvalue per constraint at the true point: {'Z': '-2.12e-17', 'LE': '-1.19e-16', 'PT1': '-1.57e-16', 'PT2': '7.73e-04', 'PT1LE': '1.13e-17', 'PT2LE': '-1.62e-16', 'QQ': '1.09e-01', 'QQQ': '6.93e-01', 'QQQQ': '3.06e+00'}
+  dense twirl built (6561 dim) in 1.2s
+     Z: dense vs block spectrum max diff 1.6e-16  (dense min -1.587e-16)
+     PROJ: dense identity residual 7.5e-17
+     LE: dense vs block spectrum max diff 4.2e-16 (dense min eig -1.558e-16); 19s
+     PT1: dense vs block spectrum max diff 1.7e-16 (dense min eig -7.113e-17); 27s
+     PT2: dense vs block spectrum max diff 3.3e-16 (dense min eig 4.520e-04); 36s
+     PT1LE: dense vs block spectrum max diff 3.6e-16 (dense min eig -1.589e-16); 45s
+     PT2LE: dense vs block spectrum max diff 3.3e-16 (dense min eig -2.371e-16); 54s
+     QQ: dense vs block spectrum max diff 7.9e-16 (dense min eig 1.212e-02); 64s
+     QQQ: dense vs block spectrum max diff 3.0e-15 (dense min eig 7.695e-02); 77s
+     QQQQ: dense vs block spectrum max diff 1.3e-14 (dense min eig 2.778e-01); 99s

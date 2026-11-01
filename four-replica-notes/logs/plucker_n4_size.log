@@ -1,0 +1,5 @@
+start 0: max(LHS-RHS) +0.88599
+start 1: max(LHS-RHS) +0.00047
+start 2: max(LHS-RHS) +0.94179
+start 3: max(LHS-RHS) +0.95176
+d=3 n=4 variant=size: max LHS-RHS = +0.951762

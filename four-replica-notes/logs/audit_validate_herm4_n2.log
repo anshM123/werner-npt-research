@@ -1,0 +1,15 @@
+[herm4 n=2] 55 parameters {'uuuu': 4, 'uuuv': 12, 'uuvv': 23, 'uvvv': 12, 'vvvv': 4}, 33 W-blocks (max 3); 0.0s
+   identities: rank 32 (ORTHuuuv03: +4 (kept sv >= 9.5e-01, dropped <= 5.6e-16); ORTHuuuv13: +0 (kept sv >= inf, dropped <= 9.7e-16); ORTHuuuv23: +0 (kept sv >= inf, dropped <= 1.2e-15); ORTHuuvv02: +8 (kept sv >= 8.4e-01, dropped <= 6.4e-16); ORTHuuvv03: +0 (kept sv >= inf, dropped <= 1.5e-15); ORTHuuvv12: +0 (kept sv >= inf, dropped <= 1.5e-15); ORTHuuvv13: +0 (kept sv >= inf, dropped <= 1.4e-15); ORTHuvvv01: +4 (kept sv >= 9.5e-01, dropped <= 6.5e-16); ORTHuvvv02: +0 (kept sv >= inf, dropped <= 3.7e-15); ORTHuvvv03: +0 (kept sv >= inf, dropped <= 3.6e-15); MARGuuu: +3 (kept sv >= 9.7e-01, dropped <= 6.0e-16); MARGuuv: +5 (kept sv >= 7.2e-01, dropped <= 1.8e-15); MARGuvv: +5 (kept sv >= 4.8e-01, dropped <= 3.0e-15); MARGvvv: +3 (kept sv >= 7.9e-01, dropped <= 7.7e-16)); 0.2s
+      PT uuuu: 18 blocks so far; 0.3s
+      PT uuuv: 66 blocks so far; 0.5s
+      PT uuvv: 127 blocks so far; 0.7s
+      PT uvvv: 175 blocks so far; 0.8s
+      PT vvvv: 193 blocks so far; 0.9s
+      COV done: 229 blocks; 1.1s
+   PSD blocks: 269 ({'PT1': 80, 'PT2': 113, 'COV': 36, 'LE2': 40}), max size 18, 1829 svec rows, 0.1M stored entries; 1.4s
+n=2 trial 0 (complex) C=(1.0,-1.0): reconstruction 1.2e-16, moment res 3.8e-15, identity res 1.3e-15, objective 1.535080554672 vs q_n(C) 1.535080554672; min eig X:1.1e-03, PT1:-3.0e-17, PT2:-7.3e-17, COV:-4.2e-17, LE2:6.6e-03; 0.1s
+n=2 trial 0 (complex) C=(1.0,0.25): reconstruction 1.2e-16, moment res 3.8e-15, identity res 1.3e-15, objective 0.624266756596 vs q_n(C) 0.624266756596; min eig X:1.1e-03, PT1:-3.0e-17, PT2:-7.3e-17, COV:-4.2e-17, LE2:6.6e-03; 0.1s
+n=2 trial 0 (complex) C=(1.0,-0.5): reconstruction 1.2e-16, moment res 3.8e-15, identity res 1.3e-15, objective 0.907654574849 vs q_n(C) 0.907654574849; min eig X:1.1e-03, PT1:-3.0e-17, PT2:-7.3e-17, COV:-4.2e-17, LE2:6.6e-03; 0.1s
+n=2 trial 1 (real) C=(1.0,-1.0): reconstruction 1.7e-16, moment res 1.6e-15, identity res 8.5e-16, objective 1.221354672352 vs q_n(C) 1.221354672352; min eig X:1.2e-04, PT1:-4.2e-17, PT2:-7.8e-17, COV:-5.8e-17, LE2:8.2e-04; 0.0s
+n=2 trial 1 (real) C=(1.0,0.25): reconstruction 1.7e-16, moment res 1.6e-15, identity res 8.5e-16, objective 0.384254658626 vs q_n(C) 0.384254658626; min eig X:1.2e-04, PT1:-4.2e-17, PT2:-7.8e-17, COV:-5.8e-17, LE2:8.2e-04; 0.0s
+n=2 trial 1 (real) C=(1.0,-0.5): reconstruction 1.7e-16, moment res 1.6e-15, identity res 8.5e-16, objective 0.683423374785 vs q_n(C) 0.683423374785; min eig X:1.2e-04, PT1:-4.2e-17, PT2:-7.8e-17, COV:-5.8e-17, LE2:8.2e-04; 0.0s

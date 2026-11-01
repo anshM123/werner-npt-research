@@ -1,0 +1,6 @@
+(a) n=1: max |(2/3)I - M_1 - (2/3) rho^G^n - D| = 0.0e+00;  D coefficients >= 0: True
+(a) n=2: max |(2/3)I - M_1 - (2/3) rho^G^n - D| = 5.6e-17;  D coefficients >= 0: True
+(c) n=3: W-type R: rank 2, exclusive-click fraction 0.666666666667, pair traces max 0.0e+00, q_n = -1.110e-16 (slice formula W_full - W_1/2 = -1.110e-16)
+(c) n=3: P_2 (x) |0..0><1..1|: exclusive-click fraction 0.666666666667
+(c) n=4: W-type R: rank 2, exclusive-click fraction 0.666666666667, pair traces max 0.0e+00, q_n = +1.110e-16 (slice formula W_full - W_1/2 = +1.110e-16)
+(c) n=4: P_2 (x) |0..0><1..1|: exclusive-click fraction 0.666666666667

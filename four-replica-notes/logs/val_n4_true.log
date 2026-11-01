@@ -1,0 +1,1 @@
+n=4 rank=2: relaxation built (541 params) in 68.4s; constraints ['LE', 'PT1', 'PT2', 'PT1LE', 'PT2LE', 'QTR1', 'QTR2', 'PROJ']

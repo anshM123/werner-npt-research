@@ -1,0 +1,6 @@
+[n=4 rank=2] 35 sorted Z-patterns, 541 free parameters, 227 W-blocks (max size 5); 0.1s
+   LE (Q on (3,), T on (), 2 terms, group 6): 198 reduced blocks, max size 12, rows 1561; 10.4s
+   PT1 (Q on (), T on (3,), 1 terms, group 6): 198 reduced blocks, max size 12, rows 1561; 16.2s
+   PT2 (Q on (), T on (2, 3), 1 terms, group 4): 312 reduced blocks, max size 12, rows 2379; 28.3s
+n=4 rank=2 cons=LE+PT1+PT2: status Solved, iters 27, obj -1.2204966797e+00 -> q_n relaxation = -3.0512416993e-01  (build 28.3s, solve 9.6s)
+   min eig per constraint: {'Z': '-4.56e-11', 'LE': '-1.57e-10', 'PT1': '-1.86e-10', 'PT2': '-5.23e-11'}  moment res 1.1e-12, eq res 0.0e+00

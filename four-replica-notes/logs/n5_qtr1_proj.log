@@ -1,0 +1,5 @@
+[n=5 rank=2] 56 sorted Z-patterns, 2380 free parameters, 550 W-blocks (max size 9); 1.7s
+   QTR1 (1 terms, target B31, symmetry group 2): 325 reduced blocks, max size 36, rows 21601; 1784.9s
+   PROJ: 1818 identity rows, rank 108; 1979.3s
+n=5 spec=[1.0, 1.0] w=0.5 cons=QTR1+PROJ: status AlmostSolved, iters 33, obj -2.9869851098e-02 -> q_n relaxation = -7.4674627745e-03  (build 1979.3s, solve 716.7s)
+   min eig per constraint: {'Z': '-1.23e-08', 'QTR1': '-7.60e-10'}  moment res 8.9e-10, eq res 6.9e-10
