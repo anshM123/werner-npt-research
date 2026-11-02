@@ -241,8 +241,9 @@ Then for every operator C on C^3 ⊗ (A ⊕ C e),
 
 *Proof.* The blocks of Z are X, √(ρτ) P, (−1)^{m+1}√(ρ/τ) Q and (−1)^{m+1} ρ Y. In q_{0,K}(Z) the trace over K gives
 X̂_0 + (−1)^{m+1} ρ Y, and its q_1 contains the cross term 2(−1)^{m+1} ρ Re B_1(X̂_0, Y). Subtracting from the identity of
-"One free copy" (where, with b = 0, the Y-sum is q_1(Y)) gives the formula. At ρ = τ = 1 it is the collapse identity of
-"Grouping the sector copies" with one group. ∎
+"One free copy" (where, with b = 0, the Y-sum is q_1(Y)) gives the formula. At ρ = τ = 1, Z = UC with U = P_A + (−1)^{m−1} P_B, and the formula is the one-group collapse plus the
+term Σ_full − Γ_X, which appears because all m planar copies share the group (see "Two planes on one side cannot share a
+group"); it vanishes for m = 1. ∎
 
 Since Z has rank at most that of C, the two-copy theorem on C^3 ⊗ K gives, for C of rank at most two and all ρ, τ > 0,
 that 2^m q_n(C) is at least the right-hand side.
@@ -252,12 +253,14 @@ that 2^m q_n(C) is at least the right-hand side.
 
 *Proof.* Write X = (1 ⊗ |c⟩) Z with Z : C^3 ⊗ A → C^3 of rank at most two. Then X̂_μ = L(σ_μ c), where L(w) = Z(1 ⊗ |w⟩)
 is a 3 × 3 matrix of rank at most two. So w ↦ q_1(L(w)) is a Hermitian form ⟨w|𝔐|w⟩ with 𝔐 ≥ 0. With weights
-w_μ = [μ has no identity factor] − 2^{1−m} + [μ = 0], we have Σ_full − Γ_X = Σ_μ w_μ q_1(X̂_μ) = Tr(𝔐 Δ_c), where
-Δ_c = Σ_μ w_μ σ_μ |c⟩⟨c| σ_μ. Since Σ_{μ full} |⟨v|σ_μ|c⟩|² = ⟨c ⊗ v|⊗_s(2 − F_s)|c ⊗ v⟩ and Σ_μ |⟨v|σ_μ|c⟩|² = 2^m‖c‖²‖v‖²,
+ω_μ = [μ has no identity factor] − 2^{1−m} + [μ = 0], we have Σ_full − Γ_X = Σ_μ ω_μ q_1(X̂_μ) = Tr(𝔐 Δ_c), where
+Δ_c = Σ_μ ω_μ σ_μ |c⟩⟨c| σ_μ. Since Σ_{μ full} |⟨v|σ_μ|c⟩|² = ⟨c ⊗ v|⊗_s(2 − F_s)|c ⊗ v⟩ and Σ_μ |⟨v|σ_μ|c⟩|² = 2^m‖c‖²‖v‖²,
 we get ⟨v|Δ_c|v⟩ = ⟨c ⊗ v|⊗_s(2 − F_s) − 2 + F_A|c ⊗ v⟩ ≥ 0 by the operator inequality in the proof of Lemma R. So
 Δ_c ≥ 0 and Tr(𝔐 Δ_c) ≥ 0. The co-range version follows by taking adjoints. ∎
 
-For generic X of rank two the inequality fails; the gap Σ_full − Γ_X reaches −2‖X‖².
+Without the hypothesis on the range the inequality can fail at rank two. The gap Σ_full − Γ_X reaches −2‖X‖², for
+example at X = |0⟩⟨1| ⊗ 2^{−1/2} 1_{K_1} ⊗ |k⟩⟨k′| ⊗ |k⟩⟨k| ⊗ … with k ⊥ k′. It fails only on a small open set; random
+rank-two X satisfy it.
 
 **Theorem E.** For every m, every C of rank at most two whose range lies in C^3 ⊗ span{c, e} for some c ∈ A has
 q_n(C) ≥ 0, whatever its co-range.
@@ -267,11 +270,14 @@ Proposition M with ρ = τ = 1 then gives 2^m q_n(C) ≥ (Σ_full − Γ_X) + (2
 3 × 3 blocks of P and Q have rank at most two. For an arbitrary co-range, the proof of Corollary B gives
 q_n(C) ≥ q_n(P_V C P_V), and P_V C P_V satisfies the hypotheses with co-range in V. ∎
 
-For m ≤ 2 this is in Theorem C. If c is a product vector, span{c, e} is a two-sector space of lines and the one-sided
-Theorem D covers it. So the new cases are m ≥ 3 with c entangled; their generic members are thick at every copy.
+For m ≤ 2 this is also in Theorem C (with [T1] when m = 2; Theorem E needs only the two-copy theorem). If c is a product
+vector, span{c, e} is a two-sector space of lines and the one-sided Theorem D covers it. More generally, if c has
+two-dimensional local support at two or fewer sector copies, the one-sided Theorem C covers the class (with [T1] when
+there are two). So the new cases are those where c has two-dimensional local support at three or more sector copies.
+Generic members are thick at every copy.
 
-**The rest of the class reduces to one inequality.** In Proposition M, the bound is separable in ρ and τ. The optimal
-choices give
+**The rest of the class reduces to one inequality.** In Proposition M, the bound is separable in ρ and τ. Since
+Γ_X ≥ 0 (the two-copy theorem for X) and q_1(Y), q̃(P), q̃(Q) ≥ 0, taking the supremum over ρ, τ > 0 gives
 
     2^m q_n(C) ≥ Σ_full + q_1(Y) + 2^m (q̃(P) + q̃(Q)) − 2√(Γ_X q_1(Y)) − 4√(q̃(P) q̃(Q)).
 
@@ -279,10 +285,20 @@ Write s = √Σ_full, g = √Γ_X and y = √q_1(Y). If g ≤ s the right side i
 (y − s)² − 2y(g − s) + (2^{m+1} − 4)√(q̃(P) q̃(Q)). So the endpoint holds on the whole class (one free copy, one
 excitation, every rank-two C with range and co-range in V) as soon as
 
-    (⋆)   √q_1(Y) · (√Γ_X − √Σ_full) ≤ (2^m − 2) √(q̃(P) q̃(Q))   for every rank-two C in the class.
+    (⋆)   √q_1(Y) · (√Γ_X − √Σ_full) ≤ (2^m − 2) √(q̃(P) q̃(Q))   for every C of rank at most two in the class.
 
-We have not proved (⋆). Numerically the largest ratio of the two sides is 4.0000 at m = 3 and 4, where the needed
-constants are 6 and 14. At m = 2 the needed constant 2 is too small, and that case stays with Theorem C. Fixed choices
+We have not proved (⋆). It holds when q_1(Y) = 0, and also when q̃(P) q̃(Q) = 0. For example, if q̃(Q) = 0 and Q ≠ 0,
+every block of Q is a multiple of one rank-two projector. That forces the co-range of C into C^3 ⊗ span{w, e}, so Lemma
+R′ applies to C*. If Q = 0, then rank X ≤ 1 whenever q_1(Y) > 0. So (⋆) is needed only where q_1(Y), q̃(P) and q̃(Q) are
+all positive.
+
+Numerically the largest ratio of the two sides is 4, attained, at m = 2, 3, 4, where the needed constants are 2, 6 and
+14. An explicit operator attains 4 at every m (strings in orthonormal bases of the planes): C* = |R_1⟩⟨L_1| + |R_2⟩⟨L_2|
+with R_1 = |0⟩|0…0⟩ + |1⟩|e⟩, L_1 = |1⟩|0…0⟩ + |0⟩|e⟩, R_2 = −|0⟩|110…0⟩ + |1⟩|e⟩ and L_2 = |1⟩|110…0⟩ + |0⟩|e⟩. It has
+Σ_full = 0, Γ_X = 4, q_1(Y) = 4 and q̃(P) = q̃(Q) = 1. Adding a sector copy with a product factor leaves all five
+quantities unchanged, so the supremum does not decrease with m. The maximisers found share a shape: Y has rank one and
+trace zero, X has rank two with equal singular values, and Σ_full = 0, X̂_0 = 0, Γ_X = 2‖X‖². (⋆) with constant 4 would
+settle every m ≥ 3. By the compression of Corollary B it would also cover range in V with any co-range. At m = 2 the needed constant 2 is too small, and that case stays with Theorem C. Fixed choices
 ρ = τ = 1 do not suffice (the bound reaches −2‖C‖²), and a version of (⋆) with squares instead of square roots is false.
 
 Checks: `code/check_free_copy_excitation.py` (`logs/check_free_copy_excitation.log`, m = 3, 4) covers:
@@ -291,7 +307,10 @@ Checks: `code/check_free_copy_excitation.py` (`logs/check_free_copy_excitation.l
 - Theorem E with arbitrary co-range, minimum ≥ 3·10⁻¹⁷ against a rank-three control at −0.5;
 - the largest ratio in (⋆).
 
-This section has not yet had an independent referee.
+An independent referee re-derived this section and checked it with its own code at m = 1 to 4. It checked Proposition M
+against the one-free-copy identity and the sign of D_1, every step of Lemma R′ (with rank-three controls), the
+compression for an arbitrary co-range piece by piece, and the reduction to (⋆), and it found the explicit maximiser
+above. It also found no gap at the edge cases. It found no mathematical error, and its fixes are applied above.
 
 ## Two free copies
 
