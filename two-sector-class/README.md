@@ -11,8 +11,9 @@ operators.
 Later sections free one or two copies entirely. They prove the inequality when the two sectors carry rank-one blocks
 (Theorems A and A₂), and for every rank-two operator when the planes are spread out over the sector copies (Theorem C,
 an exact reduction to at most three copies of larger dimension). These cover a four-copy class that is thick at every
-copy, some open cases of Tomar's §8, and (with three sectors) the operators on C^3 ⊗ span{1…1, 2…2, 3…3} for every
-number of copies.
+copy, some open cases of Tomar's §8, and (with three sectors) the rank-two operators on C^3 ⊗ span{1…1, 2…2, 3…3} for
+every number of copies. Collapsing blocks of copies one at a time (Theorem D) gives, for every n, classes that are thick
+at every copy and need only the two-copy theorem.
 
 ## Setting
 
@@ -366,20 +367,75 @@ Checks:
 - `code/check_group_gap.py` (`logs/check_group_gap.log`, f = 0 and 1) checks the closed form of the gap, its smallest
   eigenvalue −2 and the rank-two example above; over rank one the gap is ≥ −7·10⁻¹⁶.
 
-**More than two sectors.** The same bookkeeping works for r sectors S_i = ⊗_s V_{i,s} (i = 1, …, r) with V_{1,s}, …,
-V_{r,s} mutually orthogonal at every sector copy, grouped so that each sector has at most one planar factor in each
-group, as long as phases ε_i with ε_i conj(ε_j) = (−1)^{m−g} exist for all i ≠ j. For r = 2 they always do (this is U above). For r = 3 every V_{i,s} is a line, and the phases exist exactly when
-m − g is even, with all ε_i = 1. Then, for every operator C on H_F ⊗ (S_1 ⊕ S_2 ⊕ S_3),
+**More than two sectors.** The same bookkeeping works for r sectors S_i = ⊗_s V_{i,s} (i = 1, …, r), with
+V_{1,s}, …, V_{r,s} mutually orthogonal at every sector copy and grouped so that each sector has at most one planar
+factor in each group, as long as there are phases ε_i with ε_i conj(ε_j) = (−1)^{m−g} for all i ≠ j. Then the identity
+above holds with U = Σ_i ε_i P_{S_i}, and with Σ_{i≠j} q̃_F(X_ij) in place of q̃_F(P) + q̃_F(Q), where X_ij is the block
+of C from H_F ⊗ S_j to H_F ⊗ S_i. For r = 2 such phases always exist (this is U above). For r = 3 every V_{i,s} is a
+line. The conditions on the three pairs force ε_1 = ε_2 = ε_3 and (−1)^{m−g} = 1, so the phases exist exactly when
+m − g is even, and then U = 1. So if m − g is even, then for every operator C on H_F ⊗ (S_1 ⊕ S_2 ⊕ S_3),
 
     q_n(C) = 2^{g−m} q_{F ∪ {K_1, …, K_g}}(C) + (1 − 2^{g−m}) Σ_{i ≠ j} q_F(X_ij),
 
-where X_ij is the block of C from S_j to S_i and each K_k ≅ C^3 is spanned by the three sector strings on G_k. Take
-g = 1 for odd m and g = 2 for even m. So for every m and every rank-two C with range and co-range in
-C^3 ⊗ span{1…1, 2…2, 3…3} (in any local bases), q_{m+1}(C) ≥ 0: by the two-copy theorem when m is odd, and by the
-three-copy theorem [T1] when m is even. For odd m the same holds with two free copies, C^9 ⊗ span{1…1, 2…2, 3…3}.
-Generic members are thick at every copy. Theorem C covers them only when f + m ≤ 3. This paragraph is checked by
-`code/check_three_sectors.py` (`logs/check_three_sectors.log`: identity to 8·10⁻¹⁶, adversarial minima of q_n/‖C‖² ≥
-−1.3·10⁻¹⁶ at n = 4, 5, 6, and controls with m − g odd that fail at 3·10⁻²). It has not yet had an independent referee.
+where X_ij is read as an operator on H_F (S_i and S_j are lines) and each K_k ≅ C^3 is spanned by the three sector
+strings on G_k. Take g = 1 for odd m and g = 2 for even m. So for every m and every C of rank at most two with range
+and co-range in C^3 ⊗ span{1…1, 2…2, 3…3}, q_{m+1}(C) ≥ 0. Here i…i is the product of the i-th vectors of an
+orthonormal basis chosen at each sector copy, the same basis for range and co-range. The merged operator is C itself,
+so its form is nonnegative by the two-copy theorem when m is odd and by [T1] at d = 3 when m is even. Each X_ij has rank
+at most two, so q_1(X_ij) ≥ 0, and 1 − 2^{g−m} ≥ 0. For odd m the same argument with two free copies gives
+q_{m+2}(C) ≥ 0 for range and co-range in C^9 ⊗ span{1…1, 2…2, 3…3}. It uses [T1] for the merged operator and the
+two-copy theorem for the blocks X_ij.
+
+Generic members are thick at every copy, and Theorem C covers them only when f + m ≤ 3. For n ≤ 3 these statements
+follow from the two- and three-copy theorems, so they are new from four copies on. They are also outside
+[T2, Thms. 4.1–4.7], which need the range (or co-range) in V_0 + V_1 up to local unitaries. For m ≥ 3, contracting the
+free copy of a generic range would put three product vectors that are orthogonal at every copy into V_0 + V_1 on the m
+sector copies, and there are none. With no free copy and three copies, the class is the same-code product code of
+Wu–Zou [WZ, Remark C.3], and the identity reproduces their closed form.
+
+Checks: `code/check_three_sectors.py` (`logs/check_three_sectors.log`) gives the identity to 8·10⁻¹⁶ and adversarial
+minima of q_n/‖C‖² ≥ −1.3·10⁻¹⁶ at n = 4, 5, 6; controls with m − g odd fail at 3·10⁻².
+
+**Products of blocks.** Both identities hold whatever the free copies are, so they can be applied to one block of
+copies at a time. Split the copies into blocks, and let the range and co-range of C lie in S_1 ⊗ … ⊗ S_k, where each
+S_i lives on its own block and is one of the following:
+- C^3 on a single copy (a free copy), with weight g_i = 1;
+- a two-sector space A_i ⊕ B_i on the block, grouped as in Theorem C, with weight g_i = max(a_i, b_i, 1);
+- a three-sector space span{1…1, 2…2, 3…3} on the block (in local bases), with weight g_i = 1 if the block has odd
+  size and g_i = 2 if it has even size.
+
+**Theorem D.** If g_1 + … + g_k ≤ 3, then q_n(C) ≥ 0 for every C of rank at most two with range and co-range in
+S_1 ⊗ … ⊗ S_k. If the weights add up to at most 2, the proof uses only the two-copy theorem.
+
+*Proof.* Induction on the number of blocks that are not single copies; single copies may have any dimension. Collapse
+one such block, treating every other copy as free. The identity writes q_n(C) as a positive multiple of the form of UC
+(U = 1 for a three-sector block) with that block replaced by g_i copies of dimension at most four, plus a nonnegative
+multiple of a sum of
+q of rank-two operators whose range and co-range lie in the product of the other S_j (these are the q̃ terms, or the
+blocks X_ij). Both are problems of the same kind with one block fewer to collapse and weight sum at most 3. When only
+single copies are left there are at most three of them, and the endpoint theorem holds for up to three copies of any
+dimension [FHPV, BGH, T1]; for at most two copies the two-copy theorem suffices. ∎
+
+Examples that use only the two-copy theorem and are thick at every copy:
+- for even n, C^3 ⊗ span{1^{n−1}, 2^{n−1}, 3^{n−1}} (one free copy and an odd three-sector block);
+- for odd n ≥ 3, (L_1 ⊗ e_2 ⊕ e_1 ⊗ L_2) ⊗ span{1^{n−2}, 2^{n−2}, 3^{n−2}}, with L_s a plane and e_s ⊥ L_s;
+- at four copies, (L_1 ⊗ e_2 ⊕ e_1 ⊗ L_2) ⊗ (L_3 ⊗ e_4 ⊕ e_3 ⊗ L_4);
+- at n = m + m′ copies with m, m′ odd, span{1^m, 2^m, 3^m} ⊗ span{1^{m′}, 2^{m′}, 3^{m′}}.
+
+With [T1] the budget is 3: for example three odd three-sector blocks, or a free copy and two odd ones.
+
+**Where the content lies.** The copies of type (1, 1) in Theorem C are thin: their local support A_s ⊕ B_s is a plane.
+The thin-copy reduction removes them and stays inside the class, since a contraction at such a copy maps A ⊕ B into
+the same kind of space on the other copies. So beyond the original two-sector theorem, Theorem C is about at most
+f + 2g ≤ 6 − f thick copies, that is at most five. Three-sector blocks are different: every copy of such a block is
+thick. So Theorem D gives classes that are thick at every copy for every n.
+
+Checks:
+- `code/check_ghz_blocks.py` (`logs/check_ghz_blocks.log`): the two-stage identity for two three-sector blocks, to
+  10⁻¹⁵ (n ≤ 6), and adversarial minima.
+- `code/check_product_blocks.py` (`logs/check_product_blocks.log`): mixed products of free copies, two-sector groups and
+  three-sector blocks up to n = 6. The adversarial minima of q_n/‖C‖² over rank two are ≥ 0 up to rounding, while
+  rank-three members of the same supports reach −0.125 to −0.5, so the search finds negative values when they exist.
 
 ## The two-copy critical point
 
@@ -438,6 +494,8 @@ of this shape violates the endpoint inequality, for any number of copies.
   to 2.5·10⁻¹⁵, and adversarial minima for Theorem C and the [T2, §8] shapes; see "Grouping the sector copies".
 - `code/check_group_gap.py` (`logs/check_group_gap.log`): the gap when two planes share a group.
 - `code/check_three_sectors.py` (`logs/check_three_sectors.log`): three sectors, the identity and adversarial minima.
+- `code/check_ghz_blocks.py`, `code/check_product_blocks.py` (`logs/check_ghz_blocks.log`,
+  `logs/check_product_blocks.log`): products of blocks (Theorem D).
 
 An independent referee re-derived every step of the sections before "One free copy" and re-ran the checks with
 separately written code, up to n = 5. It found no mathematical error. Its wording and attribution fixes are applied
@@ -451,8 +509,12 @@ showing that the rank hypotheses are needed. It found no mathematical error, and
 fourth independent referee did the same for "Grouping the sector copies" at n = 1 to 5 (652 identity tests, every
 valid g, ranks one to full, controls with the wrong sign of U and with two planes in one group). It found no
 mathematical error; its fixes (the derivation of the identity, the embedding, the one-sided statement, the example's
-notation, the §8 subspaces and the gap remark) are applied above. The paragraph "More than two sectors" was added
-afterwards and has not yet had an independent referee.
+notation, the §8 subspaces and the gap remark) are applied above. A fifth independent referee re-derived the identity of "More than two sectors" and repeated the checks with its own
+code at n = 1 to 6: 414 identity tests for three sectors and 200 for two sectors and d = 4, adversarial minima at
+n = 4, 5, 6, and controls showing that the optimiser finds negative values at rank three and at t = 0.55. It found no
+mathematical error, and its fixes (U for general r, the parity condition, the bases, the theorems used, novelty) are
+applied above. "Products of blocks" (Theorem D) and "Where the content lies" were added afterwards and have not yet had
+an independent referee.
 
 ## References
 

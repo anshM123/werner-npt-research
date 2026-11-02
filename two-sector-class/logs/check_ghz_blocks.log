@@ -1,0 +1,6 @@
+f=0 blocks=(1,1) -> g=(1,1), n=2, collapsed copies 2: two-stage identity max rel error 4.7e-16; adversarial min q_n/|C|^2 over rank-2 = -2.217e-16 (4 starts)
+f=0 blocks=(3,1) -> g=(1,1), n=4, collapsed copies 2: two-stage identity max rel error 3.4e-16; adversarial min q_n/|C|^2 over rank-2 = +7.416e-17 (4 starts)
+f=0 blocks=(3,3) -> g=(1,1), n=6, collapsed copies 2: two-stage identity max rel error 1.0e-15; adversarial min q_n/|C|^2 over rank-2 = -1.804e-16 (3 starts)
+f=0 blocks=(2,3) -> g=(2,1), n=5, collapsed copies 3: two-stage identity max rel error 4.8e-16; adversarial min q_n/|C|^2 over rank-2 = -2.637e-16 (3 starts)
+f=1 blocks=(3,1) -> g=(1,1), n=5, collapsed copies 3: two-stage identity max rel error 6.3e-16; adversarial min q_n/|C|^2 over rank-2 = +8.333e-15 (3 starts)
+f=0 blocks=(2,2) -> g=(2,2), n=4, collapsed copies 4: two-stage identity max rel error 3.3e-16; adversarial min q_n/|C|^2 over rank-2 = +4.501e-16 (2 starts)
