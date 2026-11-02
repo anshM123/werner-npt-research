@@ -114,6 +114,22 @@ This fails close to the thin boundary, where the descent uses other directions.
 * **It is not the compression conjecture.** That conjecture asks for a single finite compression to a plane at one copy
   that lowers R. That fails at some points. ORB only asks for an infinitesimal squeeze, possibly at second order, at
   thick points.
+* **It does not hold for every t.** For large t and odd n the term (−t)^n |Tr X|² takes over and the trap above
+  appears. Descents started at thick projectors and positive operators then stop inside, at thick near-projectors with
+  very negative R. The threshold t_c(n) is:
+
+  | n | t_c(n) | evidence |
+  |---|---|---|
+  | 3 | ≈ 1.48 | no stop up to 1.45; 2 of 6 starts stop at 1.5, all at 1.6 |
+  | 5 | ≈ 1.045 | none at 1.03; 3 of 4 at 1.06 |
+  | 7 | ≈ 0.97 | none at 0.95; both at 1.0 |
+  | 2 | — | no stop up to t = 2, consistent with the good sign of the trace term at even n |
+
+  The endpoint t = 1/2 lies well inside the good range for every n tested. A heuristic shows why the trap lives near
+  t = 1 rather than near 1/2. For a random thick plane W, Page-type purities give
+  R_t(P_W) ≈ (1 − t/3)^n + 2((1 − 3t)/3)^n. For odd n this is negative only for t above a value that tends to 1, the
+  point where X ↦ Tr(X) I − tX stops being positive. At t = 1/2 it equals (5/6)^n − 2(1/6)^n > 0. Whether
+  t_c(n) > 1/2 for every n is part of the conjecture.
 
 ## A formula for the second variation
 
