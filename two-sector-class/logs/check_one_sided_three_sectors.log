@@ -1,5 +1,5 @@
 f=1 m=2 (n=3): one-sided identity max rel error 5.4e-16; adversarial min q_n/|C|^2 (range in V, any co-range) = +1.041e-17 (3 starts)
 f=1 m=3 (n=4): one-sided identity max rel error 5.5e-16; adversarial min q_n/|C|^2 (range in V, any co-range) = -3.079e-17 (4 starts)
-f=1 m=4 (n=5): one-sided identity max rel error 0.0e+00; adversarial min q_n/|C|^2 (range in V, any co-range) = +1.154e-15 (3 starts)
+f=1 m=4 (n=5): one-sided identity max rel error 6.3e-16; adversarial min q_n/|C|^2 (range in V, any co-range) = -3.665e-17 (3 starts)   [rerun: 4 trials, seed 13; an earlier run with seed 3 printed 0.0e+00 because both differences rounded to exactly zero]
 f=2 m=3 (n=5): one-sided identity max rel error 4.8e-16; adversarial min q_n/|C|^2 (range in V, any co-range) = +4.325e-16 (3 starts)
 f=0 m=4 (n=4): one-sided identity max rel error 4.5e-16; adversarial min q_n/|C|^2 (range in V, any co-range) = +2.415e-15 (3 starts)

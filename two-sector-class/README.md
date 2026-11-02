@@ -432,34 +432,42 @@ With [T1] the budget is 3: for example three odd three-sector blocks, or a free 
 **One side is enough.** The co-range can be left arbitrary. Take a three-sector block of m copies and let R be the
 other copies. For C with range in H_R ⊗ span{1…1, 2…2, 3…3}, expand the co-range factor on the block in the local
 bases. A partial trace over copies J of the block keeps |j…j⟩⟨w| only if the string w equals j on J. Two such pieces
-have orthogonal partial traces unless every copy of the block is traced, and then only constant strings survive.
+have orthogonal partial traces unless every copy of the block is traced, and then only the pieces with w = j…j survive,
+and these belong to CQ.
 This gives the exact identity
 
     q_n(C) = q_n(CQ) + Σ_j Σ_{w not constant} 2^{−|A(j,w)|} q_R(⟨j…j|C|w⟩),
 
 where Q projects the co-range onto H_R ⊗ span{1…1, 2…2, 3…3}, A(j, w) is the set of copies where w_s = j, and
-⟨j…j|C|w⟩ is the operator on H_R obtained by contracting the block. For a two-sector group the proof of Corollary B
-gives q_n(C) ≥ q_n(CQ) in the same way. In both cases each extra term is q_R of an operator of rank at most two whose
-range lies in the product of the other blocks' spaces.
+⟨j…j|C|w⟩ is the operator on H_R obtained by contracting the block. For a two-sector block, the proof of Corollary B
+writes q_n(C) − q_n(CQ) as a sum of nonnegative multiples of terms q_R(Y), using the separable form of the one-copy form
+at the planar copies. In both cases each Y has rank at most two, and its range lies in the product of the other blocks'
+spaces. So q_n(C) ≥ q_n(CQ) once these terms are known to be nonnegative. The compression is the co-range splitting of
+[T2, Lemma 4.8], with the local bases of the block in place of span{0, 1, 2}.
 
 **Theorem D (one-sided).** If the weights add up to at most 3, then q_n(C) ≥ 0 for every C of rank at most two with
 range in S_1 ⊗ … ⊗ S_k, whatever the co-range. The same holds with range and co-range exchanged.
 
-*Proof.* Induction on the number of blocks. Compress the co-range one block at a time as above. The extra terms are
-one-sided problems on fewer blocks, so they are nonnegative by induction; when only free copies are left, there are at
-most three, and the endpoint theorem covers them. At the end the operator is P_V C P_V, with V = S_1 ⊗ … ⊗ S_k. It has
-rank at most two, and its range and co-range lie in V, so Theorem D applies. ∎
+*Proof.* Induction on the number of blocks that are not free copies. Compress the co-range one block at a time as
+above. Each extra term is a one-sided problem on the other blocks, with weight sum at most 3 − g_i, so it is nonnegative
+by induction. When only free copies are left, there are at most three of them, and the endpoint theorem covers them.
+After the last compression the operator is CP_V = P_V C P_V, with V = S_1 ⊗ … ⊗ S_k. It has rank at most two, and its
+range and co-range lie in V, so Theorem D applies. If the weights add up to at most 2, only the two-copy theorem is used.
+The statement with range and co-range exchanged follows from q_n(C*) = q_n(C). ∎
 
-For example, for every even n, every rank-two C whose range lies in C^3 ⊗ span{1^{n−1}, 2^{n−1}, 3^{n−1}} has
+For example, for every even n, every C of rank at most two whose range lies in C^3 ⊗ span{1^{n−1}, 2^{n−1}, 3^{n−1}} has
 q_n(C) ≥ 0, whatever its co-range in (C^3)^{⊗n}. This uses only the two-copy theorem.
 
-For C with range and co-range in one plane (for instance Hermitian C), and blocks that are free copies or three-sector
-blocks, the budget is 4. The collapses keep C itself, so the last step is the four-copy theorem of
-`four-replica-notes/` (computer-assisted, not refereed), and the remainders are covered by Theorem D.
+For C with range and co-range in one plane inside S_1 ⊗ … ⊗ S_k (for instance a Hermitian C of rank two), and blocks
+that are free copies or three-sector blocks, the budget is 4. The collapses keep C itself (U = 1), and every copy left at
+the end is a qutrit. So the last step is the four-copy theorem of `four-replica-notes/` for such C on (C^3)^{⊗4}, which
+is computer-assisted and not refereed. Each remainder has weight at most 3 and is covered by two-sided Theorem D.
+Two-sector blocks are excluded, because their collapse can turn C into UC with U ≠ 1 and creates copies of dimension
+four. Blocks of size two do not shrink, so this adds new cases only from five copies on.
 
 Checks:
 - `code/check_one_sided_three_sectors.py` (`logs/check_one_sided_three_sectors.log`): the identity to 6·10⁻¹⁶ and
-  adversarial minima ≥ −3·10⁻¹⁷ at n = 3, 4, 5.
+  adversarial minima ≥ −3.7·10⁻¹⁷ at n = 3, 4, 5.
 - `code/check_product_blocks_one_sided.py` (`logs/check_product_blocks_one_sided.log`): mixed products up to n = 6 with
   arbitrary co-range. The minima are ≥ 0 up to rounding; rank-three members reach −0.125 to −0.5.
 
@@ -560,8 +568,10 @@ applied above. A sixth independent referee checked "Products of blocks" and "Whe
 to 6. It ran the induction to its leaves for 17 configurations of blocks: the identity is exact, the coefficients are
 nonnegative, and the leaves have rank at most two on at most three copies of dimension at most four. It also ran
 adversarial minima for the examples and for weight-3 products, with rank-three and t = 0.55 controls, and checked the
-thin-copy reduction. It found no mathematical error, and its fixes are applied above. "One side is enough" was added
-afterwards and has not yet had an independent referee.
+thin-copy reduction. It found no mathematical error, and its fixes are applied above. A seventh independent referee checked "One side is enough" with its
+own code at n = 3 to 6. It found the one-sided identities exact, ran the one-sided induction end to end, and ran
+adversarial minima for one-sided and Hermitian weight-4 products, with rank-three and t = 0.55 controls. It found no
+mathematical error, and its fixes are applied above.
 
 ## References
 
