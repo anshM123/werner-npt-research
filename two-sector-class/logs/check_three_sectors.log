@@ -1,0 +1,6 @@
+f=1 m=3 g=1 (n=4, m-g even): identity max rel error 5.4e-16; adversarial min q_n/|C|^2 over rank-2 members = -1.249e-16 (6 starts)
+f=1 m=4 g=2 (n=5, m-g even): identity max rel error 8.0e-16; adversarial min q_n/|C|^2 over rank-2 members = -1.076e-16 (6 starts)
+f=1 m=5 g=1 (n=6, m-g even): identity max rel error 5.3e-16; adversarial min q_n/|C|^2 over rank-2 members = +6.384e-16 (3 starts)
+f=2 m=3 g=1 (n=5, m-g even): identity max rel error 3.9e-16; adversarial min q_n/|C|^2 over rank-2 members = +8.916e-16 (4 starts)
+f=1 m=3 g=2 (n=4, m-g odd): identity max rel error 3.2e-02
+f=1 m=2 g=1 (n=3, m-g odd): identity max rel error 7.3e-02

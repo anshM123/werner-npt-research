@@ -1,0 +1,2 @@
+f=0: closed form error 3.3e-16; smallest eigenvalue of G/||X||^2 over all X = -2.000000; example (rank 2) G/||X||^2 = -2.000000; adversarial min over rank one = -2.22e-16, over rank two = -2.000000 (6 starts)
+f=1: closed form error 3.3e-16; smallest eigenvalue of G/||X||^2 over all X = -2.000000; example (rank 2) G/||X||^2 = -2.000000; adversarial min over rank one = -6.66e-16, over rank two = -2.000000 (6 starts)

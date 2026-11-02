@@ -1,2 +1,4 @@
 f=1 groups=[[(2, 1), (1, 2)], [(2, 1)]] (n=4, g=2): identity max rel error 5.1e-16; adversarial min q_n/|C|^2 over rank-2 = +5.690e-16 (3 starts)
 f=1 groups=[[(2, 1), (1, 2)], [(2, 1), (1, 2)]] (n=5, g=2): identity max rel error 5.0e-16; adversarial min q_n/|C|^2 over rank-2 = +6.939e-16 (2 starts)
+f=1 groups=[[(2, 1), (1, 2)], [(2, 1)]] (n=4, g=2): identity max rel error 1.8e-16; adversarial min q_n/|C|^2 over rank-2 = +1.451e-16 (8 starts)
+f=1 groups=[[(2, 1), (1, 2)], [(2, 1), (1, 2)]] (n=5, g=2): identity max rel error 2.5e-16; adversarial min q_n/|C|^2 over rank-2 = -1.596e-16 (5 starts)
