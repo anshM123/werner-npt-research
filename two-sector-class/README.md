@@ -47,8 +47,9 @@ How the class relates to known ones (write a and b for the numbers of copies at 
   at every copy. So the Corollary covers every rank-two operator whose range lies in
   span{0…0, 2_i 0…0 (i ∈ T_0), 1…1, 2_j 1…1 (j ∈ T_1)} and whose co-range is arbitrary: the two GHZ backbones of
   [T2] with their tails on disjoint sets of copies. [T2, §8] lists range in V_0 + V_1 with an arbitrary co-range as
-  open, apart from ranges spanned by vectors of V_0 ∪ V_1 and co-ranges orthogonal to all partner strings. What is
-  left of that case is ranges in which both backbones have a tail at a common copy.
+  open, except for operators whose range is spanned by two vectors of V_0 ∪ V_1 or whose co-range is orthogonal to
+  all partner strings. What stays open in that case is the ranges in which a tail of the 0…0 backbone and a tail of
+  the 1…1 backbone sit at the same copy, outside Tomar's conditions.
 - **Credits.** The co-range splitting in the proof of the Corollary is the argument of [T2, Lemma 4.8]. The rank-one
   bound below is [Song–Chen, Prop. 8]. Wu–Zou [WZ, App. C.2] treat locally orthogonal product codes at three copies,
   which contains the case where every copy has (dim A_s, dim B_s) = (1,1).
