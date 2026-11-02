@@ -326,6 +326,23 @@ many, because a QR factorisation of the rank-deficient set of invariant directio
 projection is needed.) At copies 1 and 2 the gradient is 0.10–0.12, so the full two-sided orbit still descends. Both
 the squeeze version and the two-sided version of the orbit property are therefore genuinely multi-copy.
 
+**The Levi form alone is not enough.** At a point C critical for the two-sided filters, C itself lies in V_C with
+q_r(C) = 0, so "q_r is not positive semidefinite on V_C" would be a pure eigenvalue statement, and with it ORB2 would
+follow. It is false at two copies. `data/levi_positive_n2.npy` is a thick rank-two operator with
+- R = 0.143505, thickness 0.17 and σ₂/σ₁ = 0.44;
+- two-sided gradient 1.4·10⁻¹⁵;
+- q_r positive on the 28-dimensional complement of C in V_C, with smallest eigenvalue 0.0037.
+
+It is still a saddle. Along e^{εX} C e^{εY} the second variation of q_r is
+
+    q_r(XC + CY) + Re⟨L, X²C + 2XCY + CY²⟩,    L = Φ_r(C),
+
+and replacing (X, Y) by (iX, iY) flips the sign of the second term. So at a point where the Levi form is positive, any
+descent comes from the curvature term ⟨L, ·⟩. Here the real second variation has 8 negative directions, and the
+smallest is −3.64 (per unit tangent norm). Along the best of them the Levi part is +0.85 and the curvature part is
+−4.49. `code/levi_positive_point.py` checks these numbers (`logs/levi_positive_point.log`). So a proof of ORB2 has to
+control the pairing of L with the second-order motion, not only q_r on the tangent space.
+
 ## Status
 
 Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 7. A proof of ORB_n for all n would prove
@@ -344,6 +361,8 @@ NPT bound entanglement; we do not have one.
   critical point on the rank-two variety.
 * `code/two_sided_single_copy_min.py` (with `data/two_sided_single_copy_min_n3.npy`): a strict local minimum for two-sided
   filters at one copy (n = 3).
+* `code/levi_positive_point.py` (with `data/levi_positive_n2.npy`): a two-copy two-sided critical point with positive
+  Levi form that still descends through the curvature term.
 * `logs/`: the runs in the tables and the control.
 
 ## References

@@ -1,0 +1,3 @@
+rank 2, s2/s1 = 0.4426, R = 0.143505, thickness = 0.1735, two-sided gradient = 1.4e-15
+Levi form on the complement of C in V_C (dim 28): smallest eigenvalues [0.0037  0.00627 0.01247 0.0136 ]
+real second variation of R on the two-sided orbit (tangent metric, dim 58): smallest [-3.6405 -3.6405 -2.7251 -2.7251], 8 negative
