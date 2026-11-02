@@ -15,6 +15,29 @@ copy, some open cases of Tomar's §8, and (with three sectors) the rank-two oper
 every number of copies. Collapsing blocks of copies one at a time (Theorem D) gives, for every n, classes that are thick
 at every copy and need only the two-copy theorem. It is enough that one side (range or co-range) lies in such a product.
 
+## Overview
+
+Each row is an every-n statement: q_n(C) ≥ 0 for every C of rank at most two in the stated class. "Uses" lists the
+results the proof relies on beyond elementary algebra: 2CT is the two-copy theorem [FHPV, BGH] and [T1] is Tomar's
+computer-assisted three-copy theorem. Every row has been re-derived and checked by an independent referee.
+
+| Result | Class (range, co-range) | Uses | New from |
+|---|---|---|---|
+| Theorem, Corollary | range in A ⊕ B (A = ⊗A_s, B = ⊗B_s, A_s ⊥ B_s), any co-range | — | n = 4 |
+| Theorem A, Corollary B | one free copy; diagonal blocks of rank ≤ 1, or range spanned by one vector of C^3 ⊗ A and one of C^3 ⊗ B | — | n = 4 |
+| Theorem A₂, Corollary B₂ | the same with two free copies | [T1] | n = 4 |
+| Theorem C | f free copies and sector groups with at most one plane per side, f + max(a, b, 1) ≤ 3 | 2CT, [T1] | n = 4 |
+| Three sectors | C^3 ⊗ span{1…1, 2…2, 3…3} (all n); C^9 ⊗ span{…} (odd m) | 2CT, [T1] | n = 4 |
+| Theorem D | one side in a product of free copies, two-sector groups and repetition codes, weights ≤ 3 | 2CT, [T1] | n = 4 |
+| Theorem D, weight ≤ 2 | the same with weights ≤ 2 (for example C^3 ⊗ span{1^{n−1}, 2^{n−1}, 3^{n−1}}, n even) | 2CT only | n = 4 |
+| Theorem E | one free copy, one excitation, range in C^3 ⊗ span{c, e}, any co-range | 2CT | n = 4 |
+| Theorem E′ | one free copy, any two-sector structure, range in C^3 ⊗ span{c, c′} | 2CT | n = 6 |
+| Theorem E₂ | two free copies, range in C^9 ⊗ span{c, e} (also c′ ∈ B) | [T1] | n = 4 |
+| Theorem F | one free copy, one excitation, m ≥ 4, range and co-range each meet C^3 ⊗ A | 2CT | n = 5 |
+
+What remains open for one free copy is a single inequality, (⋆) and its general form; see "One free copy and one
+excitation". The every-n endpoint for general rank-two C is open.
+
 ## Setting
 
 For an operator C on (C^3)^⊗n,
