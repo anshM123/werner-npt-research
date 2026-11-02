@@ -1,0 +1,4 @@
+n = 2: identity max error 2.2e-16 (20 random members); qubit lemma min gap +9.1e-20 (4 adversarial runs); min q/||C||^2 over the class -3.5e-16 (4 adversarial runs)
+n = 3: identity max error 2.2e-16 (20 random members); qubit lemma min gap +1.6e-19 (4 adversarial runs); min q/||C||^2 over the class -2.6e-16 (4 adversarial runs)
+n = 4: identity max error 2.2e-16 (20 random members); qubit lemma min gap +2.7e-18 (4 adversarial runs); min q/||C||^2 over the class -2.2e-16 (4 adversarial runs)
+two-copy critical point: R = 0.129844 (exact (9 - sqrt 41)/20 = 0.129844); weight of Cn outside (K (x) K + C|11>) on either side: 7.2e-28
