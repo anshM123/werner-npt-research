@@ -1,0 +1,6 @@
+blocks ['F', 'G3']: n=4, support dim 9, weight sum 2: adversarial min q_n/|C|^2 over rank 2 = +3.061e-16 (4 starts); rank-3 control -0.500
+blocks ['G3', 'G3']: n=6, support dim 9, weight sum 2: adversarial min q_n/|C|^2 over rank 2 = +1.682e-14 (3 starts); rank-3 control -0.125
+blocks ['T21.12', 'G3']: n=5, support dim 12, weight sum 2: adversarial min q_n/|C|^2 over rank 2 = +1.659e-15 (3 starts); rank-3 control -0.250
+blocks ['F', 'G3', 'G1']: n=5, support dim 27, weight sum 3: adversarial min q_n/|C|^2 over rank 2 = +2.644e-16 (3 starts); rank-3 control -0.500
+blocks ['T21.12', 'T21.12']: n=4, support dim 16, weight sum 2: adversarial min q_n/|C|^2 over rank 2 = +2.483e-16 (3 starts); rank-3 control -0.250
+blocks ['F', 'T21.12', 'G3']: n=6, support dim 36, weight sum 3: adversarial min q_n/|C|^2 over rank 2 = +2.749e-15 (2 starts); rank-3 control -0.500

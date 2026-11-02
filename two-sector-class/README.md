@@ -13,7 +13,7 @@ Later sections free one or two copies entirely. They prove the inequality when t
 an exact reduction to at most three copies of larger dimension). These cover a four-copy class that is thick at every
 copy, some open cases of Tomar's §8, and (with three sectors) the rank-two operators on C^3 ⊗ span{1…1, 2…2, 3…3} for
 every number of copies. Collapsing blocks of copies one at a time (Theorem D) gives, for every n, classes that are thick
-at every copy and need only the two-copy theorem.
+at every copy and need only the two-copy theorem. It is enough that one side (range or co-range) lies in such a product.
 
 ## Setting
 
@@ -396,25 +396,27 @@ Wu–Zou [WZ, Remark C.3], and the identity reproduces their closed form.
 Checks: `code/check_three_sectors.py` (`logs/check_three_sectors.log`) gives the identity to 8·10⁻¹⁶ and adversarial
 minima of q_n/‖C‖² ≥ −1.3·10⁻¹⁶ at n = 4, 5, 6; controls with m − g odd fail at 3·10⁻².
 
-**Products of blocks.** Both identities hold whatever the free copies are, so they can be applied to one block of
-copies at a time. Split the copies into blocks, and let the range and co-range of C lie in S_1 ⊗ … ⊗ S_k, where each
+**Products of blocks.** Both identities hold whatever the free copies are, since their derivation never uses the
+dimensions of the free copies. So they can be applied to one block of copies at a time. Split the copies into blocks, and let the range and co-range of C lie in S_1 ⊗ … ⊗ S_k, where each
 S_i lives on its own block and is one of the following:
 - C^3 on a single copy (a free copy), with weight g_i = 1;
 - a two-sector space A_i ⊕ B_i on the block, grouped as in Theorem C, with weight g_i = max(a_i, b_i, 1);
-- a three-sector space span{1…1, 2…2, 3…3} on the block (in local bases), with weight g_i = 1 if the block has odd
-  size and g_i = 2 if it has even size.
+- a three-sector space span{1…1, 2…2, 3…3} on the block (in an orthonormal basis at each copy of the block), with
+  weight g_i = 1 if the block has odd size and g_i = 2 if it has even size.
 
 **Theorem D.** If g_1 + … + g_k ≤ 3, then q_n(C) ≥ 0 for every C of rank at most two with range and co-range in
 S_1 ⊗ … ⊗ S_k. If the weights add up to at most 2, the proof uses only the two-copy theorem.
 
 *Proof.* Induction on the number of blocks that are not single copies; single copies may have any dimension. Collapse
-one such block, treating every other copy as free. The identity writes q_n(C) as a positive multiple of the form of UC
-(U = 1 for a three-sector block) with that block replaced by g_i copies of dimension at most four, plus a nonnegative
-multiple of a sum of
-q of rank-two operators whose range and co-range lie in the product of the other S_j (these are the q̃ terms, or the
-blocks X_ij). Both are problems of the same kind with one block fewer to collapse and weight sum at most 3. When only
-single copies are left there are at most three of them, and the endpoint theorem holds for up to three copies of any
-dimension [FHPV, BGH, T1]; for at most two copies the two-copy theorem suffices. ∎
+one such block, treating every other copy as free. The identity writes q_n(C) as 2^{g_i−m_i} times the form of UC
+(U = 1 for a three-sector block), with that block replaced by g_i copies of dimension at most four, plus
+(1 − 2^{g_i−m_i}) ≥ 0 times a sum of forms of operators of rank at most two on the other copies. These operators are the
+blocks ⟨α|P|β⟩ and ⟨β|Q|α⟩ of the q̃ terms, or the X_ij. Their ranges and co-ranges lie in the product of the other
+S_j. So do those of UC, with the new copies counted as single copies. Both are problems of the same kind, with one block
+fewer to collapse and weight sum at most 3. When only single copies are left, there are at most three of them, each of
+dimension at most four. The form is then nonnegative: by [T1, Thm. 1.2] for three copies, by the two-copy theorem
+[FHPV, BGH] for two, and trivially for one or none. If the weights add up to at most 2, at most two copies are ever
+left. ∎
 
 Examples that use only the two-copy theorem and are thick at every copy:
 - for even n, C^3 ⊗ span{1^{n−1}, 2^{n−1}, 3^{n−1}} (one free copy and an odd three-sector block);
@@ -422,13 +424,52 @@ Examples that use only the two-copy theorem and are thick at every copy:
 - at four copies, (L_1 ⊗ e_2 ⊕ e_1 ⊗ L_2) ⊗ (L_3 ⊗ e_4 ⊕ e_3 ⊗ L_4);
 - at n = m + m′ copies with m, m′ odd, span{1^m, 2^m, 3^m} ⊗ span{1^{m′}, 2^{m′}, 3^{m′}}.
 
+The first example is the last one with m′ = 1, and was already in "More than two sectors". The second and third were
+already covered with [T1]: the second by the two-free-copy case of "More than two sectors", the third by Theorem C with
+f = 2, as in the four-copy example there. Here they need only the two-copy theorem. The last with m, m′ ≥ 3 is new.
 With [T1] the budget is 3: for example three odd three-sector blocks, or a free copy and two odd ones.
+
+**One side is enough.** The co-range can be left arbitrary. Take a three-sector block of m copies and let R be the
+other copies. For C with range in H_R ⊗ span{1…1, 2…2, 3…3}, expand the co-range factor on the block in the local
+bases. A partial trace over copies J of the block keeps |j…j⟩⟨w| only if the string w equals j on J. Two such pieces
+have orthogonal partial traces unless every copy of the block is traced, and then only constant strings survive.
+This gives the exact identity
+
+    q_n(C) = q_n(CQ) + Σ_j Σ_{w not constant} 2^{−|A(j,w)|} q_R(⟨j…j|C|w⟩),
+
+where Q projects the co-range onto H_R ⊗ span{1…1, 2…2, 3…3}, A(j, w) is the set of copies where w_s = j, and
+⟨j…j|C|w⟩ is the operator on H_R obtained by contracting the block. For a two-sector group the proof of Corollary B
+gives q_n(C) ≥ q_n(CQ) in the same way. In both cases each extra term is q_R of an operator of rank at most two whose
+range lies in the product of the other blocks' spaces.
+
+**Theorem D (one-sided).** If the weights add up to at most 3, then q_n(C) ≥ 0 for every C of rank at most two with
+range in S_1 ⊗ … ⊗ S_k, whatever the co-range. The same holds with range and co-range exchanged.
+
+*Proof.* Induction on the number of blocks. Compress the co-range one block at a time as above. The extra terms are
+one-sided problems on fewer blocks, so they are nonnegative by induction; when only free copies are left, there are at
+most three, and the endpoint theorem covers them. At the end the operator is P_V C P_V, with V = S_1 ⊗ … ⊗ S_k. It has
+rank at most two, and its range and co-range lie in V, so Theorem D applies. ∎
+
+For example, for every even n, every rank-two C whose range lies in C^3 ⊗ span{1^{n−1}, 2^{n−1}, 3^{n−1}} has
+q_n(C) ≥ 0, whatever its co-range in (C^3)^{⊗n}. This uses only the two-copy theorem.
+
+For C with range and co-range in one plane (for instance Hermitian C), and blocks that are free copies or three-sector
+blocks, the budget is 4. The collapses keep C itself, so the last step is the four-copy theorem of
+`four-replica-notes/` (computer-assisted, not refereed), and the remainders are covered by Theorem D.
+
+Checks:
+- `code/check_one_sided_three_sectors.py` (`logs/check_one_sided_three_sectors.log`): the identity to 6·10⁻¹⁶ and
+  adversarial minima ≥ −3·10⁻¹⁷ at n = 3, 4, 5.
+- `code/check_product_blocks_one_sided.py` (`logs/check_product_blocks_one_sided.log`): mixed products up to n = 6 with
+  arbitrary co-range. The minima are ≥ 0 up to rounding; rank-three members reach −0.125 to −0.5.
 
 **Where the content lies.** The copies of type (1, 1) in Theorem C are thin: their local support A_s ⊕ B_s is a plane.
 The thin-copy reduction removes them and stays inside the class, since a contraction at such a copy maps A ⊕ B into
-the same kind of space on the other copies. So beyond the original two-sector theorem, Theorem C is about at most
-f + 2g ≤ 6 − f thick copies, that is at most five. Three-sector blocks are different: every copy of such a block is
-thick. So Theorem D gives classes that are thick at every copy for every n.
+the same kind of space on the other copies. After they are removed, f + a + b ≤ f + 2g ≤ 6 − f copies are left. For f = 0, Theorem C is contained in the original
+Theorem. Its new cases have f ≥ 1, so they live on at most five thick copies, and on four or five once the known results
+for up to three copies are set aside. Three-sector blocks are different: every copy of such a block is
+thick. So Theorem D gives classes that are thick at every copy for every n. Both theorems are exact reductions to at most
+three copies. What differs is thickness, which by [T2, §6] is where a first failure would have to sit.
 
 Checks:
 - `code/check_ghz_blocks.py` (`logs/check_ghz_blocks.log`): the two-stage identity for two three-sector blocks, to
@@ -496,6 +537,8 @@ of this shape violates the endpoint inequality, for any number of copies.
 - `code/check_three_sectors.py` (`logs/check_three_sectors.log`): three sectors, the identity and adversarial minima.
 - `code/check_ghz_blocks.py`, `code/check_product_blocks.py` (`logs/check_ghz_blocks.log`,
   `logs/check_product_blocks.log`): products of blocks (Theorem D).
+- `code/check_one_sided_three_sectors.py`, `code/check_product_blocks_one_sided.py`
+  (`logs/check_one_sided_three_sectors.log`, `logs/check_product_blocks_one_sided.log`): the one-sided version.
 
 An independent referee re-derived every step of the sections before "One free copy" and re-ran the checks with
 separately written code, up to n = 5. It found no mathematical error. Its wording and attribution fixes are applied
@@ -513,8 +556,12 @@ notation, the §8 subspaces and the gap remark) are applied above. A fifth indep
 code at n = 1 to 6: 414 identity tests for three sectors and 200 for two sectors and d = 4, adversarial minima at
 n = 4, 5, 6, and controls showing that the optimiser finds negative values at rank three and at t = 0.55. It found no
 mathematical error, and its fixes (U for general r, the parity condition, the bases, the theorems used, novelty) are
-applied above. "Products of blocks" (Theorem D) and "Where the content lies" were added afterwards and have not yet had
-an independent referee.
+applied above. A sixth independent referee checked "Products of blocks" and "Where the content lies" with its own code at n = 2
+to 6. It ran the induction to its leaves for 17 configurations of blocks: the identity is exact, the coefficients are
+nonnegative, and the leaves have rank at most two on at most three copies of dimension at most four. It also ran
+adversarial minima for the examples and for weight-3 products, with rank-three and t = 0.55 controls, and checked the
+thin-copy reduction. It found no mathematical error, and its fixes are applied above. "One side is enough" was added
+afterwards and has not yet had an independent referee.
 
 ## References
 
