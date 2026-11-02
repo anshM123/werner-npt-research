@@ -1,16 +1,15 @@
 """Independent exact verification of the n = 4 certificate (reads only lin4.pkl, facedata4r.pkl, cert4.pkl, pts/p_ent.pkl).
 
-Checks (all in exact rational arithmetic):
+No pipeline code is imported. Checks (all in exact rational arithmetic):
   (a) e . y = 0 and c = E^T y + sum_k F_k^*(S_k) for every coordinate;
-  (b) exact LDL^T of every S_k (all pivots >= 0, zero pivots only with zero rows);
+  (b) every S_k is keyed to an existing face block of the right size, is exactly symmetric, and passes an exact LDL^T
+      (all pivots >= 0, zero pivots only with zero rows);
   (c) at the entangled true point P (vectors stored in pts/p_ent.pkl): q_4(P) recomputed here from P, c . x(P) = q_4(P),
       E x(P) = e, c . x(P) = y . E x(P) + sum_k Tr(S_k F_k(x(P))) with every term >= 0, and every face block
       F_k(x(P)) PSD (exact LDL^T; a necessary condition for the constraint data to be valid at a true point).
 usage: python verify4.py [point_name ...]   (default: p_ent; reads facedata4r.pkl.gz if facedata4r.pkl is absent)"""
-import sys, os, time, gzip, pickle, numpy as np
+import sys, os, time, gzip, pickle, itertools, numpy as np
 from gmpy2 import mpq
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'relaxations'))
-from exact_coreN import exact_qn
 
 def ldl(S):
     k = len(S); M = [row[:] for row in S]; minpiv = None
@@ -26,6 +25,25 @@ def ldl(S):
                 f = M[j][i] / p
                 for l in range(i + 1, k): M[j][l] -= f * M[i][l]
     return True, minpiv
+
+def q4_plus(u, v):
+    """exact q_4(P_u + P_v) = sum_J (-1/2)^|J| ||Tr_J P||^2 for real integer u, v (81 entries), via the integer matrix
+    M = |u|^2 |v|^2 P = |v|^2 u u^T + |u|^2 v v^T: for each J the traced sites are moved to the end and the partial
+    trace is the sum of the diagonal (i, i) slices (own code, no pipeline import)"""
+    nu = int(sum(int(a) * int(a) for a in u)); nv = int(sum(int(a) * int(a) for a in v)); D = nu * nv
+    M = np.empty((81, 81), dtype=object)
+    for i in range(81):
+        for j in range(81): M[i, j] = nv * int(u[i]) * int(u[j]) + nu * int(v[i]) * int(v[j])
+    tot = mpq(0)
+    for k in range(5):
+        for J in itertools.combinations(range(4), k):
+            keep = [t for t in range(4) if t not in J]
+            T = M.reshape((3,) * 8).transpose(keep + [4 + t for t in keep] + list(J) + [4 + t for t in J])
+            T = T.reshape(3 ** len(keep), 3 ** len(keep), 3 ** k, 3 ** k)
+            R = T[:, :, 0, 0].copy()
+            for i in range(1, 3 ** k): R = R + T[:, :, i, i]
+            tot += mpq(-1, 2) ** k * sum(int(z) * int(z) for z in R.ravel())
+    return tot / (D * D)
 
 def block_at(b, x):
     """exact F_k(x) as list of lists of mpq"""
@@ -72,6 +90,9 @@ def main():
     ident = all(v == 0 for v in r)
     print(f"(a) e . y = 0: {ey == 0};  c = E^T y + sum_k F_k^*(S_k) exactly: {ident}; {time.time() - t0:.0f}s", flush=True)
     psd = True; minp = None; sizes = []
+    keys_ok = all(isinstance(k, int) and 0 <= k < len(blocks) and len(M) == blocks[k]['r'] and all(len(row) == len(M) for row in M)
+                  for k, M in S.items())
+    sym = all(M[a][b_] == M[b_][a] for M in S.values() for a in range(len(M)) for b_ in range(a + 1, len(M)))
     for k, M in S.items():
         ok, mp = ldl(M); sizes.append(len(M))
         if not ok: psd = False; print(f"    S block {blocks[k]['name']} NOT PSD"); break
@@ -79,15 +100,15 @@ def main():
     nb = max(int(abs(v.numerator)).bit_length() for M in S.values() for row in M for v in row)
     db = max(int(v.denominator).bit_length() for M in S.values() for row in M for v in row)
     nby = max(int(abs(v.numerator)).bit_length() for v in y); dby = max(int(v.denominator).bit_length() for v in y)
-    print(f"(b) exact LDL^T: all {len(S)} dual blocks PSD: {psd} (sizes up to {max(sizes)}, smallest pivot {float(minp):.3e}); "
+    print(f"(b) dual blocks keyed to face blocks of the right size: {keys_ok}; exactly symmetric: {sym}; "
+          f"exact LDL^T: all {len(S)} dual blocks PSD: {psd} (sizes up to {max(sizes)}, smallest pivot {float(minp):.3e}); "
           f"S entries up to {nb}/{db} bits, y up to {nby}/{dby} bits; {time.time() - t0:.0f}s", flush=True)
-    good = ey == 0 and ident and psd
+    good = ey == 0 and ident and psd and keys_ok and sym
     for pname in (sys.argv[1:] or ['p_ent']):
         rec = pickle.load(open(f'pts/{pname}.pkl', 'rb'))
         u = np.array(rec['u'], dtype=object); v = np.array(rec['v'], dtype=object)
         assert (u * v).sum() == 0
-        P = np.outer(u, u) * mpq(1, int((u * u).sum())) + np.outer(v, v) * mpq(1, int((v * v).sum()))
-        q4 = exact_qn(P, 4)
+        q4 = q4_plus(u, v)
         x = [mpq(a, d) for (a, d) in rec['x']]
         cx = sum((c[i] * x[i] for i in range(N) if c[i] != 0), mpq(0))
         Ex = [sum((E[j][i] * x[i] for i in range(N) if E[j][i] != 0), mpq(0)) for j in range(len(E))]

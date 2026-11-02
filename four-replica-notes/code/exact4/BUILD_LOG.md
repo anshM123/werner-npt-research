@@ -16,7 +16,7 @@ E1 (2026-11-01 06:28) exact engine for n sites written and validated.
   tree over the sites that produces the images in ALL unsorted target patterns at once; the image of the site orbit in
   a sorted target is the sum over orbit representatives with the site axes permuted back.  Tree arithmetic is float64 on
   integers with an a-priori bound < 2^53 (asserted per group), hence exact.
-  n = 4 variable space: 1331 parameters, 175 groups (largest K = 96 parameters, t <= 21, D <= 81), integer tensors
+  n = 4 variable space: 1331 parameters, 175 family-pattern pairs (150 non-empty groups) (largest K = 96 parameters, t <= 21, D <= 81), integer tensors
   <= 13 bits, sum K D^2 = 4.8M entries; builds in 4 s.
   test_engine.py: at a random rational point of the common variable space, our objective, all 120 moment functionals,
   the raw images of all ORTH/MARG maps (every sorted target) and every raw covariance block agree EXACTLY with the

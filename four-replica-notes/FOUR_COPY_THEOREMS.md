@@ -17,7 +17,9 @@ in exact arithmetic by a short verification script that imports none of the code
 - rank-two operators whose range and co-range are different planes, so it is not the full four-copy endpoint;
 - any number of copies other than four.
 
-The proofs are computer-assisted. They have been checked independently by us, but they have not been refereed.
+The proofs are computer-assisted. An independent referee re-derived the relaxation and checked the argument (see
+"Referee" in Section 4): every constraint family, the equalities E x = e and the objective exactly, and the certificate
+logic. It also re-ran the verifiers and checked fresh true points, including near-zeros. It found no gap.
 
 This file collects the statements, the definitions and the argument. The working notes are in `NOTES.md` (Section 3),
 with the build logs in `code/exact4/BUILD_LOG.md`, `code/exact4m/BUILD_LOG.md` and `code/exact4L/BUILD_LOG.md`.
@@ -83,7 +85,7 @@ Every constraint below holds whenever u, v are orthonormal, i.e. at every *true 
       [[R(X_{xyuu}), R(X_{xyuv})], [R(X_{xyvu}), R(X_{xyvv})]] ⪰ 0,
 
   where R realigns replicas 3 and 4 on every copy, moving the bra of replica 3 to the ket side and the ket of replica 4
-  to the bra side.
+  to the bra side. In indices, on each copy: R(X)[(a₃ b₃), (b₄ a₄)] = X[(a₃ a₄), (b₃ b₄)].
   - *Proof.* R(P_z ⊗ P_w) = |vec P_z⟩⟨vec P_w|. Hence the block matrix is the twirl of P_x ⊗ P_y ⊗ |η⟩⟨η|, with
     η = e₁ ⊗ vec P_u + e₂ ⊗ vec P_v.
   - After realignment, the twirl acts on replicas 3 and 4 as U ⊗ Ū, so it is still an average of unitary
@@ -99,10 +101,10 @@ P_u + P_v ≤ I, but the certificates do not use them.
   at n = 4.
 - **Coordinates.** Each X_c is stored through its Fourier blocks. These use exact rational irreducible modules of
   C[S_4], with Gram matrices, built from integer Casimir eigenspaces.
-- **Complex vectors.** For complex u, v the real part of the point x(u, v) is the average of x(u, v) and x(ū, v̄).
-  Both are true points, and they have the same objective, since q_4 is invariant under complex conjugation. Every
-  constraint map has rational coefficients. So the real part is feasible with the same objective, and real
-  certificates cover complex pairs.
+- **Complex vectors.** For complex u, v the argument is phrased with operators. X(u, v) and X(ū, v̄) are both twirled
+  moment operators of true points, with the same objective, since q_4 is invariant under complex conjugation. Their
+  average X_R = (X(u, v) + X(ū, v̄))/2 has real symmetric blocks, so it is a point of the real parametrisation, and it
+  satisfies every constraint because each constraint is convex. So the certificates cover complex pairs.
 
 ## 2. Certificates
 
@@ -172,7 +174,9 @@ For an orthonormal pair, set x = x(u, v) and
 
     Y₊ = (a+b)² x,   Y₋ = (a−b)² x,   Z = (a² − b²) x,   ε₊ = (a+b)²,   ε₋ = (a−b)²,   ζ = a² − b².
 
-This point is feasible, since L_k = MᵀW_k(x)M with M = [(a+b)N₊, (a−b)N₋]. Its objective is q_4(aP_u + bP_v).
+This point is feasible, since L_k = MᵀW_k(x)M with M = [(a+b)N₊, (a−b)N₋]. Its objective is q_4(aP_u + bP_v). It
+meets the normalisation (ε₊ + ε₋)/2 = 1 when a² + b² = 1, which costs nothing by homogeneity; the certificate does not
+use that constraint.
 
 **Certificate.** y₊, y₋, y_Z ∈ Q^147 and S_k = [[A_k, B_k], [B_kᵀ, C_k]] ⪰ 0 with, exactly,
 
@@ -300,11 +304,27 @@ The first two take under a minute each, the third about a minute for these two p
 11 points (Python 3, numpy, gmpy2; python-flint for `verify4.py`).
 
 **What a referee has to trust.** Steps 1 and 2 are a complete proof that c·x ≥ 0 on the set {E x = e, F_k(x) ⪰ 0}.
-What remains is that this set contains every true point, which is the validity of the constraint data.
-- The saved data are produced by our code from the definitions in Section 1.
-- They are supported by the cross-checks above and by step 3 at every test point.
-- An independent re-derivation of E, e, c and the F_k from Section 1 would remove this last dependence. The saved
-  pickles make a direct comparison possible.
+What remains is that this set contains every true point, which is the validity of the constraint data. The saved data
+are produced by our code from the definitions in Section 1, and an independent re-derivation now confirms them (below).
+
+**Referee.** An independent referee checked the four-copy theorems at the level of the derivation, with its own code.
+- **Constraint families.** It derived every constraint family used by the certificates, (X), (M), (S), (O), (G) and
+  (C), for all true points. It confirmed numerically that the realignment turns the twirl into a conjugation by
+  U ⊗ U ⊗ U ⊗ Ū (with the other index ordering (C) would fail). It also checked the per-site irreducible representations:
+  homomorphism, irreducibility, Schur orthogonality and the Gram matrices.
+- **Equalities.** It re-derived the equalities from generalized moments without the repo's site maps. Their exact RREF
+  is identical to the saved [E | e].
+- **Positivity blocks.** It re-derived the covariance blocks a second way, and confirmed by an exact adjoint pass that
+  the certificate identities hold with its derived maps in all 1331 coordinates, for all five identities.
+- **Objective.** It re-derived the objective vectors exactly.
+- **Logic.** It checked the facial reduction (compressions only), the lifted construction, and the certificate logic.
+- **Fresh points.** It computed x(u, v) with its own code at 8 fresh points (generic real, complex, near-zeros with
+  q_4 down to 8.6·10⁻⁶, and spin-flip pairs). Each satisfies E x = e and every PSD block exactly, with objective equal
+  to the directly computed q_4.
+
+It found no gap. Following its suggestions, `verify4.py` now computes q_4 with its own code (no pipeline import), and
+`verify4.py` and `verify4m.py` check that every dual block is exactly symmetric and keyed to a face block of the right
+size. Both still print VERIFIED.
 
 ## References
 
