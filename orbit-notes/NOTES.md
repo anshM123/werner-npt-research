@@ -86,6 +86,24 @@ A direct search for a counterexample at n = 2 (minimise the squeeze gradient and
 Hessian over thick C, with thickness ≥ 0.05) never achieved both: the squared gradient stayed ≥ 3·10⁻², while the
 smallest Hessian eigenvalue stayed between −0.015 and −0.14.
 
+Seven copies: with C kept in factored form, both random starts at n = 7, t = 1/2 descend to the boundary at R → 0 (our
+script `orbit_big.py`, not included here).
+
+**Critical points are saddles.** Thick critical points of R on squeeze orbits do exist. We found them at n = 2 by
+minimising the squeeze gradient, also with a bias towards small R:
+- a family near R ≈ 0.129;
+- points close to the thin boundary with R ≈ 7·10⁻⁴;
+- bulk points with R between 0.5 and 0.8.
+
+Every one has negative squeeze-Hessian directions: 3 to 10 of the 16, with the most negative curvature between −0.34
+and −5.6 in the bulk and about −0.003 near the boundary.
+
+Past the endpoint (t = 0.7) we also found thick, nearly critical points with negative value (R ≈ −0.03). They too are
+saddles. So "thick critical points have positive value" fails for t > 1/2, and a proof of ORB cannot be first-order
+uniformly in t: it has to see the negative curvature. At most critical points the descent is already visible in
+squeezes that are diagonal in the eigenbasis of the local support operator Tr_other(CC^* + C^*C), one copy at a time.
+This fails close to the thin boundary, where the descent uses other directions.
+
 ## What ORB is not
 
 * **It is not a property of every invariant form.** For q(X) = ‖X‖² − c|Tr X|² (c = 0.1, two copies), every
@@ -118,7 +136,7 @@ random two-copy operators).
 
 ## Status
 
-Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 6. A proof of ORB_n for all n would prove
+Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 7. A proof of ORB_n for all n would prove
 NPT bound entanglement; we do not have one.
 
 ## Files
