@@ -324,6 +324,31 @@ Checked by `code/check_free_copies_excitation.py` (`logs/check_free_copies_excit
 
 This paragraph has not had a separate referee.
 
+**General two sectors.** The argument works for any two-sector structure, with planes on both sides. Let Σ_X and Σ_Y
+be the sums of q_1(X̂_μ) and q_1(Ŷ_ν) over Pauli strings with no identity factor on the planar copies of A, respectively
+of B. Put Γ_X = 2q_{0,A}(X) and Γ_Y = 2q_{0,B}(Y), with A and B each read as one copy, and K = A ⊕ B. The proof of
+Proposition M gives
+
+    2^m q_n(C) − (2/ρ) q_{0,K}(Z) = (Σ_X − Γ_X/ρ) + (Σ_Y − ρΓ_Y) + (2^m − 2τ) q̃(P) + (2^m − 2/τ) q̃(Q),
+
+with D_1 = 1_A ⊕ (−1)^{m+1}√(ρ/τ) 1_B and D_2 = 1_A ⊕ √(ρτ) 1_B as before. (When B is a line this is Proposition M,
+since then Σ_Y = Γ_Y = q_1(Y).) Lemma R′ holds on each side.
+
+**Theorem E′.** For every two-sector structure, every C of rank at most two whose range lies in C^3 ⊗ span{c, c′} for some
+c ∈ A and c′ ∈ B has q_n(C) ≥ 0, whatever its co-range.
+
+*Proof.* As for Theorem E, with ρ = τ = 1: Lemma R′ gives Σ_X ≥ Γ_X and Σ_Y ≥ Γ_Y, the q̃ terms are nonnegative, and the
+compression of Corollary B handles an arbitrary co-range. ∎
+
+Theorem E′ complements Corollary B. There the range is spanned by one vector of C^3 ⊗ A and one of C^3 ⊗ B, so the
+diagonal blocks have rank one. Here X and Y may have rank two, but their ranges are products between copy 0 and the
+sector. With one free copy, Theorem C covers max(a, b) ≤ 2, so Theorem E′ is new when c or c′ has two-dimensional local
+support at three or more sector copies.
+
+Checked by `code/check_free_copy_general_sectors.py` (`logs/check_free_copy_general_sectors.log`) on four structures,
+(a, b) = (2, 1), (2, 2), (1, 3) and (3, 0) at n = 4, 5: the identity holds to 6·10⁻¹⁵, and the adversarial minima are
+≥ 2·10⁻¹⁶ against rank-three controls at −0.5. This paragraph has not had a separate referee.
+
 An independent referee re-derived this section and checked it with its own code at m = 1 to 4. It checked Proposition M
 against the one-free-copy identity and the sign of D_1, every step of Lemma R′ (with rank-three controls), the
 compression for an arbitrary co-range piece by piece, and the reduction to (⋆), and it found the explicit maximiser

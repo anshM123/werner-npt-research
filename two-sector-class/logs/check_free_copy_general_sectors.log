@@ -1,0 +1,4 @@
+types [(2, 1), (1, 2), (2, 1)] (n=4, a=2, b=1): generalised Prop M error 4.0e-15; Theorem E' adversarial min q_n/|C|^2 +9.26e-16 (3 starts; rank-3 control -0.500)
+types [(2, 1), (2, 1), (1, 2), (1, 2)] (n=5, a=2, b=2): generalised Prop M error 5.6e-15; Theorem E' adversarial min q_n/|C|^2 +6.93e-16 (2 starts; rank-3 control -0.500)
+types [(1, 2), (1, 2), (1, 2), (2, 1)] (n=5, a=1, b=3): generalised Prop M error 6.3e-15; Theorem E' adversarial min q_n/|C|^2 +1.44e-15 (2 starts; rank-3 control -0.500)
+types [(2, 1), (2, 1), (2, 1)] (n=4, a=3, b=0): generalised Prop M error 3.2e-15; Theorem E' adversarial min q_n/|C|^2 +2.02e-16 (3 starts; rank-3 control -0.500)
