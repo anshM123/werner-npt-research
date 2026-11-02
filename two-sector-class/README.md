@@ -301,9 +301,11 @@ trace zero, X has rank two with equal singular values, and Σ_full = 0, X̂_0 = 
 settle every m ≥ 3. By the compression of Corollary B it would also cover range in V with any co-range. At m = 2 the needed constant 2 is too small, and that case stays with Theorem C. Fixed choices
 ρ = τ = 1 do not suffice (the bound reaches −2‖C‖²), and a version of (⋆) with squares instead of square roots is false.
 
-**Partial results on (⋆).** Two bounds hold for every Z: Σ_full(Z) ≤ 2^m‖Z‖², by Pauli completeness on A. If Z has rank
-at most two, also Γ(Z) ≤ 2‖Z‖²: indeed 2‖Z‖² − Γ(Z) = ‖Tr_0 Z‖² + ‖Tr_A Z‖² − ½|Tr Z|², and Tr_A Z is 3 × 3 while Tr_0 Z
-has rank at most 6.
+**Partial results on (⋆).** For every operator Z on C^3 ⊗ A, Σ_full(Z) ≤ 2^m‖Z‖², since q_1 ≤ ‖·‖² and the Pauli strings
+on A satisfy Σ_μ ‖Ẑ_μ‖² = 2^m‖Z‖². If Z has rank at most two, also Γ(Z) ≤ 2‖Z‖². Indeed
+2‖Z‖² − Γ(Z) = ‖Tr_0 Z‖² + ‖Tr_A Z‖² − ½|Tr Z|². Here Tr_A Z is 3 × 3, and Tr_0 Z has rank at most 6, since each rank-one
+term contributes rank at most 3. So |Tr Z|² ≤ 3‖Tr_A Z‖² and |Tr Z|² ≤ 6‖Tr_0 Z‖², and 1/3 + 1/6 = 1/2. Both bounds are
+attained at rank one, and the second fails at rank three for m ≥ 3.
 
 *Lemma T.* Let X = X_0 + E, where every operator in span{X_0, E} has rank at most two and Γ(X_0) ≤ Σ_full(X_0). Then
 
@@ -313,24 +315,46 @@ has rank at most 6.
 semidefinite on the span and their square roots are seminorms there. So
 √Γ(X) ≤ √Γ(X_0) + √Γ(E) ≤ √Σ_full(X_0) + √Γ(E) ≤ √Σ_full(X) + √Σ_full(E) + √Γ(E). ∎
 
-*Theorem 1a.* For m ≥ 4, q_n(C) ≥ 0 for every C of rank at most two with range and co-range in V such that the range and
+*Theorem F (case 1a).* For m ≥ 4, q_n(C) ≥ 0 for every C of rank at most two with range and co-range in V such that the range and
 the co-range each contain a nonzero vector of C^3 ⊗ A.
 
-*Proof.* The condition says that the e-components of the range vectors are parallel, and likewise for the co-range. If
-either set of e-components vanishes, C is block-triangular, a case covered in "One free copy". Otherwise a gauge gives
-Y = uv*, P = x_1 v* and Q = u y_1*, with X = x_1 y_1* + x_2 y_2*. Then q_1(Y) ≤ ‖u‖²‖v‖², q̃(P) ≥ ½‖x_1‖²‖v‖² and
+*Proof.* Rank one is covered by the rank-one bound, so let C = r_1 l_1* + r_2 l_2* have rank two. The condition says
+that the e-components of r_1 and r_2 are linearly dependent (they may vanish), and likewise for l_1 and l_2. If either
+pair vanishes, C is block-triangular with Y = 0, a case covered in "One free copy". Otherwise the e-components are
+λ_k u and κ_k v, and Y = (Σ_k λ_k κ̄_k) uv*. If Y = 0, the left side of (⋆) vanishes. If Y ≠ 0, a change of basis
+r ↦ rG, l ↦ lG^{−*} moves the e-components into r_1 and l_1 alone. This gives Y = uv*, P = x_1 v*, Q = u y_1* and
+X = x_1 y_1* + x_2 y_2*, where x_k and y_k are the A-parts of r_k and l_k. Then q_1(Y) ≤ ‖u‖²‖v‖², q̃(P) ≥ ½‖x_1‖²‖v‖² and
 q̃(Q) ≥ ½‖u‖²‖y_1‖². Lemma T with X_0 = x_2 y_2* (rank one, so Γ ≤ Σ_full by the operator inequality in Lemma R) and
 E = x_1 y_1* gives (⋆) with constant 2√2 + 2^{1+m/2}. This is at most 2^m − 2 exactly when m ≥ 4. ∎
 
-The remaining cases of (⋆) are those where Y has rank two, or where the e-components are parallel on one side only. There
-P and Q are both close to the form c ⊗ Π, and (⋆) needs a bound that is bilinear in the two deviations. Lemma T alone is
-first order in each. `code/check_case_1a.py` (`logs/check_case_1a.log`) checks:
-- the two bounds;
-- Lemma T on random two-piece X;
-- in case 1a, the largest ratio in (⋆): 4.0 at m = 3 and 4, against the proved constants 8.49 and 10.83;
-- adversarial minima of q_n ≥ 0.
+Theorem F uses only the two-copy theorem. It is not contained in Theorems A, C, D, E or Corollary B. Generic members
+have rank X = 2. Neither their range nor their co-range contains a vector of C^3 ⊗ e or lies in C^3 ⊗ span{c, e}. They
+are thick at every copy, and their range has two-copy reductions of rank 5 on every pair of sector copies. The new cases
+are at n ≥ 5. A proof of √Γ_X − √Σ_full(X) ≤ 2σ_2(X) for rank-two X would give (⋆) with constant 4 in case 1a, since
+‖x_1‖‖y_1‖ ≥ σ_2(X), and so would extend Theorem F to m = 3 (n = 4). This bound holds numerically with sharp constant 2 at
+m = 2, 3, 4, attained at the maximiser shape.
 
-These results have not had a separate referee.
+For m ≥ 4, the remaining cases of (⋆) are those where Y has rank two (the e-components are independent on both sides),
+and those where the e-components are parallel on one side only. At m = 3 (n = 4), case 1a also remains, since
+2√2 + 2^{5/2} ≈ 8.49 exceeds 6. In the remaining cases P or Q can have 3 × 3 blocks of rank two, so q̃ can vanish on it
+while it is nonzero, at the form c ⊗ Π. If the e-components are parallel on the range side, Q still has rank one and
+q̃(Q) ≥ ½‖Q‖², so only P can degenerate; if Y has rank two, both can. Lemma T bounds the left side of (⋆) linearly in
+‖E‖, which does not control these degenerations. `code/check_case_1a.py` (`logs/check_case_1a.log`) checks:
+- the two bounds and Lemma T, on random two-piece X;
+- in case 1a, the largest ratio in (⋆): 4.0 at m = 3 and 4, against the constants 8.49 and 10.83 that the proof gives and
+  the 6 and 14 that are needed;
+- adversarial minima of q_n over case 1a, which are 0 up to rounding. They are attained at the block-triangular corner
+  Y, P, Q → 0. Away from it, with σ_2(X) ≥ σ_1(X)/2 and ‖Y‖, ‖P‖, ‖Q‖ ≥ 0.2‖C‖, the minimum of q_n/‖C‖² is about 0.18 at
+  m = 4 (referee's check).
+
+An independent referee re-derived these results with its own code at m = 1 to 4. It checked:
+- the norm bounds (with rank-three controls);
+- Lemma T adversarially (with rank-four controls);
+- the gauge of Theorem F, including the case Y = 0;
+- the constant;
+- the novelty of the class.
+
+It found no mathematical error, and its fixes are applied above.
 
 Checks: `code/check_free_copy_excitation.py` (`logs/check_free_copy_excitation.log`, m = 3, 4) covers:
 - Proposition M, to 4·10⁻¹⁵;
