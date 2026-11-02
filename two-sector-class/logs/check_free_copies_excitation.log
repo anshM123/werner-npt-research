@@ -1,0 +1,2 @@
+two free copies, m=2 (n=4): Prop M (q_F) error 4.4e-16; Lemma R' (q_F) adversarial min gap +1.30e-15; Theorem E2 adversarial min q_n/|C|^2 +4.01e-17 (rank-3 control -0.500)
+two free copies, m=3 (n=5): Prop M (q_F) error 1.9e-15; Lemma R' (q_F) adversarial min gap +4.60e-15; Theorem E2 adversarial min q_n/|C|^2 +4.56e-16 (rank-3 control -0.500)

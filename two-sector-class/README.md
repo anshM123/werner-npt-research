@@ -307,6 +307,23 @@ Checks: `code/check_free_copy_excitation.py` (`logs/check_free_copy_excitation.l
 - Theorem E with arbitrary co-range, minimum ≥ 3·10⁻¹⁷ against a rank-three control at −0.5;
 - the largest ratio in (⋆).
 
+**Two free copies.** Everything above holds verbatim with two free copies F (H_F = C^9), with q_1 replaced by the
+two-copy form q_F and K = A ⊕ C e as a third copy. Proposition M becomes an identity with q_F and q_{F∪{K}}. Lemma R′ holds
+because w ↦ q_F(L(w)) is positive semidefinite by the two-copy theorem; the rest of its proof is unchanged. This gives:
+
+**Theorem E₂.** For every m, every C of rank at most two whose range lies in C^9 ⊗ span{c, e} for some c ∈ A has
+q_n(C) ≥ 0, whatever its co-range.
+
+The main term uses the three-copy theorem in arbitrary dimensions [T1] on C^3 ⊗ C^3 ⊗ K, the q̃ terms use the two-copy
+theorem, and the co-range compression is the one of Corollary B₂. With two free copies, Theorem C covers c with
+two-dimensional local support at one sector copy at most. So the new cases are those where c has it at two or more.
+Checked by `code/check_free_copies_excitation.py` (`logs/check_free_copies_excitation.log`, m = 2, 3, so n = 4, 5):
+- Proposition M with q_F to 2·10⁻¹⁵;
+- Lemma R′ with q_F, adversarial minimum ≥ 0;
+- Theorem E₂ with arbitrary co-range, minimum ≥ 4·10⁻¹⁷ against a rank-three control at −0.5.
+
+This paragraph has not had a separate referee.
+
 An independent referee re-derived this section and checked it with its own code at m = 1 to 4. It checked Proposition M
 against the one-free-copy identity and the sign of D_1, every step of Lemma R′ (with rank-three controls), the
 compression for an arbitrary co-range piece by piece, and the reduction to (⋆), and it found the explicit maximiser
