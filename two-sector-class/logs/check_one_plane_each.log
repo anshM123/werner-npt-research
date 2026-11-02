@@ -1,0 +1,7 @@
+f=2 types=[(2, 1), (1, 2)] (n=4): identity max rel error 7.4e-16; adversarial min q_n/|C|^2 over rank-2 members = -1.773e-16 (4 starts)
+f=1 types=[(2, 1), (1, 2)] (n=3): identity max rel error 1.4e-15; adversarial min q_n/|C|^2 over rank-2 members = -2.570e-16 (4 starts)
+f=2 types=[(2, 1), (1, 1), (1, 2)] (n=5): identity max rel error 2.5e-15; adversarial min q_n/|C|^2 over rank-2 members = -1.118e-16 (3 starts)
+f=1 types=[(1, 2), (1, 1), (2, 1)] (n=4): identity max rel error 8.1e-16; adversarial min q_n/|C|^2 over rank-2 members = -1.880e-16 (3 starts)
+n=4 T0=[0, 1] T1=[0, 1]: adversarial min q_n/|C|^2 (any co-range) = -8.675e-17 over 4 starts
+n=4 T0=[0, 2] T1=[0, 3]: adversarial min q_n/|C|^2 (any co-range) = -5.695e-17 over 4 starts
+n=4 T0=[0] T1=[0]: adversarial min q_n/|C|^2 (any co-range) = -1.617e-16 over 4 starts

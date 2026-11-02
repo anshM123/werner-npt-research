@@ -220,21 +220,24 @@ off-diagonal blocks, so the Schur-complement step of Step 3 has nothing to pay w
 ## Two free copies
 
 The rank-one argument does not need Lemma L. It needs only the endpoint inequality for one more copy, where that copy
-may have any dimension. This lets us free a second copy.
+may have any dimension. This contains the f-copy inequality used below, since q_{F ∪ {K}}(Z ⊗ |e⟩⟨e|) = ½ q_F(Z). This
+lets us free a second copy.
 
 Let F be a set of f free copies and keep the sector copies 1, …, m as above, so n = f + m. Write H_F = (C^3)^{⊗f},
-q_F for the f-copy form on operators on H_F, B_F for its bilinear form, and q̃_F(P) = Σ_{J ⊆ F} (−½)^{|J|} ‖Tr_J P‖².
-The identity of the previous section holds verbatim with q_1, B_1, q̃ replaced by q_F, B_F, q̃_F. The proof of Lemma R
-also goes through as far as the operator inequality, since W_F = ⊗(1 − ½F) ≥ 0. Writing x = Σ_α x_α ⊗ α and
-y = Σ_β y_β ⊗ β over a basis of A, it gives
+q_F for the f-copy form on operators on H_F, B_F(Z, W) = Σ_{J ⊆ F} (−½)^{|J|} Tr[(Tr_J Z)^* Tr_J W] for its sesquilinear
+form, and q̃_F(P) = Σ_{J ⊆ F} (−½)^{|J|} ‖Tr_J P‖². The identity of the previous section holds verbatim with q_1, B_1, q̃
+replaced by q_F, B_F, q̃_F; now the X̂_μ are operators on H_F. The proof of Lemma R also goes through as far as the
+operator inequality, since W_F = ⊗_{c∈F}(1 − ½F_c) ≥ 0. Write x = Σ_α x_α ⊗ α and y = Σ_β y_β ⊗ β over an orthonormal
+basis {α} of A (likewise x′, y′ over an orthonormal basis of B). Then
 
     Σ_μ q_F(X̂_μ) ≥ ⟨x ⊗ y| W_F ⊗ (2 − F_A) |x ⊗ y⟩ = 2 Σ_{α,β} q_F(x_α y_β^*) − q_F(X̂_0).
 
-**Theorem A₂.** For every n ≥ 3, take f = 2 free copies. If ran C and ran C^* lie in H_F ⊗ (A ⊕ B), rank X ≤ 1,
-rank Y ≤ 1, rank P ≤ 2 and rank Q ≤ 2, then q_n(C) ≥ 0.
+**Theorem A₂.** For every n ≥ 3, let F be any two copies, and let the other m = n − 2 copies be sector copies as above.
+Suppose ran C and ran C^* lie in H_F ⊗ (A ⊕ B). Take blocks with respect to H_F ⊗ A ⊕ H_F ⊗ B. If rank X ≤ 1,
+rank Y ≤ 1, rank P ≤ 2 and rank Q ≤ 2, then q_n(C) ≥ 0. Here C may have rank up to six.
 
-*Proof.* Write X = xy^* and Y = x′y′^* (the case X = 0 or Y = 0 is easier, since the cross term vanishes). Bound the
-X-sum and the Y-sum by the inequality above and choose the phase φ that realises the cross term:
+*Proof.* Write X = xy^* and Y = x′y′^* (the case X = 0 or Y = 0 is covered by putting x = 0 or x′ = 0). Bound the
+X-sum and the Y-sum by the inequality above, and put e^{iφ} = (−1)^{m+1}:
 
     2^m q_n(C) ≥ 2 q_{F ∪ {K}}(𝒞) + 2^m (q̃_F(P) + q̃_F(Q)),   𝒞 = xy^* ⊕ e^{iφ} x′y′^*.
 
@@ -242,22 +245,87 @@ Here 𝒞 is read as an operator on H_F ⊗ K, where K = A ⊕ B counts as one m
 
     q_{F ∪ {K}}(𝒞) = Σ_{α,β} q_F(x_α y_β^*) + Σ_{α′,β′} q_F(x′_{α′} y′_{β′}^*) − ½ q_F(X̂_0 + e^{iφ} Ŷ_0).
 
+With this φ, q_F(X̂_0 + e^{iφ} Ŷ_0) = q_F(X̂_0) + q_F(Ŷ_0) − 2(−1)^m Re B_F(X̂_0, Ŷ_0). So 2 q_{F ∪ {K}}(𝒞) is exactly the
+bound for the X-sum, the Y-sum and the cross term together.
+
 The operator 𝒞 has rank at most two. So q_{F ∪ {K}}(𝒞) ≥ 0 by the three-copy endpoint theorem with factors C^3, C^3
 and K, which holds for arbitrary factor dimensions [T1, Thm. 1.2]. Each 9 × 9 block of P has rank at most two, so
 q̃_F(P) ≥ 0 by the two-copy theorem; likewise for Q. ∎
 
 With f = 1 the same proof uses the two-copy theorem for C^3 ⊗ K, which holds in arbitrary dimensions [FHPV, BGH].
-This gives a second proof of Theorem A. In general, the rank-one case with f free copies follows from the endpoint
-inequality for f + 1 copies, one of them of arbitrary dimension.
+This gives a second proof of Theorem A. In general, the analogue of Theorem A with f free copies follows from the
+endpoint inequality for f + 1 copies, one of them of arbitrary dimension. If a cited theorem is stated for one common
+local dimension, unequal factors follow by embedding each factor isometrically into the largest one; q_n and the rank
+are unchanged.
 
 **Corollary B₂.** For every n ≥ 3 with two free copies: if C has rank at most two and its range is spanned by one vector
 of H_F ⊗ A and one vector of H_F ⊗ B, then q_n(C) ≥ 0, whatever the co-range.
 
-*Proof.* As for Corollary B, with the co-range split only at the sector copies. Each piece reduces, at the sector
-copies, to q_F on pieces of rank at most two, which is nonnegative by the two-copy theorem. ∎
+*Proof.* As for Corollary B, with the co-range split only at the sector copies. Here P_A C = ug^* and P_B C = vh^* have
+rank at most one, so every piece reduces at the sector copies to q_F of rank-one operators, which is nonnegative. The
+piece T = {1..m} has q_n equal to q̃_F of it; splitting its co-range ⊗_s A_s^⊥ = B ⊕ R gives q̃_F(P_A C P_B) plus a
+nonnegative term. The cross terms are J_F ∪ {1..m}, J_F ⊆ F, and only P_A C P_A and P_B C P_B contribute. So
+q_n(C) ≥ q_n(P_V C P_V); this step holds for every rank-two C with ran C ⊆ V, by the two-copy theorem. The blocks of
+P_V C P_V have rank at most one, so Theorem A₂ applies. ∎
 
 **Status.** Theorem A₂ and Corollary B₂ rest on Tomar's computer-assisted three-copy theorem [T1]. For rank two they
-are new at n ≥ 4; Theorem A₂ at ranks three to six is not covered by the known rank-two results even at n = 3.
+are new at n ≥ 4. At four copies, [T1] reaches only α ≤ 0.4979. The Hermitian members, and those with range and co-range
+in one plane, are also covered by the certificates in `four-replica-notes/`. Theorem A₂ at ranks three to six is not a
+special case of the known rank-two results, even at n = 3, where it is derived from [T1].
+
+## Grouping the sector copies
+
+Without a rank condition on the blocks there is still an exact reduction, as long as the planes are spread out. Split
+the sector copies into g groups G_1, …, G_g so that each group contains at most one copy with a planar A_s and at most
+one copy with a planar B_s. Then A_i = ⊗_{s∈G_i} A_s and B_i = ⊗_{s∈G_i} B_s have dimension at most two. Treat
+K_i = A_i ⊕ B_i (of dimension at most four) as one copy, with the endpoint form there. In a group the one-copy forms
+multiply out to 2^{1−|G_i|} times the endpoint form of A_i, and likewise for B_i: a line contributes ½, and the planar
+copy, if there is one, is A_i itself. The off-diagonal blocks have no surviving trace over a sector copy or over a K_i.
+The two diagonal blocks only meet through the full trace. Comparing term by term gives, for every operator C on
+H_F ⊗ (A ⊕ B),
+
+    q_n(C) = 2^{g−m} q_{F ∪ {K_1, …, K_g}}(UC) + (1 − 2^{g−m}) (q̃_F(P) + q̃_F(Q)),   U = P_A + (−1)^{m−g} P_B.
+
+**Theorem C.** Let a and b count the sector copies with planar A_s, resp. planar B_s. If f + max(a, b, 1) ≤ 3, then
+q_n(C) ≥ 0 for every n and every C of rank at most two with ran C and ran C^* in H_F ⊗ (A ⊕ B).
+
+*Proof.* Pair each planar-A copy with a different planar-B copy. Together with the unpaired planar copies, this gives
+g = max(a, b, 1) groups of the required kind; the lines can go anywhere. UC has rank at most two. So the first term
+is nonnegative by the endpoint theorem for f + g ≤ 3 copies, g of them of dimension at most four, which holds in
+arbitrary dimensions [T1, Thm. 1.2]; for f + g ≤ 2 the two-copy theorem suffices [FHPV, BGH]. The blocks of P and Q
+have rank at most two, so q̃_F(P), q̃_F(Q) ≥ 0 by the endpoint theorem for f ≤ 2 copies. Finally 1 − 2^{g−m} ≥ 0. ∎
+
+No rank condition on X, Y, P or Q is needed here. The proof of Corollary B applies as before and gives the one-sided
+version for rank-two C (ran C in H_F ⊗ (A ⊕ B), co-range arbitrary). The cases covered are:
+- f = 2 with at most one plane on each side;
+- f = 1 with at most two planes on each side;
+- f = 0 with up to three, which the Theorem above already covers for every a and b.
+
+**Example (four copies).** Take f = 2, and at copies 3 and 4 put A_3 = K_3, a plane; B_3 = e_3 ⊥ K_3; A_4 = e_4; and
+B_4 = K_4 ⊥ e_4. Then every rank-two C with range and co-range in C^9 ⊗ (K_3 ⊗ e_4 ⊕ e_3 ⊗ K_4) has q_4(C) ≥ 0. Its
+generic members are thick at every copy.
+
+**An open case of [T2, §8] with shared tails.** For the GHZ backbones of [T2, §8], with tails T_0 and T_1, take every
+copy in T_0 ∩ T_1 as a free copy; copies in T_0 \ T_1 are of type (2, 1), and those in T_1 \ T_0 of type (1, 2). The
+one-sided Theorem C then covers every rank-two operator whose range lies in
+span{0…0, 2_i 0…0 (i ∈ T_0), 1…1, 2_j 1…1 (j ∈ T_1)}, with arbitrary co-range, whenever
+
+    |T_0 ∩ T_1| + max(|T_0 \ T_1|, |T_1 \ T_0|, 1) ≤ 3.
+
+This includes tails of both backbones at the same copy, the case that the Corollary leaves open. Examples:
+- one shared tail copy, with up to two further tails on each backbone;
+- two shared tail copies, with up to one further tail on each.
+
+**Status.** Theorem C rests on the two-copy theorem and on Tomar's computer-assisted three-copy theorem [T1].
+- `code/check_one_plane_each.py` checks one group, `code/check_grouped_sectors.py` two groups, and
+  `code/check_tomar8_shared_tails.py` the [T2, §8] shapes; the logs are `logs/check_one_plane_each.log` (which also has
+  the §8 runs) and `logs/check_grouped_sectors.log`.
+- The identity holds to 2.5·10⁻¹⁵ for random C of any rank.
+- Adversarial minima of q_n/‖C‖² over rank-two members are ≥ −2.6·10⁻¹⁶ at n = 3, 4, 5.
+- For the [T2, §8] shapes with shared tails at n = 4 and arbitrary co-range, the minima are ≥ −1.6·10⁻¹⁶.
+
+Two planes on one side cannot share a group. With two planar copies in one group, the inequality of the previous section
+fails for rank-two X: the gap reaches −2‖X‖².
 
 ## The two-copy critical point
 
@@ -306,9 +374,14 @@ of this shape violates the endpoint inequality, for any number of copies.
   `logs/check_free_copies_f1_m3.log`), f free copies and m sector copies (n = 4 and 5, including planar sectors on both
   sides). It checks:
   - the identity with q_F, to 3.9·10⁻¹⁵;
-  - the inequality Σ_μ q_F(X̂_μ) ≥ 2Σ q_F(x_α y_β^*) − q_F(X̂_0) (gap ≥ 0, equal to 0 when A has no planar factor);
+  - the inequality Σ_μ q_F(X̂_μ) ≥ 2Σ q_F(x_α y_β^*) − q_F(X̂_0) (gap ≥ 0, equal to 0 when A has at most one planar
+    factor);
   - the reduction 2^m q_n(C) ≥ 2 q_{F∪{K}}(𝒞) + 2^m(q̃_F(P) + q̃_F(Q)), with slack ≥ −1.5·10⁻¹⁵;
   - Theorem A₂ and Corollary B₂ (with f = 1 also Theorem A and Corollary B), adversarial minima ≥ −2.1·10⁻¹⁶.
+
+- `code/check_one_plane_each.py`, `code/check_grouped_sectors.py`, `code/check_tomar8_shared_tails.py`
+  (`logs/check_one_plane_each.log`, `logs/check_grouped_sectors.log`): the grouping identity for random C of any rank,
+  to 2.5·10⁻¹⁵, and adversarial minima for Theorem C and the [T2, §8] shapes; see "Grouping the sector copies".
 
 An independent referee re-derived every step of the sections before "One free copy" and re-ran the checks with
 separately written code, up to n = 5. It found no mathematical error. Its wording and attribution fixes are applied
@@ -316,7 +389,10 @@ above. A second independent referee did the same for "One free copy". It re-deri
 at n = 2 to 5, including Theorem A at ranks three to six and the pieces of the proof of Corollary B. It found no
 mathematical error, and its fixes (the proof of Corollary B, the scope statement, hypotheses and wording) are applied
 above. It also confirmed that the rank conditions matter: with rank X = 2, rank Y = 1 and P = Q = 0 the form goes
-negative. The section "Two free copies" was added afterwards. It has been re-derived and checked with the script above,
+negative. A third independent referee did the same for "Two free copies" at n = 4 and 5. It checked the identity,
+the replica form, the reduction (which holds only with the stated phase), Theorem A₂, Corollary B₂ and control runs
+showing that the rank hypotheses are needed. It found no mathematical error, and its fixes are applied above. The
+section "Grouping the sector copies" was added afterwards. It has been re-derived and checked with the scripts above,
 but has not yet had an independent referee.
 
 ## References
