@@ -273,8 +273,10 @@ q_n(C) ≥ q_n(P_V C P_V), and P_V C P_V satisfies the hypotheses with co-range 
 For m ≤ 2 this is also in Theorem C (with [T1] when m = 2; Theorem E needs only the two-copy theorem). If c is a product
 vector, span{c, e} is a two-sector space of lines and the one-sided Theorem D covers it. More generally, if c has
 two-dimensional local support at two or fewer sector copies, the one-sided Theorem C covers the class (with [T1] when
-there are two). So the new cases are those where c has two-dimensional local support at three or more sector copies.
-Generic members are thick at every copy.
+there are two). GHZ-form c = α k_1⋯k_m + β k′_1⋯k′_m (with k_s, k′_s an orthonormal basis of K_s) is covered by the
+one-sided Theorem D: for odd m with weights 1 + 1 and only the two-copy theorem, for even m with weights 1 + 2 and [T1].
+So the new cases are those where c has two-dimensional local support at three or more sector copies and is not of GHZ
+form. Generic members are thick at every copy.
 
 **The rest of the class reduces to one inequality.** In Proposition M, the bound is separable in ρ and τ. Since
 Γ_X ≥ 0 (the two-copy theorem for X) and q_1(Y), q̃(P), q̃(Q) ≥ 0, taking the supremum over ρ, τ > 0 gives
@@ -362,22 +364,25 @@ Checks: `code/check_free_copy_excitation.py` (`logs/check_free_copy_excitation.l
 - Theorem E with arbitrary co-range, minimum ≥ 3·10⁻¹⁷ against a rank-three control at −0.5;
 - the largest ratio in (⋆).
 
-**Two free copies.** Everything above holds verbatim with two free copies F (H_F = C^9), with q_1 replaced by the
-two-copy form q_F and K = A ⊕ C e as a third copy. Proposition M becomes an identity with q_F and q_{F∪{K}}. Lemma R′ holds
-because w ↦ q_F(L(w)) is positive semidefinite by the two-copy theorem; the rest of its proof is unchanged. This gives:
+**Two free copies.** Proposition M, Lemma R′ and the proof of Theorem E carry over to two free copies F (H_F = C^9).
+Replace q_1, B_1 and q̃ by q_F, B_F and q̃_F, and read K = A ⊕ C e as a third copy. Lemma R′ holds because
+w ↦ q_F(L(w)) is positive semidefinite by the two-copy theorem. The constants of the (⋆) discussion and of Theorem F are
+not claimed here: for P = xv*, q̃_F(P) can be as small as ¼‖x‖²‖v‖². This gives:
 
 **Theorem E₂.** For every m, every C of rank at most two whose range lies in C^9 ⊗ span{c, e} for some c ∈ A has
 q_n(C) ≥ 0, whatever its co-range.
 
 The main term uses the three-copy theorem in arbitrary dimensions [T1] on C^3 ⊗ C^3 ⊗ K, the q̃ terms use the two-copy
-theorem, and the co-range compression is the one of Corollary B₂. With two free copies, Theorem C covers c with
-two-dimensional local support at one sector copy at most. So the new cases are those where c has it at two or more.
+theorem, and the co-range compression is the one of Corollary B₂. With two free copies, Theorem C covers only product
+vectors c: a vector cannot have two-dimensional local support at exactly one copy, and an entangled c forces two planar
+copies on one side. For odd m the one-sided Theorem D also covers GHZ-form c, with weights 1 + 1 + 1 and [T1]. So the new
+cases are the entangled c, apart from GHZ-form c when m is odd; at m = 2 (n = 4) every entangled c is new. The same
+proof gives Theorem E₂ for every two-sector structure, with range in C^9 ⊗ span{c, c′}; the referee checked this at
+n = 5, 6.
 Checked by `code/check_free_copies_excitation.py` (`logs/check_free_copies_excitation.log`, m = 2, 3, so n = 4, 5):
 - Proposition M with q_F to 2·10⁻¹⁵;
 - Lemma R′ with q_F, adversarial minimum ≥ 0;
 - Theorem E₂ with arbitrary co-range, minimum ≥ 4·10⁻¹⁷ against a rank-three control at −0.5.
-
-This paragraph has not had a separate referee.
 
 **General two sectors.** The argument works for any two-sector structure, with planes on both sides. Let Σ_X and Σ_Y
 be the sums of q_1(X̂_μ) and q_1(Ŷ_ν) over Pauli strings with no identity factor on the planar copies of A, respectively
@@ -387,7 +392,8 @@ Proposition M gives
     2^m q_n(C) − (2/ρ) q_{0,K}(Z) = (Σ_X − Γ_X/ρ) + (Σ_Y − ρΓ_Y) + (2^m − 2τ) q̃(P) + (2^m − 2/τ) q̃(Q),
 
 with D_1 = 1_A ⊕ (−1)^{m+1}√(ρ/τ) 1_B and D_2 = 1_A ⊕ √(ρτ) 1_B as before. (When B is a line this is Proposition M,
-since then Σ_Y = Γ_Y = q_1(Y).) Lemma R′ holds on each side.
+since then Σ_Y = Γ_Y = q_1(Y).) Lemma R′ holds on each side, with weights ω_μ = [μ has no identity factor] − 2^{1−a}
++ [μ = 0] over Pauli strings on the planar copies of A (and likewise with b for B).
 
 **Theorem E′.** For every two-sector structure, every C of rank at most two whose range lies in C^3 ⊗ span{c, c′} for some
 c ∈ A and c′ ∈ B has q_n(C) ≥ 0, whatever its co-range.
@@ -397,12 +403,26 @@ compression of Corollary B handles an arbitrary co-range. ∎
 
 Theorem E′ complements Corollary B. There the range is spanned by one vector of C^3 ⊗ A and one of C^3 ⊗ B, so the
 diagonal blocks have rank one. Here X and Y may have rank two, but their ranges are products between copy 0 and the
-sector. With one free copy, Theorem C covers max(a, b) ≤ 2, so Theorem E′ is new when c or c′ has two-dimensional local
-support at three or more sector copies.
+sector. Theorem E′ contains Theorem E: if c′ is a product vector, put e = c′ and K_s = e_s^⊥; then c ∈ K_1 ⊗ ⋯ ⊗ K_m,
+because A_s ⊥ B_s ∋ e_s. The same holds with c and c′ exchanged. If c and c′ each have two-dimensional local support at
+two sector copies or fewer, the one-sided Theorem C covers the class with [T1]; Theorem E′ proves it from the two-copy
+theorem alone. So Theorem E′ adds new cases only when both c and c′ are entangled and one of them has two-dimensional
+local support at three or more copies. This needs m ≥ 5 (n ≥ 6). From n = 7 on, some special members, such as products of
+two odd GHZ codes, are covered by the one-sided Theorem D.
 
 Checked by `code/check_free_copy_general_sectors.py` (`logs/check_free_copy_general_sectors.log`) on four structures,
-(a, b) = (2, 1), (2, 2), (1, 3) and (3, 0) at n = 4, 5: the identity holds to 6·10⁻¹⁵, and the adversarial minima are
-≥ 2·10⁻¹⁶ against rank-three controls at −0.5. This paragraph has not had a separate referee.
+(a, b) = (2, 1), (2, 2), (1, 3) and (3, 0) at n = 4, 5: the identity holds to 6.3·10⁻¹⁵, and the adversarial minima
+are ≥ 2·10⁻¹⁶ against rank-three controls at −0.5. These four structures lie inside Theorem E or Theorem C. The
+referee's runs at n = 6 cover the genuinely new part.
+
+An independent referee re-derived "Two free copies" and "General two sectors" with its own code. It checked:
+- the identities on 15 structures up to n = 6, with sign controls;
+- Lemma R′ with q_F;
+- Theorems E₂ and E′ at n = 4 to 6 with arbitrary co-range;
+- the scope claims.
+
+It found no mathematical error. Its fixes, on the scope of Theorems E, E₂ and E′ and on the constants with two free
+copies, are applied above.
 
 An independent referee re-derived this section and checked it with its own code at m = 1 to 4. It checked Proposition M
 against the one-free-copy identity and the sign of D_1, every step of Lemma R′ (with rank-three controls), the
