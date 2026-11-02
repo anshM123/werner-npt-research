@@ -123,13 +123,15 @@ This fails close to the thin boundary, where the descent uses other directions.
   | 3 | ≈ 1.48 | no stop up to 1.45; 2 of 6 starts stop at 1.5, all at 1.6 |
   | 5 | ≈ 1.045 | none at 1.03; 3 of 4 at 1.06 |
   | 7 | ≈ 0.97 | none at 0.95; both at 1.0 |
+  | 9 | between 0.95 and 1.0 | none at 0.95; all at 1.0 (R = −0.0263, thickness 0.64) |
   | 2 | — | no stop up to t = 2, consistent with the good sign of the trace term at even n |
 
   The endpoint t = 1/2 lies well inside the good range for every n tested. A heuristic shows why the trap lives near
   t = 1 rather than near 1/2. For a random thick plane W, Page-type purities give
   R_t(P_W) ≈ (1 − t/3)^n + 2((1 − 3t)/3)^n. For odd n this is negative only for t above a value that tends to 1, the
-  point where X ↦ Tr(X) I − tX stops being positive. At t = 1/2 it equals (5/6)^n − 2(1/6)^n > 0. Whether
-  t_c(n) > 1/2 for every n is part of the conjecture.
+  point where X ↦ Tr(X) I − tX stops being positive. At t = 1/2 it equals (5/6)^n − 2(1/6)^n > 0. At n = 9, t = 1 the heuristic gives −(2/3)^9 = −0.0260;
+  the trapped value found is −0.0263. The thresholds level off near 1 (≈ 1.48, 1.045, 0.97, 0.97 for n = 3, 5, 7, 9).
+  Whether t_c(n) > 1/2 for every n is part of the conjecture.
 
 ## A formula for the second variation
 
