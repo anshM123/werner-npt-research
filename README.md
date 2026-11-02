@@ -48,7 +48,12 @@ scripts need PyTorch.
   rank-two variety, adversarial searches at two and three copies find no thick local minimum, and the lowest thick
   critical points have closed-form values ((9 − √41)/20 at two copies; (67 − √2329)/216 at three), all saddles.
   `two-sector-class/` proves the endpoint for every n when the range lies in two product subspaces that are orthogonal
-  at every copy (any co-range). The two-copy point lies in that class.
+  at every copy (any co-range). The two-copy point lies in that class. Its collapse identities (Theorems C and D) also
+  give every-n classes thick at every copy: one side of C in a product of repetition codes, two-sector groups and free
+  copies with weights adding up to at most 3. That route has reached its limit. Even repetition blocks cost two copies,
+  and the first case outside it is one free copy times a one-excitation block with three planes,
+  C^3 ⊗ (K⊗K⊗K ⊕ C e⊗e⊗e), at four copies. Read as LOCC, the collapse maps m Werner copies to a weakly NPT two-qutrit
+  state ρ_m whose undistillability for every number of copies would already give NPT bound entanglement.
 - The endpoint for every n, even restricted to operators whose range and co-range lie in one plane. Section 4 of
   `three-copy-notes/NOTES.md` explains why the most natural inductive route fails.
 - The endpoint for every n on the bosonic sector (range and co-range in Sym^n(C^3)). Section 4 of
