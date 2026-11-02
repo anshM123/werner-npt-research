@@ -2,10 +2,11 @@
 
 Ansh Mishra and Aryan Senthilkumar, 2 November 2026
 
-This note proves the endpoint inequality for every number of copies on a class of rank-two operators. Their range and
-co-range lie in the sum of two product subspaces that are orthogonal at every copy. Operators in this class can have
-one-copy reductions of rank three at every copy. The class contains the lowest thick critical point we found at two
-copies. It is a small class, and the argument does not extend to general operators.
+This note proves the endpoint inequality for every number of copies on a class of rank-two operators. Their range lies
+in the sum of two product subspaces that are orthogonal at every copy; the co-range can be arbitrary (or the other way
+round). Operators in this class can have one-copy reductions of rank three at every copy. The class contains the lowest
+thick critical point we found at two copies. It is a small class, and the argument does not extend to general
+operators.
 
 ## Setting
 
@@ -19,6 +20,14 @@ At every copy s, let A_s and B_s be nonzero subspaces of C^3 with A_s ⊥ B_s. P
 B = B_1 ⊗ … ⊗ B_n.
 
 **Theorem.** For every n, if C has rank at most two and both ran C and ran C* lie in A ⊕ B, then q_n(C) ≥ 0.
+
+**Corollary (one side is enough).** For every n, if C has rank at most two and ran C lies in V = A ⊕ B, with the
+co-range arbitrary, then
+
+    q_n(C) ≥ q_n(P_V C P_V) ≥ 0.
+
+The same holds with ran C* in V and the range arbitrary, since q_n(C*) = q_n(C). The first inequality holds for every
+rank.
 
 The main example is **one excitation**: A_s = K_s is a plane, B_s = C e_s with e_s ⊥ K_s, so A ⊕ B = K ⊕ C e. Without
 the e-component this is the thin case (range in a product of planes; Tomar, Lemma 2.6). With it, the one-copy
@@ -89,6 +98,28 @@ A partial trace over copy s pairs the copy-s factor of the range with that of th
     (If x ≥ a′ and y ≥ b′, use (x − a′)² + (y − b′)² ≥ 2(x − a′)(y − b′). Otherwise one of 2a′y, 2b′x is at least
     2xy.) ∎
 
+**Proof of the Corollary.** Let ran C ⊆ V and put X_A = P_A C and X_B = P_B C.
+
+At every copy, split the co-range factor of X_A into its parts in A_s and in A_s^⊥. This writes X_A = Σ_T X_A^(T),
+where T is the set of copies at which the co-range factor lies in A_s^⊥. Three facts about these pieces:
+- A partial trace over a copy in T vanishes on X_A^(T).
+- Two pieces with T ≠ T′ have orthogonal partial traces, since they differ at a copy that is not traced. So
+  q_n(X_A) = Σ_T q_n(X_A^(T)).
+- Every piece has q_n ≥ 0, for any rank. At the copies outside T, its range and co-range lie in A_s, of dimension at
+  most two, where the one-copy form is positive semidefinite. At the copies in T no trace survives.
+
+Two pieces are special:
+- The piece T = ∅ is P_A C P_A.
+- The piece T = {1..n} has no surviving trace, so its q_n is its squared norm. That is at least ‖P_A C P_B‖², because
+  B ⊆ ⊗_s A_s^⊥.
+
+The same holds for X_B. The partial traces of X_A and X_B live in orthogonal ranges, so their only cross term is the
+full trace. There only P_A C P_A and P_B C P_B contribute. Comparing with Step 1 for P_V C P_V gives
+
+    q_n(C) ≥ q_n(P_V C P_V).
+
+Since P_V C P_V has rank at most two, the Theorem gives q_n(P_V C P_V) ≥ 0. ∎
+
 ## The two-copy critical point
 
 The lowest thick critical point of R = q_2/‖·‖² on the rank-two variety that we found at two copies is in this class
@@ -119,6 +150,10 @@ of this shape violates the endpoint inequality, for any number of copies.
   dimensions (1,1), (2,1), (1,2) in random bases, at n = 2, 3, 4.
   - The identity of Step 1 holds to 4.4·10⁻¹⁵.
   - The minimum of q_n/‖C‖² over the class is ≥ −3.3·10⁻¹⁶.
+- `code/check_one_sided.py` (`logs/check_one_sided.log`), the Corollary, with ran C in V and the co-range arbitrary,
+  at n = 2, 3, 4.
+  - The difference q_n(C) − q_n(P_V C P_V) is at least 0.17 ‖C‖² on random members.
+  - By adversarial minimisation it is at least −8.9·10⁻¹⁶ ‖C‖²; zero is attained when the co-range lies in V.
 
 ## References
 

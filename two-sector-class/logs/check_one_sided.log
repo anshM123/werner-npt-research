@@ -1,0 +1,3 @@
+n = 2: min of q(C) - q(P_V C P_V) over random members +1.72e-01, adversarial -8.88e-16
+n = 3: min of q(C) - q(P_V C P_V) over random members +3.92e-01, adversarial -8.88e-16
+n = 4: min of q(C) - q(P_V C P_V) over random members +3.84e-01, adversarial +8.33e-17
