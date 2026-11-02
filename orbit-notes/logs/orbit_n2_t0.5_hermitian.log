@@ -1,0 +1,10 @@
+n = 2, t = 0.5, ensemble hermitian; product value (1-2t)(1-t)^(n-1) = +0.000000, rank-one value (1-t)^n = +0.250000
+  start 0: R +0.554723 (thickness 1.62e-01) -> +0.000000; end thickness 8.7e-10, s2/s1 1.0e+00, max|H| 3.6
+  start 1: R +0.770620 (thickness 2.29e-01) -> +0.000000; end thickness 2.1e-08, s2/s1 1.0e+00, max|H| 3.3
+  start 2: R +0.695262 (thickness 1.22e-01) -> +0.000000; end thickness 3.6e-11, s2/s1 1.0e+00, max|H| 3.2
+  start 3: R +0.675883 (thickness 2.24e-01) -> +0.000000; end thickness 7.9e-09, s2/s1 1.0e+00, max|H| 3.7
+  start 4: R +0.443679 (thickness 9.87e-02) -> +0.000000; end thickness 1.7e-12, s2/s1 1.0e+00, max|H| 3.9
+  start 5: R +0.543362 (thickness 2.17e-01) -> +0.000000; end thickness 3.3e-12, s2/s1 1.0e+00, max|H| 3.5
+  start 6: R +0.572136 (thickness 9.67e-02) -> +0.000000; end thickness 9.6e-08, s2/s1 1.0e+00, max|H| 3.0
+  start 7: R +0.695557 (thickness 2.58e-01) -> +0.000000; end thickness 1.2e-08, s2/s1 1.0e+00, max|H| 3.0
+interior stops: 0 of 8

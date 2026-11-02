@@ -1,0 +1,8 @@
+n = 3, t = 0.5, ensemble projector; product value (1-2t)(1-t)^(n-1) = +0.000000, rank-one value (1-t)^n = +0.125000
+  start 0: R +0.544348 (thickness 3.18e-01) -> +0.000000; end thickness 5.6e-12, s2/s1 1.0e+00, max|H| 3.8
+  start 1: R +0.518992 (thickness 2.79e-01) -> +0.000000; end thickness -4.9e-36, s2/s1 1.0e+00, max|H| 6.9
+  start 2: R +0.519843 (thickness 2.33e-01) -> +0.000000; end thickness 4.9e-13, s2/s1 1.0e+00, max|H| 5.4
+  start 3: R +0.525786 (thickness 3.56e-01) -> +0.000002; end thickness 9.6e-12, s2/s1 1.0e+00, max|H| 3.9
+  start 4: R +0.576105 (thickness 3.82e-01) -> +0.000000; end thickness 9.8e-14, s2/s1 1.0e+00, max|H| 4.9
+  start 5: R +0.537987 (thickness 2.99e-01) -> +0.000000; end thickness 9.1e-14, s2/s1 1.0e+00, max|H| 3.5
+interior stops: 0 of 6

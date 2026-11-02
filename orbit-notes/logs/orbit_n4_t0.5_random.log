@@ -1,0 +1,6 @@
+n = 4, t = 0.5, ensemble random; product value (1-2t)(1-t)^(n-1) = +0.000000, rank-one value (1-t)^n = +0.062500
+  start 0: R +0.477042 (thickness 4.58e-01) -> +0.000000; end thickness 1.3e-15, s2/s1 1.0e+00, max|H| 6.1
+  start 1: R +0.478221 (thickness 4.80e-01) -> +0.000000; end thickness -3.1e-16, s2/s1 1.0e+00, max|H| 7.2
+  start 2: R +0.479998 (thickness 4.15e-01) -> +0.000000; end thickness 1.8e-16, s2/s1 1.0e+00, max|H| 5.8
+  start 3: R +0.482261 (thickness 4.30e-01) -> +0.062500; end thickness -1.1e-16, s2/s1 4.6e-08, max|H| 6.4
+interior stops: 0 of 4
