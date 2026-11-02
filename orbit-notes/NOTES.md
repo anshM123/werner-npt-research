@@ -199,10 +199,19 @@ So the lowest thick critical value lies between 0.10 and 0.13 at n = 2, between 
 0.03 and 0.05 at n = 4. That is of order 2^{−n}. This is what a search found, not a bound.
 (At t = 0.4, target 0.2 at n = 2 slid to the boundary in 4/4 runs.)
 
-On the whole rank-two variety (not only on squeeze orbits), the lowest thick critical point we found at two copies
-is exact: R = (9 − √41)/20 ≈ 0.12984. It lies in the two-sector class of `../two-sector-class/`, where the endpoint
-inequality is proved for every n. So no operator of that shape gives a counterexample at any number of copies.
-At three copies the lowest thick variety-critical point found (R ≈ 0.0926) is not in such a class.
+On the whole rank-two variety, not only on squeeze orbits, the lowest thick critical points we found have closed-form
+values. All of them are saddles (`code/exact_critical_points.py`, `logs/exact_critical_points.log`, data in `data/`).
+
+| n | R | negative Hessian directions | structure |
+|---|---|---|---|
+| 2 | (9 − √41)/20 ≈ 0.12984 | 6 (smallest −0.58) | in the two-sector class of `../two-sector-class/` |
+| 3 | (3 − √5)/8 ≈ 0.09549 | 30 (smallest −1/3) | local spectra (1/3, 1/3, 4/3) at every copy |
+| 3 | (67 − √2329)/216 ≈ 0.08676 | 15 (smallest −0.28) | |C| in local eigenbases invariant under copy permutations |
+
+The endpoint inequality is proved for every n on the two-sector class, so no operator of the two-copy shape gives a
+counterexample at any number of copies. The three-copy points are not in that class. Adversarial searches for a thick
+local minimum on the variety, at two and three copies, either stall at the thickness floor with many negative Hessian
+directions or slide to thin global minima with R = 0.
 
 Every genuine critical point is a saddle, with most negative squeeze curvature between −0.13 and −2.5 (in the
 coordinates of the script). At the low ones
@@ -368,6 +377,8 @@ NPT bound entanglement; we do not have one.
   filters at one copy (n = 3).
 * `code/levi_positive_point.py` (with `data/levi_positive_n2.npy`): a two-copy two-sided critical point with positive
   Levi form that still descends through the curvature term.
+* `code/exact_critical_points.py` (with `data/variety_critical_n2_low.npy`, `data/variety_critical_n3_golden.npy`,
+  `data/variety_critical_n3_low.npy`): the exact low thick critical points on the rank-two variety.
 * `logs/`: the runs in the tables and the control.
 
 ## References
