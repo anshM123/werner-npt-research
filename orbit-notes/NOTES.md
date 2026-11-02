@@ -193,7 +193,7 @@ with the squeeze gradient alone. A run counts as genuine if the squeeze gradient
 | 2 | 0.15 (4/4), 0.2 (6/6), 0.4 (4/4) | 0.05 (4), 0.1 (4) |
 | 3 | 0.08 (R = 0.080, 0.106), 0.15 (3/3), 0.3 (3/3) | 0.03 (3), 0.04 (3), 0.05 (3) |
 | 4 | 0.05 (1/1), 0.1 (2/2) | 0.03 (2) |
-| 5 | 0.05 (first run) | — |
+| 5 | 0.05 (2/2) | — |
 
 So the lowest thick critical value lies between 0.10 and 0.13 at n = 2, between 0.05 and 0.08 at n = 3, and between
 0.03 and 0.05 at n = 4. That is of order 2^{−n}. This is what a search found, not a bound.
@@ -314,6 +314,18 @@ which pairs the leakage of the range at copy s with the leakage of the co-range 
 neither family works alone. An adversarial search at n = 2 finds thick critical points with no similarity descent
 (largest b about +5·10⁻⁷). There the squeeze Hessian is −2.9 to −4.0 and the two-sided Hessian about −0.8 to −1.0.
 
+**One copy is not enough here either.** Consider two-sided filters at a single copy,
+C ↦ (g ⊗ 1)C(h ⊗ 1)^T with g, h ∈ GL(3). They reach the thin boundary from every random start we tried (16/16 at
+n = 2 and 3), including from both squeeze examples above. But an adversarial search finds a strict local minimum at
+n = 3: `data/two_sided_single_copy_min_n3.npy`, with R = 0.3111 and thickness 0.26–0.33 at every copy. The gradient over
+(X, Y) at copy 0 is 1.5·10⁻¹³. On the 24 directions where R is not constant, the Hessian has smallest eigenvalue
+0.010. The excluded directions are the unitary conjugations and scalings, whose span has rank 12; R is constant along
+them to 10⁻¹⁶. Along 300 random directions R goes up, and perturbed descents return to the same value.
+`code/two_sided_single_copy_min.py` checks all of this. (A first version of this check removed one direction too
+many, because a QR factorisation of the rank-deficient set of invariant directions was used; a rank-revealing
+projection is needed.) At copies 1 and 2 the gradient is 0.10–0.12, so the full two-sided orbit still descends. Both
+the squeeze version and the two-sided version of the orbit property are therefore genuinely multi-copy.
+
 ## Status
 
 Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 7. A proof of ORB_n for all n would prove
@@ -330,6 +342,8 @@ NPT bound entanglement; we do not have one.
 * `code/joint_second_variation.py` (with `data/critical_n2_R0.2.npy`): check of the joint second-variation formula.
 * `code/two_sided_identities.py` (with `data/variety_critical_n2.npy`): the squeeze and similarity second variations at a
   critical point on the rank-two variety.
+* `code/two_sided_single_copy_min.py` (with `data/two_sided_single_copy_min_n3.npy`): a strict local minimum for two-sided
+  filters at one copy (n = 3).
 * `logs/`: the runs in the tables and the control.
 
 ## References

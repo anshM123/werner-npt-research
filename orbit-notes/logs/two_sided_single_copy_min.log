@@ -1,0 +1,10 @@
+R = +0.31107496, singular values [0.7333 0.6799 0.    ]
+thickness (range at copies 0,1,2; co-range at copies 0,1,2): [0.3172 0.2778 0.2601 0.3318 0.3071 0.2605]
+copy 0: |gradient over (X, Y)| 1.5e-13
+copy 1: |gradient over (X, Y)| 1.0e-01
+copy 2: |gradient over (X, Y)| 1.2e-01
+directions along which R is constant: rank 12; largest change of R along them at step 1e-2: 1.7e-16
+Hessian at copy 0 on the 24-dim complement: smallest eigenvalues [0.01024 0.0119  0.01719 0.02275]
+step 0.001: smallest R(step) - R over 300 random directions of the complement +3.71e-08
+step 0.01: smallest R(step) - R over 300 random directions of the complement +4.37e-06
+step 0.05: smallest R(step) - R over 300 random directions of the complement +1.14e-04
