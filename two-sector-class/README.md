@@ -22,7 +22,7 @@ B = B_1 ⊗ … ⊗ B_n.
 
 The main example is **one excitation**: A_s = K_s is a plane, B_s = C e_s with e_s ⊥ K_s, so A ⊕ B = K ⊕ C e. Without
 the e-component this is the thin case (range in a product of planes; Tomar, Lemma 2.6). With it, the one-copy
-reduction of the range has rank three at every copy, as long as the e-component is nonzero.
+reduction of the range generically has rank three at every copy.
 
 How the class relates to known ones:
 - A generic member has no product vector in its range or co-range, so the product-ray theorem (Wu–Zou, Thm. 7.3, which
