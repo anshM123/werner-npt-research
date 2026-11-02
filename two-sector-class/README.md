@@ -42,10 +42,13 @@ How the class relates to known ones (write a and b for the numbers of copies at 
 - **Few copies.** For n ≤ 3 the Theorem also follows from the known two- and three-copy results.
 - **What is new.** The two-sided class with a ≥ 2 or b ≥ 2 (for example one excitation) at n ≥ 4, and the one-sided
   Corollary.
-- **An open case of [T2, §8].** With a = b = 1 the Corollary covers operators whose range lies in
-  span{0…0, 2_i 0…0, 1…1, 2_j 1…1} with i ≠ j, and whose co-range is arbitrary. Take A = (span{0,2} at copy i) ⊗ (0 at
-  the others) and B = (span{1,2} at copy j) ⊗ (1 at the others). This is part of a case that [T2, §8] lists as open:
-  range in V_0 + V_1 not spanned by vectors of V_0 ∪ V_1, with an arbitrary co-range.
+- **An open case of [T2, §8].** Let T_0 and T_1 be disjoint sets of copies, and take
+  A = ⊗_{s∈T_0} span{0,2} ⊗ ⊗_{s∉T_0} span{0} and B = ⊗_{s∈T_1} span{1,2} ⊗ ⊗_{s∉T_1} span{1}. These are orthogonal
+  at every copy. So the Corollary covers every rank-two operator whose range lies in
+  span{0…0, 2_i 0…0 (i ∈ T_0), 1…1, 2_j 1…1 (j ∈ T_1)} and whose co-range is arbitrary: the two GHZ backbones of
+  [T2] with their tails on disjoint sets of copies. [T2, §8] lists range in V_0 + V_1 with an arbitrary co-range as
+  open, apart from ranges spanned by vectors of V_0 ∪ V_1 and co-ranges orthogonal to all partner strings. What is
+  left of that case is ranges in which both backbones have a tail at a common copy.
 - **Credits.** The co-range splitting in the proof of the Corollary is the argument of [T2, Lemma 4.8]. The rank-one
   bound below is [Song–Chen, Prop. 8]. Wu–Zou [WZ, App. C.2] treat locally orthogonal product codes at three copies,
   which contains the case where every copy has (dim A_s, dim B_s) = (1,1).
