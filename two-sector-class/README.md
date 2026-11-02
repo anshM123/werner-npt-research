@@ -217,6 +217,48 @@ setting of [T2, §8] with one shared tail copy, ranges spanned by one vector of 
 there. The general case, with a diagonal block of rank two, is open. There the q̃ terms can vanish on projector-like
 off-diagonal blocks, so the Schur-complement step of Step 3 has nothing to pay with.
 
+## Two free copies
+
+The rank-one argument does not need Lemma L. It needs only the endpoint inequality for one more copy, where that copy
+may have any dimension. This lets us free a second copy.
+
+Let F be a set of f free copies and keep the sector copies 1, …, m as above, so n = f + m. Write H_F = (C^3)^{⊗f},
+q_F for the f-copy form on operators on H_F, B_F for its bilinear form, and q̃_F(P) = Σ_{J ⊆ F} (−½)^{|J|} ‖Tr_J P‖².
+The identity of the previous section holds verbatim with q_1, B_1, q̃ replaced by q_F, B_F, q̃_F. The proof of Lemma R
+also goes through as far as the operator inequality, since W_F = ⊗(1 − ½F) ≥ 0. Writing x = Σ_α x_α ⊗ α and
+y = Σ_β y_β ⊗ β over a basis of A, it gives
+
+    Σ_μ q_F(X̂_μ) ≥ ⟨x ⊗ y| W_F ⊗ (2 − F_A) |x ⊗ y⟩ = 2 Σ_{α,β} q_F(x_α y_β^*) − q_F(X̂_0).
+
+**Theorem A₂.** For every n ≥ 3, take f = 2 free copies. If ran C and ran C^* lie in H_F ⊗ (A ⊕ B), rank X ≤ 1,
+rank Y ≤ 1, rank P ≤ 2 and rank Q ≤ 2, then q_n(C) ≥ 0.
+
+*Proof.* Write X = xy^* and Y = x′y′^* (the case X = 0 or Y = 0 is easier, since the cross term vanishes). Bound the
+X-sum and the Y-sum by the inequality above and choose the phase φ that realises the cross term:
+
+    2^m q_n(C) ≥ 2 q_{F ∪ {K}}(𝒞) + 2^m (q̃_F(P) + q̃_F(Q)),   𝒞 = xy^* ⊕ e^{iφ} x′y′^*.
+
+Here 𝒞 is read as an operator on H_F ⊗ K, where K = A ⊕ B counts as one more copy with the endpoint form there. Indeed
+
+    q_{F ∪ {K}}(𝒞) = Σ_{α,β} q_F(x_α y_β^*) + Σ_{α′,β′} q_F(x′_{α′} y′_{β′}^*) − ½ q_F(X̂_0 + e^{iφ} Ŷ_0).
+
+The operator 𝒞 has rank at most two. So q_{F ∪ {K}}(𝒞) ≥ 0 by the three-copy endpoint theorem with factors C^3, C^3
+and K, which holds for arbitrary factor dimensions [T1, Thm. 1.2]. Each 9 × 9 block of P has rank at most two, so
+q̃_F(P) ≥ 0 by the two-copy theorem; likewise for Q. ∎
+
+With f = 1 the same proof uses the two-copy theorem for C^3 ⊗ K, which holds in arbitrary dimensions [FHPV, BGH].
+This gives a second proof of Theorem A. In general, the rank-one case with f free copies follows from the endpoint
+inequality for f + 1 copies, one of them of arbitrary dimension.
+
+**Corollary B₂.** For every n ≥ 3 with two free copies: if C has rank at most two and its range is spanned by one vector
+of H_F ⊗ A and one vector of H_F ⊗ B, then q_n(C) ≥ 0, whatever the co-range.
+
+*Proof.* As for Corollary B, with the co-range split only at the sector copies. Each piece reduces, at the sector
+copies, to q_F on pieces of rank at most two, which is nonnegative by the two-copy theorem. ∎
+
+**Status.** Theorem A₂ and Corollary B₂ rest on Tomar's computer-assisted three-copy theorem [T1]. For rank two they
+are new at n ≥ 4; Theorem A₂ at ranks three to six is not covered by the known rank-two results even at n = 3.
+
 ## The two-copy critical point
 
 The lowest thick critical point of R = q_2/‖·‖² on the rank-two variety that we found at two copies is in this class
@@ -260,16 +302,29 @@ of this shape violates the endpoint inequality, for any number of copies.
   - Theorem A, adversarial minimum of q_n/‖C‖² ≥ −2.6·10⁻¹⁶;
   - Corollary B, adversarial minimum ≥ −2.6·10⁻¹⁶, and q_n(C) − q_n(P_V C P_V) ≥ −2.8·10⁻¹⁷.
 
+- `code/check_free_copies.py` (`logs/check_free_copies_f2_m2.log`, `logs/check_free_copies_f2_m3.log`,
+  `logs/check_free_copies_f1_m3.log`), f free copies and m sector copies (n = 4 and 5, including planar sectors on both
+  sides). It checks:
+  - the identity with q_F, to 3.9·10⁻¹⁵;
+  - the inequality Σ_μ q_F(X̂_μ) ≥ 2Σ q_F(x_α y_β^*) − q_F(X̂_0) (gap ≥ 0, equal to 0 when A has no planar factor);
+  - the reduction 2^m q_n(C) ≥ 2 q_{F∪{K}}(𝒞) + 2^m(q̃_F(P) + q̃_F(Q)), with slack ≥ −1.5·10⁻¹⁵;
+  - Theorem A₂ and Corollary B₂ (with f = 1 also Theorem A and Corollary B), adversarial minima ≥ −2.1·10⁻¹⁶.
+
 An independent referee re-derived every step of the sections before "One free copy" and re-ran the checks with
 separately written code, up to n = 5. It found no mathematical error. Its wording and attribution fixes are applied
 above. A second independent referee did the same for "One free copy". It re-derived every step and wrote its own checks
 at n = 2 to 5, including Theorem A at ranks three to six and the pieces of the proof of Corollary B. It found no
 mathematical error, and its fixes (the proof of Corollary B, the scope statement, hypotheses and wording) are applied
 above. It also confirmed that the rank conditions matter: with rank X = 2, rank Y = 1 and P = Q = 0 the form goes
-negative.
+negative. The section "Two free copies" was added afterwards. It has been re-derived and checked with the script above,
+but has not yet had an independent referee.
 
 ## References
 
+- [T1] T. S. Tomar, *Undistillability of Werner states from three, four and five copies*, Zenodo 23718035 (2026):
+  Theorem 1.2 (three copies at the endpoint, arbitrary factor dimensions; computer-assisted).
+- [FHPV] Fraser, Huber, Pozsgay and Vona, arXiv:2607.24309; [BGH] Bharti, Gajjala and Haug, arXiv:2607.24479: the
+  two-copy endpoint in arbitrary factor dimensions.
 - [T2] T. S. Tomar, *Equality cases and every-copy results for the Werner endpoint*, Zenodo (2026):
   - Lemma 2.6 (range in a product of qubits);
   - Theorems 4.1–4.7 (GHZ backbones with single-copy tails);
