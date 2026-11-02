@@ -1,0 +1,2 @@
+m=3 (n=4): Prop M error 4.1e-15; Lemma R' adversarial min gap -1.81e-16 (generic control -2.000); Theorem E adversarial min q_n/|C|^2 +3.31e-16 (rank-3 control -0.500); largest ratio in (*) found 4.0000 (needed <= 2^m - 2 = 6)
+m=4 (n=5): Prop M error 3.5e-15; Lemma R' adversarial min gap +6.91e-15 (generic control -2.000); Theorem E adversarial min q_n/|C|^2 +3.40e-17 (rank-3 control -0.500); largest ratio in (*) found 4.0000 (needed <= 2^m - 2 = 14)

@@ -222,8 +222,76 @@ three-copy results, so for rank two the new content is at n ≥ 4. Theorem A at 
 them. In the
 setting of [T2, §8] with one shared tail copy, ranges spanned by one vector of each backbone space are already covered
 there. The general case, with a diagonal block of rank two, is covered by Theorem C below when a, b ≤ 2 (using [T1]), and
-is open for max(a, b) ≥ 3. There the q̃ terms can vanish on projector-like off-diagonal blocks, so the
+is open for max(a, b) ≥ 3. For one excitation, Theorem E below covers ranges in C^3 ⊗ span{c, e}, and the rest reduces
+to one explicit inequality (⋆). There the q̃ terms can vanish on projector-like off-diagonal blocks, so the
 Schur-complement step of Step 3 has nothing to pay with.
+
+## One free copy and one excitation
+
+Here the sector copies carry one excitation: A = K_1 ⊗ … ⊗ K_m with planes K_s, and B = C e with e = e_1 ⊗ … ⊗ e_m,
+e_s ⊥ K_s. This is the case a = m, b = 0 of "One free copy", and it is open in general for m ≥ 3. Treat K = A ⊕ C e
+(dimension 2^m + 1) as one copy, and write q_{0,K} for the two-copy form on C^3 ⊗ K. Put
+Σ_full = Σ_{μ∈{1,2,3}^m} q_1(X̂_μ), which is 2^m q_n(X), and Γ_X = 2 q_{0,K}(X) = 2 Σ_{α,β} q_1(X_{αβ}) − q_1(X̂_0), where the
+X_{αβ} are the 3 × 3 blocks of X in a basis of A. Since b = 0, Y is a 3 × 3 matrix.
+
+**Proposition M.** For ρ, τ > 0 let D_1 = 1_A ⊕ (−1)^{m+1}√(ρ/τ) 1_B, D_2 = 1_A ⊕ √(ρτ) 1_B and Z = (1 ⊗ D_1) C (1 ⊗ D_2).
+Then for every operator C on C^3 ⊗ (A ⊕ C e),
+
+    2^m q_n(C) − (2/ρ) q_{0,K}(Z) = Σ_full − Γ_X/ρ + (1 − ρ) q_1(Y) + (2^m − 2τ) q̃(P) + (2^m − 2/τ) q̃(Q).
+
+*Proof.* The blocks of Z are X, √(ρτ) P, (−1)^{m+1}√(ρ/τ) Q and (−1)^{m+1} ρ Y. In q_{0,K}(Z) the trace over K gives
+X̂_0 + (−1)^{m+1} ρ Y, and its q_1 contains the cross term 2(−1)^{m+1} ρ Re B_1(X̂_0, Y). Subtracting from the identity of
+"One free copy" (where, with b = 0, the Y-sum is q_1(Y)) gives the formula. At ρ = τ = 1 it is the collapse identity of
+"Grouping the sector copies" with one group. ∎
+
+Since Z has rank at most that of C, the two-copy theorem on C^3 ⊗ K gives, for C of rank at most two and all ρ, τ > 0,
+that 2^m q_n(C) is at least the right-hand side.
+
+**Lemma R′.** If X has rank at most two and ran X ⊆ C^3 ⊗ c for one vector c ∈ A (entangled or not), then
+Σ_full ≥ Γ_X. The same holds if ran X* ⊆ C^3 ⊗ c.
+
+*Proof.* Write X = (1 ⊗ |c⟩) Z with Z : C^3 ⊗ A → C^3 of rank at most two. Then X̂_μ = L(σ_μ c), where L(w) = Z(1 ⊗ |w⟩)
+is a 3 × 3 matrix of rank at most two. So w ↦ q_1(L(w)) is a Hermitian form ⟨w|𝔐|w⟩ with 𝔐 ≥ 0. With weights
+w_μ = [μ has no identity factor] − 2^{1−m} + [μ = 0], we have Σ_full − Γ_X = Σ_μ w_μ q_1(X̂_μ) = Tr(𝔐 Δ_c), where
+Δ_c = Σ_μ w_μ σ_μ |c⟩⟨c| σ_μ. Since Σ_{μ full} |⟨v|σ_μ|c⟩|² = ⟨c ⊗ v|⊗_s(2 − F_s)|c ⊗ v⟩ and Σ_μ |⟨v|σ_μ|c⟩|² = 2^m‖c‖²‖v‖²,
+we get ⟨v|Δ_c|v⟩ = ⟨c ⊗ v|⊗_s(2 − F_s) − 2 + F_A|c ⊗ v⟩ ≥ 0 by the operator inequality in the proof of Lemma R. So
+Δ_c ≥ 0 and Tr(𝔐 Δ_c) ≥ 0. The co-range version follows by taking adjoints. ∎
+
+For generic X of rank two the inequality fails; the gap Σ_full − Γ_X reaches −2‖X‖².
+
+**Theorem E.** For every m, every C of rank at most two whose range lies in C^3 ⊗ span{c, e} for some c ∈ A has
+q_n(C) ≥ 0, whatever its co-range.
+
+*Proof.* First let the co-range lie in V = C^3 ⊗ (A ⊕ C e). Then ran X ⊆ C^3 ⊗ c, so Lemma R′ gives Σ_full ≥ Γ_X.
+Proposition M with ρ = τ = 1 then gives 2^m q_n(C) ≥ (Σ_full − Γ_X) + (2^m − 2)(q̃(P) + q̃(Q)) ≥ 0, because the
+3 × 3 blocks of P and Q have rank at most two. For an arbitrary co-range, the proof of Corollary B gives
+q_n(C) ≥ q_n(P_V C P_V), and P_V C P_V satisfies the hypotheses with co-range in V. ∎
+
+For m ≤ 2 this is in Theorem C. If c is a product vector, span{c, e} is a two-sector space of lines and the one-sided
+Theorem D covers it. So the new cases are m ≥ 3 with c entangled; their generic members are thick at every copy.
+
+**The rest of the class reduces to one inequality.** In Proposition M, the bound is separable in ρ and τ. The optimal
+choices give
+
+    2^m q_n(C) ≥ Σ_full + q_1(Y) + 2^m (q̃(P) + q̃(Q)) − 2√(Γ_X q_1(Y)) − 4√(q̃(P) q̃(Q)).
+
+Write s = √Σ_full, g = √Γ_X and y = √q_1(Y). If g ≤ s the right side is at least (s − y)² ≥ 0. If g > s it is at least
+(y − s)² − 2y(g − s) + (2^{m+1} − 4)√(q̃(P) q̃(Q)). So the endpoint holds on the whole class (one free copy, one
+excitation, every rank-two C with range and co-range in V) as soon as
+
+    (⋆)   √q_1(Y) · (√Γ_X − √Σ_full) ≤ (2^m − 2) √(q̃(P) q̃(Q))   for every rank-two C in the class.
+
+We have not proved (⋆). Numerically the largest ratio of the two sides is 4.0000 at m = 3 and 4, where the needed
+constants are 6 and 14. At m = 2 the needed constant 2 is too small, and that case stays with Theorem C. Fixed choices
+ρ = τ = 1 do not suffice (the bound reaches −2‖C‖²), and a version of (⋆) with squares instead of square roots is false.
+
+Checks: `code/check_free_copy_excitation.py` (`logs/check_free_copy_excitation.log`, m = 3, 4) covers:
+- Proposition M, to 4·10⁻¹⁵;
+- Lemma R′, adversarial minimum ≥ −2·10⁻¹⁶ against a generic control at −2;
+- Theorem E with arbitrary co-range, minimum ≥ 3·10⁻¹⁷ against a rank-three control at −0.5;
+- the largest ratio in (⋆).
+
+This section has not yet had an independent referee.
 
 ## Two free copies
 
