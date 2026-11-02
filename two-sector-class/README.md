@@ -301,6 +301,37 @@ trace zero, X has rank two with equal singular values, and Σ_full = 0, X̂_0 = 
 settle every m ≥ 3. By the compression of Corollary B it would also cover range in V with any co-range. At m = 2 the needed constant 2 is too small, and that case stays with Theorem C. Fixed choices
 ρ = τ = 1 do not suffice (the bound reaches −2‖C‖²), and a version of (⋆) with squares instead of square roots is false.
 
+**Partial results on (⋆).** Two bounds hold for every Z: Σ_full(Z) ≤ 2^m‖Z‖², by Pauli completeness on A. If Z has rank
+at most two, also Γ(Z) ≤ 2‖Z‖²: indeed 2‖Z‖² − Γ(Z) = ‖Tr_0 Z‖² + ‖Tr_A Z‖² − ½|Tr Z|², and Tr_A Z is 3 × 3 while Tr_0 Z
+has rank at most 6.
+
+*Lemma T.* Let X = X_0 + E, where every operator in span{X_0, E} has rank at most two and Γ(X_0) ≤ Σ_full(X_0). Then
+
+    √Γ_X − √Σ_full(X) ≤ √Γ(E) + √Σ_full(E) ≤ (√2 + 2^{m/2}) ‖E‖.
+
+*Proof.* On rank-two operators, Σ_full ≥ 0 (thin copies) and Γ ≥ 0 (two-copy theorem), so both forms are positive
+semidefinite on the span and their square roots are seminorms there. So
+√Γ(X) ≤ √Γ(X_0) + √Γ(E) ≤ √Σ_full(X_0) + √Γ(E) ≤ √Σ_full(X) + √Σ_full(E) + √Γ(E). ∎
+
+*Theorem 1a.* For m ≥ 4, q_n(C) ≥ 0 for every C of rank at most two with range and co-range in V such that the range and
+the co-range each contain a nonzero vector of C^3 ⊗ A.
+
+*Proof.* The condition says that the e-components of the range vectors are parallel, and likewise for the co-range. If
+either set of e-components vanishes, C is block-triangular, a case covered in "One free copy". Otherwise a gauge gives
+Y = uv*, P = x_1 v* and Q = u y_1*, with X = x_1 y_1* + x_2 y_2*. Then q_1(Y) ≤ ‖u‖²‖v‖², q̃(P) ≥ ½‖x_1‖²‖v‖² and
+q̃(Q) ≥ ½‖u‖²‖y_1‖². Lemma T with X_0 = x_2 y_2* (rank one, so Γ ≤ Σ_full by the operator inequality in Lemma R) and
+E = x_1 y_1* gives (⋆) with constant 2√2 + 2^{1+m/2}. This is at most 2^m − 2 exactly when m ≥ 4. ∎
+
+The remaining cases of (⋆) are those where Y has rank two, or where the e-components are parallel on one side only. There
+P and Q are both close to the form c ⊗ Π, and (⋆) needs a bound that is bilinear in the two deviations. Lemma T alone is
+first order in each. `code/check_case_1a.py` (`logs/check_case_1a.log`) checks:
+- the two bounds;
+- Lemma T on random two-piece X;
+- in case 1a, the largest ratio in (⋆): 4.0 at m = 3 and 4, against the proved constants 8.49 and 10.83;
+- adversarial minima of q_n ≥ 0.
+
+These results have not had a separate referee.
+
 Checks: `code/check_free_copy_excitation.py` (`logs/check_free_copy_excitation.log`, m = 3, 4) covers:
 - Proposition M, to 4·10⁻¹⁵;
 - Lemma R′, adversarial minimum ≥ −2·10⁻¹⁶ against a generic control at −2;

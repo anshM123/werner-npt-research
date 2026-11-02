@@ -1,0 +1,2 @@
+m=3: Lemma T max violation -5.9e+01; max Sigma/(2^m|X|^2) 0.404; max Gamma/(2|X|^2) 0.833 (random two-piece X); case (1a): largest (*) ratio 4.0000 vs proved constant 8.49 and needed 6; adversarial min q_n/|C|^2 +6.58e-16
+m=4: Lemma T max violation -1.8e+02; max Sigma/(2^m|X|^2) 0.271; max Gamma/(2|X|^2) 0.827 (random two-piece X); case (1a): largest (*) ratio 3.9999 vs proved constant 10.83 and needed 14; adversarial min q_n/|C|^2 +1.41e-15
