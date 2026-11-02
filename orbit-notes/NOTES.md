@@ -199,6 +199,11 @@ So the lowest thick critical value lies between 0.10 and 0.13 at n = 2, between 
 0.03 and 0.05 at n = 4. That is of order 2^{−n}. This is what a search found, not a bound.
 (At t = 0.4, target 0.2 at n = 2 slid to the boundary in 4/4 runs.)
 
+On the whole rank-two variety (not only on squeeze orbits), the lowest thick critical point we found at two copies
+is exact: R = (9 − √41)/20 ≈ 0.12984. It lies in the two-sector class of `../two-sector-class/`, where the endpoint
+inequality is proved for every n. So no operator of that shape gives a counterexample at any number of copies.
+At three copies the lowest thick variety-critical point found (R ≈ 0.0926) is not in such a class.
+
 Every genuine critical point is a saddle, with most negative squeeze curvature between −0.13 and −2.5 (in the
 coordinates of the script). At the low ones
 the descent comes mostly from coupling between copies. Take the most negative direction of the full squeeze Hessian.
