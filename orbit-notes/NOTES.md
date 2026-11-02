@@ -280,6 +280,40 @@ The search could push the pair blocks to −10⁻⁵, but only away from critica
 thickness floor 0.05 of the search. There the full Hessian was still −0.018. We did not reach a thick critical point
 where all pairs are flat.
 
+## Two-sided filters
+
+The reduction also works for the larger group of local filters acting independently on range and co-range,
+C ↦ (⊗_s g_s) C (⊗_s h_s)^T with g_s, h_s ∈ GL(3). It contains the squeezes and also the "similarities"
+C ↦ G C G^{-1}. Its orbit closures again add only thin or rank-one operators. So the statement "no thick rank-two
+operator is a local minimum of R on its two-sided orbit" (call it ORB2) also gives EP_{n−1} ⇒ EP_n. ORB2 is weaker
+than ORB, so it is the easier target.
+
+This group acts holomorphically. So at a local minimum, f = q − r‖·‖² has a positive semidefinite Levi form, which
+here is just q_r restricted to the complex tangent space {XC + CY}, with X and Y 1-local. That is a statement about one
+fixed linear space, with none of the second-order terms of the group action.
+
+At a critical point of R on the whole rank-two variety, put L = Φ_r(C) = Φ(C) − rC, the residual of the Werner map
+(L vanishes on the co-range of C, and its range is orthogonal to the range of C). For 1-local Hermitian K, the exact
+second variations of q_r are:
+
+    squeeze    e^{εK} C e^{εK}   :  ε² [ 2 q_r(KC) + 2 q_r(CK) + 4 b(K) ],
+    similarity e^{εK} C e^{−εK}  :  ε² [ −4 b(K) ],          b(K) = Re⟨L, K C K⟩.
+
+For K at a single copy, in its eigenbasis (this needs only criticality for squeezes at that copy),
+
+    b(K_s) = −½ Σ_ab (k_a − k_b)² q′_r(X_ab).
+
+`code/two_sided_identities.py` checks all three at a critical point (finite differences, and exactly for the last).
+At a thick global minimum with r < 0, every q_r(KC), q_r(CK) and q′_r(X_ab) is ≥ 0, since these operators have rank
+two. So every single-copy similarity and every one-sided term points the wrong way. Descent there has to come from
+the cross-copy part of b,
+
+    Re⟨L, K_s C K_{s′}⟩ = Σ_i Re⟨Π_A^⊥ K_s A_i, L Π_B^⊥ K_{s′} B_i⟩     (C = Σ_i A_i B_i^*),
+
+which pairs the leakage of the range at copy s with the leakage of the co-range at copy s′ through L. Numerically
+neither family works alone. An adversarial search at n = 2 finds thick critical points with no similarity descent
+(largest b about +5·10⁻⁷). There the squeeze Hessian is −2.9 to −4.0 and the two-sided Hessian about −0.8 to −1.0.
+
 ## Status
 
 Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 7. A proof of ORB_n for all n would prove
@@ -294,6 +328,8 @@ NPT bound entanglement; we do not have one.
 * `code/one_copy_counterexamples.py` with `data/single_copy_min_n3.npy`, `data/copywise_min_n3.npy`,
   `data/copywise_min_n4.npy`: the operators above.
 * `code/joint_second_variation.py` (with `data/critical_n2_R0.2.npy`): check of the joint second-variation formula.
+* `code/two_sided_identities.py` (with `data/variety_critical_n2.npy`): the squeeze and similarity second variations at a
+  critical point on the rank-two variety.
 * `logs/`: the runs in the tables and the control.
 
 ## References

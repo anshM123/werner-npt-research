@@ -1,0 +1,5 @@
+R = +0.717129; criticality on the rank-two variety: |Pi_A L| + |L Pi_B| = 2.9e-09
+   direction 0: squeeze  finite difference -4.318834, formula -4.318650;  similarity  finite difference +3.702247, formula +3.702195
+   direction 1: squeeze  finite difference -6.253553, formula -6.253462;  similarity  finite difference +4.565274, formula +4.565200
+   direction 2: squeeze  finite difference -1.728488, formula -1.728460;  similarity  finite difference +1.585979, formula +1.585951
+   single copy: b(K_0) = -0.3106769591, -(1/2) sum (k_a - k_b)^2 q'_r(X_ab) = -0.3106769590
