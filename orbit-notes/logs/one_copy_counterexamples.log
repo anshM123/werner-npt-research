@@ -1,12 +1,19 @@
 data/single_copy_min_n3.npy: R = +0.296812, rank = 2
-   thickness (range at copies 0,1,2; co-range at copies 0,1,2): [0.1773 0.2668 0.2674 0.2271 0.3036 0.4382]
+   thickness (range at each copy, then co-range at each copy): [0.1773 0.2668 0.2674 0.2271 0.3036 0.4382]
    copy 0: |squeeze gradient| 8.5e-14; F_0 eigenvalues [2.363615e-17 5.618287e-04 8.540002e-04 1.138989e-03 3.011791e-03 4.357504e-03 6.131819e-03 1.806237e-02 2.187368e-02]
    copy 1: |squeeze gradient| 1.8e-01; F_1 eigenvalues [-0.031684 -0.025769 -0.014269 -0.007557 -0.005933  0.005928  0.018956  0.028264  0.043147]
    copy 2: |squeeze gradient| 2.3e-01; F_2 eigenvalues [-0.040252 -0.029481 -0.025144 -0.017902 -0.009333  0.004996  0.018301  0.022639  0.028141]
-   full squeeze Hessian: smallest eigenvalue -0.7922; pair blocks (0,1),(0,2),(1,2): [-0.417  -0.5718 -0.6603]
+   full squeeze Hessian: smallest eigenvalue -0.7922, 9 negative of 24; smallest eigenvalue of each pair block [-0.417  -0.5718 -0.6603]
 data/copywise_min_n3.npy: R = +0.262272, rank = 2
-   thickness (range at copies 0,1,2; co-range at copies 0,1,2): [0.3131 0.2155 0.2726 0.419  0.267  0.2673]
+   thickness (range at each copy, then co-range at each copy): [0.3131 0.2155 0.2726 0.419  0.267  0.2673]
    copy 0: |squeeze gradient| 7.1e-14; F_0 eigenvalues [1.108381e-17 3.009460e-04 5.127283e-04 9.969060e-04 2.099945e-03 5.771486e-03 8.978428e-03 1.406990e-02 2.187725e-02]
    copy 1: |squeeze gradient| 1.1e-13; F_1 eigenvalues [-5.531147e-17  3.079355e-04  4.079722e-04  4.733306e-04  5.319851e-04  1.830023e-03  5.936423e-03  1.614962e-02  2.084854e-02]
    copy 2: |squeeze gradient| 5.9e-14; F_2 eigenvalues [-3.135998e-18  2.866823e-04  4.425369e-04  8.429289e-04  3.106665e-03  3.906910e-03  6.512120e-03  1.860779e-02  2.349972e-02]
-   full squeeze Hessian: smallest eigenvalue -0.5679; pair blocks (0,1),(0,2),(1,2): [-0.325  -0.408  -0.3136]
+   full squeeze Hessian: smallest eigenvalue -0.5679, 8 negative of 24; smallest eigenvalue of each pair block [-0.325  -0.408  -0.3136]
+data/copywise_min_n4.npy: R = +0.227735, rank = 2
+   thickness (range at each copy, then co-range at each copy): [0.3468 0.1553 0.2539 0.3262 0.3432 0.1864 0.2436 0.3636]
+   copy 0: |squeeze gradient| 4.3e-14; F_0 eigenvalues [4.916755e-17 1.290059e-04 1.886083e-04 2.558303e-04 8.324837e-04 1.039486e-03 2.950195e-03 4.682954e-03 1.014529e-02]
+   copy 1: |squeeze gradient| 9.1e-14; F_1 eigenvalues [6.433872e-17 1.095807e-04 1.974078e-04 4.227870e-04 9.621349e-04 1.177166e-03 1.972688e-03 5.339332e-03 9.232642e-03]
+   copy 2: |squeeze gradient| 5.2e-14; F_2 eigenvalues [5.533963e-17 1.588390e-04 2.034907e-04 3.499757e-04 7.041016e-04 2.273077e-03 5.841070e-03 9.056084e-03 1.249190e-02]
+   copy 3: |squeeze gradient| 4.9e-14; F_3 eigenvalues [1.848125e-17 1.303627e-04 1.989682e-04 3.829174e-04 4.588037e-04 9.528854e-04 2.066769e-03 5.661137e-03 1.233367e-02]
+   full squeeze Hessian: smallest eigenvalue -0.3882, 12 negative of 32; smallest eigenvalue of each pair block [-0.139  -0.1666 -0.2228 -0.1054 -0.121  -0.205 ]

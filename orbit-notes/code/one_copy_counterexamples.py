@@ -1,9 +1,9 @@
-"""Check the two three-copy operators in data/ (t = 1/2).
+"""Check the three operators in data/ (t = 1/2): two at three copies, one at four copies.
 
 data/single_copy_min_n3.npy: thick, critical for squeezes at copy 0, and the copy-0 squeeze form F_0 is positive on all
     traceless directions, so C is a strict minimum of R over its whole copy-0 squeeze orbit (one copy is not enough).
-data/copywise_min_n3.npy: thick, critical at every copy, and every single-copy form F_s is positive semidefinite, yet
-    the joint squeeze Hessian has negative directions, already for each pair of copies.
+data/copywise_min_n3.npy, data/copywise_min_n4.npy: thick, critical at every copy, and every single-copy form F_s is
+    positive semidefinite, yet the joint squeeze Hessian has negative directions, already for each pair of copies.
 
 For each file: R, thickness at every copy, the squeeze gradient at every copy, the eigenvalues of the exact 9 x 9 forms
 F_s (block formula, F_s(I) = 0 gives one zero), the smallest eigenvalue of the full squeeze Hessian and of each pair block.
@@ -11,11 +11,7 @@ usage: python one_copy_counterexamples.py   (run from orbit-notes/)"""
 import sys, itertools
 import numpy as np
 import torch
-sys.argv = [sys.argv[0], '3', '0.5', '0.1', '0', '0']
 sys.path.insert(0, 'code')
-import squeeze_hessian as SH
-
-n = 3
 HB = []
 for a in range(3):
     E = np.zeros((3, 3), complex); E[a, a] = 1; HB.append(E)
@@ -43,13 +39,17 @@ def thickness_each(C):
     return out
 
 
-for fn in ('data/single_copy_min_n3.npy', 'data/copywise_min_n3.npy'):
+for fn, n in (('data/single_copy_min_n3.npy', 3), ('data/copywise_min_n3.npy', 3), ('data/copywise_min_n4.npy', 4)):
+    sys.argv = [sys.argv[0], str(n), '0.5', '0.1', '0', '0']
+    if 'squeeze_hessian' in sys.modules:
+        del sys.modules['squeeze_hessian']
+    import squeeze_hessian as SH
     C = np.load(fn); C = C / np.linalg.norm(C); r = SH.q_np(C, n)
     Ct = torch.tensor(C); h = torch.zeros(8 * n, requires_grad=True)
     g = torch.autograd.grad(SH.squeeze_R(Ct, h), h)[0].numpy()
     H = torch.autograd.functional.hessian(lambda hh: SH.squeeze_R(Ct, hh), torch.zeros(8 * n)); H = ((H + H.T) / 2).numpy()
     print(f"{fn}: R = {r:+.6f}, rank = {np.sum(np.linalg.svd(C, compute_uv=False) > 1e-10)}")
-    print(f"   thickness (range at copies 0,1,2; co-range at copies 0,1,2): {np.round(thickness_each(C), 4)}")
+    print(f"   thickness (range at each copy, then co-range at each copy): {np.round(thickness_each(C), 4)}")
     for s in range(n):
         w = np.linalg.eigvalsh(F_matrix(C, s, r))
         print(f"   copy {s}: |squeeze gradient| {np.linalg.norm(g[8 * s:8 * s + 8]):.1e}; F_{s} eigenvalues "
@@ -57,5 +57,6 @@ for fn in ('data/single_copy_min_n3.npy', 'data/copywise_min_n3.npy'):
     pairs = [np.linalg.eigvalsh(H[np.ix_(list(range(8 * a, 8 * a + 8)) + list(range(8 * b, 8 * b + 8)),
                                           list(range(8 * a, 8 * a + 8)) + list(range(8 * b, 8 * b + 8)))])[0]
              for a, b in itertools.combinations(range(n), 2)]
-    print(f"   full squeeze Hessian: smallest eigenvalue {np.linalg.eigvalsh(H)[0]:+.4f}; "
-          f"pair blocks (0,1),(0,2),(1,2): {np.round(pairs, 4)}")
+    w = np.linalg.eigvalsh(H)
+    print(f"   full squeeze Hessian: smallest eigenvalue {w[0]:+.4f}, {np.sum(w < -1e-6)} negative of {8 * n}; "
+          f"smallest eigenvalue of each pair block {np.round(pairs, 4)}")

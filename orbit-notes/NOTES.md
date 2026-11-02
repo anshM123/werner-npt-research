@@ -244,10 +244,41 @@ and `code/one_copy_counterexamples.py` checks them (output in `logs/one_copy_cou
 
 **ORB survives at both points.** The joint squeeze Hessian of the copywise example has 8 negative eigenvalues out of 24,
 the smallest −0.57. Every pair of copies is already enough: the 16 × 16 blocks for the pairs (0,1), (0,2) and (1,2)
-have smallest eigenvalues −0.33, −0.41 and −0.31. So ORB is not a statement about single copies. A proof has to use the
+have smallest eigenvalues −0.33, −0.41 and −0.31. The same happens at four copies. `data/copywise_min_n4.npy` has
+R = 0.2277, thickness 0.16–0.36, squeeze gradient ≤ 10⁻¹³ at every copy, and each F_s ≥ 1.1·10⁻⁴ on traceless
+directions. Its joint Hessian has 12 negative eigenvalues out of 32 (smallest −0.39), and all six pair blocks are
+negative (−0.11 to −0.22). So ORB is not a statement about single copies. A proof has to use the
 coupling between copies. These points have R > 0. Restricted to negative values, the single-copy and copywise
 statements are equivalent to EP_n itself, given EP_{n−1}. A thick negative global minimum would admit no descent at
 all, and a non-minimum descends anyway. So the restricted versions do not give an easier target.
+
+## The joint second variation
+
+Let C be squeeze-critical with r = R_t(C), and take a 1-local direction H = Σ_s H_s (H_s acting at copy s). For
+C(ε) = e^{εH} C e^{εH}, R(C(ε)) = r + ε² 𝓗(H)/‖C‖² + O(ε³), where
+
+    𝓗(H) = 2 q_r({H, C}) − 2 Σ_s [ q_r(H_s C) + q_r(C H_s) ]
+           + 8t² Σ_{s<s′} Re[ B″(Tr_{ss′} C, Tr_{ss′}(H_s H_{s′} C)) − B″(Tr_{ss′}(H_s C), Tr_{ss′}(H_{s′} C)) ].
+
+Here {H, C} = HC + CH and B″ is the bilinear form on the other n − 2 copies (for n = 2, the product of the two
+traces). `code/joint_second_variation.py` checks this against automatic differentiation to 10⁻⁸ or better. Expanding the
+first term, the "self" parts cancel. So 𝓗(H) = 4 Σ_{k<l} Re B_r(V_k, V_l) + (the trace terms), summed over the 2n
+rank-two pieces V ∈ {H_s C, C H_s}. The second variation is the total pairwise correlation of the left and right
+multiplications. For one copy this gives F_s(H) = Re B_r(HC, CH).
+
+At a thick global minimum with r < 0, every q_r(H_s C) and q_r(C H_s) is ≥ 0, since these operators have rank two. So
+the middle sum pushes 𝓗 down, and everything depends on q_r of the rank-four tangent vector {H, C}.
+
+At the copywise example the numbers are as follows. Along the best direction of each pair (s, s′), the single-copy
+terms 4F_s(H_s) are only +0.005 to +0.013, because the anticommutator energy q_r({H_s, C}) ≈ 0.09–0.12 almost cancels
+the commutator energy Σ_ab q′_r([H_s, C]_ab) ≈ 0.08–0.11. Meanwhile the tangent vectors {H_s, C} and {H_{s′}, C} at the
+two copies have correlation Re B_r / √(q_r q_r) between −0.41 and −0.55, which gives a cross term of −0.15 to −0.23. The
+trace terms are only ±0.02.
+
+We also searched adversarially at n = 3 for a thick critical point where every pair block is positive semidefinite.
+The search could push the pair blocks to −10⁻⁵, but only away from criticality (gradient ≥ 3·10⁻³) and at the
+thickness floor 0.05 of the search. There the full Hessian was still −0.018. We did not reach a thick critical point
+where all pairs are flat.
 
 ## Status
 
@@ -260,8 +291,9 @@ NPT bound entanglement; we do not have one.
 * `code/trace_form_check.py`: the control above.
 * `code/squeeze_hessian.py`: thick squeeze-critical points, the split of their Hessian, the three direction tests and
   checks of the identities above.
-* `code/one_copy_counterexamples.py` with `data/single_copy_min_n3.npy`, `data/copywise_min_n3.npy`: the two
-  three-copy operators above.
+* `code/one_copy_counterexamples.py` with `data/single_copy_min_n3.npy`, `data/copywise_min_n3.npy`,
+  `data/copywise_min_n4.npy`: the operators above.
+* `code/joint_second_variation.py` (with `data/critical_n2_R0.2.npy`): check of the joint second-variation formula.
 * `logs/`: the runs in the tables and the control.
 
 ## References

@@ -1,0 +1,8 @@
+data/critical_n2_R0.2.npy (n = 2, R = +0.200000)
+   random direction 0: formula +0.9082268796   autograd +0.9082268805
+   random direction 1: formula +0.7741666256   autograd +0.7741666433
+   random direction 2: formula +1.0571093028   autograd +1.0571093034
+data/copywise_min_n3.npy (n = 3, R = +0.262272)
+   random direction 0: formula +0.2588554450   autograd +0.2588554450
+   random direction 1: formula +1.0525096605   autograd +1.0525096605
+   random direction 2: formula +1.4392205479   autograd +1.4392205479
