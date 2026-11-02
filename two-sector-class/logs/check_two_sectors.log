@@ -1,0 +1,18 @@
+trial 0: dims [(1, 2), (1, 2)], identity error 4.4e-16, min q/||C||^2 -3.28e-16
+trial 1: dims [(1, 1), (1, 2)], identity error 2.7e-15, min q/||C||^2 -3.05e-16
+trial 2: dims [(1, 1), (2, 1)], identity error 8.9e-16, min q/||C||^2 -3.05e-16
+trial 3: dims [(1, 1), (2, 1)], identity error 8.9e-16, min q/||C||^2 -2.78e-16
+trial 4: dims [(1, 1), (2, 1)], identity error 1.3e-15, min q/||C||^2 -3.19e-16
+trial 5: dims [(2, 1), (1, 2)], identity error 0.0e+00, min q/||C||^2 -3.12e-16
+n = 2: max identity error 2.7e-15; min over all trials -3.28e-16
+trial 0: dims [(1, 1), (2, 1), (2, 1)], identity error 4.4e-15, min q/||C||^2 -1.55e-16
+trial 1: dims [(2, 1), (1, 1), (1, 2)], identity error 3.6e-15, min q/||C||^2 -2.29e-16
+trial 2: dims [(2, 1), (1, 1), (1, 1)], identity error 3.6e-15, min q/||C||^2 -2.24e-16
+trial 3: dims [(1, 1), (1, 2), (1, 2)], identity error 1.3e-15, min q/||C||^2 -1.53e-16
+trial 4: dims [(1, 1), (1, 2), (1, 2)], identity error 1.3e-15, min q/||C||^2 -2.13e-16
+trial 5: dims [(1, 2), (1, 1), (2, 1)], identity error 1.8e-15, min q/||C||^2 -2.19e-16
+n = 3: max identity error 4.4e-15; min over all trials -2.29e-16
+trial 0: dims [(1, 1), (2, 1), (2, 1), (2, 1)], identity error 4.4e-15, min q/||C||^2 -1.26e-16
+trial 1: dims [(2, 1), (2, 1), (1, 1), (2, 1)], identity error 2.7e-15, min q/||C||^2 -1.40e-16
+trial 2: dims [(1, 2), (1, 1), (1, 1), (2, 1)], identity error 1.8e-15, min q/||C||^2 -1.39e-16
+n = 4: max identity error 4.4e-15; min over all trials -1.40e-16
