@@ -1,0 +1,3 @@
+m=1: compression error 0.0e+00; state min eigenvalue +0.5000; PT min eigenvalue -0.500000 (-2^-m = -0.500000); Werner twirl a = -0.500000 (formula -0.500000)
+m=3: compression error 0.0e+00; state min eigenvalue +0.1250; PT min eigenvalue -0.125000 (-2^-m = -0.125000); Werner twirl a = -0.384615 (formula -0.384615)
+m=5: compression error 0.0e+00; state min eigenvalue +0.0312; PT min eigenvalue -0.031250 (-2^-m = -0.031250); Werner twirl a = -0.346939 (formula -0.346939)

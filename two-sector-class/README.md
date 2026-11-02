@@ -486,6 +486,22 @@ Checks:
   three-sector blocks up to n = 6. The adversarial minima of q_n/‖C‖² over rank two are ≥ 0 up to rounding, while
   rank-three members of the same supports reach −0.125 to −0.5, so the search finds negative values when they exist.
 
+**An LOCC reading.** For odd m, project m copies of the endpoint Werner state locally, on both sides, onto the
+repetition code span{1…1, 2…2, 3…3}. By the identity of "More than two sectors" with no free copy, the result is (up to
+normalisation) the two-qutrit state ρ_m whose partial transpose is
+
+    2^{1−m} (1 − ½|Ω⟩⟨Ω|) + (1 − 2^{1−m}) Σ_{i≠j} |ij⟩⟨ij|,   Ω = Σ_i |ii⟩.
+
+It has full rank and is NPT for every m: the smallest eigenvalue of its partial transpose is −2^{−m}. Its Werner twirl
+has parameter a = −(1 + 2^{1−m})/(3 + 2^{1−m}), which tends to the PPT boundary −1/3 (a = −5/13 for m = 3). The endpoint
+inequality on products of k blocks of size m is exactly k-copy undistillability of ρ_m, so Theorem D says that ρ_m is
+undistillable for up to three copies. This does not make the general problem easier. ρ_m^Γ is a mixture of the one-copy
+endpoint operator and a separable operator, so k-copy undistillability of ρ_m follows from the endpoint inequality for
+up to k copies, and it in turn implies undistillability of the Werner twirl. Still, undistillability of ρ_m for every k,
+for a single m, would already give NPT bound entanglement. Checked by `code/check_repetition_state.py`
+(`logs/check_repetition_state.log`, m = 1, 3, 5): the compression identity holds exactly. This remark has not had a
+separate referee; it is a direct reading of the refereed identity.
+
 ## The two-copy critical point
 
 The lowest thick critical point of R = q_2/‖·‖² on the rank-two variety that we found at two copies is in this class
