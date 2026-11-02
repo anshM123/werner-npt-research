@@ -42,6 +42,12 @@ scripts need PyTorch.
 
 - The endpoint for every n. `compression-notes/` states a compression conjecture that would give it, with evidence up to five copies.
   `orbit-notes/` reduces it to a local statement on squeeze orbits (no thick squeeze-orbit minimum), supported numerically for n ≤ 7.
+  Every one-copy version of that statement is false at three copies. The Levi form alone does not settle the two-sided
+  version: at a two-copy critical point with positive Levi form the descent comes from a curvature term. On the whole
+  rank-two variety, adversarial searches at two and three copies find no thick local minimum, and the lowest thick
+  critical points have closed-form values ((9 − √41)/20 at two copies; (67 − √2329)/216 at three), all saddles.
+  `two-sector-class/` proves the endpoint for every n when the range lies in two product subspaces that are orthogonal
+  at every copy (any co-range). The two-copy point lies in that class.
 - The endpoint for every n, even restricted to operators whose range and co-range lie in one plane. Section 4 of
   `three-copy-notes/NOTES.md` explains why the most natural inductive route fails.
 - The endpoint for every n on the bosonic sector (range and co-range in Sym^n(C^3)). Section 4 of
