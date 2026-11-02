@@ -321,6 +321,17 @@ semidefinite also stalls, at squared gradient ≥ 8·10⁻⁴. This agrees with 
 always enough. `code/restricted_families.py` checks both points by finite differences
 (`logs/restricted_families.log`).
 
+Two further observations (numerical only):
+- **Pairs.** Pushed further (3000 steps, then L-BFGS on the penalised objective), the three-copy pair search gets stuck
+  at squared gradient 6·10⁻⁶ > 0 with thickness 0.07. A four-copy run from `copywise_min_n4.npy` stalls at 1.1·10⁻³. So
+  far some pair of copies always carries the descent.
+- **Low values.** Both counterexamples above have fairly large values. If the torus search is also required to keep
+  R ≤ 0.1 (the lowest thick critical values at three copies are about 0.074–0.087), every run pushes R up to the cap and
+  gets stuck at squared gradient about 5·10⁻⁶. So we found no torus-flat thick critical point at low values. At the
+  lowest points the descent is a rebalance inside the weak plane, with the same sign at every copy. Only low and
+  nonpositive values matter for the reduction. There, however, the torus statement is equivalent to EP_n itself, given
+  EP_{n−1}, so this locates the mechanism but does not prove it.
+
 ## Two-sided filters
 
 The reduction also works for the larger group of local filters acting independently on range and co-range,
