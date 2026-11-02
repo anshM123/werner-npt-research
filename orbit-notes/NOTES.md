@@ -90,19 +90,19 @@ Seven copies: with C kept in factored form, both random starts at n = 7, t = 1/2
 script `orbit_big.py`, not included here).
 
 **Critical points are saddles.** Thick critical points of R on squeeze orbits do exist. We found them at n = 2 by
-minimising the squeeze gradient, also with a bias towards small R:
+minimising the squeeze gradient, also with a bias towards a chosen value of R:
 - a family near R ≈ 0.129;
-- points close to the thin boundary with R ≈ 7·10⁻⁴;
-- bulk points with R between 0.5 and 0.8.
+- points at R = 0.2;
+- bulk points with R between 0.5 and 0.9.
 
-Every one has negative squeeze-Hessian directions: 3 to 10 of the 16, with the most negative curvature between −0.34
-and −5.6 in the bulk and about −0.003 near the boundary.
+Every one has negative squeeze-Hessian directions: 3 to 10 of the 16, with the most negative curvature between −0.23
+and −5.6. (An earlier version of these notes also listed points near the thin boundary with R ≈ 7·10⁻⁴. They were not
+critical points. A thickness penalty in the search held them in place, and their squeeze gradient was about 10⁻³.
+Polishing them with the gradient alone sends them to the thin boundary.) More on the low critical points below.
 
 Past the endpoint (t = 0.7) we also found thick, nearly critical points with negative value (R ≈ −0.03). They too are
 saddles. So "thick critical points have positive value" fails for t > 1/2, and a proof of ORB cannot be first-order
-uniformly in t: it has to see the negative curvature. At most critical points the descent is already visible in
-squeezes that are diagonal in the eigenbasis of the local support operator Tr_other(CC^* + C^*C), one copy at a time.
-This fails close to the thin boundary, where the descent uses other directions.
+uniformly in t: it has to see the negative curvature.
 
 ## What ORB is not
 
@@ -152,6 +152,78 @@ where B is the bilinear form of q′. At critical points Γ_s = 0 for every s. A
 the traceless part of the local support operator of C, lowers R at some copy for most operators but not all (197 of 200
 random two-copy operators).
 
+## The second variation at a critical point
+
+Fix a copy s, put P at copy s and I at the other copies, and write F_s(P) = N(P) − r D(P) for the numerator and
+denominator of R on the orbit (r = R_t(C)). This is a quadratic form in P, and its formula makes sense for every
+Hermitian P, not only for positive ones:
+
+    F_s(P) = Σ_{abcd} P_ca P_bd B′_r(X_cd, X_ab) − t q′(Σ_ab P_ba X_ab),    B′_r = B′ − r⟨·,·⟩.
+
+Squeezes at copy s near I are P = exp(2εH), and F_s(exp(2εH)) = 4ε² F_s(H) + O(ε³) at a critical point. A squeeze-orbit
+minimum at I therefore needs F_s ≥ 0 on all of Herm(3), indefinite H included, with F_s(I, ·) = 0. Equivalently, the
+kernel K(u, v) = ½[q′_r(X_uv) + q′_r(X_vu)] − t Re B′(X_uu, X_vv) on unit vectors of C^3 must be positive
+semidefinite, with zero row averages. Three exact facts about F_s (checked numerically to 10⁻¹⁰ or better by
+`code/squeeze_hessian.py`):
+
+1. **Trace.** For every C, with r = R_t(C), the trace over an orthonormal basis of Herm(3) is
+   Tr F_s = q′_r(Tr_s C) − t Σ_ab q′(X_ab). When r ≤ 0, EP_{n−1} makes it nonnegative:
+   Σ_ab q′(X_ab) ≥ 0, and then q_n(C) = r‖C‖² forces q′(Tr_s C) ≥ 0. So averaging over squeeze directions at one copy cannot find the descent, and the direction has to
+   be chosen.
+2. **Rank-one squeezes are monotone.** At a critical point, F_s(I − E) = F_s(E) for E = |e⟩⟨e|. Along the path
+   G_p = (I − E) + √p E from C (p = 1) to its thin compression (p = 0), q_r(G_p C G_p) = F_s(E)(1 − p)² exactly,
+   with F_s(E) = (1 − t) q′(X_ee) − r‖X_ee‖². The path descends iff R_{n−1}(X_ee) < r/(1 − t). At a hypothetical negative
+   minimum (r < 0) this never happens, by EP_{n−1}: squeezing towards a thin operator one direction at a time only
+   goes uphill there.
+3. **Qubit planes.** For a plane K ⊂ C^3 with Pauli matrices σ_μ^K, Σ_μ S_t(σ_μ^K) = −(1 + 2t) S_{t′}(I_K) as operators
+   on the qubit, with t′ = 1/2 + 3/(2(1 + 2t)) (t′ = 5/4 at t = 1/2). Hence
+
+       Σ_μ F_s(σ_μ^K) = −(1 + 2t) q_{(t′ at s)}(C_K) − r(2‖Tr_K C‖² − ‖C_K‖²),
+
+   where C_K is the compression of C to K at copy s, Tr_K C = Σ_{k∈K} ⟨k|C|k⟩, and q_{(t′ at s)} uses the parameter t′
+   at copy s and t elsewhere. At t = 1/2 and r = 0 this is (3/2) q′(Tr_K C) − 2 q_n(C_K).
+
+**What the low critical points show.** `code/squeeze_hessian.py n t target starts seed` searches for a thick
+critical point with a bias towards a target value of R and a thickness floor of 0.02. It then removes both and polishes
+with the squeeze gradient alone. A run counts as genuine if the squeeze gradient ends below 10⁻⁸ with thickness above
+10⁻³. Results at t = 1/2 (logs in `logs/squeeze_hessian_n*_t*_R*.log`):
+
+| n | targets that gave genuine critical points | targets where every run slid to the thin boundary |
+|---|---|---|
+| 2 | 0.15 (4/4), 0.2 (6/6), 0.4 (4/4) | 0.05 (4), 0.1 (4) |
+| 3 | 0.08 (R = 0.080, 0.106), 0.15 (3/3), 0.3 (3/3) | 0.03 (3), 0.04 (3), 0.05 (3) |
+| 4 | 0.05 (1/1), 0.1 (2/2) | 0.03 (2) |
+| 5 | 0.05 (first run) | — |
+
+So the lowest thick critical value lies between 0.10 and 0.13 at n = 2, between 0.05 and 0.08 at n = 3, and between
+0.03 and 0.05 at n = 4. That is of order 2^{−n}. This is what a search found, not a bound.
+(At t = 0.4, target 0.2 at n = 2 slid to the boundary in 4/4 runs.)
+
+Every genuine critical point is a saddle, with most negative squeeze curvature between −0.13 and −2.5 (in the
+coordinates of the script). At the low ones
+the descent comes mostly from coupling between copies. Take the most negative direction of the full squeeze Hessian.
+Along it, the single-copy blocks contribute a positive or small amount, and the cross-copy terms give most of the
+curvature. Examples (single-copy part / cross-copy part):
+- n = 2, R = 0.15: +0.50 / −1.32;
+- n = 3, R = 0.08: +0.25 / −0.47;
+- n = 4, R = 0.05: +0.003 / −0.134;
+- n = 5, R = 0.05: −0.026 / −0.249.
+
+Every single-copy block still has a negative eigenvalue, but a much weaker one. At n = 3, R = 0.08 they are between
+−0.006 and −0.009, against −0.21 for the full Hessian.
+
+We tested three explicit families of directions:
+- (a) rank-one squeezes;
+- (b) the trace over a qubit plane (formula 3 above);
+- (c) the *top-two rebalance*. Here H_s = |b_s⟩⟨b_s| − |a_s⟩⟨a_s| at every copy s, where a_s and b_s are the largest and
+  second-largest eigenvectors of the local support operator Tr_other(CC^* + C^*C), and the n weights are optimised
+  jointly.
+
+None of them works at every point. (a) and (b) see nothing at several low points. (c) is negative at all low points
+(n = 2, R ≤ 0.2; n = 3, R = 0.08; n = 4 and 5). It is positive at 2 of the 4 n = 2 points at R = 0.4 and at 1 of the 3
+n = 3 points at R = 0.15. So far every point is caught by at least one of the three. A proof of ORB that looks at one copy at a time
+would have to find the weak single-copy directions. The cross-copy terms are where the curvature actually is.
+
 ## Status
 
 Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 7. A proof of ORB_n for all n would prove
@@ -161,7 +233,9 @@ NPT bound entanglement; we do not have one.
 
 * `code/orbit_descent.py`: squeeze-orbit descent (`python code/orbit_descent.py n t starts seed ensemble`).
 * `code/trace_form_check.py`: the control above.
-* `logs/`: the runs in the table and the control.
+* `code/squeeze_hessian.py`: thick squeeze-critical points, the split of their Hessian, the three direction tests and
+  checks of the identities above.
+* `logs/`: the runs in the tables and the control.
 
 ## References
 

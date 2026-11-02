@@ -1,0 +1,19 @@
+start 0: |grad| 2.1e-09  R +0.15000  thickness 4.94e-02
+    Hessian min -0.3434: single-copy part +0.0022, cross-copy part -0.3456
+    smallest eigenvalue of each single-copy block [-0.06835 -0.07043 -0.06865]
+    top-two rebalance: joint -0.0708, each copy alone [0.7541 0.1096 0.2668]
+    rank-one test -0.00289   plane test -0.01702
+    identity checks: trace formula 1.4e-16, F(I-E) = F(E) 2.0e-10
+start 1: |grad| 1.7e-09  R +0.15000  thickness 2.07e-02
+    Hessian min -0.3319: single-copy part -0.0142, cross-copy part -0.3177
+    smallest eigenvalue of each single-copy block [-0.07223 -0.06087 -0.10663]
+    top-two rebalance: joint +0.0491, each copy alone [0.2727 0.7186 0.2195]
+    rank-one test -0.00384   plane test -0.01336
+    identity checks: trace formula 1.4e-16, F(I-E) = F(E) 3.9e-10
+start 2: |grad| 9.5e-10  R +0.15000  thickness 2.01e-02
+    Hessian min -0.4772: single-copy part -0.0936, cross-copy part -0.3836
+    smallest eigenvalue of each single-copy block [-0.01664 -0.16851 -0.23729]
+    top-two rebalance: joint -0.2331, each copy alone [ 1.2314  0.0709 -0.1962]
+    rank-one test -0.00921   plane test -0.03056
+    identity checks: trace formula 7.4e-17, F(I-E) = F(E) 1.0e-10
+[exit 0]

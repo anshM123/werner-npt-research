@@ -1,0 +1,30 @@
+start 0: |grad| 1.6e-09  R +0.20000  thickness 4.72e-02
+    Hessian min -0.3539: single-copy part +0.0884, cross-copy part -0.4424
+    smallest eigenvalue of each single-copy block [-0.12647 -0.06406]
+    rank-one test -0.00003   plane test -0.02980
+    identity checks: trace formula 1.1e-16, F(I-E) = F(E) 1.2e-10
+start 1: |grad| 1.9e-09  R +0.20000  thickness 2.06e-02
+    Hessian min -0.2939: single-copy part +0.2785, cross-copy part -0.5724
+    smallest eigenvalue of each single-copy block [-0.02239 -0.01296]
+    rank-one test +0.00000   plane test +0.00294
+    identity checks: trace formula 2.1e-16, F(I-E) = F(E) 1.4e-10
+start 2: |grad| 1.0e-09  R +0.20000  thickness 2.74e-02
+    Hessian min -0.4829: single-copy part +0.0962, cross-copy part -0.5791
+    smallest eigenvalue of each single-copy block [-0.15411 -0.02812]
+    rank-one test -0.00004   plane test -0.03394
+    identity checks: trace formula 1.9e-16, F(I-E) = F(E) 1.2e-10
+start 3: |grad| 1.1e-09  R +0.20000  thickness 8.85e-02
+    Hessian min -0.5710: single-copy part -0.0558, cross-copy part -0.5152
+    smallest eigenvalue of each single-copy block [-0.13345 -0.20815]
+    rank-one test -0.00734   plane test -0.03165
+    identity checks: trace formula 1.1e-16, F(I-E) = F(E) 5.8e-11
+start 4: |grad| 1.2e-09  R +0.20000  thickness 7.39e-02
+    Hessian min -0.4974: single-copy part +0.0499, cross-copy part -0.5474
+    smallest eigenvalue of each single-copy block [-0.09637 -0.11566]
+    rank-one test -0.00007   plane test -0.02961
+    identity checks: trace formula 8.3e-17, F(I-E) = F(E) 5.3e-11
+start 5: |grad| 5.1e-10  R +0.20000  thickness 2.04e-02
+    Hessian min -0.2282: single-copy part +0.4058, cross-copy part -0.6340
+    smallest eigenvalue of each single-copy block [-0.01435 -0.02143]
+    rank-one test +0.00001   plane test +0.00572
+    identity checks: trace formula 8.3e-17, F(I-E) = F(E) 5.0e-11

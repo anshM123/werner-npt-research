@@ -1,0 +1,4 @@
+start 0: |grad| 5.6e-06  R +0.03337  thickness 7.53e-07  -> not a thick critical point (slid to the boundary or not converged)
+start 1: |grad| 1.1e-05  R +0.03415  thickness 1.65e-06  -> not a thick critical point (slid to the boundary or not converged)
+start 2: |grad| 6.6e-06  R +0.03081  thickness 1.44e-06  -> not a thick critical point (slid to the boundary or not converged)
+start 3: |grad| 9.9e-06  R +0.04497  thickness 7.48e-07  -> not a thick critical point (slid to the boundary or not converged)

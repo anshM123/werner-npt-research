@@ -1,0 +1,12 @@
+start 0: |grad| 9.7e-09  R +0.10614  thickness 3.01e-03
+    Hessian min -0.5265: single-copy part +0.1641, cross-copy part -0.6907
+    smallest eigenvalue of each single-copy block [-0.00234 -0.0391  -0.05142]
+    rank-one test -0.00179   plane test -0.00983
+    identity checks: trace formula 6.6e-17, F(I-E) = F(E) 1.4e-09
+start 1: |grad| 2.1e-09  R +0.08000  thickness 2.01e-02
+    Hessian min -0.2123: single-copy part +0.2549, cross-copy part -0.4672
+    smallest eigenvalue of each single-copy block [-0.00691 -0.00891 -0.00622]
+    rank-one test +0.00001   plane test -0.00010
+    identity checks: trace formula 2.2e-16, F(I-E) = F(E) 1.6e-10
+start 2: |grad| 1.5e-08  R +0.08000  thickness 2.00e-02  -> not a thick critical point (slid to the boundary or not converged)
+[exit 0]
