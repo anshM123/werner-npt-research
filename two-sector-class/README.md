@@ -145,6 +145,68 @@ For d ≥ 4 a copy can also carry two orthogonal planes. Then the last case of S
 above does not cover it. The numerics stay nonnegative there (d = 4, 5, n ≤ 3, adversarial minimisation), but we have
 no proof.
 
+## One free copy
+
+Keep the sectors at copies 1, …, m (m = n − 1) and leave copy 0 unconstrained. So A = A_1 ⊗ … ⊗ A_m and
+B = B_1 ⊗ … ⊗ B_m as before, V = C^3 ⊗ (A ⊕ B), and C = [[X, P], [Q, Y]] in blocks with respect to
+C^3 ⊗ A ⊕ C^3 ⊗ B. Let a and b count the sector copies at which A_s, resp. B_s, is a plane. For a Pauli string μ on the
+planar factors of A (identity on the one-dimensional ones) put X̂_μ = Tr_A[(1 ⊗ σ_μ) X], a 3 × 3 matrix, and
+X̂_0 = Tr_A X; define Ŷ_ν and Ŷ_0 in the same way. Write
+
+    q_1(Z) = ‖Z‖² − ½|Tr Z|²,   B_1(Z, W) = Tr(Z^* W) − ½ conj(Tr Z) Tr W,   q̃(P) = ‖P‖² − ½‖Tr_0 P‖²,
+
+where Tr_0 is the trace over copy 0. The argument of Step 1 gives, with copy 0 carried along,
+
+    2^m q_n(C) = Σ_{μ ∈ {1,2,3}^a} q_1(X̂_μ) + Σ_{ν ∈ {1,2,3}^b} q_1(Ŷ_ν) + 2^m (q̃(P) + q̃(Q)) + 2(−1)^m Re B_1(X̂_0, Ŷ_0).
+
+The first sum is 2^m q_n(X). It is nonnegative when X has rank at most two. At every sector copy the range of X lies in
+the plane or line A_s, and there the separable decomposition of 1 − |ω_K⟩⟨ω_K| (the thin-copy reduction) removes the
+copy. Doing this at each sector copy leaves the one-copy inequality at copy 0. The same holds for Y. Also q̃(P) ≥ 0
+when P has rank at most two, since q̃(P) is a sum of q_1 over 3 × 3 blocks of rank at most two. So only the last term
+can be negative.
+
+**Lemma L.** For square matrices Z and W of any size, |B_1(Z, W)|² ≤ ψ(Z) ψ(W), where ψ(Z) = ‖Z‖₁² − ½|Tr Z|².
+
+*Proof.* First let z and w have rank one. For every λ > 0 and every phase θ, the matrix λz − e^{iθ}w/λ has rank at most
+two, so q_1 of it is nonnegative. This gives |B_1(z, w)|² ≤ q_1(z) q_1(w), and q_1 = ψ in rank one. In general, take
+singular value decompositions Z = Σ_k s_k u_k v_k^* and W = Σ_l t_l u′_l v′_l^*. Expanding B_1 bilinearly and using the
+rank-one case term by term gives |B_1(Z, W)| ≤ S_Z S_W with S_Z = Σ_k s_k (1 − ½|c_k|²)^{1/2}, c_k = ⟨v_k, u_k⟩. Put p_k = s_k/‖Z‖₁. Concavity of the
+square root and Σ_k p_k|c_k|² ≥ |Σ_k p_k c_k|² give S_Z² ≤ ‖Z‖₁²(1 − ½|Σ_k p_k c_k|²) = ψ(Z), since
+Σ_k s_k c_k = Tr Z. ∎
+
+**Lemma R.** If X = xy^* has rank one, then Σ_μ q_1(X̂_μ) ≥ ψ(X̂_0).
+
+*Proof.* Write F for the swap of the two replicas. In replica form,
+Σ_μ q_1(X̂_μ) = ⟨x ⊗ y| W_0 ⊗ ⊗_s (2 − F_s) |x ⊗ y⟩, with the product over the planar copies of A and
+W_0 = 1 − ½F_0 ≥ 0; one-dimensional copies contribute a factor 1. For f_s = ±1 we have Π_s(2 − f_s) ≥ 2 − Π_s f_s, so
+⊗_s(2 − F_s) ≥ 2 − F_A. Moreover W_0 ⊗ (2 − F_A) = 1 − ½F_0 ⊗ F_A + 4P_0^− ⊗ P_A^− ≥ 1 − ½F_0 ⊗ F_A, where the P^− are
+antisymmetric projectors. The expectation of the right side is ‖x‖²‖y‖² − ½|⟨y, x⟩|². Finally ‖X̂_0‖₁ ≤ ‖x‖‖y‖ and
+Tr X̂_0 = ⟨y, x⟩. ∎
+
+**Theorem A.** For every n, if rank X ≤ 1, rank Y ≤ 1, rank P ≤ 2 and rank Q ≤ 2, then q_n(C) ≥ 0. Here C itself may
+have rank up to six.
+
+*Proof.* By the identity, Lemma R (the X-sum is 0 if X = 0, and then so is X̂_0), q̃ ≥ 0 and Lemma L,
+
+    2^m q_n(C) ≥ ψ(X̂_0) + ψ(Ŷ_0) − 2 (ψ(X̂_0) ψ(Ŷ_0))^{1/2} ≥ 0.  ∎
+
+**Corollary B.** For every n, if C has rank at most two and its range is spanned by one vector of C^3 ⊗ A and one
+vector of C^3 ⊗ B, then q_n(C) ≥ 0, whatever the co-range.
+
+*Proof.* The proof of the Corollary above goes through with the co-range split only at the sector copies. Each piece is
+thin at the sector copies outside T, so its form reduces to q_1 at copy 0 on pieces of rank at most two, which is
+nonnegative. This gives q_n(C) ≥ q_n(P_V C P_V). The blocks of P_V C P_V satisfy the hypotheses of Theorem A. ∎
+
+The same argument covers the block-triangular members of rank at most two (P = 0 or Q = 0). There
+rank X + rank Y ≤ 2, and if one of X and Y vanishes, so does the cross term.
+
+**Scope.** At n = 2 this class is all of C^3 ⊗ C^3, since with one sector copy of dimensions (2, 1) we have
+A_1 ⊕ B_1 = C^3. The general rank-two member therefore contains the full two-copy theorem, and we prove only the cases
+above. For n ≤ 3 they also follow from the known two- and three-copy results, so the new content is at n ≥ 4. In the
+setting of [T2, §8] with one shared tail copy, ranges spanned by one vector of each backbone space are already covered
+there. The general case, with a diagonal block of rank two, is open. There the q̃ terms can vanish on projector-like
+off-diagonal blocks, so the Schur-complement step of Step 3 has nothing to pay with.
+
 ## The two-copy critical point
 
 The lowest thick critical point of R = q_2/‖·‖² on the rank-two variety that we found at two copies is in this class
@@ -181,6 +243,15 @@ of this shape violates the endpoint inequality, for any number of copies.
   - By adversarial minimisation it is at least −8.9·10⁻¹⁶ ‖C‖²; zero is attained when the co-range lies in V.
 - `code/check_other_dimensions.py` (`logs/check_other_dimensions.log`): d = 4, 5, including copies with two orthogonal
   planes; the minimum of q_n/‖C‖² over the one-sided class is ≥ −5·10⁻¹⁷.
+- `code/check_free_copy.py` (`logs/check_free_copy_n3.log`, `logs/check_free_copy_n4.log`), one free copy, random
+  sector dimensions and bases:
+  - the identity, to 4.8·10⁻¹⁵;
+  - Lemma L, with largest ratio |B_1|²/(ψψ) = 0.9957 (random and adversarial);
+  - Theorem A, adversarial minimum of q_n/‖C‖² ≥ −2.6·10⁻¹⁶;
+  - Corollary B, adversarial minimum ≥ −2.6·10⁻¹⁶, and q_n(C) − q_n(C P_V) ≥ −2.8·10⁻¹⁷.
+
+  The free-copy section was re-derived step by step and checked with separately written code. It has not had an
+  outside referee.
 
 An independent referee re-derived every step and re-ran the checks with separately written code, up to n = 5. It found
 no mathematical error. Its wording and attribution fixes are applied above.

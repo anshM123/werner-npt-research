@@ -1,0 +1,4 @@
+data/torus_pd_n3.npy: n = 3, R = 0.257316, thickness = 0.1981, |grad| = 3.1e-10
+   smallest Hessian eigenvalue: torus +0.00290, su(K) -0.04838, pairs -0.05467, -0.04556, -0.06003, full -0.08350
+data/suk_pd_n3.npy: n = 3, R = 0.317720, thickness = 0.1783, |grad| = 9.4e-11
+   smallest Hessian eigenvalue: torus -0.06340, su(K) +0.00249, pairs -0.12907, -0.08370, -0.10516, full -0.15109

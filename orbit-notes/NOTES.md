@@ -294,6 +294,33 @@ The search could push the pair blocks to −10⁻⁵, but only away from critica
 thickness floor 0.05 of the search. There the full Hessian was still −0.018. We did not reach a thick critical point
 where all pairs are flat.
 
+## Natural families of directions are not enough
+
+The descent at thick critical points is not confined to the obvious families of squeezes. Two of them fail at three
+copies:
+- the **torus**: traceless squeezes diagonal in the eigenbasis of the local support operator μ_s = Tr_other(CC^* + C^*C)
+  at every copy (2n directions, an abelian family);
+- the **weak planes**: squeezes in su(K_s), where K_s is the plane of the two smaller eigenvectors of μ_s
+  (3n directions).
+
+The two counterexamples:
+- `data/torus_pd_n3.npy` is a thick squeeze-critical point: gradient 3·10⁻¹⁰, R = 0.2573, thickness 0.20. On the torus
+  the Hessian is positive definite, with smallest eigenvalue +0.0029. The weak planes give −0.048 and the full squeeze
+  Hessian −0.084.
+- `data/suk_pd_n3.npy` is the other way round: gradient 9·10⁻¹¹, R = 0.3177, thickness 0.18. On the weak planes the
+  Hessian is positive definite (+0.0025). The torus gives −0.063 and the full squeeze Hessian −0.151.
+
+Both were found from `copywise_min_n3.npy` by minimising the squared squeeze gradient with a penalty on the restricted
+Hessian, then polishing the gradient alone. Both are ordinary saddles. Every pair of copies descends there
+(−0.046 to −0.129), and each point is caught by the families (a) and (b) of the previous section; the second is also
+caught by (c).
+
+At two copies the same searches stall far from criticality, with squared gradient about 0.025, so there these families
+may be enough. At three copies a search of the same kind for a thick critical point with every pair block positive
+semidefinite also stalls, at squared gradient ≥ 8·10⁻⁴. This agrees with the observation above that pairs of copies were
+always enough. `code/restricted_families.py` checks both points by finite differences
+(`logs/restricted_families.log`).
+
 ## Two-sided filters
 
 The reduction also works for the larger group of local filters acting independently on range and co-range,
@@ -379,6 +406,8 @@ NPT bound entanglement; we do not have one.
   Levi form that still descends through the curvature term.
 * `code/exact_critical_points.py` (with `data/variety_critical_n2_low.npy`, `data/variety_critical_n3_golden.npy`,
   `data/variety_critical_n3_low.npy`): the exact low thick critical points on the rank-two variety.
+* `code/restricted_families.py` (with `data/torus_pd_n3.npy`, `data/suk_pd_n3.npy`): three-copy critical points at which
+  the torus, resp. the weak-plane family, has no descent.
 * `logs/`: the runs in the tables and the control.
 
 ## References

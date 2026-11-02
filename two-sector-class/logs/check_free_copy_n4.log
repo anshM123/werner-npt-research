@@ -1,0 +1,5 @@
+n = 4, 3 random sector configurations
+(i)   identity: max relative error 4.8e-15
+(ii)  Lemma L: max |B1|^2/(psi psi) = 0.995682 (random + adversarial)
+(iii) Theorem A: adversarial min of q_n/|C|^2 = -1.37e-16
+(iv)  corollary class: adversarial min of q_n/|C|^2 = -1.78e-16; min of q_n(C) - q_n(C P_V) = +2.82e-18
