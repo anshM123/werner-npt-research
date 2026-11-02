@@ -61,22 +61,27 @@ On the class, n copies follow from the full (n − 1)-copy statement. The argume
 need the full four-copy statement.
 
 **Corollary 3 (a nested class, every n).** Let K_1 be the operators of rank at most two on one copy. For n ≥ 2 let
-K_n be the operators that, after a unitary on each copy and a permutation of the copies, have the form above with
-tail operator X in K_{n−1}. Then q_n(t, C) ≥ 0 for every C in K_n, every n ≥ 1 and every 0 ≤ t ≤ 1/2.
+K_n be the operators that, after a conjugation C ↦ UCU* by a product unitary U = U_1 ⊗ ⋯ ⊗ U_n (the same on range and
+co-range) and a permutation of the copies, have the form above with tail operator X in K_{n−1}. Then q_n(t, C) ≥ 0 for every C in K_n, every n ≥ 1 and every 0 ≤ t ≤ 1/2.
 
 *Proof.* Induction on n. For n = 1, q_1(t, X) ≥ (1 − 2t)‖X‖² because |Tr X|² ≤ 2‖X‖² for rank two. For n ≥ 2,
 Theorem 1 gives q_n(t, C) ≥ (1 − t) q_{n−1}(t, X) ≥ 0. ∎
 
 Corollary 3 uses no unproven input. Random members of K_n are thick at every copy: the reductions of the range and of
 the co-range have rank three, and τ_s = Tr(P_s Q_s) = 3 > 2, at every copy we checked (`check_nested.py`, n ≤ 4). So
-thin-copy removal reduces nothing here. K_n is a measure-zero family, but it contains P ⊗ |c⟩⟨c|^{⊗(n−1)}.
+thin-copy removal reduces nothing here. K_n is a measure-zero family, but it contains P ⊗ |c⟩⟨c|^{⊗(n−1)}. By Theorem 1,
+the only nonzero zeros of K_n at t = 1/2 are the operators P ⊗ |a⟩⟨b| (up to local unitaries and permutations), and
+q_n > 0 on K_n ∖ {0} for t < 1/2, so the class has no new equality cases. K_n is new from n ≥ 4; for n ≤ 3 it follows
+from the two- and three-copy theorems.
 
 **Remarks.**
 - **The class is not covered by earlier results.** A generic member has three-dimensional local supports on the
   first copy (so the copy is thick, and thin-copy removal [WZ, Thm. 7.2; T2, Lemma 6.1] does not apply). Its range
   contains no product vector unless c_0 α_0 + c_1 α_1 ∈ span(a) for some (c_0, c_1) ≠ 0, so the product-ray theorem
   [WZ, Thm. 7.3] does not apply either. Tomar's every-copy class [T2, Thms. 4.1-4.7] has GHZ backbones |0^k⟩, |1^k⟩
-  with tails at single copies, which is a different family.
+  with tails at single copies, which is a different family. Generic members of K_n are also outside the every-n classes
+  of `two-sector-class/` and `compression-notes/`: for n ≥ 5 every two-copy reduction of their range and co-range has
+  rank 9, while each of those classes forces a smaller rank on some pair of copies (at most 5, 6 or 3).
 - **Aligned backbones are needed.** The same grouping does not work when the backbones differ (y_k = |k⟩ ⊗ a_k + |2⟩ ⊗ α_k
   with a_0 ≠ a_1). There is still an exact identity, but its part outside the squares reaches −‖C‖² in numerical
   searches, while q_n itself stays nonnegative.
@@ -91,9 +96,9 @@ curve C(ε) = (Y_0 + εY_1 + …)(Z_0 + εZ_1 + …)^* of rank-two operators thr
 q_n(1/2, C(ε)) at ε = 0 is nonnegative.
 
 *Proof sketch.*
-- The gradient of q_n at C_0 is B(C_0) = −P^⊥ ⊗ B'(|a⟩⟨b|), where P^⊥ = I − P on the first copy and B' is the map B
-  for the other n − 1 copies. It is orthogonal
-  to the tangent space, so the second variation is
+- The derivative of q_n at C_0 in direction H is 2Re⟨B(C_0), H⟩, with B(C_0) = −P^⊥ ⊗ B'(|a⟩⟨b|), where
+  P^⊥ = I − P on the first copy and B' is the map B for the other n − 1 copies. B(C_0) is orthogonal to the tangent
+  space, so the second variation (the ε² coefficient) is
 
       q_n(T) + 2 Re⟨B(C_0), Y_1 Z_1^*⟩,   T = Y_1 Z_0^* + Y_0 Z_1^*.
 
@@ -113,8 +118,11 @@ The script `check_zero_family.py` evaluates the Hessian for random entangled a, 
 eigenvalue. An adversarial search over a, b (not part of the scripts here) found none either. The statement is only
 second order.
 
-Tomar proves positivity near generic equality cases supported on two-dimensional subspaces of every copy [T2]. When a
-and b are entangled, the zeros here have higher-rank reductions on the other copies.
+Proposition 4 is the second-order part of a known result. Tomar [T2, Thm. 5.2] proves that, given EP_{n−1}(d), the
+endpoint form is nonnegative on a whole neighbourhood of every product plane U ⊗ χ, with χ any vector on the other
+copies, entangled or not, and arbitrary range vectors. The co-range of P ⊗ |a⟩⟨b| is U ⊗ b, so the proposition follows.
+By [T1] this is unconditional at four copies. We include only a short direct computation of the second variation; its
+split into a qubit part and a complement part parallels Tomar's Lemma B.9.
 
 ## 3. A contraction inequality that fails
 
@@ -124,7 +132,8 @@ A natural way to pass from n − 1 to n copies would be the site-contraction ine
 
 Since contractions keep rank at most two, SCI for all n would give R_n ≥ (1 − 2t)(1 − t)^{n−1}, the conjectured sharp
 curve, and in particular the endpoint for every n.
-- SCI is tight at the product zeros for every t, and at the GHZ zeros for t = 1/2.
+- SCI holds with equality at P ⊗ |c⟩⟨c|^{⊗(n−1)} for every t (a zero only at t = 1/2), and at the GHZ zeros for t = 1/2.
+  The minimum runs over nonzero contractions.
 - At t = 1/2, every zero we generated has a contraction that is a zero (60 random zeros at three copies, 12 at four;
   exploratory runs, not scripted here).
 - **The rank-one case holds.** For C = |x⟩⟨y|, I − tF_s ≥ (1 − t)I gives
@@ -132,9 +141,11 @@ curve, and in particular the endpoint for every n.
 - **Rank two fails at three copies.** The operator in `data/sci_counterexample_n3.npy` has rank two and singular
   values 0.98 ‖C‖ and 0.20 ‖C‖. At t = 1/2 it has R_3(C) = 0.101905, while the smallest value of R_2 over its contractions that
   we find is 0.207236, so SCI fails by 1.7 × 10^{−3}. Positivity itself is not in question: R_3(C) > 0.
-  - This is a numerical finding, from many restarts of an exact alternating minimisation at every site
-    (`check_sci_counterexample.py`), not a certificate.
-  - Related operators violate SCI at every t we tried in [0.3, 1/2].
+  - The minimum over contractions is also verified by a decomposition: at each site, M_s = Q_s − 0.2072 H_s =
+    P_s + Q_s^Γ with Q_s ⪰ 0 and P_s ≻ 0 (an SDP solution checked in double precision, with relative margins
+    3.5·10⁻³, 1.0·10⁻³ and 1.2·10⁻⁴). So every contraction has R_2 ≥ 0.2072, and SCI fails by about 1.69·10⁻³.
+  - The stored operator violates SCI for t ≥ 0.4; small perturbations of it violate SCI at t = 0.30 and 0.35 (checked
+    the same way).
 
 Two related observations from our searches:
 - **A defect version survives, with a thin margin.** Subtract the conjectured sharp bound (1 − t)^{n−1}(‖C‖_2² − t‖C‖_1²)
@@ -146,8 +157,10 @@ Two related observations from our searches:
     required 1/2. It is reached near the zeros of Section 2.
   - Appending a pure copy does not change the ratio, so its infimum can only decrease with n.
   - We have no proof.
-- **The dephasing condition fails.** The condition "some basis of some copy has Σ_i q_{n−1}(X_ii) ≥ t q_{n−1}(Σ_i X_ii)"
-  would close the induction through the recursion, but it fails already at two copies.
+- **The dephasing condition.** The condition "some basis of some copy has Σ_i q_{n−1}(X_ii) ≥ t q_{n−1}(Σ_i X_ii)"
+  would close the induction through the recursion, together with EP_{n−1}. An earlier version of these notes said it
+  fails at two copies; an independent referee could not reproduce that (min-over-C, max-over-basis searches at n = 2, 3,
+  4 stay ≥ 0, reaching 0 only at zeros). We do not know whether it holds. With EP_3 it would give EP_4.
 
 ## References
 
@@ -173,3 +186,18 @@ Python 3 with NumPy. Outputs are in `logs/`.
 - `code/check_nested.py`: Corollary 3. It checks positivity and thickness of random members of K_n, for n = 2, 3, 4.
 - `code/check_zero_family.py`: Section 2. It computes Hessians at P ⊗ |a⟩⟨b| for random entangled a, b, at n = 3, 4.
 - `code/check_sci_counterexample.py`: Section 3. It re-checks the stored operator against SCI.
+
+## Referee
+
+An independent referee re-derived Theorem 1, Corollaries 2 and 3, Proposition 4 and the SCI counterexample with its
+own code. It checked:
+- the identity of Theorem 1 at d = 3, 4 and n ≤ 5, to 2.4·10⁻¹⁵;
+- W ≥ (1 − t)^{n−1}, exactly;
+- K_n at n ≤ 6: positivity, thickness, and adversarial minima ≥ 0 against controls that go negative.
+
+It found no mathematical error. Its corrections are applied above:
+- Proposition 4 is a special case of [T2, Thm. 5.2];
+- the dephasing remark was not reproduced;
+- the definition of K_n now fixes the unitary;
+- the SCI minimum is now verified by a decomposition.
+
