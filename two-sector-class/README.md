@@ -120,6 +120,15 @@ full trace. There only P_A C P_A and P_B C P_B contribute. Comparing with Step 1
 
 Since P_V C P_V has rank at most two, the Theorem gives q_n(P_V C P_V) ≥ 0. ∎
 
+**Other local dimensions.** The argument uses d = 3 only through dim A_s + dim B_s ≤ 3. The form q_n is the same for
+qudit Werner states at the endpoint, and an operator supported on a plane gives the same one-copy form in any dimension.
+So the Theorem and the Corollary hold for every local dimension d ≥ 3 when every copy has
+(dim A_s, dim B_s) ∈ {(1,1), (2,1), (1,2)}.
+
+For d ≥ 4 a copy can also carry two orthogonal planes. Then the last case of Step 3 can have a = n, and the case split
+above does not cover it. The numerics stay nonnegative there (d = 4, 5, n ≤ 3, adversarial minimisation), but we have
+no proof.
+
 ## The two-copy critical point
 
 The lowest thick critical point of R = q_2/‖·‖² on the rank-two variety that we found at two copies is in this class
@@ -154,6 +163,8 @@ of this shape violates the endpoint inequality, for any number of copies.
   at n = 2, 3, 4.
   - The difference q_n(C) − q_n(P_V C P_V) is at least 0.17 ‖C‖² on random members.
   - By adversarial minimisation it is at least −8.9·10⁻¹⁶ ‖C‖²; zero is attained when the co-range lies in V.
+- `code/check_other_dimensions.py` (`logs/check_other_dimensions.log`): d = 4, 5, including copies with two orthogonal
+  planes; the minimum of q_n/‖C‖² over the one-sided class is ≥ −5·10⁻¹⁷.
 
 ## References
 
