@@ -33,18 +33,30 @@ The main example is **one excitation**: A_s = K_s is a plane, B_s = C e_s with e
 the e-component this is the thin case (range in a product of planes; Tomar, Lemma 2.6). With it, the one-copy
 reduction of the range generically has rank three at every copy.
 
-How the class relates to known ones:
-- A generic member has no product vector in its range or co-range, so the product-ray theorem (Wu–Zou, Thm. 7.3, which
-  holds for every n) does not apply.
-- Tomar's every-copy classes [T2, Thms. 4.1–4.7] are built on the two GHZ strings 0…0 and 1…1, with tails at single
-  copies. Here each sector is a whole product subspace, and the two sectors are orthogonal at every copy.
+How the class relates to known ones (write a and b for the numbers of copies at which A_s, resp. B_s, is a plane):
+- **Product ray.** When a + b ≥ 2, a generic member has no product vector in its range or co-range. Then the
+  product-ray theorem (Wu–Zou, Thm. 7.3, stated for three copies; its proof extends to every n) does not apply. When
+  a + b ≤ 1, every two-dimensional range meets A or B, whose vectors are products.
+- **Tomar's every-copy classes [T2, Thms. 4.1–4.7].** These are built on the two GHZ strings 0…0 and 1…1, with tails at
+  single copies. Up to local unitaries, our two-sided class with a ≤ 1 and b ≤ 1 lies inside [T2, Thm. 4.1].
+- **Few copies.** For n ≤ 3 the Theorem also follows from the known two- and three-copy results.
+- **What is new.** The two-sided class with a ≥ 2 or b ≥ 2 (for example one excitation) at n ≥ 4, and the one-sided
+  Corollary.
+- **An open case of [T2, §8].** With a = b = 1 the Corollary covers operators whose range lies in
+  span{0…0, 2_i 0…0, 1…1, 2_j 1…1} with i ≠ j, and whose co-range is arbitrary. Take A = (span{0,2} at copy i) ⊗ (0 at
+  the others) and B = (span{1,2} at copy j) ⊗ (1 at the others). This is part of a case that [T2, §8] lists as open:
+  range in V_0 + V_1 not spanned by vectors of V_0 ∪ V_1, with an arbitrary co-range.
+- **Credits.** The co-range splitting in the proof of the Corollary is the argument of [T2, Lemma 4.8]. The rank-one
+  bound below is [Song–Chen, Prop. 8]. Wu–Zou [WZ, App. C.2] treat locally orthogonal product codes at three copies,
+  which contains the case where every copy has (dim A_s, dim B_s) = (1,1).
 
 ## Proof
 
 **Notation.**
 - Every copy has (dim A_s, dim B_s) equal to (1,1), (2,1) or (1,2).
 - Let a be the number of copies with dim A_s = 2, and b the number with dim B_s = 2. Then a + b ≤ n.
-- The block P_A C P_A is a fixed unit vector at each copy where A_s is a line. So it is an operator X on (C^2)^⊗a.
+- The block P_A C P_A is a fixed rank-one projector at each copy where A_s is a line. So it is an operator X on
+  (C^2)^⊗a.
   Likewise P_B C P_B is an operator Y on (C^2)^⊗b.
 - Put P = P_A C P_B and Q = P_B C P_A.
 - On qubits put Q_k(Z) = 2^{−k} Σ_σ |Tr σZ|², where σ runs over the 3^k Pauli strings with no identity factor, and
@@ -64,7 +76,7 @@ A partial trace over copy s pairs the copy-s factor of the range with that of th
   give exactly Q_a (resp. Q_b).
 
 **Step 2 (two facts on qubits).**
-- *Rank-one bound.* 2^k Q_k(xy*) ≥ ‖x‖²‖y‖² ≥ |Tr xy*|². Indeed q_k(xy*) = ⟨x ⊗ y|(I − F/2)^⊗k|x ⊗ y⟩, and
+- *Rank-one bound* [Song–Chen, Prop. 8]. 2^k Q_k(xy*) ≥ ‖x‖²‖y‖² ≥ |Tr xy*|². Indeed q_k(xy*) = ⟨x ⊗ y|(I − F/2)^⊗k|x ⊗ y⟩, and
   I − F/2 ≥ I/2.
 - *Qubit lemma.* For k ≥ 1 and Z of rank two on (C^2)^⊗k,
 
@@ -166,9 +178,17 @@ of this shape violates the endpoint inequality, for any number of copies.
 - `code/check_other_dimensions.py` (`logs/check_other_dimensions.log`): d = 4, 5, including copies with two orthogonal
   planes; the minimum of q_n/‖C‖² over the one-sided class is ≥ −5·10⁻¹⁷.
 
+An independent referee re-derived every step and re-ran the checks with separately written code, up to n = 5. It found
+no mathematical error. Its wording and attribution fixes are applied above.
+
 ## References
 
 - [T2] T. S. Tomar, *Equality cases and every-copy results for the Werner endpoint*, Zenodo (2026):
   - Lemma 2.6 (range in a product of qubits);
-  - Theorems 4.1–4.7 (GHZ backbones with single-copy tails).
-- [WZ] Wu and Zou, arXiv:2608.02647: Theorem 7.3 (product ray).
+  - Theorems 4.1–4.7 (GHZ backbones with single-copy tails);
+  - Lemma 4.8 (co-range compression for range in V);
+  - Section 8 (open cases).
+- [WZ] Wu and Zou, arXiv:2608.02647:
+  - Theorem 7.3 (product ray, three copies);
+  - Appendix C.2 (locally orthogonal product codes, three copies).
+- [SC] Song and Chen, arXiv:2607.23416: Proposition 8 (rank-one bound).
