@@ -224,6 +224,31 @@ None of them works at every point. (a) and (b) see nothing at several low points
 n = 3 points at R = 0.15. So far every point is caught by at least one of the three. A proof of ORB that looks at one copy at a time
 would have to find the weak single-copy directions. The cross-copy terms are where the curvature actually is.
 
+## One copy at a time is not enough
+
+Two natural strengthenings of ORB look only at one copy. Both are false at n = 3, t = 1/2. The operators are in `data/`
+and `code/one_copy_counterexamples.py` checks them (output in `logs/one_copy_counterexamples.log`).
+
+* **Single-copy version.** "If C is thick at copy s, then R over the squeeze orbit of copy s alone (other copies fixed)
+  has no interior minimum." Since F_s is quadratic, an interior local minimum on that orbit is a global minimum of R over
+  its closure. If this version held at one copy, EP_{n−1} would give EP_n at once: R(C) ≥ min over singular P ≥ 0. Random
+  starts support it: single-copy descents reached the thin boundary in 26/26 runs at n = 2, 33/33 at n = 3, 8/8 at
+  n = 4, and 24/24 at n = 2 for t = 1/3, 0.4 and 0.45. But an adversarial search finds a counterexample,
+  `data/single_copy_min_n3.npy`, with R = 0.2968 and thickness 0.18–0.44 at every copy. Its copy-0 squeeze gradient is
+  9·10⁻¹⁴, and F_0 has eigenvalues 0 (the direction I) and 5.6·10⁻⁴ to 0.022. So C is a strict minimum of R over the
+  whole copy-0 orbit. (It is not critical at the other copies.)
+* **Copywise version.** "No thick C is critical at every copy with every F_s positive semidefinite." Also false:
+  `data/copywise_min_n3.npy` has R = 0.2623, thickness 0.22–0.42, squeeze gradient ≤ 1.1·10⁻¹³ at every copy, and each
+  F_s has eigenvalues 0 (the direction I) and at least 2.9·10⁻⁴. No squeeze of any single copy lowers R, to second order
+  or globally on that copy's orbit.
+
+**ORB survives at both points.** The joint squeeze Hessian of the copywise example has 8 negative eigenvalues out of 24,
+the smallest −0.57. Every pair of copies is already enough: the 16 × 16 blocks for the pairs (0,1), (0,2) and (1,2)
+have smallest eigenvalues −0.33, −0.41 and −0.31. So ORB is not a statement about single copies. A proof has to use the
+coupling between copies. These points have R > 0. Restricted to negative values, the single-copy and copywise
+statements are equivalent to EP_n itself, given EP_{n−1}. A thick negative global minimum would admit no descent at
+all, and a non-minimum descends anyway. So the restricted versions do not give an easier target.
+
 ## Status
 
 Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 7. A proof of ORB_n for all n would prove
@@ -235,6 +260,8 @@ NPT bound entanglement; we do not have one.
 * `code/trace_form_check.py`: the control above.
 * `code/squeeze_hessian.py`: thick squeeze-critical points, the split of their Hessian, the three direction tests and
   checks of the identities above.
+* `code/one_copy_counterexamples.py` with `data/single_copy_min_n3.npy`, `data/copywise_min_n3.npy`: the two
+  three-copy operators above.
 * `logs/`: the runs in the tables and the control.
 
 ## References
