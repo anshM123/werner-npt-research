@@ -55,7 +55,9 @@ scripts need PyTorch.
   and the first case outside it is one free copy times a one-excitation block with three planes,
   C^3 ⊗ (K⊗K⊗K ⊕ C e⊗e⊗e), at four copies. Read as LOCC, the collapse maps m Werner copies to a weakly NPT two-qutrit
   state ρ_m whose undistillability for every number of copies would already give NPT bound entanglement.
-- The endpoint for every n, even restricted to operators whose range and co-range lie in one plane. Section 4 of
+- The endpoint for every n, even restricted to operators whose range and co-range lie in one plane. This restriction is
+  in fact equivalent to the full problem: by `support-and-projector-notes/` (Proposition 4), a negative rank-two
+  witness on n copies gives a negative rank-two orthogonal projector on more copies. Section 4 of
   `three-copy-notes/NOTES.md` explains why the most natural inductive route fails.
 - The endpoint for every n on the bosonic sector (range and co-range in Sym^n(C^3)). Section 4 of
   `bosonic-sector-notes/NOTES.md` isolates the remaining obstruction: interference between occupation blocks on one
