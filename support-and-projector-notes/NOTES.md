@@ -2,7 +2,7 @@
 
 Ansh Mishra and Aryan Senthilkumar, November 2026.
 
-These notes record three facts about the n-copy endpoint form:
+These notes record four facts about the n-copy endpoint form:
 - **Section 1.** The form is nonnegative on every operator whose range lies in a plane through a product vector. The
   co-range is arbitrary, and n is arbitrary. This is the product-ray theorem of Wu and Zou, which they state for three
   copies; their argument works for every n. We also show the form is positive definite there whenever the plane is
@@ -10,6 +10,7 @@ These notes record three facts about the n-copy endpoint form:
 - **Section 2.** The same holds with anchors built from maximally entangled qutrit pairs.
 - **Section 3.** The endpoint for every number of copies is equivalent to its restriction to rank-two orthogonal
   projectors.
+- **Section 4.** A negative witness forces the rank-two minimum to fall exponentially below the rank-one scale 2^{−N}.
 
 **None of this settles the all-copy problem.**
 
@@ -142,6 +143,30 @@ For a projector P_V onto V = span{v_1, v_2}, the swap trick gives
 
 where ω = (v_1 ⊗ v_2 − v_2 ⊗ v_1)/√2. So the all-copy problem asks whether, for every plane V, the W-weight of its
 antisymmetric vector is at most the W-weight of its three-dimensional symmetric square.
+
+## 4. Amplification: a negative witness grows at a fixed exponential rate
+
+Iterating the flattening step of Proposition 4 gives a quantitative criterion. Let
+
+    m_N = min { q_N(C) : rank C ≤ 2, ‖C‖_2 = 1 }.
+
+**Proposition 5.** Suppose m_n < 0, and let G be the Gram matrix of Proposition 4 for a negative witness on n copies.
+Put A = G_11 G_22 and B = |G_12|². Then B > A ≥ 4^{−n}, and along N = 2^k n (k ≥ 1)
+
+    2^N m_N ≤ −[(4^n B)^{N/(2n)} − (4^n A)^{N/(2n)}].
+
+So the right side tends to −∞ exponentially in N. Consequently the endpoint holds for every number of copies if and only
+if 2^N max(0, −m_N) grows subexponentially in N, for instance if m_N ≥ −K·2^{−N} for one constant K.
+
+*Proof.* Rank-one positivity gives q_n(xy*) ≥ 2^{−n}‖x‖²‖y‖², so A ≥ 4^{−n}, and det G < 0 gives B > A. The flattened
+witness D_1 = E_1 ⊗ E_2 − E_2 ⊗ E_1 has the orthonormal rank-one pieces F_1 = E_1 ⊗ E_2 and F_2 = −E_2 ⊗ E_1. Since
+q_{2n} is the tensor square of q_n, their Gram matrix is [[A, −B], [−B, A]]. Flattening (F_1, F_2) again squares every
+entry: after k steps the Gram matrix is [[A^{2^{k−1}}, −B^{2^{k−1}}], [−B^{2^{k−1}}, A^{2^{k−1}}]], on N = 2^k n
+copies. Its smallest eigenvalue A^{2^{k−1}} − B^{2^{k−1}} is the value of q_N at a unit rank-two operator, namely
+(F_1 + F_2)/√2 at that level. Multiply by 2^N = (4^n)^{2^{k−1}}. ∎
+
+The rank-one scale 2^{−N} is the natural one: the zeros of Section 1 are approached at that scale. This criterion is
+in the spirit of the tube-radius equivalences that circulate for this problem. It does not prove positivity.
 
 ## Code
 

@@ -26,3 +26,10 @@ for k in (1, 2):
     assert np.allclose(P @ P, P) and np.isclose(np.trace(P).real, 2)
     rhs = q(D, 2 * n).real / 2 + 2.0**-k / 4 * (q(PU, 2 * n) + q(PV, 2 * n) + 2 * (-1)**k * q(PU, 2 * n, PV)).real
     print(f"k = {k}: P_k is a rank-two projector;  q(P_k) = {q(P, 2 * n + k).real:.12f},  formula = {rhs:.12f}")
+
+# Proposition 5: Gram matrices under repeated flattening (pure algebra; the tensor-square rule was checked above)
+A, B = (G[0, 0] * G[1, 1]).real, abs(G[0, 1])**2
+F1, F2 = np.kron(E[0], E[1]), -np.kron(E[1], E[0])
+G1 = np.array([[q(F1, 2 * n), q(F1, 2 * n, F2)], [q(F2, 2 * n, F1), q(F2, 2 * n)]])
+print(f"Gram of (F_1, F_2) on 2n = {2 * n} copies: {np.round(G1.real, 12).tolist()};  predicted [[A, -B], [-B, A]] with "
+      f"A = {A:.12f}, B = {B:.12f}")

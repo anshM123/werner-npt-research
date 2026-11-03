@@ -2,3 +2,4 @@ flattening: q_4(D) = 0.846059034225,  2 det G = 0.846059034225
 D = U V^* with U, V isometries (flat)
 k = 1: P_k is a rank-two projector;  q(P_k) = 0.667206029319,  formula = 0.667206029319
 k = 2: P_k is a rank-two projector;  q(P_k) = 0.542824806940,  formula = 0.542824806940
+Gram of (F_1, F_2) on 2n = 4 copies: [[0.424089722096, -0.001060204984], [-0.001060204984, 0.424089722096]];  predicted [[A, -B], [-B, A]] with A = 0.424089722096, B = 0.001060204984
