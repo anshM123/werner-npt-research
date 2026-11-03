@@ -1,0 +1,12 @@
+n=2 product |0...0>         : smallest eigenvalue -5.1662e-16, kernel 36, gap 0.2929
+n=2 GHZ |0..0> + |1..1>     : smallest eigenvalue -6.8141e-16, kernel 12, gap 0.1238
+n=2 W = sum_s |0..1_s..0>   : smallest eigenvalue -5.3905e-16, kernel 12, gap 0.1238
+n=2 random 0                : smallest eigenvalue -6.5936e-16, kernel 9, gap 0.0088
+n=2 random 1                : smallest eigenvalue -3.2206e-16, kernel 9, gap 0.0231
+n=2 random 2                : smallest eigenvalue -7.9976e-16, kernel 9, gap 0.0067
+n=3 product |0...0>         : smallest eigenvalue -6.2239e-16, kernel 216, gap 0.1364
+n=3 GHZ |0..0> + |1..1>     : smallest eigenvalue -1.6101e-15, kernel 34, gap 0.0462
+n=3 W = sum_s |0..1_s..0>   : smallest eigenvalue -2.3889e-02, kernel 34, gap nan
+n=3 random 0                : smallest eigenvalue -6.0428e-16, kernel 27, gap 0.0477
+n=3 random 1                : smallest eigenvalue -9.4110e-16, kernel 27, gap 0.0434
+n=3 random 2                : smallest eigenvalue -8.0954e-16, kernel 27, gap 0.0432

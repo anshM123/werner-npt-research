@@ -2,7 +2,7 @@
 
 Ansh Mishra and Aryan Senthilkumar, November 2026.
 
-These notes record four facts about the n-copy endpoint form:
+These notes record four facts about the n-copy endpoint form, and some numerics:
 - **Section 1.** The form is nonnegative on every operator whose range lies in a plane through a product vector. The
   co-range is arbitrary, and n is arbitrary. This is the product-ray theorem of Wu and Zou, which they state for three
   copies; their argument works for every n. We also show the form is positive definite there whenever the plane is
@@ -11,6 +11,7 @@ These notes record four facts about the n-copy endpoint form:
 - **Section 3.** The endpoint for every number of copies is equivalent to its restriction to rank-two orthogonal
   projectors.
 - **Section 4.** A negative witness forces the rank-two minimum to fall exponentially below the rank-one scale 2^{−N}.
+- **Section 5 (numerical).** Which single vectors of a plane certify it in the Schur argument.
 
 **None of this settles the all-copy problem.**
 
@@ -184,6 +185,34 @@ naive Cauchy–Schwarz bound loses an exponential factor (4^N on the GHZ plane),
 The rank-one scale 2^{−N} is the natural one: the zeros of Section 1 are approached at that scale. This criterion is
 in the spirit of the tube-radius equivalences that circulate for this problem. It does not prove positivity.
 
+## 5. Universal anchors (numerical)
+
+Section 1 used only one vector of the plane. Here is the general version. For a unit vector p let
+R_p = M^{⊗n} V D^{−1} V* M^{⊗n}, with V = p ⊗ I and D = V* M^{⊗n} V, and put Y_p = (M^{⊗n} − R_p)^Γ. If Y_p ⪰ 0, the
+Schur argument of Theorem 1 goes through for every plane containing p, so q_n ≥ 0 on all operators whose range plane
+contains p, with any co-range. Call such p a universal anchor. Y_p always vanishes on p̄ ⊗ (C^3)^{⊗n}, since
+(M^{⊗n} − R_p)(p ⊗ x) = 0.
+
+**Numerics** (`code/check_anchors.py` and the n = 4 runs noted below). We find two kinds of behaviour.
+- **Universal:** at n = 2, every vector we tried, including W = |01⟩ + |10⟩. At n = 3, Haar-random vectors are
+  universal, with kernel exactly p̄ ⊗ (C^3)^{⊗n} and a gap of about 0.045. So are products and GHZ vectors.
+- **Not universal:** at n = 3, the W state Σ_s |0…1_s…0⟩, and more generally every single excitation Σ_s b_1…x_s…b_n
+  over a product, has smallest eigenvalue −0.0239.
+
+At n = 4, random vectors stay universal (gap 0.045), W is not (−0.0149), and GHZ is universal with a small gap
+(0.0014).
+
+**Two exact facts.** Put A = (M^{⊗n})^Γ and T_p = A^{−1/2} R_p^Γ A^{−1/2}, so that p is universal exactly when
+T_p ≤ 1.
+- Anchors tensorise: T_{p⊗p′} = T_p ⊗ T_{p′}. Since T_{p′} always has the eigenvalue 1, a vector that is not universal
+  stays so after tensoring with anything.
+- Spectra in [−1, 1] are closed under tensor products; this is the block condition of Section 2. Spectra in [−3, 1]
+  are preserved by appending product copies, because a product copy has spectrum {1, −1/3}.
+
+**Anchors do not cover every plane.** Every vector of span{Σ_s |0…1_s…0⟩, Σ_s |0…2_s…0⟩} is locally unitarily
+equivalent to W, so this plane contains no universal anchor at n = 3. Yet q_n ≥ 2^{1−n}‖X‖² on it, for every co-range,
+in our computations up to n = 7.
+
 ## Code
 
 Python 3 with NumPy and SymPy. `code/check_pair_anchor.py` uses python-flint for the exact characteristic polynomials;
@@ -193,7 +222,9 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   of q_n on {X : ran X ⊆ L}, for random planes through |0…0⟩ (positive), for planes inside a product of local qubits
   (zero), and for planes through anchors with maximally entangled pairs at n = 3, 4 (positive).
 - `code/check_pair_anchor.py`: the exact block condition of Section 2.
-- `code/check_projector_reduction.py`: the flattening and flag identities of Proposition 4, on a random rank-two C.
+- `code/check_projector_reduction.py`: the flattening and flag identities of Proposition 4, on a random rank-two C, and
+  the Gram identity behind Proposition 5.
+- `code/check_anchors.py`: Section 5 at n = 2, 3.
 
 ## References
 
