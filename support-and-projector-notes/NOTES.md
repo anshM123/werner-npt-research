@@ -165,6 +165,22 @@ entry: after k steps the Gram matrix is [[A^{2^{k−1}}, −B^{2^{k−1}}], [−
 copies. Its smallest eigenvalue A^{2^{k−1}} − B^{2^{k−1}} is the value of q_N at a unit rank-two operator, namely
 (F_1 + F_2)/√2 at that level. Multiply by 2^N = (4^n)^{2^{k−1}}. ∎
 
+**Corollary 6 (a constant suffices).** For unit vectors with u_1 ⊥ u_2 and v_1 ⊥ v_2 on N copies, put
+W_N = Π_s (I − ½F_s) on two replicas and
+
+    ρ_N = sup |⟨u_1 ⊗ v_2|W_N|u_2 ⊗ v_1⟩|² / (⟨u_1 ⊗ v_1|W_N|u_1 ⊗ v_1⟩ ⟨u_2 ⊗ v_2|W_N|u_2 ⊗ v_2⟩).
+
+Then EP_N ⟺ ρ_N ≤ 1. Also ρ_{N+1} ≥ ρ_N and ρ_{2N} ≥ ρ_N². So the endpoint holds for every N if and only if
+sup_N ρ_N < ∞: an orthogonal crossed Cauchy–Schwarz inequality with any constant independent of N would suffice.
+
+*Proof.* The entries of G for E_i = u_i v_i* are the three W_N-expectations in ρ_N, by the crossed pairing
+q(|x⟩⟨y|, |u⟩⟨v|) = ⟨x ⊗ v|W|u ⊗ y⟩. For C = σ_1 E_1 + σ_2 E_2, the phases of u_2 are free, so the worst case of
+σ_1²G_11 + σ_2²G_22 + 2σ_1σ_2 Re G_12 is nonnegative for all σ exactly when |G_12|² ≤ G_11 G_22. Appending a common
+product copy multiplies G_12 by ½ and G_11 G_22 by ¼. One flattening step squares the ratio, as in Proposition 5. ∎
+
+The constant is attained: the GHZ plane span{|0^N⟩, |1^N⟩} (odd N) and the zeros of Section 1 give ratio 1. The
+naive Cauchy–Schwarz bound loses an exponential factor (4^N on the GHZ plane), so a proof must keep the crossing.
+
 The rank-one scale 2^{−N} is the natural one: the zeros of Section 1 are approached at that scale. This criterion is
 in the spirit of the tube-radius equivalences that circulate for this problem. It does not prove positivity.
 
