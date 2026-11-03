@@ -1,0 +1,4 @@
+flattening: q_4(D) = 0.846059034225,  2 det G = 0.846059034225
+D = U V^* with U, V isometries (flat)
+k = 1: P_k is a rank-two projector;  q(P_k) = 0.667206029319,  formula = 0.667206029319
+k = 2: P_k is a rank-two projector;  q(P_k) = 0.542824806940,  formula = 0.542824806940

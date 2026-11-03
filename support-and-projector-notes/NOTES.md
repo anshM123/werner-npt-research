@@ -1,0 +1,159 @@
+# Product-containing planes for every n, and a reduction to projectors
+
+Ansh Mishra and Aryan Senthilkumar, November 2026.
+
+These notes record three facts about the n-copy endpoint form:
+- **Section 1.** The form is nonnegative on every operator whose range lies in a plane through a product vector. The
+  co-range is arbitrary, and n is arbitrary. This is the product-ray theorem of Wu and Zou, which they state for three
+  copies; their argument works for every n. We also show the form is positive definite there whenever the plane is
+  thick at one copy.
+- **Section 2.** The same holds with anchors built from maximally entangled qutrit pairs.
+- **Section 3.** The endpoint for every number of copies is equivalent to its restriction to rank-two orthogonal
+  projectors.
+
+**None of this settles the all-copy problem.**
+
+## Setting
+
+For an operator X on (C^3)^{⊗n},
+
+    q_n(X) = Σ_J (−½)^{|J|} ‖Tr_J X‖_2² = ⟨X, Φ_n(X)⟩,   Φ_n = (id − ½ Tr(·) I)^{⊗n},
+
+and EP_n is the statement that q_n(C) ≥ 0 for every C of rank at most two. On one copy,
+q_1(X) = ⟨vec X, M vec X⟩ with M = I − ½|Ω⟩⟨Ω| on C^3_row ⊗ C^3_col and Ω = Σ_a |aa⟩. Its blocks with respect to the row
+factor are M_ab = ⟨a|M|b⟩ = δ_ab I − ½|a⟩⟨b|. On n copies the matrix is M^{⊗n}. Γ denotes the transpose on the row
+factor and F the swap. Sections 1 and 2 work in any local dimensions ≥ 2.
+
+## 1. Planes through a product vector
+
+**Theorem 1.** Let p be a product vector and L a two-dimensional subspace containing p. Then q_n(X) ≥ 0 for every
+operator X with range in L, for every n. The co-range is arbitrary, so X can be any element of L ⊗ (C^3)^{⊗n}*. The
+same holds when the co-range lies in such a plane.
+
+Wu and Zou prove this for three copies [WZ, Thm. 7.3], by a Schur complement and a completely copositive order
+interval. Their argument does not use the number of copies, and we write it out for every n.
+
+*Proof.* By local unitaries take p = |0⟩^{⊗n}, and write L = span{p, u} with u ⊥ p.
+
+*One copy.* Put P = |0⟩⟨0|, Q = I − P, Z = P − Q and D = M_00 = I − ½P > 0. Define R_ab = M_a0 D^{−1} M_0b. A direct
+computation gives
+
+    R = ½ |vec Z⟩⟨vec Z| + P ⊗ Q,   A := M^Γ = I − ½F,   B := R^Γ = ½ (Z ⊗ Z) F + P ⊗ Q.
+
+The three spaces |00⟩, span{|0i⟩, |i0⟩} (i ≠ 0) and Q ⊗ Q are invariant under A and B. On them:
+
+| Invariant space | A − B | A + B |
+|---|---|---|
+| \|00⟩ | 0 | 1 |
+| span{\|0i⟩, \|i0⟩} | [[0, 0], [0, 1]] | [[2, −1], [−1, 1]] |
+| Q ⊗ Q | I − F | I |
+
+So −A ≤ B ≤ A, with A > 0.
+
+*n copies.* Compress M^{⊗n} to L on the row factor. In the basis p, u this is the block operator [[D^{⊗n}, K], [K*, H]]
+on the co-range space, with K = ⟨p|M^{⊗n}|u⟩ and H = ⟨u|M^{⊗n}|u⟩. Since all blocks factorise over the copies, its
+Schur complement is
+
+    H − K* (D^{⊗n})^{−1} K = ⟨u| (M^{⊗n} − R^{⊗n}) |u⟩,
+
+a partial expectation on the row factor. The matrix T = A^{−1/2} B A^{−1/2} is a Hermitian contraction, so
+
+    (M^{⊗n} − R^{⊗n})^Γ = A^{⊗n} − B^{⊗n} = (A^{1/2})^{⊗n} (I − T^{⊗n}) (A^{1/2})^{⊗n} ≥ 0.
+
+Whenever W^Γ ≥ 0, the operator ⟨u|W|u⟩ is positive semidefinite, because ⟨u ⊗ y|W|u ⊗ y⟩ = ⟨ū ⊗ y|W^Γ|ū ⊗ y⟩. So
+the Schur complement is positive semidefinite, hence so is the compressed block operator, and that is the claim.
+Finally q_n(X*) = q_n(X), which gives the co-range version. ∎
+
+This is positivity of the whole difference A^{⊗n} − B^{⊗n}, not of the terms of an expansion.
+
+**Strictness.** On the mixed blocks det(B − λA) = (λ − 1)(3λ + 1)/4, so T has eigenvalues 1 and −1/3 only. A tensor
+product of these equals 1 only if every factor does. So the kernel of A^{⊗n} − B^{⊗n} is K^{⊗n}, with
+
+    K = ker(A − B) = (|0⟩ ⊗ C^3) ⊕ Sym²(Q C^3).
+
+Suppose a nonzero X = pv* + uw* has q_n(X) = 0. Then the Schur form vanishes in some direction z ≠ 0, so
+ū ⊗ z ∈ K^{⊗n}. At each copy s, apply the vectors spanning K^⊥:
+- **Vectors |i⟩|0⟩ (i ≠ 0).** Either u is locally |0⟩ at s, or z has no |0⟩ component there.
+- **The vector |12⟩ − |21⟩.** In the second case, ⟨1|_s ū ⊗ ⟨2|_s z = ⟨2|_s ū ⊗ ⟨1|_s z. Then the local support of
+  u at s lies in span{|0⟩, r_s} for a single vector r_s.
+
+So the range of every zero has local dimension at most two at every copy. This gives:
+
+**Corollary 2.** If L contains a product vector and has local dimension three at some copy, then q_n is positive
+definite on {X : ran X ⊆ L}, with arbitrary co-range.
+
+The zeros include P ⊗ |0…0⟩⟨b| for a qubit projector P, with b arbitrary and possibly entangled. A generic plane in
+(C^3)^{⊗n}, n ≥ 2, contains no product vector, so Theorem 1 covers a thin set of planes. By Theorem 1, a negative rank-two
+witness must have a completely entangled range and a completely entangled co-range.
+
+## 2. Anchors with maximally entangled pairs
+
+The proof of Theorem 1 runs block by block. Split the copies into blocks and let the anchor be p = ⊗_j p_j, with p_j a
+vector on block j. For each block put
+
+    V_j = p_j ⊗ I,   D_j = V_j* M_j V_j,   R_j = M_j V_j D_j^{−1} V_j* M_j,
+
+where M_j is the endpoint matrix of the block. If D_j > 0 and −M_j^Γ ≤ R_j^Γ ≤ M_j^Γ for every block, then the Schur
+complement factorises as before, and the tensor product of the contractions is again a contraction.
+
+For a pair of qutrit copies with p_j = Ω_3 = Σ_a |aa⟩:
+- D_j = 2I + ¼|Ω_3⟩⟨Ω_3| > 0.
+- The 81 × 81 matrices 352 (M_j ± R_j)^Γ are integer matrices. Both are positive semidefinite: the signs of their
+  characteristic polynomials alternate, checked exactly.
+- (M_j − R_j)^Γ has a kernel of dimension 9.
+
+**Theorem 3.** Let p be a tensor product of single-copy vectors and maximally entangled states on disjoint pairs of
+copies. For every n, q_n(X) ≥ 0 for every X whose range lies in a plane containing p, with any co-range. The same holds
+with range and co-range exchanged.
+
+The zero analysis of Section 1 is not claimed for these anchors.
+
+## 3. Reduction to rank-two projectors
+
+**Proposition 4.** Suppose q_n(C) < 0 for some rank-two C on n copies. Then q_N(P) < 0 for some orthogonal rank-two
+projector P on N > n copies. So EP_n for every n is equivalent to the same statement for rank-two projectors alone.
+
+*Proof.* The proof has two steps.
+
+*Flattening.* Write C = σ_1 E_1 + σ_2 E_2 with E_i = u_i v_i*, and put G_ij = q_n(E_i, E_j). Its diagonal is positive,
+since q_n is positive on rank one. A combination of the E_i is negative, so det G < 0. The form tensorises, so
+
+    D = E_1 ⊗ E_2 − E_2 ⊗ E_1   has   q_{2n}(D) = 2(G_11 G_22 − |G_12|²) < 0.
+
+D = UV* for isometries U = [u_1 ⊗ u_2, u_2 ⊗ u_1] and V = [v_1 ⊗ v_2, −v_2 ⊗ v_1].
+
+*Flags.* On k further copies let f_0 = |0^k⟩ and f_1 = |1^k⟩. Put Z = (U ⊗ f_0 + V ⊗ f_1)/√2 and P_k = ZZ*. Then
+Z*Z = I_2, so P_k is a rank-two orthogonal projector. Its flag blocks are UU*/2, D/2, D*/2 and VV*/2. The off-diagonal
+flag units have q_k(f_0 f_1*) = 1, and they are q-orthogonal to the rest. The diagonal ones give 2^{−k} and (−½)^k.
+Hence
+
+    q_{2n+k}(P_k) = ½ q_{2n}(D) + 2^{−k}/4 · [q_{2n}(UU*) + q_{2n}(VV*) + 2(−1)^k Re q_{2n}(UU*, VV*)].
+
+Φ has operator norm one and ‖UU*‖² = ‖VV*‖² = 2, so the bracket is at most 8 in absolute value. Hence q(P_k) < 0 once
+2^k > 8/|q_{2n}(D)|. ∎
+
+The construction raises the number of copies, so it says nothing at a fixed n. Our four-copy theorem
+(`four-replica-notes/`) already covers every projector at n = 4. Flag constructions of this kind are standard; we have
+not seen the reduction stated for this problem.
+
+For a projector P_V onto V = span{v_1, v_2}, the swap trick gives
+
+    q_n(P_V) = Tr[(P_V ⊗ P_V) Π_s (F_s − ½)] = Tr[W Π_{Sym²V}] − ⟨ω|W|ω⟩,   W = Π_s (I − ½F_s) > 0,
+
+where ω = (v_1 ⊗ v_2 − v_2 ⊗ v_1)/√2. So the all-copy problem asks whether, for every plane V, the W-weight of its
+antisymmetric vector is at most the W-weight of its three-dimensional symmetric square.
+
+## Code
+
+Python 3 with NumPy and SymPy. `code/check_pair_anchor.py` uses python-flint for the exact characteristic polynomials;
+without it, it falls back to floating point. Outputs are in `logs/`.
+- `code/endpoint.py`: the form q_n.
+- `code/check_product_anchor.py`: Theorem 1, Corollary 2 and Theorem 3 on examples. It prints the smallest eigenvalue
+  of q_n on {X : ran X ⊆ L}, for random planes through |0…0⟩ (positive), for planes inside a product of local qubits
+  (zero), and for planes through anchors with maximally entangled pairs at n = 3, 4 (positive).
+- `code/check_pair_anchor.py`: the exact block condition of Section 2.
+- `code/check_projector_reduction.py`: the flattening and flag identities of Proposition 4, on a random rank-two C.
+
+## References
+
+- [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.

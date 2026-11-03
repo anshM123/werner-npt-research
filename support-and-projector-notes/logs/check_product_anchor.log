@@ -1,0 +1,6 @@
+n=2, product anchor |0...0>, random u: smallest eigenvalue 6.0387e-02
+n=2, product anchor, u in the local qubits span(0,1): smallest eigenvalue -7.3e-17
+n=3, product anchor |0...0>, random u: smallest eigenvalue 8.4624e-02
+n=3, product anchor, u in the local qubits span(0,1): smallest eigenvalue 3.7e-17
+n=3, anchor with maximally entangled pairs, random u: smallest eigenvalue 1.9055e-01
+n=4, anchor with maximally entangled pairs, random u: smallest eigenvalue 2.7334e-01
