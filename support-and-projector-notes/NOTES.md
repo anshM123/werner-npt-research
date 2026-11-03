@@ -179,6 +179,13 @@ q(|x⟩⟨y|, |u⟩⟨v|) = ⟨x ⊗ v|W|u ⊗ y⟩. For C = σ_1 E_1 + σ_2 E_2
 σ_1²G_11 + σ_2²G_22 + 2σ_1σ_2 Re G_12 is nonnegative for all σ exactly when |G_12|² ≤ G_11 G_22. Appending a common
 product copy multiplies G_12 by ½ and G_11 G_22 by ¼. One flattening step squares the ratio, as in Proposition 5. ∎
 
+Two remarks sharpen this.
+- **Orthogonality is not needed.** a·u_1 v_1* + b·u_2 v_2* has rank at most two for any vectors, so the same equivalence
+  holds with the supremum over all unit vectors.
+- **A subexponential bound suffices.** Tensoring two configurations multiplies their ratios, so ρ_{N+M} ≥ ρ_N ρ_M.
+  By Fekete's lemma, lim (log ρ_N)/N = sup_N (log ρ_N)/N. Hence the endpoint holds for every N if and only if
+  ρ_N = e^{o(N)}. For example, √ρ_{N+1} ≤ √ρ_N + c with a fixed c would suffice.
+
 The constant is attained: the GHZ plane span{|0^N⟩, |1^N⟩} (odd N) and the zeros of Section 1 give ratio 1. The
 naive Cauchy–Schwarz bound loses an exponential factor (4^N on the GHZ plane), so a proof must keep the crossing.
 
