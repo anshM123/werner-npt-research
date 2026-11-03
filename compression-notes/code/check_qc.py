@@ -48,7 +48,8 @@ def quad_part(C, n, s, t):
         for j in range(i + 1, d):
             a = Qd(I3[i] + I3[j]) - M[i, i] - M[j, j]
             b = Qd(I3[i] + 1j * I3[j]) - M[i, i] - M[j, j]
-            M[i, j] = (a + 1j * b) / 2
+            # Qd(e_i + i e_j) - Qd(e_i) - Qd(e_j) = -2 Im M_ij for Qd(w) = w^* M w
+            M[i, j] = (a - 1j * b) / 2
             M[j, i] = np.conj(M[i, j])
     return M
 
@@ -93,9 +94,13 @@ for n in (2, 3, 4):
             P = np.kron(P, I3 - np.outer(w, w.conj()) if r_ == s else I3)
         lhs = q(C, n, t) - q(P @ C @ P, n, t)
         rhs = delta(C, n, s, w, t)
-        tr = np.trace(quad_part(C, n, s, t)).real
+        M = quad_part(C, n, s, t)
+        tr = np.trace(M).real
+        # w^* M_s w must equal Delta_s(w) + (1 - t) q_{n-1}(X_w) at complex w
+        residual = abs(np.vdot(w, M @ w).real - rhs - (1 - t) * q(contract(C, n, s, w, w), n - 1, t))
+        assert residual < 1e-11 * np.vdot(C, C).real
         print(f"  n={n} t={t} site {s}: q_n(C) - q_n(C_wperp) = {lhs:.10f}, formula = {rhs:.10f};  "
-              f"Tr M_s = {tr:.8f}, 2 q_n(C) = {2 * q(C, n, t):.8f}", flush=True)
+              f"Tr M_s = {tr:.8f}, 2 q_n(C) = {2 * q(C, n, t):.8f};  quadratic residual = {residual:.1e}", flush=True)
 
 t = 0.5
 print("\ncanonical rules on the stored two-copy operators (value = max over copies of Delta_s(w_s)/||C||^2):")

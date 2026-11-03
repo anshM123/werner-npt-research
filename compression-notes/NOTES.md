@@ -93,7 +93,9 @@ q_n(C) > 0.
 at two copies (`data/`):
 - the eigenvector of Tr_{rest}(CC^* + C^*C) at copy s with the smallest eigenvalue: value −0.104 at an operator with
   q_2 = 0.289, where the best w gives +0.283;
-- the top eigenvector of M_s: value −0.0077, where the best w gives +0.0062.
+- the top eigenvector of M_s: value −0.0974, where the best w gives +0.0062. (An earlier version reported −0.0077: the
+  polarisation in `quad_part` built the transpose of M_s. The script now also checks w^* M_s w against the formula at
+  complex w.)
 
 **No basis average works at zeros (proved).** By the trace identity, QC would follow if at some copy some
 orthonormal basis had Σ_k q_{n−1}(⟨e_k|C|e_k⟩) ≤ 4 q_n(C). This fails for every n ≥ 2 on the zero
