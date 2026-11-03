@@ -1,0 +1,112 @@
+conc  B012      D=2  sup_found=4  bound=13  holds=True  restarts=16 x steps=1200
+conc  B012      D=3  sup_found=4  bound=13  holds=True  restarts=16 x steps=1200
+conc  B012      D=4  sup_found=4  bound=13  holds=True  restarts=16 x steps=1200
+conc  B012      D=6  sup_found=3.99998  bound=13  holds=True  restarts=8 x steps=1000
+conc  B3        D=2  sup_found=1  bound=1  holds=True  restarts=16 x steps=1200
+conc  B3        D=3  sup_found=1  bound=1  holds=True  restarts=16 x steps=1200
+conc  B3        D=4  sup_found=1  bound=1  holds=True  restarts=16 x steps=1200
+conc  Bfull     D=2  sup_found=0.99978  bound=1  holds=True  restarts=16 x steps=1200
+conc  Bfull     D=3  sup_found=0.999719  bound=1  holds=True  restarts=16 x steps=1200
+conc  Bfull     D=4  sup_found=0.999781  bound=1  holds=True  restarts=16 x steps=1200
+conc  Bfull     D=6  sup_found=0.999742  bound=1  holds=True  restarts=8 x steps=1000
+conc  W_B012    D=2  sup_found=4  bound=13  holds=True  restarts=10 x steps=600
+conc  W_free13  D=2  sup_found=2  bound=6.5  holds=True  restarts=16 x steps=800
+conc  W_orb24   D=2  sup_found=1.99999  bound=2  holds=True  restarts=16 x steps=800
+conc  adj       D=2  sup_found=-1.68313e-05  bound=0  holds=True  restarts=40 x steps=1200
+conc  comp      D=2  sup_found=1  bound=1  holds=True  restarts=16 x steps=1200
+conc  comp      D=3  sup_found=1  bound=1  holds=True  restarts=16 x steps=1200
+conc  comp      D=4  sup_found=1  bound=1  holds=True  restarts=16 x steps=1200
+conc  free13    D=2  sup_found=2  bound=6.5  holds=True  restarts=40 x steps=1200
+conc  orb24     D=2  sup_found=2  bound=2  holds=True  restarts=40 x steps=1200
+lemma Gbup      D=1  sup_found=2  bound=4  holds=True  restarts=30 x steps=1500
+lemma Gbup      D=2  sup_found=4  bound=4  holds=True  restarts=30 x steps=1500
+lemma Gbup      D=3  sup_found=4  bound=4  holds=True  restarts=30 x steps=1500
+lemma Gbup      D=4  sup_found=4  bound=4  holds=True  restarts=30 x steps=1500
+lemma Gpos      D=1  sup_found=1.41149e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma Gpos      D=2  sup_found=9.58898e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma Gpos      D=3  sup_found=8.86321e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma Gpos      D=4  sup_found=8.93859e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma Gup       D=1  sup_found=2  bound=2  holds=True  restarts=30 x steps=1500
+lemma Gup       D=2  sup_found=2  bound=2  holds=True  restarts=30 x steps=1500
+lemma Gup       D=3  sup_found=2  bound=2  holds=True  restarts=30 x steps=1500
+lemma Gup       D=4  sup_found=2  bound=2  holds=True  restarts=30 x steps=1500
+lemma Hcurv     D=1  sup_found=4.89672e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma Hcurv     D=2  sup_found=-2.812e-12  bound=0  holds=True  restarts=30 x steps=1500
+lemma Hcurv     D=3  sup_found=-4.42423e-09  bound=0  holds=True  restarts=30 x steps=1500
+lemma Hcurv     D=4  sup_found=-1.2996e-08  bound=0  holds=True  restarts=30 x steps=1500
+lemma Hcurv     D=6  sup_found=-8.52349e-07  bound=0  holds=True  restarts=12 x steps=1200
+lemma Hcurv     D=8  sup_found=-2.89649e-06  bound=0  holds=True  restarts=12 x steps=1200
+lemma Hpure_hi  D=1  sup_found=8.71934e-16  bound=2  holds=True  restarts=30 x steps=1500
+lemma Hpure_hi  D=2  sup_found=2  bound=2  holds=True  restarts=30 x steps=1500
+lemma Hpure_hi  D=3  sup_found=2  bound=2  holds=True  restarts=30 x steps=1500
+lemma Hpure_hi  D=4  sup_found=2  bound=2  holds=True  restarts=30 x steps=1500
+lemma Hpure_lo  D=1  sup_found=8.71934e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma Hpure_lo  D=2  sup_found=1.51964e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma Hpure_lo  D=3  sup_found=1.38311e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma Hpure_lo  D=4  sup_found=1.64971e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma aux       D=1  sup_found=7.42012e-16  bound=2.82843  holds=True  restarts=30 x steps=1500
+lemma aux       D=2  sup_found=2  bound=2.82843  holds=True  restarts=30 x steps=1500
+lemma aux       D=3  sup_found=2  bound=2.82843  holds=True  restarts=30 x steps=1500
+lemma aux       D=4  sup_found=2  bound=2.82843  holds=True  restarts=30 x steps=1500
+lemma aux       D=6  sup_found=2  bound=2.82843  holds=True  restarts=12 x steps=1200
+lemma aux       D=8  sup_found=2  bound=2.82843  holds=True  restarts=12 x steps=1200
+lemma curv27    D=1  sup_found=3.19338e-12  bound=1  holds=True  restarts=30 x steps=1500
+lemma curv27    D=2  sup_found=0.499971  bound=1  holds=True  restarts=30 x steps=1500
+lemma curv27    D=3  sup_found=0.5  bound=1  holds=True  restarts=30 x steps=1500
+lemma curv27    D=4  sup_found=0.499999  bound=1  holds=True  restarts=30 x steps=1500
+lemma curv27    D=6  sup_found=0.499881  bound=1  holds=True  restarts=12 x steps=1200
+lemma curv27    D=8  sup_found=0.499919  bound=1  holds=True  restarts=12 x steps=1200
+lemma denom     D=1  sup_found=-2.83875e-08  bound=0  holds=True  restarts=30 x steps=1500
+lemma denom     D=2  sup_found=-1.96974e-07  bound=0  holds=True  restarts=30 x steps=1500
+lemma denom     D=3  sup_found=-4.95652e-09  bound=0  holds=True  restarts=30 x steps=1500
+lemma denom     D=4  sup_found=-2.03588e-09  bound=0  holds=True  restarts=30 x steps=1500
+lemma denom     D=6  sup_found=-1.45612e-07  bound=0  holds=True  restarts=12 x steps=1200
+lemma denom     D=8  sup_found=-5.31502e-08  bound=0  holds=True  restarts=12 x steps=1200
+lemma flat2     D=1  sup_found=5.54417e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat2     D=2  sup_found=4.59147e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat2     D=3  sup_found=4.69229e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat2     D=4  sup_found=5.25774e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat2     D=6  sup_found=4.35557e-16  bound=0  holds=True  restarts=12 x steps=1200
+lemma flat2     D=8  sup_found=5.06332e-16  bound=0  holds=True  restarts=12 x steps=1200
+lemma flat2b    D=1  sup_found=5.40641e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat2b    D=2  sup_found=5.47181e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat2b    D=3  sup_found=5.03167e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat2b    D=4  sup_found=6.01448e-16  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat3     D=1  sup_found=1.20414e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat3     D=2  sup_found=1.65091e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat3     D=3  sup_found=1.82766e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat3     D=4  sup_found=1.76153e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma flat3     D=6  sup_found=1.68757e-15  bound=0  holds=True  restarts=12 x steps=1200
+lemma flat3     D=8  sup_found=1.47251e-15  bound=0  holds=True  restarts=12 x steps=1200
+lemma func      D=1  sup_found=1.66575e-11  bound=16.3  holds=True  restarts=30 x steps=1500
+lemma func      D=2  sup_found=2.82266  bound=16.3  holds=True  restarts=30 x steps=1500
+lemma func      D=3  sup_found=2.82436  bound=16.3  holds=True  restarts=30 x steps=1500
+lemma func      D=4  sup_found=2.82433  bound=16.3  holds=True  restarts=30 x steps=1500
+lemma func      D=6  sup_found=2.82384  bound=16.3  holds=True  restarts=12 x steps=1200
+lemma func      D=8  sup_found=2.82243  bound=16.3  holds=True  restarts=12 x steps=1200
+lemma safe      D=1  sup_found=1.07689e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma safe      D=2  sup_found=1.87618e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma safe      D=3  sup_found=1.38205e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma safe      D=4  sup_found=1.41558e-15  bound=0  holds=True  restarts=30 x steps=1500
+lemma safecomp  D=1  sup_found=3.88193e-12  bound=3.41421  holds=True  restarts=30 x steps=1500
+lemma safecomp  D=2  sup_found=1.41232  bound=3.41421  holds=True  restarts=30 x steps=1500
+lemma safecomp  D=3  sup_found=1.41101  bound=3.41421  holds=True  restarts=30 x steps=1500
+lemma safecomp  D=4  sup_found=1.41204  bound=3.41421  holds=True  restarts=30 x steps=1500
+lemma safecomp  D=6  sup_found=1.41228  bound=3.41421  holds=True  restarts=12 x steps=1200
+lemma safecomp  D=8  sup_found=1.41181  bound=3.41421  holds=True  restarts=12 x steps=1200
+bridge   param=2  sup_found=3.999995  limit=125.0  runs=3 (restarts 24 x 1500 steps) inits=['rand', 'w4'] best_init=rand Y_svals=['27.3', '2.44e-10']
+bridge   param=3  sup_found=3.999991  limit=125.0  runs=2 (restarts 16 x 1500 steps) inits=['rand'] best_init=rand Y_svals=['22.8', '1.79e-09']
+bridge   param=4  sup_found=4.000000  limit=125.0  runs=4 (restarts 30 x 1500 steps) inits=['rand', 'w4', 'x4018'] best_init=x4018 Y_svals=['0.684', '3.37e-19']
+bridge   param=6  sup_found=3.999989  limit=125.0  runs=2 (restarts 16 x 1500 steps) inits=['rand'] best_init=rand Y_svals=['84.4', '7.01e-10']
+bridge1  param=2  sup_found=3.999993  limit=23.05  runs=3 (restarts 24 x 1500 steps) inits=['rand', 'w4'] best_init=rand Y_svals=['247', '2.02e-14']
+bridge1  param=3  sup_found=3.999991  limit=23.05  runs=2 (restarts 16 x 1500 steps) inits=['rand'] best_init=rand Y_svals=['88.5', '6.19e-15']
+bridge1  param=4  sup_found=3.999995  limit=23.05  runs=3 (restarts 24 x 1500 steps) inits=['rand', 'w4'] best_init=rand Y_svals=['9.89', '8.52e-16']
+bridge1  param=6  sup_found=3.999984  limit=23.05  runs=2 (restarts 16 x 1500 steps) inits=['rand'] best_init=rand Y_svals=['32.6', '1.4e-15']
+star     param=3  sup_found=4.055311  limit=6  runs=4 (restarts 24 x 1500 steps) inits=['rand', 'w4', 'x4018'] best_init=x4018 Y_svals=['1.09', '5.15e-19']
+star     param=4  sup_found=4.242348  limit=14  runs=4 (restarts 24 x 1500 steps) inits=['rand', 'w4', 'x4018'] best_init=x4018 Y_svals=['1.2', '1.38e-18']
+star     param=5  sup_found=4.390459  limit=30  runs=4 (restarts 24 x 1500 steps) inits=['rand', 'w4', 'x4018'] best_init=x4018 Y_svals=['1.21', '1.08e-15']
+star     param=6  sup_found=4.494746  limit=62  runs=4 (restarts 24 x 1500 steps) inits=['rand', 'w4', 'x4018'] best_init=x4018 Y_svals=['1.21', '5.04e-17']
+star1    param=3  sup_found=3.999968  limit=6  runs=3 (restarts 18 x 1500 steps) inits=['rand', 'x4018'] best_init=rand Y_svals=['87.7', '5.33e-15']
+star1    param=4  sup_found=3.999952  limit=14  runs=3 (restarts 18 x 1500 steps) inits=['rand', 'x4018'] best_init=rand Y_svals=['25.7', '1.58e-15']
+star1    param=5  sup_found=3.999941  limit=30  runs=3 (restarts 18 x 1500 steps) inits=['rand', 'x4018'] best_init=rand Y_svals=['3.19', '1.7e-16']
+star1    param=6  sup_found=3.998788  limit=62  runs=3 (restarts 18 x 1500 steps) inits=['rand', 'x4018'] best_init=x4018 Y_svals=['0.0392', '1.32e-18']

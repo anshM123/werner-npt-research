@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "One free copy and one excitation: the endpoint for every n >= 17"
+authors:
+  - family-names: Mishra
+    given-names: Ansh
+  - family-names: Senthilkumar
+    given-names: Aryan
+date-released: 2026-11-03
+license: MIT
+keywords:
+  - NPT bound entanglement
+  - Werner states
+  - entanglement distillation

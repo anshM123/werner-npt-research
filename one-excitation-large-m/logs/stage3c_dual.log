@@ -1,0 +1,4 @@
+(i) dual: 52 entangled of 60; (sup_witness - Wootters)/TrB in [-7.49e-08, 1.41e-15]  (exact dual <=> ~0)
+(iv) max(-Tr(W_M B) - |det M| C(B)) normalised = -3.17e-03  (must be <= 0)
+(ii) orb24 (2): max LHS/RHS over separable S,T = 1.000000  (must be <= 1)
+(iii) max eig(D_x)/||x||^2 = 1.000000  (must be <= 1)

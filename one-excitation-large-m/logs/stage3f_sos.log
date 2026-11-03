@@ -1,0 +1,1 @@
+induction16 (5): max |LHS-RHS|/||Z||^2 = 2.63e-15; max |LHS - (2q2-(s1-s2)^2/2)|/||Z||^2 = 1.06e-15; min h(rank-one)/||Z||^2 = 0.00e+00 (>= 0)  [400 random rank-2 Z, d1,d2 in 2..4]

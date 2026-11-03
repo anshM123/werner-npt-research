@@ -1,0 +1,10 @@
+m=1: identity err 3.31e-16; Prop M err 7.49e-16; literal-vs-replica Sigma/Gamma err 3.46e-16
+m=2: identity err 4.15e-16; Prop M err 7.45e-16; literal-vs-replica Sigma/Gamma err 5.43e-16
+m=3: identity err 1.88e-15; Prop M err 1.88e-15; literal-vs-replica Sigma/Gamma err 1.28e-15
+control (flipped cross-term sign) err 1.38e-02  (should be O(1))
+explicit operator m=2: Sigma=0.000000 Gamma=4.000000 q1Y=4.000000 p=1.000000 q=1.000000 ratio=4.0000000000
+explicit operator m=3: Sigma=0.000000 Gamma=4.000000 q1Y=4.000000 p=1.000000 q=1.000000 ratio=4.0000000000
+explicit operator m=4: Sigma=0.000000 Gamma=4.000000 q1Y=4.000000 p=1.000000 q=1.000000 ratio=4.0000000000
+explicit operator m=5: Sigma=0.000000 Gamma=4.000000 q1Y=4.000000 p=1.000000 q=1.000000 ratio=4.0000000000
+explicit operator m=6: Sigma=0.000000 Gamma=4.000000 q1Y=4.000000 p=1.000000 q=1.000000 ratio=4.0000000000
+exact m=3 operator: Gamma*2^40=1358550811983.0 (README 1358550811983), Sigma*2^40=1308487705385.0 (README 1308487705385), q1Y=1.000000, ratio=4.0180024504

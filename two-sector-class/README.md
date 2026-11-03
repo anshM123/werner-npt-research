@@ -34,9 +34,11 @@ computer-assisted three-copy theorem. Every row has been re-derived and checked 
 | Theorem E′ | one free copy, any two-sector structure, range in C^3 ⊗ span{c, c′} | 2CT | n = 6 |
 | Theorem E₂ | two free copies, range in C^9 ⊗ span{c, e} (also c′ ∈ B) | [T1] | n = 4 |
 | Theorem F | one free copy, one excitation, m ≥ 4, range and co-range each meet C^3 ⊗ A | 2CT | n = 5 |
+| Theorem G (`../one-excitation-large-m/`) | one free copy, one excitation, all of (⋆), m ≥ 16 (m ≥ 11 when rank Y ≤ 1) | 2CT | n = 17 |
 
 What remains open for one free copy is a single inequality, (⋆) and its general form; see "One free copy and one
-excitation". The every-n endpoint for general rank-two C is open.
+excitation". (⋆) itself is now proved for every m ≥ 16 (`../one-excitation-large-m/`), so the one-excitation class is
+open only at 3 ≤ m ≤ 15. The every-n endpoint for general rank-two C is open.
 
 ## Setting
 
