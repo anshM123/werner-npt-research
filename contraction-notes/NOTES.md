@@ -157,10 +157,23 @@ Two related observations from our searches:
     required 1/2. It is reached near the zeros of Section 2.
   - Appending a pure copy does not change the ratio, so its infimum can only decrease with n.
   - We have no proof.
-- **The dephasing condition.** The condition "some basis of some copy has Σ_i q_{n−1}(X_ii) ≥ t q_{n−1}(Σ_i X_ii)"
-  would close the induction through the recursion, together with EP_{n−1}. An earlier version of these notes said it
-  fails at two copies; an independent referee could not reproduce that (min-over-C, max-over-basis searches at n = 2, 3,
-  4 stay ≥ 0, reaching 0 only at zeros). We do not know whether it holds. With EP_3 it would give EP_4.
+- **The dephasing condition is false at two copies.** The condition "some basis of some copy has
+  Σ_i q_{n−1}(X_ii) ≥ t q_{n−1}(Σ_i X_ii)" would close the induction through the recursion, together with EP_{n−1}.
+  At t = 1/2 it fails for C = Y Z* with the Gaussian-integer factors in `code/check_dephasing_counterexample.py`:
+  q_2(C) = 14193/4 > 0 (‖C‖² = 20969), but in every orthonormal basis the dephasing defect
+  Σ_i q_1(X_ii) − ½ q_1(Tr_s C) is at most −65/12 at the first copy and at most −3/4 at the second.
+  - *Certificate.* If H_1, H_2 are Hilbert–Schmidt orthonormal and span the traceless diagonal matrices of the basis,
+    the defect equals Σ_j q_1(Tr_s[(H_j ⊗ I)C]) − q_1(Tr_s C)/6. Expand H_j = Σ_a r_{j,a} K_a in a basis K_a of
+    traceless Hermitian matrices, with Gram matrix G. Then Σ_j r_jᵀ G r_j = 2, and since H_1² + H_2² = (2/3)I,
+    Σ_j r_jᵀ D_c r_j = 0 for D_c[a, b] = Re Tr K_c(K_a K_b + K_b K_a)/2. So the defect is at most 2λ − q_1(Tr_s C)/6
+    whenever λG − A + Σ_c y_c D_c ⪰ 0, where A[a, b] = Re q_1(Tr_s[(K_a ⊗ I)C], Tr_s[(K_b ⊗ I)C]). The script checks,
+    in exact arithmetic, explicit integers λ and y_c for which twice this matrix is an integer matrix with nonnegative
+    diagonal-dominance surpluses.
+  - A direct numerical maximisation over bases gives about −619 and −565, far below zero.
+  - This confirms the two-copy failure found in our searches of 30 October. The referee's min-over-C, max-over-basis
+    searches had missed it; such searches drift to the zeros of q_2, where the defect is 0.
+
+  So the dephasing condition is not a valid induction step. The endpoint itself is not in question: q_2(C) > 0.
 
 ## References
 
@@ -186,6 +199,8 @@ Python 3 with NumPy. Outputs are in `logs/`.
 - `code/check_nested.py`: Corollary 3. It checks positivity and thickness of random members of K_n, for n = 2, 3, 4.
 - `code/check_zero_family.py`: Section 2. It computes Hessians at P ⊗ |a⟩⟨b| for random entangled a, b, at n = 3, 4.
 - `code/check_sci_counterexample.py`: Section 3. It re-checks the stored operator against SCI.
+- `code/check_dephasing_counterexample.py`: Section 3. It recomputes q_2 and the dephasing certificate in exact
+  arithmetic (SymPy) and maximises the defect over bases numerically.
 
 ## Referee
 
@@ -197,7 +212,8 @@ own code. It checked:
 
 It found no mathematical error. Its corrections are applied above:
 - Proposition 4 is a special case of [T2, Thm. 5.2];
-- the dephasing remark was not reproduced;
+- the dephasing remark was not reproduced (a later exact certificate shows that the dephasing condition does fail at
+  two copies; see Section 3);
 - the definition of K_n now fixes the unitary;
 - the SCI minimum is now verified by a decomposition.
 

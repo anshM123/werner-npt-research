@@ -1,0 +1,4 @@
+Gamma_X = 1358550811983/2^40,  Sigma_full = 1308487705385/2^40,  q_1(Y) = 1,  q~(P) = 111/2^21,  q~(Q) = 1048893/2^21
+ratio sqrt(q_1(Y)) (sqrt(Gamma) - sqrt(Sigma)) / sqrt(q~(P) q~(Q)) = 4.018002450357
+exceeds 4 (exact): True;  exceeds 2^3 - 2 = 6 (exact): False
+so sqrt(Gamma) - sqrt(Sigma) > 2 |a_2| |b_2| >= 2 sigma_2(X): True;  (sqrt(Gamma) - sqrt(Sigma)) / (|a_2| |b_2|) = 2.009001225178

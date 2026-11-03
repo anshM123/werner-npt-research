@@ -1,0 +1,5 @@
+rank Y = 2, rank Z = 2;  ||C||^2 = 20969;  q_2(C) = 14193/4  (ratio 0.16921408)
+copy 0: beta = 30473/12;  2S is an integer matrix, diagonal-dominance surpluses [104, 676, 306, 374, 990, 2, 362, 3866];  so the defect is <= 2*1267 - beta = -65/12 in every orthonormal basis
+copy 1: beta = 10211/4;  2S is an integer matrix, diagonal-dominance surpluses [358, 304, 1890, 1690, 1430, 0, 390, 1814];  so the defect is <= 2*1276 - beta = -3/4 in every orthonormal basis
+copy 0: numerical maximum of the defect over 100 started bases = -619.3803
+copy 1: numerical maximum of the defect over 100 started bases = -564.9674

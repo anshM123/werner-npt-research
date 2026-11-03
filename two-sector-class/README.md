@@ -317,13 +317,25 @@ every block of Q is a multiple of one rank-two projector. That forces the co-ran
 R′ applies to C*. If Q = 0, then rank X ≤ 1 whenever q_1(Y) > 0. So (⋆) is needed only where q_1(Y), q̃(P) and q̃(Q) are
 all positive.
 
-Numerically the largest ratio of the two sides is 4, attained, at m = 2, 3, 4, where the needed constants are 2, 6 and
-14. An explicit operator attains 4 at every m (strings in orthonormal bases of the planes): C* = |R_1⟩⟨L_1| + |R_2⟩⟨L_2|
+Our first searches found 4 as the largest ratio of the two sides at m = 2, 3, 4, where the needed constants are 2, 6
+and 14. An explicit operator attains 4 at every m (strings in orthonormal bases of the planes): C* = |R_1⟩⟨L_1| + |R_2⟩⟨L_2|
 with R_1 = |0⟩|0…0⟩ + |1⟩|e⟩, L_1 = |1⟩|0…0⟩ + |0⟩|e⟩, R_2 = −|0⟩|110…0⟩ + |1⟩|e⟩ and L_2 = |1⟩|110…0⟩ + |0⟩|e⟩. It has
 Σ_full = 0, Γ_X = 4, q_1(Y) = 4 and q̃(P) = q̃(Q) = 1. Adding a sector copy with a product factor leaves all five
 quantities unchanged, so the supremum does not decrease with m. The maximisers found share a shape: Y has rank one and
-trace zero, X has rank two with equal singular values, and Σ_full = 0, X̂_0 = 0, Γ_X = 2‖X‖². (⋆) with constant 4 would
-settle every m ≥ 3. By the compression of Corollary B it would also cover range in V with any co-range. At m = 2 the needed constant 2 is too small, and that case stays with Theorem C. Fixed choices
+trace zero, X has rank two with equal singular values, and Σ_full = 0, X̂_0 = 0, Γ_X = 2‖X‖².
+
+**4 is not the supremum.** An exact operator at m = 3 has ratio 4.0180 (`code/check_star_constant.py`,
+`logs/check_star_constant.log`). Take the planes K_s = span{|0⟩, |1⟩}, e = |2⟩|2⟩|2⟩, vectors a_1, a_2, b_1, b_2 in
+A = K_1 ⊗ K_2 ⊗ K_3 with Gaussian-integer coordinates over 1024 (listed in the script), and
+
+    r_1 = |0⟩a_1,   l_1 = |1⟩b_1,   r_2 = |0⟩a_2 + |1⟩e,   l_2 = |1⟩b_2 + |0⟩e,   C = r_1 l_1* + r_2 l_2*.
+
+Then X = |0⟩⟨1| ⊗ D with D = a_1 b_1* + a_2 b_2*, Y = |1⟩⟨0|, q_1(Y) = 1, q̃(P) = ½‖a_2‖², q̃(Q) = ½‖b_2‖²,
+Γ_X = 2‖D‖² − |Tr D|² and Σ_full = Σ_μ |Tr σ_μ D|². Exactly, Γ_X = 1358550811983/2^40 and Σ_full = 1308487705385/2^40,
+and the comparison with 4 is decided in integer arithmetic. The range and co-range contain r_1, l_1 ∈ C^3 ⊗ A, so this
+is case 1a below. The needed constant at m = 3 is 6, and the operator satisfies (⋆) with it. Appending sector copies
+with product factors embeds it at every m ≥ 3, so no proof of (⋆) for m = 3 can go through a constant-4 bound. At m = 2 the needed constant 2 is too small, and that
+case stays with Theorem C. Fixed choices
 ρ = τ = 1 do not suffice (the bound reaches −2‖C‖²), and a version of (⋆) with squares instead of square roots is false.
 
 **Partial results on (⋆).** For every operator Z on C^3 ⊗ A, Σ_full(Z) ≤ 2^m‖Z‖², since q_1 ≤ ‖·‖² and the Pauli strings
@@ -355,9 +367,10 @@ E = x_1 y_1* gives (⋆) with constant 2√2 + 2^{1+m/2}. This is at most 2^m �
 Theorem F uses only the two-copy theorem. It is not contained in Theorems A, C, D, E or Corollary B. Generic members
 have rank X = 2. Neither their range nor their co-range contains a vector of C^3 ⊗ e or lies in C^3 ⊗ span{c, e}. They
 are thick at every copy, and their range has two-copy reductions of rank 5 on every pair of sector copies. The new cases
-are at n ≥ 5. A proof of √Γ_X − √Σ_full(X) ≤ 2σ_2(X) for rank-two X would give (⋆) with constant 4 in case 1a, since
-‖x_1‖‖y_1‖ ≥ σ_2(X), and so would extend Theorem F to m = 3 (n = 4). This bound holds numerically with sharp constant 2 at
-m = 2, 3, 4, attained at the maximiser shape.
+are at n ≥ 5. A bound √Γ_X − √Σ_full(X) ≤ 2σ_2(X) for rank-two X would have given (⋆) with constant 4 in case 1a, since
+‖x_1‖‖y_1‖ ≥ σ_2(X), and so Theorem F at m = 3 (n = 4). It is false: for the m = 3 operator above,
+√Γ_X − √Σ_full(X) = 2.009 ‖a_2‖‖b_2‖, and ‖a_2‖‖b_2‖ ≥ σ_2(X) because X minus the a_1 b_1* term has rank one. The bound
+does hold with constant 2 on the family X = |0⟩⟨1| ⊗ (s|a⟩⟨a| − t|b⟩⟨b|), with equality there.
 
 For m ≥ 4, the remaining cases of (⋆) are those where Y has rank two (the e-components are independent on both sides),
 and those where the e-components are parallel on one side only. At m = 3 (n = 4), case 1a also remains, since
@@ -366,7 +379,8 @@ while it is nonzero, at the form c ⊗ Π. If the e-components are parallel on t
 q̃(Q) ≥ ½‖Q‖², so only P can degenerate; if Y has rank two, both can. Lemma T bounds the left side of (⋆) linearly in
 ‖E‖, which does not control these degenerations. `code/check_case_1a.py` (`logs/check_case_1a.log`) checks:
 - the two bounds and Lemma T, on random two-piece X;
-- in case 1a, the largest ratio in (⋆): 4.0 at m = 3 and 4, against the constants 8.49 and 10.83 that the proof gives and
+- in case 1a, the largest ratio in (⋆) that these searches found: 4.0 at m = 3 and 4 (the exact operator above shows
+  the supremum at m = 3 is larger, at least 4.018), against the constants 8.49 and 10.83 that the proof gives and
   the 6 and 14 that are needed;
 - adversarial minima of q_n over case 1a, which are 0 up to rounding. They are attained at the block-triangular corner
   Y, P, Q → 0. Away from it, with σ_2(X) ≥ σ_1(X)/2 and ‖Y‖, ‖P‖, ‖Q‖ ≥ 0.2‖C‖, the minimum of q_n/‖C‖² is about 0.18 at
@@ -385,7 +399,7 @@ Checks: `code/check_free_copy_excitation.py` (`logs/check_free_copy_excitation.l
 - Proposition M, to 4·10⁻¹⁵;
 - Lemma R′, adversarial minimum ≥ −2·10⁻¹⁶ against a generic control at −2;
 - Theorem E with arbitrary co-range, minimum ≥ 3·10⁻¹⁷ against a rank-three control at −0.5;
-- the largest ratio in (⋆).
+- the largest ratio in (⋆) found by local search (4.0; it misses the exact 4.018 operator above).
 
 **Two free copies.** Proposition M, Lemma R′ and the proof of Theorem E carry over to two free copies F (H_F = C^9).
 Replace q_1, B_1 and q̃ by q_F, B_F and q̃_F, and read K = A ⊕ C e as a third copy. Lemma R′ holds because
