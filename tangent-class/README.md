@@ -20,7 +20,9 @@ formulated for the reductions is false:
 The theorems remain correct as implications, but no hypothesis we can state holds. What the minimiser argument really
 uses is the pencil at λ = R(C) < 0 at every copy at once. With the sign, that is equivalent to EP on the class itself.
 So one-copy squeeze arguments cannot settle the endpoint on tangent planes. A proof has to use the coupling between
-copies (compare `orbit-notes/`), as it must for general rank-two operators.
+copies (compare `orbit-notes/`), as it must for general rank-two operators. A different route, which optimises the
+co-range first and works on all copies at once, is in `povm-minimum-principle/`: there the class becomes a set of
+qubit POVMs whose extreme points are products of planes.
 
 Earlier versions of this page claimed numerical support first for SC, then for SC-cw, SC-desc and SC′. The first claim
 rested on random and balanced sampling, which missed the counterexamples. The second was a reporting error: the

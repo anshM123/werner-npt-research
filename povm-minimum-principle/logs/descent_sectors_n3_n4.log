@@ -1,0 +1,25 @@
+# python search_minimum_principle.py descent c n starts seed C, for (n, C) = (3, 3), (4, 4), (3, 1), (4, 1), (4, 2); 4 Nov 2026
+descent c n=3 c=3 start 0: 0.32193 -> 0.000000; smallest eigenvalue among A_s 2.9e-15; rank-<=1 elements 2/3
+descent c n=3 c=3 start 1: 0.39009 -> 0.000000; smallest eigenvalue among A_s 2.1e-15; rank-<=1 elements 2/3
+descent c n=3 c=3 start 2: 0.31480 -> 0.000000; smallest eigenvalue among A_s 2.1e-15; rank-<=1 elements 2/3
+descent c n=3 c=3 start 3: 0.26668 -> 0.000000; smallest eigenvalue among A_s 5.6e-15; rank-<=1 elements 2/3
+descent c n=3 c=3 start 4: 0.38424 -> 0.000000; smallest eigenvalue among A_s 6.2e-15; rank-<=1 elements 2/3
+descent c n=3 c=3 start 5: 0.33912 -> 0.000000; smallest eigenvalue among A_s 1.3e-14; rank-<=1 elements 2/3
+descent c n=4 c=4 start 0: 0.39415 -> 0.000000; smallest eigenvalue among A_s 1.1e-15; rank-<=1 elements 3/4
+descent c n=4 c=4 start 1: 0.38405 -> 0.000000; smallest eigenvalue among A_s 2.9e-15; rank-<=1 elements 3/4
+descent c n=4 c=4 start 2: 0.40454 -> 0.000000; smallest eigenvalue among A_s 4.3e-16; rank-<=1 elements 3/4
+descent c n=4 c=4 start 3: 0.33191 -> 0.000000; smallest eigenvalue among A_s 9.8e-15; rank-<=1 elements 3/4
+descent c n=3 c=1 start 0: 0.17843 -> 0.000000; smallest eigenvalue among A_s 1.6e-15; rank-<=1 elements 3/3
+descent c n=3 c=1 start 1: 0.09981 -> 0.000000; smallest eigenvalue among A_s 2.0e-15; rank-<=1 elements 3/3
+descent c n=3 c=1 start 2: 0.12053 -> 0.000000; smallest eigenvalue among A_s 5.6e-17; rank-<=1 elements 3/3
+descent c n=3 c=1 start 3: 0.19977 -> 0.000000; smallest eigenvalue among A_s 8.3e-15; rank-<=1 elements 3/3
+descent c n=3 c=1 start 4: 0.11346 -> 0.000000; smallest eigenvalue among A_s 1.1e-15; rank-<=1 elements 3/3
+descent c n=3 c=1 start 5: 0.15466 -> 0.000000; smallest eigenvalue among A_s 1.7e-15; rank-<=1 elements 2/3
+descent c n=4 c=1 start 0: 0.12591 -> 0.000000; smallest eigenvalue among A_s 1.3e-14; rank-<=1 elements 4/4
+descent c n=4 c=1 start 1: 0.10550 -> 0.000000; smallest eigenvalue among A_s 4.5e-15; rank-<=1 elements 4/4
+descent c n=4 c=1 start 2: 0.13422 -> 0.000000; smallest eigenvalue among A_s 3.1e-15; rank-<=1 elements 3/4
+descent c n=4 c=1 start 3: 0.11826 -> 0.000000; smallest eigenvalue among A_s 9.6e-15; rank-<=1 elements 4/4
+descent c n=4 c=2 start 0: 0.10738 -> 0.000000; smallest eigenvalue among A_s 3.1e-14; rank-<=1 elements 4/4
+descent c n=4 c=2 start 1: 0.08399 -> 0.000000; smallest eigenvalue among A_s 3.7e-15; rank-<=1 elements 4/4
+descent c n=4 c=2 start 2: 0.12087 -> 0.000000; smallest eigenvalue among A_s 4.4e-15; rank-<=1 elements 4/4
+descent c n=4 c=2 start 3: 0.10729 -> 0.000000; smallest eigenvalue among A_s 5.1e-15; rank-<=1 elements 4/4

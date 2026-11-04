@@ -1,3 +1,4 @@
 descent c n=5 c=3 start 0: 0.08174 -> 0.000000; smallest eigenvalue among A_s 1.2e-14; rank-<=1 elements 5/5
 descent c n=5 c=3 start 1: 0.08711 -> 0.000000; smallest eigenvalue among A_s 2.3e-14; rank-<=1 elements 5/5
 descent c n=5 c=3 start 2: 0.10063 -> 0.000000; smallest eigenvalue among A_s 7.5e-16; rank-<=1 elements 5/5
+descent c n=5 c=3 start 3: 0.04294 -> 0.000000; smallest eigenvalue among A_s 1.1e-14; rank-<=1 elements 5/5

@@ -1,0 +1,15 @@
+# python search_face.py n c starts seed; 4 Nov 2026
+face n=4 c=3 start 0: 0.05278 -> 0.000000; weight of A_1 0.668; rank-<=1 among A_2..A_n 3/3; smallest eigenvalue among them 1.2e-14
+face n=4 c=3 start 1: 0.09175 -> 0.000000; weight of A_1 0.156; rank-<=1 among A_2..A_n 3/3; smallest eigenvalue among them 4.7e-14
+face n=4 c=3 start 2: 0.03166 -> 0.000000; weight of A_1 0.645; rank-<=1 among A_2..A_n 3/3; smallest eigenvalue among them 1.7e-14
+face n=4 c=3 start 3: 0.02765 -> 0.000000; weight of A_1 0.786; rank-<=1 among A_2..A_n 3/3; smallest eigenvalue among them 2.2e-14
+face n=4 c=3 start 4: 0.04401 -> 0.000000; weight of A_1 0.398; rank-<=1 among A_2..A_n 3/3; smallest eigenvalue among them 7.6e-16
+face n=4 c=3 start 5: 0.09216 -> 0.000000; weight of A_1 0.356; rank-<=1 among A_2..A_n 3/3; smallest eigenvalue among them 5.1e-15
+face n=4 c=3 start 6: 0.05530 -> 0.000000; weight of A_1 0.929; rank-<=1 among A_2..A_n 3/3; smallest eigenvalue among them 1.0e-14
+face n=4 c=3 start 7: 0.02597 -> 0.000000; weight of A_1 0.848; rank-<=1 among A_2..A_n 3/3; smallest eigenvalue among them 9.3e-14
+face n=5 c=3 start 0: 0.04882 -> 0.000000; weight of A_1 0.761; rank-<=1 among A_2..A_n 4/4; smallest eigenvalue among them 2.0e-13
+face n=5 c=3 start 1: 0.05704 -> 0.000000; weight of A_1 0.833; rank-<=1 among A_2..A_n 4/4; smallest eigenvalue among them 3.3e-14
+face n=5 c=3 start 2: 0.07345 -> 0.000000; weight of A_1 0.095; rank-<=1 among A_2..A_n 4/4; smallest eigenvalue among them 2.8e-14
+face n=5 c=4 start 0: 0.01639 -> 0.000000; weight of A_1 0.958; rank-<=1 among A_2..A_n 4/4; smallest eigenvalue among them 5.6e-13
+face n=5 c=4 start 1: 0.03057 -> 0.000000; weight of A_1 0.786; rank-<=1 among A_2..A_n 4/4; smallest eigenvalue among them 8.5e-14
+face n=5 c=4 start 2: 0.04768 -> 0.000000; weight of A_1 0.891; rank-<=1 among A_2..A_n 4/4; smallest eigenvalue among them 1.6e-13

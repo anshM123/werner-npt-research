@@ -85,7 +85,8 @@ interior of a face of positive dimension of the POVM set, at a value below its i
 that face.
 
 By Propositions 2 and 3 and induction over faces, MP gives μ_c ≥ 0 for every c, hence the endpoint for every
-single-excitation range plane with any co-range, for every n. That includes every sector c ≥ 3 left open in
+single-excitation range plane with any co-range, for every n. Only the open sectors 3 ≤ c ≤ n − 1 are needed; the
+statement for the other sectors is included because the numerics support it there too. That includes every sector c ≥ 3 left open in
 `single-excitation-range/`. The analogue on the convex sets P_ψ would give it for every tangent plane.
 
 MP is stated sector by sector because m itself has flat pieces. Where the constant sector 0 is the smallest, m equals
@@ -106,7 +107,10 @@ Natural stronger statements fail, so a proof of MP has to use more than convexit
 - **Quasi-concavity** fails. At n = 2 the segment (0.1313, 0.1234) → (0.2617, 0.0501) dips from 0.0909 and 0.0917 to
   0.0902 in between (`code/check_n2_landscape.py`).
 - **Quasi-concavity along one-parameter squeeze subgroups** U_s ↦ e^{τK_s} U_s fails at n = 2 (2 of 80 random
-  curves). It held on all tested curves at n = 3 (40) and n = 4 (12).
+  curves). It held on all tested curves at n = 3 (40) and n = 4 (12). Sector by sector
+  (`code/check_sector_geodesics.py`), the top sector μ_n dips on every tested curve, by up to 0.36, and μ_2 dips once
+  in 10 curves at n = 4. μ_1 at n = 3, 4 and μ_3 at n = 4 never dip. So no convexity along curves is available in
+  general, even though, as below, no sector shows an interior local minimum.
 - **Fixed co-range.** For a fixed co-range, A ↦ q_n(C(A, V)) is not concave, and is not quasi-concave along squeeze
   subgroups (about half of random curves dip). So the co-range has to be optimised first.
 - **One-copy squeeze conditions.** On tangent planes, every one-copy squeeze condition we formulated is false
@@ -124,6 +128,11 @@ Natural stronger statements fail, so a proof of MP has to use more than convexit
     singular) with m = 0;
   - the open sector c = 3 at n = 4: 12 of 12 runs end at an extreme POVM with μ_3 = 0; c = 2 at n = 4: 6 of 6; c = 3 at
     n = 5: 3 of 3, and 3 of 3 more in `logs/descent_n5_c3.log`; c = 4 at n = 5: 3 of 3 (`logs/descent_n5_c4.log`).
+    The other sectors (c = 1 at n = 3, 4; c = 2 at n = 4; the top sector c = n at n = 3, 4) behave the same: 24 of 24
+    runs end on the boundary with value 0 (`logs/descent_sectors_n3_n4.log`);
+  - on a face: with A_1 = w|ψ⟩⟨ψ| for a fixed ψ, the descents of μ_3 (n = 4, 5) and μ_4 (n = 5) all end at an
+    extreme point of that face, every other element of rank one, with value 0 (14 of 14; `code/search_face.py`,
+    `logs/face_descents.log`).
 - **Starts at hard points.** The tangent-class operators that are squeeze minima at every copy
   (`tangent-class/data/copywise_squeeze_min_n*.npy`) have m = 0.097 (n = 3) and 0.098 (n = 4) once the co-range is
   optimised. All ten descents from them end at m = 0.
@@ -143,7 +152,9 @@ Natural stronger statements fail, so a proof of MP has to use more than convexit
 - `code/check_n2_landscape.py`: the n = 2 landscape (no concavity, no quasi-concavity, no interior minimum). Log:
   `logs/check_n2_landscape.log`.
 - `code/search_minimum_principle.py`: descents and the φ_h adversary. Logs: `logs/descents.log`, `logs/adversary.log`,
-  `logs/descent_n5_c3.log`, `logs/descent_n5_c4.log`.
+  `logs/descent_n5_c3.log`, `logs/descent_n5_c4.log`, `logs/descent_sectors_n3_n4.log`.
+- `code/search_face.py`: descents on the face A_1 = w|ψ⟩⟨ψ|. Log: `logs/face_descents.log`.
+- `code/check_sector_geodesics.py`: sector functions along squeeze subgroups. Log: `logs/check_sector_geodesics.log`.
 
 ## Status
 

@@ -1,0 +1,2 @@
+n=3: curves with a dip, per sector: c=1: 0/30 (largest -1.3e-07), c=2: 0/30 (largest -8.7e-10), c=3: 30/30 (largest +3.6e-01)
+n=4: curves with a dip, per sector: c=1: 0/10 (largest -4.5e-05), c=2: 1/10 (largest +1.3e-03), c=3: 0/10 (largest -1.5e-11), c=4: 10/10 (largest +2.5e-01)
