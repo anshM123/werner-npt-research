@@ -32,7 +32,9 @@ because single excitations over a product are not anchors.
   rank two) ⊗ (product), and an exact computation shows that these vectors are anchors for every n.
 - Lemma 11 and Conjecture 12 (added 4 November 2026): a relative version of the anchor argument reduces every sector
   of every single-excitation plane to one positive semidefinite statement about a single weighted W-type vector
-  Σ_t w_t |1⟩_t. It is proved when at most two weights are nonzero and holds in all our numerical tests.
+  Σ_t w_t |1⟩_t. It is proved when at most two weights are nonzero and holds in all our numerical tests. Copies of
+  weight zero reduce to a finite test on the others (Lemma 13). With an exact computation this gives a balanced
+  three-copy case (Proposition 14).
 
 Both classes are thick at every copy.
 
@@ -718,12 +720,76 @@ n − 1 real parameters, where the original problem has a plane and a co-range.
   n = 6 with c = 1, 3, 4 and n = 7 with c = 3; at n = 6, 7 only a few weight vectors were tried. The smallest
   eigenvalue found is −3 × 10^{−15}.
 
+**Zero weights reduce to a finite test.** Let p = p_G ⊗ |0⟩^{⊗m}, where p_G is a single excitation on a group G of k
+copies and the other m copies carry weight zero. On the k copies of G put A = (M^{⊗k})^Γ, B = R_{p_G}^Γ and Y = A − B.
+Write G1_j for the states with row in H_1(G) and column in H_j(G), and G0_j for those with row = vacuum and column in
+H_j(G).
+
+**Lemma 13 (bath reduction).** Y_c(p) ⪰ 0 for every m ≥ 0 and every c if and only if
+- (R∞) Y compressed to G1_j ⊕ G0_{j+1} is ⪰ 0 for −1 ≤ j ≤ k (G1_{−1} = G0_{k+1} = ∅, so j = −1 is the single state
+  row = column = vacuum), and
+- (R2) 3A + B compressed to G0_j is ⪰ 0 for 0 ≤ j ≤ k.
+
+*Proof.*
+1. **Factorisation.** By the charge argument above, Y_c(p) is the compression of A_G ⊗ A_0^{⊗m} − B_G ⊗ B_0^{⊗m} to
+   H_1 ⊗ H_c. Here A_0 = I − ½F and B_0 = R_{|0⟩}^Γ on one bath copy. Both conserve the charge q(row) + q(column) of
+   each copy and its letters. On the states that occur they are:
+   - row and column vacuum: A_0 = B_0 = ½;
+   - "c" = (row 0, column i) and "r" = (row i, column 0), in the basis (c, r): A_0 = [[1, −½], [−½, 1]] and
+     B_0 = [[1, −½], [−½, 0]];
+   - row and column both excited: A_0 = I − ½F and B_0 = ½F.
+2. **Blocks.** A state of H_1 ⊗ H_c has one row excitation. So Y_c(p) splits into blocks labelled by the bath copies
+   of each type. Hole copies contribute a common factor 2^{−N_0}.
+3. **One bath copy excited in row and column.** The row excitation is there, and the other charged bath copies are
+   "c". The block is A^{00} ⊗ (I − ½F) − B^{00} ⊗ ½F on G0_j. It is ½Y^{00} on symmetric letter pairs and
+   ½(3A^{00} + B^{00}) on the antisymmetric one.
+4. **No such copy.** Let N copies carry one column excitation each. The row excitation sits in G (state G1_j ⊗ c…c)
+   or at one of these copies s (state G0_{j+1} ⊗ r_s). The tensor products give the block
+   F_N = [[Y^{11}, −½Y^{10} ⊗ 1^T], [−½Y^{01} ⊗ 1, A^{00} ⊗ I_N + ¼Y^{00} ⊗ (J_N − I_N)]].
+   - On 1^⊥ the lower block is ¼(3A^{00} + B^{00}).
+   - On the symmetric vector, conjugation by diag(I, 2/√N) and then diag(I, −I) gives
+     Y|_{G1_j⊕G0_{j+1}} + (1/N)(0 ⊕ (3A^{00} + B^{00})).
+5. **Conclusion.** (R∞) and (R2) make every block ⪰ 0. Conversely, letting N → ∞ forces (R∞) for j ≥ 0, the blocks
+   of step 3 force it for j = −1, and N = 2 forces (R2). ∎
+
+So copies of weight zero never hurt once the group passes a finite test. That test does not depend on n.
+
+**Proposition 14 (balanced triple).** Suppose A_0 + A_1 + A_2 has the eigenvalue 1, with a unit eigenvector g such
+that ‖U_0 g‖ = ‖U_1 g‖ = ‖U_2 g‖. Then every sector is nonnegative, for every n.
+
+*Proof.*
+- As in Proposition 10 (b), U_t g = 0 for t ≥ 3. So the plane contains a vector that local unitaries fixing |0⟩ turn
+  into a multiple of p_G ⊗ |0⟩^{⊗(n−3)}, with p_G = |100⟩ + |010⟩ + |001⟩.
+- An exact computation over Q checks (R∞) and (R2) for this p_G, using symmetric Gaussian elimination
+  (`code/check_balanced_triple_exact.py`). The state sets have sizes 1, 12, 48, 80, 48 and 1, 6, 12, 8.
+- Lemma 13 and Lemma 11 give the result. ∎
+
+For general three-copy weights, (R∞) and (R2) hold at every weight vector tested. That is a grid of the two-parameter
+family plus random points, about 285 vectors. They are not proved there.
+
+**Tangent planes.** Every plane L ⊆ span{|0…0⟩} ⊕ H_1 contains a nonzero p ∈ H_1, since the vacuum amplitude is a
+linear functional on L.
+
+*Lemma 11′.* Suppose that for every k the compression of (M^{⊗n} − R_p)^Γ to (H_0 ⊗ H_k) ⊕ (H_1 ⊗ H_{k−1}) is ⪰ 0.
+Then q_n(X) ≥ 0 for every X whose range lies in such a plane containing p, with any co-range.
+
+*Proof.* Use the proof of Lemma 11 with arbitrary v, w. Write u = u_0 + u_1 with u_0 ∈ H_0 and u_1 ∈ H_1. Since
+(M^{⊗n} − R_p)^Γ conserves q(row) + q(column), the form (ū ⊗ w̄)^*(M^{⊗n} − R_p)^Γ(ū ⊗ w̄) splits into the pieces
+ū_0 ⊗ w̄_k + ū_1 ⊗ w̄_{k−1}. ∎
+
+For a vector with no zero weight, these compressions are exactly the conditions (R∞) of Lemma 13 with the whole
+system as the group. So Conjecture 12 for every n implies them, by the converse half of Lemma 13. When p has at most
+two nonzero weights, Proposition 10 already covers every plane containing p. Numerically the compressions are ⪰ 0 for
+n = 3 and 4, at every k, for random, structured and minimised weights. For tangent planes this would replace the
+chain analysis of `tangent-class/`.
+
 ## What remains for single-excitation ranges
 
 The open part is the sectors 3 ≤ c ≤ n − 2 outside the cases above (W-planes, Propositions 5, 8, 9 and 10).
 - **The shortest route is Conjecture 12.** It concerns one vector Σ_t w_t |1⟩_t and would settle every sector of every
-  single-excitation plane for every n. It is proved for at most two nonzero weights. The first open case is three
-  nonzero weights.
+  single-excitation plane for every n. It is proved for at most two nonzero weights and for the balanced triple.
+  The first open case is three general nonzero weights. By Lemma 13 that is a two-parameter family of finite
+  matrix inequalities on three copies, independent of n.
 
 Three further precise statements would each make progress, and the first two would together settle the class for
 every n:
@@ -822,6 +888,12 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   that the full R_p agrees with R_c on H_1 ⊗ H_c, and Y_c ⪰ 0 with kernel containing p̄ ⊗ H_c at random weights
   (n ≤ 5, every c). `code/adversarial_relative.py` minimises λ_min(Y_c) over the weights. These two are evidence for
   Conjecture 12, not proof.
+- `code/check_bath_reduction.py` checks Lemma 13. For random group vectors (k = 2, 3) and m = 1, 2, 3 bath copies, the
+  eigenvalues of all blocks of the lemma reproduce the spectrum of Y_c(p) computed directly (every c; deviation
+  ≤ 10^{−14}). It also checks Y_c ⪰ 0 directly for the balanced triple at n = 3, …, 6.
+  `code/check_balanced_triple_exact.py` is the exact proof of (R∞) and (R2) for Proposition 14. It works over Q and
+  rejects the false variant A − (11/10)B. `code/tangent_relative.py` gives the evidence for the tangent compressions
+  (n = 3, 4).
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});

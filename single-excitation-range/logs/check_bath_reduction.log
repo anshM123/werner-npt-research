@@ -1,0 +1,20 @@
+(a) k=2 m=1 c=1: 36 eigenvalues, max deviation 4.6e-16
+(a) k=2 m=1 c=2: 72 eigenvalues, max deviation 1.8e-15
+(a) k=2 m=1 c=3: 48 eigenvalues, max deviation 2.7e-15
+(a) k=2 m=2 c=1: 64 eigenvalues, max deviation 3.9e-16
+(a) k=2 m=2 c=3: 256 eigenvalues, max deviation 6.0e-15
+(a) k=2 m=2 c=4: 128 eigenvalues, max deviation 3.1e-15
+(a) k=2 m=3 c=1: 100 eigenvalues, max deviation 4.2e-16
+(a) k=2 m=3 c=3: 800 eigenvalues, max deviation 3.8e-15
+(a) k=2 m=3 c=5: 320 eigenvalues, max deviation 2.1e-15
+(a) k=3 m=1 c=1: 64 eigenvalues, max deviation 6.1e-16
+(a) k=3 m=1 c=3: 256 eigenvalues, max deviation 4.4e-15
+(a) k=3 m=1 c=4: 128 eigenvalues, max deviation 2.2e-15
+(a) k=3 m=2 c=1: 100 eigenvalues, max deviation 3.1e-16
+(a) k=3 m=2 c=3: 800 eigenvalues, max deviation 4.3e-15
+(a) k=3 m=2 c=5: 320 eigenvalues, max deviation 4.7e-15
+(a) k=3 m=3 c=1: 144 eigenvalues, max deviation 1.9e-16
+(a) k=3 m=3 c=4: 2880 eigenvalues, max deviation 1.0e-14
+(a) k=3 m=3 c=6: 768 eigenvalues, max deviation 8.7e-15
+(b) balanced triple, n = 3..6, every c: min eigenvalue of Y_c -1.16e-15
+PASS

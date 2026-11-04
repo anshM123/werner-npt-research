@@ -1,0 +1,13 @@
+n=3 k=0 (dim 1): random/structured min +2.451e-03, Nelder-Mead -2.776e-17
+n=3 k=1 (dim 12): random/structured min -9.004e-17, Nelder-Mead -1.591e-16
+n=3 k=2 (dim 48): random/structured min -3.956e-16, Nelder-Mead -3.005e-16
+n=3 k=3 (dim 80): random/structured min -6.233e-16, Nelder-Mead -5.924e-16
+n=3 k=4 (dim 48): random/structured min -5.987e-16, Nelder-Mead -8.581e-16
+PASS
+n=4 k=0 (dim 1): random/structured min +1.820e-03, Nelder-Mead -1.388e-17
+n=4 k=1 (dim 16): random/structured min -4.023e-17, Nelder-Mead -1.181e-16
+n=4 k=2 (dim 88): random/structured min -1.759e-16, Nelder-Mead -1.436e-16
+n=4 k=3 (dim 224): random/structured min -5.917e-16, Nelder-Mead -7.836e-16
+n=4 k=4 (dim 272): random/structured min -9.600e-16, Nelder-Mead -9.091e-16
+n=4 k=5 (dim 128): random/structured min -7.781e-16, Nelder-Mead -7.798e-16
+PASS

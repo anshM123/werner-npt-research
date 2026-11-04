@@ -1,0 +1,8 @@
+(D) D_{p_G} > 0 (exact, every weight block PSD and invertible): True [0.0s]
+  j = -1: (R_inf) on 1 states (symmetric: True): True;  (R2) on 0 states: True  [0.1s]
+  j = 0: (R_inf) on 12 states (symmetric: True): True;  (R2) on 1 states: True  [0.1s]
+  j = 1: (R_inf) on 48 states (symmetric: True): True;  (R2) on 6 states: True  [0.1s]
+  j = 2: (R_inf) on 80 states (symmetric: True): True;  (R2) on 12 states: True  [0.2s]
+  j = 3: (R_inf) on 48 states (symmetric: True): True;  (R2) on 8 states: True  [0.2s]
+sanity: the routine rejects "A - (11/10) B >= 0" on the j = 1 set: True
+PASS
