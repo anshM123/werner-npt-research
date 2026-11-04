@@ -1,0 +1,4 @@
+(a) random rank-two X with range and co-range in T_e, n = 2..5: smallest (q - bound)/||X||^2 = +5.740e-02
+(b) adversarial minimum of (q - bound)/||X||^2 at n = 3, 4: +5.662e-09
+(c) the bound is tight to optimiser accuracy: True
+PASS

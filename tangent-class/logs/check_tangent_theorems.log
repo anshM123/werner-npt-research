@@ -1,0 +1,22 @@
+n=2 trial 0: Theorem B q=37.722554 >= bound 9.620597
+n=2 trial 1: Theorem B q=82.481523 >= bound 10.338446
+n=2 trial 2: Theorem B q=79.812584 >= bound 25.219957
+n=3 trial 0: Theorem B q=51.597299 >= bound 14.356067
+n=3 trial 1: Theorem B q=122.136434 >= bound 37.712993
+n=3 trial 2: Theorem B q=140.157528 >= bound 45.834464
+n=4 trial 0: Theorem B q=284.717974 >= bound 118.045843
+n=4 trial 1: Theorem B q=104.030966 >= bound 33.097035
+n=4 trial 2: Theorem B q=112.198291 >= bound 45.250142
+charge-formula worst rel. error 1.2969060639765292e-15
+Theorem B adversarial n=3: min (q - bound)/||X||^2 = 2.844e-08
+Theorem B adversarial n=4: min (q - bound)/||X||^2 = 2.148e-08
+Theorem C n=3 trial 0: K - 1/2||P_F alpha F||^2 = 3010.631369, q at optimal a = 3010.631369
+Theorem C n=3 trial 1: K - 1/2||P_F alpha F||^2 = 1837.267552, q at optimal a = 1837.267552
+Theorem C n=3 trial 2: K - 1/2||P_F alpha F||^2 = 1371.133312, q at optimal a = 1371.133312
+Theorem C n=4 trial 0: K - 1/2||P_F alpha F||^2 = 8473.827732, q at optimal a = 8473.827732
+Theorem C n=4 trial 1: K - 1/2||P_F alpha F||^2 = 4764.357628, q at optimal a = 4764.357628
+Theorem C n=4 trial 2: K - 1/2||P_F alpha F||^2 = 7290.525651, q at optimal a = 7290.525651
+rank-one blocks n=3: min lambda_min = -4.441e-16
+rank-one blocks n=4: min lambda_min = -1.021e-15
+worst identity error 1.2969060639765292e-15
+PASS

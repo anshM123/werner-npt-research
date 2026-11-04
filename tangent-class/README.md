@@ -7,6 +7,9 @@ range lies in the tangent space of a product vector. The class contains every op
 excitations over a product vector (`single-excitation-range/`), with any co-range, so it contains the sectors 3 ≤ c ≤ n − 2
 that are still open there. We prove an exact Fock form of the endpoint form on the class, an exact thin-copy removal
 identity, and two reductions of EP on the class to conditions on 9 × 9 one-copy squeeze pencils (Theorems 3 and 3′).
+Added 4 November 2026: a sector analysis. The endpoint holds for every n when range and co-range both lie in the
+tangent space (Theorem 6). The vacuum amplitude can be eliminated exactly (Proposition 5). At four copies the
+endpoint holds for every co-range without two adjacent occupied sectors among {1, 2}, {2, 3}, {3, 4} (Corollary 7).
 
 **Status (4 November 2026): the one-copy route is closed on this class.** Every sign-free one-copy condition we
 formulated for the reductions is false:
@@ -184,6 +187,75 @@ n = 4). At each thick copy it takes a direction with 𝒩_s(H) = 0 from a small 
 of every line. Along all 36 lines, R at the start is at least the smaller end value, with a gap of at least 0.045. All
 40 branches end at operators that are thin at every copy, and the smallest value there is +0.088.
 
+## Sector analysis (added 4 November 2026)
+
+The co-range sectors of `single-excitation-range/` carry over to the class, with one new feature: the vacuum
+amplitude a couples neighbouring sectors. Write F = (+)_c F_c for the parts of F on strings with c excitations, and use
+the notation of Propositions 5–9 there: Vac, T = Σ_t β_t^*β_t, α = Σ_t β_t, Ā_U = Σ_s Ā_s, and
+K^U = Ā_U + Vac − T + ½ α^*α, the single-excitation sector form of the blocks U alone (not normalised). Let ⟨a|
+contract the reference index with the vacuum amplitudes, ⟨a|F = Σ_r ā_r F_r.
+
+**Proposition 4 (chain form; every n).** In the gauge Ā_U + aa^* = I,
+
+    q_n(X) = Σ_c ⟨F_c| K^U_c + aa^* |F_c⟩ − √2 Re Σ_c ⟨αF_{c+1}, ⟨a|F_c⟩,
+    2q_n(X) = ⟨F| 4 Vac − 2 Σ_t Δ_t^{exc} |F⟩ + ‖(α − √2⟨a|)F‖²,
+
+with Δ_t as in Proposition 8 of `single-excitation-range/`. So each sector couples only to its neighbours. Each pair
+(c, c + 1) is coupled through the single vector ⟨a|F_c.
+
+*Proof.* In Proposition 1, Ā_U, Vac and T preserve the sectors, α lowers the excitation number by one, and ⟨a|
+preserves it. So the square splits as Σ_c ½‖αF_{c+1} − √2⟨a|F_c‖². Expanding and using Ā_U + aa^* = I gives the first
+line. The second follows from I = aa^* + Vac + Ex and T − Ex = Σ_t Δ_t^{exc}. ∎
+
+**Proposition 5 (the vacuum amplitude can be eliminated; every n).** For arbitrary blocks U and co-range v,
+
+    inf_{a ∈ C²} q_n(X_{U,a,v}) = K^U(F) − ½ ‖P_F αF‖²,
+
+where P_F is the orthogonal projector onto span{F_1, F_2}, the span of the two reference components of F. Hence the
+endpoint on 𝒯_n is equivalent to ‖P_F αF‖² ≤ 2K^U(F) for all U and F. This is the single-excitation endpoint
+K^U ⪰ 0, strengthened by the margin ½‖P_F αF‖².
+
+*Proof.* The amplitude a enters Proposition 1 only through ½‖αF − √2 Σ_r ā_r F_r‖², and Σ_r ā_r F_r runs over
+span{F_1, F_2}. ∎
+
+The margin vanishes unless two adjacent sectors are occupied, since αF_{c+1} lies in sector c.
+
+**Theorem 6 (range and co-range in the tangent space; every n).** Let X have rank at most two, with range(X) ⊆ T_e
+and range(X^*) ⊆ T_e for the same product vector e. Let Y_st be the 2 × 2 block of X between the single excitations
+at copies s (rows) and t (columns). Then
+
+    q_n(X) ≥ 2^{1−n} Σ_{s≠t} ‖Y_st‖² ≥ 0.
+
+*Proof.* Take e = |0…0⟩. In the basis (e, (s, z)) of T_e, write x = X[e; e], w for the row e on the single excitations,
+w' for the column e, and Y for the block between single excitations.
+- By the phase twirl (step 1 of Theorem 1 in `single-excitation-range/`), q splits over charge pieces:
+  q(X) = q(|e⟩⟨w|) + q(|w'⟩⟨e|) + q(X_0), with X_0 = x|e⟩⟨e| + Y. The two rank-one pieces give 2^{1−n}(‖w‖² + ‖w'‖²).
+- Adding x|e⟩⟨e| to Y changes its sector formula (c = 1, a single string ρ = ∅) only through the total trace:
+  2^n q(X_0) = 4 Σ_{s≠t} ‖Y_st‖² + 2 Σ_s ‖Y_ss‖² + |T − x|² − 2 Σ_s |Tr Y_ss|², with T = Σ_s Tr Y_ss.
+  Indeed q(|e⟩⟨e|) = 2^{−n}, and the cross term is −2^{1−n} Re(x̄ T).
+- Flip the sign of the row e. The resulting matrix still has rank at most two, and its diagonal blocks are {e}
+  (1 × 1) and the 2 × 2 blocks of copies s. The rank-two Lemma gives
+  |x|² + Σ_s |Tr Y_ss|² ≤ |x|² + ‖w‖² + ‖w'‖² + ‖Y‖² + ½|T − x|².
+- Insert this into the formula and use ‖Y‖² = Σ_{s≠t} ‖Y_st‖² + Σ_s ‖Y_ss‖². ∎
+
+The bound is tight: adversarial minimisation of (q − bound)/‖X‖² at n = 3, 4 reaches 6 × 10^{−9}
+(`code/check_tangent_both_sides.py`, which computes q from partial traces). This class contains every rank-two
+operator with range and co-range in the same tangent space. For example, it contains the Hermitian ones whose range
+lies in T_e, which `four-replica-notes/` covers only at four copies.
+
+**Corollary 7 (four copies).** Let S be the set of occupied co-range sectors. If every maximal run of consecutive
+elements of S is a single sector or the pair {0, 1}, then q_4(X) ≥ 0 for every X in 𝒯_4 with that co-range.
+
+*Proof.* By Proposition 4 the runs decouple. A single sector c contributes ⟨F_c| K^U_c + aa^* |F_c⟩ ≥ 0, since
+K^U_c ⪰ 0 at n = 4 for every c (Corollary 4 of `single-excitation-range/`, transported to unnormalised U by
+K^{UM}(F) = K^U(M̄F)). The run {0, 1} is Theorem 6. ∎
+
+What is missing at n = 4 is co-ranges with two adjacent occupied sectors among {1, 2}, {2, 3} and {3, 4}.
+Adversarial minima of these sub-chains are 0 at the boundary, so a proof has to be sharp. Three routes fail:
+- AM–GM with constant weights fails at the top sector.
+- The Lemma per string fails through conflicting rescalings for {0, 1, 2}, and through a factor n for the top pair.
+- Eliminating F_4 exactly would need αα^* ⪯ I, which is false in general.
+
 ## Numerics
 
 The scripts report ν_s = max_λ λ_min(𝒬_s − λ𝒩_s)/‖𝒩_s‖. ν_s < 0 means the pencil at copy s is PSD for no λ, and
@@ -336,12 +408,23 @@ Besides the counterexamples above, the following fail.
   positive definite at λ = −½. Log: `logs/check_common_shift.log`.
 - `code/check_common_shift_t.py` with `data/common_shift_t*_n3.npy`: the same at Werner parameters t = 0.45, 0.40,
   0.35 and 0.335. Log: `logs/check_common_shift_t.log`.
+- `code/fock_tangent.py`: tangent-class operators in Fock variables and a direct q_n.
+- `code/check_tangent_chain.py`: Proposition 4 (both forms) against partial traces, n = 2, 3, 4. Log:
+  `logs/check_tangent_chain.log`.
+- `code/check_tangent_theorems.py`: the charge formula with the vacuum row (every c), Theorem 6 (random and
+  adversarial), Proposition 5, and the rank-one case. Log: `logs/check_tangent_theorems.log`.
+- `code/check_tangent_covariance.py`: K^{UM}(F) = K^U(M̄F). Log: `logs/check_tangent_covariance.log`.
+- `code/check_tangent_both_sides.py`: Theorem 6 from direct partial traces (n = 2–5, adversarial at n = 3, 4). Log:
+  `logs/check_tangent_both_sides.log`.
 
 ## Status
 
 - **Proved:** Proposition 1 (identity, checked numerically), Lemma 2 (identity, checked numerically), and Theorems 3
   and 3′ as implications (Theorem 3 re-derived by an independent check).
+- **Proved (4 November 2026):** Theorem 6 (range and co-range in T_e, every n, with a sharp margin), Propositions 4
+  and 5 (identities), Corollary 7 (n = 4 without coupled adjacent sectors); checked numerically, not refereed.
 - **False:** Conjecture SC and SC∞ (exact at n = 3), and the relaxed conditions SC′, SC-cw, SC-desc and SC′∞ (n = 3, 4).
   So the one-copy route does not settle the endpoint on 𝒯.
-- **Open:** the endpoint on 𝒯_n for n ≥ 4 (it holds for n ≤ 3 by Tomar's theorem).
+- **Open:** the endpoint on 𝒯_n for n ≥ 4 (it holds for n ≤ 3 by Tomar's theorem). At n = 4 only co-ranges with two
+  adjacent occupied sectors among {1, 2}, {2, 3}, {3, 4} remain.
 - **Not journal peer-reviewed.**
