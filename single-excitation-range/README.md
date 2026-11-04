@@ -539,6 +539,8 @@ is a hole". On V ⊗ H_k define
   is a multiple of one rank-one projector, so this needs no further hypothesis.
 - (c) Sector c is nonnegative whenever ν(h + (c + 3)² μ/2) ≤ μ, where μ = s_min^{−2} − 1, ν = s_max^{−2} − 1 and
   h = n − c, whatever the directions x_t.
+- (d) Sector c is nonnegative whenever 1/s_1² + 1/s_2² ≤ 2 + 8/h², whatever the directions x_t. At n = 5, c = 3
+  it is enough that s_1², s_2² ≥ ½: copy 0 is heavy in both directions.
 
 Part (b) contains the heavy-copy family A_0 = diag(1 − d, 1), with any weights and phases on the light copies. That
 is the family where the certificates of Proposition 6 fail from n = 7 on.
@@ -569,7 +571,23 @@ is the family where the certificates of Proposition 6 fail from n = 7 on.
   - Next, S_1 ⪰ M_11 − ½ M_12 M_21, and 4K ⪯ b_1 b_1^* + b_2 b_2^*, where b_r is the e_r part of b_c.
   - The commutator in direction e_1 gives M_11 − 4K ⪰ Λ_11 − b_2 b_2^*.
   - Finally b_2 b_2^* ⪯ hΛ_22 and ‖M_12‖ ≤ (c + 3)(Λ_11 Λ_22)^{1/2}, both by Cauchy–Schwarz over the created or
-    annihilated copy. ∎
+    annihilated copy.
+- (d) Put g(x) = x/(2 + x), which is operator monotone. Since Tr_V (2 + Y)^{−1} = I − ½ Tr_V g(Y) and
+  ½ + (2 + Z)^{−1} = I − ½ g(Z), the inequality in (a) reads Tr_V g(M) ⪰ g(4K). It follows from
+  Tr_V g(N) ⪰ g(W), where N = 2X'_{c−1} + b_{c−1}^*b_{c−1} ⪯ M and W = b_c b_c^* ⪰ 4K.
+  - The hard-core commutator in matrix form gives N = Λ ⊗ I + C^Γ, where C = 𝐛𝐛^* ⪰ 0 with 𝐛 = Σ_t ȳ_t ⊗ σ_t^−,
+    Γ is the partial transpose on V, and Tr_V C = W.
+  - With κ = ‖N‖, the chord bound g(x) ≥ x/(2 + κ) on [0, κ] gives Tr_V g(N) ⪰ (W + τ)/(2 + κ), where
+    τ = Tr Λ = s_1^{−2} + s_2^{−2} − 2.
+  - On a qubit, C^Γ = I ⊗ W − (J^{−1} ⊗ I) C (J ⊗ I) ⪯ I ⊗ W, so κ ≤ λ_max(Λ) + ‖W‖.
+  - For each eigenvalue w of W, (w + τ)/(2 + κ) ≥ w/(2 + w) is the condition w² − (κ − τ)w + 2τ ≥ 0. It holds when
+    (‖W‖ − λ_min(Λ))² ≤ 8τ, and ‖W‖ ≤ hτ by Cauchy–Schwarz. So τ ≤ 8/h² is enough. ∎
+
+Part (d) also covers configurations missed by Propositions 5 and 8 and by (b) and (c), for example s_1² = 0.9,
+s_2² = 0.5 at n = 5, c = 3. The same identities reduce the sector with h holes to a statement about one positive
+operator C on C² ⊗ H and a 2 × 2 matrix Λ ⪰ 0: if Λ ⊗ I + C^Γ ⪰ 0 and ‖C‖ ≤ h Tr Λ, then
+Tr_V g(Λ ⊗ I + C^Γ) ⪰ g(Tr_V C). Adversarial searches with dim H ≤ 4 found no violation for h ≤ 8, but found one at
+h = 16, so that route alone cannot reach every h.
 
 *The elimination works for any other copies.* The first step of the proof of (a) never uses that the other copies
 have rank one. Let 2K̃'_k be the sector forms of the other n − 1 copies after the same change of reference index (blocks
@@ -686,7 +704,8 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   matches the inequality in (a) in all 80 random cases), the commutator identity and m − 4K ⪰ (Σ|η_t|²) I of (b),
   λ_min(2K̃_c) ≥ 0 directly at 50 POVMs with an eigenvalue-1 copy (N ≤ 7, every c, rotated frames), 120 random
   configurations under the condition of (c), the failure of the separable split and of subadditivity, and the
-  general congruence of (a′) at random POVMs with every copy of rank two (relative error 10^{−15}).
+  general congruence of (a′) at random POVMs with every copy of rank two (relative error 10^{−15}). Part (f) checks the chain
+  of inequalities in the proof of (d) and λ_min(2K̃_c) ≥ 0 at 150 non-parallel configurations satisfying its condition.
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});
