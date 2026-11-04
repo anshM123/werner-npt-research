@@ -1,0 +1,31 @@
+(a) m=1: lambda_max = 1.0000000000, (m+1)/2 = 1.0
+(a) m=2: lambda_max = 1.5000000000, (m+1)/2 = 1.5
+(a) m=3: lambda_max = 2.0000000000, (m+1)/2 = 2.0
+(a) m=4: lambda_max = 2.5000000000, (m+1)/2 = 2.5
+(a) m=5: lambda_max = 3.0000000000, (m+1)/2 = 3.0
+(a) m=6: lambda_max = 3.5000000000, (m+1)/2 = 3.5
+(a) m=7: lambda_max = 4.0000000000, (m+1)/2 = 4.0
+(a) m=8: lambda_max = 4.5000000000, (m+1)/2 = 4.5
+(b) m=1: max of lambda_max - (sum w + max w)/2 = -2.22e-16
+(b) m=2: max of lambda_max - (sum w + max w)/2 = -1.11e-16
+(b) m=3: max of lambda_max - (sum w + max w)/2 = +4.44e-16
+(b) m=4: max of lambda_max - (sum w + max w)/2 = +1.11e-15
+(b) m=5: max of lambda_max - (sum w + max w)/2 = +8.88e-16
+(b) m=6: max of lambda_max - (sum w + max w)/2 = +1.78e-15
+(c) n=3 h=0: hole form vs direct partial traces, relative error 3.9e-16
+(c) n=3 h=1: hole form vs direct partial traces, relative error 2.5e-16
+(c) n=3 h=2: hole form vs direct partial traces, relative error 6.5e-16
+(c) n=4 h=0: hole form vs direct partial traces, relative error 1.1e-15
+(c) n=4 h=1: hole form vs direct partial traces, relative error 3.8e-16
+(c) n=4 h=2: hole form vs direct partial traces, relative error 7.3e-16
+(c) n=4 h=3: hole form vs direct partial traces, relative error 6.0e-16
+(d) n=2 W-plane: min over all co-ranges of q/||C||^2 = +2.500000e-01
+(d) n=2 weighted: min over all co-ranges of q/||C||^2 = +2.432885e-01
+(d) n=3 W-plane: min over all co-ranges of q/||C||^2 = +2.500000e-01
+(d) n=3 weighted: min over all co-ranges of q/||C||^2 = +2.091888e-01
+(d) n=4 W-plane: min over all co-ranges of q/||C||^2 = +1.250000e-01
+(d) n=4 weighted: min over all co-ranges of q/||C||^2 = +1.250000e-01
+(d) n=5 W-plane: min over all co-ranges of q/||C||^2 = +6.250000e-02
+(d) n=5 weighted: min over all co-ranges of q/||C||^2 = +6.250000e-02
+RESULT: central spin exact; weighted bound gap +1.8e-15 ; hole form error 1.1e-15 ; W-plane minimum +6.250e-02
+PASS

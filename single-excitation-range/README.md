@@ -2,10 +2,13 @@
 
 Ansh Mishra and Aryan Senthilkumar, 3 November 2026
 
-We prove the endpoint inequality for every number of copies on one class of rank-two operators. The range lies among
-the single excitations over a product vector. The co-range has at most two excitations. The class is thick at every
-copy. It consists of exactly the planes where the anchor method of `support-and-projector-notes/` (Section 5) breaks
-down, because single excitations over a product are not anchors.
+We prove the endpoint inequality for every number of copies on two classes of rank-two operators. In both, the range
+lies among the single excitations over a product vector. These are exactly the planes where the anchor method of
+`support-and-projector-notes/` (Section 5) breaks down, because single excitations over a product are not anchors.
+- In Theorem 1 the range plane is arbitrary in that space and the co-range has at most two excitations.
+- In Theorem 2 the range is a weighted W-plane (this includes the W-plane itself) and the co-range is arbitrary.
+
+Both classes are thick at every copy.
 
 ## Setting
 
@@ -22,7 +25,7 @@ spanned by b itself.
 
 ## Result
 
-**Theorem.** Let X have rank at most two, with range(X) ⊆ H_1 and range(X^*) ⊆ H_0 ⊕ H_1 ⊕ H_2. Then q_n(X) ≥ 0 for
+**Theorem 1.** Let X have rank at most two, with range(X) ⊆ H_1 and range(X^*) ⊆ H_0 ⊕ H_1 ⊕ H_2. Then q_n(X) ≥ 0 for
 every n. Since q_n(X^*) = q_n(X), the same holds with range and co-range exchanged.
 
 Remarks.
@@ -31,7 +34,8 @@ Remarks.
 - **No product vector in the range plane.** A product vector in H_1 is excited at only one copy. So for n ≥ 2 the
   range plane of a generic X contains no product vector, and the product-ray theorem does not apply.
 - **The top sector is free.** The sector c = n (every copy excited on the co-range side) is nonnegative for every rank,
-  by the same formula. The open cases are the sectors 3 ≤ c ≤ n − 1, so the first open case is n = 4, c = 3.
+  by the same formula. For a general range plane in H_1 the open cases are the sectors 3 ≤ c ≤ n − 1, so the first
+  open case is n = 4, c = 3. Theorem 2 closes all of them for weighted W-planes.
 
 ## Proof
 
@@ -105,11 +109,79 @@ Y = |1⟩⟨1| ⊗ I_2 and for Y = [[I, I], [−I, −I]].
 **4. Conclusion.** Every X^ρ is a submatrix of X, so it has rank at most two. For c = 2 the Lemma gives
 F_2(X^ρ) ≥ 0 for every ρ. For c = 1, F_1 ≥ F_2 ≥ 0. Together with step 1 this proves the theorem. ∎
 
+## Theorem 2: W-planes, with any co-range
+
+For one family of range planes inside H_1, every co-range sector can be handled. Among them is the W-plane span{W_1, W_2},
+W_z = Σ_s |0…0 z_s 0…0⟩, the standard example of a plane on which single-vector anchors fail
+(`support-and-projector-notes/`, Section 5).
+
+**Theorem 2.** Let λ_1, …, λ_n > 0 with max_s λ_s² ≤ 2 min_s λ_s², and let W_s be a unitary on span{|1⟩, |2⟩} at copy
+s. Put w_k = Σ_s λ_s |0…(W_s e_k)_s…0⟩ for k = 1, 2, where e_1 = |1⟩ and e_2 = |2⟩. Then q_n(C) ≥ 0 for every C of rank
+at most two whose range lies in span{w_1, w_2}, with arbitrary co-range, for every n. In particular this holds for the
+W-plane (all λ_s equal, W_s = I).
+
+These planes are thick at every copy and contain no product vector. For the W-plane the exact minimum of q_n/‖C‖² over
+all co-ranges is 2^{1−n} for n = 3, 4, 5 (`code/check_wplanes.py`), in line with the numerics of Section 5 there; the
+referee found 0, 1/4, 1/4, 1/8, 1/16, 1/32 for n = 1, …, 6, attained in the sector c = 0. The rotations W_s do not
+change the minimum. For n ≤ 3 the statement also follows from the two- and three-copy theorems; it is new from n = 4.
+
+*Proof.*
+- **Reduction.** A product unitary that acts as W_s^{−1} on span{|1⟩, |2⟩} at each copy leaves q_n unchanged and
+  turns W_s into I. Rescaling all λ_s together does not change the plane, so assume Σ_s λ_s² = 1. In the notation of
+  the first proof, the range factor is U with U_s = λ_s I. So U^*U = I, and A_s := U_s^*U_s = λ_s² I.
+- **Sectors.** By step 1 of the first proof it is enough to treat X = C P_c for each c. The case c = 0 has rank one.
+- **Hole form.** Fix c ≥ 1 and put h = n − c.
+  - For a column σ of weight c let H(σ) be its set of holes (copies where σ is 0). Write X[(s,z); σ] = (U_s f_σ)_z with
+    f_σ ∈ C². Then Off_σ = f_σ^* A_{H(σ)} f_σ and Diag_σ = f_σ^* (I − A_{H(σ)}) f_σ, where A_H := Σ_{u∈H} A_u = λ_H² I.
+  - The sector formula therefore reads
+
+        2^{n−c+1} q_n(X) = Σ_σ f_σ^* (2I + 2A_{H(σ)}) f_σ − Σ_ρ ( 2 Σ_{s free in ρ} |τ_{ρ,s}|² − |T_ρ|² ).
+
+  - Collect the columns with a given hole set H into one vector F_H ∈ (C²)^{⊗([n]∖H)} ⊗ C²_V: the labels at the
+    excited copies index the first factor, and the value f_σ is the last one.
+  - Then τ_{ρ,s} = λ_s (⟨Φ|_{s,V} F_H)(labels of ρ), with H = H(ρ) ∖ {s} and Φ = Σ_{z=1,2} |z⟩_s |z⟩_V. Each pair
+    (ρ, s) with s free in ρ corresponds to exactly one triple (H, s ∉ H, labels).
+- **h ≥ 1.** In the formula, drop the terms +|T_ρ|² ≥ 0; this can only lower the right-hand side. What is subtracted
+  is then 2 Σ_ρ Σ_s |τ_{ρ,s}|², and the regrouping above turns it into an equality:
+
+      2 Σ_ρ Σ_s |τ_{ρ,s}|² = 2 Σ_H Σ_{s∉H} λ_s² ‖⟨Φ|_{s,V} F_H‖² ≤ 2 Σ_H (1 − λ_H² + max_{s∉H} λ_s²) ‖F_H‖².
+
+  The inequality is the lemma below, applied with |Φ⟩⟨Φ| = 2P (P a maximally entangled projector). The positive sum
+  is Σ_H (2 + 2λ_H²) ‖F_H‖². The difference is at least Σ_H (4λ_H² − 2 max_{s∉H} λ_s²) ‖F_H‖². This is ≥ 0, because
+  λ_H² ≥ min λ² ≥ ½ max λ² when H ≠ ∅.
+- **h = 0** (c = n). Every ρ has one free copy, so its bracket is |τ_{ρ,s}|² − 2|τ_{ρ,s}|² = −|τ_{ρ,s}|². The net
+  subtracted amount is Σ_s λ_s² ‖⟨Φ|_{s,V} F_∅‖² = 2⟨F_∅| Σ_s λ_s² P_s |F_∅⟩ ≤ 2‖F_∅‖², since Σ_s λ_s² P_s ⪯ I. That is
+  the positive sum. ∎
+
+**Lemma (weighted central spin).** Let P_s be the projector onto a maximally entangled state of (qubit s) ⊗ V, and let
+w_s ≥ 0. Then λ_max(Σ_s w_s P_s) ≤ (Σ_s w_s + max_s w_s)/2.
+
+*Proof.* Every maximally entangled state of qubit s and V has the form (I ⊗ Y)|ψ⁻⟩ with Y unitary. Since
+(Y ⊗ Y)|ψ⁻⟩ = det(Y)|ψ⁻⟩, this equals det(Y)·(Y^{−1} ⊗ I)|ψ⁻⟩, a unitary on qubit s alone applied to the singlet.
+Conjugating by the product of these satellite unitaries reduces to singlets. For a set S of qubits, Σ_{s∈S} P_s = |S|/4 − **S**_S·**S**_V, with
+**S**_S the total spin of S. Its largest eigenvalue is attained at total spin |S|/2 coupled down to |S|/2 − ½, and it
+equals (|S| + 1)/2. For general weights, write w = Σ_k (θ_k − θ_{k+1}) 1_{S_k} over the level sets
+S_k = {s : w_s ≥ θ_k}, with θ_1 > θ_2 > ⋯ the distinct values and the last θ equal to 0. The largest eigenvalue is
+subadditive, so it is at most Σ_k (θ_k − θ_{k+1})(|S_k| + 1)/2 = (Σ_s w_s + θ_1)/2. ∎
+
+Equal weights attain the bound. For the W-plane the proof gives (n − h + 1)/(n + h) < 1 for the ratio of the two sums
+in every sector with h ≥ 1. The exact values are smaller, for example (n + 2)/(2n + 2) at h = 1, computed for n ≤ 8.
+
+The weight condition comes from dropping −|T_ρ|². Numerically it is not needed. The exact sector ratios stay at most
+0.84 for strongly unequal weights (one heavy copy, one light copy, geometric weights, two heavy copies; n = 4, 5, 6).
+Brute force over all co-ranges outside the condition also gives positive minima. The argument can keep part of
+−|T_ρ|². Per string, one coefficient may drop below 2 if the others rise: Σ_s c_s|τ_s|² ≥ 2Σ_s|τ_s|² − |Σ_s τ_s|²
+exactly when diag(c − 2) + J ⪰ 0. Combined with the lemma, this certifies every weight vector we tested, two heavy
+copies included, provided the coefficients are chosen by a small semidefinite program. The simple explicit rules we
+tried fail. So the general weighted case is left open until an explicit rule is found.
+
 ## Why the sectors c ≥ 3 are different
 
 The even split gives each string the weight 4/c < 2 on its off-diagonal blocks, and the Lemma needs 2. This loss is
 real. The rank-two matrix Y = [[I, I], [−I, −I]] has F_c(Y)/‖Y‖² = 2/c − 1, which is negative for every c ≥ 3. So a
 proof for c ≥ 3 has to share the off-diagonal weight unevenly, or use the rank-two coupling between different strings.
+Theorem 2 does the latter for weighted W-planes. There all range blocks U_s are multiples of unitaries, and monogamy of
+a central qubit controls all strings at once. For general range blocks this monogamy bound alone is too weak.
 
 Numerically the full sector form stays nonnegative. Adversarial minimisation at n = 4, 5 with co-range in H_3 gives
 minima of order 10^{−6} to 10^{−8}, approached at thin operators whose range sits on one or two copies. The referee's
@@ -141,7 +213,13 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   - the equality cases;
   - the matrix step for random and adversarial u;
   - the explicit failure of the even split for c ≥ 3.
-- `code/check_class.py` brute-forces q_n/‖X‖² on the class of the theorem for n = 2, …, 5, with random and adversarial
+- `code/check_class.py` brute-forces q_n/‖X‖² on the class of Theorem 1 for n = 2, …, 5, with random and adversarial
   starts (minimum +1.6 × 10^{−9}). It also runs the open sector c = 3 at n = 4, 5, as evidence only.
+- `code/check_wplanes.py` checks Theorem 2:
+  - the central-spin value (m + 1)/2 for m ≤ 8;
+  - the weighted bound (largest violation 2 × 10^{−15});
+  - the hole form against direct partial traces (n = 3, 4, every h; error 10^{−15});
+  - the exact minimum over all co-ranges for the W-plane and for weighted W-planes, n = 2, …, 5, with random rotations
+    W_s (minimum 2^{1−n} for n ≥ 3).
 
 The logs are in `logs/`.
