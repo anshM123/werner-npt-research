@@ -1,0 +1,60 @@
+  k=3 j=-1: full letter-1 block size 1, nullity 0  (0.0s)
+k=3 j=0 i=0 vecs=['A0', 'G0'] Q psd=True rank=1/2
+k=3 j=0 i=1 vecs=['B00', 'G0'] Q psd=True rank=2/2
+  k=3 j=0: full letter-1 block size 6, nullity 1  (0.0s)
+k=3 j=1 i=0 vecs=['A0', 'A1', 'G0'] Q psd=True rank=1/3
+k=3 j=1 i=1 vecs=['A0', 'B00', 'B01', 'B10', 'G0'] Q psd=True rank=4/5
+  k=3 j=1: full letter-1 block size 12, nullity 4  (0.0s)
+k=3 j=2 i=0 vecs=['A0', 'A1', 'G0'] Q psd=True rank=2/3
+k=3 j=2 i=1 vecs=['A1', 'B01', 'B10', 'B11'] Q psd=True rank=2/4
+  k=3 j=2: full letter-1 block size 10, nullity 5  (0.0s)
+k=3 j=3 i=0 vecs=['A1'] Q psd=True rank=0/1
+k=3 j=3 i=1 vecs=['B11'] Q psd=True rank=1/1
+  k=3 j=3: full letter-1 block size 3, nullity 1  (0.0s)
+  k=4 j=-1: full letter-1 block size 1, nullity 0  (0.0s)
+k=4 j=0 i=0 vecs=['A0', 'G0'] Q psd=True rank=1/2
+k=4 j=0 i=1 vecs=['B00', 'G0'] Q psd=True rank=2/2
+k=4 j=0 i=2 vecs=[] Q psd=True rank=0/0
+  k=4 j=0: full letter-1 block size 8, nullity 1  (0.0s)
+k=4 j=1 i=0 vecs=['A0', 'A1', 'G0'] Q psd=True rank=2/3
+k=4 j=1 i=1 vecs=['A0', 'B00', 'B01', 'B10', 'G0'] Q psd=True rank=4/5
+k=4 j=1 i=2 vecs=['B00', 'G0'] Q psd=True rank=2/2
+  k=4 j=1: full letter-1 block size 22, nullity 4  (0.0s)
+k=4 j=2 i=0 vecs=['A0', 'A1', 'G0'] Q psd=True rank=1/3
+k=4 j=2 i=1 vecs=['A0', 'A1', 'B00', 'B01', 'B10', 'B11', 'G0'] Q psd=True rank=6/7
+k=4 j=2 i=2 vecs=['B01', 'B10'] Q psd=True rank=1/2
+  k=4 j=2: full letter-1 block size 28, nullity 7  (0.0s)
+k=4 j=3 i=0 vecs=['A0', 'A1', 'G0'] Q psd=True rank=2/3
+k=4 j=3 i=1 vecs=['A1', 'B01', 'B10', 'B11'] Q psd=True rank=2/4
+k=4 j=3 i=2 vecs=['B11'] Q psd=True rank=1/1
+  k=4 j=3: full letter-1 block size 17, nullity 7  (0.0s)
+k=4 j=4 i=0 vecs=['A1'] Q psd=True rank=0/1
+k=4 j=4 i=1 vecs=['B11'] Q psd=True rank=1/1
+k=4 j=4 i=2 vecs=[] Q psd=True rank=0/0
+  k=4 j=4: full letter-1 block size 4, nullity 1  (0.0s)
+  k=5 j=-1: full letter-1 block size 1, nullity 0  (0.0s)
+k=5 j=0 i=0 vecs=['A0', 'G0'] Q psd=True rank=1/2
+k=5 j=0 i=1 vecs=['B00', 'G0'] Q psd=True rank=2/2
+k=5 j=0 i=2 vecs=[] Q psd=True rank=0/0
+  k=5 j=0: full letter-1 block size 10, nullity 1  (0.0s)
+k=5 j=1 i=0 vecs=['A0', 'A1', 'G0'] Q psd=True rank=2/3
+k=5 j=1 i=1 vecs=['A0', 'B00', 'B01', 'B10', 'G0'] Q psd=True rank=4/5
+k=5 j=1 i=2 vecs=['B00', 'G0'] Q psd=True rank=2/2
+  k=5 j=1: full letter-1 block size 35, nullity 5  (0.0s)
+k=5 j=2 i=0 vecs=['A0', 'A1', 'G0'] Q psd=True rank=2/3
+k=5 j=2 i=1 vecs=['A0', 'A1', 'B00', 'B01', 'B10', 'B11', 'G0'] Q psd=True rank=6/7
+k=5 j=2 i=2 vecs=['A0', 'B00', 'B01', 'B10', 'G0'] Q psd=True rank=4/5
+  k=5 j=2: full letter-1 block size 60, nullity 10  (0.0s)
+k=5 j=3 i=0 vecs=['A0', 'A1', 'G0'] Q psd=True rank=1/3
+k=5 j=3 i=1 vecs=['A0', 'A1', 'B00', 'B01', 'B10', 'B11', 'G0'] Q psd=True rank=6/7
+k=5 j=3 i=2 vecs=['A1', 'B01', 'B10', 'B11'] Q psd=True rank=3/4
+  k=5 j=3: full letter-1 block size 55, nullity 11  (0.0s)
+k=5 j=4 i=0 vecs=['A0', 'A1', 'G0'] Q psd=True rank=2/3
+k=5 j=4 i=1 vecs=['A1', 'B01', 'B10', 'B11'] Q psd=True rank=2/4
+k=5 j=4 i=2 vecs=['B11'] Q psd=True rank=1/1
+  k=5 j=4: full letter-1 block size 26, nullity 9  (0.0s)
+k=5 j=5 i=0 vecs=['A1'] Q psd=True rank=0/1
+k=5 j=5 i=1 vecs=['B11'] Q psd=True rank=1/1
+k=5 j=5 i=2 vecs=[] Q psd=True rank=0/0
+  k=5 j=5: full letter-1 block size 5, nullity 1  (0.0s)
+PASS

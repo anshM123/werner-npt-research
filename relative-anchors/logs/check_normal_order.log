@@ -1,0 +1,8 @@
+k=2: Lemma N (T_a normal-ordered, E = Nn + J^-J^+/2) on every H_c, all letters: True
+k=3: Lemma N (T_a normal-ordered, E = Nn + J^-J^+/2) on every H_c, all letters: True
+k=4: Lemma N (T_a normal-ordered, E = Nn + J^-J^+/2) on every H_c, all letters: True
+k=3: Y (vac (x) J^-|1..1>) = 0 on the letter-1 block of (R_inf)_1 (12 states): True
+k=4: Y (vac (x) J^-|1..1>) = 0 on the letter-1 block of (R_inf)_2 (28 states): True
+k=5: Y (vac (x) J^-|1..1>) = 0 on the letter-1 block of (R_inf)_3 (55 states): True
+k=6: Y (vac (x) J^-|1..1>) = 0 on the letter-1 block of (R_inf)_4 (96 states): True
+PASS

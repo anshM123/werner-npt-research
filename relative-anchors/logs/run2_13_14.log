@@ -1,0 +1,3 @@
+k=13: 834 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 582, 1: 252}  (164s)
+k=14: 1015 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 707, 1: 308}  (556s)
+PASS

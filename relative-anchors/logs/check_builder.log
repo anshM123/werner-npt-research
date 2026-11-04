@@ -1,0 +1,10 @@
+k=2 j=-1: 1 states, max |dense - exact| = 0.0e+00, lmin = 1.66e-01
+k=2 j=0: 8 states, max |dense - exact| = 5.6e-17, lmin = -1.32e-16
+k=2 j=1: 20 states, max |dense - exact| = 4.4e-16, lmin = -4.89e-16
+k=2 j=2: 16 states, max |dense - exact| = 4.4e-16, lmin = -2.68e-16
+k=3 j=-1: 1 states, max |dense - exact| = 0.0e+00, lmin = 8.38e-02
+k=3 j=0: 12 states, max |dense - exact| = 5.6e-17, lmin = 6.80e-18
+k=3 j=1: 48 states, max |dense - exact| = 4.4e-16, lmin = -6.54e-16
+k=3 j=2: 80 states, max |dense - exact| = 4.4e-16, lmin = -1.06e-15
+k=3 j=3: 48 states, max |dense - exact| = 8.9e-16, lmin = -1.19e-15
+PASS

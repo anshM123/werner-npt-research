@@ -1,0 +1,16 @@
+k=2 j=-1: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; Woodbury inverse checked: True
+k=2 j=0: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; C singular or H_{j+2} empty: inverse formula not applicable: True
+k=2 j=1: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; C singular or H_{j+2} empty: inverse formula not applicable: True
+k=2: G1_0 letter-1 Laplacian form True; (R_inf)_k letter-1 Laplacian form True
+k=3 j=-1: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; Woodbury inverse checked: True
+k=3 j=0: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; Woodbury inverse checked: True
+k=3 j=1: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; C singular or H_{j+2} empty: inverse formula not applicable: True
+k=3 j=2: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; C singular or H_{j+2} empty: inverse formula not applicable: True
+k=3: G1_0 letter-1 Laplacian form True; (R_inf)_k letter-1 Laplacian form True
+k=4 j=-1: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; Woodbury inverse checked: True
+k=4 j=0: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; Woodbury inverse checked: True
+k=4 j=1: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; Woodbury inverse checked: True
+k=4 j=2: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; C singular or H_{j+2} empty: inverse formula not applicable: True
+k=4 j=3: Y00 = 2^-(k-j-1)(I - J^-E^-1J^+/2): True; C singular or H_{j+2} empty: inverse formula not applicable: True
+k=4: G1_0 letter-1 Laplacian form True; (R_inf)_k letter-1 Laplacian form True
+PASS

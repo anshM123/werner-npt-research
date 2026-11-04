@@ -1,0 +1,12 @@
+k=2: 10 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 7, 1: 3}  (0s)
+k=3: 24 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 17, 1: 7}  (0s)
+k=4: 45 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 32, 1: 13}  (0s)
+k=5: 76 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 54, 1: 22}  (0s)
+k=6: 117 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 83, 1: 34}  (0s)
+k=7: 171 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 121, 1: 50}  (0s)
+k=8: 238 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 168, 1: 70}  (1s)
+k=9: 321 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 226, 1: 95}  (3s)
+k=10: 420 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 295, 1: 125}  (12s)
+k=11: 538 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 377, 1: 161}  (28s)
+k=12: 675 reduced letter-2 forms, all PSD so far: True; nullity histogram {0: 472, 1: 203}  (86s)
+PASS

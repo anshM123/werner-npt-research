@@ -1,0 +1,6 @@
+k=10 done (0s)
+k=20 done (7s)
+k=30 done (44s)
+k=40 done (142s)
+7188 reduced blocks, nullity histogram {2: 78, 0: 800, 1: 6310}
+PASS 142s

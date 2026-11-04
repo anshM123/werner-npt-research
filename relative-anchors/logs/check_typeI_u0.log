@@ -1,0 +1,11 @@
+(2) Schur complement of Q: diagonal formula True ; off-diagonal formula True
+(3) beta = -a b P1/Den: True ; P1, Den nonnegative coefficients: True
+(4) bound numerator and denominator nonnegative coefficients: True ; numerator = b * (poly with positive pure powers a^4, b^4, c^4): True
+k=2: closed form vs builder True; F strictly diagonally dominant with negative off-diagonal: True
+k=3: closed form vs builder True; F strictly diagonally dominant with negative off-diagonal: True
+k=4: closed form vs builder True; F strictly diagonally dominant with negative off-diagonal: True
+k=5: closed form vs builder True; F strictly diagonally dominant with negative off-diagonal: True
+k=6: closed form vs builder n/a (k > 5); F strictly diagonally dominant with negative off-diagonal: True
+k=7: closed form vs builder n/a (k > 5); F strictly diagonally dominant with negative off-diagonal: True
+k=8: closed form vs builder n/a (k > 5); F strictly diagonally dominant with negative off-diagonal: True
+PASS
