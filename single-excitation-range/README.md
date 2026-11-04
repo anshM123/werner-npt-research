@@ -484,9 +484,12 @@ re-checked with independent eigenvalue computations, together with the guard λ_
   k_{S,u} = x_{S,u} Ā_u/Tr A_u + w_{S,u} E_S + y_{S,u} I exists at all six POVM types at n = 5, c = 3, at all six at
   n = 6, c = 3, and on the heavy-copy family for n = 5, …, 10. The child slack ranges from 7.6 × 10^{−4} to 0.5
   (`code/check_structured_split.py`; each solution is rebuilt from its numbers, re-checked, and repaired for solver
-  tolerance by a shift of at most 6 × 10^{−7}). At n = 6, c = 4 the same family is still under test; at a near
-  rank-one frame a first-order solver returned slack −2.6 × 10^{−2}, not yet confirmed. The numbers vary from pair to
-  pair. Closed-form choices we tried
+  tolerance by a shift of at most 6 × 10^{−7}). At n = 6, c = 4 the three-number family works at six of the seven
+  test POVMs (random, two nearly unused copies, two heavy, one heavy, the heavy-copy family, the uniform W-plane;
+  first-order solver SCS, slacks 1.1 × 10^{−3} to 0.47, re-checked). At the near rank-one frame it fails, with slack
+  −2.6 × 10^{−2}, while that sector itself is strictly positive. A general matrix-valued balanced certificate at
+  that frame was not solved: the SCS run was stopped after two hours. So at c = 4 the three numbers are not enough.
+  The numbers vary from pair to pair. Closed-form choices we tried
   (even or trace-weighted splits of R_S, of E_S or of 2I + 2Ā_H − Σβ^*β, with or without moving vacuum between
   children, matrix-weighted splits) each fail at some tested POVM; for example the trace-weighted split of
   2I + 2Ā_H − Σβ^*β leaves a child eigenvalue −8.0 × 10^{−2} at n = 6, c = 4.
