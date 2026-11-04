@@ -42,6 +42,8 @@ scripts need PyTorch.
 
 ## What is open
 
+`OBSTRUCTIONS.md` lists the exact equivalent forms of the every-n statement and the reasons the natural approaches fail.
+
 - The endpoint for every n. `compression-notes/` states a compression conjecture that would give it, with evidence up to five copies.
   `orbit-notes/` reduces it to a local statement on squeeze orbits (no thick squeeze-orbit minimum), supported numerically for n ≤ 7.
   Every one-copy version of that statement is false at three copies, and so are the versions restricted to the
