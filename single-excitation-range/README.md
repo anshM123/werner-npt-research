@@ -598,6 +598,19 @@ reference space fails for d ≥ 3 as y → 0, where the left side tends to d/2 a
 M ⪰ ρ ⊗ 4K (ρ a density matrix on V) and operator subadditivity of (2 + ·)^{−1} both fail on explicit instances
 (c = 3, N = 3 and 4), so a proof has to use the hard-core structure.
 
+## What remains for single-excitation ranges
+
+The open part is the sectors 3 ≤ c ≤ n − 2 outside the cases above (W-planes, Propositions 5, 8 and 9). Three precise
+statements would each make progress, and the first two would together settle the class for every n:
+- **One rank-two copy.** The inequality of Proposition 9 (a) for light directions that are not parallel. The first
+  case is n = 5, c = 3 (four light copies). Our random and adversarial searches up to N = 6 light copies found no
+  violation.
+- **Several rank-two copies.** An inductive argument for Proposition 9 (a′). Removing one rank-two copy leaves a
+  quantitative condition on two adjacent sectors of the other copies. An all-n proof would need a statement about
+  those sectors that survives adding a copy.
+- **A rule for the splits.** An explicit choice of the matrices k_{S,u} in the balanced certificate of
+  Proposition 7. Numerically, three numbers per pair suffice at n ≤ 6 with c = 3.
+
 ## Why the sectors c ≥ 3 are different
 
 The even split gives each string the weight 4/c < 2 on its off-diagonal blocks, and the Lemma needs 2. This loss is
