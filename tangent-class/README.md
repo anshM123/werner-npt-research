@@ -251,7 +251,11 @@ Four things fail.
   `data/common_shift_pd_n3.npy` is a thick three-copy operator (local-support ratios of range and co-range ≥ 0.30)
   whose three pencils are all positive definite at λ = −½. They are PSD on [−2.39, −0.038], [−5.11, +0.050] and
   [−7.00, −0.026]. Its value is R = 0.265, so what the argument really uses is the coupling λ = R(C), and for
-  negative values that is equivalent to EP itself (`code/check_common_shift.py`).
+  negative values that is equivalent to EP itself (`code/check_common_shift.py`). The same failure occurs away from
+  the endpoint. At Werner parameter t, the argument would need the shift to avoid [1 − 3t, 0). At t = 0.45, 0.40,
+  0.35 and 0.335 there are thick three-copy operators whose three pencils are all positive definite at λ = 1 − 3t
+  (`code/check_common_shift_t.py`, `data/common_shift_t*_n3.npy`). So, for general rank-two operators, the one-copy
+  minimiser argument fails at every t in (1/3, ½] that we tried.
 - **Structured certificates.** Several natural certificates for the one-copy condition fail adversarially as
   standalone arguments, at points where the full 9 × 9 pencil still has a negative direction:
   - tilts of the vacuum alone;
@@ -287,6 +291,8 @@ Four things fail.
   `logs/check_line_iteration.log`.
 - `code/check_common_shift.py` with `data/common_shift_pd_n3.npy`: a general thick operator whose pencils are all
   positive definite at λ = −½. Log: `logs/check_common_shift.log`.
+- `code/check_common_shift_t.py` with `data/common_shift_t*_n3.npy`: the same at Werner parameters t = 0.45, 0.40,
+  0.35 and 0.335. Log: `logs/check_common_shift_t.log`.
 
 ## Status
 
