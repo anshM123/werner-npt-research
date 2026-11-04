@@ -23,6 +23,9 @@ because single excitations over a product are not anchors.
 - Proposition 8 (added 4 November 2026): in a second exact form of each sector, every one-copy correction has a
   single positive eigenvalue √det A_t. With the central-spin bound this closes every sector, for every n, when the
   rank-two parts are small compared with the vacuum of every hole set.
+- Proposition 9 (added 4 November 2026): when only one copy has rank two, each sector is equivalent to one operator
+  inequality on the other copies. It holds for every n when that copy carries a full direction (A_0 has eigenvalue 1),
+  which includes the heavy-copy counterexample family, and in a quantitative neighbourhood of that case.
 
 Both classes are thick at every copy.
 
@@ -504,6 +507,68 @@ by Proposition 5. At n = 5, c = 3 there is a POVM with every A_t of rank two, a 
 condition fails as soon as the holes of some S are parallel rank-one copies while S contains a rank-two copy, as in
 the heavy-copy family. There the term α^*α, dropped here, is what keeps the sector positive.
 
+## Proposition 9: one copy of rank two
+
+Added 4 November 2026. Suppose copy 0 has a rank-two range block and the other N = n − 1 copies have rank one. After
+rotations of the reference index and of the letters, U_0 = diag(s_1, s_2) and U_t = |1⟩⟨x̄_t| for t ≥ 1, with
+Σ_t x_t x_t^* = I − Ā_0. A rank-one copy uses one letter. The strings where it carries the other letter form an
+invariant block. On that block the form is 2⟨F, Ā_t F⟩ plus the same sector problem for the other copies, with one
+excitation fewer. So in (a) and (c) below we assume that every rank-one copy carries only its range letter.
+
+Put y_t = Ā_0^{−1/2} x_t; every family of vectors y_t ∈ C² arises this way. Treat the rank-one copies as qubits. Let
+H_k be the functions on k-element sets of them, σ_t^− the annihilation at copy t, and n_t the projector onto "copy t
+is a hole". On V ⊗ H_k define
+
+    X'_k = Σ_t y_t y_t^* ⊗ n_t,    b_k = Σ_t y_t^* ⊗ σ_t^− : V ⊗ H_k → H_{k−1},
+    M = 4 X'_{c−1} + b_{c−1}^* b_{c−1},    K = ¼ b_c (I + X'_c)^{−1} b_c^*.
+
+**Proposition 9.**
+- (a) Sector c is nonnegative if and only if Tr_V (2 + M)^{−1} ⪯ ½ I + (2 + 4K)^{−1} on H_{c−1}.
+- (b) If A_0 has an eigenvalue equal to 1, then every sector is nonnegative, for every n. In that case every other A_t
+  is a multiple of one rank-one projector, so this needs no further hypothesis.
+- (c) Sector c is nonnegative whenever ν(h + (c + 3)² μ/2) ≤ μ, where μ = s_min^{−2} − 1, ν = s_max^{−2} − 1 and
+  h = n − c, whatever the directions x_t.
+
+Part (b) contains the heavy-copy family A_0 = diag(1 − d, 1), with any weights and phases on the light copies. That
+is the family where the certificates of Proposition 6 fail from n = 7 on.
+
+*Proof.*
+- (a) Start from the identity of Proposition 8. There Δ_t = 0 for the light copies, so
+  2K̃_c = 4 Vac + α^*α − 2Δ_0^{exc}. Conjugate the reference index by Ā_0^{−1/2}. Write the strings where copy 0 is
+  excited as F_h = (I ⊗ Ā_0^{−1/2})G, with G = (G_1, G_2) indexed by the letter of copy 0, and the strings where copy 0
+  is a hole as F_l = Ā_0^{−1/2}H. Then
+
+      ⟨F, 2K̃_c F⟩ = 2‖G‖² − 2‖g‖² + Σ_z ⟨G_z, M G_z⟩ + 4⟨H, (I + X'_c)H⟩ + ‖g + b_c H‖²,   g = G_1[1] + G_2[2].
+
+  The minimum over H is ⟨g, (I + K)^{−1} g⟩. For fixed g, the minimum of Σ_z ⟨G_z, (2 + M)G_z⟩ is ⟨g, R^{−1} g⟩
+  with R = Tr_V (2 + M)^{−1}. So the sector is nonnegative iff R^{−1} − 2 + (I + K)^{−1} ⪰ 0, that is, iff
+  R ⪯ (I + K)(I + 2K)^{−1} = ½ I + (2 + 4K)^{−1}.
+- (b) If s_max = 1, then Λ = Σ_t y_t y_t^* = Ā_0^{−1} − I has rank one, so y_t = η_t e for one unit vector e. Then
+  M = ee^* ⊗ m with m = 4D + B^*B, where D = Σ_t |η_t|² n_t and B = Σ_t η̄_t σ_t^−, and K = ¼ B (1 + D_c)^{−1} B^*. In
+  the basis (e, e^⊥), Tr_V (2 + M)^{−1} = ½ + (2 + m)^{−1}, so (a) asks for m ⪰ 4K. On H_{c−1} the hard-core
+  commutator is
+      B B^* − B^* B = Σ_t |η_t|² (n_t − (1 − n_t)),
+  because terms at different copies commute. Hence 4K ⪯ BB^* = B^*B + D − U with U = Σ_t |η_t|² (1 − n_t), and
+  m − 4K ⪰ 3D + U ⪰ (Σ_t |η_t|²) I. For general data, induct on n through the invariant blocks above. Removing a
+  light copy and renormalising keeps the eigenvalue 1 of A_0, because the removed A_t is orthogonal to its
+  eigenvector.
+- (c) Work in the eigenbasis (e_1, e_2) of Λ, with Λ_11 = μ ≥ Λ_22 = ν, and write M in 2 × 2 blocks.
+  - Tr_V (2 + M)^{−1} = (2 + S_1)^{−1} + (2 + S_2)^{−1} with Schur complements S_1, S_2 ⪰ 0. Since
+    (2 + S_2)^{−1} ⪯ ½, it suffices that S_1 ⪰ 4K.
+  - Next, S_1 ⪰ M_11 − ½ M_12 M_21, and 4K ⪯ b_1 b_1^* + b_2 b_2^*, where b_r is the e_r part of b_c.
+  - The commutator in direction e_1 gives M_11 − 4K ⪰ Λ_11 − b_2 b_2^*.
+  - Finally b_2 b_2^* ⪯ hΛ_22 and ‖M_12‖ ≤ (c + 3)(Λ_11 Λ_22)^{1/2}, both by Cauchy–Schwarz over the created or
+    annihilated copy. ∎
+
+Part (c) covers the opposite end from Proposition 5: copy 0 nearly saturates one direction. For example, at n = 5,
+c = 3 with s_min² = ½ it needs s_max² ≥ 20/21, while Proposition 5 needs λ_max(A_S) ≤ 4/5.
+
+For general light directions the case is exactly the single inequality (a). Random and adversarial searches up to
+N = 7 found no violation, but we have no proof. The inequality uses dim V = 2: its analogue with a d-dimensional
+reference space fails for d ≥ 3 as y → 0, where the left side tends to d/2 and the right side to 1. A separable split
+M ⪰ ρ ⊗ 4K (ρ a density matrix on V) and operator subadditivity of (2 + ·)^{−1} both fail on explicit instances
+(c = 3, N = 3 and 4), so a proof has to use the hard-core structure.
+
 ## Why the sectors c ≥ 3 are different
 
 The even split gives each string the weight 4/c < 2 on its off-diagonal blocks, and the Lemma needs 2. This loss is
@@ -573,6 +638,10 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
 - `code/check_small_ranktwo.py` checks Proposition 8: the identity 2K̃_c = 4 Vac + α^*α − 2 Σ_t Δ_t^{exc} (complex
   POVMs, n = 3, 4, 5, every c; error 2 × 10^{−15}), the spectrum of Δ_t, the central-spin bound on every pattern, the
   corollary at 60 random POVMs, and an example outside the threshold of Proposition 5.
+- `code/check_one_ranktwo.py` checks Proposition 9: the reduction (the sign of λ_min(2K̃_c), computed directly,
+  matches the inequality in (a) in all 80 random cases), the commutator identity and m − 4K ⪰ (Σ|η_t|²) I of (b),
+  λ_min(2K̃_c) ≥ 0 directly at 50 POVMs with an eigenvalue-1 copy (N ≤ 7, every c, rotated frames), 120 random
+  configurations under the condition of (c), and the failure of the separable split and of subadditivity.
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});
