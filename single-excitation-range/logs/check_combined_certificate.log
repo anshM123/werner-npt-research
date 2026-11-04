@@ -1,32 +1,62 @@
 n=5 c=3 uniform W-plane: certificate slack +3.000e-01 (re-checked min eigenvalue +3.000e-01, min theta +2.0e-10); lambda_min Q_c +1.375e+00
+    (e) lambda_min Q_c - (c+1) slack = +1.754e-01 (>= 0 required)
 n=5 c=3 one heavy copy, d = 0.05: certificate slack +4.101e-03 (re-checked min eigenvalue +4.101e-03, min theta +4.9e-08); lambda_min Q_c +4.811e-02
+    (e) lambda_min Q_c - (c+1) slack = +3.171e-02 (>= 0 required)
 n=5 c=3 random: certificate slack +8.308e-02 (re-checked min eigenvalue +8.308e-02, min theta +3.2e-10); lambda_min Q_c +6.667e-01
+    (e) lambda_min Q_c - (c+1) slack = +3.344e-01 (>= 0 required)
 n=5 c=3 near rank-one frame: certificate slack +8.251e-02 (re-checked min eigenvalue +8.251e-02, min theta +6.1e-10); lambda_min Q_c +5.839e-01
+    (e) lambda_min Q_c - (c+1) slack = +2.538e-01 (>= 0 required)
 n=5 c=3 two nearly unused copies: certificate slack +2.931e-04 (re-checked min eigenvalue +2.931e-04, min theta +2.0e-09); lambda_min Q_c +5.229e-02
+    (e) lambda_min Q_c - (c+1) slack = +5.112e-02 (>= 0 required)
 n=5 c=3 two heavy copies: certificate slack +1.074e-01 (re-checked min eigenvalue +1.074e-01, min theta +8.2e-10); lambda_min Q_c +5.652e-01
+    (e) lambda_min Q_c - (c+1) slack = +1.357e-01 (>= 0 required)
 n=5 c=4 uniform W-plane: certificate slack +8.000e-02 (re-checked min eigenvalue +8.000e-02, min theta +9.9e-01); lambda_min Q_c +1.000e+00
+    (e) lambda_min Q_c - (c+1) slack = +6.000e-01 (>= 0 required)
 n=5 c=4 one heavy copy, d = 0.05: certificate slack +2.620e-03 (re-checked min eigenvalue +2.620e-03, min theta +8.1e-01); lambda_min Q_c +3.653e-02
+    (e) lambda_min Q_c - (c+1) slack = +2.343e-02 (>= 0 required)
 n=5 c=4 random: certificate slack +2.989e-02 (re-checked min eigenvalue +2.989e-02, min theta +4.8e-01); lambda_min Q_c +4.890e-01
+    (e) lambda_min Q_c - (c+1) slack = +3.395e-01 (>= 0 required)
 n=5 c=4 near rank-one frame: certificate slack +2.924e-05 (re-checked min eigenvalue +2.924e-05, min theta +8.4e-01); lambda_min Q_c +1.674e-01
+    (e) lambda_min Q_c - (c+1) slack = +1.673e-01 (>= 0 required)
 n=5 c=4 two nearly unused copies: certificate slack +1.173e-04 (re-checked min eigenvalue +1.173e-04, min theta +5.9e-01); lambda_min Q_c +2.090e-01
+    (e) lambda_min Q_c - (c+1) slack = +2.085e-01 (>= 0 required)
 n=5 c=4 two heavy copies: certificate slack +7.932e-02 (re-checked min eigenvalue +7.932e-02, min theta +2.6e-08); lambda_min Q_c +5.366e-01
+    (e) lambda_min Q_c - (c+1) slack = +1.400e-01 (>= 0 required)
 n=6 c=3 uniform W-plane: certificate slack +4.167e-01 (re-checked min eigenvalue +4.167e-01, min theta +4.4e-10); lambda_min Q_c +1.667e+00
+    (e) lambda_min Q_c - (c+1) slack = +9.264e-09 (>= 0 required)
 n=6 c=3 one heavy copy, d = 0.05: certificate slack +4.181e-03 (re-checked min eigenvalue +4.181e-03, min theta +1.0e-07); lambda_min Q_c +5.267e-02
+    (e) lambda_min Q_c - (c+1) slack = +3.594e-02 (>= 0 required)
 n=6 c=3 random: certificate slack +1.638e-01 (re-checked min eigenvalue +1.638e-01, min theta +2.2e-10); lambda_min Q_c +8.460e-01
+    (e) lambda_min Q_c - (c+1) slack = +1.907e-01 (>= 0 required)
 n=6 c=3 near rank-one frame: certificate slack +6.638e-02 (re-checked min eigenvalue +6.638e-02, min theta +7.2e-09); lambda_min Q_c +3.025e-01
+    (e) lambda_min Q_c - (c+1) slack = +3.695e-02 (>= 0 required)
 n=6 c=3 two nearly unused copies: certificate slack +4.564e-04 (re-checked min eigenvalue +4.564e-04, min theta +1.0e-09); lambda_min Q_c +1.622e-01
+    (e) lambda_min Q_c - (c+1) slack = +1.604e-01 (>= 0 required)
 n=6 c=3 two heavy copies: certificate slack +1.087e-01 (re-checked min eigenvalue +1.087e-01, min theta +3.3e-09); lambda_min Q_c +5.911e-01
+    (e) lambda_min Q_c - (c+1) slack = +1.562e-01 (>= 0 required)
 n=6 c=4 uniform W-plane: certificate slack +2.000e-01 (re-checked min eigenvalue +2.000e-01, min theta +5.9e-10); lambda_min Q_c +1.297e+00
+    (e) lambda_min Q_c - (c+1) slack = +2.972e-01 (>= 0 required)
 n=6 c=4 one heavy copy, d = 0.05: certificate slack +1.413e-03 (re-checked min eigenvalue +1.413e-03, min theta +5.9e-09); lambda_min Q_c +4.325e-02
+    (e) lambda_min Q_c - (c+1) slack = +3.619e-02 (>= 0 required)
 n=6 c=4 random: certificate slack +8.534e-02 (re-checked min eigenvalue +8.534e-02, min theta +1.3e-09); lambda_min Q_c +7.523e-01
+    (e) lambda_min Q_c - (c+1) slack = +3.256e-01 (>= 0 required)
 n=6 c=4 near rank-one frame: certificate slack +6.180e-02 (re-checked min eigenvalue +6.180e-02, min theta +4.0e-10); lambda_min Q_c +5.294e-01
+    (e) lambda_min Q_c - (c+1) slack = +2.204e-01 (>= 0 required)
 n=6 c=4 two nearly unused copies: certificate slack +9.639e-05 (re-checked min eigenvalue +9.639e-05, min theta +7.6e-10); lambda_min Q_c +2.756e-02
+    (e) lambda_min Q_c - (c+1) slack = +2.708e-02 (>= 0 required)
 n=6 c=4 two heavy copies: certificate slack +6.986e-02 (re-checked min eigenvalue +6.986e-02, min theta +1.3e-10); lambda_min Q_c +5.410e-01
+    (e) lambda_min Q_c - (c+1) slack = +1.917e-01 (>= 0 required)
 n=6 c=5 uniform W-plane: certificate slack +5.556e-02 (re-checked min eigenvalue +5.556e-02, min theta +9.9e-01); lambda_min Q_c +1.000e+00
+    (e) lambda_min Q_c - (c+1) slack = +6.667e-01 (>= 0 required)
 n=6 c=5 one heavy copy, d = 0.05: certificate slack +1.723e-03 (re-checked min eigenvalue +1.723e-03, min theta +8.5e-01); lambda_min Q_c +3.414e-02
+    (e) lambda_min Q_c - (c+1) slack = +2.380e-02 (>= 0 required)
 n=6 c=5 random: certificate slack +1.337e-02 (re-checked min eigenvalue +1.337e-02, min theta +7.1e-01); lambda_min Q_c +3.337e-01
+    (e) lambda_min Q_c - (c+1) slack = +2.535e-01 (>= 0 required)
 n=6 c=5 near rank-one frame: certificate slack +3.328e-05 (re-checked min eigenvalue +3.328e-05, min theta +8.8e-01); lambda_min Q_c +7.678e-02
+    (e) lambda_min Q_c - (c+1) slack = +7.658e-02 (>= 0 required)
 n=6 c=5 two nearly unused copies: certificate slack +7.225e-05 (re-checked min eigenvalue +7.225e-05, min theta +7.8e-01); lambda_min Q_c +1.014e-01
+    (e) lambda_min Q_c - (c+1) slack = +1.010e-01 (>= 0 required)
 n=6 c=5 two heavy copies: certificate slack +6.339e-02 (re-checked min eigenvalue +6.339e-02, min theta +1.8e-08); lambda_min Q_c +5.426e-01
+    (e) lambda_min Q_c - (c+1) slack = +1.623e-01 (>= 0 required)
 (d) n=6 c=5 one heavy copy (d = 0.2), local certificate only (theta = 0): slack -3.248e-03 (< 0: infeasible)
 PASS

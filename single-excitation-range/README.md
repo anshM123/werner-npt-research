@@ -447,7 +447,9 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
 - `code/combined_certificate.py` sets up the certificate of Conjecture 6 as a semidefinite program (needs cvxpy with
   the CLARABEL solver). `code/check_combined_certificate.py` solves it at structured POVMs for n = 5, 6 and
   3 ≤ c ≤ n − 1, re-checks every inequality of each solution with independent eigenvalue computations, and shows
-  that θ = 0 alone is infeasible at n = 6, c = 5 with one heavy copy. `code/sweep_combined_certificate.py` runs the
+  that θ = 0 alone is infeasible at n = 6, c = 5 with one heavy copy. It also checks the quantitative form of
+  Proposition 6: a certificate with common slack λ forces λ_min(Q_c) ≥ (c + 1)λ, since each column lies in c strings
+  and one pattern. `code/sweep_combined_certificate.py` runs the
   60-POVM sweep at n = 5, c = 3. This is evidence, not proof. `code/check_certificate_counterexample.py` checks the
   counterexample at n = 7, 8: a symmetric reduction that matches the full program at n = 5, 6, the negative
   slacks, and the positive sector minimum.
