@@ -106,6 +106,30 @@ The reduction uses the conjecture only at the value λ = m of a hypothetical neg
 uses only m ≤ 0 (an explicit zero) and the spectral bound. Any proof of SC must be sign-free: it may use EP on
 𝒯_{n−1}, but not q_n ≥ 0 on 𝒯_n.
 
+### A second route, without induction
+
+The strong form of the conjecture needs no induction and no input from three copies.
+
+**Conjecture SC∞.** If C ∈ 𝒯_n is thick at copy s, there is H ∈ Herm_3 with 𝒩_s(H) = 0 and 𝒬_s(H) < 0.
+
+What the numerics test is that 𝒬_s − λ𝒩_s is positive semidefinite for no real λ (ν_s < 0 below). When 𝒩_s is
+indefinite, that gives such an H, by convexity of the joint numerical range of two real quadratic forms in nine
+variables (Brickman).
+
+**Theorem 3′.** If SC∞ holds for every n, then q_n ≥ 0 on 𝒯_n for every n.
+
+*Proof.* Take a thick copy s and such an H.
+1. H is not semidefinite. Otherwise q(GCG) would be a concave quadratic in ε along M = I + εH, while ‖GCG‖² stays
+   positive and affine, so R → −∞, against R ≥ −½.
+2. So M = I + εH is positive definite exactly on an interval (ε_−, ε_+) and singular at both ends.
+3. On that interval, ‖GCG‖² is affine and positive and q(GCG) is concave, so R is quasi-concave. Hence R(C) is at
+   least the smaller of its limits at the two ends.
+4. The end operators are thin at s and still lie in 𝒯. An end where GCG = 0 is a proper algebraic condition, and it
+   can be avoided by perturbing H inside {𝒩_s = 0}, keeping 𝒬_s(H) < 0.
+5. Squeezes at other copies keep a thin copy thin. Repeating at each thick copy, every branch ends, after at most n
+   steps, at an operator that is thin at every copy.
+6. Such an operator has range in a product of planes, so q ≥ 0 by separability of 2 × 3 PPT states. ∎
+
 ## Evidence for Conjecture SC
 
 The numerics test the stronger statement with every λ ∈ [−5, 5]. They report
@@ -130,12 +154,14 @@ The numerics test the stronger statement with every λ ∈ [−5, 5]. They repor
 ## What does not work
 
 Three things fail, and they show that the conjecture uses the tangent structure.
-- **Larger classes.** For the class of ranges with at most two excitations over a product, the same one-copy
-  statement fails. Projecting the operator above into T^(2) and re-optimising inside that class gives a thick operator
+- **Larger classes.** The one-copy statement fails for every natural enlargement we tried. For ranges with at
+  most two excitations over a product it fails as follows. Projecting the operator above into T^(2) and re-optimising inside that class gives a thick operator
   (local-support ratios 0.50, 0.37, 0.35, stored in `data/two_excitation_pencil_psd_n3.npy`) whose pencil is positive
   definite for some λ at every copy (ν_s = +0.037). For general rank-two C, single-copy squeeze minima exist at three
   and four copies (`orbit-notes/`). The known examples have 98–99% of their range inside some T^(n−1) but only
-  41–69% inside a tangent space.
+  41–69% inside a tangent space. Planes that merely meet a tangent space also fail: they contain Wu and Zou's
+  planes through a product vector and are closed under squeezes and thin-copy removal. Starting from the same
+  three-copy operator, re-optimising inside that class reaches thickness ≥ 0.2 with ν_s ≈ +0.02 at every copy.
 - **Structured certificates.** Several natural certificates for the conjecture fail adversarially as standalone
   arguments, though the full 9 × 9 pencil still has a negative direction there:
   - tilts of the vacuum alone;
@@ -164,7 +190,7 @@ Three things fail, and they show that the conjecture uses the tangent structure.
 
 ## Status
 
-- **Proved:** Proposition 1 (identity, checked numerically), Lemma 2 (identity, checked numerically) and Theorem 3
-  (the reduction). The reduction was re-derived by an independent check.
-- **Not proved:** Conjecture SC, and with it the endpoint on 𝒯_n for n ≥ 4.
+- **Proved:** Proposition 1 (identity, checked numerically), Lemma 2 (identity, checked numerically), Theorem 3 (the
+  reduction; re-derived by an independent check) and Theorem 3′.
+- **Not proved:** Conjectures SC and SC∞, and with them the endpoint on 𝒯_n for n ≥ 4.
 - **Not journal peer-reviewed.**
