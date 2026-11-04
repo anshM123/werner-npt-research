@@ -1,0 +1,13 @@
+k = 4, weights (1,1,1,1), parameters []: (D) D_pG block diagonal and > 0 (exact): True  [0.3s]
+  j = -1: (R_inf) 1 states, 1 torus blocks (largest 1), block-diagonal True, certified PSD: True, rank 1  [0.7s]
+  j = 0: (R_inf) 16 states, 5 torus blocks (largest 8), block-diagonal True, certified PSD: True, rank 15  [0.7s]
+  j = 0: (R2) 1 states, 1 torus blocks (largest 1), block-diagonal True, certified PSD: True, rank 1  [0.7s]
+  j = 1: (R_inf) 88 states, 15 torus blocks (largest 22), block-diagonal True, certified PSD: True, rank 80  [0.9s]
+  j = 1: (R2) 8 states, 5 torus blocks (largest 4), block-diagonal True, certified PSD: True, rank 8  [0.9s]
+  j = 2: (R_inf) 224 states, 31 torus blocks (largest 28), block-diagonal True, certified PSD: True, rank 199  [1.7s]
+  j = 2: (R2) 24 states, 11 torus blocks (largest 6), block-diagonal True, certified PSD: True, rank 24  [1.8s]
+  j = 3: (R_inf) 272 states, 44 torus blocks (largest 17), block-diagonal True, certified PSD: True, rank 237  [3.0s]
+  j = 3: (R2) 32 states, 15 torus blocks (largest 4), block-diagonal True, certified PSD: True, rank 32  [3.0s]
+  j = 4: (R_inf) 128 states, 48 torus blocks (largest 8), block-diagonal True, certified PSD: True, rank 112  [3.3s]
+  j = 4: (R2) 16 states, 16 torus blocks (largest 1), block-diagonal True, certified PSD: True, rank 16  [3.3s]
+PASS

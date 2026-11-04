@@ -32,9 +32,11 @@ because single excitations over a product are not anchors.
   rank two) ⊗ (product), and an exact computation shows that these vectors are anchors for every n.
 - Lemma 11 and Conjecture 12 (added 4 November 2026): a relative version of the anchor argument reduces every sector
   of every single-excitation plane to one positive semidefinite statement about a single weighted W-type vector
-  Σ_t w_t |1⟩_t. It is proved when at most two weights are nonzero and holds in all our numerical tests. Copies of
-  weight zero reduce to a finite test on the others (Lemma 13). With an exact computation this gives a balanced
-  three-copy case (Proposition 14).
+  Σ_t w_t |1⟩_t. Copies of weight zero reduce to a finite test on the others (Lemma 13). Theorem 16 (added 4 November
+  2026) proves it whenever at most three weights are nonzero, by an exact certificate over Q(a, b, c). So every
+  sector is nonnegative for every n whenever A_0 + A_1 + A_2 has the eigenvalue 1, and the same holds for the
+  corresponding tangent planes (Corollary 17). Larger supports hold in all numerical tests and at exact special
+  points.
 
 Both classes are thick at every copy.
 
@@ -718,11 +720,16 @@ n − 1 real parameters, where the original problem has a plane and a co-range.
   conserves q(row) − q(column) at every copy, so D_p is block diagonal in the column charge, and only the block H_c
   reaches these entries. Hence Y_c(p) is a compression of A − R_p^Γ, which is ⪰ 0 when T_p ⪯ I. For two nonzero
   weights, p = (w_0|10⟩ + w_1|01⟩) ⊗ |0…0⟩ up to the order of the copies, and Proposition 10 (a) gives T_p ⪯ I.
-- Its kernel contains p̄ ⊗ H_c.
-- Numerics: two independent implementations find no violation. The weight vectors were random, near-degenerate
-  (one or two dominant weights) or chosen by Nelder–Mead minimisation of λ_min(Y_c). This covers n ≤ 5 with every c,
-  n = 6 with c = 1, 3, 4 and n = 7 with c = 3; at n = 6, 7 only a few weight vectors were tried. The smallest
-  eigenvalue found is −3 × 10^{−15}.
+- Its kernel contains p̄ ⊗ H_c. For full support it contains n − 1 further vectors when c = n − 1.
+- Numerics, three independent implementations: no violation found.
+  - Direct computation of Y_c covers n ≤ 5 with every c, n = 6 with c ≤ 4, n = 7 with every c and n = 8 with
+    c = 3, 4, 5. The weights were random, near-degenerate, structured or chosen by Nelder–Mead minimisation of
+    λ_min(Y_c).
+  - By Lemma 13 (below), the group conditions cover every n at once. They hold at about 950 weight vectors on four
+    copies (including a full grid of step 1/48), 1000 on five, 900 on six and 7 on seven. The smallest values were
+    re-evaluated in 50-digit arithmetic: they are exact zeros, and the next eigenvalue is positive.
+  - At equal weights the smallest nonzero eigenvalue of the group conditions is 2^{−k}(4k − 5)/(5k − 4) for
+    k = 3, …, 7. It tends to zero only at the boundary of the orthant, like (w_min/w_max)².
 
 **Zero weights reduce to a finite test.** Let p = p_G ⊗ |0⟩^{⊗m}, where p_G is a single excitation on a group G of k
 copies and the other m copies carry weight zero. On the k copies of G put A = (M^{⊗k})^Γ, B = R_{p_G}^Γ and Y = A − B.
@@ -808,16 +815,63 @@ some p_G ⊗ |0⟩^{⊗m}. Apply Lemmas 13′ and 11′. ∎
 
 Two cases hold without the conjecture: tangent planes containing a single excitation on at most two copies
 (Proposition 10), and those containing a balanced three-copy single excitation (Proposition 14 and Lemma 13′).
+Theorem 16 below extends this to every single excitation on three copies.
 Numerically the compressions of Lemma 11′ are ⪰ 0 for n = 3 and 4, at every k, for random, structured and minimised
 weights. For tangent planes this would replace the chain analysis of `tangent-class/`.
+
+**Remark ((R2) always holds).** On G0_j both row strings are the vacuum. So B is there a principal submatrix of
+R_{p_G} = M V D^{−1} V^* M ⪰ 0, and 3A + B ⪰ 3A ≻ 0. Lemmas 13 and 13′ therefore need only (R∞).
+
+**Theorem 16 (three copies).** Conjecture 12 holds for every p ∈ H_1 supported on at most three copies: Y_c(p) ⪰ 0
+for every n and every c.
+
+*Proof.*
+- **At most two copies.** This is Proposition 10, since Y_c(p) is a compression of A − R_p^Γ.
+- **Three copies.** By Lemma 13 and the remark, it suffices to prove (R∞) for p_G = a|100⟩ + b|010⟩ + c|001⟩ with
+  a, b, c > 0. The boundary of the orthant follows by continuity, because D_{p_G} stays invertible there.
+  `code/check_group_exact.py "a,b,c"` proves (R∞) over the field Q(a, b, c):
+  - It checks exactly that each (R∞) set splits into torus blocks.
+  - In each block it runs symmetric Gaussian elimination with diagonal pivoting. Each pivot it uses is a ratio of two
+    polynomials whose coefficients all have the same sign, so it is positive on the open orthant. When no nonzero
+    diagonal entry is left, the rest of the block is identically zero.
+  - The only denominators are determinants of blocks of D_{p_G}, which are positive on the orthant, and products of
+    pivots. So the elimination commutes with evaluation at every point. At every point each block is congruent to a
+    diagonal matrix with nonnegative entries. ∎
+
+The run takes a few seconds with python-flint. An independent implementation in sympy
+(`code/check_group_exact_sympy.py`) proves the same for the weights (1, v, u) in about 45 s, with the same ranks.
+Since the matrices are homogeneous of degree 0 in the weights, that covers the orthant as well. The flint version
+rejects the perturbed condition with B replaced by 1.001 B.
+
+**Corollary 17.**
+- (a) If A_0 + A_1 + A_2 has the eigenvalue 1, then every sector is nonnegative, for every n.
+- (b) Every tangent plane whose single excitation is supported on at most three copies satisfies the endpoint, with
+  any co-range, for every n.
+
+*Proof.*
+- (a) As in Proposition 10 (b), the plane contains a single excitation supported on copies 0, 1 and 2. Apply
+  Theorem 16 and Lemma 11.
+- (b) Apply Lemmas 13′ and 11′ with the certified (R∞). ∎
+
+Corollary 17 (a) contains Propositions 9 (b), 10 (b) and 14.
+
+**Larger groups.** The same certificate proves (R∞) in several further cases:
+- at the equal-weight points for k = 4, 5 and 6 copies;
+- on the lines (1, 1, 1, u) and (1, 1, 1, 1, u) for all u > 0;
+- at the rational point (1, 3/7, 11/5, 1/1000, 5/4) for k = 5.
+
+So the conclusions of Corollary 17 hold for single excitations of these shapes. The six-copy point takes about
+eight minutes. For the whole four-copy family the certificate is not complete. In a run with squared weights, eleven
+of the largest torus blocks (sizes 12 to 28, three parameters) did not finish.
 
 ## What remains for single-excitation ranges
 
 The open part is the sectors 3 ≤ c ≤ n − 2 outside the cases above (W-planes, Propositions 5, 8, 9 and 10).
 - **The shortest route is Conjecture 12.** It concerns one vector Σ_t w_t |1⟩_t and would settle every sector of every
-  single-excitation plane for every n. It is proved for at most two nonzero weights and for the balanced triple.
-  The first open case is three general nonzero weights. By Lemma 13 that is a two-parameter family of finite
-  matrix inequalities on three copies, independent of n.
+  single-excitation plane, and with Corollary 15 every tangent plane, for every n. It is proved for at most three
+  nonzero weights (Theorem 16). The first open case is four nonzero weights. By Lemma 13 that is a three-parameter
+  family of finite matrix inequalities on four copies, independent of n. There the certificate of Theorem 16 has
+  finished on all but eleven torus blocks.
 
 Three further precise statements would each make progress, and the first two would together settle the class for
 every n:
@@ -924,6 +978,12 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   (n = 3, 4). `code/check_tangent_bath.py` checks Lemma 13′: the eigenvalues of its blocks reproduce the spectrum of
   (M^{⊗n} − R_p)^Γ on (H_0 ⊕ H_1) ⊗ (all columns), computed directly, for k = 2, 3 and m = 1, 2, 3 (deviation
   ≤ 2 × 10^{−14}).
+- `code/check_group_exact.py` (needs python-flint; `code/flintfield.py` is a small exact rational-function field on
+  top of it) proves (R∞) and (R2) exactly for a group vector with rational or symbolic weights. `"a,b,c"` is the
+  proof of Theorem 16 (a few seconds). The option `bscale=1001/1000` is the sanity test that must fail.
+  `code/check_group_exact_sympy.py` is an independent implementation in sympy. Logs of the runs at
+  (a, b, c), (1, 1, 1, 1), (1, 1, 1, u), (1, 1, 1, 1, 1), (1, 1, 1, 1, u), (1, 3/7, 11/5, 1/1000, 5/4) and
+  (1, 1, 1, 1, 1, 1) are in `logs/`, with the sympy run at (1, v, u) and the failing sanity run.
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});
