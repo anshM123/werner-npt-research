@@ -1,0 +1,19 @@
+(a) n=3 c=2: min_v q_n(X) vs (u (x) w)^* Y (u (x) w): rel. error 2.8e-16
+(a) n=4 c=2: min_v q_n(X) vs (u (x) w)^* Y (u (x) w): rel. error 1.2e-16
+(a) n=4 c=3: min_v q_n(X) vs (u (x) w)^* Y (u (x) w): rel. error 0.0e+00
+(b) n=3 c=1: min eigenvalue of Y_c over 5 weight vectors -2.48e-16
+(b) n=3 c=2: min eigenvalue of Y_c over 5 weight vectors -6.37e-16
+(b) n=3 c=3: min eigenvalue of Y_c over 5 weight vectors -5.45e-16
+(b) n=4 c=1: min eigenvalue of Y_c over 5 weight vectors -1.62e-16
+(b) n=4 c=2: min eigenvalue of Y_c over 5 weight vectors -4.49e-16
+(b) n=4 c=3: min eigenvalue of Y_c over 5 weight vectors -6.82e-16
+(b) n=4 c=4: min eigenvalue of Y_c over 5 weight vectors -8.76e-16
+(b) n=5 c=1: min eigenvalue of Y_c over 5 weight vectors -1.43e-16
+(b) n=5 c=2: min eigenvalue of Y_c over 5 weight vectors -3.77e-16
+(b) n=5 c=3: min eigenvalue of Y_c over 5 weight vectors -8.11e-16
+(b) n=5 c=4: min eigenvalue of Y_c over 5 weight vectors -2.29e-15
+(b) n=5 c=5: min eigenvalue of Y_c over 5 weight vectors -1.56e-15
+(c) n=3 c=1: max |R_p - R_c| on H_1 (x) H_c = 1.2e-16
+(c) n=3 c=2: max |R_p - R_c| on H_1 (x) H_c = 1.7e-16
+(c) n=3 c=3: max |R_p - R_c| on H_1 (x) H_c = 1.7e-16
+PASS

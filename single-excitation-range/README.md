@@ -27,6 +27,12 @@ because single excitations over a product are not anchors.
   inequality on the other copies. It holds for every n when that copy carries a full direction (A_0 has eigenvalue 1),
   which includes the heavy-copy counterexample family, in a quantitative neighbourhood of that case, and whenever
   that copy is heavy in both directions (1/s_1² + 1/s_2² ≤ 2 + 8/h²).
+- Proposition 10 (added 4 November 2026): every sector, for every n, when two copies together carry a full direction
+  (A_0 + A_1 has eigenvalue 1). The proof is an anchor argument: such a plane contains (two-copy vector of Schmidt
+  rank two) ⊗ (product), and an exact computation shows that these vectors are anchors for every n.
+- Lemma 11 and Conjecture 12 (added 4 November 2026): a relative version of the anchor argument reduces every sector
+  of every single-excitation plane to one positive semidefinite statement about a single weighted W-type vector
+  Σ_t w_t |1⟩_t. It is proved when at most two weights are nonzero and holds in all our numerical tests.
 
 Both classes are thick at every copy.
 
@@ -621,10 +627,106 @@ reference space fails for d ≥ 3 as y → 0, where the left side tends to d/2 a
 M ⪰ ρ ⊗ 4K (ρ a density matrix on V) and operator subadditivity of (2 + ·)^{−1} both fail on explicit instances
 (c = 3, N = 3 and 4), so a proof has to use the hard-core structure.
 
+## Proposition 10: two copies carrying a full direction
+
+Added 4 November 2026. Proposition 9 (b) needs one copy with A_0 having the eigenvalue 1. Here two copies share that
+role. The proof does not use the sector forms. It goes back to the anchor method of `support-and-projector-notes/`
+(the Schur complement argument of Wu and Zou, Sections 1 and 5 there).
+
+Notation. On one copy let M = I − ½|Ω⟩⟨Ω| on C³_row ⊗ C³_col, with Ω = Σ_a |aa⟩, so that
+q_n(X) = ⟨vec X, M^{⊗n} vec X⟩. Let Γ be the transpose on the row factor. Then A = (M^{⊗n})^Γ = (I − ½F)^{⊗n}, where F
+swaps row and column at each copy, so A ≻ 0. For a row vector p put
+- V_p = p ⊗ I;
+- D_p = V_p^* M^{⊗n} V_p;
+- R_p = M^{⊗n} V_p D_p^{−1} V_p^* M^{⊗n};
+- T_p = A^{−1/2} R_p^Γ A^{−1/2}.
+
+D_p is the form of the rank-one operators |p⟩⟨v|, so D_p ⪰ 2^{−n}‖p‖² I.
+
+**Anchor lemma.** If T_p ⪯ I, then q_n(X) ≥ 0 for every X whose range lies in a plane containing p, whatever the
+co-range.
+
+*Proof.* Write X = |p⟩⟨v| + |u⟩⟨w|. Minimising q_n over v leaves (u ⊗ w̄)^*(M^{⊗n} − R_p)(u ⊗ w̄). For product vectors
+(x ⊗ y)^* W (x ⊗ y) = (x̄ ⊗ y)^* W^Γ (x̄ ⊗ y), so this equals (ū ⊗ w̄)^*(A − R_p^Γ)(ū ⊗ w̄). It is ≥ 0 when T_p ⪯ I. ∎
+
+All four objects factor over the copies, so T_{p′⊗p″} = T_{p′} ⊗ T_{p″}. For the vacuum on one copy,
+spec T_{|0⟩} = {1, −1/3}.
+
+**Proposition 10.**
+- (a) Let φ be a vector on two copies with Schmidt rank at most two, and b a product vector on the other n − 2
+  copies. Then q_n(X) ≥ 0 for every X whose range lies in a plane containing φ ⊗ b, with any co-range, for every n.
+- (b) Take a single-excitation range plane in the gauge Σ_t A_t = I. If A_0 + A_1 has the eigenvalue 1, then
+  q_n ≥ 0 for every co-range, so every sector is nonnegative, for every n.
+
+*Proof.*
+- (a) Local unitaries turn φ ⊗ b into a multiple of φ_u ⊗ |0⟩^{⊗(n−2)}, where φ_u = |10⟩ + u|01⟩ and u ∈ [0, 1]
+  is the ratio of the Schmidt coefficients. They leave q_n unchanged, and the co-range is arbitrary anyway.
+  - For every u ≥ 0 we have D_{φ_u} ≻ 0 and −3 ⪯ T_{φ_u} ⪯ I. This is an exact computation, described below.
+  - So T_p = T_{φ_u} ⊗ T_{|0⟩}^{⊗(n−2)} has the eigenvalues λ(−1/3)^j with λ ∈ [−3, 1] and j ≥ 0. All of them are
+    at most 1.
+  - The anchor lemma applies.
+- (b) Let g be a unit eigenvector for the eigenvalue 1.
+  - Then Σ_{t≥2} g^*A_t g = 0, so U_t g = 0 for t ≥ 2.
+  - The plane therefore contains u_g = (|U_0 g⟩_0 |0⟩_1 + |0⟩_0 |U_1 g⟩_1) ⊗ |0…0⟩. Its two-copy factor has Schmidt
+    rank at most two, because its copy-0 marginal lives on span{|0⟩, U_0 g}.
+  - Apply (a). ∎
+
+*The exact computation.* A torus acts by phases on |1⟩ at both copies and on |2⟩ at each copy separately. It fixes
+φ_u, so it splits the 81 × 81 matrices into 27 blocks of size at most 8, with entries in Q(u). For each block H the
+script proves H ⪰ 0 for all u ≥ 0 as follows:
+- it multiplies H by a common denominator that is positive on [0, ∞);
+- it reads the elementary symmetric functions of the eigenvalues off the characteristic polynomial;
+- it shows that each of them is ≥ 0 on [0, ∞), by exact real-root isolation and exact evaluation in every gap.
+
+D_{φ_u} ≻ 0 follows from its leading principal minors.
+
+Remarks.
+- (b) contains Proposition 9 (b). There U_1 g = 0, so the anchor is a product vector. The bath of the other copies
+  never enters: its weights, letters and phases are arbitrary.
+- The bound T ⪯ I is tight: λ_max(T_{φ_u}) = 1 for every u. The smallest eigenvalue is −11/9, at u = 1. So this
+  argument says nothing when the top eigenvalue of A_0 + A_1 is 1 − ε.
+- Three copies carrying a full direction are different. Every single excitation on three copies with three nonzero
+  weights has λ_max(T) > 1, so the anchor lemma itself does not apply there.
+
+## Relative anchors and a one-vector conjecture
+
+For a single-excitation plane both the second range vector and the co-range are restricted (to H_1 and to H_c), so
+the anchor argument needs much less than T_p ⪯ I. For p ∈ H_1 and 1 ≤ c ≤ n let
+- D_c be the compression of D_p to the column space H_c;
+- R_c = M^{⊗n} V_p D_c^{−1} V_p^* M^{⊗n};
+- Y_c(p) be the compression of (M^{⊗n} − R_c)^Γ to H_1 ⊗ H_c (row index in H_1, column index in H_c).
+
+**Lemma 11.** If Y_c(p) ⪰ 0, then sector c is nonnegative for every single-excitation range plane that contains p.
+
+*Proof.* Run the proof of the anchor lemma with v, w ∈ H_c and u ∈ H_1. Since H_1 and H_c have real bases, ū ∈ H_1 and
+w̄ ∈ H_c, so only the compression Y_c(p) is used. ∎
+
+Every vector of a single-excitation plane lies in H_1. Local unitaries that fix |0⟩ bring every p ∈ H_1 to
+Σ_t w_t |1⟩_t with w_t ≥ 0. Lemma 11 therefore reduces the whole class to a statement about one vector.
+
+**Conjecture 12.** Y_c(Σ_t w_t |1⟩_t) ⪰ 0 for every n, every 1 ≤ c ≤ n and all weights w_t ≥ 0.
+
+Conjecture 12 implies that every sector of every single-excitation range plane is nonnegative for every n. It has
+n − 1 real parameters, where the original problem has a plane and a co-range.
+- **It holds when at most two weights are nonzero.** By charge conservation, R_c and R_p agree on H_1 ⊗ H_c: M^{⊗n}
+  conserves q(row) − q(column) at every copy, so D_p is block diagonal in the column charge, and only the block H_c
+  reaches these entries. Hence Y_c(p) is a compression of A − R_p^Γ, which is ⪰ 0 when T_p ⪯ I. For two nonzero
+  weights, p = (w_0|10⟩ + w_1|01⟩) ⊗ |0…0⟩ up to the order of the copies, and Proposition 10 (a) gives T_p ⪯ I.
+- Its kernel contains p̄ ⊗ H_c.
+- Numerics: two independent implementations find no violation. The weight vectors were random, near-degenerate
+  (one or two dominant weights) or chosen by Nelder–Mead minimisation of λ_min(Y_c). This covers n ≤ 5 with every c,
+  n = 6 with c = 1, 3, 4 and n = 7 with c = 3; at n = 6, 7 only a few weight vectors were tried. The smallest
+  eigenvalue found is −3 × 10^{−15}.
+
 ## What remains for single-excitation ranges
 
-The open part is the sectors 3 ≤ c ≤ n − 2 outside the cases above (W-planes, Propositions 5, 8 and 9). Three precise
-statements would each make progress, and the first two would together settle the class for every n:
+The open part is the sectors 3 ≤ c ≤ n − 2 outside the cases above (W-planes, Propositions 5, 8, 9 and 10).
+- **The shortest route is Conjecture 12.** It concerns one vector Σ_t w_t |1⟩_t and would settle every sector of every
+  single-excitation plane for every n. It is proved for at most two nonzero weights. The first open case is three
+  nonzero weights.
+
+Three further precise statements would each make progress, and the first two would together settle the class for
+every n:
 - **One rank-two copy.** The inequality of Proposition 9 (a) for light directions that are not parallel, outside the
   regions of (b)–(d). The first case is n = 5, c = 3 (four light copies), for example s_max² = 0.9, s_min² = 0.2. Our random and adversarial searches up to N = 6 light copies found no
   violation.
@@ -711,6 +813,15 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   configurations under the condition of (c), the failure of the separable split and of subadditivity, and the
   general congruence of (a′) at random POVMs with every copy of rank two (relative error 10^{−15}). Part (f) checks the chain
   of inequalities in the proof of (d) and λ_min(2K̃_c) ≥ 0 at 150 non-parallel configurations satisfying its condition.
+- `code/check_pair_anchor_exact.py` is the exact proof behind Proposition 10 (sympy, about 2 s). It checks D_{φ_u} ≻ 0,
+  A − R^Γ ⪰ 0 and R^Γ + 3A ⪰ 0 for all u ≥ 0 on the 27 torus blocks, and the block structure itself.
+  `code/check_pair_anchor.py` checks the same facts numerically with an independent implementation. It covers spec T_{|0⟩} = {1, −1/3}, the
+  values u ∈ [0, 1] on a grid of 21 points and u = 1.5, 3, 10 (largest eigenvalue 1, smallest −11/9), random complex two-copy vectors of Schmidt rank two, and
+  λ_min(2K̃_c) ≥ 0 directly at random configurations with A_0 + A_1 having eigenvalue 1 (n = 5, 6, every c).
+- `code/relative_anchor.py` implements Y_c(p). It checks the Schur step of Lemma 11 as an identity (error 3 × 10^{−16}),
+  that the full R_p agrees with R_c on H_1 ⊗ H_c, and Y_c ⪰ 0 with kernel containing p̄ ⊗ H_c at random weights
+  (n ≤ 5, every c). `code/adversarial_relative.py` minimises λ_min(Y_c) over the weights. These two are evidence for
+  Conjecture 12, not proof.
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});

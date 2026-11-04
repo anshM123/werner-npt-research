@@ -1,0 +1,7 @@
+(a) T_|0>: spectrum [-0.333333, +1.000000]
+(b) phi_u grid: max eig +1.000000000000, min eig -1.222222 (-11/9 = -1.222222), min lambda(D) 0.2500
+(c) random x, y: spectrum [-1.016409, +1.000000], min lambda(D) 1.5955
+(c) random x, y: spectrum [-1.204207, +1.000000], min lambda(D) 1.1506
+(c) random x, y: spectrum [-1.199566, +1.000000], min lambda(D) 6.0319
+(d) A_0 + A_1 with eigenvalue 1, n = 5, 6, every c: min lambda_min(Kt_c) = +3.483e-03
+PASS
