@@ -1,0 +1,20 @@
+(a) n=5 c=3 random real            solver slack +3.671e-02; re-check (P) +9.8e-11 -> +1.0e-10 after eps = 1.0e-12; (C) +3.671e-02; lambda_min(2Kt) +2.546e-01 >= h (C) = +7.341e-02
+(a) n=5 c=3 near rank-one frame    solver slack +3.552e-03; re-check (P) -1.8e-11 -> +2.0e-12 after eps = 1.0e-11; (C) +3.552e-03; lambda_min(2Kt) +5.048e-02 >= h (C) = +7.104e-03
+(a) n=5 c=3 two nearly unused copies solver slack +1.824e-01; re-check (P) +3.6e-11 -> +3.8e-11 after eps = 1.0e-12; (C) +1.824e-01; lambda_min(2Kt) +3.654e-01 >= h (C) = +3.648e-01
+(a) n=5 c=3 two heavy copies       solver slack +2.542e-01; re-check (P) -8.2e-11 -> +2.0e-12 after eps = 4.2e-11; (C) +2.542e-01; lambda_min(2Kt) +5.091e-01 >= h (C) = +5.083e-01
+(a) n=5 c=3 one heavy copy         solver slack +1.350e-01; re-check (P) -6.3e-11 -> +2.0e-12 after eps = 3.2e-11; (C) +1.350e-01; lambda_min(2Kt) +2.741e-01 >= h (C) = +2.701e-01
+(a) n=5 c=3 uniform W-plane        solver slack +5.000e-01; re-check (P) +3.5e-08 -> +3.5e-08 after eps = 1.0e-12; (C) +5.000e-01; lambda_min(2Kt) +1.375e+00 >= h (C) = +1.000e+00
+(a) n=6 c=3 random real            solver slack +1.065e-01; re-check (P) +7.8e-11 -> +8.1e-11 after eps = 1.0e-12; (C) +1.065e-01; lambda_min(2Kt) +9.070e-01 >= h (C) = +3.194e-01
+(a) n=6 c=3 near rank-one frame    solver slack +2.399e-02; re-check (P) +1.2e-10 -> +1.2e-10 after eps = 1.0e-12; (C) +2.399e-02; lambda_min(2Kt) +3.707e-01 >= h (C) = +7.196e-02
+(a) n=6 c=3 two nearly unused copies solver slack +7.634e-04; re-check (P) -1.8e-06 -> +3.0e-12 after eps = 6.0e-07; (C) +7.601e-04; lambda_min(2Kt) +2.518e-03 >= h (C) = +2.280e-03
+(a) n=6 c=3 two heavy copies       solver slack +1.649e-01; re-check (P) -7.4e-09 -> +3.0e-12 after eps = 2.5e-09; (C) +1.649e-01; lambda_min(2Kt) +4.954e-01 >= h (C) = +4.946e-01
+(a) n=6 c=3 one heavy copy         solver slack +9.086e-02; re-check (P) +3.2e-11 -> +3.5e-11 after eps = 1.0e-12; (C) +9.086e-02; lambda_min(2Kt) +3.012e-01 >= h (C) = +2.726e-01
+(a) n=6 c=3 uniform W-plane        solver slack +3.333e-01; re-check (P) +1.0e-08 -> +1.0e-08 after eps = 1.0e-12; (C) +3.333e-01; lambda_min(2Kt) +1.667e+00 >= h (C) = +1.000e+00
+(a) n=5 c=3 heavy family d=0.1     solver slack +4.518e-02; re-check (P) +2.2e-11 -> +2.4e-11 after eps = 1.0e-12; (C) +4.518e-02; lambda_min(2Kt) +9.238e-02 >= h (C) = +9.036e-02
+(a) n=7 c=5 heavy family d=0.1     solver slack +3.720e-02; re-check (P) +8.0e-10 -> +8.1e-10 after eps = 1.0e-12; (C) +3.720e-02; lambda_min(2Kt) +7.664e-02 >= h (C) = +7.439e-02
+(a) n=7 c=5 heavy family d=0.2     solver slack +6.500e-02; re-check (P) +2.0e-10 -> +2.0e-10 after eps = 1.0e-12; (C) +6.500e-02; lambda_min(2Kt) +1.397e-01 >= h (C) = +1.300e-01
+(a) n=8 c=6 heavy family d=0.2     solver slack +6.061e-02; re-check (P) +7.9e-11 -> +8.1e-11 after eps = 1.0e-12; (C) +6.061e-02; lambda_min(2Kt) +1.311e-01 >= h (C) = +1.212e-01
+(a) n=9 c=7 heavy family d=0.2     solver slack +5.730e-02; re-check (P) +7.5e-11 -> +7.7e-11 after eps = 1.0e-12; (C) +5.730e-02; lambda_min(2Kt) +1.247e-01 >= h (C) = +1.146e-01
+(a) n=10 c=8 heavy family d=0.2     solver slack +5.473e-02; re-check (P) +2.0e-10 -> +2.0e-10 after eps = 1.0e-12; (C) +5.473e-02; lambda_min(2Kt) +1.197e-01 >= h (C) = +1.095e-01
+(b) trace-weighted closed-form split at n = 6, c = 4 (three POVMs): smallest child eigenvalue -7.998e-02 < 0
+PASS

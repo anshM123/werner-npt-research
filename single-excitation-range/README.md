@@ -470,6 +470,15 @@ re-checked with independent eigenvalue computations, together with the guard λ_
   slack is somewhat larger at random and near rank-one frames (optimal μ between 0.02 and 0.2).
 - *The splits must be matrices.* At a near rank-one real frame (n = 5, c = 3), splits k_{S,u} = w_{S,u} R_S with the
   best scalar weights fail, while a matrix-valued balanced certificate exists.
+- *Three numbers per split are enough in every test.* Put E_S = 2Ā_S − Σ_{t∈S} β_t^*β_t, which is positive
+  semidefinite (a sum of the one-copy terms 2Ā_t ⊗ I − β_t^*β_t). A balanced certificate of the form
+  k_{S,u} = x_{S,u} Ā_u/Tr A_u + w_{S,u} E_S + y_{S,u} I exists at all six POVM types at n = 5, c = 3, at all six at
+  n = 6, c = 3, and on the heavy-copy family for n = 5, …, 10. The child slack ranges from 7.6 × 10^{−4} to 0.5
+  (`code/check_structured_split.py`; each solution is rebuilt from its numbers, re-checked, and repaired for solver
+  tolerance by a shift of at most 6 × 10^{−7}). The numbers vary from pair to pair. Closed-form choices we tried
+  (even or trace-weighted splits of R_S, of E_S or of 2I + 2Ā_H − Σβ^*β, with or without moving vacuum between
+  children, matrix-weighted splits) each fail at some tested POVM; for example the trace-weighted split of
+  2I + 2Ā_H − Σβ^*β leaves a child eigenvalue −8.0 × 10^{−2} at n = 6, c = 4.
 
 Does every sector have a balanced certificate? If so, the endpoint would hold on all single-excitation range planes,
 for every n and every co-range. We know no counterexample. Conjecture 6 showed how evidence at small n can mislead,
@@ -635,6 +644,8 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   matrix-valued splits, and the child-form formula Π_{S'} = Σ_{s'} Tr(N N̄) with its rank-one antisymmetric part
   (complex POVMs, error 7 × 10^{−15}). Every solution is re-checked, with the guard λ_min(2K̃_c) ≥ (n + 1)λ. This is evidence,
   not proof.
+- `code/check_structured_split.py` solves the three-number balanced certificates of Proposition 7 (n = 5, 6 and the
+  heavy-copy family up to n = 10), rebuilds and re-checks every solution, and shows a closed-form split failing.
 - `code/check_small_ranktwo.py` checks Proposition 8: the identity 2K̃_c = 4 Vac + α^*α − 2 Σ_t Δ_t^{exc} (complex
   POVMs, n = 3, 4, 5, every c; error 2 × 10^{−15}), the spectrum of Δ_t, the central-spin bound on every pattern, the
   corollary at 60 random POVMs, and an example outside the threshold of Proposition 5.
