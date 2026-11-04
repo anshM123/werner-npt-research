@@ -1,0 +1,10 @@
+n=3 t=0: pair form 70.360582, embedding 70.360582, Thm-3(n+1) lower bound 24.304358, p=0.271
+n=3 t=1: pair form 66.401038, embedding 66.401038, Thm-3(n+1) lower bound 22.934826, p=0.139
+n=3 t=2: pair form 78.489640, embedding 78.489640, Thm-3(n+1) lower bound 29.846111, p=0.328
+n=3 t=3: pair form 77.991902, embedding 77.991902, Thm-3(n+1) lower bound 30.582988, p=0.087
+n=4 t=0: pair form 173.299261, embedding 173.299261, Thm-3(n+1) lower bound 58.025783, p=0.270
+n=4 t=1: pair form 190.481176, embedding 190.481176, Thm-3(n+1) lower bound 72.013333, p=0.333
+n=4 t=2: pair form 184.379874, embedding 184.379874, Thm-3(n+1) lower bound 64.623675, p=0.358
+n=4 t=3: pair form 158.513067, embedding 158.513067, Thm-3(n+1) lower bound 61.938948, p=0.226
+embedding identity worst rel err 7.288374461701381e-16
+PASS

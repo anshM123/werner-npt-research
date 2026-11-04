@@ -250,6 +250,19 @@ elements of S is a single sector or the pair {0, 1}, then q_4(X) ≥ 0 for every
 K^U_c ⪰ 0 at n = 4 for every c (Corollary 4 of `single-excitation-range/`, transported to unnormalised U by
 K^{UM}(F) = K^U(M̄F)). The run {0, 1} is Theorem 6. ∎
 
+*The top pair is a Lagrange sector on n + 1 copies.* Take the co-range in sectors n − 1 and n, with G = F_{n−1} and
+P = F_n. Add a copy 0 whose block is −√2 a_r|1⟩. On the n + 1 copies, a string with one hole has its hole either at
+copy 0 (this is P) or elsewhere with letter 1 at copy 0 (this is G). With 𝒟' the map of Theorem 3 in
+`single-excitation-range/` for these n + 1 copies,
+
+    q = ‖F‖² + ‖⟨a|G‖² + Vac(G) − ½‖𝒟'F‖²,
+
+and the pair terms involving copy 0 are exactly −(αP + √2⟨a|G). So the vacuum amplitude acts as one extra copy.
+Theorem 3 on the n + 1 copies falls short by exactly ‖⟨a|P‖²: it charges the copy-0 hole with I + aa^*, while the form
+supplies only I. Minimising that bound over P leaves a condition that is false at random tangent data
+(`code/check_tangent_toppair.py`, `code/check_tangent_obstruction.py`). So a proof of the top pair must keep the slack
+that Theorem 3's argument discards.
+
 What is missing at n = 4 is co-ranges with two adjacent occupied sectors among {1, 2}, {2, 3} and {3, 4}.
 Adversarial minima of these sub-chains are 0 at the boundary, so a proof has to be sharp. Three routes fail:
 - AM–GM with constant weights fails at the top sector.
@@ -416,6 +429,8 @@ Besides the counterexamples above, the following fail.
 - `code/check_tangent_covariance.py`: K^{UM}(F) = K^U(M̄F). Log: `logs/check_tangent_covariance.log`.
 - `code/check_tangent_both_sides.py`: Theorem 6 from direct partial traces (n = 2–5, adversarial at n = 3, 4). Log:
   `logs/check_tangent_both_sides.log`.
+- `code/check_tangent_toppair.py`, `code/check_tangent_obstruction.py`: the top pair as a Lagrange sector on n + 1
+  copies (identity error 7 × 10^{−16}), and the failure of the condition left by Theorem 3. Logs: same names.
 
 ## Status
 

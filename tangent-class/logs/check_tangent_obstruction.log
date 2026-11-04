@@ -1,0 +1,12 @@
+n=3 trial 0: lambda_max(Gamma_1^*Gamma_1 - Vac_11) = +0.5842
+n=3 trial 1: lambda_max(Gamma_1^*Gamma_1 - Vac_11) = +0.5346
+n=3 trial 2: lambda_max(Gamma_1^*Gamma_1 - Vac_11) = +0.4656
+n=3 trial 3: lambda_max(Gamma_1^*Gamma_1 - Vac_11) = +0.3961
+n=3 trial 4: lambda_max(Gamma_1^*Gamma_1 - Vac_11) = +0.3432
+n=4 trial 0: lambda_max(Gamma_1^*Gamma_1 - Vac_11) = +0.4834
+n=4 trial 1: lambda_max(Gamma_1^*Gamma_1 - Vac_11) = +0.4410
+n=4 trial 2: lambda_max(Gamma_1^*Gamma_1 - Vac_11) = +0.6069
+n=4 trial 3: lambda_max(Gamma_1^*Gamma_1 - Vac_11) = +0.5641
+n=4 trial 4: lambda_max(Gamma_1^*Gamma_1 - Vac_11) = +0.6184
+largest 0.6184496601816041
+PASS (the sufficient condition fails, as claimed)
