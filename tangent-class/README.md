@@ -11,6 +11,13 @@ Added 4 November 2026: a sector analysis. The endpoint holds for every n when ra
 tangent space (Theorem 6). The vacuum amplitude can be eliminated exactly (Proposition 5). At four copies the
 endpoint holds for every co-range without two adjacent occupied sectors among {1, 2}, {2, 3}, {3, 4} (Corollary 7).
 
+Added 4 November 2026, later: a different route through relative anchors (`single-excitation-range/`, Lemmas 11′
+and 13′, Corollary 15). Every tangent plane contains a single excitation p. The endpoint on the plane, with any
+co-range and every n, follows from finitely many matrix inequalities on the copies where p is nonzero. Those are the
+same conditions as in Conjecture 12 there. So Conjecture 12 for every n would settle this whole class. Without the
+conjecture it settles the planes whose single excitation lives on at most two copies, or is a balanced three-copy
+vector.
+
 **Status (4 November 2026): the one-copy route is closed on this class.** Every sign-free one-copy condition we
 formulated for the reductions is false:
 - Conjecture SC and its strong form SC∞: a pencil can be positive definite at λ = −½ (exact at n = 3; n = 4, 5, 6 in
@@ -442,4 +449,6 @@ Besides the counterexamples above, the following fail.
   So the one-copy route does not settle the endpoint on 𝒯.
 - **Open:** the endpoint on 𝒯_n for n ≥ 4 (it holds for n ≤ 3 by Tomar's theorem). At n = 4 only co-ranges with two
   adjacent occupied sectors among {1, 2}, {2, 3}, {3, 4} remain.
+- **Reduction (4 November 2026, `single-excitation-range/` Corollary 15):** the endpoint on 𝒯_n for every n follows
+  from Conjecture 12 there (finite group conditions (R∞), (R2) for single excitations with positive weights).
 - **Not journal peer-reviewed.**

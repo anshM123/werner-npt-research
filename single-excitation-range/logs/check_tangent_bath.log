@@ -1,0 +1,6 @@
+k=2 m=1: 189 eigenvalues, max deviation 6.2e-15, smallest -3.44e-16
+k=2 m=2: 729 eigenvalues, max deviation 8.9e-15, smallest -4.45e-16
+k=3 m=1: 729 eigenvalues, max deviation 1.0e-14, smallest -3.81e-16
+k=3 m=2: 2673 eigenvalues, max deviation 2.0e-14, smallest -9.71e-16
+k=2 m=3: 2673 eigenvalues, max deviation 1.7e-14, smallest -8.33e-16
+PASS

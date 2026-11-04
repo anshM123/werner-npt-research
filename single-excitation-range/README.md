@@ -778,10 +778,34 @@ Then q_n(X) ≥ 0 for every X whose range lies in such a plane containing p, wit
 ū_0 ⊗ w̄_k + ū_1 ⊗ w̄_{k−1}. ∎
 
 For a vector with no zero weight, these compressions are exactly the conditions (R∞) of Lemma 13 with the whole
-system as the group. So Conjecture 12 for every n implies them, by the converse half of Lemma 13. When p has at most
-two nonzero weights, Proposition 10 already covers every plane containing p. Numerically the compressions are ⪰ 0 for
-n = 3 and 4, at every k, for random, structured and minimised weights. For tangent planes this would replace the
-chain analysis of `tangent-class/`.
+system as the group. Zero weights reduce in the same way.
+
+*Lemma 13′.* For p = p_G ⊗ |0⟩^{⊗m}, the compressions of Lemma 11′ are ⪰ 0 for every m ≥ 0 and every k if and only
+if (R∞) and (R2) hold for p_G.
+
+*Proof.* Follow the proof of Lemma 13. Now a state may also carry no row excitation at all, G0_{j+1} ⊗ c…c. With N
+charged bath copies, the block on G1_j ⊕ (G0_{j+1} ⊗ C^N) ⊕ G0_{j+1} is
+
+    [[Y^{11}, −½Y^{10} ⊗ 1^T, Y^{10}], [−½Y^{01} ⊗ 1, A^{00} ⊗ I_N + ¼Y^{00} ⊗ (J_N − I_N), −½Y^{00} ⊗ 1],
+     [Y^{01}, −½Y^{00} ⊗ 1^T, Y^{00}]].
+
+- On 1^⊥ it is ¼(3A^{00} + B^{00}).
+- On the symmetric vector, write the three components as z_1, z_2, z_3. The substitution z_3 ↦ z_3 − (√N/2) z_2 turns
+  the block into Y|_{G1_j ⊕ G0_{j+1}} ⊕ ¼(3A^{00} + B^{00}).
+- For N = 0 the block is Y|_{G1_j ⊕ G0_{j+1}}.
+- The blocks with a bath copy excited in row and column are those of Lemma 13. ∎
+
+**Corollary 15.** If Conjecture 12 holds for every n, then q_n ≥ 0 on every tangent plane (range in
+span{|0…0⟩} ⊕ H_1), with any co-range, for every n.
+
+*Proof.* By Lemma 13, Conjecture 12 for every n is equivalent to (R∞) and (R2) for every group vector with positive
+weights. Up to local unitaries fixing |0⟩ and the order of the copies, the vector p ∈ L ∩ H_1 of a tangent plane L is
+some p_G ⊗ |0⟩^{⊗m}. Apply Lemmas 13′ and 11′. ∎
+
+Two cases hold without the conjecture: tangent planes containing a single excitation on at most two copies
+(Proposition 10), and those containing a balanced three-copy single excitation (Proposition 14 and Lemma 13′).
+Numerically the compressions of Lemma 11′ are ⪰ 0 for n = 3 and 4, at every k, for random, structured and minimised
+weights. For tangent planes this would replace the chain analysis of `tangent-class/`.
 
 ## What remains for single-excitation ranges
 
@@ -893,7 +917,9 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   ≤ 10^{−14}). It also checks Y_c ⪰ 0 directly for the balanced triple at n = 3, …, 6.
   `code/check_balanced_triple_exact.py` is the exact proof of (R∞) and (R2) for Proposition 14. It works over Q and
   rejects the false variant A − (11/10)B. `code/tangent_relative.py` gives the evidence for the tangent compressions
-  (n = 3, 4).
+  (n = 3, 4). `code/check_tangent_bath.py` checks Lemma 13′: the eigenvalues of its blocks reproduce the spectrum of
+  (M^{⊗n} − R_p)^Γ on (H_0 ⊕ H_1) ⊗ (all columns), computed directly, for k = 2, 3 and m = 1, 2, 3 (deviation
+  ≤ 2 × 10^{−14}).
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});
