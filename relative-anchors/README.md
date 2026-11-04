@@ -17,6 +17,7 @@ This folder collects what we can prove about the group conditions for every k.
   - (R∞)_{k−1} holds on its letter-1 block (Theorem T), on every block in which one copy carries the letter 2 in row
     and column (Proposition T2), and on the block in which every copy carries one letter 2 (Proposition U0).
   - (R∞)_{k−2} has the explicit kernel vector vac ⊗ J⁻|1…1⟩ (Proposition K2).
+  - (R∞)_0 holds completely (Theorem B0, with one two-parameter inequality checked in interval arithmetic).
 - **Equal weights** (w_t = 1).
   - The letter-1 block of every (R∞)_j is ⪰ 0 for every k, with the kernel described exactly (Theorem E1). The proof is
     computer-assisted, symbolic in k.
@@ -32,7 +33,7 @@ single-copy excitation, all ‖x_t‖ equal) with |G| ≤ 14. Hence, for every n
 (Local unitaries fixing |0⟩ bring such a vector to Σ_{t∈G} |1_t⟩.)
 
 **Open.**
-- For general weights: the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 1 (for k ≥ 5), and (R∞)_j for 0 ≤ j ≤ k − 2
+- For general weights: the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 1 (for k ≥ 5), and (R∞)_j for 1 ≤ j ≤ k − 2
   (for k ≥ 4; k = 4 is being certified).
 - At equal weights: the "case I" letter-2 blocks for k ≥ 15.
 
@@ -187,6 +188,71 @@ Q = (vac, 1…1).
 Theorem T and Proposition K2 account for every kernel vector beyond p ⊗ H_j that our numerics found at j = k − 1 and
 j = k − 2.
 
+## 3b. The condition (R∞)_0, every k
+
+**Theorem B0.** For every k ≥ 2 and every positive weight vector, the condition (R∞)_0 holds.
+
+Normalise |s| = 1 and write x_t = s_t and λ_t = 1/(1 − x_t). Put γ = Σ_t x_t/(2(1 − x_t)) = ½Σ_t(λ_t − 1) ≥ ½. The
+blocks of (R∞)_0 are:
+- the letter-1 block, with states (1@r, vac) and (vac, 1@r);
+- for each r, a 2 × 2 letter-2 block with states (2@r, vac) and (vac, 2@r).
+
+**Closed form** (Lemmas B and G at j = 0, scaled by 2^{k−1}). Let |w⟩ = J⁺|vac⟩ = Σ_t w_t|1@t⟩ and u = E_1^{−1}w.
+Sherman–Morrison gives u_r = w_r/(2(1 − x_r)(1 + γ/2)).
+- The row block is I − ww^T on letter-1 rows and I on letter-2 rows.
+- The column block is I − ½J⁻E_2^{−1}J⁺.
+- The cross block is −½(I − K), with K[a, y] = ⟨u|𝒯_a|y⟩.
+
+**Letter-2 blocks.** The block at r is [[1, −½(1 − κ_r)], [−½(1 − κ_r), η_r]] with
+- η_r = 1/(1 + γ_r/2), where γ_r = Σ_{t≠r} x_t/(2 − x_r − 2x_t);
+- 1 − κ_r = (1 + g_r)/(1 + γ/2), where g_r = x_r/(2(1 − x_r)).
+
+It is ⪰ 0 iff (1 + γ/2)² ≥ ¼(1 + g_r)²(1 + γ_r/2).
+
+*Proof.* Put a = 1 + g_r and G′ = Σ_{t≠r} g_t, so that 1 + γ/2 = ½(a + 1 + G′).
+- Since (a + 1 + G′)² ≥ a² + 2a(1 + G′), it suffices that 4(1 + G′) ≥ aγ_r.
+- Now aγ_r − 4G′ = Σ_{t≠r} d_t with d_t = x_t[(2 − x_r)/(2(1 − x_r)(2 − x_r − 2x_t)) − 2/(1 − x_t)].
+- Each d_t ≤ 4x_t/(1 − x_r). Indeed, for y = x_t ∈ [0, 1 − x_r] we have 2 − x_r − 2y ≥ 1 − y, so
+  (2 − x_r)/(2(2 − x_r − 2y)) ≤ 1/(1 − y) ≤ 4 + 2(1 − x_r)/(1 − y). The last step uses (2x_r − 1)/(1 − y) ≤ 1 when
+  x_r > ½.
+- Summing gives Σ_t d_t ≤ 4. ∎
+
+**Letter-1 block.**
+- **The cross block factors.** With τ = 1/(1 + γ/2), Λ = diag(λ_r) and P = I − ww^T, it equals −½τPΛ. This uses
+  (I − K)^T w = 0, so (w, 0), which is p ⊗ H_0, is in the kernel.
+- **Reduction to (C0).** Eliminate the rows (Lemma G gives the column block as (I + ½N)^{−1} with N = J⁻C^{−1}J⁺). The
+  block is ⪰ 0 iff v^TΛ(I + ½N)Λv ≤ 4(1 + γ/2)²|v|² for all v ⊥ w.
+- **The form of (C0) we prove.** With v_r = w_r ζ_r, δ_rt = 1 − x_r − x_t and W_rt = x_r x_t/δ_rt, it reads: for all
+  ζ with Σ_r x_r ζ_r = 0 and S = Σ_r x_r ζ_r²,
+
+      L := Σ_r x_r λ_r² ζ_r² + ¼ Σ_{r<t} W_rt (λ_r ζ_r + λ_t ζ_t)² ≤ (2 + γ)² S.               (C0)
+
+*Proof of (C0).* Order x_1 ≥ x_2 ≥ ⋯ and put q_r = x_r ζ_r²/S.
+- **A consequence of the constraint.** x_1ζ_1 = −Σ_{u≠1} x_u ζ_u, and similarly for every r, gives
+  x_r ζ_r² ≤ (1 − x_r)S. So q is a probability vector with q_r ≤ 1 − x_r = 1/λ_r.
+- **Regime A, x_1 + x_2 ≤ ¾.** Then every δ_rt ≥ ¼.
+  - With (a + b)² ≤ 2a² + 2b², L ≤ S Σ_r q_r λ_r(λ_r + 2).
+  - Maximising over q, the most mass goes to the largest λ. This gives L/S ≤ λ_1 + 2 + x_1λ_2(λ_2 + 2).
+  - Also γ ≥ γ_A := ½(λ_1 − 1) + ½(λ_2 − 1) + ½(1 − x_1 − x_2).
+  - The inequality λ_1 + 2 + x_1λ_2(λ_2 + 2) ≤ (2 + γ_A)², in the two variables x_1, x_2, holds on the whole region.
+    This is checked in interval arithmetic on an adaptive box subdivision. The largest ratio is 0.80.
+- **Regime B, x_1 + x_2 > ¾.**
+  - Pairs not containing copy 1 have δ ≥ 3/8. For them use the bound of Regime A with W ≤ (8/3)x_r x_t.
+  - For the pairs (1, t) use the identity λ_1ζ_1 + λ_tζ_t = λ_1λ_t[δ_1t(ζ_1 + ζ_t) − σ_1t], with
+    σ_1t = Σ_{u∉{1,t}} x_u ζ_u. Here σ_1t² ≤ δ_1t S.
+  - The elementary facts x_tλ_1 ≤ 1, x_1λ_t ≤ 1, λ_1²δ_1t ≤ min(λ_1, 1/(4x_t)) and Σ_{t≥2} x_tλ_1 = 1 give
+    L/S ≤ Σ_r c_r q_r + ½λ_1λ_2, with
+    - c_1 = λ_1² + λ_2²;
+    - c_2 = λ_2² + λ_2 min(λ_1, 1/(4x_2)) + (4/3)λ_2² ε, where ε = 1 − x_1 − x_2;
+    - c_t = λ_t² + λ_t min(λ_1, 1/(4x_t)) + (4/3)λ_t²(1 − x_1 − x_t) for t ≥ 3.
+  - Bound the tail copies by x_t ≤ ε and let the tail take any mass. This leaves a linear program in (q_1, q_2), and the
+    inequality U_2(x_1, x_2) ≤ (2 + γ_B)², where γ_B = ½(λ_1 − 1) + ½(λ_2 − 1) + ½ε.
+  - That inequality is checked in interval arithmetic for x_1 ≤ 0.99. The largest ratio, 0.944, occurs near
+    x_1 = x_2 = ½.
+  - For x_1 ≥ 0.99 a direct estimate gives ratio ≤ 4(2.52λ_1 + 1.06)/(λ_1 + 3)² < 0.11. ∎
+
+The worst case of (C0) itself is the ratio 4/9, approached as x → (½, ½, 0, …).
+
 **What blocks the rest.** Two parts are still open:
 - the type I blocks with 1 ≤ |T| ≤ k − 1;
 - the conditions (R∞)_j with j ≤ k − 2.
@@ -268,3 +334,4 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `check_vs_builder.py`, `check_orbit_vs_eqlib.py` | Reduced letter-1 forms against the builder (k ≤ 5) and against explicit vectors (k ≤ 9) |
 | `check_caseII.py` | Proposition E2 |
 | `check2_vs_builder.py`, `run2.py` | Reduced letter-2 forms against the builder (k = 3, 4); exact elimination for every k ≤ 14 |
+| `check_bottom_condition.py`, `c0_interval.py` | Theorem B0: closed form against a direct construction (k ≤ 5), the letter-2 blocks, the reduction to (C0), the bound chains at random points, and the two reduced inequalities in interval arithmetic |

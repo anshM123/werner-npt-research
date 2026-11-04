@@ -1,0 +1,9 @@
+(a) k=2: closed form vs direct, max error 1.1e-16
+(a) k=3: closed form vs direct, max error 1.1e-16
+(a) k=4: closed form vs direct, max error 5.6e-17
+(a) k=5: closed form vs direct, max error 1.1e-16
+(b) letter-2 blocks: formula matches the closed form; largest ratio (1/4)(1+g_r)^2(1+gamma_r/2)/(1+gamma/2)^2 = 1.000000 (<= 1)
+(c) PSD of the letter-1 block <=> (C0): disagreements 0
+(d) bound chains of Regimes A and B: violations 0
+(e) interval arithmetic: Regime A PASS (30, 3); Regime B (x1 <= 0.99) PASS (1347, 7)
+PASS
