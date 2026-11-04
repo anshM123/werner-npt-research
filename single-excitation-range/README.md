@@ -587,8 +587,11 @@ is the family where the certificates of Proposition 6 fail from n = 7 on.
 Part (d) also covers configurations missed by Propositions 5 and 8 and by (b) and (c), for example s_1² = 0.9,
 s_2² = 0.5 at n = 5, c = 3. The same identities reduce the sector with h holes to a statement about one positive
 operator C on C² ⊗ H and a 2 × 2 matrix Λ ⪰ 0: if Λ ⊗ I + C^Γ ⪰ 0 and ‖C‖ ≤ h Tr Λ, then
-Tr_V g(Λ ⊗ I + C^Γ) ⪰ g(Tr_V C). Adversarial searches with dim H ≤ 4 found no violation for h ≤ 8, but found one at
-h = 16, so that route alone cannot reach every h.
+Tr_V g(Λ ⊗ I + C^Γ) ⪰ g(Tr_V C). This abstract statement is false once ‖C‖ may reach 2.82 Tr Λ: there are
+instances with dim H = 3, certified in 60-digit arithmetic, so it cannot give h ≥ 3. (An earlier version of this
+page said that no violation was found for h ≤ 8; those searches had only drifted to the trivial point C, Λ → 0.)
+For h = 2, about 3000 local searches with dim H ≤ 12 found no violation. The physical data have more structure
+than these hypotheses, so the counterexamples say nothing about the sectors themselves.
 
 *The elimination works for any other copies.* The first step of the proof of (a) never uses that the other copies
 have rank one. Let 2K̃'_k be the sector forms of the other n − 1 copies after the same change of reference index (blocks
