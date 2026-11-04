@@ -1,6 +1,6 @@
-"""Sanity check of Theorem 3' on examples: at each thick copy take a Finsler direction H (N_s(H) = 0, Q_s(H) < 0, from a
-small SDP), walk the line M = I + eps H to both ends of its PSD interval, and recurse on the end operators until every
-copy is thin.  Checks: R is quasi-concave on each line (R(0) >= min of the end values), and all leaves have q >= 0.
+"""Sanity check of Theorem 3' on examples: at a thick copy that has a Finsler direction H (N_s(H) = 0, Q_s(H) < 0, from a
+small SDP; Condition SC'-infinity asks that one exists), walk the line M = I + eps H to both ends of its PSD interval,
+and recurse on the end operators until every copy is thin.  Checks: R is quasi-concave on each line (R(0) >= min of the end values), and all leaves have q >= 0.
 Needs cvxpy (solver CLARABEL)."""
 import numpy as np, cvxpy as cp
 from scipy.linalg import sqrtm
@@ -31,7 +31,7 @@ def squeeze(X, n, s, M):
     T = np.moveaxis(np.tensordot(T, G, axes=([n + s], [0])), -1, n + s); return T.reshape(d ** n, d ** n)
 
 
-stats = {"lines": 0, "worst_drop": np.inf, "leaves": 0, "min_leaf": np.inf}
+stats = {"lines": 0, "worst_drop": np.inf, "leaves": 0, "min_leaf": np.inf, "stuck": 0}
 
 
 def descend(X, n, depth=0):
@@ -39,7 +39,12 @@ def descend(X, n, depth=0):
     thick = [s for s in range(n) if dims[s] == 3]
     if not thick or depth > n:
         stats["leaves"] += 1; stats["min_leaf"] = min(stats["min_leaf"], R0); return R0
-    s = thick[0]; K, Kn = squeeze_forms(X, n, s); H, val = finsler(K, Kn)
+    for s in thick:                                  # a thick copy with a Finsler direction (Condition SC'-infinity)
+        K, Kn = squeeze_forms(X, n, s); H, val = finsler(K, Kn)
+        if val < -1e-9:
+            break
+    else:
+        stats["stuck"] += 1; stats["leaves"] += 1; stats["min_leaf"] = min(stats["min_leaf"], R0); return R0
     ev = np.linalg.eigvalsh(H); em, ep = -1 / ev[-1], -1 / ev[0]                 # PSD interval of I + eps H
     ends = []
     for e in (em * (1 - 1e-9), ep * (1 - 1e-9)):
@@ -58,6 +63,6 @@ for n, trials in ((3, 3), (4, 1)):
         R0 = q(X / np.linalg.norm(X), n); m = descend(X, n)
         print(f"n={n} trial {trial}: R(C) = {R0:.4f}, minimum over the leaves = {m:.4f}")
 print(f"lines followed {stats['lines']}, smallest R(start) - min(R(ends)) {stats['worst_drop']:+.2e} (>= 0: quasi-concavity), "
-      f"leaves {stats['leaves']}, smallest leaf value {stats['min_leaf']:+.4f}")
-assert stats["worst_drop"] > -1e-7 and stats["min_leaf"] >= 0
+      f"leaves {stats['leaves']}, smallest leaf value {stats['min_leaf']:+.4f}, operators with no good thick copy {stats['stuck']}")
+assert stats["worst_drop"] > -1e-7 and stats["min_leaf"] >= 0 and stats["stuck"] == 0
 print("PASS")

@@ -2,5 +2,5 @@ n=3 trial 0: R(C) = 0.6298, minimum over the leaves = 0.1504
 n=3 trial 1: R(C) = 0.6079, minimum over the leaves = 0.1383
 n=3 trial 2: R(C) = 0.5909, minimum over the leaves = 0.1528
 n=4 trial 0: R(C) = 0.4642, minimum over the leaves = 0.0878
-lines followed 36, smallest R(start) - min(R(ends)) +4.54e-02 (>= 0: quasi-concavity), leaves 40, smallest leaf value +0.0878
+lines followed 36, smallest R(start) - min(R(ends)) +4.54e-02 (>= 0: quasi-concavity), leaves 40, smallest leaf value +0.0878, operators with no good thick copy 0
 PASS

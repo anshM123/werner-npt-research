@@ -1,0 +1,21 @@
+# python search_corange.py n starts seed
+## logC_2_1.txt
+n=2 start 0: nu_0 = -4.0640e-02, thickness 0.051
+n=2 start 1: nu_0 = -4.4391e-02, thickness 0.051
+n=2 start 2: nu_0 = -3.7911e-02, thickness 0.050
+n=2 start 3: nu_0 = -7.8856e-02, thickness 0.050
+n=2 start 4: nu_0 = -3.5468e-02, thickness 0.050
+n=2 start 5: nu_0 = -4.3500e-02, thickness 0.050
+n=2: 0/6 starts reach nu_0 > 0 at thickness >= 0.05
+## logC_3_2.txt
+n=3 start 0: nu_0 = +3.5638e-03, thickness 0.177
+n=3 start 1: nu_0 = +4.0658e-03, thickness 0.158
+n=3 start 2: nu_0 = -3.0780e-03, thickness 0.124
+n=3 start 3: nu_0 = +1.0937e-02, thickness 0.202
+n=3: 3/4 starts reach nu_0 > 0 at thickness >= 0.05
+## logC_3_3.txt
+n=3 start 0: nu_0 = +9.1339e-03, thickness 0.158
+n=3 start 1: nu_0 = +3.6394e-03, thickness 0.172
+n=3 start 2: nu_0 = -8.4509e-03, thickness 0.096
+n=3 start 3: nu_0 = -1.0252e-04, thickness 0.166
+n=3: 2/4 starts reach nu_0 > 0 at thickness >= 0.05

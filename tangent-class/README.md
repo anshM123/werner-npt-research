@@ -1,12 +1,21 @@
-# Tangent planes: an induction that closes with one copy at a time
+# Tangent planes: one-copy reductions of the endpoint, and where they fail
 
 Ansh Mishra and Aryan Senthilkumar, November 2026.
 
-This folder reduces the endpoint inequality, for every n, on a natural class of operators to a 9 × 9 matrix condition at
-a single copy. The class contains every operator whose range lies in the single excitations over a product vector
-(`single-excitation-range/`), with any co-range, so it contains the sectors c ≥ 3 that are still open there. The
-reduction and the identities below are proved. The 9 × 9 condition (Conjecture SC) is supported by numerics at three,
-four and five copies but is **not proved**. Nothing here settles the every-n endpoint.
+This folder studies the endpoint inequality, for every n, on a natural class of operators: rank-two operators whose
+range lies in the tangent space of a product vector. The class contains every operator whose range lies in the single
+excitations over a product vector (`single-excitation-range/`), with any co-range, so it contains the sectors c ≥ 3
+that are still open there. We prove two reductions of EP on this class to conditions on 9 × 9 matrix pencils at single
+copies (Theorems 3 and 3′).
+
+**Correction (4 November 2026).** The per-copy condition we first conjectured (Conjecture SC, and its strong form
+SC∞) is **false**. We give thick operators in the class whose pencil at one copy is positive definite at λ = −½: exactly
+at n = 3, and in floating point with a wide margin at n = 4, 5 and 6 (`code/check_sc_counterexamples.py`). Earlier
+versions of this folder listed numerical support for SC. That support came from random and balanced sampling, and it
+missed these operators. The reductions only need the condition at some copy of each operator (Conditions SC′ and SC′∞
+below). At every counterexample another copy satisfies it. Adversarial searches have not found an operator at which
+every copy fails, but the margins they find go to zero at thin operators. SC′ and SC′∞ are open. Nothing here settles
+the every-n endpoint.
 
 Throughout, q_n(C) = Σ_J (−½)^{|J|} ‖Tr_J C‖² and R(C) = q_n(C)/‖C‖² on (C^3)^{⊗n}, and "rank two" means rank at most two.
 
@@ -82,12 +91,18 @@ M ↦ 𝒩_s(M) := ‖GCG‖² are quadratic forms in M on the nine-dimensional 
 
 where C_{ab} = ⟨a|_s C |b⟩_s and q_{n−1}(·, ·) is the polarised form.
 
-**Conjecture SC.** If C ∈ 𝒯_n (n ≥ 4) is thick (not thin) at copy s, then 𝒬_s − λ𝒩_s is not positive semidefinite on Herm_3
-for any λ ∈ [−½, 0).
+**Conjecture SC (false).** We first conjectured that if C ∈ 𝒯_n (n ≥ 4) is thick at copy s, then 𝒬_s − λ𝒩_s is not
+positive semidefinite on Herm_3 for any λ ∈ [−½, 0). This fails at n = 4, 5 and 6 (see *Counterexamples* below).
 
-**Theorem 3.** If Conjecture SC holds for n copies, then EP on 𝒯_{n−1} implies EP on 𝒯_n. EP holds on 𝒯_n for n ≤ 3
-(Tomar's three-copy theorem). Consequently, Conjecture SC for every n ≥ 4 gives q_n(C) ≥ 0 for every C ∈ 𝒯_n and every
-n. In particular it would give the endpoint for every single-excitation range with any co-range.
+**Condition SC′(n).** No C ∈ 𝒯_n that is thick at every copy has 𝒬_s − λ𝒩_s ⪰ 0 at every copy s for one common
+λ ∈ [−½, 0).
+
+SC′ is implied by the false Conjecture SC, and by the weaker statement that every such C has one copy whose pencil is
+PSD for no λ ∈ [−½, 0).
+
+**Theorem 3.** If SC′(n) holds, then EP on 𝒯_{n−1} implies EP on 𝒯_n. EP holds on 𝒯_n for n ≤ 3 (Tomar's three-copy
+theorem). Consequently, SC′(n) for every n ≥ 4 gives q_n(C) ≥ 0 for every C ∈ 𝒯_n and every n. In particular it would
+give the endpoint for every single-excitation range with any co-range.
 
 *Proof.*
 1. Let m = min R over the unit sphere of 𝒯_n. The minimum exists by compactness. Note m ≤ 0, since
@@ -98,27 +113,32 @@ n. In particular it would give the endpoint for every single-excitation range wi
 4. Otherwise C* is thick at every copy. Fix s. Since GC*G ∈ 𝒯_n for every M ∈ PD_3, M = I minimises
    𝒬_s(M)/𝒩_s(M) over PD_3.
 5. Put f(ε) = 𝒬_s(I + εH) − m𝒩_s(I + εH) for H ∈ Herm_3. Then f ≥ 0 near 0 and f(0) = 0, so f''(0) ≥ 0. Hence
-   𝒬_s − m𝒩_s ⪰ 0 with m ∈ [−½, 0), which contradicts Conjecture SC.
+   𝒬_s − m𝒩_s ⪰ 0 at every copy s, with the same m ∈ [−½, 0). This contradicts SC′(n).
 
 No boundary analysis is needed. ∎
 
-The reduction uses the conjecture only at the value λ = m of a hypothetical negative minimum. Restricting λ to [−½, 0)
-uses only m ≤ 0 (an explicit zero) and the spectral bound. Any proof of SC must be sign-free: it may use EP on
-𝒯_{n−1}, but not q_n ≥ 0 on 𝒯_n.
+The reduction uses the condition only at the value λ = m of a hypothetical negative minimum. Restricting λ to [−½, 0)
+uses only m ≤ 0 (an explicit zero) and the spectral bound. Any proof of SC′ must be sign-free: it may use EP on
+𝒯_{n−1}, but not q_n ≥ 0 on 𝒯_n. The common value of λ matters: over all rank-two operators, not just 𝒯, the
+analogue of SC′ is false (*What does not work*).
 
 ### A second route, without induction
 
-The strong form of the conjecture needs no induction and no input from three copies.
+A stronger condition needs no induction and no input from three copies.
 
-**Conjecture SC∞.** If C ∈ 𝒯_n is thick at copy s, there is H ∈ Herm_3 with 𝒩_s(H) = 0 and 𝒬_s(H) < 0.
+**Conjecture SC∞ (false).** We first conjectured that if C ∈ 𝒯_n is thick at copy s, there is H ∈ Herm_3 with
+𝒩_s(H) = 0 and 𝒬_s(H) < 0. This fails at n = 3, 4, 5 and 6 (see *Counterexamples* below).
 
-What the numerics test is that 𝒬_s − λ𝒩_s is positive semidefinite for no real λ (ν_s < 0 below). When 𝒩_s is
-indefinite, that gives such an H, by convexity of the joint numerical range of two real quadratic forms in nine
+**Condition SC′∞(n).** Every C ∈ 𝒯_n that is thick at some copy has a thick copy s and an H ∈ Herm_3 with
+𝒩_s(H) = 0 and 𝒬_s(H) < 0.
+
+Such an H exists at copy s exactly when 𝒬_s − λ𝒩_s is positive semidefinite for no real λ (ν_s < 0 below), provided
+𝒩_s is indefinite. This follows from convexity of the joint numerical range of two real quadratic forms in nine
 variables (Brickman).
 
-**Theorem 3′.** If SC∞ holds for every n, then q_n ≥ 0 on 𝒯_n for every n.
+**Theorem 3′.** If SC′∞(n) holds for every n, then q_n ≥ 0 on 𝒯_n for every n.
 
-*Proof.* Take a thick copy s and such an H.
+*Proof.* Take a thick copy s with such an H.
 1. H is not semidefinite. Otherwise q(GCG) would be a concave quadratic in ε along M = I + εH, while ‖GCG‖² stays
    positive and affine, so R → −∞, against R ≥ −½.
 2. So M = I + εH is positive definite exactly on an interval (ε_−, ε_+) and singular at both ends.
@@ -126,8 +146,8 @@ variables (Brickman).
    least the smaller of its limits at the two ends.
 4. The end operators are thin at s and still lie in 𝒯. An end where GCG = 0 is a proper algebraic condition, and it
    can be avoided by perturbing H inside {𝒩_s = 0}, keeping 𝒬_s(H) < 0.
-5. Squeezes at other copies keep a thin copy thin. Repeating at each thick copy, every branch ends, after at most n
-   steps, at an operator that is thin at every copy.
+5. Squeezes at other copies keep a thin copy thin. Repeating at a good thick copy each time, every branch ends, after
+   at most n steps, at an operator that is thin at every copy.
 6. Such an operator has range in a product of planes, so q ≥ 0 by separability of 2 × 3 PPT states. ∎
 
 `code/check_line_iteration.py` runs this construction on random tangent operators (three at n = 3, one at n = 4). It
@@ -135,21 +155,56 @@ takes the direction H from a small semidefinite program at each thick copy and f
 all 36 lines, R at the start is at least the smaller end value, with a gap of at least 0.045. All 40 branches end at
 operators that are thin at every copy, and the smallest value there is +0.088.
 
-## Evidence for Conjecture SC
+## Numerics
 
-The numerics test the stronger statement with every λ ∈ [−5, 5]. They report
-ν_s = max_λ λ_min(𝒬_s − λ𝒩_s)/‖𝒩_s‖, and ν_s < 0 means the pencil is PSD for no λ. Scripts are in `code/`, outputs in
-`logs/`.
-- **Random tangent operators** (worst co-range at n = 3, 4; random co-range at n = 5). ν_s < 0 at every copy. Values
-  are about −0.1 at n = 5; they approach 0 only where the raw local support is nearly thin.
+The scripts report ν_s = max_λ λ_min(𝒬_s − λ𝒩_s)/‖𝒩_s‖. ν_s < 0 means the pencil at copy s is PSD for no λ, and
+ν_s > 0 means it is positive definite for some λ. Scripts are in `code/`, outputs in `logs/`.
+
+### Counterexamples to SC and SC∞
+
+Take the W-type range u_z = Σ_t |z at copy t⟩ (z = 1, 2), so U_t = I at every copy and a = 0, and choose the co-range
+adversarially. `code/check_sc_counterexamples.py` checks four operators C = u_1 g_1^T + u_2 g_2^T. All four have rank
+two and are thick at every copy, for range and co-range alike (smallest local-support ratio 0.07–0.22). At copy 0,
+𝒬_0 − λ𝒩_0 is positive definite at λ = −½.
+- **n = 3.** The co-range is integer:
+
+      g_1 = −|000⟩ − 3|001⟩ − 3|010⟩ + |020⟩ + 3|100⟩ − |101⟩ − |112⟩ − |121⟩ + 2|211⟩,
+      g_2 = |000⟩ − 3|002⟩ − 3|020⟩ − 2|122⟩ + 3|200⟩ + |202⟩ + |212⟩ + |221⟩.
+
+  The pencil is positive definite exactly on about (−2.31, −0.36). In exact rational arithmetic, all nine leading
+  principal minors of 𝒬_0 − λ𝒩_0 are positive at λ = −1 and λ = −½. R(C) = 0.32.
+- **n = 4, 5, 6.** The co-ranges are Gaussian-integer vectors (`data/sc_counterexample_corange_n*.npy`). The values of
+  λ_min(𝒬_0 + ½𝒩_0)/‖𝒩_0‖ are +4.2·10⁻³, +5.6·10⁻⁴ and +4.9·10⁻⁴, far above rounding error. The forms agree with
+  direct evaluation of q(GCG) and ‖GCG‖² to 10⁻¹⁴. Since n ≥ 4, these refute Conjecture SC as stated.
+
+Such points are common. With the W-type range fixed, maximising ν_0 over the co-range alone reaches ν_0 > 0, at
+thickness 0.16–0.20, from 5 of 8 random starts at n = 3. It reaches it from none of 6 at n = 2 (`code/search_corange.py`,
+`logs/search_corange.log`). At n = 3 and n = 4, the other copies of the stored operators have no PSD λ
+(ν_s ≤ −0.09). So the counterexamples satisfy SC′ and SC′∞.
+
+*Normal form.* At a thick copy s, a filter A = [[α, β^T], [0, B]] (vacuum first) maps 𝒯 to itself. It changes the
+pencil at s only by H ↦ A^{−*}HA^{−1}. Together with a change of basis of the range, this allows U_s = I and a = 0.
+
+### The surviving conditions
+
+- **Short adversarial searches** inside 𝒯 maximise min_s ν_s (for SC′∞) or the smallest margin at one common
+  λ ∈ [−½, −0.01] (for SC′). Thickness of range and co-range at every copy is held at τ or above. The runs use L-BFGS
+  from random, W-type and counterexample starts: 12 runs at n = 3 and 2 at n = 4 (`code/search_surviving_conditions.py`,
+  `logs/search_surviving_conditions.log`). Every run ended at the thickness floor, with no violation. At n = 3 the best
+  values scale with the floor: about −0.004 at τ = 0.02, −0.01 to −0.06 at τ = 0.05, and −0.05 to −0.10 at τ = 0.1. The
+  n = 4 runs ended at −0.099 (τ = 0.05) and −0.154 (τ = 0.1). So, if SC′∞ holds, it holds with no uniform margin.
+  These searches are short, and the method is the same kind that missed the counterexamples before, so this is weak
+  evidence.
+- **Random tangent operators** (worst co-range at n = 3, 4; random co-range at n = 5). ν_s < 0 at every copy. These
+  operators do not come close to the counterexamples above.
 - **Scale invariance.** For A ∈ GL_3 at copy s, 𝒬_{ACA^*}(H) = 𝒬_C(A^*HA), and likewise for 𝒩
-  (`code/check_exact_facts.py`). Only the sign of ν_s is invariant, so the conjecture can be checked on the compact
-  slice of balanced operators, where Tr_{−s}(CC^* + C^*C) ∝ I. There the margins do not close near thin points.
-  Sampling four regimes (generic, nearly thin U_0, a = 0, range = co-range) gives largest balanced values −0.27, −0.16
-  and −0.13 at n = 2, 3, 4 (`code/check_balanced.py`). Three samples per regime at n = 5 give −0.12 (generic),
-  −0.12 (a = 0) and −0.064 (range = co-range). The margin stays negative but is not uniform in n. In the range =
-  co-range regime it halves at each step: −0.52, −0.25, −0.13, −0.064 for n = 2, …, 5, so ν·2^n ≈ −2.05 at every n.
-  Independent adversarial searches on the balanced slice, not included here, found the same sign.
+  (`code/check_exact_facts.py`). Only the sign of ν_s is invariant, so sampling can use the compact slice of balanced
+  operators, where Tr_{−s}(CC^* + C^*C) ∝ I.
+  - Four regimes (generic, nearly thin U_0, a = 0, range = co-range) give largest balanced values −0.27, −0.16 and
+    −0.13 at n = 2, 3, 4 (`code/check_balanced.py`).
+  - Three samples per regime at n = 5 give −0.12 (generic), −0.12 (a = 0) and −0.064 (range = co-range).
+  - In the range = co-range regime the value halves at each step, −0.52, −0.25, −0.13, −0.064 for n = 2, …, 5.
+  - Random sampling of this kind did not find the counterexamples above.
 - **Targeted test.** The general three-copy operator with a single-copy squeeze minimum at every copy
   (`orbit-notes/data/copywise_min_n3.npy`) has only 67% of its range inside its best tangent space. Projecting it into
   that tangent space and maximising min_s ν_s inside the class runs to thin points, with local-support ratios ≤ 3·10⁻⁴
@@ -158,26 +213,28 @@ The numerics test the stronger statement with every λ ∈ [−5, 5]. They repor
   V, f the missing direction) has 𝒩_s(H) = 0 and 𝒬_s(H) = −½ q_{n−1}(⟨h|C|f⟩). The phase average over e^{iθ}|f⟩⟨w| + h.c. gives
   E𝒬 = 2Re q'(C_ff, C_ww) − ½[q'(C_fw) + q'(C_wf)] and E𝒩 = 2Re⟨C_ff, C_ww⟩.
 
-### A larger class where the numerics also pass
+### A larger class
 
 Theorem 3′ uses only two properties of the class: invariance under single-copy squeezes, and that operators thin at
-every copy are products of planes. So any squeeze-invariant class on which SC∞ holds would do.
+every copy are products of planes. So any squeeze-invariant class on which SC′∞ holds would do.
 
-One candidate passes every test we ran: the bond-two class. Its range planes lie in
+One candidate is the bond-two class. Its range planes lie in
 span{a_1 ⊗ ⋯ ⊗ a_{s−1} ⊗ y ⊗ b_{s+1} ⊗ ⋯ ⊗ b_n : s, y} for product vectors a and b.
 - a = b gives the tangent class.
 - a = |0…0⟩, b = |1…1⟩ contains the GHZ plane span{|0…0⟩, |1…1⟩}, a known extremal case.
 - At each copy, the range component orthogonal to span{a_s, b_s} has rank one with range a_{<s} ⊗ b_{>s}.
 
-In `code/check_bond_two.py`, balanced margins are at most −0.21 at n = 3 and −0.15 at n = 4. They stay below −0.17 next
-to the GHZ plane. Hill-climbs on the balanced margin, not included here, plateau at −0.16 to −0.18 at n = 3 and −0.14
-at n = 4.
+In `code/check_bond_two.py`, balanced margins at random points are at most −0.21 at n = 3 and −0.15 at n = 4. They stay
+below −0.17 next to the GHZ plane. Hill-climbs on the balanced margin, not included here, plateau at −0.16 to −0.18 at
+n = 3 and −0.14 at n = 4. The class contains 𝒯, so the counterexamples to SC∞ above lie in it as well. Only SC′∞ is
+open there.
 
 ## What does not work
 
-Four things fail, and they show that the conjecture uses the tangent structure.
-- **Larger classes.** The one-copy statement fails for every natural enlargement we tried. For ranges with at
-  most two excitations over a product it fails as follows. Projecting the operator above into T^(2) and re-optimising inside that class gives a thick operator
+Four things fail.
+- **Larger classes.** In every natural enlargement of 𝒯 we tried, even SC′∞ fails: there are thick operators whose
+  pencil is positive definite for some λ at every copy. For ranges with at most two excitations over a product it
+  fails as follows. Projecting the operator above into T^(2) and re-optimising inside that class gives a thick operator
   (local-support ratios 0.50, 0.37, 0.35, stored in `data/two_excitation_pencil_psd_n3.npy`) whose pencil is positive
   definite for some λ at every copy (ν_s = +0.037). For general rank-two C, single-copy squeeze minima exist at three
   and four copies (`orbit-notes/`). The known examples have 98–99% of their range inside some T^(n−1) but only
@@ -195,8 +252,8 @@ Four things fail, and they show that the conjecture uses the tangent structure.
   whose three pencils are all positive definite at λ = −½. They are PSD on [−2.39, −0.038], [−5.11, +0.050] and
   [−7.00, −0.026]. Its value is R = 0.265, so what the argument really uses is the coupling λ = R(C), and for
   negative values that is equivalent to EP itself (`code/check_common_shift.py`).
-- **Structured certificates.** Several natural certificates for the conjecture fail adversarially as standalone
-  arguments, though the full 9 × 9 pencil still has a negative direction there:
+- **Structured certificates.** Several natural certificates for the one-copy condition fail adversarially as
+  standalone arguments, at points where the full 9 × 9 pencil still has a negative direction:
   - tilts of the vacuum alone;
   - the vacuum squeeze diag(t, 1, 1) alone;
   - compressing along the weakest direction of U_s;
@@ -213,8 +270,12 @@ Four things fail, and they show that the conjecture uses the tangent structure.
 - `code/common.py`: q_n, tangent-class operators, and the single-copy squeeze forms.
 - `code/check_fock_identity.py`: Proposition 1. Log: `logs/check_fock_identity.log`.
 - `code/check_thin_removal.py`: Lemma 2. Log: `logs/check_thin_removal.log`.
-- `code/check_squeeze_condition.py`: the evidence for Conjecture SC and the two-excitation contrast. Log:
+- `code/check_squeeze_condition.py`: random sampling of ν_s and the two-excitation contrast. Log:
   `logs/check_squeeze_condition.log`.
+- `code/check_sc_counterexamples.py` with `data/sc_counterexample_corange_n{4,5,6}.npy`: the counterexamples to SC and
+  SC∞ (n = 3 exact, needs sympy). Log: `logs/check_sc_counterexamples.log`.
+- `code/search_corange.py`, `code/search_surviving_conditions.py`: the adversarial searches above (W-type range with free
+  co-range; SC′ and SC′∞ inside 𝒯). Logs: `logs/search_corange.log`, `logs/search_surviving_conditions.log`.
 - `code/check_exact_facts.py`: scale invariance, the thin-point tilt identity and the phase-averaged tilt formula. Log:
   `logs/check_exact_facts.log`.
 - `code/check_balanced.py`: balanced-slice margins. Log: `logs/check_balanced.log`.
@@ -231,5 +292,6 @@ Four things fail, and they show that the conjecture uses the tangent structure.
 
 - **Proved:** Proposition 1 (identity, checked numerically), Lemma 2 (identity, checked numerically), Theorem 3 (the
   reduction; re-derived by an independent check) and Theorem 3′.
-- **Not proved:** Conjectures SC and SC∞, and with them the endpoint on 𝒯_n for n ≥ 4.
+- **False:** Conjectures SC and SC∞ (explicit counterexamples, exact at n = 3).
+- **Open:** Conditions SC′ and SC′∞, and with them the endpoint on 𝒯_n for n ≥ 4.
 - **Not journal peer-reviewed.**

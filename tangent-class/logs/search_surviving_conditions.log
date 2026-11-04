@@ -1,0 +1,43 @@
+# python search_surviving_conditions.py n mode start seed steps [tau]; runs of 4 Nov 2026 (default tau = 0.05)
+## log_3_common_random_2.txt
+n=3 common start random: score -3.1083e-01, thick 0.029, R 0.6189
+end: score -1.0240e-02, thick 0.050, R 0.2269, 22s
+## log_3_common_w3ce_1.txt
+n=3 common start w3ce: score -1.3994e-01, thick 0.224, R 0.3255
+end: score -2.1511e-02, thick 0.050, R 0.2296, 21s
+## log_3_exists_W_3.txt
+n=3 exists start W: score -1.9319e-01, thick 0.176, R 0.5686
+end: score -8.8137e-03, thick 0.050, R 0.2293, 18s
+## log_3_exists_random_4.txt
+n=3 exists start random: score -1.6909e-01, thick 0.003, R 0.5448
+end: score -1.2045e-02, thick 0.050, R 0.2509, 18s
+## log_3_exists_w3ce_1.txt
+n=3 exists start w3ce: score -1.3990e-01, thick 0.224, R 0.3255
+end: score -6.0027e-02, thick 0.057, R 0.2941, 17s
+## log_4_exists_W_5.txt
+n=4 exists start W: score -1.3147e-01, thick 0.148, R 0.4651
+end: score -9.8656e-02, thick 0.049, R 0.4243, 63s
+## logB_3_common_W_13_0.1.txt
+n=3 common start W: score -2.1645e-01, thick 0.200, R 0.5583
+end: score -9.7721e-02, thick 0.100, R 0.4442, 23s
+## logB_3_common_random_11_0.1.txt
+n=3 common start random: score -2.2171e-01, thick 0.016, R 0.5413
+end: score -5.3373e-02, thick 0.100, R 0.3364, 23s
+## logB_3_common_random_12_0.05.txt
+n=3 common start random: score -2.9390e-01, thick 0.003, R 0.5790
+end: score -1.7446e-02, thick 0.050, R 0.2488, 23s
+## logB_3_exists_W_15_0.1.txt
+n=3 exists start W: score -1.9957e-01, thick 0.224, R 0.5996
+end: score -9.3618e-02, thick 0.100, R 0.4439, 19s
+## logB_3_exists_random_14_0.1.txt
+n=3 exists start random: score -2.1761e-01, thick 0.008, R 0.5792
+end: score -6.5358e-02, thick 0.099, R 0.3886, 16s
+## logB_3_exists_random_17_0.02.txt
+n=3 exists start random: score -2.6334e-01, thick 0.002, R 0.6100
+end: score -4.1699e-03, thick 0.020, R 0.2072, 20s
+## logB_3_exists_w3ce_16_0.1.txt
+n=3 exists start w3ce: score -1.3874e-01, thick 0.218, R 0.3252
+end: score -7.2028e-02, thick 0.099, R 0.2939, 19s
+## logB_4_common_W_18_0.1.txt
+n=4 common start W: score -2.0168e-01, thick 0.143, R 0.4893
+end: score -1.5402e-01, thick 0.100, R 0.4542, 79s

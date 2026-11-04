@@ -1,0 +1,7 @@
+n=3: rank 2, smallest local-support ratio 0.222, R = 0.3228; forms vs direct 5.6e-15; copy 0: lambda_min(Q + N/2)/||N|| = +5.644e-03, PD for lambda in [-2.31, -0.36]; other copies: largest margin -0.134
+n=3 exact: Q_0 - (-1) N_0 has all nine leading principal minors positive: True (smallest 427/4)
+n=3 exact: Q_0 - (-1/2) N_0 has all nine leading principal minors positive: True (smallest 271/4)
+n=4: rank 2, smallest local-support ratio 0.160, R = 0.2725; forms vs direct 7.2e-15; copy 0: lambda_min(Q + N/2)/||N|| = +4.244e-03, PD for lambda in [-4.00, -0.29]; other copies: largest margin -0.091
+n=5: rank 2, smallest local-support ratio 0.067, R = 0.2400; forms vs direct 1.6e-14; copy 0: lambda_min(Q + N/2)/||N|| = +5.582e-04, PD for lambda in [-0.71, -0.24]
+n=6: rank 2, smallest local-support ratio 0.070, R = 0.1887; forms vs direct 7.4e-15; copy 0: lambda_min(Q + N/2)/||N|| = +4.942e-04, PD for lambda in [-0.81, -0.16]
+PASS
