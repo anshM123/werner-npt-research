@@ -486,7 +486,8 @@ re-checked with independent eigenvalue computations, together with the guard λ_
   (`code/check_structured_split.py`; each solution is rebuilt from its numbers, re-checked, and repaired for solver
   tolerance by a shift of at most 6 × 10^{−7}). At n = 6, c = 4 the three-number family works at six of the seven
   test POVMs (random, two nearly unused copies, two heavy, one heavy, the heavy-copy family, the uniform W-plane;
-  first-order solver SCS, slacks 1.1 × 10^{−3} to 0.47, re-checked). At the near rank-one frame it fails, with slack
+  first-order solver SCS, slacks 1.1 × 10^{−3} to 0.47; the re-check shows solver errors up to 6.5 × 10^{−3}, below
+  each slack). At the near rank-one frame it fails, with slack
   −2.6 × 10^{−2}, while that sector itself is strictly positive. A general matrix-valued balanced certificate at
   that frame was not solved: the SCS run was stopped after two hours. So at c = 4 the three numbers are not enough.
   The numbers vary from pair to pair. Closed-form choices we tried
