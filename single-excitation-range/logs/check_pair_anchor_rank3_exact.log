@@ -1,0 +1,4 @@
+built exact A, R^Gamma (81 x 81)  [0.2s]
+A - R^Gamma: symmetric True, 19 components (largest 15), certified PSD on the open quadrant: True, rank 72  [0.6s]
+R^Gamma + 3A: symmetric True, 19 components (largest 15), certified PSD on the open quadrant: True, rank 81  [1.8s]
+PASS

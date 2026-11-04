@@ -1,0 +1,23 @@
+built exact A, R^Gamma (81 x 81)  [0.1s]
+   not certified: component of size 15
+   not certified: component of size 8
+   not certified: component of size 8
+   not certified: component of size 8
+   not certified: component of size 8
+   not certified: component of size 8
+   not certified: component of size 8
+   not certified: component of size 1
+   not certified: component of size 2
+   not certified: component of size 2
+   not certified: component of size 1
+   not certified: component of size 2
+   not certified: component of size 1
+   not certified: component of size 2
+   not certified: component of size 2
+   not certified: component of size 1
+   not certified: component of size 1
+   not certified: component of size 2
+   not certified: component of size 1
+A - R^Gamma: symmetric True, 19 components (largest 15), certified PSD on the open quadrant: False, rank 0  [1.4s]
+R^Gamma + 3A: symmetric True, 19 components (largest 15), certified PSD on the open quadrant: True, rank 81  [2.5s]
+FAIL

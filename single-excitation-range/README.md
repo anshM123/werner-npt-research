@@ -28,8 +28,8 @@ because single excitations over a product are not anchors.
   which includes the heavy-copy counterexample family, in a quantitative neighbourhood of that case, and whenever
   that copy is heavy in both directions (1/s_1² + 1/s_2² ≤ 2 + 8/h²).
 - Proposition 10 (added 4 November 2026): every sector, for every n, when two copies together carry a full direction
-  (A_0 + A_1 has eigenvalue 1). The proof is an anchor argument: such a plane contains (two-copy vector of Schmidt
-  rank two) ⊗ (product), and an exact computation shows that these vectors are anchors for every n.
+  (A_0 + A_1 has eigenvalue 1). The proof is an anchor argument: such a plane contains (two-copy vector) ⊗ (product),
+  and an exact computation shows that every such vector, of any Schmidt rank, is an anchor for every n.
 - Lemma 11 and Conjecture 12 (added 4 November 2026): a relative version of the anchor argument reduces every sector
   of every single-excitation plane to one positive semidefinite statement about a single weighted W-type vector
   Σ_t w_t |1⟩_t. Copies of weight zero reduce to a finite test on the others (Lemma 13). Theorem 16 (added 4 November
@@ -661,17 +661,19 @@ All four objects factor over the copies, so T_{p′⊗p″} = T_{p′} ⊗ T_{p�
 spec T_{|0⟩} = {1, −1/3}.
 
 **Proposition 10.**
-- (a) Let φ be a vector on two copies with Schmidt rank at most two, and b a product vector on the other n − 2
-  copies. Then q_n(X) ≥ 0 for every X whose range lies in a plane containing φ ⊗ b, with any co-range, for every n.
+- (a) Let φ be any vector on two copies and b a product vector on the other n − 2 copies. Then q_n(X) ≥ 0 for
+  every X whose range lies in a plane containing φ ⊗ b, with any co-range, for every n.
 - (b) Take a single-excitation range plane in the gauge Σ_t A_t = I. If A_0 + A_1 has the eigenvalue 1, then
   q_n ≥ 0 for every co-range, so every sector is nonnegative, for every n.
 
 *Proof.*
-- (a) Local unitaries turn φ ⊗ b into a multiple of φ_u ⊗ |0⟩^{⊗(n−2)}, where φ_u = |10⟩ + u|01⟩ and u ∈ [0, 1]
-  is the ratio of the Schmidt coefficients. They leave q_n unchanged, and the co-range is arbitrary anyway.
-  - For every u ≥ 0 we have D_{φ_u} ≻ 0 and −3 ⪯ T_{φ_u} ⪯ I. This is an exact computation, described below.
-  - So T_p = T_{φ_u} ⊗ T_{|0⟩}^{⊗(n−2)} has the eigenvalues λ(−1/3)^j with λ ∈ [−3, 1] and j ≥ 0. All of them are
-    at most 1.
+- (a) Local unitaries turn φ ⊗ b into a multiple of φ_{β,γ} ⊗ |0⟩^{⊗(n−2)}, where φ_{β,γ} = |00⟩ + β|11⟩ + γ|22⟩
+  is the Schmidt form of φ (β, γ ≥ 0). Local unitaries leave q_n unchanged, and the co-range is arbitrary anyway.
+  - For all β, γ ≥ 0 we have −3 ⪯ T_{φ_{β,γ}} ⪯ I (and D ≻ 0, by the rank-one bound). This is an exact
+    computation, described below; the boundary β = 0 or γ = 0 follows by continuity.
+  - Since every one-copy vector is locally unitarily equivalent to |0⟩, T_p is unitarily equivalent to
+    T_{φ_{β,γ}} ⊗ T_{|0⟩}^{⊗(n−2)}. Its eigenvalues are λ(−1/3)^j with λ ∈ [−3, 1] and j ≥ 0. All of them are at
+    most 1.
   - The anchor lemma applies.
 - (b) Let g be a unit eigenvector for the eigenvalue 1.
   - Then Σ_{t≥2} g^*A_t g = 0, so U_t g = 0 for t ≥ 2.
@@ -679,20 +681,24 @@ spec T_{|0⟩} = {1, −1/3}.
     rank at most two, because its copy-0 marginal lives on span{|0⟩, U_0 g}.
   - Apply (a). ∎
 
-*The exact computation.* A torus acts by phases on |1⟩ at both copies and on |2⟩ at each copy separately. It fixes
-φ_u, so it splits the 81 × 81 matrices into 27 blocks of size at most 8, with entries in Q(u). For each block H the
-script proves H ⪰ 0 for all u ≥ 0 as follows:
-- it multiplies H by a common denominator that is positive on [0, ∞);
-- it reads the elementary symmetric functions of the eigenvalues off the characteristic polynomial;
-- it shows that each of them is ≥ 0 on [0, ∞), by exact real-root isolation and exact evaluation in every gap.
+*The exact computation* (`code/check_pair_anchor_rank3_exact.py`, a few seconds). The matrices A − R^Γ and
+R^Γ + 3A on the 81-dimensional space have entries in Q(β, γ). The script splits them into the connected components
+of their nonzero pattern (19 components, the largest of size 15). In each component it runs symmetric Gaussian
+elimination over Q(β, γ). Every pivot it uses is a ratio of two polynomials whose coefficients all have the same
+sign, so it is positive for all β, γ > 0. The ranks are 72 and 81, so the kernel of A − R^Γ is exactly
+φ̄ ⊗ (C³)^{⊗2}. The script rejects the perturbed condition with R^Γ replaced by 1.001 R^Γ.
 
-D_{φ_u} ≻ 0 follows from its leading principal minors.
+This contains Schmidt rank one (the product-ray theorem), Schmidt rank two, and the maximally entangled pair
+(`support-and-projector-notes/`). An earlier version of this section treated Schmidt rank at most two with the
+one-parameter family φ_u = |10⟩ + u|01⟩. That computation, by exact real-root isolation of the elementary
+symmetric functions of 27 torus blocks over Q(u), is kept as `code/check_pair_anchor_exact.py`.
 
 Remarks.
 - (b) contains Proposition 9 (b). There U_1 g = 0, so the anchor is a product vector. The bath of the other copies
   never enters: its weights, letters and phases are arbitrary.
-- The bound T ⪯ I is tight: λ_max(T_{φ_u}) = 1 for every u. The smallest eigenvalue is −11/9, at u = 1. So this
-  argument says nothing when the top eigenvalue of A_0 + A_1 is 1 − ε.
+- The bound T ⪯ I is tight: λ_max(T_φ) = 1 for every φ. For φ_u = |10⟩ + u|01⟩ the smallest eigenvalue is −11/9,
+  at u = 1; for random two-copy vectors it lies between about −1.05 and −0.8. So this argument says nothing when the
+  top eigenvalue of A_0 + A_1 is 1 − ε.
 - Three copies carrying a full direction are different. Every single excitation on three copies with three nonzero
   weights has λ_max(T) > 1, so the anchor lemma itself does not apply there.
 
@@ -961,7 +967,9 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   configurations under the condition of (c), the failure of the separable split and of subadditivity, and the
   general congruence of (a′) at random POVMs with every copy of rank two (relative error 10^{−15}). Part (f) checks the chain
   of inequalities in the proof of (d) and λ_min(2K̃_c) ≥ 0 at 150 non-parallel configurations satisfying its condition.
-- `code/check_pair_anchor_exact.py` is the exact proof behind Proposition 10 (sympy, about 2 s). It checks D_{φ_u} ≻ 0,
+- `code/check_pair_anchor_rank3_exact.py` is the exact proof behind Proposition 10 (a) for every two-copy vector
+  (python-flint, a few seconds; the option `sanity` must fail). `code/check_pair_anchor_exact.py` is the earlier
+  exact proof for Schmidt rank at most two (sympy, about 2 s). It checks D_{φ_u} ≻ 0,
   A − R^Γ ⪰ 0 and R^Γ + 3A ⪰ 0 for all u ≥ 0 on the 27 torus blocks, and the block structure itself.
   `code/check_pair_anchor.py` checks the same facts numerically with an independent implementation. It covers spec T_{|0⟩} = {1, −1/3}, the
   values u ∈ [0, 1] on a grid of 21 points and u = 1.5, 3, 10 (largest eigenvalue 1, smallest −11/9), random complex two-copy vectors of Schmidt rank two, and
