@@ -72,7 +72,9 @@ on single-excitation planes, m ≥ 0 reduces to μ_c := λ_min K̃_c ≥ 0 for 3
 holds on all single-excitation planes at n = 4, and the first open case is n = 5, c = 3. Proposition 5 of
 `single-excitation-range/` sharpens item 3: sector c is nonnegative whenever Σ_{t∈σ} A_t ⪯ 2h/(3h − 1) · I for every
 set σ of c copies (h = n − c), by Theorem 3 applied to every set of c + 1 copies. The open sectors are therefore
-the POVMs with a heavy set of c elements.
+the POVMs with a heavy set of c elements. Conjecture 6 there gives a finite family of matrix inequalities for each
+POVM. If a solution exists, it proves the sector at that POVM (Proposition 6), and numerically a solution always
+exists. It is a sector-by-sector alternative to MP.
 
 `code/check_reformulation.py` checks, at n = 2, 3, 4:
 - m = λ_min K against the direct minimum over co-ranges, for single-excitation and tangent planes;

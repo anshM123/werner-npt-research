@@ -13,6 +13,9 @@ because single excitations over a product are not anchors.
 - Proposition 5 (added 4 November 2026) settles every sector 1 ≤ c ≤ n − 1 for range planes in which no c copies are
   heavy: Σ_{t∈S} A_t ⪯ 2(n − c)/(3(n − c) − 1) · I for every set S of c copies. It is Theorem 3 applied to every set
   of c + 1 copies.
+- Proposition 6 and Conjecture 6 (added 4 November 2026) put Theorems 1–3 and Proposition 5 into one family of
+  certificates. Each certificate is a finite set of matrix inequalities and proves its sector. Numerically every
+  tested sector has one. The conjecture that all do is open.
 
 Both classes are thick at every copy.
 
@@ -290,9 +293,78 @@ copies elsewhere. The sector stays nonnegative there numerically, but for a diff
   uniform W-plane whenever c > 2n/3: by symmetry the even split is optimal there, and it gives Riesz weights
   2(n − h)/(n + h) > 1 on every block. It also fails numerically near POVMs with nearly unused copies (n = 6, c = 4). With
   metrics that mix the letters, the same per-string decomposition is feasible at the uniform W-plane for n = 5, c = 4
-  (margin 0.1). This is being tested further.
+  (margin 0.1). The next section builds on this.
 
 The sectors 3 ≤ c ≤ n − 2 therefore remain open for planes with a heavy set of c copies.
+
+## Conjecture 6: one certificate for every sector
+
+The proofs above use three different mechanisms:
+- Theorem 1 uses the rank-two Lemma on each string ρ;
+- Theorem 2 uses monogamy of the reference qubit;
+- Theorem 3 uses a Lagrange identity on the whole sector.
+
+All three fit into one family of certificates, and numerically this family suffices in every sector we tested.
+
+Write the sector form with co-range vectors f_σ ∈ C², in the gauge Σ_t A_t = I:
+
+    Q_c(f) = Σ_σ f_σ^* (2I + 2A_{H(σ)}) f_σ − Σ_ρ [2 Σ_t |τ_{ρ,t}|² − |Σ_t τ_{ρ,t}|²],
+
+where τ_{ρ,t} = Σ_{z,r} U_t[z, r] f_{ρ+z@t}[r] and y_t ∈ C⁴ has entries conj(U_t[z, r]).
+
+A **certificate** for sector c consists of two families.
+- Numbers θ_Q ≥ 0, one for each set Q of c + 1 copies.
+- Hermitian 4 × 4 matrices m_{S,t}, one for each set S of c copies and each t ∈ S. Each acts on the letter at copy t
+  and the reference index; m^{(t)} denotes it extended by the identity on the other letters.
+
+They must satisfy two conditions.
+- **(L)** For every set R of c − 1 copies, with free copies F(R): ⊕_{t∈F(R)} m_{R∪t,t} ⪰ Y(N_R). Here N_R is the matrix on
+  C^{F(R)} given by N_R = 2I − J − Σ_{s<t} θ_{R∪{s,t}} (e_s − e_t)(e_s − e_t)^T, and Y(N) has 4 × 4 blocks N_st |y_s⟩⟨y_t|.
+- **(P)** For every set S of c copies:
+  Σ_{t∈S} m_{S,t}^{(t)} + 2 Σ_{u∉S} θ_{S∪u} I ⊗ A_{S∪u} ⪯ I ⊗ (2I + 2A_{H(S)}).
+
+**Proposition 6.** If sector c has a certificate, then Q_c ≥ 0 on that sector.
+
+*Proof.* For a string ρ with support R, split 2I − J = 𝓛_R + N_R, where 𝓛_R is the weighted Laplacian with pair weights
+θ_{R∪{s,t}}. As in steps 3–5 of Proposition 5, the 𝓛_R parts add up to Σ_Q θ_Q ‖𝒟_Q f‖². Theorem 3 on each Q bounds
+this sum by 2 Σ_Q θ_Q Σ_{u∈Q} f_{Q−u}^* A_Q f_{Q−u}.
+
+The N_R part of the string ρ is ⟨v_ρ| Y(N_R) |v_ρ⟩, where v_ρ collects the columns ρ + z@t. By (L) it is at most
+Σ_t ⟨v_ρ| m_{R∪t,t} |v_ρ⟩. Summed over ρ and regrouped by columns, this is Σ_S Σ_{t∈S} f_S^* m_{S,t}^{(t)} f_S.
+
+By (P), the two bounds together are at most Σ_σ f_σ^* (2I + 2A_H) f_σ. ∎
+
+The family contains the earlier arguments.
+- θ = 1 and m = 0 is Theorem 3 (c = n − 1).
+- θ_Q = 2/(h + 1) and m = 0 is Proposition 5.
+- θ = 0 and m_{S,t} = 2|y_t⟩⟨y_t| works whenever every A_t has rank at most one. Then (L) holds with slack |⊕y⟩⟨⊕y|,
+  and (P) follows from 2A_S ⪯ 2I + 2A_H, because each y_t is a product of a letter and a reference vector.
+- For weighted W-planes, the same choice reduces (P) to the central-spin bound. This is the proof of Theorem 2.
+
+With θ = 0, (P) is a monogamy condition on the reference qubit and (L) is the Lemma's condition on each string.
+
+**Conjecture 6.** Every co-range sector of every single-excitation range plane has a certificate.
+
+By Proposition 6 this would give the endpoint on all single-excitation range planes, with any co-range, for every n.
+Already the case c = n − 2 would give it for n = 5.
+
+*Evidence.* We solved the certificate as a semidefinite program, maximising a common slack, and re-checked every
+inequality of the returned solution with independent eigenvalue computations
+(`code/check_combined_certificate.py`). The tested cases were n = 5, 6, sectors 3 ≤ c ≤ n − 1, at W-planes, at one
+or two heavy copies, at random POVMs, at near rank-one frames and with two nearly unused copies. The slack was positive
+every time, ranging from 3 × 10^{−5} to 0.42.
+
+A sweep over 60 structured POVMs at n = 5, c = 3 (random rank-one frames with noise, nearly unused copies,
+nearly parallel directions, one or two heavy copies, near W-planes) found worst slack +5.5 × 10^{−5}
+(`code/sweep_combined_certificate.py`). The smallest margins occur next to nearly unused copies.
+
+Neither half of the certificate works alone. With θ = 0 the program is infeasible at c = n − 1, n = 6, for one heavy copy
+A_0 = diag(1 − d, 1) and five light copies (d/5)|e_1⟩⟨e_1|. A rough count with symmetric, rank-one pieces explains why.
+The light copies' pieces are products, so they add up with no monogamy gain, and the count closes only for at most four
+light copies (slack ≈ 0 at n = 5, negative at n = 6). This explains the numbers but is not a proof of infeasibility.
+With m = 0 the program is Proposition 5. With splits diagonal in the letters it fails as shown above.
+
+Conjecture 6 is not proved.
 
 ## Why the sectors c ≥ 3 are different
 
@@ -344,6 +416,11 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   - the hard-core form and the twisted identity (n = 3, 4, every c; error 4 × 10^{−16});
   - the c = 1 bound;
   - the failure of the vacuum-free bound in the heavy-copy example (n = 5, 6, every 2 ≤ c ≤ n − 2).
+- `code/combined_certificate.py` sets up the certificate of Conjecture 6 as a semidefinite program (needs cvxpy with
+  the CLARABEL solver). `code/check_combined_certificate.py` solves it at structured POVMs for n = 5, 6 and
+  3 ≤ c ≤ n − 1, re-checks every inequality of each solution with independent eigenvalue computations, and shows
+  that θ = 0 alone is infeasible at n = 6, c = 5 with one heavy copy. `code/sweep_combined_certificate.py` runs the
+  60-POVM sweep at n = 5, c = 3. This is evidence, not proof.
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});

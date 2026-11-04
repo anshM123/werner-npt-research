@@ -1,0 +1,6 @@
+n=5 c=3: 12 samples, worst slack +5.630e-04 (nearly unused copies; lambda_min Q_c there +3.000e-01)
+n=5 c=3: 24 samples, worst slack +7.330e-05 (nearly unused copies; lambda_min Q_c there +5.229e-01)
+n=5 c=3: 36 samples, worst slack +5.545e-05 (nearly unused copies; lambda_min Q_c there +5.035e-01)
+n=5 c=3: 48 samples, worst slack +5.545e-05 (nearly unused copies; lambda_min Q_c there +5.035e-01)
+n=5 c=3: 60 samples, worst slack +5.545e-05 (nearly unused copies; lambda_min Q_c there +5.035e-01)
+PASS
