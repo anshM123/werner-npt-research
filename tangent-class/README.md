@@ -151,6 +151,21 @@ The numerics test the stronger statement with every λ ∈ [−5, 5]. They repor
   V, f the missing direction) has 𝒩_s(H) = 0 and 𝒬_s(H) = −½ q_{n−1}(⟨h|C|f⟩). The phase average over e^{iθ}|f⟩⟨w| + h.c. gives
   E𝒬 = 2Re q'(C_ff, C_ww) − ½[q'(C_fw) + q'(C_wf)] and E𝒩 = 2Re⟨C_ff, C_ww⟩.
 
+### A larger class where the numerics also pass
+
+Theorem 3′ uses only two properties of the class: invariance under single-copy squeezes, and that operators thin at
+every copy are products of planes. So any squeeze-invariant class on which SC∞ holds would do.
+
+One candidate passes every test we ran: the bond-two class. Its range planes lie in
+span{a_1 ⊗ ⋯ ⊗ a_{s−1} ⊗ y ⊗ b_{s+1} ⊗ ⋯ ⊗ b_n : s, y} for product vectors a and b.
+- a = b gives the tangent class.
+- a = |0…0⟩, b = |1…1⟩ contains the GHZ plane span{|0…0⟩, |1…1⟩}, a known extremal case.
+- At each copy, the range component orthogonal to span{a_s, b_s} has rank one with range a_{<s} ⊗ b_{>s}.
+
+In `code/check_bond_two.py`, balanced margins are at most −0.21 at n = 3 and −0.15 at n = 4. They stay below −0.17 next
+to the GHZ plane. Hill-climbs on the balanced margin, not included here, plateau at −0.16 to −0.18 at n = 3 and −0.14
+at n = 4.
+
 ## What does not work
 
 Three things fail, and they show that the conjecture uses the tangent structure.
@@ -162,6 +177,10 @@ Three things fail, and they show that the conjecture uses the tangent structure.
   41–69% inside a tangent space. Planes that merely meet a tangent space also fail: they contain Wu and Zou's
   planes through a product vector and are closed under squeezes and thin-copy removal. Starting from the same
   three-copy operator, re-optimising inside that class reaches thickness ≥ 0.2 with ν_s ≈ +0.02 at every copy.
+  Product anchoring alone is not enough either. Take ranges in ⊗_t B_t + Σ_s C φ_s ⊗ f^(s), with planes B_t,
+  φ_t ⊥ B_t, and product anchors f^(s) inside the planes. This contains the bond-two class, and it has a thick
+  operator with ν_s > 0 at every copy and R = 0.30 (`data/anchored_pencil_psd_n3.npy`). The tangent and bond-two
+  ranges span only 2n + 1 dimensions, against 2^n + n here.
 - **Structured certificates.** Several natural certificates for the conjecture fail adversarially as standalone
   arguments, though the full 9 × 9 pencil still has a negative direction there:
   - tilts of the vacuum alone;
@@ -187,6 +206,8 @@ Three things fail, and they show that the conjecture uses the tangent structure.
 - `code/check_balanced.py`: balanced-slice margins. Log: `logs/check_balanced.log`.
 - `data/two_excitation_pencil_psd_n3.npy`: the thick two-excitation operator with ν_s > 0 at every copy, written in
   the basis where e = |000⟩.
+- `code/check_bond_two.py`: the bond-two class and the anchored contrast. Log: `logs/check_bond_two.log`.
+- `data/anchored_pencil_psd_n3.npy`: the thick anchored operator with ν_s > 0 at every copy.
 
 ## Status
 

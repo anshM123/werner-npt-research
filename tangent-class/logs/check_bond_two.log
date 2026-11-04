@@ -1,0 +1,9 @@
+(a) bond-two class, random members (balanced nu, minimum over copies)
+  n=3: largest balanced min_s nu -0.2075 over 6 samples
+  n=4: largest balanced min_s nu -0.1490 over 3 samples
+    near the GHZ plane span{|000>, |111>} (+ eps times a bond-two perturbation), n = 3
+  eps 0.3: balanced nu per copy [-0.1698 -0.1911 -0.1688]
+  eps 0.1: balanced nu per copy [-0.1967 -0.1729 -0.2281]
+(b) planes plus anchored single excitations: stored operator
+  local-support ratios [0.403 0.315 0.215], nu per copy [0.0101 0.0119 0.0047], R = 0.3003
+RESULT: bond-two class nu < 0 in all tests; the anchored operator has nu > 0 at every copy (R > 0 there)
