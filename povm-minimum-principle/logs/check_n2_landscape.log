@@ -1,0 +1,5 @@
+corners [0. 0. 0. 0.], centre 0.250000
+largest Hessian eigenvalue on the interior grid +2.232 (positive: not concave); fraction of grid points with a positive one 0.25
+segment [0.1313 0.1234] -> [0.2617 0.0501]: ends 0.09088, 0.09170, interior minimum 0.09020: dips +6.77e-04 below both ends (not quasi-concave)
+local minimisations ending at a corner: 40 of 40
+PASS

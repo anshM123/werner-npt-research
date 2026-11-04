@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
-title: "Tangent planes: an induction that closes with one copy at a time"
+title: "Tangent planes: one-copy reductions of the endpoint, and why they fail"
 authors:
   - family-names: Mishra
     given-names: Ansh

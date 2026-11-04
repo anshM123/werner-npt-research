@@ -1,0 +1,29 @@
+# phi_h adversary runs of 4 Nov 2026 (code/search_minimum_principle.py adversary; earlier file names)
+## logLM_2.txt
+n=2 start 0: max phi_h found -3.885e-03 at m = 0.25000, min eig A_s 0.500
+n=2 start 1: max phi_h found -3.886e-03 at m = 0.25000, min eig A_s 0.500
+n=2 start 2: max phi_h found -3.884e-03 at m = 0.25000, min eig A_s 0.500
+n=2 start 3: max phi_h found -3.884e-03 at m = 0.25000, min eig A_s 0.500
+n=2 start 4: max phi_h found -3.885e-03 at m = 0.25000, min eig A_s 0.500
+n=2 start 5: max phi_h found -3.884e-03 at m = 0.25000, min eig A_s 0.500
+n=2 h=0.01: largest phi_h at interior points -3.884e-03 (> 0 would be an interior local minimum)
+## logLM_3a.txt
+n=3 start 0: max phi_h found -1.665e-01 at m = 0.11530, min eig A_s 0.020
+n=3 start 1: max phi_h found -1.653e-01 at m = 0.09864, min eig A_s 0.035
+n=3 start 2: max phi_h found -1.646e-01 at m = 0.08704, min eig A_s 0.039
+n=3 start 3: max phi_h found -1.522e-01 at m = 0.08877, min eig A_s 0.079
+n=3 start 4: max phi_h found -1.342e-01 at m = 0.08841, min eig A_s 0.031
+n=3 start 5: max phi_h found -1.752e-01 at m = 0.14091, min eig A_s 0.041
+n=3 h=0.01: largest phi_h at interior points -1.342e-01 (> 0 would be an interior local minimum)
+## logLM_3b.txt
+n=3 start 0: max phi_h found -1.725e-01 at m = 0.09830, min eig A_s 0.064
+n=3 start 1: max phi_h found -1.375e-01 at m = 0.16025, min eig A_s 0.067
+n=3 start 2: max phi_h found -1.303e-01 at m = 0.16240, min eig A_s 0.083
+n=3 start 3: max phi_h found -1.543e-01 at m = 0.08966, min eig A_s 0.072
+n=3 start 4: max phi_h found -1.364e-01 at m = 0.12438, min eig A_s 0.050
+n=3 start 5: max phi_h found -1.563e-01 at m = 0.09756, min eig A_s 0.055
+n=3 h=0.003: largest phi_h at interior points -1.303e-01 (> 0 would be an interior local minimum)
+## logLM_4.txt
+n=4 start 0: max phi_h found +2.776e-15 at m = 0.12500, min eig A_s 0.030
+## logS_4_3_adv.txt
+n=4 c=3 start 0: max phi_h -1.389e-01 at mu = 0.11857, min eig A_s 0.030

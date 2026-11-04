@@ -1,0 +1,107 @@
+# Runs of 4 Nov 2026 (scripts equivalent to code/search_minimum_principle.py; the same algorithms, earlier file names).
+## logPD_3.txt
+n=3 start 0: m 0.1125 -> 0.000000; smallest eigenvalue among the A_s 5.1e-16; elements of rank <= 1: 3/3; |grad| 3.9e-08
+n=3 start 1: m 0.1312 -> 0.000000; smallest eigenvalue among the A_s 1.8e-14; elements of rank <= 1: 3/3; |grad| 5.0e-08
+n=3 start 2: m 0.1423 -> 0.000000; smallest eigenvalue among the A_s 5.0e-16; elements of rank <= 1: 3/3; |grad| 4.0e-08
+n=3 start 3: m 0.0710 -> 0.000000; smallest eigenvalue among the A_s 4.1e-14; elements of rank <= 1: 3/3; |grad| 7.8e-08
+n=3 start 4: m 0.0591 -> 0.000000; smallest eigenvalue among the A_s 3.8e-15; elements of rank <= 1: 3/3; |grad| 2.7e-08
+n=3 start 5: m 0.0284 -> 0.000000; smallest eigenvalue among the A_s 1.3e-14; elements of rank <= 1: 3/3; |grad| 5.5e-08
+n=3 start 6: m 0.0269 -> 0.000000; smallest eigenvalue among the A_s 1.1e-14; elements of rank <= 1: 3/3; |grad| 4.3e-08
+n=3 start 7: m 0.1349 -> 0.000000; smallest eigenvalue among the A_s 2.5e-14; elements of rank <= 1: 3/3; |grad| 7.3e-08
+n=3 start 8: m 0.0994 -> 0.000000; smallest eigenvalue among the A_s 1.8e-14; elements of rank <= 1: 3/3; |grad| 7.0e-08
+n=3 start 9: m 0.1023 -> 0.000000; smallest eigenvalue among the A_s 6.1e-14; elements of rank <= 1: 3/3; |grad| 8.1e-08
+n=3 start 10: m 0.1136 -> 0.000000; smallest eigenvalue among the A_s 7.2e-16; elements of rank <= 1: 3/3; |grad| 2.4e-08
+n=3 start 11: m 0.1587 -> 0.000000; smallest eigenvalue among the A_s 6.5e-15; elements of rank <= 1: 3/3; |grad| 3.6e-08
+n=3 start 12: m 0.1395 -> 0.000000; smallest eigenvalue among the A_s 4.8e-15; elements of rank <= 1: 3/3; |grad| 2.4e-08
+n=3 start 13: m 0.0899 -> 0.000000; smallest eigenvalue among the A_s 1.9e-15; elements of rank <= 1: 2/3; |grad| 1.0e-08
+n=3 start 14: m 0.0367 -> 0.000000; smallest eigenvalue among the A_s 3.4e-15; elements of rank <= 1: 3/3; |grad| 8.0e-08
+n=3 start 15: m 0.0644 -> 0.000000; smallest eigenvalue among the A_s 6.2e-15; elements of rank <= 1: 3/3; |grad| 1.1e-07
+n=3 start 16: m 0.0534 -> 0.000000; smallest eigenvalue among the A_s 3.4e-15; elements of rank <= 1: 3/3; |grad| 5.3e-08
+n=3 start 17: m 0.1071 -> 0.000000; smallest eigenvalue among the A_s 3.9e-15; elements of rank <= 1: 3/3; |grad| 3.4e-08
+n=3 start 18: m 0.0365 -> 0.000000; smallest eigenvalue among the A_s 1.8e-15; elements of rank <= 1: 3/3; |grad| 4.7e-08
+n=3 start 19: m 0.0557 -> 0.000000; smallest eigenvalue among the A_s 9.6e-15; elements of rank <= 1: 3/3; |grad| 5.8e-08
+n=3 start 20: m 0.1053 -> 0.000000; smallest eigenvalue among the A_s 1.1e-14; elements of rank <= 1: 3/3; |grad| 6.6e-08
+n=3 start 21: m 0.1056 -> 0.000000; smallest eigenvalue among the A_s 6.7e-15; elements of rank <= 1: 3/3; |grad| 6.6e-08
+n=3 start 22: m 0.0794 -> 0.000000; smallest eigenvalue among the A_s 1.2e-14; elements of rank <= 1: 3/3; |grad| 4.1e-08
+n=3 start 23: m 0.0920 -> 0.000000; smallest eigenvalue among the A_s 5.2e-15; elements of rank <= 1: 3/3; |grad| 5.3e-08
+n=3 start 24: m 0.0769 -> 0.000000; smallest eigenvalue among the A_s 1.6e-15; elements of rank <= 1: 3/3; |grad| 3.5e-08
+n=3 start 25: m 0.1166 -> 0.000000; smallest eigenvalue among the A_s 2.0e-15; elements of rank <= 1: 2/3; |grad| 1.8e-08
+n=3 start 26: m 0.0656 -> 0.000000; smallest eigenvalue among the A_s 1.5e-16; elements of rank <= 1: 3/3; |grad| 1.4e-08
+n=3 start 27: m 0.1457 -> 0.000000; smallest eigenvalue among the A_s 2.6e-15; elements of rank <= 1: 3/3; |grad| 1.5e-08
+n=3 start 28: m 0.1140 -> 0.000000; smallest eigenvalue among the A_s 5.1e-15; elements of rank <= 1: 3/3; |grad| 3.1e-08
+n=3 start 29: m 0.0830 -> 0.000000; smallest eigenvalue among the A_s 1.8e-15; elements of rank <= 1: 3/3; |grad| 4.8e-08
+n=3: 0 interior stops out of 30; final values [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+## logPD_4.txt
+n=4 start 0: m 0.0535 -> 0.000000; smallest eigenvalue among the A_s 2.1e-14; elements of rank <= 1: 4/4; |grad| 7.3e-08
+n=4 start 1: m 0.0532 -> 0.000000; smallest eigenvalue among the A_s 6.5e-14; elements of rank <= 1: 4/4; |grad| 8.9e-08
+n=4 start 2: m 0.1203 -> 0.000000; smallest eigenvalue among the A_s 2.3e-15; elements of rank <= 1: 4/4; |grad| 3.7e-08
+n=4 start 3: m 0.1058 -> 0.000000; smallest eigenvalue among the A_s 6.9e-15; elements of rank <= 1: 4/4; |grad| 6.6e-08
+n=4 start 4: m 0.0693 -> 0.000000; smallest eigenvalue among the A_s 2.8e-14; elements of rank <= 1: 4/4; |grad| 9.4e-08
+n=4 start 5: m 0.0890 -> 0.000000; smallest eigenvalue among the A_s 1.7e-14; elements of rank <= 1: 4/4; |grad| 8.0e-08
+n=4 start 6: m 0.0475 -> 0.000000; smallest eigenvalue among the A_s 1.2e-14; elements of rank <= 1: 4/4; |grad| 7.5e-08
+n=4 start 7: m 0.0880 -> 0.000000; smallest eigenvalue among the A_s 1.6e-15; elements of rank <= 1: 3/4; |grad| 8.2e-09
+n=4 start 8: m 0.0664 -> 0.000000; smallest eigenvalue among the A_s 3.1e-15; elements of rank <= 1: 4/4; |grad| 4.8e-08
+n=4 start 9: m 0.0416 -> 0.000000; smallest eigenvalue among the A_s 3.3e-14; elements of rank <= 1: 4/4; |grad| 2.2e-07
+n=4 start 10: m 0.0475 -> 0.000000; smallest eigenvalue among the A_s 2.6e-14; elements of rank <= 1: 4/4; |grad| 1.2e-07
+n=4 start 11: m 0.0823 -> 0.000000; smallest eigenvalue among the A_s 2.9e-14; elements of rank <= 1: 4/4; |grad| 8.5e-08
+n=4 start 12: m 0.0708 -> 0.000000; smallest eigenvalue among the A_s 2.1e-16; elements of rank <= 1: 3/4; |grad| 1.9e-08
+n=4 start 13: m 0.0824 -> 0.000000; smallest eigenvalue among the A_s 5.7e-15; elements of rank <= 1: 4/4; |grad| 4.2e-08
+n=4 start 14: m 0.0546 -> 0.000000; smallest eigenvalue among the A_s 2.4e-14; elements of rank <= 1: 4/4; |grad| 1.1e-07
+n=4 start 15: m 0.0508 -> 0.000000; smallest eigenvalue among the A_s 2.4e-14; elements of rank <= 1: 4/4; |grad| 8.7e-08
+n=4: 0 interior stops out of 16; final values [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+## logPD_5.txt
+n=5 start 0: m 0.0472 -> 0.000000; smallest eigenvalue among the A_s 5.9e-14; elements of rank <= 1: 5/5; |grad| 1.3e-07
+n=5 start 1: m 0.0625 -> 0.062500; smallest eigenvalue among the A_s 1.6e-02; elements of rank <= 1: 0/5; |grad| 1.2e-10
+n=5 start 2: m 0.0612 -> 0.000000; smallest eigenvalue among the A_s 1.0e-13; elements of rank <= 1: 4/5; |grad| 2.5e-08
+n=5 start 3: m 0.0625 -> 0.062500; smallest eigenvalue among the A_s 5.5e-03; elements of rank <= 1: 0/5; |grad| 1.1e-10
+n=5 start 4: m 0.0609 -> 0.000000; smallest eigenvalue among the A_s 3.5e-15; elements of rank <= 1: 4/5; |grad| 1.0e-08
+## logTPD_3.txt
+n=3 start 0: m 0.0745 -> 0.000000; smallest eigenvalue among A_s 3.1e-13; vacuum weight |a|^2 0.979
+n=3 start 1: m 0.0434 -> 0.000000; smallest eigenvalue among A_s 1.6e-14; vacuum weight |a|^2 0.606
+n=3 start 2: m 0.0912 -> 0.000000; smallest eigenvalue among A_s 8.0e-15; vacuum weight |a|^2 0.327
+n=3 start 3: m 0.0886 -> 0.000000; smallest eigenvalue among A_s 1.7e-14; vacuum weight |a|^2 0.431
+n=3 start 4: m 0.1452 -> 0.000000; smallest eigenvalue among A_s 6.5e-15; vacuum weight |a|^2 0.399
+n=3 start 5: m 0.0797 -> 0.000000; smallest eigenvalue among A_s 1.8e-14; vacuum weight |a|^2 0.572
+n=3 start 6: m 0.0261 -> 0.000000; smallest eigenvalue among A_s 2.0e-14; vacuum weight |a|^2 0.410
+n=3 start 7: m 0.1245 -> 0.000000; smallest eigenvalue among A_s 3.1e-14; vacuum weight |a|^2 0.074
+n=3 start 8: m 0.0566 -> 0.000000; smallest eigenvalue among A_s 5.1e-14; vacuum weight |a|^2 0.676
+n=3 start 9: m 0.0287 -> 0.000000; smallest eigenvalue among A_s 2.2e-14; vacuum weight |a|^2 0.864
+n=3 start 10: m 0.0334 -> 0.000000; smallest eigenvalue among A_s 2.7e-14; vacuum weight |a|^2 0.129
+n=3 start 11: m 0.0694 -> 0.000000; smallest eigenvalue among A_s 6.9e-14; vacuum weight |a|^2 0.137
+n=3 start 12: m 0.0856 -> 0.000000; smallest eigenvalue among A_s 3.0e-15; vacuum weight |a|^2 0.473
+n=3 start 13: m 0.1446 -> 0.000000; smallest eigenvalue among A_s 1.4e-13; vacuum weight |a|^2 0.819
+n=3 start 14: m 0.1093 -> 0.000000; smallest eigenvalue among A_s 7.2e-14; vacuum weight |a|^2 0.707
+n=3 start 15: m 0.0263 -> 0.000000; smallest eigenvalue among A_s 5.7e-14; vacuum weight |a|^2 0.655
+## logTPD_4.txt
+n=4 start 0: m 0.0782 -> 0.000000; smallest eigenvalue among A_s 6.0e-15; vacuum weight |a|^2 0.054
+n=4 start 1: m 0.0745 -> 0.000000; smallest eigenvalue among A_s 1.9e-13; vacuum weight |a|^2 0.288
+n=4 start 2: m 0.0599 -> 0.000000; smallest eigenvalue among A_s 3.1e-14; vacuum weight |a|^2 0.248
+n=4 start 3: m 0.0622 -> 0.000000; smallest eigenvalue among A_s 1.0e-13; vacuum weight |a|^2 0.126
+n=4 start 4: m 0.0751 -> 0.000000; smallest eigenvalue among A_s 3.8e-14; vacuum weight |a|^2 0.339
+n=4 start 5: m 0.0200 -> 0.000000; smallest eigenvalue among A_s 9.5e-14; vacuum weight |a|^2 0.231
+n=4 start 6: m 0.0666 -> 0.000000; smallest eigenvalue among A_s 5.9e-14; vacuum weight |a|^2 0.681
+n=4 start 7: m 0.0820 -> 0.000000; smallest eigenvalue among A_s 7.9e-16; vacuum weight |a|^2 0.269
+## logS_4_3_desc.txt
+n=4 c=3 start 0: mu 0.12924 -> 0.000000; smallest eigenvalue among A_s 6.4e-15; rank-<=1 elements 4/4
+n=4 c=3 start 1: mu 0.06506 -> 0.000000; smallest eigenvalue among A_s 1.3e-14; rank-<=1 elements 4/4
+n=4 c=3 start 2: mu 0.10167 -> 0.000000; smallest eigenvalue among A_s 5.5e-15; rank-<=1 elements 4/4
+n=4 c=3 start 3: mu 0.13994 -> 0.000000; smallest eigenvalue among A_s 5.9e-15; rank-<=1 elements 4/4
+n=4 c=3 start 4: mu 0.06456 -> 0.000000; smallest eigenvalue among A_s 8.0e-14; rank-<=1 elements 4/4
+n=4 c=3 start 5: mu 0.05304 -> 0.000000; smallest eigenvalue among A_s 2.2e-15; rank-<=1 elements 4/4
+n=4 c=3 start 6: mu 0.08502 -> 0.000000; smallest eigenvalue among A_s 6.2e-15; rank-<=1 elements 4/4
+n=4 c=3 start 7: mu 0.06228 -> 0.000000; smallest eigenvalue among A_s 4.4e-14; rank-<=1 elements 4/4
+n=4 c=3 start 8: mu 0.12340 -> 0.000000; smallest eigenvalue among A_s 1.7e-14; rank-<=1 elements 4/4
+n=4 c=3 start 9: mu 0.06587 -> 0.000000; smallest eigenvalue among A_s 3.4e-14; rank-<=1 elements 4/4
+n=4 c=3 start 10: mu 0.08394 -> 0.000000; smallest eigenvalue among A_s 1.3e-14; rank-<=1 elements 4/4
+n=4 c=3 start 11: mu 0.08572 -> 0.000000; smallest eigenvalue among A_s 5.9e-15; rank-<=1 elements 4/4
+## logS_4_2_desc.txt
+n=4 c=2 start 0: mu 0.11936 -> 0.000000; smallest eigenvalue among A_s 3.2e-15; rank-<=1 elements 4/4
+n=4 c=2 start 1: mu 0.08162 -> 0.000000; smallest eigenvalue among A_s 6.8e-16; rank-<=1 elements 4/4
+n=4 c=2 start 2: mu 0.10328 -> 0.000000; smallest eigenvalue among A_s 3.8e-15; rank-<=1 elements 4/4
+n=4 c=2 start 3: mu 0.10337 -> 0.000000; smallest eigenvalue among A_s 2.6e-14; rank-<=1 elements 4/4
+n=4 c=2 start 4: mu 0.08865 -> 0.000000; smallest eigenvalue among A_s 6.4e-16; rank-<=1 elements 4/4
+n=4 c=2 start 5: mu 0.07415 -> 0.000000; smallest eigenvalue among A_s 2.3e-14; rank-<=1 elements 4/4
+## logS_5_3_desc.txt
+n=5 c=3 start 0: mu 0.08005 -> 0.000000; smallest eigenvalue among A_s 2.2e-14; rank-<=1 elements 5/5
+n=5 c=3 start 1: mu 0.09427 -> 0.000000; smallest eigenvalue among A_s 1.6e-14; rank-<=1 elements 5/5
+n=5 c=3 start 2: mu 0.07276 -> 0.000000; smallest eigenvalue among A_s 8.0e-16; rank-<=1 elements 5/5
