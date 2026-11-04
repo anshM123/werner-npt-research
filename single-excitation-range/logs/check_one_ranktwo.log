@@ -2,4 +2,5 @@
 (b) commutator identity error 7.1e-15; min eig of m - 4K - lambda I -1.1e-16; min lambda_min(2Kt_c) +7.329e-03 (50 POVMs, N <= 7)
 (c) 120 random configurations satisfy the near-parallel condition; min lambda_min(2Kt_c) +5.378e-02
 (d) best separable-split margin / ||4K|| over 40 instances: -2.062e-01 (< 0: the split fails); subadditivity violated by +0.065
+(e) general congruence: largest relative error 1.1e-15; reduced condition agrees with lambda_min(2Kt_c) >= 0 in 16/16 (smallest reduced margin +1.680e-01)
 PASS

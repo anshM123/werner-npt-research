@@ -571,6 +571,24 @@ is the family where the certificates of Proposition 6 fail from n = 7 on.
   - Finally b_2 b_2^* ⪯ hΛ_22 and ‖M_12‖ ≤ (c + 3)(Λ_11 Λ_22)^{1/2}, both by Cauchy–Schwarz over the created or
     annihilated copy. ∎
 
+*The elimination works for any other copies.* The first step of the proof of (a) never uses that the other copies
+have rank one. Let 2K̃'_k be the sector forms of the other n − 1 copies after the same change of reference index (blocks
+U_t A_0^{−1/2}; these are not normalised, since Σ_t A'_t = A_0^{−1} − I, so 2K̃'_k = 2Ā'_tot + 2 Vac' − 2T' + α'^*α'), and
+let α' be their annihilation from c to c − 1 excitations. The same congruence gives
+
+    ⟨F, 2K̃_c F⟩ = 2‖G‖² − 2‖g‖² + Σ_z ⟨G_z, 2K̃'_{c−1} G_z⟩ + ⟨H, (4 + 2K̃'_c − α'^*α')H⟩ + ‖g + α'H‖².
+
+Eliminating H and then G as in (a):
+
+- (a′) If some copy has rank two and the other copies satisfy 2K̃'_c ⪰ 0, then sector c is nonnegative if and only if
+
+      Tr_V (2 + 2K̃'_{c−1})^{−1} + α' (4 + 2K̃'_c + α'^*α')^{−1} α'^* ⪯ I   on H'_{c−1}.
+
+The hypothesis on 2K̃'_c is the same statement for n − 1 copies, so (a′) turns the sector inequality into an induction
+over copies: one rank-two copy is removed at a time, at the price of a quantitative condition on two adjacent sectors
+of the rest. For rank-one other copies, (a′) is (a). We have no proof of (a′) in general (`code/check_one_ranktwo.py`,
+part (e), checks the congruence at random POVMs with every copy of rank two).
+
 Part (c) covers the opposite end from Proposition 5: copy 0 nearly saturates one direction. For example, at n = 5,
 c = 3 with s_min² = ½ it needs s_max² ≥ 20/21, while Proposition 5 needs λ_max(A_S) ≤ 4/5.
 
@@ -654,7 +672,8 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
 - `code/check_one_ranktwo.py` checks Proposition 9: the reduction (the sign of λ_min(2K̃_c), computed directly,
   matches the inequality in (a) in all 80 random cases), the commutator identity and m − 4K ⪰ (Σ|η_t|²) I of (b),
   λ_min(2K̃_c) ≥ 0 directly at 50 POVMs with an eigenvalue-1 copy (N ≤ 7, every c, rotated frames), 120 random
-  configurations under the condition of (c), and the failure of the separable split and of subadditivity.
+  configurations under the condition of (c), the failure of the separable split and of subadditivity, and the
+  general congruence of (a′) at random POVMs with every copy of rank two (relative error 10^{−15}).
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});

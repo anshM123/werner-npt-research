@@ -10,6 +10,9 @@ Reduced operators (y_t = Abar_0^{-1/2} x_t, light copies as qubits, levels k = n
     N <= 7, every c;
 (c) the near-parallel condition nu (h + (c+3)^2 mu / 2) <= mu (mu = s_min^-2 - 1, nu = s_max^-2 - 1): at random data
     satisfying it, lambda_min(2Kt_c) >= 0;
+(e) the general elimination (any other copies, here all of rank two): the congruence <F, 2Kt_c F> = Q(G, H) with the
+    other copies' sector forms 2Kt'_k (blocks U_t A_0^{-1/2}, not normalised), and the reduced condition
+    Tr_V (2 + 2Kt'_{c-1})^{-1} + alpha' (4 + 2Kt'_c + alpha'^* alpha')^{-1} alpha'^* <= I at random POVMs;
 (d) two routes that cannot prove (a) in general: a separable split M >= rho (x) 4K (rho a density matrix on V) fails at
     an instance with N = 3, c = 3, and (2 + tP)^{-1} + (2 + tQ)^{-1} <= 1/2 + (2 + t(P+Q))^{-1} fails for rank-one P, Q."""
 import numpy as np, itertools, warnings
@@ -116,5 +119,46 @@ Z = np.linalg.inv(2 * np.eye(2) + tt * P) + np.linalg.inv(2 * np.eye(2) + tt * Q
 sub = np.linalg.eigvalsh(Z)[-1]
 print(f"(d) best separable-split margin / ||4K|| over 40 instances: {best:+.3e} (< 0: the split fails); subadditivity violated by {sub:+.3f}")
 ok &= best < 0 and sub > 0
+# (e)
+def fixK(o, Abt): return 2 * o['K'] + 2 * np.kron(Abt - np.eye(2), np.eye(o['m']))   # 2Kt' with total Abar'_tot
+cerr = 0; nred = 0; red_min = np.inf
+for tr in range(16):
+    n = int(rng.integers(3, 6)); c = int(rng.integers(1, n + 1))
+    from threelevel_certificate import gauge
+    U = gauge([rng.normal(size=(2, 2)) + 1j * rng.normal(size=(2, 2)) for _ in range(n)])
+    Wl, sv, Wrh = np.linalg.svd(U[0]); U = [u @ Wrh.conj().T for u in U]; U[0] = Wl.conj().T @ U[0]
+    a0 = np.real(np.diag(U[0].conj().T @ U[0])); Ah = np.diag(np.sqrt(a0))
+    Full = GeneralModel(U); of = Full.ops(c); S, m = of['S'], of['m']; pos = {s_: j for j, s_ in enumerate(S)}
+    Rest = GeneralModel([u @ np.diag(a0 ** -0.5) for u in U[1:]]); Abt = sum(a.conj() for a in Rest.A)
+    F = rng.normal(size=2 * m) + 1j * rng.normal(size=2 * m); lhs = np.vdot(F, 2 * of['K'] @ F).real
+    Fv = lambda s_: np.array([F[r * m + pos[s_]] for r in range(2)])
+    S1 = Rest.strings(c - 1); m1 = len(S1); p1 = {s_: j for j, s_ in enumerate(S1)}; G = {}
+    for z in (1, 2):
+        Gz = np.zeros(2 * m1, complex)
+        for s_ in S1:
+            if (z,) + s_ in pos:
+                v = Ah @ Fv((z,) + s_)
+                for r in range(2): Gz[r * m1 + p1[s_]] = v[r]
+        G[z] = Gz
+    g = np.array([G[1][j] + G[2][m1 + j] for j in range(m1)])
+    K1 = fixK(Rest.ops(c - 1), Abt) if c - 1 >= 1 else 4 * Abt
+    Q = 2 * sum(np.vdot(G[z], G[z]).real for z in (1, 2)) - 2 * np.vdot(g, g).real + sum(np.vdot(G[z], K1 @ G[z]).real for z in (1, 2))
+    if c <= n - 1:
+        oc = Rest.ops(c); Sc, mc = oc['S'], oc['m']; pc = {s_: j for j, s_ in enumerate(Sc)}; H = np.zeros(2 * mc, complex)
+        for s_ in Sc:
+            v = Ah @ Fv((0,) + s_)
+            for r in range(2): H[r * mc + pc[s_]] = v[r]
+        al = sum(oc['B']); Kc = fixK(oc, Abt)
+        Q += np.vdot(H, (4 * np.eye(2 * mc) + Kc - al.conj().T @ al) @ H).real + np.vdot(g + al @ H, g + al @ H).real
+        Z = al @ np.linalg.inv(4 * np.eye(2 * mc) + Kc + al.conj().T @ al) @ al.conj().T
+    else:
+        Q += np.vdot(g, g).real; Z = np.zeros((m1, m1))
+    cerr = max(cerr, abs(lhs - Q) / max(abs(lhs), 1))
+    Rinv = np.linalg.inv(2 * np.eye(2 * m1) + K1); Red = np.eye(m1) - (Rinv[:m1, :m1] + Rinv[m1:, m1:]) - Z
+    red = np.linalg.eigvalsh((Red + Red.conj().T) / 2)[0]; lm = 2 * np.linalg.eigvalsh(of['K'])[0]
+    nred += (red >= -1e-10) == (lm >= -1e-10); red_min = min(red_min, red)
+print(f"(e) general congruence: largest relative error {cerr:.1e}; reduced condition agrees with lambda_min(2Kt_c) >= 0 in {nred}/16 "
+      f"(smallest reduced margin {red_min:+.3e})")
+ok &= cerr < 1e-10 and nred == 16
 assert ok
 print("PASS")
