@@ -525,7 +525,7 @@ Added 4 November 2026. Suppose copy 0 has a rank-two range block and the other N
 rotations of the reference index and of the letters, U_0 = diag(s_1, s_2) and U_t = |1⟩⟨x̄_t| for t ≥ 1, with
 Σ_t x_t x_t^* = I − Ā_0. A rank-one copy uses one letter. The strings where it carries the other letter form an
 invariant block. On that block the form is 2⟨F, Ā_t F⟩ plus the same sector problem for the other copies, with one
-excitation fewer. So in (a) and (c) below we assume that every rank-one copy carries only its range letter.
+excitation fewer. So in (a), (c) and (d) below we assume that every rank-one copy carries only its range letter.
 
 Put y_t = Ā_0^{−1/2} x_t; every family of vectors y_t ∈ C² arises this way. Treat the rank-one copies as qubits. Let
 H_k be the functions on k-element sets of them, σ_t^− the annihilation at copy t, and n_t the projector onto "copy t
@@ -599,11 +599,12 @@ let α' be their annihilation from c to c − 1 excitations. The same congruence
 
 Eliminating H and then G as in (a):
 
-- (a′) If some copy has rank two and the other copies satisfy 2K̃'_c ⪰ 0, then sector c is nonnegative if and only if
+- (a′) If some copy has rank two and the other copies satisfy 2K̃'_{c−1} ⪰ 0 and 2K̃'_c ⪰ 0, then sector c is
+  nonnegative if and only if
 
       Tr_V (2 + 2K̃'_{c−1})^{−1} + α' (4 + 2K̃'_c + α'^*α')^{−1} α'^* ⪯ I   on H'_{c−1}.
 
-The hypothesis on 2K̃'_c is the same statement for n − 1 copies, so (a′) turns the sector inequality into an induction
+The hypotheses are the same statement for n − 1 copies, so (a′) turns the sector inequality into an induction
 over copies: one rank-two copy is removed at a time, at the price of a quantitative condition on two adjacent sectors
 of the rest. For rank-one other copies, (a′) is (a). We have no proof of (a′) in general (`code/check_one_ranktwo.py`,
 part (e), checks the congruence at random POVMs with every copy of rank two).
