@@ -27,3 +27,6 @@ n=3 h=0.003: largest phi_h at interior points -1.303e-01 (> 0 would be an interi
 n=4 start 0: max phi_h found +2.776e-15 at m = 0.12500, min eig A_s 0.030
 ## logS_4_3_adv.txt
 n=4 c=3 start 0: max phi_h -1.389e-01 at mu = 0.11857, min eig A_s 0.030
+n=4 c=3 start 1: max phi_h -1.272e-01 at mu = 0.15774, min eig A_s 0.030
+n=4 c=3 start 2: max phi_h -1.574e-01 at mu = 0.06465, min eig A_s 0.036
+n=4 c=3: largest phi_h at interior points -1.272e-01 (> 0 would be a strict interior local minimum)

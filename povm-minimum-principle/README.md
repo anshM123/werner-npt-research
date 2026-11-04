@@ -141,7 +141,7 @@ Natural stronger statements fail, so a proof of MP has to use more than convexit
   φ_h > 0 would mean a strict local minimum. Results:
   - n = 2: −3.9·10⁻³, at the W-plane;
   - n = 3: −0.13 to −0.18 over 12 starts and two scales h;
-  - n = 4: 0 for m, which is the plateau m = 2^{1−n}, and −0.139 for the sector function μ_3.
+  - n = 4: 0 for m, which is the plateau m = 2^{1−n}, and −0.127 to −0.157 over 3 starts for the sector function μ_3.
 
   The search uses Nelder–Mead in 8n dimensions, which is weak, so these numbers are evidence only.
 
