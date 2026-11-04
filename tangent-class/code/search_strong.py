@@ -6,7 +6,8 @@ local-support ratios at every copy above tau.  Modes:
   exists  each copy its own best lam in [-8, 8] (Condition SC'-inf); f > 0 refutes it;
   min0    copy 0 only, lam = R(C): f = 0 means C is a minimum of R on the squeeze orbit of copy 0;
   minall  every copy, lam = R(C): f = 0 means C is a squeeze minimum at every copy (refutes SC-cw).
-usage: python search_strong.py n mode seed iters tau [start-parameter-file]"""
+usage: python search_strong.py n mode seed iters tau [start-parameter-file] [--anneal]
+The soft minimum lies below the true minimum by up to T log n (T = 0.003); --anneal lowers T to 1e-5."""
 import numpy as np, sys, itertools, time
 
 from common import squeeze_forms, tangent_range, q, Bt, Lmap
@@ -92,11 +93,13 @@ def objective(x, lam_c, want_grad=True):
     gz[4 * n:4 * n + 2] = [gu[0][0], gu[1][0]]; gz[4 * n + 2:] = np.concatenate(gv)
     return f_tot, f, ratios.min(), 2 * np.concatenate([gz.real, gz.imag]), g_lam
 P = 2 * (4 * n + 2 + 2 * D); x = rng.normal(size=P); lam_c = -0.25
-if len(sys.argv) > 6: x = np.load(sys.argv[6]) + 0.02 * rng.normal(size=P)
+if len(sys.argv) > 6 and sys.argv[6] != '--anneal': x = np.load(sys.argv[6]) + 0.02 * rng.normal(size=P)
 m1 = np.zeros(P); m2 = np.zeros(P); lr = 0.02; t0 = time.time(); best = (-np.inf, None)
+anneal = '--anneal' in sys.argv
 for it in range(1, iters + 1):
+    if anneal: T_soft = 0.003 * (1e-5 / 0.003) ** (it / iters)
     f_tot, f, th, g, g_lam = objective(x, lam_c)
-    if th >= tau - 1e-3 and f > best[0]: best = (f, x.copy(), lam_c, th)
+    if th >= tau - 1e-3 and (not anneal or it > iters // 2) and f > best[0]: best = (f, x.copy(), lam_c, th)
     m1 = 0.9 * m1 + 0.1 * g; m2 = 0.999 * m2 + 0.001 * g ** 2
     x = x + lr * (m1 / (1 - 0.9 ** it)) / (np.sqrt(m2 / (1 - 0.999 ** it)) + 1e-8)
     if mode == "common": lam_c = float(np.clip(lam_c + 0.01 * np.sign(g_lam), -0.5, -0.01))

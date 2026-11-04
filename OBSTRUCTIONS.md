@@ -37,8 +37,8 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
     Q_s − λN_s is PSD at the same λ = m. For general rank-two operators, the sign-free version of this (no
     common PSD shift in [1 − 3t, 0)) is false at N = 3 at every Werner parameter we tried, from t = 0.335 to
     t = ½: there are thick operators with all three pencils positive definite there. On tangent planes even
-    the per-copy version is false (exactly, at N = 3), and one copy can be a squeeze minimum; what survives is
-    that not every copy is one (SC-cw) and its descent form (SC-desc).
+    the per-copy version is false (exactly, at N = 3), and so is every relaxation we tried: tangent operators can be
+    squeeze minima at every copy, and can have all pencils positive definite at one common λ = −0.01 (N = 3, 4).
 - **Fixed-size convex certificates.**
   - F_qubit ⊗ W is not decomposable already at N = 1 (best value −1/7).
   - Twirled PPT and symmetric-extension relaxations fail by N = 3.

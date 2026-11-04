@@ -1,0 +1,10 @@
+shared_shift_pd_T_n3: R = 0.26188; rank 2; range weight outside T_e 0.0e+00
+   copy 0: lambda_min(Q - lambda N)/||N|| at lambda = -0.01 is +2.850e-04; PD for lambda in about [-0.036, +0.039]; ratios 0.053/0.306; forms vs direct 2.4e-15
+   copy 1: lambda_min(Q - lambda N)/||N|| at lambda = -0.01 is +2.008e-04; PD for lambda in about [-0.052, -0.000]; ratios 0.052/0.114; forms vs direct 5.4e-15
+   copy 2: lambda_min(Q - lambda N)/||N|| at lambda = -0.01 is +1.924e-04; PD for lambda in about [-0.048, -0.002]; ratios 0.051/0.103; forms vs direct 1.9e-15
+shared_shift_pd_T_n4: R = 0.19779; rank 2; range weight outside T_e 0.0e+00
+   copy 0: lambda_min(Q - lambda N)/||N|| at lambda = -0.01 is +1.156e-03; PD for lambda in about [-0.075, +0.129]; ratios 0.052/0.185; forms vs direct 3.1e-15
+   copy 1: lambda_min(Q - lambda N)/||N|| at lambda = -0.01 is +1.162e-03; PD for lambda in about [-0.129, +0.145]; ratios 0.053/0.183; forms vs direct 2.1e-15
+   copy 2: lambda_min(Q - lambda N)/||N|| at lambda = -0.01 is +1.163e-03; PD for lambda in about [-0.048, +0.119]; ratios 0.051/0.187; forms vs direct 5.9e-15
+   copy 3: lambda_min(Q - lambda N)/||N|| at lambda = -0.01 is +1.186e-03; PD for lambda in about [-0.036, +0.134]; ratios 0.050/0.197; forms vs direct 1.9e-15
+PASS

@@ -1,0 +1,13 @@
+# python search_strong.py n common seed iters tau [start], with the soft-min temperature annealed from 0.003 to 1e-5 (best point taken in the second half); 4 Nov 2026
+## c4_3_common_005.txt
+n=3 common seed 501 tau 0.05: best f = +8.8563e-05 at thickness 0.051 (lam -0.010)
+n=3 common seed 502 tau 0.05: best f = +2.2690e-05 at thickness 0.050 (lam -0.010)
+n=3 common seed 503 tau 0.05: best f = +6.7156e-05 at thickness 0.050 (lam -0.010)
+## c4_3_common_01.txt
+n=3 common seed 511 tau 0.1: best f = -1.8760e-03 at thickness 0.099 (lam -0.310)
+n=3 common seed 512 tau 0.1: best f = -6.2387e-04 at thickness 0.099 (lam -0.010)
+## c4_4_common_005.txt
+n=4 common seed 531 tau 0.05: best f = -6.6905e-05 at thickness 0.050 (lam -0.030)
+n=4 common seed 532 tau 0.05: best f = +4.4158e-04 at thickness 0.050 (lam -0.010)
+## c4_4_common_fromcw.txt
+n=4 common seed 541 tau 0.05: best f = +5.6406e-04 at thickness 0.050 (lam -0.010)

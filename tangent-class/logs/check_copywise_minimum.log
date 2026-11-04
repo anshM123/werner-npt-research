@@ -1,0 +1,10 @@
+copywise_squeeze_min_n3: R = 0.24421 (direct 0.24421); rank 2; range weight outside T_e 0.0e+00
+   copy 0: ratios 0.091/0.322; eigenvalues of F/||N||: min +1.2e-16 (null vector . I = 1.000000), next +2.58e-04; |F(I, .)| 1.9e-13; min sampled R(GCG) - R(C) +1.3e-05; pencil PSD on [0.2379, 0.2442]
+   copy 1: ratios 0.087/0.233; eigenvalues of F/||N||: min -4.6e-17 (null vector . I = 1.000000), next +1.61e-04; |F(I, .)| 9.6e-14; min sampled R(GCG) - R(C) +2.0e-05; pencil PSD on [0.2391, 0.2442]
+   copy 2: ratios 0.066/0.211; eigenvalues of F/||N||: min +1.3e-17 (null vector . I = 1.000000), next +1.49e-04; |F(I, .)| 1.9e-13; min sampled R(GCG) - R(C) +1.1e-05; pencil PSD on [0.2388, 0.2442]
+copywise_squeeze_min_n4: R = 0.22019 (direct 0.22019); rank 2; range weight outside T_e 0.0e+00
+   copy 0: ratios 0.062/0.420; eigenvalues of F/||N||: min +1.7e-16 (null vector . I = 1.000000), next +1.46e-04; |F(I, .)| 2.0e-12; min sampled R(GCG) - R(C) +4.4e-06; pencil PSD on [0.2176, 0.2202]
+   copy 1: ratios 0.057/0.253; eigenvalues of F/||N||: min +1.1e-16 (null vector . I = 1.000000), next +6.10e-05; |F(I, .)| 6.0e-12; min sampled R(GCG) - R(C) +1.1e-05; pencil PSD on [0.2163, 0.2202]
+   copy 2: ratios 0.056/0.357; eigenvalues of F/||N||: min +2.1e-16 (null vector . I = 1.000000), next +1.48e-04; |F(I, .)| 1.9e-11; min sampled R(GCG) - R(C) +1.8e-05; pencil PSD on [0.2163, 0.2202]
+   copy 3: ratios 0.050/0.159; eigenvalues of F/||N||: min -7.3e-17 (null vector . I = 1.000000), next +3.85e-05; |F(I, .)| 2.6e-12; min sampled R(GCG) - R(C) +9.2e-06; pencil PSD on [0.2149, 0.2202]
+PASS
