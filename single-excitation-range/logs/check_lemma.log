@@ -1,0 +1,36 @@
+(a) block size 1, m = 1: adversarial min slack/||Y||^2 = +5.00e-01
+(a) block size 1, m = 2: adversarial min slack/||Y||^2 = +1.19e-11
+(a) block size 1, m = 3: adversarial min slack/||Y||^2 = +8.99e-11
+(a) block size 1, m = 4: adversarial min slack/||Y||^2 = +3.40e-10
+(a) block size 1, m = 5: adversarial min slack/||Y||^2 = +8.60e-10
+(a) block size 1, m = 6: adversarial min slack/||Y||^2 = +3.31e-09
+(a) block size 1, m = 7: adversarial min slack/||Y||^2 = +2.21e-09
+(a) block size 1, m = 8: adversarial min slack/||Y||^2 = +8.74e-09
+(a) block size 2, m = 1: adversarial min slack/||Y||^2 = +9.17e-14
+(a) block size 2, m = 2: adversarial min slack/||Y||^2 = +5.23e-12
+(a) block size 2, m = 3: adversarial min slack/||Y||^2 = +1.48e-10
+(a) block size 2, m = 4: adversarial min slack/||Y||^2 = +8.99e-09
+(a) block size 2, m = 5: adversarial min slack/||Y||^2 = +8.14e-10
+(a) block size 2, m = 6: adversarial min slack/||Y||^2 = +1.46e-08
+(a) block size 2, m = 7: adversarial min slack/||Y||^2 = +9.73e-09
+(a) block size 2, m = 8: adversarial min slack/||Y||^2 = +4.81e-09
+(a) block size 3, m = 1: adversarial min slack/||Y||^2 = +1.98e-11
+(a) block size 3, m = 2: adversarial min slack/||Y||^2 = +3.31e-11
+(a) block size 3, m = 3: adversarial min slack/||Y||^2 = +1.70e-09
+(a) block size 3, m = 4: adversarial min slack/||Y||^2 = +3.49e-09
+(a) block size 3, m = 5: adversarial min slack/||Y||^2 = +1.07e-08
+(a) block size 3, m = 6: adversarial min slack/||Y||^2 = +6.64e-09
+(a) block size 3, m = 7: adversarial min slack/||Y||^2 = +2.23e-08
+(a) block size 3, m = 8: adversarial min slack/||Y||^2 = +1.02e-08
+(b) Y = |1><1| (x) I_2: slack = 0.0
+(b) Y = [[I, I], [-I, -I]]: slack = 1.7763568394002505e-15
+(b) Y = [[I, I], [I, I]] (strict case): slack = 8.0
+(c) min eigenvalue of I - diag(u^2) + uu^T/2 over 20000 random u with sum u^2 = 2: -3.05e-16
+(c) adversarial min eigenvalue: -8.88e-16
+(d) rank 2, c = 1: F_c(Y)/||Y||^2 = +1.000000 (2/c - 1 = +1.000000)
+(d) rank 2, c = 2: F_c(Y)/||Y||^2 = +0.000000 (2/c - 1 = +0.000000)
+(d) rank 2, c = 3: F_c(Y)/||Y||^2 = -0.333333 (2/c - 1 = -0.333333)
+(d) rank 2, c = 4: F_c(Y)/||Y||^2 = -0.500000 (2/c - 1 = -0.500000)
+(d) rank 2, c = 6: F_c(Y)/||Y||^2 = -0.666667 (2/c - 1 = -0.666667)
+RESULT: lemma adversarial min +9.17e-14; matrix step min -8.88e-16
+PASS

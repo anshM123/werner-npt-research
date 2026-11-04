@@ -1,0 +1,8 @@
+theorem class n=2: random min q/||X||^2 = +4.729e-01, adversarial min = +1.592e-09
+theorem class n=3: random min q/||X||^2 = +3.942e-01, adversarial min = +6.496e-09
+theorem class n=4: random min q/||X||^2 = +2.471e-01, adversarial min = +3.940e-07
+theorem class n=5: random min q/||X||^2 = +1.506e-01, adversarial min = +6.491e-07
+open sector c=3, n=4 (evidence only): random min = +4.492e-01, adversarial min = +5.394e-08
+open sector c=3, n=5 (evidence only): random min = +2.881e-01, adversarial min = +4.462e-06
+RESULT: smallest value on the theorem class +1.592e-09
+PASS

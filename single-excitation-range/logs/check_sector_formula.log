@@ -1,0 +1,20 @@
+(a) n=2 c=1: max relative error so far 3.8e-16
+(a) n=2 c=2: max relative error so far 4.4e-16
+(a) n=3 c=1: max relative error so far 4.4e-16
+(a) n=3 c=2: max relative error so far 5.4e-16
+(a) n=3 c=3: max relative error so far 6.1e-16
+(a) n=4 c=1: max relative error so far 6.1e-16
+(a) n=4 c=2: max relative error so far 6.1e-16
+(a) n=4 c=3: max relative error so far 6.1e-16
+(a) n=4 c=4: max relative error so far 8.3e-16
+(a) n=5 c=1: max relative error so far 8.3e-16
+(a) n=5 c=2: max relative error so far 8.3e-16
+(a) n=5 c=3: max relative error so far 1.5e-15
+(a) n=5 c=4: max relative error so far 1.5e-15
+(a) n=5 c=5: max relative error so far 1.5e-15
+(b) n=2: q(X) = +298.9350918461, sum over sectors = +298.9350918461, relative error 1.9e-16
+(b) n=3: q(X) = +1186.2866202201, sum over sectors = +1186.2866202201, relative error 0.0e+00
+(b) n=4: q(X) = +3753.6014752303, sum over sectors = +3753.6014752303, relative error 0.0e+00
+(b) n=5: q(X) = +6072.7727779565, sum over sectors = +6072.7727779565, relative error 1.5e-16
+RESULT: sector formula max relative error 1.5e-15; charge splitting max relative error 1.9e-16
+PASS
