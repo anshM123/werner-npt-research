@@ -1,0 +1,9 @@
+(a) n=5 c=3 d=0.05: symmetric slack +4.100795e-03, full program +4.100794e-03
+(a) n=5 c=3 d=0.2: symmetric slack +1.435614e-02, full program +1.435614e-02
+(a) n=6 c=4 d=0.05: symmetric slack +1.412651e-03, full program +1.412651e-03
+(a) n=6 c=4 d=0.2: symmetric slack +4.380602e-03, full program +4.380598e-03
+(b) n=7 c=5 d=0.05: maximal slack +1.7761e-04
+(b) n=7 c=5 d=0.2: maximal slack -6.6882e-05
+(b) n=8 c=6 d=0.05: maximal slack -4.4635e-04
+(c) n=7 c=5 d=0.2: lambda_min of the sector form +1.3966e-01 (the sector itself is positive)
+PASS

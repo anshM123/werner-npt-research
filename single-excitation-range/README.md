@@ -13,9 +13,9 @@ because single excitations over a product are not anchors.
 - Proposition 5 (added 4 November 2026) settles every sector 1 ≤ c ≤ n − 1 for range planes in which no c copies are
   heavy: Σ_{t∈S} A_t ⪯ 2(n − c)/(3(n − c) − 1) · I for every set S of c copies. It is Theorem 3 applied to every set
   of c + 1 copies.
-- Proposition 6 and Conjecture 6 (added 4 November 2026) put Theorems 1–3 and Proposition 5 into one family of
-  certificates. Each certificate is a finite set of matrix inequalities and proves its sector. Numerically every
-  tested sector has one. The conjecture that all do is open.
+- Proposition 6 (added 4 November 2026) puts Theorems 1–3 and Proposition 5 into one family of certificates. Each
+  certificate is a finite set of matrix inequalities and proves its sector. Every tested POVM for n ≤ 6 has one, but
+  a counterexample at n = 7 shows that the family is not enough for all n.
 
 Both classes are thick at every copy.
 
@@ -297,14 +297,15 @@ copies elsewhere. The sector stays nonnegative there numerically, but for a diff
 
 The sectors 3 ≤ c ≤ n − 2 therefore remain open for planes with a heavy set of c copies.
 
-## Conjecture 6: one certificate for every sector
+## Proposition 6: one certificate family for all three mechanisms
 
 The proofs above use three different mechanisms:
 - Theorem 1 uses the rank-two Lemma on each string ρ;
 - Theorem 2 uses monogamy of the reference qubit;
 - Theorem 3 uses a Lagrange identity on the whole sector.
 
-All three fit into one family of certificates, and numerically this family suffices in every sector we tested.
+All three fit into one family of certificates. Numerically this family suffices at every POVM we tested for
+n ≤ 6, but not for all n: it fails at n = 7 (see the counterexample below).
 
 Write the sector form with co-range vectors f_σ ∈ C², in the gauge Σ_t A_t = I:
 
@@ -343,10 +344,10 @@ The family contains the earlier arguments.
 
 With θ = 0, (P) is a monogamy condition on the reference qubit and (L) is the Lemma's condition on each string.
 
-**Conjecture 6.** Every co-range sector of every single-excitation range plane has a certificate.
-
-By Proposition 6 this would give the endpoint on all single-excitation range planes, with any co-range, for every n.
-Already the case c = n − 2 would give it for n = 5.
+**Conjecture 6 (withdrawn for n ≥ 7).** We first conjectured that every co-range sector of every single-excitation
+range plane has a certificate. This is false for n ≥ 7 (counterexample below). The question remains open for n ≤ 6.
+There, a certificate in the sector c = 3 at n = 5 for every POVM would give the endpoint on all single-excitation
+range planes at n = 5, with any co-range.
 
 *Evidence.* We solved the certificate as a semidefinite program, maximising a common slack, and re-checked every
 inequality of the returned solution with independent eigenvalue computations
@@ -364,7 +365,34 @@ The light copies' pieces are products, so they add up with no monogamy gain, and
 light copies (slack ≈ 0 at n = 5, negative at n = 6). This explains the numbers but is not a proof of infeasibility.
 With m = 0 the program is Proposition 5. With splits diagonal in the letters it fails as shown above.
 
-Conjecture 6 is not proved.
+**Counterexample (n = 7, c = 5).** Take one heavy copy A_0 = diag(1 − d, 1) and six light copies U_t = √(d/6)|1⟩⟨e_1|.
+The program is convex and invariant under permuting the light copies, so a certificate exists if and only if a
+symmetric one does, and the symmetric program has five unknown blocks. Its maximal slack is −6.69 × 10^{−5} at
+d = 0.2. The full program gives the same value (−6.688 × 10^{−5}, re-checked independently). At n = 8, c = 6 the
+slack is −4.5 × 10^{−4} already at d = 0.05.
+
+The sector form itself is positive at the n = 7 point: λ_min = +0.140. So the counterexample is to the
+certificate family, not to the endpoint. Along this family the slack falls steadily with n (d = 0.05: +4.1 × 10^{−3},
++1.4 × 10^{−3}, +1.8 × 10^{−4} at n = 5, 6, 7). The light copies are rank-one products along one direction, so their
+pieces add up with no monogamy gain. Theorem 3 on sets of c + 1 copies also does not see the light copies
+collectively. A proof of the open sectors for all n needs a further, collective ingredient for many light copies;
+checks in `code/check_certificate_counterexample.py`.
+
+A first-order computation locates that ingredient. Here it is derived by degenerate perturbation theory and checked
+numerically, not written as a proof. Write N = n − 1 and treat the light copies as spins (letter 1 = up, hole = down).
+- To first order in d, the minimum of the sector form along the family is d(1/2 + 2/N). Extrapolated numerics for
+  n = 5, …, 9 give 1, 0.9, 0.833, 0.786, 0.75 for min/d, matching this to 10^{−5}.
+- Two terms compete. One is the cost of the strings where the heavy copy is excited, K = 2N_up − S⁺S⁻. The other comes
+  from eliminating the strings where the heavy copy is a hole, W = S⁻S⁺. Their sum is exactly K + W = N, because
+  [S⁺, S⁻] = 2S_z.
+- Bounded separately, they have maxima N and 2N − 2, reached on different spin multiplets. A certificate that bounds
+  them separately therefore certifies at most d(6 − N)/(2N). That is positive for n ≤ 6, zero at n = 7 and negative from
+  n = 8, which matches the slacks above.
+
+The missing ingredient is thus a collective inequality for the light copies: the commutator identity
+[S⁺, S⁻] = 2S_z, used across all strings at once.
+
+So Proposition 6 remains a sufficient condition that we checked at many POVMs for n ≤ 6, and no more.
 
 ## Why the sectors c ≥ 3 are different
 
@@ -420,7 +448,9 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   the CLARABEL solver). `code/check_combined_certificate.py` solves it at structured POVMs for n = 5, 6 and
   3 ≤ c ≤ n − 1, re-checks every inequality of each solution with independent eigenvalue computations, and shows
   that θ = 0 alone is infeasible at n = 6, c = 5 with one heavy copy. `code/sweep_combined_certificate.py` runs the
-  60-POVM sweep at n = 5, c = 3. This is evidence, not proof.
+  60-POVM sweep at n = 5, c = 3. This is evidence, not proof. `code/check_certificate_counterexample.py` checks the
+  counterexample at n = 7, 8: a symmetric reduction that matches the full program at n = 5, 6, the negative
+  slacks, and the positive sector minimum.
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});
