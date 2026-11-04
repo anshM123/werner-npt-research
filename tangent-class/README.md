@@ -130,6 +130,11 @@ variables (Brickman).
    steps, at an operator that is thin at every copy.
 6. Such an operator has range in a product of planes, so q ≥ 0 by separability of 2 × 3 PPT states. ∎
 
+`code/check_line_iteration.py` runs this construction on random tangent operators (three at n = 3, one at n = 4). It
+takes the direction H from a small semidefinite program at each thick copy and follows both ends of every line. Along
+all 36 lines, R at the start is at least the smaller end value, with a gap of at least 0.045. All 40 branches end at
+operators that are thin at every copy, and the smallest value there is +0.088.
+
 ## Evidence for Conjecture SC
 
 The numerics test the stronger statement with every λ ∈ [−5, 5]. They report
@@ -141,8 +146,10 @@ The numerics test the stronger statement with every λ ∈ [−5, 5]. They repor
   (`code/check_exact_facts.py`). Only the sign of ν_s is invariant, so the conjecture can be checked on the compact
   slice of balanced operators, where Tr_{−s}(CC^* + C^*C) ∝ I. There the margins do not close near thin points.
   Sampling four regimes (generic, nearly thin U_0, a = 0, range = co-range) gives largest balanced values −0.27, −0.16
-  and −0.13 at n = 2, 3, 4 (`code/check_balanced.py`). Independent adversarial searches on the balanced slice, not
-  included here, found the same sign.
+  and −0.13 at n = 2, 3, 4 (`code/check_balanced.py`). Three samples per regime at n = 5 give −0.12 (generic),
+  −0.12 (a = 0) and −0.064 (range = co-range). The margin stays negative but is not uniform in n. In the range =
+  co-range regime it halves at each step: −0.52, −0.25, −0.13, −0.064 for n = 2, …, 5, so ν·2^n ≈ −2.05 at every n.
+  Independent adversarial searches on the balanced slice, not included here, found the same sign.
 - **Targeted test.** The general three-copy operator with a single-copy squeeze minimum at every copy
   (`orbit-notes/data/copywise_min_n3.npy`) has only 67% of its range inside its best tangent space. Projecting it into
   that tangent space and maximising min_s ν_s inside the class runs to thin points, with local-support ratios ≤ 3·10⁻⁴
@@ -168,7 +175,7 @@ at n = 4.
 
 ## What does not work
 
-Three things fail, and they show that the conjecture uses the tangent structure.
+Four things fail, and they show that the conjecture uses the tangent structure.
 - **Larger classes.** The one-copy statement fails for every natural enlargement we tried. For ranges with at
   most two excitations over a product it fails as follows. Projecting the operator above into T^(2) and re-optimising inside that class gives a thick operator
   (local-support ratios 0.50, 0.37, 0.35, stored in `data/two_excitation_pencil_psd_n3.npy`) whose pencil is positive
@@ -181,6 +188,13 @@ Three things fail, and they show that the conjecture uses the tangent structure.
   φ_t ⊥ B_t, and product anchors f^(s) inside the planes. This contains the bond-two class, and it has a thick
   operator with ν_s > 0 at every copy and R = 0.30 (`data/anchored_pencil_psd_n3.npy`). The tangent and bond-two
   ranges span only 2n + 1 dimensions, against 2^n + n here.
+- **One shared shift for every copy.** Run over all rank-two operators, the minimiser argument of Theorem 3 has more
+  to work with: at a thick negative minimiser the pencils at all copies are PSD at the same λ = m. The sign-free
+  version, "no thick operator has all its pencils PSD at one shared λ ∈ [−½, 0)", is false.
+  `data/common_shift_pd_n3.npy` is a thick three-copy operator (local-support ratios of range and co-range ≥ 0.30)
+  whose three pencils are all positive definite at λ = −½. They are PSD on [−2.39, −0.038], [−5.11, +0.050] and
+  [−7.00, −0.026]. Its value is R = 0.265, so what the argument really uses is the coupling λ = R(C), and for
+  negative values that is equivalent to EP itself (`code/check_common_shift.py`).
 - **Structured certificates.** Several natural certificates for the conjecture fail adversarially as standalone
   arguments, though the full 9 × 9 pencil still has a negative direction there:
   - tilts of the vacuum alone;
@@ -208,6 +222,10 @@ Three things fail, and they show that the conjecture uses the tangent structure.
   the basis where e = |000⟩.
 - `code/check_bond_two.py`: the bond-two class and the anchored contrast. Log: `logs/check_bond_two.log`.
 - `data/anchored_pencil_psd_n3.npy`: the thick anchored operator with ν_s > 0 at every copy.
+- `code/check_line_iteration.py`: the construction of Theorem 3′ followed on examples. Log:
+  `logs/check_line_iteration.log`.
+- `code/check_common_shift.py` with `data/common_shift_pd_n3.npy`: a general thick operator whose pencils are all
+  positive definite at λ = −½. Log: `logs/check_common_shift.log`.
 
 ## Status
 

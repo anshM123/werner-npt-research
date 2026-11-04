@@ -1,0 +1,6 @@
+singular values 0.7428, 0.6695, 9.8e-17; R = 0.26473 (direct partial traces 0.26473)
+copy 0: lambda_min(Q + N/2)/||N|| = +3.4845e-02; Q - lambda N is PSD exactly for lambda in [-2.3897, -0.0380]
+copy 1: lambda_min(Q + N/2)/||N|| = +3.4844e-02; Q - lambda N is PSD exactly for lambda in [-5.1139, +0.0499]
+copy 2: lambda_min(Q + N/2)/||N|| = +3.4983e-02; Q - lambda N is PSD exactly for lambda in [-7.0030, -0.0262]
+forms vs direct evaluation: largest relative error 9.5e-15; smallest local-support ratio (range and co-range) 0.298
+PASS
