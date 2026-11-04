@@ -1,0 +1,14 @@
+n=2 generic          : samples 12, largest balanced nu -0.2760, median -0.3290
+n=2 near-thin U_0    : samples 12, largest balanced nu -0.2716, median -0.3550
+n=2 a = 0            : samples 12, largest balanced nu -0.2796, median -0.3053
+n=2 range = co-range : samples 12, largest balanced nu -0.5201, median -0.5493
+n=3 generic          : samples 10, largest balanced nu -0.1595, median -0.1957
+n=3 near-thin U_0    : samples 10, largest balanced nu -0.1801, median -0.2308
+n=3 a = 0            : samples 10, largest balanced nu -0.1738, median -0.2139
+n=3 range = co-range : samples 10, largest balanced nu -0.2542, median -0.2560
+n=4 generic          : samples 6, largest balanced nu -0.1417, median -0.1514
+n=4 near-thin U_0    : samples 6, largest balanced nu -0.1538, median -0.1742
+n=4 a = 0            : samples 6, largest balanced nu -0.1483, median -0.1627
+n=4 range = co-range : samples 6, largest balanced nu -0.1274, median -0.1283
+RESULT: largest balanced nu over all samples -0.1274
+PASS

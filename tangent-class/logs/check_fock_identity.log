@@ -1,0 +1,14 @@
+n=2 trial 0 (a = 0): q_n = 128.4501075048, Fock form = 128.4501075048, rel. error 0.0e+00
+n=2 trial 1 (a != 0): q_n = 231.5043386577, Fock form = 231.5043386577, rel. error 2.5e-16
+n=2 trial 2 (a != 0): q_n = 451.5176435754, Fock form = 451.5176435754, rel. error 2.5e-16
+n=2 trial 3 (a != 0): q_n = 194.1491212142, Fock form = 194.1491212142, rel. error 2.9e-16
+n=3 trial 0 (a = 0): q_n = 1017.4787163078, Fock form = 1017.4787163078, rel. error 3.4e-16
+n=3 trial 1 (a != 0): q_n = 973.6223270265, Fock form = 973.6223270265, rel. error 3.5e-16
+n=3 trial 2 (a != 0): q_n = 1097.8858599766, Fock form = 1097.8858599766, rel. error 2.1e-16
+n=3 trial 3 (a != 0): q_n = 632.6830594629, Fock form = 632.6830594629, rel. error 5.4e-16
+n=4 trial 0 (a = 0): q_n = 1745.7080080715, Fock form = 1745.7080080715, rel. error 0.0e+00
+n=4 trial 1 (a != 0): q_n = 2334.4349538309, Fock form = 2334.4349538309, rel. error 1.9e-16
+n=4 trial 2 (a != 0): q_n = 2662.8809564201, Fock form = 2662.8809564201, rel. error 3.4e-16
+n=4 trial 3 (a != 0): q_n = 2558.6780760952, Fock form = 2558.6780760952, rel. error 3.6e-16
+RESULT: maximal relative error 5.4e-16
+PASS

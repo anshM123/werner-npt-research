@@ -1,0 +1,22 @@
+(a) random tangent operators
+  n=3 trial 0: R = 0.0668, nu per copy [-0.0177 -0.0143 -0.0067], local-support ratios [0.054 0.045 0.019]
+  n=3 trial 1: R = 0.0670, nu per copy [-0.001  -0.0118 -0.0169], local-support ratios [0.002 0.062 0.088]
+  n=3 trial 2: R = 0.1100, nu per copy [-0.0221 -0.0233 -0.035 ], local-support ratios [0.042 0.043 0.147]
+  n=3 trial 3: R = 0.0349, nu per copy [-0.0047 -0.0053 -0.0045], local-support ratios [0.008 0.029 0.008]
+  n=3 trial 4: R = 0.0848, nu per copy [-0.0194 -0.003  -0.0131], local-support ratios [0.065 0.01  0.045]
+  n=3 trial 5: R = 0.1287, nu per copy [-0.0016 -0.0208 -0.0347], local-support ratios [0.016 0.117 0.204]
+  n=4 trial 0: R = 0.0605, nu per copy [-0.0031 -0.0059 -0.0033 -0.0147], local-support ratios [0.009 0.016 0.019 0.058]
+  n=4 trial 1: R = 0.0586, nu per copy [-0.0002 -0.0027 -0.0016 -0.0036], local-support ratios [0.003 0.059 0.022 0.034]
+  n=4 trial 2: R = 0.0521, nu per copy [-0.0041 -0.0093 -0.002  -0.0019], local-support ratios [0.02  0.064 0.007 0.009]
+  n=5 trial 0: R = 0.3975, nu per copy [-0.1207 -0.1234 -0.1097 -0.1184 -0.1067], local-support ratios [0.006 0.011 0.031 0.055 0.092]
+  n=5 trial 1: R = 0.4153, nu per copy [-0.1263 -0.13   -0.1217 -0.1295 -0.1072], local-support ratios [0.047 0.033 0.026 0.001 0.005]
+  n=5 trial 2: R = 0.3859, nu per copy [-0.1048 -0.1046 -0.1119 -0.1053 -0.1034], local-support ratios [0.088 0.002 0.005 0.038 0.006]
+  largest nu over (a): -0.0002
+(b) targeted test inside the tangent class, n = 3
+  fraction of the range of the general single-copy minimum inside the best tangent space: 0.6676
+  after projection: nu [-0.0538 -0.0386 -0.0314], local-support ratios [0.0507 0.0195 0.0355]
+  after re-optimisation inside the tangent class: nu [-3.4e-05 -1.1e-05 -1.5e-05], local-support ratios [3.e-04 0.e+00 3.e-05]
+(c) two-excitation class: the stored operator
+  rank 2, range weight outside T^(2): 0.0e+00, local-support ratios [0.5   0.372 0.349]
+  nu per copy [0.0369 0.0375 0.0347] (> 0: the pencil is positive definite for some lam at every copy)
+RESULT: tangent class nu < 0 in all tests; two-excitation operator has nu > 0 at every copy

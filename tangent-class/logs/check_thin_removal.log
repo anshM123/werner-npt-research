@@ -1,0 +1,11 @@
+n=2 thin copy 0: q_n = 329.1214500358, sum of (n-1)-copy terms = 329.1214500358, rel. error 1.7e-16, max(range outside T, rank-2) = 0.0e+00
+n=2 thin copy 1: q_n = 152.2255387348, sum of (n-1)-copy terms = 152.2255387348, rel. error 0.0e+00, max(range outside T, rank-2) = 0.0e+00
+n=2 thin copy 0: q_n = 90.5086287379, sum of (n-1)-copy terms = 90.5086287379, rel. error 3.1e-16, max(range outside T, rank-2) = 0.0e+00
+n=3 thin copy 0: q_n = 1159.6957275007, sum of (n-1)-copy terms = 1159.6957275007, rel. error 2.0e-16, max(range outside T, rank-2) = 0.0e+00
+n=3 thin copy 1: q_n = 1321.5683706496, sum of (n-1)-copy terms = 1321.5683706496, rel. error 1.7e-16, max(range outside T, rank-2) = 0.0e+00
+n=3 thin copy 2: q_n = 722.3973250111, sum of (n-1)-copy terms = 722.3973250111, rel. error 1.6e-16, max(range outside T, rank-2) = 0.0e+00
+n=4 thin copy 0: q_n = 2120.4740860276, sum of (n-1)-copy terms = 2120.4740860276, rel. error 4.3e-16, max(range outside T, rank-2) = 0.0e+00
+n=4 thin copy 1: q_n = 3494.3046050448, sum of (n-1)-copy terms = 3494.3046050448, rel. error 0.0e+00, max(range outside T, rank-2) = 0.0e+00
+n=4 thin copy 2: q_n = 10311.5268565246, sum of (n-1)-copy terms = 10311.5268565246, rel. error 3.5e-16, max(range outside T, rank-2) = 0.0e+00
+RESULT: maximal relative error 4.3e-16
+PASS

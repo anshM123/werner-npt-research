@@ -1,0 +1,8 @@
+n=2 copy 0: scale-invariance 3.7e-16 1.9e-15 | thin tilt N 4.9e-17 Q 6.4e-17 | phase average Q 3.5e-16 N 2.9e-16
+n=2 copy 1: scale-invariance 4.0e-16 1.5e-15 | thin tilt N 1.7e-17 Q 2.0e-17 | phase average Q 5.9e-16 N 1.0e-15
+n=2 copy 0: scale-invariance 3.1e-16 1.5e-16 | thin tilt N 2.2e-17 Q 4.7e-17 | phase average Q 3.4e-16 N 1.6e-16
+n=3 copy 0: scale-invariance 3.0e-15 5.6e-16 | thin tilt N 1.8e-18 Q 1.1e-16 | phase average Q 2.0e-16 N 9.2e-16
+n=3 copy 1: scale-invariance 3.1e-16 1.9e-14 | thin tilt N 6.3e-18 Q 3.1e-17 | phase average Q 8.5e-16 N 3.7e-16
+n=3 copy 2: scale-invariance 1.1e-15 4.1e-16 | thin tilt N 2.1e-17 Q 7.7e-17 | phase average Q 2.5e-16 N 2.0e-16
+RESULT: maximal relative error 1.9e-14
+PASS
