@@ -1,0 +1,6 @@
+(a) 2Kt = 4 Vac + alpha^*alpha - 2 sum Delta^exc: largest error 2.2e-15
+(b) top eigenvalue of Delta = sqrt(det A), the others <= 0: largest error 9.8e-15; top eigenvector maximally entangled to 1.2e-15
+(c) largest violation of the central-spin bound: -1.7e-04
+(d) lambda_min(2Kt) - (Proposition 8 bound): smallest +1.994e-02 over 60 POVMs (10 satisfy the condition)
+(e) n=5 c=3, min sqrt(det A_t) = 0.011: max_S lambda_max(A_S) = 0.986 > Proposition 5 threshold 0.800; Proposition 8 bound +3.767e-03 >= 0; lambda_min(2Kt) +4.811e-01
+PASS

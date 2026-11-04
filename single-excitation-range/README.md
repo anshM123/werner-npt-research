@@ -20,6 +20,9 @@ because single excitations over a product are not anchors.
   counterexample (n ≤ 10 tested), and in its balanced form it only asks to split a positive semidefinite part of each
   pattern among the pattern's children. Every POVM we tested has such a split. An explicit rule for the splits would
   close all sectors for all n; we do not have one.
+- Proposition 8 (added 4 November 2026): in a second exact form of each sector, every one-copy correction has a
+  single positive eigenvalue √det A_t. With the central-spin bound this closes every sector, for every n, when the
+  rank-two parts are small compared with the vacuum of every hole set.
 
 Both classes are thick at every copy.
 
@@ -469,6 +472,38 @@ Does every sector have a balanced certificate? If so, the endpoint would hold on
 for every n and every co-range. We know no counterexample. Conjecture 6 showed how evidence at small n can mislead,
 so we state no conjecture. What is still missing is an explicit rule for the splits.
 
+## Proposition 8: small rank-two parts
+
+Added 4 November 2026. The sector form has a second exact expression. With Ex = Σ_t Ā_t ⊗ P_{1,t}, so that
+I = Vac + Ex, the sector form 2K̃_c = 2I + 2 Vac − 2T + α^*α becomes
+
+    2K̃_c = 4 Vac + α^*α − 2 Σ_t Δ_t^{exc},   Δ_t = β_t^*β_t − Ā_t ⊗ I.
+
+Here Δ_t acts on the letter at copy t and the reference index, on the strings where t is excited. Write the singular
+value decomposition U_t = Σ_k s_k |f_k⟩⟨g_k| with s_1 ≥ s_2. In the basis ḡ_k ⊗ f_l,
+
+    Δ_t = s_1 s_2 (Φ_t^+ − Φ_t^−) − s_1² |ḡ_1 f_2⟩⟨ḡ_1 f_2| − s_2² |ḡ_2 f_1⟩⟨ḡ_2 f_1|,
+
+with Φ_t^± the projectors onto (ḡ_1 ⊗ f_1 ± ḡ_2 ⊗ f_2)/√2. So Δ_t has exactly one positive eigenvalue, √det A_t, and
+its eigenvector is maximally entangled between the letter qubit and the reference qubit. If A_t has rank one, then
+Δ_t ⪯ 0. So the all-rank-one case is immediate: 2K̃_c ⪰ 4 Vac + α^*α.
+
+**Proposition 8.** For every n and every 1 ≤ c ≤ n − 1, sector c is nonnegative if, for every set S of c copies,
+
+    4 λ_min(Σ_{u∉S} A_u) ≥ Σ_{t∈S} √det A_t + max_{t∈S} √det A_t.
+
+*Proof.* Drop α^*α ⪰ 0. The other two terms act on each pattern separately. On the strings with excited set S,
+Vac = Ā_{H(S)} ⪰ λ_min(A_{H(S)}) I. The projectors Φ_t^+ are onto maximally entangled states of the letter qubit t
+and the reference qubit, so the weighted central-spin Lemma of Theorem 2 gives
+
+    2 Σ_{t∈S} Δ_t ⪯ 2 Σ_{t∈S} √det A_t Φ_t^+ ⪯ (Σ_{t∈S} √det A_t + max_{t∈S} √det A_t) I. ∎
+
+The condition asks that the rank-two parts be small compared with the vacuum of every hole set. It is not implied
+by Proposition 5. At n = 5, c = 3 there is a POVM with every A_t of rank two, a set of three copies with
+λ_max(A_S) = 0.986 > 4/5, and margin 3.8 × 10^{−3} in the condition (`code/check_small_ranktwo.py`, part (e)). The
+condition fails as soon as the holes of some S are parallel rank-one copies while S contains a rank-two copy, as in
+the heavy-copy family. There the term α^*α, dropped here, is what keeps the sector positive.
+
 ## Why the sectors c ≥ 3 are different
 
 The even split gives each string the weight 4/c < 2 on its off-diagonal blocks, and the Lemma needs 2. This loss is
@@ -531,9 +566,13 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
 - `code/threelevel_certificate.py` sets up the three-level certificate of Proposition 7 (cvxpy with CLARABEL or SCS),
   for the restricted heavy-copy model and for general range blocks. `code/check_threelevel_certificate.py` checks
   the identity T − α^*α = Vac − ⟨Θ, SΘ⟩ and its split over children (error 2 × 10^{−16}), the certificate on the
-  heavy-copy family for n = 5, …, 10, general real POVMs at n = 5, c = 3 (free μ and balanced), and the need for
-  matrix-valued splits. Every solution is re-checked, with the guard λ_min(2K̃_c) ≥ (n + 1)λ. This is evidence,
+  heavy-copy family for n = 5, …, 10, general real POVMs at n = 5, c = 3 (free μ and balanced), the need for
+  matrix-valued splits, and the child-form formula Π_{S'} = Σ_{s'} Tr(N N̄) with its rank-one antisymmetric part
+  (complex POVMs, error 7 × 10^{−15}). Every solution is re-checked, with the guard λ_min(2K̃_c) ≥ (n + 1)λ. This is evidence,
   not proof.
+- `code/check_small_ranktwo.py` checks Proposition 8: the identity 2K̃_c = 4 Vac + α^*α − 2 Σ_t Δ_t^{exc} (complex
+  POVMs, n = 3, 4, 5, every c; error 2 × 10^{−15}), the spectrum of Δ_t, the central-spin bound on every pattern, the
+  corollary at 60 random POVMs, and an example outside the threshold of Proposition 5.
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});

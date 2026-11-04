@@ -8,6 +8,8 @@
     more heavy-copy POVM;
 (e) at a near rank-one real frame the splits must be matrices: with k_{S,u} = w_{S,u} R_S (scalar weights, optimised)
     the child conditions fail, while the matrix-valued balanced certificate exists;
+(f) the child-form formula of the README: <F, Pi_{S'} F> = sum over strings s' with excited set S' of Tr(N Nbar),
+    N(s') = sum_{v in S'} F(s' - v) y_{v,z_v}^T, and ||N_anti||^2 = |sum_v det(F(s'-v), y_{v,z_v})|^2 / 2 (complex POVMs);
 every solution is re-checked with numpy eigenvalues, and the guard lambda_min(2Kt) >= (n + 1) * slack is verified."""
 import numpy as np, itertools, warnings
 from threelevel_certificate import Model, GeneralModel, gauge, certificate
@@ -76,5 +78,24 @@ lam, mu, st, chk, tmin, tmax = certificate(M, 3, three_level=True, real=True, fi
 print(f"(e) n=5 c=3 near rank-one frame: best scalar split slack {ls:+.3e}; matrix-valued balanced certificate slack {lam:+.3e} "
       f"(re-checked {chk:+.3e})", flush=True)
 ok &= ls < 0 and lam > 0 and chk > -1e-8
+# (f)
+rng3 = np.random.default_rng(5); worst = 0
+for n, c in [(4, 2), (5, 3), (5, 2)]:
+    M = GeneralModel(gauge([rng3.normal(size=(2, 2)) + 1j * rng3.normal(size=(2, 2)) for _ in range(n)])); o = M.ops(c)
+    S, m = o['S'], o['m']; pos = {s_: j for j, s_ in enumerate(S)}
+    F = rng3.normal(size=2 * m) + 1j * rng3.normal(size=2 * m)
+    for Sp, Pi in o['Pi'].items():
+        rhs = 0
+        for lets in itertools.product((1, 2), repeat=len(Sp)):
+            sp = [0] * n
+            for t, z in zip(sorted(Sp), lets): sp[t] = z
+            N = np.zeros((2, 2), complex); ell = 0
+            for v in Sp:
+                sv = list(sp); sv[v] = 0; f = np.array([F[r * m + pos[tuple(sv)]] for r in range(2)]); y = M.U[v][sp[v] - 1, :]
+                N += np.outer(f, y); ell += f[0] * y[1] - f[1] * y[0]
+            rhs += np.trace(N @ N.conj()); worst = max(worst, abs(np.linalg.norm((N - N.T) / 2) ** 2 - abs(ell) ** 2 / 2))
+        worst = max(worst, abs(np.vdot(F, Pi @ F) - rhs))
+print(f"(f) child-form formula Tr(N Nbar) and rank-one antisymmetric part: largest error {worst:.1e}")
+ok &= worst < 1e-12
 assert ok
 print("PASS")

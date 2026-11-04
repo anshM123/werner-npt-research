@@ -18,4 +18,5 @@
 (d) n=5 c=3 uniform W-plane: balanced certificate (mu = 1/2, theta = 0) slack +1.667e-01 (re-checked +1.667e-01); lambda_min(2Kt) - 6 slack +3.754e-01
 (d) n=5 c=3 one heavy copy: balanced certificate (mu = 1/2, theta = 0) slack +4.474e-02 (re-checked +4.474e-02); lambda_min(2Kt) - 6 slack +2.192e-03
 (e) n=5 c=3 near rank-one frame: best scalar split slack -7.874e-02; matrix-valued balanced certificate slack +2.185e-02 (re-checked +2.185e-02)
+(f) child-form formula Tr(N Nbar) and rank-one antisymmetric part: largest error 7.3e-15
 PASS
