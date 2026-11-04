@@ -1,0 +1,19 @@
+n=3 c=1: (a) pair decomposition error 5.6e-17; (b) max eigenvalue of D_Q^*D_Q - 2 Abar_Q P_Q +2.5e-16
+n=4 c=2: (a) pair decomposition error 1.7e-16; (b) max eigenvalue of D_Q^*D_Q - 2 Abar_Q P_Q +9.6e-16
+n=4 c=3: (a) pair decomposition error 2.2e-16; (b) max eigenvalue of D_Q^*D_Q - 2 Abar_Q P_Q -2.0e-01
+n=5 c=2: (a) pair decomposition error 1.7e-16; (b) max eigenvalue of D_Q^*D_Q - 2 Abar_Q P_Q +9.9e-16
+n=5 c=3: (a) pair decomposition error 3.3e-16; (b) max eigenvalue of D_Q^*D_Q - 2 Abar_Q P_Q +2.0e-15
+n=3 c=1 h=2: (c) min over 12 POVMs of lambda_min(Kt_c - bound) = +5.340e-10
+n=3 c=2 h=1: (c) min over 12 POVMs of lambda_min(Kt_c - bound) = -8.327e-17
+n=4 c=1 h=3: (c) min over 12 POVMs of lambda_min(Kt_c - bound) = +3.687e-09
+n=4 c=2 h=2: (c) min over 12 POVMs of lambda_min(Kt_c - bound) = +1.713e-09
+n=4 c=3 h=1: (c) min over 12 POVMs of lambda_min(Kt_c - bound) = -1.665e-16
+n=5 c=2 h=3: (c) min over 12 POVMs of lambda_min(Kt_c - bound) = +1.405e-08
+n=5 c=3 h=2: (c) min over 12 POVMs of lambda_min(Kt_c - bound) = +5.005e-09
+n=5 c=4 h=1: (c) min over 12 POVMs of lambda_min(Kt_c - bound) = -6.939e-17
+n=6 c=3 h=3: (c) min over 10 POVMs of lambda_min(Kt_c - bound) = +6.287e-03
+n=6 c=4 h=2: (c) min over 10 POVMs of lambda_min(Kt_c - bound) = +4.840e-03
+n=5 c=3: (d) 6 random POVMs with every c-set below 0.800; min lambda_min Kt_c = +4.917e-01
+n=6 c=3: (d) 6 random POVMs with every c-set below 0.750; min lambda_min Kt_c = +5.929e-01
+n=6 c=4: (d) 6 random POVMs with every c-set below 0.800; min lambda_min Kt_c = +5.012e-01
+PASS

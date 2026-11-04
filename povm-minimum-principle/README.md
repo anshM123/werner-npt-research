@@ -69,7 +69,10 @@ square and use Σ_{s vacuum} Ā_s = I − Σ_{t excited} Ā_t. ∎
 
 Sectors c ≤ 2 are Theorem 1 of `single-excitation-range/`, and the sector c = n − 1 is its Theorem 3 (every n). So
 on single-excitation planes, m ≥ 0 reduces to μ_c := λ_min K̃_c ≥ 0 for 3 ≤ c ≤ n − 2. In particular the endpoint
-holds on all single-excitation planes at n = 4, and the first open case is n = 5, c = 3.
+holds on all single-excitation planes at n = 4, and the first open case is n = 5, c = 3. Proposition 5 of
+`single-excitation-range/` sharpens item 3: sector c is nonnegative whenever Σ_{t∈σ} A_t ⪯ 2h/(3h − 1) · I for every
+set σ of c copies (h = n − c), by Theorem 3 applied to every set of c + 1 copies. The open sectors are therefore
+the POVMs with a heavy set of c elements.
 
 `code/check_reformulation.py` checks, at n = 2, 3, 4:
 - m = λ_min K against the direct minimum over co-ranges, for single-excitation and tangent planes;
@@ -124,8 +127,8 @@ Natural stronger statements fail, so a proof of MP has to use more than convexit
 - **Descents** (`code/search_minimum_principle.py`, L-BFGS from random interior points, `logs/descents.log`):
   - single-excitation planes: 30 of 30 runs at n = 3 and 16 of 16 at n = 4 end at an extreme POVM with m = 0. At
     n = 5, three of five end on the boundary with m = 0, and two stay on the plateau m = 2^{1−n};
-  - tangent planes with a vacuum amplitude: 16 of 16 at n = 3 and 8 of 8 at n = 4 end on the boundary (some A_s
-    singular) with m = 0;
+  - tangent planes with a vacuum amplitude: 16 of 16 at n = 3, 8 of 8 at n = 4 and 3 of 3 at n = 5
+    (`logs/descent_T_n5.log`) end on the boundary (some A_s singular) with m = 0;
   - the open sector c = 3 at n = 4: 12 of 12 runs end at an extreme POVM with μ_3 = 0; c = 2 at n = 4: 6 of 6; c = 3 at
     n = 5: 3 of 3, and 3 of 3 more in `logs/descent_n5_c3.log`; c = 4 at n = 5: 3 of 3 (`logs/descent_n5_c4.log`).
     At n = 6 the open sectors c = 3, 4, 5 give 6 of 6, using the sector formula directly (`code/sector_fast.py`,
@@ -143,7 +146,8 @@ Natural stronger statements fail, so a proof of MP has to use more than convexit
   φ_h > 0 would mean a strict local minimum. Results:
   - n = 2: −3.9·10⁻³, at the W-plane;
   - n = 3: −0.13 to −0.18 over 12 starts and two scales h;
-  - n = 4: 0 for m, which is the plateau m = 2^{1−n}, and −0.127 to −0.157 over 3 starts for the sector function μ_3.
+  - n = 4: 0 for m, which is the plateau m = 2^{1−n}, and −0.127 to −0.157 over 3 starts for the sector function μ_3
+    (two further starts, −0.139 and −0.147, in `logs/adversary_n4_c3.log`).
 
   The search uses Nelder–Mead in 8n dimensions, which is weak, so these numbers are evidence only.
 

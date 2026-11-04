@@ -1,0 +1,9 @@
+(i) hard-core form, n = 3, 4, all c: largest relative error 2.4e-16
+(ii) twisted identity, n = 3, 4, all c: largest relative error 4.4e-16
+(iii) c = 1 pair bound and L <= 2||F||^2 at all samples: True
+(iv) n=5 c=2: heavy copy d=0.14: without vacuum lambda_min -7.760e-03 (< 0: L > 2||F||^2), with vacuum +7.809e-02
+(iv) n=5 c=3: heavy copy d=0.22: without vacuum lambda_min -1.176e-02 (< 0: L > 2||F||^2), with vacuum +9.139e-02
+(iv) n=6 c=2: heavy copy d=0.14: without vacuum lambda_min -8.825e-03 (< 0: L > 2||F||^2), with vacuum +8.104e-02
+(iv) n=6 c=3: heavy copy d=0.18: without vacuum lambda_min -1.649e-02 (< 0: L > 2||F||^2), with vacuum +8.402e-02
+(iv) n=6 c=4: heavy copy d=0.26: without vacuum lambda_min -1.629e-02 (< 0: L > 2||F||^2), with vacuum +9.290e-02
+PASS

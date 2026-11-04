@@ -10,6 +10,9 @@ because single excitations over a product are not anchors.
 - Theorem 3 (added 4 November 2026) settles the co-range sector with n − 1 excitations, for every range plane in that
   space and every n. Together with Theorem 1 this gives the endpoint at four copies for every such range plane and
   every co-range (Corollary 4). The sectors 3 ≤ c ≤ n − 2 remain open; the first open case is n = 5, c = 3.
+- Proposition 5 (added 4 November 2026) settles every sector 1 ≤ c ≤ n − 1 for range planes in which no c copies are
+  heavy: Σ_{t∈S} A_t ⪯ 2(n − c)/(3(n − c) − 1) · I for every set S of c copies. It is Theorem 3 applied to every set
+  of c + 1 copies.
 
 Both classes are thick at every copy.
 
@@ -221,6 +224,76 @@ to be closed. For n ≥ 5 the sectors 3 ≤ c ≤ n − 2 remain. The same argum
 every sector: with Γ inserting w_t at the holes, the form Σ_ρ [2‖τ_ρ‖² − |Σ_t τ_{ρ,t}|²] is at most ‖G‖². The two
 reference indices cannot be recombined as in step 4, because for c ≤ n − 2 the per-string form 2I − J is indefinite.
 
+## Proposition 5: the open sectors when no c copies are heavy
+
+Added 4 November 2026. Theorem 3 also controls the open sectors, by applying it to every set of c + 1 copies. We work
+in the gauge Σ_t A_t = I and write the sector form as
+
+    K̃_c = I + Vac − T + ½ α^*α,
+
+where Vac = Σ_t Ā_t ⊗ P_{0,t} (vacuum weight), T = Σ_t β_t^* β_t, α = Σ_t β_t, and β_t contracts the reference index
+and the letter at copy t with U_t (β_t F = K_t F in the notation of Theorem 3). So K̃_c ⪰ 0 is the sector inequality
+L ≤ 2‖F‖² + 2⟨F|Vac|F⟩ with L = 2T − α^*α. Let Ex = Σ_t Ā_t ⊗ P_{1,t}; on co-range strings with excited set S it is
+Ā_S = Σ_{t∈S} Ā_t, and Vac = I − Ex there. Put h = n − c.
+
+**Proposition 5.** For every n, every 1 ≤ c ≤ n − 1 and every single-excitation range plane,
+
+    K̃_c ⪰ (2h I − (3h − 1) Ex)/(h + 1) + (h − 1)/(2(h + 1)) · α^*α.
+
+In particular, sector c is nonnegative whenever λ_max(Σ_{t∈S} A_t) ≤ 2h/(3h − 1) for every set S of c copies.
+
+The threshold is 1 for h = 1 (that is Theorem 3), 4/5 for h = 2, 3/4 for h = 3, and it decreases to 2/3 as h grows.
+Item 3 of Proposition 3 in `povm-minimum-principle/` gives the same conclusion under the threshold 2/3 for every h.
+So the sufficient condition is strictly weaker here.
+
+*Proof.*
+1. For a string ρ with c − 1 letters, let τ_ρ = (τ_{ρ,t}) over its h + 1 free copies, τ_{ρ,t} = (β_t F)(ρ). Then
+   L = Σ_ρ τ_ρ^* (2I − J) τ_ρ, with J the all-ones matrix.
+2. On C^{h+1}, 2I − J = (2/(h + 1)) Σ_{s<t} (e_s − e_t)(e_s − e_t)^T − ((h − 1)/(h + 1)) J. The J term adds up to
+   ‖αF‖², so
+       L = (2/(h + 1)) Σ_ρ Σ_{s<t} |τ_{ρ,s} − τ_{ρ,t}|² − ((h − 1)/(h + 1)) ‖αF‖².
+3. Group the pair terms by Q = supp(ρ) ∪ {s, t}, a set of c + 1 copies. For fixed Q they are exactly the terms of
+   Theorem 3 on the copies of Q: the co-range strings with excited set Q − u play the role of F_u, and the copies
+   outside Q are vacuum spectators. So the double sum is Σ_Q ‖𝒟_Q F‖².
+4. On Q the range blocks satisfy Σ_{t∈Q} A_t = A_Q ⪯ I. If A_Q is invertible, replace U_t by U_t A_Q^{−1/2} and the
+   reference index of F by (Ā_Q)^{1/2}. Theorem 3 then gives ‖𝒟_Q F‖² ≤ 2 Σ_{u∈Q} ⟨F_{Q−u}| Ā_Q |F_{Q−u}⟩, and by
+   continuity this holds for every A_Q.
+5. A string with excited set S lies in h of these sets, Q = S ∪ {u} with u a hole. Summing,
+   Σ_Q ‖𝒟_Q F‖² ≤ 2 Σ_S ⟨F_S| hĀ_S + Ā_{H(S)} |F_S⟩ = 2 Σ_S ⟨F_S| I + (h − 1) Ā_S |F_S⟩, using Ā_H = I − Ā_S.
+6. Hence L ≤ (4/(h + 1)) ⟨F| I + (h − 1) Ex |F⟩ − ((h − 1)/(h + 1)) ‖αF‖². Insert this into
+   2K̃_c = 2I + 2 Vac − L = 4I − 2 Ex − L. ∎
+
+The bound is sharp: at h = 1 it is Theorem 3, and the adversarial searches of `code/check_subsystem_bound.py` reach
+zero in every tested sector. It does not cover all planes. If some c copies carry almost all of the weight in one
+direction, the threshold fails, and so does the bound. An example is one heavy copy with A_0 = diag(1 − d, 1) and light
+copies elsewhere. The sector stays nonnegative there numerically, but for a different reason (see the remarks below).
+
+**Remarks (proved identities and numerical facts).**
+- *Hard-core boson form.* Let a_r^† = Σ_t |U_t e_r⟩⟨0|_t create the range vector u_r and let G^r be the components of
+  F. Then ⟨F|K̃_c|F⟩ = ‖F‖² + Σ_{r,r'} ⟨a_{r'}^† G^r, a_r^† G^{r'}⟩ − ½‖αF‖². Equivalently,
+  K̃_c = I + Σ_{r,r'} |r⟩⟨r'| ⊗ [a_{r'}, a_r^†] + ½ α^*α, where the commutators are sums of one-copy terms.
+- *Twisted identity.* With F̃ = (G^2, −G^1) and γ_t F = Σ_r |U_t e_r⟩⟨0|_t G^r (creation at copy t),
+  L = (Σ_t Tr A_t)‖F‖² − s − Σ_t ‖γ_t F̃‖² − ‖Θ_+‖² + ½ ‖Σ_t γ_t F̃‖². Here s ≥ 0 is the one-copy Cauchy–Schwarz slack,
+  ‖Θ_+‖² = ‖a_1^† G^1‖² + ‖a_2^† G^2‖² + ½‖a_1^† G^2 + a_2^† G^1‖², and the gauge is not used. For c = 1 every
+  created pair receives exactly two terms, so ½‖Σ_t γ_t F̃‖² ≤ Σ_t ‖γ_t F̃‖² and L ≤ 2‖F‖². This is a short proof of the
+  sector c = 1 (the content of the Lemma there).
+- *The vacuum terms are needed.* The bound L ≤ 2‖F‖² holds for c = 1 and c = n − 1, but it fails in every sector
+  2 ≤ c ≤ n − 2. The heavy-copy example above gives λ_min of I − T + ½α^*α from −7.8 × 10^{−3} to −1.6 × 10^{−2} at
+  n = 5, 6, while K̃_c itself stays positive.
+- *No low-degree certificate* (numerical). For a fixed co-range, the sector form is a Hermitian form in the range
+  blocks. We asked for a sum-of-squares certificate of degree two in both, modulo the gauge. Such certificates exist for
+  c = 1, c = n − 1 and c = n at n = 3, 4. None was found for n = 4, c = 2 (Theorem 1's sector) or n = 5, c = 3: an
+  alternating-projection solver stalls at a relative residual of 3 × 10^{−2}. So the remaining sectors seem to need an
+  argument of the Lemma's kind, not only identities and Cauchy–Schwarz.
+- *Splitting the budget per string* (numerical). One could split each column's budget 2I + 2A_H among the strings ρ
+  that contain it and apply the Lemma to each X^ρ. With splits diagonal in the letters, this provably fails at the
+  uniform W-plane whenever c > 2n/3: by symmetry the even split is optimal there, and it gives Riesz weights
+  2(n − h)/(n + h) > 1 on every block. It also fails numerically near POVMs with nearly unused copies (n = 6, c = 4). With
+  metrics that mix the letters, the same per-string decomposition is feasible at the uniform W-plane for n = 5, c = 4
+  (margin 0.1). This is being tested further.
+
+The sectors 3 ≤ c ≤ n − 2 therefore remain open for planes with a heavy set of c copies.
+
 ## Why the sectors c ≥ 3 are different
 
 The even split gives each string the weight 4/c < 2 on its off-diagonal blocks, and the Lemma needs 2. This loss is
@@ -261,6 +334,16 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   - the sharp example (ratio exactly 2 for n = 3, 4, 5);
   - the one-reference-index bound in every sector (identity error 4 × 10^{−16}, ratio at most 1);
   - Corollary 4 end to end at n = 4 from the dense operator (minimum over random and minimised planes +3 × 10^{−10}).
+- `code/check_subsystem_bound.py` checks Proposition 5:
+  - the pair decomposition of step 2 (error 3 × 10^{−16});
+  - Theorem 3 on subsystems, step 4 (largest eigenvalue of 𝒟_Q^*𝒟_Q − 2Ā_Q P_Q at most 2 × 10^{−15});
+  - the operator bound at random, heavy-copy, W-plane, near-extreme and adversarial POVMs, for n = 3, …, 6 and
+    1 ≤ c ≤ n − 1 (smallest eigenvalue of the difference −2 × 10^{−16});
+  - the corollary at random POVMs that satisfy the weight condition (n = 5, 6).
+- `code/check_hardcore_form.py` checks the remarks after Proposition 5:
+  - the hard-core form and the twisted identity (n = 3, 4, every c; error 4 × 10^{−16});
+  - the c = 1 bound;
+  - the failure of the vacuum-free bound in the heavy-copy example (n = 5, 6, every 2 ≤ c ≤ n − 2).
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});
