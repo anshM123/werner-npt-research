@@ -25,7 +25,8 @@ because single excitations over a product are not anchors.
   rank-two parts are small compared with the vacuum of every hole set.
 - Proposition 9 (added 4 November 2026): when only one copy has rank two, each sector is equivalent to one operator
   inequality on the other copies. It holds for every n when that copy carries a full direction (A_0 has eigenvalue 1),
-  which includes the heavy-copy counterexample family, and in a quantitative neighbourhood of that case.
+  which includes the heavy-copy counterexample family, in a quantitative neighbourhood of that case, and whenever
+  that copy is heavy in both directions (1/s_1² + 1/s_2² ≤ 2 + 8/h²).
 
 Both classes are thick at every copy.
 
@@ -620,8 +621,8 @@ M ⪰ ρ ⊗ 4K (ρ a density matrix on V) and operator subadditivity of (2 + ·
 
 The open part is the sectors 3 ≤ c ≤ n − 2 outside the cases above (W-planes, Propositions 5, 8 and 9). Three precise
 statements would each make progress, and the first two would together settle the class for every n:
-- **One rank-two copy.** The inequality of Proposition 9 (a) for light directions that are not parallel. The first
-  case is n = 5, c = 3 (four light copies). Our random and adversarial searches up to N = 6 light copies found no
+- **One rank-two copy.** The inequality of Proposition 9 (a) for light directions that are not parallel, outside the
+  regions of (b)–(d). The first case is n = 5, c = 3 (four light copies), for example s_max² = 0.9, s_min² = 0.2. Our random and adversarial searches up to N = 6 light copies found no
   violation.
 - **Several rank-two copies.** An inductive argument for Proposition 9 (a′). Removing one rank-two copy leaves a
   quantitative condition on two adjacent sectors of the other copies. An all-n proof would need a statement about
