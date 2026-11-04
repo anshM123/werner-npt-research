@@ -16,6 +16,10 @@ because single excitations over a product are not anchors.
 - Proposition 6 (added 4 November 2026) puts Theorems 1–3 and Proposition 5 into one family of certificates. Each
   certificate is a finite set of matrix inequalities and proves its sector. Every tested POVM for n ≤ 6 has one, but
   a counterexample at n = 7 shows that the family is not enough for all n.
+- Proposition 7 (added 4 November 2026) adds a third level, the creation pairing on sets of c + 1 copies. It fixes the
+  counterexample (n ≤ 10 tested), and in its balanced form it only asks to split a positive semidefinite part of each
+  pattern among the pattern's children. Every POVM we tested has such a split. An explicit rule for the splits would
+  close all sectors for all n; we do not have one.
 
 Both classes are thick at every copy.
 
@@ -394,6 +398,77 @@ The missing ingredient is thus a collective inequality for the light copies: the
 
 So Proposition 6 remains a sufficient condition that we checked at many POVMs for n ≤ 6, and no more.
 
+## Proposition 7: adding the creation level
+
+Added 4 November 2026. We use the notation of the hard-core form (remarks after Proposition 5). The certificates of
+Proposition 6 never use the creation pairing ⟨Θ, SΘ⟩ = Σ_{r,r'} ⟨a_{r'}^† G^r, a_r^† G^{r'}⟩: Theorem 3 throws it
+away as slack. The counterexample needs exactly this pairing, since its term W = S⁻S⁺ is a creation term. So we add a
+third level to the certificate.
+
+Call a set S' of c + 1 copies a *child* of the sets S' − u, u ∈ S'. Let Π_{S'}(F) be the part of ⟨Θ, SΘ⟩ that lands
+on strings with excited set S'. It involves only the co-range on the c + 1 sets S' − u.
+
+**An exact family.** The identity T − α^*α = Vac − ⟨Θ, SΘ⟩ of the hard-core form gives, for every real μ,
+
+    2K̃_c = Σ_S F_S^* (2I + (2 − 2μ) Ā_H) F_S − Σ_ρ τ_ρ^* [(2 − 2μ) I − (1 − 2μ) J] τ_ρ + 2μ Σ_{S'} Π_{S'}(F).
+
+Here S runs over sets of c copies with holes H = H(S), ρ over strings with c − 1 letters, and τ_ρ is as in
+Proposition 5. The value μ = 0 is the original form and μ = 1 the hard-core form.
+
+**Three-level certificate.** Besides the data of Proposition 6 (θ_Q ≥ 0 and m_{S,t}), it has a real number μ and a
+Hermitian matrix k_{S,u} for each set S of c copies and each hole u of S, acting on the strings with excited set S.
+The conditions are:
+- (L) as in Proposition 6, with 2I − J replaced by (2 − 2μ)I − (1 − 2μ)J;
+- (C) for every child S': 2μ Π_{S'} + ⊕_{u∈S'} k_{S'−u,u} ⪰ 0;
+- (P) as in Proposition 6, with Σ_{u∉S} k_{S,u} added on the left and 2A_H replaced by (2 − 2μ)A_H on the right.
+
+**Proposition 7.** If sector c has a three-level certificate, then K̃_c ⪰ 0. If every condition holds with a common
+slack λ, then λ_min(2K̃_c) ≥ (n + 1)λ.
+
+*Proof.* Start from the exact family. The first two sums are handled as in the proof of Proposition 6, with the new
+N_R. By (P), what is left over is at least Σ_S Σ_{u∉S} F_S^* k_{S,u} F_S. Regroup these terms by children (the pair
+(S, u) belongs to the child S ∪ u) and add 2μ Π_{S'}. By (C) each child gives a nonnegative total. For the slack
+count, each column lies in one set S, in c strings ρ and in h children, so it collects λ from n + 1 conditions. ∎
+
+**The balanced case μ = 1/2.** Then the J terms cancel:
+
+    2K̃_c = Σ_S F_S^* R_S F_S + Σ_{S'} Π_{S'}(F),   R_S = 2I + Ā_H − Σ_{t∈S} β_t^*β_t.
+
+The pattern part R_S is positive semidefinite, because ‖Σ_{t∈S} β_t^*β_t‖ ≤ Σ_{t∈S} Tr A_t ≤ 2. Take θ = 0 and the
+smallest metrics that (L) allows at μ = 1/2, m_{S,t} = |y_t⟩⟨y_t|. Then a three-level certificate is just a way to
+split R_S among the h children of S:
+
+    Σ_{u∉S} k_{S,u} ⪯ R_S   for every S,      Π_{S'} + ⊕_{u∈S'} k_{S'−u,u} ⪰ 0   for every child S'.
+
+We call this a *balanced certificate*. For c = n − 1 there is a single child, and a balanced certificate is the
+sector inequality itself (Theorem 3). The content is in h ≥ 2.
+
+Each child form has a simple structure. For a string s' with excited set S' and letters z_v, put
+
+    N(s') = Σ_{v∈S'} F(s' − v) y_{v,z_v}^T,
+
+a 2 × 2 matrix. Here F(s' − v) ∈ C² is the co-range at the string s' with copy v emptied, and y_{v,z} ∈ C² is row z
+of U_v. Then Π_{S'} = Σ_{s'} Tr(N N̄) = Σ_{s'} (‖N_sym‖² − ‖N_anti‖²). So on each child string the negative part has
+rank one: it is ½|Σ_{v∈S'} det(F(s' − v), y_{v,z_v})|². Summed over all children, these parts give
+½‖a_1^† G^2 − a_2^† G^1‖², the creation of the twisted co-range (G^2, −G^1) that also appears in the twisted
+identity of Proposition 5.
+
+*Evidence* (`code/threelevel_certificate.py`, `code/check_threelevel_certificate.py`). Every solution below is
+re-checked with independent eigenvalue computations, together with the guard λ_min(2K̃_c) ≥ (n + 1)λ.
+- *The heavy-copy counterexample.* Restrict to the strings where every excited light copy carries letter 1. This
+  subspace is invariant and contains the minimiser (the restricted minima equal the full ones). There a balanced
+  certificate exists for n = 5, …, 10, with slack +3 × 10^{−3} to +1.6 × 10^{−2}; μ = 1/2 and θ = 0 are optimal. The
+  certificates of Proposition 6 fail there from n = 7 on.
+- *General real POVMs at n = 5, c = 3* (random, near rank-one frame, two nearly unused copies, two heavy copies, one
+  heavy copy, W-plane). A balanced certificate exists in every case, with slack 1.3 × 10^{−3} to 0.17. With μ free the
+  slack is somewhat larger at random and near rank-one frames (optimal μ between 0.02 and 0.2).
+- *The splits must be matrices.* At a near rank-one real frame (n = 5, c = 3), splits k_{S,u} = w_{S,u} R_S with the
+  best scalar weights fail, while a matrix-valued balanced certificate exists.
+
+Does every sector have a balanced certificate? If so, the endpoint would hold on all single-excitation range planes,
+for every n and every co-range. We know no counterexample. Conjecture 6 showed how evidence at small n can mislead,
+so we state no conjecture. What is still missing is an explicit rule for the splits.
+
 ## Why the sectors c ≥ 3 are different
 
 The even split gives each string the weight 4/c < 2 on its off-diagonal blocks, and the Lemma needs 2. This loss is
@@ -453,6 +528,12 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   60-POVM sweep at n = 5, c = 3. This is evidence, not proof. `code/check_certificate_counterexample.py` checks the
   counterexample at n = 7, 8: a symmetric reduction that matches the full program at n = 5, 6, the negative
   slacks, and the positive sector minimum.
+- `code/threelevel_certificate.py` sets up the three-level certificate of Proposition 7 (cvxpy with CLARABEL or SCS),
+  for the restricted heavy-copy model and for general range blocks. `code/check_threelevel_certificate.py` checks
+  the identity T − α^*α = Vac − ⟨Θ, SΘ⟩ and its split over children (error 2 × 10^{−16}), the certificate on the
+  heavy-copy family for n = 5, …, 10, general real POVMs at n = 5, c = 3 (free μ and balanced), and the need for
+  matrix-valued splits. Every solution is re-checked, with the guard λ_min(2K̃_c) ≥ (n + 1)λ. This is evidence,
+  not proof.
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});

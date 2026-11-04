@@ -1,0 +1,21 @@
+(a) identity T - AA = Vac - <Theta,S Theta> and its split over children: largest error 2.4e-16
+(b) heavy family n=5 c=3 d=0.05: three-level slack +7.937e-03 (re-checked +7.937e-03, mu +0.500); Proposition 6 slack +4.101e-03; lambda_min(2Kt) - (n+1) slack +4.879e-04
+(b) heavy family n=7 c=5 d=0.05: three-level slack +4.933e-03 (re-checked +4.933e-03, mu +0.500); Proposition 6 slack +1.776e-04; lambda_min(2Kt) - (n+1) slack +5.416e-04
+(b) heavy family n=7 c=5 d=0.2: three-level slack +1.625e-02 (re-checked +1.625e-02, mu +0.500); Proposition 6 slack -6.688e-05; lambda_min(2Kt) - (n+1) slack +9.662e-03
+(b) heavy family n=8 c=6 d=0.05: three-level slack +4.125e-03 (re-checked +4.125e-03, mu +0.500); Proposition 6 slack -4.464e-04; lambda_min(2Kt) - (n+1) slack +5.569e-04
+(b) heavy family n=8 c=6 d=0.2: three-level slack +1.347e-02 (re-checked +1.347e-02, mu +0.500); Proposition 6 slack -2.253e-03; lambda_min(2Kt) - (n+1) slack +9.932e-03
+(b) heavy family n=9 c=7 d=0.2: three-level slack +1.146e-02 (re-checked +1.146e-02, mu +0.500); Proposition 6 slack -3.377e-03; lambda_min(2Kt) - (n+1) slack +1.013e-02
+(b) heavy family n=10 c=8 d=0.05: three-level slack +3.092e-03 (re-checked +3.092e-03, mu +0.500); Proposition 6 slack -9.560e-04; lambda_min(2Kt) - (n+1) slack +5.773e-04
+(c) n=5 c=3 random real: three-level slack +1.031e-01 (re-checked +1.031e-01, mu +0.190); lambda_min(2Kt) +6.811e-01; lambda_min(2Kt) - 6 slack +6.256e-02
+(c) n=5 c=3 near rank-one real frame: three-level slack +2.242e-03 (re-checked +2.242e-03, mu +0.051); lambda_min(2Kt) +1.407e-02; lambda_min(2Kt) - 6 slack +6.164e-04
+(c) n=5 c=3 two nearly unused copies: three-level slack +1.348e-03 (re-checked +1.348e-03, mu +0.500); lambda_min(2Kt) +8.125e-03; lambda_min(2Kt) - 6 slack +3.811e-05
+(c) n=5 c=3 two heavy copies: three-level slack +8.792e-02 (re-checked +8.792e-02, mu +0.500); lambda_min(2Kt) +5.280e-01; lambda_min(2Kt) - 6 slack +4.542e-04
+(c) n=5 c=3 uniform W-plane: three-level slack +2.066e-01 (re-checked +2.066e-01, mu +0.154); lambda_min(2Kt) +1.375e+00; lambda_min(2Kt) - 6 slack +1.360e-01
+(d) n=5 c=3 random real: balanced certificate (mu = 1/2, theta = 0) slack +8.582e-02 (re-checked +8.582e-02); lambda_min(2Kt) - 6 slack +1.661e-01
+(d) n=5 c=3 near rank-one real frame: balanced certificate (mu = 1/2, theta = 0) slack +1.364e-03 (re-checked +1.364e-03); lambda_min(2Kt) - 6 slack +5.881e-03
+(d) n=5 c=3 two nearly unused copies: balanced certificate (mu = 1/2, theta = 0) slack +1.348e-03 (re-checked +1.348e-03); lambda_min(2Kt) - 6 slack +3.802e-05
+(d) n=5 c=3 two heavy copies: balanced certificate (mu = 1/2, theta = 0) slack +8.792e-02 (re-checked +8.792e-02); lambda_min(2Kt) - 6 slack +4.541e-04
+(d) n=5 c=3 uniform W-plane: balanced certificate (mu = 1/2, theta = 0) slack +1.667e-01 (re-checked +1.667e-01); lambda_min(2Kt) - 6 slack +3.754e-01
+(d) n=5 c=3 one heavy copy: balanced certificate (mu = 1/2, theta = 0) slack +4.474e-02 (re-checked +4.474e-02); lambda_min(2Kt) - 6 slack +2.192e-03
+(e) n=5 c=3 near rank-one frame: best scalar split slack -7.874e-02; matrix-valued balanced certificate slack +2.185e-02 (re-checked +2.185e-02)
+PASS
