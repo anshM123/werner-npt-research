@@ -3,4 +3,5 @@
 (c) 120 random configurations satisfy the near-parallel condition; min lambda_min(2Kt_c) +5.378e-02
 (d) best separable-split margin / ||4K|| over 40 instances: -2.062e-01 (< 0: the split fails); subadditivity violated by +0.065
 (e) general congruence: largest relative error 1.1e-15; reduced condition agrees with lambda_min(2Kt_c) >= 0 in 16/16 (smallest reduced margin +1.680e-01)
+(f) 150 non-parallel configurations with Tr Lambda <= 8/h^2: chain margins >= +1.3e-04; h Tr Lambda - ||W|| >= +8.3e-02; min lambda_min(2Kt_c) +3.413e-02
 PASS

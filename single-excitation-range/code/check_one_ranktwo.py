@@ -13,6 +13,9 @@ Reduced operators (y_t = Abar_0^{-1/2} x_t, light copies as qubits, levels k = n
 (e) the general elimination (any other copies, here all of rank two): the congruence <F, 2Kt_c F> = Q(G, H) with the
     other copies' sector forms 2Kt'_k (blocks U_t A_0^{-1/2}, not normalised), and the reduced condition
     Tr_V (2 + 2Kt'_{c-1})^{-1} + alpha' (4 + 2Kt'_c + alpha'^* alpha')^{-1} alpha'^* <= I at random POVMs;
+(f) the condition of (d) in the README (copy 0 heavy in both directions): with g(x) = x/(2+x), N = 2X'_{c-1} + b^*b,
+    W = b_c b_c^*, tau = Tr Lambda, the chain Tr_V g(N) >= (W + tau)/(2 + ||N||) >= g(W), ||W|| <= h tau, and
+    lambda_min(2Kt_c) >= 0 at random non-parallel configurations with tau <= 8/h^2;
 (d) two routes that cannot prove (a) in general: a separable split M >= rho (x) 4K (rho a density matrix on V) fails at
     an instance with N = 3, c = 3, and (2 + tP)^{-1} + (2 + tQ)^{-1} <= 1/2 + (2 + t(P+Q))^{-1} fails for rank-one P, Q."""
 import numpy as np, itertools, warnings
@@ -160,5 +163,27 @@ for tr in range(16):
 print(f"(e) general congruence: largest relative error {cerr:.1e}; reduced condition agrees with lambda_min(2Kt_c) >= 0 in {nred}/16 "
       f"(smallest reduced margin {red_min:+.3e})")
 ok &= cerr < 1e-10 and nred == 16
+# (f)
+def gfun(X):
+    w, V = np.linalg.eigh((X + X.conj().T) / 2); return (V * (w / (2 + w))) @ V.conj().T
+cnt = 0; worst_chain = np.inf; worst_W = np.inf; worst_lm = np.inf
+for tr in range(4000):
+    N = int(rng.integers(3, 7)); c = int(rng.integers(2, N + 1)); h = N + 1 - c
+    tau = rng.uniform(0.05, 1.0) * 8 / h ** 2; frac = rng.uniform(0.2, 0.8)          # Lambda eigenvalues tau*frac, tau*(1-frac)
+    lam1, lam2 = tau * frac, tau * (1 - frac); s1, s2 = (1 + lam1) ** -0.5, (1 + lam2) ** -0.5
+    x = lights(s1, s2, N)                                                           # generic, non-parallel light vectors
+    y = np.array([np.diag([1 / s1, 1 / s2]) @ xt for xt in x])
+    Xk, bk = ops(y, c - 1); m = Xk.shape[0] // 2; Nop = 2 * Xk + bk.conj().T @ bk
+    if c <= N: Xc, bc = ops(y, c); W = bc @ bc.conj().T
+    else: W = np.zeros((m, m))
+    kap = np.linalg.eigvalsh((Nop + Nop.conj().T) / 2)[-1]; gN = gfun(Nop); TrV_gN = gN[:m, :m] + gN[m:, m:]
+    TrV_N = Nop[:m, :m] + Nop[m:, m:]
+    a1 = np.linalg.eigvalsh(TrV_gN - TrV_N / (2 + kap))[0]; a2 = np.linalg.eigvalsh(TrV_N / (2 + kap) - gfun(W))[0]
+    worst_chain = min(worst_chain, a1, a2); worst_W = min(worst_W, h * np.sum(np.abs(y) ** 2) - np.linalg.eigvalsh(W)[-1])
+    worst_lm = min(worst_lm, 2 * np.linalg.eigvalsh(model(s1, s2, x, haar2()).ops(c)['K'])[0]); cnt += 1
+    if cnt >= 150: break
+print(f"(f) {cnt} non-parallel configurations with Tr Lambda <= 8/h^2: chain margins >= {worst_chain:+.1e}; "
+      f"h Tr Lambda - ||W|| >= {worst_W:+.1e}; min lambda_min(2Kt_c) {worst_lm:+.3e}")
+ok &= worst_chain > -1e-10 and worst_W > -1e-10 and worst_lm > -1e-10
 assert ok
 print("PASS")
