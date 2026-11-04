@@ -470,12 +470,14 @@ re-checked with independent eigenvalue computations, together with the guard λ_
   slack is somewhat larger at random and near rank-one frames (optimal μ between 0.02 and 0.2).
 - *The splits must be matrices.* At a near rank-one real frame (n = 5, c = 3), splits k_{S,u} = w_{S,u} R_S with the
   best scalar weights fail, while a matrix-valued balanced certificate exists.
-- *Three numbers per split are enough in every test.* Put E_S = 2Ā_S − Σ_{t∈S} β_t^*β_t, which is positive
+- *Three numbers per split, at n ≤ 6 with c = 3.* Put E_S = 2Ā_S − Σ_{t∈S} β_t^*β_t, which is positive
   semidefinite (a sum of the one-copy terms 2Ā_t ⊗ I − β_t^*β_t). A balanced certificate of the form
   k_{S,u} = x_{S,u} Ā_u/Tr A_u + w_{S,u} E_S + y_{S,u} I exists at all six POVM types at n = 5, c = 3, at all six at
   n = 6, c = 3, and on the heavy-copy family for n = 5, …, 10. The child slack ranges from 7.6 × 10^{−4} to 0.5
   (`code/check_structured_split.py`; each solution is rebuilt from its numbers, re-checked, and repaired for solver
-  tolerance by a shift of at most 6 × 10^{−7}). The numbers vary from pair to pair. Closed-form choices we tried
+  tolerance by a shift of at most 6 × 10^{−7}). At n = 6, c = 4 the same family is still under test; at a near
+  rank-one frame a first-order solver returned slack −2.6 × 10^{−2}, not yet confirmed. The numbers vary from pair to
+  pair. Closed-form choices we tried
   (even or trace-weighted splits of R_S, of E_S or of 2I + 2Ā_H − Σβ^*β, with or without moving vacuum between
   children, matrix-weighted splits) each fail at some tested POVM; for example the trace-weighted split of
   2I + 2Ā_H − Σβ^*β leaves a child eigenvalue −8.0 × 10^{−2} at n = 6, c = 4.
