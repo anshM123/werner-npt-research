@@ -1,0 +1,6 @@
+R(C) = 0.32277; copy-0 pencil positive definite for lambda in about [-2.31, -0.36] (no Finsler direction)
+F = Q_0 - R(C) N_0: smallest eigenvalue -4.4544e-02 (relative to ||N_0||), eigenvector H with eigenvalues [-0.7   -0.015  0.714]; F(I, H) = +2.023e-05
+end eps = -1.4001: R = 0.28585, local-support ratio at copy 0 = 2.2e-11
+end eps = +1.4291: R = 0.28523, local-support ratio at copy 0 = 1.8e-11
+chosen end (eps F(I, H) <= 0): R = 0.28585 < R(C) = 0.32277: True
+PASS

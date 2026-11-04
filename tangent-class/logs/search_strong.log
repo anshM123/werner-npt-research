@@ -1,0 +1,77 @@
+# python search_strong.py n mode seed iters tau [start]; runs of 4 Nov 2026. f = softmin_s lambda_min(Q_s - lam N_s)/||C||^2 at the best point with thickness >= tau.
+# modes: common (SC'), exists (SC'-inf), min0 (copy-0 squeeze minimum, f = 0 means one), minall (SC-cw, f = 0 refutes it).
+## camp_3_common_005.txt
+n=3 common seed 11 tau 0.05: best f = -2.5159e-03 at thickness 0.050 (lam -0.010)
+n=3 common seed 12 tau 0.05: best f = -3.5997e-03 at thickness 0.050 (lam -0.250)
+n=3 common seed 13 tau 0.05: best f = -2.6117e-03 at thickness 0.050 (lam -0.010)
+n=3 common seed 14 tau 0.05: best f = -2.6816e-03 at thickness 0.050 (lam -0.010)
+n=3 common seed 15 tau 0.05: best f = -2.5784e-03 at thickness 0.050 (lam -0.010)
+## camp_3_common_01.txt
+n=3 common seed 21 tau 0.1: best f = -3.9315e-03 at thickness 0.100 (lam -0.010)
+n=3 common seed 22 tau 0.1: best f = -4.5954e-03 at thickness 0.100 (lam -0.160)
+n=3 common seed 23 tau 0.1: best f = -4.1667e-03 at thickness 0.100 (lam -0.010)
+n=3 common seed 24 tau 0.1: best f = -4.0301e-03 at thickness 0.100 (lam -0.010)
+n=3 common seed 25 tau 0.1: best f = -4.0993e-03 at thickness 0.099 (lam -0.010)
+## camp_3_exists_005.txt
+n=3 exists seed 31 tau 0.05: best f = -2.2415e-03 at thickness 0.049 (lam -0.250)
+n=3 exists seed 32 tau 0.05: best f = -2.2561e-03 at thickness 0.050 (lam -0.250)
+n=3 exists seed 33 tau 0.05: best f = -2.2609e-03 at thickness 0.049 (lam -0.250)
+n=3 exists seed 34 tau 0.05: best f = -2.2755e-03 at thickness 0.050 (lam -0.250)
+n=3 exists seed 35 tau 0.05: best f = -2.2419e-03 at thickness 0.049 (lam -0.250)
+## camp_3_exists_01.txt
+n=3 exists seed 41 tau 0.1: best f = -4.0893e-03 at thickness 0.099 (lam -0.250)
+n=3 exists seed 42 tau 0.1: best f = -4.8142e-03 at thickness 0.100 (lam -0.250)
+n=3 exists seed 43 tau 0.1: best f = -3.8939e-03 at thickness 0.100 (lam -0.250)
+n=3 exists seed 44 tau 0.1: best f = -3.4502e-03 at thickness 0.099 (lam -0.250)
+n=3 exists seed 45 tau 0.1: best f = -4.1501e-03 at thickness 0.099 (lam -0.250)
+## camp_4_common_005.txt
+n=4 common seed 51 tau 0.05: best f = -3.2415e-03 at thickness 0.050 (lam -0.010)
+n=4 common seed 52 tau 0.05: best f = -3.5470e-03 at thickness 0.050 (lam -0.130)
+n=4 common seed 53 tau 0.05: best f = -3.2944e-03 at thickness 0.049 (lam -0.010)
+## camp_4_exists_005.txt
+n=4 exists seed 61 tau 0.05: best f = -3.1604e-03 at thickness 0.050 (lam -0.250)
+n=4 exists seed 62 tau 0.05: best f = -2.8637e-03 at thickness 0.050 (lam -0.250)
+n=4 exists seed 63 tau 0.05: best f = -2.9328e-03 at thickness 0.050 (lam -0.250)
+## camp_5_common_005.txt
+n=5 common seed 71 tau 0.05: best f = -5.0651e-03 at thickness 0.050 (lam -0.050)
+n=5 common seed 72 tau 0.05: best f = -5.1821e-03 at thickness 0.050 (lam -0.010)
+## camp_3_min0_005.txt
+n=3 min0 seed 201 tau 0.05: best f = +6.4202e-17 at thickness 0.050 (lam -0.250)
+n=3 min0 seed 202 tau 0.05: best f = +8.8168e-17 at thickness 0.054 (lam -0.250)
+n=3 min0 seed 203 tau 0.05: best f = -9.4173e-10 at thickness 0.050 (lam -0.250)
+n=3 min0 seed 204 tau 0.05: best f = +1.2901e-16 at thickness 0.051 (lam -0.250)
+## camp_3_min0_015.txt
+n=3 min0 seed 211 tau 0.15: best f = -2.3254e-04 at thickness 0.150 (lam -0.250)
+n=3 min0 seed 212 tau 0.15: best f = -3.2487e-05 at thickness 0.150 (lam -0.250)
+n=3 min0 seed 213 tau 0.15: best f = -4.5647e-12 at thickness 0.150 (lam -0.250)
+n=3 min0 seed 214 tau 0.15: best f = -5.6677e-06 at thickness 0.151 (lam -0.250)
+## camp_4_min0_005.txt
+n=4 min0 seed 241 tau 0.05: best f = +1.3612e-16 at thickness 0.051 (lam -0.250)
+n=4 min0 seed 242 tau 0.05: best f = +1.2144e-16 at thickness 0.050 (lam -0.250)
+## camp_3_minall_005.txt
+n=3 minall seed 221 tau 0.05: best f = -3.6590e-03 at thickness 0.050 (lam -0.250)
+n=3 minall seed 222 tau 0.05: best f = -3.6657e-03 at thickness 0.050 (lam -0.250)
+n=3 minall seed 223 tau 0.05: best f = -3.2958e-03 at thickness 0.066 (lam -0.250)
+## camp_3_minall_015.txt
+n=3 minall seed 231 tau 0.15: best f = -1.1221e-02 at thickness 0.150 (lam -0.250)
+n=3 minall seed 232 tau 0.15: best f = -1.0254e-02 at thickness 0.149 (lam -0.250)
+n=3 minall seed 233 tau 0.15: best f = -9.8476e-03 at thickness 0.150 (lam -0.250)
+## minall_n3_025.txt
+n=3 minall seed 331 tau 0.25: best f = -1.9303e-02 at thickness 0.250 (lam -0.250)
+n=3 minall seed 332 tau 0.25: best f = -1.8797e-02 at thickness 0.249 (lam -0.250)
+n=3 minall seed 333 tau 0.25: best f = -1.8890e-02 at thickness 0.250 (lam -0.250)
+n=3 minall seed 334 tau 0.25: best f = -1.9015e-02 at thickness 0.250 (lam -0.250)
+## camp_4_minall_01.txt
+n=4 minall seed 251 tau 0.1: best f = -4.2637e-03 at thickness 0.100 (lam -0.250)
+n=4 minall seed 252 tau 0.1: best f = -4.2320e-03 at thickness 0.100 (lam -0.250)
+## minall_n4.txt
+n=4 minall seed 311 tau 0.05: best f = -4.1589e-03 at thickness 0.050 (lam -0.250)
+n=4 minall seed 312 tau 0.05: best f = -4.1773e-03 at thickness 0.050 (lam -0.250)
+n=4 minall seed 313 tau 0.05: best f = -4.1589e-03 at thickness 0.054 (lam -0.250)
+## minall_n5.txt
+n=5 minall seed 321 tau 0.05: best f = -5.8723e-03 at thickness 0.050 (lam -0.250)
+## seedmin_n3.txt
+n=3 min0 seed 301 tau 0.15: best f = -8.9351e-04 at thickness 0.150 (lam -0.250)
+n=3 min0 seed 302 tau 0.15: best f = -3.8833e-04 at thickness 0.150 (lam -0.250)
+n=3 minall seed 401 tau 0.15: best f = -1.0778e-02 at thickness 0.149 (lam -0.250)
+n=3 minall seed 402 tau 0.15: best f = -9.4830e-03 at thickness 0.149 (lam -0.250)

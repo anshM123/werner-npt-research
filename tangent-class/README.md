@@ -12,10 +12,16 @@ copies (Theorems 3 and 3′).
 SC∞) is **false**. We give thick operators in the class whose pencil at one copy is positive definite at λ = −½: exactly
 at n = 3, and in floating point with a wide margin at n = 4, 5 and 6 (`code/check_sc_counterexamples.py`). Earlier
 versions of this folder listed numerical support for SC. That support came from random and balanced sampling, and it
-missed these operators. The reductions only need the condition at some copy of each operator (Conditions SC′ and SC′∞
-below). At every counterexample another copy satisfies it. Adversarial searches have not found an operator at which
-every copy fails, but the margins they find go to zero at thin operators. SC′ and SC′∞ are open. Nothing here settles
-the every-n endpoint.
+missed these operators.
+
+The reductions need much less than SC. Both proofs only use the pencil at λ = R(C), the value of the operator itself.
+Theorem 3 needs only that no thick tangent operator is a minimum of R on the one-copy squeeze orbit of every copy at
+once (Condition SC-cw). Theorem 3′ needs, at some thick copy, an indefinite direction along which 𝒬_s − R(C)𝒩_s is
+negative (Condition SC-desc). At the exact counterexample this holds even at the failing copy
+(`code/check_refined_descent.py`). One copy alone can be a squeeze minimum: `data/percopy_squeeze_min_n3.npy` is a thick
+tangent operator that minimises R over all squeezes of copy 0. But a strong adversary, with analytic gradients at
+n = 3, 4, 5, found no operator that is a squeeze minimum at every copy at once. Its margins shrink in proportion to
+thickness. SC-cw and SC-desc are open. Nothing here settles the every-n endpoint.
 
 Throughout, q_n(C) = Σ_J (−½)^{|J|} ‖Tr_J C‖² and R(C) = q_n(C)/‖C‖² on (C^3)^{⊗n}, and "rank two" means rank at most two.
 
@@ -94,15 +100,20 @@ where C_{ab} = ⟨a|_s C |b⟩_s and q_{n−1}(·, ·) is the polarised form.
 **Conjecture SC (false).** We first conjectured that if C ∈ 𝒯_n (n ≥ 4) is thick at copy s, then 𝒬_s − λ𝒩_s is not
 positive semidefinite on Herm_3 for any λ ∈ [−½, 0). This fails at n = 4, 5 and 6 (see *Counterexamples* below).
 
+**Condition SC-cw(n).** No C ∈ 𝒯_n that is thick at every copy has 𝒬_s − R(C)𝒩_s ⪰ 0 at every copy s. Equivalently,
+no such C minimises R on the one-copy squeeze orbit of each of its copies.
+
 **Condition SC′(n).** No C ∈ 𝒯_n that is thick at every copy has 𝒬_s − λ𝒩_s ⪰ 0 at every copy s for one common
 λ ∈ [−½, 0).
 
-SC′ is implied by the false Conjecture SC, and by the weaker statement that every such C has one copy whose pencil is
-PSD for no λ ∈ [−½, 0).
+Either condition suffices below. Both are implied by Condition SC′∞ of the next section; SC′ is also implied by the
+false Conjecture SC. SC-cw is not, because it also excludes copywise minima with R(C) ≥ 0. Here "thick" means thick
+at the range and at the co-range. A copy where the co-range is thin is handled by
+Lemma 2 applied to C^*, since q_n(C^*) = q_n(C) and the contractions of C stay in the class.
 
-**Theorem 3.** If SC′(n) holds, then EP on 𝒯_{n−1} implies EP on 𝒯_n. EP holds on 𝒯_n for n ≤ 3 (Tomar's three-copy
-theorem). Consequently, SC′(n) for every n ≥ 4 gives q_n(C) ≥ 0 for every C ∈ 𝒯_n and every n. In particular it would
-give the endpoint for every single-excitation range with any co-range.
+**Theorem 3.** If SC-cw(n) or SC′(n) holds, then EP on 𝒯_{n−1} implies EP on 𝒯_n. EP holds on 𝒯_n for n ≤ 3 (Tomar's
+three-copy theorem). Consequently, SC-cw(n) for every n ≥ 4 gives q_n(C) ≥ 0 for every C ∈ 𝒯_n and every n. In
+particular it would give the endpoint for every single-excitation range with any co-range.
 
 *Proof.*
 1. Let m = min R over the unit sphere of 𝒯_n. The minimum exists by compactness. Note m ≤ 0, since
@@ -113,47 +124,52 @@ give the endpoint for every single-excitation range with any co-range.
 4. Otherwise C* is thick at every copy. Fix s. Since GC*G ∈ 𝒯_n for every M ∈ PD_3, M = I minimises
    𝒬_s(M)/𝒩_s(M) over PD_3.
 5. Put f(ε) = 𝒬_s(I + εH) − m𝒩_s(I + εH) for H ∈ Herm_3. Then f ≥ 0 near 0 and f(0) = 0, so f''(0) ≥ 0. Hence
-   𝒬_s − m𝒩_s ⪰ 0 at every copy s, with the same m ∈ [−½, 0). This contradicts SC′(n).
+   𝒬_s − m𝒩_s ⪰ 0 at every copy s, with the same m = R(C*) ∈ [−½, 0). This contradicts SC-cw(n) and SC′(n).
 
 No boundary analysis is needed. ∎
 
-The reduction uses the condition only at the value λ = m of a hypothetical negative minimum. Restricting λ to [−½, 0)
-uses only m ≤ 0 (an explicit zero) and the spectral bound. Any proof of SC′ must be sign-free: it may use EP on
-𝒯_{n−1}, but not q_n ≥ 0 on 𝒯_n. The common value of λ matters: over all rank-two operators, not just 𝒯, the
-analogue of SC′ is false (*What does not work*).
+The proof uses the pencils only at λ = m = R(C*) < 0, where they are PSD at every copy simultaneously. SC-cw drops
+the sign, SC′ drops the link between λ and R(C). Either way the condition is sign-free: a proof may use EP on
+𝒯_{n−1}, but not q_n ≥ 0 on 𝒯_n. Over all rank-two operators, not just 𝒯, both analogues are false
+(*What does not work*).
 
 ### A second route, without induction
 
-A stronger condition needs no induction and no input from three copies.
+A descent condition needs no induction and no input from three copies. Here "thick" refers to the range only.
 
-**Conjecture SC∞ (false).** We first conjectured that if C ∈ 𝒯_n is thick at copy s, there is H ∈ Herm_3 with
-𝒩_s(H) = 0 and 𝒬_s(H) < 0. This fails at n = 3, 4, 5 and 6 (see *Counterexamples* below).
+**Condition SC-desc(n).** Every C ∈ 𝒯_n that is thick at some copy has a thick copy s and an indefinite H ∈ Herm_3
+with (𝒬_s − R(C)𝒩_s)(H) < 0.
 
-**Condition SC′∞(n).** Every C ∈ 𝒯_n that is thick at some copy has a thick copy s and an H ∈ Herm_3 with
-𝒩_s(H) = 0 and 𝒬_s(H) < 0.
+**Conjecture SC∞ (false).** We first conjectured the stronger statement that every thick copy s has an H with
+𝒩_s(H) = 0 and 𝒬_s(H) < 0. This fails at n = 3, 4, 5 and 6 (see *Counterexamples* below). Its "some copy" form,
+Condition SC′∞(n), is still open and implies SC-desc(n): such an H is never semidefinite, and
+(𝒬_s − R(C)𝒩_s)(H) = 𝒬_s(H) < 0. An H with 𝒩_s(H) = 0 and 𝒬_s(H) < 0 exists at copy s exactly when
+𝒬_s − λ𝒩_s is positive semidefinite for no real λ (ν_s < 0 below), provided 𝒩_s is indefinite. This follows from
+convexity of the joint numerical range of two real quadratic forms in nine variables (Brickman).
 
-Such an H exists at copy s exactly when 𝒬_s − λ𝒩_s is positive semidefinite for no real λ (ν_s < 0 below), provided
-𝒩_s is indefinite. This follows from convexity of the joint numerical range of two real quadratic forms in nine
-variables (Brickman).
+**Theorem 3′.** If SC-desc(n) holds for every n, then q_n ≥ 0 on 𝒯_n for every n.
 
-**Theorem 3′.** If SC′∞(n) holds for every n, then q_n ≥ 0 on 𝒯_n for every n.
+*Proof.* Take a thick copy s and H as in SC-desc, put r = R(C) and F = 𝒬_s − r𝒩_s, so F(I) = q(C) − r‖C‖² = 0.
+1. M = I + εH is positive definite exactly on an interval (ε_−, ε_+), with ε_− < 0 < ε_+ finite since H is indefinite,
+   and singular at both ends.
+2. Along the line, g(ε) = q(GCG) − r‖GCG‖² = F(I + εH) = 2εF(I, H) + ε²F(H) ≤ 2εF(I, H). At the end ε* with
+   ε*F(I, H) ≤ 0, g(ε*) ≤ 0. So the end operator C' = G*CG* has q(C') ≤ R(C)‖C'‖².
+3. C' is thin at s, because the range of G* at s is a plane, and it lies in 𝒯 by compactness. C' = 0 would force
+   the compression of C to that plane at copy s to vanish on both sides. The plane moves with H, so this is avoided by
+   perturbing H inside the open set {H indefinite : F(H) < 0}. Hence R(C') ≤ R(C).
+4. Squeezes at other copies keep a thin copy thin. Repeating at a thick copy given by SC-desc each time, every branch
+   ends, after at most n steps, at an operator that is thin at every copy.
+5. Such an operator has range in a product of planes, so q ≥ 0 by separability of 2 × 3 PPT states. ∎
 
-*Proof.* Take a thick copy s with such an H.
-1. H is not semidefinite. Otherwise q(GCG) would be a concave quadratic in ε along M = I + εH, while ‖GCG‖² stays
-   positive and affine, so R → −∞, against R ≥ −½.
-2. So M = I + εH is positive definite exactly on an interval (ε_−, ε_+) and singular at both ends.
-3. On that interval, ‖GCG‖² is affine and positive and q(GCG) is concave, so R is quasi-concave. Hence R(C) is at
-   least the smaller of its limits at the two ends.
-4. The end operators are thin at s and still lie in 𝒯. An end where GCG = 0 is a proper algebraic condition, and it
-   can be avoided by perturbing H inside {𝒩_s = 0}, keeping 𝒬_s(H) < 0.
-5. Squeezes at other copies keep a thin copy thin. Repeating at a good thick copy each time, every branch ends, after
-   at most n steps, at an operator that is thin at every copy.
-6. Such an operator has range in a product of planes, so q ≥ 0 by separability of 2 × 3 PPT states. ∎
+An earlier version asked for 𝒩_s(H) = 0, which makes R quasi-concave along the whole line. The proof needs only
+the sign of g at one end. `code/check_refined_descent.py` runs one step of this at copy 0 of the exact counterexample
+below, where no H with 𝒩_0(H) = 0, 𝒬_0(H) < 0 exists. F has three negative directions with indefinite H. Both ends
+are thin, with local-support ratios about 2·10⁻¹¹, and the chosen end has R = 0.286 < R(C) = 0.323.
 
-`code/check_line_iteration.py` runs this construction on random tangent operators (three at n = 3, one at n = 4). It
-takes the direction H from a small semidefinite program at each thick copy and follows both ends of every line. Along
-all 36 lines, R at the start is at least the smaller end value, with a gap of at least 0.045. All 40 branches end at
-operators that are thin at every copy, and the smallest value there is +0.088.
+`code/check_line_iteration.py` runs the whole construction on random tangent operators (three at n = 3, one at
+n = 4). At each thick copy it takes a direction with 𝒩_s(H) = 0 from a small semidefinite program and follows both ends
+of every line. Along all 36 lines, R at the start is at least the smaller end value, with a gap of at least 0.045. All
+40 branches end at operators that are thin at every copy, and the smallest value there is +0.088.
 
 ## Numerics
 
@@ -187,6 +203,26 @@ pencil at s only by H ↦ A^{−*}HA^{−1}. Together with a change of basis of 
 
 ### The surviving conditions
 
+- **Strong adversary** (`code/search_strong.py`, `logs/search_strong.log`). The gradients are analytic, through the
+  eigenvectors of the pencils, and agree with finite differences to about 10⁻⁶. Each run takes 600–4000 Adam steps on
+  a soft minimum over copies, inside 𝒯. Range and co-range local-support ratios at every copy are held at τ or above.
+  The values reported are λ_min/‖C‖² at the best point. In 58 runs, no violation was found:
+  - **SC-cw** (mode minall: every copy a squeeze minimum, λ = R(C)): −3.7·10⁻³ (n = 3, τ = 0.05), −1.0·10⁻²
+    (τ = 0.15), −1.9·10⁻² (τ = 0.25), −4.2·10⁻³ (n = 4, τ = 0.05) and −5.9·10⁻³ (n = 5, τ = 0.05). Warm starts from
+    near-minima of one copy end at the same values.
+  - **SC′** (mode common): −2.5·10⁻³ to −3.6·10⁻³ (n = 3, τ = 0.05), about −4·10⁻³ (n = 3, τ = 0.1), −3.2·10⁻³ to
+    −3.5·10⁻³ (n = 4) and −5.1·10⁻³ (n = 5).
+  - **SC′∞** (mode exists): −2.2·10⁻³ (n = 3, τ = 0.05), −3.9·10⁻³ to −4.8·10⁻³ (τ = 0.1) and −2.9·10⁻³ to −3.2·10⁻³
+    (n = 4).
+  - **One copy alone** (mode min0) is different. The adversary reaches F_0 = 𝒬_0 − R(C)𝒩_0 ⪰ 0 to rounding error at
+    τ = 0.05 (n = 3, 4) and at τ = 0.15. So one-copy squeeze minima exist in 𝒯 (`data/percopy_squeeze_min_n3.npy`,
+    `code/check_percopy_minimum.py`), and in each of them another copy descends.
+
+  Every run of the first three kinds ends at the thickness floor, and the margins scale roughly linearly with τ. At
+  the extremal points one copy is nearly thin on both sides and carries the descent with a small margin. The copies
+  that fail there have pencils positive definite near λ ≈ +0.1. So, if these conditions hold, they hold with no
+  uniform margin. A copy that is thin on both sides is degenerate: its pencil sees only the part of H inside the plane. Lemma 2
+  applies there.
 - **Short adversarial searches** inside 𝒯 maximise min_s ν_s (for SC′∞) or the smallest margin at one common
   λ ∈ [−½, −0.01] (for SC′). Thickness of range and co-range at every copy is held at τ or above. The runs use L-BFGS
   from random, W-type and counterexample starts: 12 runs at n = 3 and 2 at n = 4 (`code/search_surviving_conditions.py`,
@@ -226,8 +262,8 @@ span{a_1 ⊗ ⋯ ⊗ a_{s−1} ⊗ y ⊗ b_{s+1} ⊗ ⋯ ⊗ b_n : s, y} for pro
 
 In `code/check_bond_two.py`, balanced margins at random points are at most −0.21 at n = 3 and −0.15 at n = 4. They stay
 below −0.17 next to the GHZ plane. Hill-climbs on the balanced margin, not included here, plateau at −0.16 to −0.18 at
-n = 3 and −0.14 at n = 4. The class contains 𝒯, so the counterexamples to SC∞ above lie in it as well. Only SC′∞ is
-open there.
+n = 3 and −0.14 at n = 4. The class contains 𝒯, so the counterexamples to SC∞ above lie in it as well. Only the conditions
+SC-cw, SC-desc, SC′ and SC′∞ are open there.
 
 ## What does not work
 
@@ -280,6 +316,12 @@ Four things fail.
   SC∞ (n = 3 exact, needs sympy). Log: `logs/check_sc_counterexamples.log`.
 - `code/search_corange.py`, `code/search_surviving_conditions.py`: the adversarial searches above (W-type range with free
   co-range; SC′ and SC′∞ inside 𝒯). Logs: `logs/search_corange.log`, `logs/search_surviving_conditions.log`.
+- `code/search_strong.py`: the strong adversary (analytic gradients; modes common, exists, min0, minall). Log:
+  `logs/search_strong.log`.
+- `code/check_refined_descent.py`: the descent step of Theorem 3′ at the exact counterexample. Log:
+  `logs/check_refined_descent.log`.
+- `code/check_percopy_minimum.py` with `data/percopy_squeeze_min_n3.npy`: a thick tangent operator that minimises R
+  over all squeezes of one copy. Log: `logs/check_percopy_minimum.log`.
 - `code/check_exact_facts.py`: scale invariance, the thin-point tilt identity and the phase-averaged tilt formula. Log:
   `logs/check_exact_facts.log`.
 - `code/check_balanced.py`: balanced-slice margins. Log: `logs/check_balanced.log`.
@@ -299,5 +341,5 @@ Four things fail.
 - **Proved:** Proposition 1 (identity, checked numerically), Lemma 2 (identity, checked numerically), Theorem 3 (the
   reduction; re-derived by an independent check) and Theorem 3′.
 - **False:** Conjectures SC and SC∞ (explicit counterexamples, exact at n = 3).
-- **Open:** Conditions SC′ and SC′∞, and with them the endpoint on 𝒯_n for n ≥ 4.
+- **Open:** Conditions SC-cw and SC-desc (and the stronger SC′, SC′∞), and with them the endpoint on 𝒯_n for n ≥ 4.
 - **Not journal peer-reviewed.**

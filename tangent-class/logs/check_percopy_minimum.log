@@ -1,0 +1,6 @@
+R = 0.25293; singular values [0.7614 0.6482 0.    ]
+copy 0: local-support ratios 0.150 (range), 0.196 (co-range); eigenvalues of (Q - R N)/||N||: [-9.9857e-12  8.0390e-05  3.5474e-04  9.1116e-04  1.7088e-03  3.5118e-03  9.4102e-03  2.8860e-02  5.2043e-02]
+   copy 0: null direction overlaps H = I with |cos| = 1.000000; second eigenvalue +8.039e-05
+copy 1: local-support ratios 0.151 (range), 0.172 (co-range); eigenvalues of (Q - R N)/||N||: [-0.0396 -0.0288 -0.0157 -0.0092  0.0198  0.0217  0.0528  0.0777  0.0874]
+copy 2: local-support ratios 0.150 (range), 0.367 (co-range); eigenvalues of (Q - R N)/||N||: [-0.0837 -0.0126 -0.0023 -0.0013  0.0092  0.0121  0.0261  0.0654  0.0827]
+PASS
