@@ -2,11 +2,14 @@
 
 Ansh Mishra and Aryan Senthilkumar, 3 November 2026
 
-We prove the endpoint inequality for every number of copies on two classes of rank-two operators. In both, the range
-lies among the single excitations over a product vector. These are exactly the planes where the anchor method of
-`support-and-projector-notes/` (Section 5) breaks down, because single excitations over a product are not anchors.
+We prove the endpoint inequality on rank-two operators whose range lies among the single excitations over a product
+vector. These are exactly the planes where the anchor method of `support-and-projector-notes/` (Section 5) breaks down,
+because single excitations over a product are not anchors.
 - In Theorem 1 the range plane is arbitrary in that space and the co-range has at most two excitations.
 - In Theorem 2 the range is a weighted W-plane (this includes the W-plane itself) and the co-range is arbitrary.
+- Theorem 3 (added 4 November 2026) settles the co-range sector with n − 1 excitations, for every range plane in that
+  space and every n. Together with Theorem 1 this gives the endpoint at four copies for every such range plane and
+  every co-range (Corollary 4). The sectors 3 ≤ c ≤ n − 2 remain open; the first open case is n = 5, c = 3.
 
 Both classes are thick at every copy.
 
@@ -175,6 +178,49 @@ exactly when diag(c − 2) + J ⪰ 0. Combined with the lemma, this certifies ev
 copies included, provided the coefficients are chosen by a small semidefinite program. The simple explicit rules we
 tried fail. So the general weighted case is left open until an explicit rule is found.
 
+## Theorem 3: the sector c = n − 1, for every n
+
+Added 4 November 2026. In the gauge Σ_s U_s^*U_s = I, let F_u be the part of the co-range whose hole is at copy u, as
+a vector in C^2 ⊗ (C^2)^{⊗([n]∖u)} (the reference index, then the letters of the other copies). K_s contracts the letter
+at copy s and the reference index with U_s. With A_u = U_u^*U_u, the sector c = n − 1 reads
+
+    Σ_{s<t} ‖K_s F_t − K_t F_s‖² ≤ Σ_u ⟨F_u| (2I + 2Ā_u) |F_u⟩.
+
+This is the hole form with h = 1 (checked against direct partial traces by `code/check_wplanes.py`, part (c)).
+
+**Theorem 3.** For every n ≥ 2, all U_1, …, U_n with Σ_s U_s^*U_s = I and all F,
+
+    Σ_{s<t} ‖K_s F_t − K_t F_s‖² ≤ 2 Σ_u ‖F_u‖².
+
+So the co-range sector c = n − 1 of q_n is nonnegative for every range plane in H_1, and the constant is sharp.
+
+*Proof.*
+1. Split the reference index: F_u = Σ_r e_r ⊗ F_u[r]. Put w_{s,r} = U_s e_r and let κ_{s,r} contract the letter at copy
+   s against w_{s,r}. Then K_s F_t = Σ_r κ_{s,r} F_t[r]. So the left side is ‖𝒟F‖², where 𝒟F = Σ_r 𝒟_r F[r] and
+   (𝒟_r G)_{st} = κ_{s,r} G_t − κ_{t,r} G_s.
+2. Fix r and drop it from the notation. Put Γ = Σ_t w_t ⊗_t G_t ∈ (C^2)^{⊗n}, where w_t fills the hole of G_t. For
+   s ≠ t, ⟨w_s ⊗_s G_s, w_t ⊗_t G_t⟩ = ⟨κ_t G_s, κ_s G_t⟩, so the cross terms of ‖𝒟_r G‖² and ‖Γ‖² cancel:
+
+       ‖𝒟_r G‖² + ‖Γ‖² = Σ_t [ Σ_{s≠t} ‖κ_s G_t‖² + ‖w_t‖² ‖G_t‖² ].
+
+3. Since ‖κ_s G_t‖ ≤ ‖w_s‖ ‖G_t‖ and Σ_s ‖w_s‖² = ⟨e_r| Σ_s A_s |e_r⟩ = 1, this gives ‖𝒟_r G‖² ≤ Σ_t ‖G_t‖².
+4. Hence ‖𝒟F‖ ≤ ‖F[1]‖ + ‖F[2]‖ ≤ √2 ‖F‖. ∎
+
+The sector inequality follows, since Ā_u ⪰ 0. It is sharp. Take a real tight frame v_1, …, v_n of R²
+(Σ_s v_s v_s^T = I) and unit vectors z_s. Put U_s = |z_s⟩⟨v_s| and F_t = (J v_t) ⊗ ⊗_{j≠t} z_j, with
+J = [[0, 1], [−1, 0]]. Then ‖𝒟F‖² = 2‖F‖², and ⟨F_t|Ā_t|F_t⟩ = 0 because J v_t ⊥ v_t. So both sides of the sector
+inequality are equal.
+
+**Corollary 4.** If X has rank at most two and range(X) ⊆ H_1, then q_4(X) ≥ 0, whatever the co-range.
+
+*Proof.* By the charge splitting (step 1 of the proof of Theorem 1), q_4(X) = Σ_c q_4(X P_c) over the co-range sectors
+c = 0, …, 4. The sectors c ≤ 2 are covered by Theorem 1, c = 3 by Theorem 3, and c = 4 is the free top sector. ∎
+
+Three copies were known (every sector there is c ≤ 2 or c = n). Four copies is the first case where an open sector had
+to be closed. For n ≥ 5 the sectors 3 ≤ c ≤ n − 2 remain. The same argument applied to one reference index works in
+every sector: with Γ inserting w_t at the holes, the form Σ_ρ [2‖τ_ρ‖² − |Σ_t τ_{ρ,t}|²] is at most ‖G‖². The two
+reference indices cannot be recombined as in step 4, because for c ≤ n − 2 the per-string form 2I − J is indefinite.
+
 ## Why the sectors c ≥ 3 are different
 
 The even split gives each string the weight 4/c < 2 on its off-diagonal blocks, and the Lemma needs 2. This loss is
@@ -194,13 +240,7 @@ Two partial facts hold for every sector.
   three copies, where c ≤ 2 or c equals the number of copies. So the first open case needs four copies, with the range
   supported on all four. (This sub-case is not new as a class: such a range is thin at every other copy, so Tomar's
   thin-copy removal and the three-copy theorem also cover it. The sector argument gives a direct proof.)
-- For c = n − 1 the sector inequality takes a compact form. Use the gauge Σ_s U_s^*U_s = I and write F_u for the
-  column vectors whose hole is at copy u, as a vector in (C^2)^{⊗([n]∖u)} ⊗ C^2. The inequality is then
-
-      Σ_{s<t} ‖K_s F_t − K_t F_s‖² ≤ Σ_u ⟨F_u| (2I + 2U_u^*U_u) |F_u⟩,
-
-  where K_s contracts the label at copy s and the C^2 index with the matrix U_s. In numerical tests the best
-  constant is exactly 1 for n = 2, …, 5, so the inequality is tight.
+- For c = n − 1 the sector inequality takes a compact form, and Theorem 3 proves it.
 
 ## Verification
 
@@ -215,6 +255,12 @@ The scripts need Python 3 with NumPy and SciPy. Each one ends with an assertion 
   - the explicit failure of the even split for c ≥ 3.
 - `code/check_class.py` brute-forces q_n/‖X‖² on the class of Theorem 1 for n = 2, …, 5, with random and adversarial
   starts (minimum +1.6 × 10^{−9}). It also runs the open sector c = 3 at n = 4, 5, as evidence only.
+- `code/check_theorem3.py` checks Theorem 3:
+  - the identity of step 2 (n = 2, …, 5, letters in C^2 and C^3; error 4 × 10^{−16});
+  - λ_max(𝒟^*𝒟) ≤ 2 at random and adversarial U for n = 3, 4, 5 (largest 1.9999999997);
+  - the sharp example (ratio exactly 2 for n = 3, 4, 5);
+  - the one-reference-index bound in every sector (identity error 4 × 10^{−16}, ratio at most 1);
+  - Corollary 4 end to end at n = 4 from the dense operator (minimum over random and minimised planes +3 × 10^{−10}).
 - `code/check_wplanes.py` checks Theorem 2:
   - the central-spin value (m + 1)/2 for m ≤ 8;
   - the weighted bound (largest violation 2 × 10^{−15});

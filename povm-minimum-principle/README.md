@@ -67,8 +67,9 @@ with |Ũ_s⟩ = Σ_{r,z} U_s[z, r] |r⟩|z⟩_s and Z_t = Σ_{r,z} conj(U_t[z, r
 The hopping term is ½Σ_ρ [|Σ_t τ_t(ρ)|² − Σ_t |τ_t(ρ)|²], where τ_t(ρ) is Z_t F evaluated at the string ρ. Drop the
 square and use Σ_{s vacuum} Ā_s = I − Σ_{t excited} Ā_t. ∎
 
-Sectors c ≤ 2 are Theorem 1 of `single-excitation-range/`. So on single-excitation planes, m ≥ 0 reduces to
-μ_c := λ_min K̃_c ≥ 0 for 3 ≤ c ≤ n − 1. The first open case is n = 4, c = 3.
+Sectors c ≤ 2 are Theorem 1 of `single-excitation-range/`, and the sector c = n − 1 is its Theorem 3 (every n). So
+on single-excitation planes, m ≥ 0 reduces to μ_c := λ_min K̃_c ≥ 0 for 3 ≤ c ≤ n − 2. In particular the endpoint
+holds on all single-excitation planes at n = 4, and the first open case is n = 5, c = 3.
 
 `code/check_reformulation.py` checks, at n = 2, 3, 4:
 - m = λ_min K against the direct minimum over co-ranges, for single-excitation and tangent planes;
@@ -85,8 +86,8 @@ interior of a face of positive dimension of the POVM set, at a value below its i
 that face.
 
 By Propositions 2 and 3 and induction over faces, MP gives μ_c ≥ 0 for every c, hence the endpoint for every
-single-excitation range plane with any co-range, for every n. Only the open sectors 3 ≤ c ≤ n − 1 are needed; the
-statement for the other sectors is included because the numerics support it there too. That includes every sector c ≥ 3 left open in
+single-excitation range plane with any co-range, for every n. Only the open sectors 3 ≤ c ≤ n − 2 are needed; the
+statement for the other sectors is included because the numerics support it there too. That includes every sector 3 ≤ c ≤ n − 2 left open in
 `single-excitation-range/`. The analogue on the convex sets P_ψ would give it for every tangent plane.
 
 MP is stated sector by sector because m itself has flat pieces. Where the constant sector 0 is the smallest, m equals

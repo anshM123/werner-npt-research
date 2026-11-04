@@ -1,0 +1,13 @@
+(a) identity, n = 2..5, m = 2, 3: largest relative error 3.5e-16
+(b) largest lambda_max(D^*D) over random and adversarial U at n = 3, 4, 5: 1.9999999997 (bound 2)
+    sharp example n=3: ||D F||^2 / ||F||^2 = 2.000000000000; |sum A - I| = 2.2e-16
+    sharp example n=4: ||D F||^2 / ||F||^2 = 2.000000000000; |sum A - I| = 4.4e-16
+    sharp example n=5: ||D F||^2 / ||F||^2 = 2.000000000000; |sum A - I| = 2.2e-16
+(d) one reference index, n=3 c=2: identity error 2.4e-16; largest L_r/||G||^2 over random w, G 0.5004 (bound 1)
+(d) one reference index, n=4 c=2: identity error 2.7e-16; largest L_r/||G||^2 over random w, G 0.4152 (bound 1)
+(d) one reference index, n=4 c=3: identity error 2.1e-16; largest L_r/||G||^2 over random w, G 0.5162 (bound 1)
+(d) one reference index, n=5 c=2: identity error 3.7e-16; largest L_r/||G||^2 over random w, G 0.3828 (bound 1)
+(d) one reference index, n=5 c=3: identity error 1.3e-16; largest L_r/||G||^2 over random w, G 0.3874 (bound 1)
+(d) one reference index, n=5 c=4: identity error 2.0e-16; largest L_r/||G||^2 over random w, G 0.4883 (bound 1)
+(e) Corollary 4 at n = 4, dense evaluation: min over 10 random and 3 minimised single-excitation planes of the minimum over all co-ranges = +3.331e-10
+PASS

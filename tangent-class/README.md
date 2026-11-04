@@ -4,7 +4,7 @@ Ansh Mishra and Aryan Senthilkumar, November 2026.
 
 This folder studies the endpoint inequality, for every n, on a natural class of operators: rank-two operators whose
 range lies in the tangent space of a product vector. The class contains every operator whose range lies in the single
-excitations over a product vector (`single-excitation-range/`), with any co-range, so it contains the sectors c ≥ 3
+excitations over a product vector (`single-excitation-range/`), with any co-range, so it contains the sectors 3 ≤ c ≤ n − 2
 that are still open there. We prove an exact Fock form of the endpoint form on the class, an exact thin-copy removal
 identity, and two reductions of EP on the class to conditions on 9 × 9 one-copy squeeze pencils (Theorems 3 and 3′).
 
