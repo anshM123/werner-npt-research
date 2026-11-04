@@ -154,6 +154,8 @@ These planes are thick at every copy and contain no product vector. For the W-pl
 all co-ranges is 2^{1−n} for n = 3, 4, 5 (`code/check_wplanes.py`), in line with the numerics of Section 5 there; the
 referee found 0, 1/4, 1/4, 1/8, 1/16, 1/32 for n = 1, …, 6, attained in the sector c = 0. The rotations W_s do not
 change the minimum. For n ≤ 3 the statement also follows from the two- and three-copy theorems; it is new from n = 4.
+The proof below gives the margin q_n ≥ min{2^{1−n}, 1/(2n)}‖C‖² on the W-plane for every n, and hence the endpoint on an
+explicit open set of planes around it, none of which contains an anchor (`support-and-projector-notes/`, Corollary 9).
 
 *Proof.*
 - **Reduction.** A product unitary that acts as W_s^{−1} on span{|1⟩, |2⟩} at each copy leaves q_n unchanged and
@@ -699,8 +701,10 @@ Remarks.
 - The bound T ⪯ I is tight: λ_max(T_φ) = 1 for every φ. For φ_u = |10⟩ + u|01⟩ the smallest eigenvalue is −11/9,
   at u = 1; for random two-copy vectors it lies between about −1.05 and −0.8. So this argument says nothing when the
   top eigenvalue of A_0 + A_1 is 1 − ε.
-- Three copies carrying a full direction are different. Every single excitation on three copies with three nonzero
-  weights has λ_max(T) > 1, so the anchor lemma itself does not apply there.
+- Three copies carrying a full direction are different. A single excitation with three or more nonzero weights is
+  never an anchor, for any n: Proposition 8 of `support-and-projector-notes/` gives an explicit vector on which
+  A − R_p^Γ is negative. So (b) covers exactly the single-excitation planes that contain an anchor (those with
+  max_{i<j} λ_max(A_i + A_j) = 1). The other planes need the relative anchors below.
 
 ## Relative anchors and a one-vector conjecture
 

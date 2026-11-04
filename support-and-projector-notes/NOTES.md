@@ -11,7 +11,10 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
 - **Section 3.** The endpoint for every number of copies is equivalent to its restriction to rank-two orthogonal
   projectors.
 - **Section 4.** A negative witness forces the rank-two minimum to fall exponentially below the rank-one scale 2^{−N}.
-- **Section 5 (numerical).** Which single vectors of a plane certify it in the Schur argument.
+- **Section 5.** Which single vectors of a plane certify it in the Schur argument ("universal anchors"). Numerics,
+  and three exact facts for every n ≥ 3: the W-plane and every plane near it contain no anchor (Proposition 7); a
+  single excitation is an anchor exactly when it lives on at most two copies (Proposition 8); and the endpoint still
+  holds, with a margin, on all planes near the W-plane (Corollary 9).
 
 **None of this settles the all-copy problem.**
 
@@ -192,7 +195,7 @@ naive Cauchy–Schwarz bound loses an exponential factor (4^N on the GHZ plane),
 The rank-one scale 2^{−N} is the natural one: the zeros of Section 1 are approached at that scale. This criterion is
 in the spirit of the tube-radius equivalences that circulate for this problem. It does not prove positivity.
 
-## 5. Universal anchors (numerical)
+## 5. Universal anchors
 
 Section 1 used only one vector of the plane. Here is the general version. For a unit vector p let
 R_p = M^{⊗n} V D^{−1} V* M^{⊗n}, with V = p ⊗ I and D = V* M^{⊗n} V, and put Y_p = (M^{⊗n} − R_p)^Γ. If Y_p ⪰ 0, the
@@ -220,6 +223,92 @@ T_p ≤ 1.
 equivalent to W, so this plane contains no universal anchor at n = 3. Yet q_n ≥ 2^{1−n}‖X‖² on it, for every co-range,
 in our computations up to n = 7.
 
+The rest of this section makes these observations exact for every n.
+
+**Notation.** e_t is the string with the letter 1 at copy t and 0 elsewhere, and r_S the string with the letter 1 on a
+pair S of copies. Vectors of row ⊗ column are written |row⟩|column⟩. Put c_n = 2^{1−n} and W_n = Σ_t |e_t⟩ (not
+normalised; Y_p does not depend on the normalisation of p). For a local unitary U^{⊗n}, Y_{U^{⊗n}p} is unitarily
+equivalent to Y_p, because M^{⊗n} commutes with (U ⊗ Ū)^{⊗n}.
+
+**Proposition 7 (no anchor near the W-plane).** Let n ≥ 3 and put
+
+    a_n = Σ_{|S|=2} Σ_{t∈S} |r_S⟩|e_t⟩,   b_n = Σ_{|S|=2} Σ_{t∉S} |r_S⟩|e_t⟩.
+
+Then the Gram matrix of Y_{W_n} on (a_n, b_n) is
+
+    c_n (n − 1)(n − 2) · [[0, −1], [−1, 2(n + 1)]].
+
+It has negative determinant. With z = 2(n + 1)a_n + b_n this gives λ_min(Y_{W_n}) ≤ −β_n, where
+β_n = 2^{3−n}(n + 1)(n − 2)/(n[8(n + 1)² + n − 2]). At n = 3 the matrix is [[0, −½], [−½, 4]] and β_3 = 4/387.
+
+*Proof.* Every entry of M^{⊗n} is a product over the copies of δ_{ab}δ_{yx} − ½δ_{ay}δ_{bx}.
+- **The rows of MV_p.** Let p = Σ_t w_t|e_t⟩. Going through the copies one by one, the row (r_S, e_t) of MV_p is
+  −c_n w_{S∖t}[t ∈ S] times the vacuum column ⟨0…0|, and has no other entry. D_p preserves the number of excitations
+  (Lemma 1 of `relative-anchors/`) and equals c_n Σ_t w_t² on the vacuum. Hence, on these states,
+
+      R_p^Γ[(S, t), (S′, t′)] = (c_n/Σ_u w_u²) w_{S′∖t} w_{S∖t′} [t ∈ S′][t′ ∈ S].
+
+- **A = (M^{⊗n})^Γ on these states.** It is c_n I on the states (S, t) with t ∈ S. On the states with t ∉ S it is
+  block diagonal over the three-sets S ∪ {t}, with blocks c_n(3I + J) (J the all-ones matrix). It does not couple the
+  two families.
+- **Counting** (w_t = 1). ‖a_n‖² = n(n − 1) and ‖b_n‖² = n(n − 1)(n − 2)/2. Fix a state of a_n. Then n states of a_n
+  and n − 2 states of b_n have a nonzero R^Γ entry with it. A state of b_n has 2(n − 2) such partners in b_n. So
+  G_A = c_n diag(n(n − 1), 3n(n − 1)(n − 2)) and G_{R^Γ} = c_n [[n(n − 1), (n − 1)(n − 2)], [(n − 1)(n − 2), (n − 1)(n − 2)²]].
+  Their difference is the claim. ∎
+
+**Consequences.**
+- Every unit vector of the W-plane L_n = span{Σ_s |0…1_s…0⟩, Σ_s |0…2_s…0⟩} is U^{⊗n}W_n/√n for a one-copy unitary U
+  fixing |0⟩. So λ_min(Y_p) ≤ −β_n on all of L_n: for every n ≥ 3 the W-plane contains no universal anchor.
+- p ↦ Y_p is continuous, so the anchors form a closed set and the planes containing no anchor form an open set. By
+  the above this open set is nonempty for every n ≥ 3. So vectors that are not anchors, and planes without an anchor,
+  have positive measure. Such planes cannot be confined to finitely many proper algebraic families.
+- Quantitatively, ‖M^{⊗n}‖ = 1 and D_p ⪰ 2^{−n} give ‖Y_p − Y_q‖ ≤ K_n‖p − q‖ for unit p, q, with
+  K_n = 2·3^n(2^n + 4^n). (Use ‖D_p − D_q‖ ≤ 2‖p − q‖, ‖D_p^{−1} − D_q^{−1}‖ ≤ 2·4^n‖p − q‖ and ‖X^Γ‖ ≤ 3^n‖X‖.) So
+  no plane L′ with η(L_n, L′) < β_n/(2K_n) contains an anchor. Here η(L, L′) is the smallest ‖U − U′‖ over
+  isometries U, U′ : C² → (C³)^{⊗n} onto L and L′.
+
+**Proposition 8 (anchors among single excitations).** Let p ≠ 0 be a single excitation over a product vector, that is
+p = Σ_t x_t with x_t a single excitation at copy t. Then p is a universal anchor if and only if x_t ≠ 0 for at most two
+copies. Quantitatively, local unitaries fixing the product vector bring p to Σ_t w_t|e_t⟩ with w_t ≥ 0 and
+Σ_t w_t² = 1, and for any three distinct copies i, j, k,
+
+    λ_min(Y_p) ≤ −4c_n π/(4(n − 1) + π),   π = w_i² w_j² w_k².
+
+*Proof.* If p lives on at most two copies, it is a two-copy vector tensored with a product vector. It is then an
+anchor by Proposition 10 of `single-excitation-range/` (its exact two-copy certificate, with product copies appended as
+in the second exact fact above). Conversely, put a(w) = Σ_{|S|=2} Σ_{t∈S} w_{S∖t}|r_S⟩|e_t⟩ and b = |r_{ij}⟩|e_k⟩. The
+formulas in the proof of Proposition 7 give ⟨a, Y_p a⟩ = 0, ‖a‖² = n − 1, ⟨a, Y_p b⟩ = −2c_n w_iw_jw_k,
+⟨b, Y_p b⟩ = 4c_n and b ⊥ a. If Y_p ⪰ 0, then ⟨a, Y_p a⟩ = 0 forces Y_p a = 0, which fails when w_iw_jw_k ≠ 0. The vector
+a + (w_iw_jw_k/2)b gives the bound. ∎
+
+**Planes inside the single excitations.** Let L be a plane of single excitations over a product vector, with
+orthonormal frame U and one-copy blocks U_s : C² → C², so that Σ_s A_s = I with A_s = U_s^*U_s. A vector Ug has
+excitation U_s g at copy s. By Proposition 8, L contains an anchor iff some nonzero vector of L lives on two copies,
+that is, iff max_{i<j} λ_max(A_i + A_j) = 1. These are exactly the planes of Proposition 10 of
+`single-excitation-range/`. Equivalently: with r the number of rank-two blocks, m the number of rank-one blocks and M
+the largest number of rank-one blocks sharing a kernel line, the fewest copies a nonzero vector of L can occupy is
+r + m − M, and L contains an anchor iff r + m − M ≤ 2. If κ = 1 − max_{i<j} λ_max(A_i + A_j) > 0, every unit vector of L
+has three weights with x_1x_2x_3 ≥ ρ = κ²/(n(n − 2)²) (x_s = ‖U_s g‖²), so λ_min(Y_p) ≤ −4c_nρ/(4(n − 1) + ρ) on all of L.
+For the remaining single-excitation planes the relative anchors of `relative-anchors/` take over.
+
+**Corollary 9 (the endpoint near the W-plane).** For every n ≥ 3 and every operator C whose range lies in a plane L′
+with η(L_n, L′) = η, with any co-range,
+
+    q_n(C) ≥ (μ_n − 2η)‖C‖_F²,   μ_n = min{2^{1−n}, 1/(2n)}.
+
+So the endpoint holds on an explicit open set of planes around the W-plane, and for η < β_n/(2K_n) these planes contain
+no anchor.
+
+*Proof.* For the W-plane itself, the proof of Theorem 2 of `single-excitation-range/` gives explicit sector bounds:
+with h = n − c holes, the hole form is at least (4h − 2)/n per unit norm, so q_n ≥ (2h − 1)/(n2^h)‖X_c‖² for
+1 ≤ h ≤ n − 1; the sector c = n gives (n − 1)/(2n); and the vacuum sector is exactly 2^{1−n}. The minimum over these is
+μ_n (for n ≥ 3, (2h − 1)/2^h is smallest at h = 1 or h = n − 1, and (2n − 3)/(n2^{n−1}) ≥ 2^{1−n}). For n ≥ 4, μ_n = 2^{1−n}
+is attained by the vacuum sector. For a plane L′ with frame U′, the compressed form (U′^* ⊗ I)M^{⊗n}(U′ ⊗ I) moves by at
+most 2‖U − U′‖, since ‖M^{⊗n}‖ = 1. ∎
+
+At n = 3 the exact minimum on the W-plane is 1/4 (`single-excitation-range/code/check_wplanes.py`), so there the margin
+is 1/4 − 2η. The radii are small (β_3/(2K_3) = 1/752328); the point is that both sets are open.
+
 ## Code
 
 Python 3 with NumPy and SymPy. `code/check_pair_anchor.py` uses python-flint for the exact characteristic polynomials;
@@ -232,6 +321,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
 - `code/check_projector_reduction.py`: the flattening and flag identities of Proposition 4, on a random rank-two C, and
   the Gram identity behind Proposition 5.
 - `code/check_anchors.py`: Section 5 at n = 2, 3.
+- `code/check_anchor_obstruction.py`: Propositions 7 and 8 in exact rational arithmetic for n = 3, …, 7: the rows of
+  MV_p live on the vacuum column, the Gram matrix on (a_n, b_n), and the weighted identities at rational weights.
 
 ## References
 

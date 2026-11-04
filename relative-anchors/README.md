@@ -14,8 +14,11 @@ This folder collects what we can prove about the group conditions for every k.
 **Results.**
 - **Every k, every positive weight vector.**
   - Closed forms for all entries (Lemmas 1, B, N, G).
+  - The two extreme conditions hold: (R∞)_{−1} (Proposition M) and (R∞)_k, the latter with kernel exactly p ⊗ H_k and
+    an explicit gap (Theorem K).
   - (R∞)_{k−1} holds on its letter-1 block (Theorem T), on every block in which one copy carries the letter 2 in row
-    and column (Proposition T2), and on the block in which every copy carries one letter 2 (Proposition U0).
+    and column (Proposition T2), and on the block in which every copy carries one letter 2 (Proposition U0). Each
+    remaining (type I) block reduces exactly to a smaller matrix (Remark after Proposition U0).
   - (R∞)_{k−2} has the explicit kernel vector vac ⊗ J⁻|1…1⟩ (Proposition K2).
   - (R∞)_0 holds completely (Theorem B0, with one two-parameter inequality checked in interval arithmetic).
 - **Equal weights** (w_t = 1).
@@ -149,8 +152,14 @@ Q = (vac, 1…1).
 5. **Positivity.** Now v = 0, and with ρ_a = s_a/d_a ≤ 2/3,
    F(X′) = ¼Σ_{a≠b} X′_ab² + Σ_a(¾ − ½ρ_a)X′_aa² + (1/(2(2 + G))) Σ_{a,b} ρ_a ρ_b X′_ab X′_ba.
 
-   Bound the crossed pairs by AM–GM, |ρ_aρ_b X′_ab X′_ba| ≤ (4/9)·½(X′_ab² + X′_ba²), and use 2 + G > 2. This gives
-   F(X′) ≥ (5/36)‖X′‖². ∎
+   For a ≠ b put x = s_a/|s| and y = s_b/|s|. Then ρ_a = 2x/(1 + 2x), ρ_b = 2y/(1 + 2y), x + y ≤ 1, and
+   (1 + 2x)(1 + 2y)(2 + ρ_a + ρ_b − 12ρ_aρ_b) = 2 + 6(x + y) − 32xy ≥ 2(1 − x − y)(1 + 4(x + y)) ≥ 0,
+   using xy ≤ (x + y)²/4. Since G ≥ ρ_a + ρ_b, this gives ρ_aρ_b/(2(2 + G)) ≤ 1/24. Bound each crossed pair by
+   2|X′_ab X′_ba| ≤ X′_ab² + X′_ba², and use ρ_a ≤ 2/3 on the diagonal:
+   F(X′) ≥ (5/24)Σ_{a≠b} X′_ab² + (5/12)Σ_a X′_aa² ≥ (5/24)‖X′‖². ∎
+
+   (The first version had 5/36 here. As a form on all X, F has smallest eigenvalue exactly 5/24 in the limit of two
+   weights ½ and the rest 0, so the crossed-pair bound cannot give more.)
 
 **Proposition T2.** Every type II block of (R∞)_{k−1} is positive definite.
 
@@ -176,6 +185,23 @@ Q = (vac, 1…1).
 - **Diagonal dominance.** The function 2b(3S − a)/(2S − a)² + β(a, b) is b times a ratio of polynomials with
   nonnegative coefficients and positive numerator. Summing over t′ gives Σ_{t′≠t}|F_tt′| < D_t, so F is strictly
   diagonally dominant with positive diagonal. ∎
+
+**Remark (the other type I blocks: an exact reduction).** Let T ≠ ∅ be the copies carrying one letter 2, with
+U = [k] ∖ T ≠ ∅, m = |T| and u = |U|. The block has u(k + m) + m + 1 states:
+- P_{r,h}: row letter 1 at r ∈ [k]; column 2 on T and 1 on U, with a hole at h ∈ U;
+- R_t: row letter 2 at t ∈ T; column with a hole at t, 2 on T ∖ t and 1 on U;
+- Z_{t,h}: row letter 2 at t ∈ T; column 1 at t, 2 on T ∖ t and 1 on U, with a hole at h ∈ U;
+- Q: vacuum row; column 2 on T and 1 on U.
+
+On the one-hole strings of U put E_0 = diag_{h∈U}(s_h + ½s_U) + ½w_Uw_U^T and E = s_T I + E_0. The principal block on
+the states P_{t,h} with t ∈ T is
+
+    K = ½ I − ½ w_Tw_T^T ⊗ E^{−1},   K^{−1} = 2I + 2 w_Tw_T^T ⊗ E_0^{−1},   K ⪰ s_U/(2(2s_T + s_U)) · I.
+
+Indeed K acts as ½E_0E^{−1} on the direction of w_T and as ½ on its complement, and E_0 ⪰ ½s_U. So these mu
+coordinates can be eliminated exactly. The u kernel vectors p ⊗ f_h survive the elimination and are removed by
+deleting one coordinate P_{r_0,h} (r_0 ∈ U fixed) for each h. The block is then ⪰ 0 iff an explicit matrix of size
+u(k − 1) + m + 1 is ⪰ 0. We have not proved that it is.
 
 **Proposition K2.** The vector vac ⊗ J⁻|1…1⟩ lies in the kernel of (R∞)_{k−2}.
 
@@ -253,8 +279,58 @@ It is ⪰ 0 iff (1 + γ/2)² ≥ ¼(1 + g_r)²(1 + γ_r/2).
 
 The worst case of (C0) itself is the ratio 4/9, approached as x → (½, ½, 0, …).
 
+## 3c. The conditions (R∞)_{−1} and (R∞)_k, every k
+
+**Proposition M.** For every k and every positive weight vector, (R∞)_{−1} holds.
+
+*Proof.* It is the 1 × 1 block (vac, vac). By Lemma G it equals 2^{−k}(1 − ½w^TE_1^{−1}w), where on the letter-1 part
+of H_1, E_1 = 2 diag(|s| − s_r) + ½ww^T. Sherman–Morrison gives w^TE_1^{−1}w = γ/(1 + γ/2) with
+γ = Σ_r s_r/(2(|s| − s_r)), so the block is 2^{−k}/(1 + γ/2) > 0. ∎
+
+**Theorem K.** For every k ≥ 2 and every positive weight vector, (R∞)_k ⪰ 0 and its kernel is exactly p ⊗ H_k. On the
+orthogonal complement of p ⊗ H_k in G1_k,
+
+    Y ⪰ ν(w) I,   ν(w) = min{11/48, ½(1 − max_t s_t/|s|)}.
+
+At j = k there is no vacuum row and Z = 0, so Lemma B gives Y itself. Every column string lies in {1, 2}^k. For a set
+T of copies let y_T be the string with the letter 2 on T and 1 elsewhere, and s_T = Σ_{t∈T} s_t.
+
+*Closed form.* On H_k we have J⁺ = 0 and n_r = 1, so by Lemma N:
+- E_k is diagonal, E_k|y_T⟩ = ½(|s| + s_T)|y_T⟩;
+- 𝒯_{(r,1)} = w_r N_r is diagonal, where N_r = 1 if the column has the letter 2 at r and ½ if it has the letter 1;
+- 𝒯_{(t,2)}|y⟩ = −½ w_t [y_t = 2] |y with t → 1⟩;
+- σ_b⁺σ_a⁻ vanishes on H_k unless a and b sit at the same copy.
+
+So the torus blocks are:
+- for each T ⊆ [k] (∅ included) a type I block on P_r = (1@r, y_T), r ∈ [k], and Z_t = (2@t, y_{T∖t}), t ∈ T;
+- for each B and t ∈ B a type II block with the single state (2@t, y_B).
+
+Together they contain all 2k·2^k states. Put N_r = 1 for r ∈ T and ½ otherwise, v_r = w_rN_r, a = Σ_r s_rN_r =
+½(|s| + s_T), a_t = a − s_t/2 and a_tu = a − (s_t + s_u)/2. Lemma B gives:
+- on the P_r: P = diag(N) − vv^T/a;
+- between P_r and Z_t: C_rt = (a/(2a_t))(w_tv_r/a − δ_rt);
+- on the Z_t: B_tt = 1 and B_tu = −w_tw_u/(4a_tu) for t ≠ u;
+- a type II block: (a_B − s_t)/(2a_B − s_t), with a_B = ½(|s| + s_B).
+
+*Proof.*
+1. **The P-block.** Since Σ_r N_rs_r = a, x^TPx = min_λ Σ_r N_r(x_r − λw_r)². So P ⪰ ½(I − ww^T/|s|), and the
+   kernel of P is spanned by w.
+2. **Completing the square.** Let L be the k × |T| matrix with columns L_t = −(a/(2a_t))e_t. Then C = PL, so the form
+   on (x, z) is (x + Lz)^TP(x + Lz) + z^TFz with F = B − L^TPL. Its entries are
+   F_tt = 1 − a(a − s_t)/(4a_t²) and F_tu = −w_tw_us_ts_u/(16a_ta_ua_tu).
+3. **F ⪰ (11/16)I.** a(a − s_t) ≤ a_t², so F_tt ≥ ¾. Put x_t = s_t/a. Then Σ_{t∈T} x_t ≤ 1, and a_t, a_u, a_tu ≥ a/2,
+   so |F_tu| ≤ ½(x_tx_u)^{3/2}. Hence Σ_{u≠t}|F_tu| ≤ ½x_t^{3/2}(Σ_{u≠t} x_u)^{3/2} ≤ ½[x_t(1 − x_t)]^{3/2} ≤ 1/16.
+4. **Type I blocks.** By steps 1–3 the form is ⪰ 0, and it vanishes only at z = 0, x ∈ span(w), which is p ⊗ y_T.
+   For the gap, let x_⊥ be the part of x orthogonal to w and y = x_⊥ + Π_{w⊥}Lz. Since s_t ≤ a we have ‖L‖ ≤ 1, so
+   ‖x_⊥‖² + ‖z‖² ≤ 2‖y‖² + 3‖z‖². The form is at least ½‖y‖² + (11/16)‖z‖², hence at least (11/48)(‖x_⊥‖² + ‖z‖²).
+5. **Type II blocks.** (a_B − s_t)/(2a_B − s_t) = ½(1 − s_t/(|s| + s_B − s_t)) ≥ ½(1 − s_t/|s|), since s_B ≥ s_t. ∎
+
+In our samples the smallest type I eigenvalue off the kernel is about 0.44, so 11/48 is not sharp. This fits the
+searches, where (R∞)_k never came close to binding.
+
 **What blocks the rest.** Two parts are still open:
-- the type I blocks with 1 ≤ |T| ≤ k − 1;
+- the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 1 (the Remark after Proposition U0 reduces each to an explicit
+  matrix of size u(k − 1) + m + 1);
 - the conditions (R∞)_j with j ≤ k − 2.
 
 In both, the method of Theorem T leaves soft directions: eigenvalues 0.01–0.1, and as small as 0.0015 for
@@ -335,3 +411,5 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `check_caseII.py` | Proposition E2 |
 | `check2_vs_builder.py`, `run2.py` | Reduced letter-2 forms against the builder (k = 3, 4); exact elimination for every k ≤ 14 |
 | `check_bottom_condition.py`, `c0_interval.py` | Theorem B0: closed form against a direct construction (k ≤ 5), the letter-2 blocks, the reduction to (C0), the bound chains at random points, and the two reduced inequalities in interval arithmetic |
+| `check_top_condition.py` | Theorem K: closed form against a direct construction (k ≤ 5, every T, all 2k·2^k states), the identities C = PL and the entries of F exactly at rational weights, the dominance margin 11/16, and the gap at random and extreme weights |
+| `check_typeI_reduction.py` | The Remark after Proposition U0 (the block K, its inverse and lower bound, block sizes; k = 3, 4, 5) and the constant 5/24 in Theorem T (the scalar lemma in SymPy, the smallest eigenvalue of the form) |

@@ -1,0 +1,11 @@
+(a) k=3 |T|=1: |Y - K| = 0.0e+00, |K K^-1 - I| = 1.1e-16, lambda_min(K) = 0.4091 >= 0.3749, block size 10 = u(k+m)+m+1: True
+(a) k=3 |T|=2: |Y - K| = 6.9e-18, |K K^-1 - I| = 1.1e-16, lambda_min(K) = 0.4084 >= 0.2635, block size 8 = u(k+m)+m+1: True
+(a) k=4 |T|=1: |Y - K| = 4.3e-19, |K K^-1 - I| = 2.2e-16, lambda_min(K) = 0.4611 >= 0.4533, block size 17 = u(k+m)+m+1: True
+(a) k=4 |T|=2: |Y - K| = 8.7e-19, |K K^-1 - I| = 3.3e-16, lambda_min(K) = 0.2460 >= 0.2055, block size 15 = u(k+m)+m+1: True
+(a) k=4 |T|=3: |Y - K| = 5.6e-17, |K K^-1 - I| = 4.4e-16, lambda_min(K) = 0.0797 >= 0.0226, block size 11 = u(k+m)+m+1: True
+(a) k=5 |T|=1: |Y - K| = 4.3e-19, |K K^-1 - I| = 2.2e-16, lambda_min(K) = 0.4686 >= 0.4637, block size 26 = u(k+m)+m+1: True
+(a) k=5 |T|=2: |Y - K| = 5.6e-17, |K K^-1 - I| = 3.3e-16, lambda_min(K) = 0.3746 >= 0.3561, block size 24 = u(k+m)+m+1: True
+(a) k=5 |T|=3: |Y - K| = 5.6e-17, |K K^-1 - I| = 2.2e-16, lambda_min(K) = 0.1662 >= 0.1277, block size 20 = u(k+m)+m+1: True
+(a) k=5 |T|=4: |Y - K| = 6.9e-18, |K K^-1 - I| = 4.4e-16, lambda_min(K) = 0.0662 >= 0.0184, block size 14 = u(k+m)+m+1: True
+(b) Theorem T form: smallest lambda_min = 0.208333 (claim >= 5/24 = 0.208333); scalar lemma identities: True
+PASS

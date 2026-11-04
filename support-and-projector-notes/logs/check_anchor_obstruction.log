@@ -1,0 +1,16 @@
+n=3 W: G supported on the vacuum column: True; D[0,0] = 3/4 (= n c_n: True); Gram on (a_n, b_n) = [['0', '-1/2'], ['-1/2', '4']]: True
+n=3 weights ['1/2', '2/3', '3/4']...: support on vacuum True; witness identities exact: True
+n=3 weights ['3', '1/2', '1/7']...: support on vacuum True; witness identities exact: True
+n=4 W: G supported on the vacuum column: True; D[0,0] = 1/2 (= n c_n: True); Gram on (a_n, b_n) = [['0', '-3/4'], ['-3/4', '15/2']]: True
+n=4 weights ['1/2', '2/3', '3/4', '4/5']...: support on vacuum True; witness identities exact: True
+n=4 weights ['3', '1/2', '1/7', '3/7']...: support on vacuum True; witness identities exact: True
+n=5 W: G supported on the vacuum column: True; D[0,0] = 5/16 (= n c_n: True); Gram on (a_n, b_n) = [['0', '-3/4'], ['-3/4', '9']]: True
+n=5 weights ['1/2', '2/3', '3/4', '4/5']...: support on vacuum True; witness identities exact: True
+n=5 weights ['3', '1/2', '1/7', '3/7']...: support on vacuum True; witness identities exact: True
+n=6 W: G supported on the vacuum column: True; D[0,0] = 3/16 (= n c_n: True); Gram on (a_n, b_n) = [['0', '-5/8'], ['-5/8', '35/4']]: True
+n=6 weights ['1/2', '2/3', '3/4', '4/5']...: support on vacuum True; witness identities exact: True
+n=6 weights ['3', '1/2', '1/7', '3/7']...: support on vacuum True; witness identities exact: True
+n=7 W: G supported on the vacuum column: True; D[0,0] = 7/64 (= n c_n: True); Gram on (a_n, b_n) = [['0', '-15/32'], ['-15/32', '15/2']]: True
+n=7 weights ['1/2', '2/3', '3/4', '4/5']...: support on vacuum True; witness identities exact: True
+n=7 weights ['3', '1/2', '1/7', '3/7']...: support on vacuum True; witness identities exact: True
+PASS
