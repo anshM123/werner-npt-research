@@ -63,14 +63,17 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
   of a local U(1) works numerically for single excitations and their tangent planes. As a general principle it fails:
   - **Same sector, qubit corners.** Take rows and columns both in a full two-letter subspace, for example rows and
     columns in H_4 at four copies, or in {0,1}^{⊗n} for the charge that counts letter 2. Then the compression has
-    negative eigenvalues: −5.1 × 10^{−3} (n = 4) and −2.9 × 10^{−3}, −9.7 × 10^{−3} (n = 3, 4) at random vectors.
+    negative eigenvalues at random vectors, for example −3.2 × 10^{−2} (rows and columns in H_4, n = 4) and
+    −1.3 × 10^{−2}, −2.3 × 10^{−3} ({0,1}^{⊗n}, n = 3, 4).
     The endpoint itself holds there, because two letters make the state PPT, so only the certificate fails.
   - **Different sectors.** For planes spanned by charge eigenvectors of different charges, such as span{x_2, y_1}
     with x_2 ∈ H_2 and y_1 ∈ H_1, the compression with rows in the other sector has negative eigenvalues. Examples:
-    p ∈ H_1 with rows in H_2 and columns in H_1 gives −9.7 × 10^{−3} (random p) and −1.0 × 10^{−2} (W). A Dicke vector
-    p ∈ H_2 with rows in H_1 and columns in H_2 gives −1.0 × 10^{−2}.
+    p ∈ H_1 with rows in H_2 and columns in H_1 gives −6.9 × 10^{−3} (random p) and −1.0 × 10^{−2} (W). A Dicke vector
+    p ∈ H_2 with rows in H_1 and columns in H_2 gives −1.0 × 10^{−2}. All at n = 3.
   - So such planes need more than a sector-restricted anchor, and so does a general plane. General planes lie in
     no charge sector. Planes of this kind arise as fixed points of filter flows.
+  - Script: `single-excitation-range/code/check_sector_anchor_failures.py`. It also re-checks that the
+    single-excitation sector passes at the same sizes.
 
 ## What remains
 

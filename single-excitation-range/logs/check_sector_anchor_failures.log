@@ -1,0 +1,8 @@
+(a) diagonal charge, n=4, rows H_4, cols H_4: smallest eigenvalue -3.162e-02
+(a) letter-2 charge, n=3, rows and cols {0,1}^n: smallest eigenvalue -1.285e-02
+(a) letter-2 charge, n=4, rows and cols {0,1}^n: smallest eigenvalue -2.323e-03
+(b) n=3, p in H_1 (W), rows H_2, cols H_1: smallest eigenvalue -1.034e-02
+(b) n=3, p in H_1 (random), rows H_2, cols H_1: smallest eigenvalue -6.910e-03
+(b) n=3, p in H_2 (Dicke), rows H_1, cols H_2: smallest eigenvalue -1.034e-02
+(c) single-excitation sector, n = 3, 4, every column sector, random complex p: smallest -9.22e-16
+PASS
