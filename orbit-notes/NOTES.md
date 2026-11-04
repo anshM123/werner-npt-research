@@ -395,10 +395,55 @@ smallest is −3.64 (per unit tangent norm). Along the best of them the Levi par
 −4.49. `code/levi_positive_point.py` checks these numbers (`logs/levi_positive_point.log`). So a proof of ORB2 has to
 control the pairing of L with the second-order motion, not only q_r on the tangent space.
 
+## The co-range optimised first (added 4 November 2026)
+
+ORB moves the co-range together with the range. Optimising the co-range first gives a weaker property that is still
+enough, and it removes the one-copy traps found above. For a two-dimensional range plane U ⊂ (C^3)^{⊗n} put
+
+    m(U) = min over all co-ranges of R_{1/2}(C) = λ_min [Ψ^{⊗n}(w_r w_r'^*)]_{r,r'},
+
+with (w_1, w_2) an orthonormal basis of U and Ψ(Y) = Tr(Y) I − Y/2 on each copy. Local unitaries leave m unchanged, so
+on the orbit {(⊗_s G_s)U : G_s ∈ GL(3)} it is a function of the positive parts G_s^*G_s.
+
+**Conjecture ORB_m (at t = 1/2).** No range plane U that is thick at every copy (range local supports all of C^3) is a
+local minimum of m on its orbit at a value m(U) < 2^{−n}.
+
+**Theorem.** EP_{n−1} and ORB_m for n copies imply EP_n.
+
+*Proof.* Rank-one operators satisfy q_n ≥ 2^{−n}‖·‖² (Song–Chen). The Grassmannian of planes is compact and m is
+continuous, so m attains its minimum at some U*. If U* is thin at some copy, every C with range U* is thin there, and
+Lemma 6.1 of Tomar with EP_{n−1} gives q_n(C) ≥ 0. Otherwise U* is thick. It is a minimum of m on its own orbit, so
+ORB_m forces m(U*) ≥ 2^{−n} > 0. ∎
+
+The threshold 2^{−n} is there because m can have flat pieces. On single-excitation planes, m equals 2^{1−n} on an
+open set, where the best co-range has rank one (`povm-minimum-principle/`). Values coming from a rank-one co-range
+are at least 2^{−n} by the rank-one bound, so the threshold excludes them. A local minimum of m on the orbit of U, at a thick U whose optimal co-range is thick,
+would give a local minimum of R on the squeeze orbit of the corresponding C, since R(GCG) ≥ m(GU) ≥ m(U) = R(C). So
+ORB implies ORB_m at such points. ORB_m is the weaker statement.
+
+On single-excitation and tangent planes the orbit of a thick plane is the interior of a set of qubit POVMs, and ORB_m
+becomes the minimum principle of `povm-minimum-principle/`.
+
+Numerics (`code/orbm_descent.py`, `code/orbm_hard_starts.py`, `code/orbm_perturbed.py`):
+- **Random planes.** L-BFGS on the filter parameters, starting at G = I. Every run ends at a thin plane (range
+  local-support ratio 10⁻⁷ or smaller) with m → 0: 10 of 10 at n = 2, 12 of 12 at n = 3, and 3 of 3 at n = 4
+  (`logs/orbm_descent.log`).
+- **Hard starts.** We started from the range planes of every stored operator above, and of the tangent-class and
+  shared-shift operators of `tangent-class/` (17 operators at n = 2, 3, 4). From all of them m descends to 0 at a thin
+  plane (`logs/orbm_hard_starts.log`). That includes the copywise and single-copy squeeze minima, which are traps for
+  ORB-type one-copy arguments but not for m.
+  - The three exact critical points on the rank-two variety do not move, since the gradient vanishes there. After a
+    perturbation of size 0.02 in the filter parameters, m drops below the critical value at once and descends to 0
+    (`logs/orbm_perturbed.log`). So they are saddles for m too.
+
+These are descents, not an adversarial search for local minima of m; see `povm-minimum-principle/` for such a search
+on single-excitation planes.
+
 ## Status
 
-Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 7. A proof of ORB_n for all n would prove
-NPT bound entanglement; we do not have one.
+Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 7. The weaker ORB_m, with the co-range
+optimised first, also suffices; it is a conjecture, tested by descents for n ≤ 4. A proof of either for all n would
+prove NPT bound entanglement; we do not have one.
 
 ## Files
 
@@ -417,6 +462,8 @@ NPT bound entanglement; we do not have one.
   Levi form that still descends through the curvature term.
 * `code/exact_critical_points.py` (with `data/variety_critical_n2_low.npy`, `data/variety_critical_n3_golden.npy`,
   `data/variety_critical_n3_low.npy`): the exact low thick critical points on the rank-two variety.
+* `code/orbm_descent.py`, `code/orbm_hard_starts.py`, `code/orbm_perturbed.py`: the co-range-optimised orbit property
+  ORB_m (logs `logs/orbm_*.log`).
 * `code/restricted_families.py` (with `data/torus_pd_n3.npy`, `data/suk_pd_n3.npy`): three-copy critical points at which
   the torus, resp. the weak-plane family, has no descent.
 * `logs/`: the runs in the tables and the control.

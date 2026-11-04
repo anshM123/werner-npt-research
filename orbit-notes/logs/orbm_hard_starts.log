@@ -1,0 +1,17 @@
+orbit-notes/data\copywise_min_n3.npy (n=3): m 0.16288 -> 0.000000; smallest range local-support ratio 2.5e-09
+orbit-notes/data\copywise_min_n4.npy (n=4): m 0.15913 -> 0.000000; smallest range local-support ratio 2.2e-12
+orbit-notes/data\critical_n2_R0.2.npy (n=2): m 0.05968 -> 0.000000; smallest range local-support ratio 3.8e-09
+orbit-notes/data\levi_positive_n2.npy (n=2): m 0.08690 -> 0.000000; smallest range local-support ratio 1.9e-07
+orbit-notes/data\single_copy_min_n3.npy (n=3): m 0.14088 -> -0.000002; smallest range local-support ratio -7.1e-17
+orbit-notes/data\suk_pd_n3.npy (n=3): m 0.17193 -> 0.000000; smallest range local-support ratio 4.1e-07
+orbit-notes/data\torus_pd_n3.npy (n=3): m 0.14072 -> 0.000000; smallest range local-support ratio 3.8e-11
+orbit-notes/data\two_sided_single_copy_min_n3.npy (n=3): m 0.17255 -> -0.000000; smallest range local-support ratio -1.8e-17
+orbit-notes/data\variety_critical_n2.npy (n=2): m 0.12799 -> 0.000000; smallest range local-support ratio 8.5e-12
+orbit-notes/data\variety_critical_n2_low.npy (n=2): m 0.12984 -> 0.129844; smallest range local-support ratio 2.6e-01
+orbit-notes/data\variety_critical_n3_golden.npy (n=3): m 0.09549 -> 0.095492; smallest range local-support ratio 2.5e-01
+orbit-notes/data\variety_critical_n3_low.npy (n=3): m 0.08676 -> 0.086761; smallest range local-support ratio 2.0e-01
+data/copywise_squeeze_min_n3.npy (n=3): m 0.09702 -> 0.000000; smallest range local-support ratio 7.6e-12
+data/copywise_squeeze_min_n4.npy (n=4): m 0.09810 -> 0.000000; smallest range local-support ratio 1.8e-15
+data/shared_shift_pd_T_n3.npy (n=3): m 0.06620 -> -0.000000; smallest range local-support ratio -7.7e-17
+data/common_shift_pd_n3.npy (n=3): m 0.22747 -> 0.000000; smallest range local-support ratio 8.5e-10
+data/common_shift_t0.40_n3.npy (n=3): m 0.21655 -> -0.000000; smallest range local-support ratio 2.9e-17

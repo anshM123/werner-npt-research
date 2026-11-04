@@ -1,0 +1,27 @@
+# python orbm_descent.py n starts seed; 4 Nov 2026
+ORB_m general n=2 start 0: m 0.09835 -> 0.000000; smallest range local-support ratio 6.1e-11; max |x| 2.8
+ORB_m general n=2 start 1: m 0.14500 -> 0.000000; smallest range local-support ratio 1.0e-07; max |x| 1.8
+ORB_m general n=2 start 2: m 0.16014 -> 0.000000; smallest range local-support ratio 7.7e-07; max |x| 1.4
+ORB_m general n=2 start 3: m 0.13586 -> 0.000000; smallest range local-support ratio 3.6e-08; max |x| 1.8
+ORB_m general n=2 start 4: m 0.09842 -> 0.000000; smallest range local-support ratio 3.2e-08; max |x| 1.6
+ORB_m general n=2 start 5: m 0.09735 -> 0.000000; smallest range local-support ratio 8.2e-07; max |x| 1.4
+ORB_m general n=2 start 6: m 0.12368 -> 0.000000; smallest range local-support ratio 2.7e-07; max |x| 1.4
+ORB_m general n=2 start 7: m 0.10116 -> 0.000000; smallest range local-support ratio 2.0e-07; max |x| 1.6
+ORB_m general n=2 start 8: m 0.18357 -> 0.000000; smallest range local-support ratio 1.1e-07; max |x| 1.7
+ORB_m general n=2 start 9: m 0.14660 -> 0.000000; smallest range local-support ratio 3.9e-08; max |x| 1.5
+ORB_m general n=3 start 0: m 0.20021 -> 0.000000; smallest range local-support ratio 2.7e-07; max |x| 1.5
+ORB_m general n=3 start 1: m 0.21909 -> 0.000000; smallest range local-support ratio 1.7e-10; max |x| 2.3
+ORB_m general n=3 start 2: m 0.24169 -> 0.000000; smallest range local-support ratio 3.7e-11; max |x| 2.4
+ORB_m general n=3 start 3: m 0.22378 -> 0.000000; smallest range local-support ratio 4.0e-07; max |x| 1.9
+ORB_m general n=3 start 4: m 0.23067 -> -0.000000; smallest range local-support ratio -1.2e-16; max |x| 8.0
+ORB_m general n=3 start 5: m 0.17623 -> 0.000000; smallest range local-support ratio 5.0e-08; max |x| 1.9
+ORB_m general n=3 start 6: m 0.16092 -> 0.000000; smallest range local-support ratio 1.9e-09; max |x| 2.8
+ORB_m general n=3 start 7: m 0.19746 -> 0.000000; smallest range local-support ratio 4.5e-08; max |x| 2.1
+ORB_m general n=3 start 8: m 0.18489 -> 0.000000; smallest range local-support ratio 2.0e-10; max |x| 2.9
+ORB_m general n=3 start 9: m 0.20036 -> 0.000000; smallest range local-support ratio 2.7e-07; max |x| 1.4
+ORB_m general n=3 start 10: m 0.21675 -> 0.000000; smallest range local-support ratio 1.0e-11; max |x| 3.6
+ORB_m general n=3 start 11: m 0.19207 -> 0.000000; smallest range local-support ratio 2.0e-07; max |x| 1.6
+ORB_m general n=4 start 0: m 0.26113 -> -0.000000; smallest range local-support ratio -4.2e-17; max |x| 8.0
+ORB_m general n=4 start 1: m 0.19928 -> 0.000000; smallest range local-support ratio 1.5e-08; max |x| 2.6
+ORB_m general n=4 start 2: m 0.25924 -> 0.000000; smallest range local-support ratio 2.0e-10; max |x| 2.4
+ORB_m general n=4 start 3: m 0.27604 -> -0.000005; smallest range local-support ratio -2.3e-17; max |x| 8.0

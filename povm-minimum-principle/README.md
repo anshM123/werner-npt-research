@@ -95,9 +95,8 @@ there (`logs/descents.log`). These plateaus sit at the top value of m and play n
 
 MP is a minimum principle on a single group orbit. On thick single-excitation planes, the range-side filters
 ⊗_s(|0⟩⟨0| + B_s), B_s ∈ GL(2), act transitively. Their balanced (Kempf–Ness) points are the weighted W-planes. There
-Theorem 2 of `single-excitation-range/` proves the endpoint, for weights within a factor two of each other. MP is in
-the spirit of the orbit property of `orbit-notes/` (no local minima on filter orbits), but with the co-range optimised
-first and one sector at a time. We do not claim that either statement implies the other.
+Theorem 2 of `single-excitation-range/` proves the endpoint, for weights within a factor two of each other. MP is the single-excitation form of the co-range-optimised orbit property ORB_m of `orbit-notes/`, taken one sector
+at a time and extended to faces.
 
 ## 4. What does not hold
 
@@ -128,6 +127,8 @@ Natural stronger statements fail, so a proof of MP has to use more than convexit
     singular) with m = 0;
   - the open sector c = 3 at n = 4: 12 of 12 runs end at an extreme POVM with μ_3 = 0; c = 2 at n = 4: 6 of 6; c = 3 at
     n = 5: 3 of 3, and 3 of 3 more in `logs/descent_n5_c3.log`; c = 4 at n = 5: 3 of 3 (`logs/descent_n5_c4.log`).
+    At n = 6 the open sectors c = 3, 4, 5 give 6 of 6, using the sector formula directly (`code/sector_fast.py`,
+    checked against the dense construction to 10⁻¹⁶; `logs/descent_n6_c*.log`).
     The other sectors (c = 1 at n = 3, 4; c = 2 at n = 4; the top sector c = n at n = 3, 4) behave the same: 24 of 24
     runs end on the boundary with value 0 (`logs/descent_sectors_n3_n4.log`);
   - on a face: with A_1 = w|ψ⟩⟨ψ| for a fixed ψ, the descents of μ_3 (n = 4, 5) and μ_4 (n = 5) all end at an
@@ -154,6 +155,8 @@ Natural stronger statements fail, so a proof of MP has to use more than convexit
 - `code/search_minimum_principle.py`: descents and the φ_h adversary. Logs: `logs/descents.log`, `logs/adversary.log`,
   `logs/descent_n5_c3.log`, `logs/descent_n5_c4.log`, `logs/descent_sectors_n3_n4.log`.
 - `code/search_face.py`: descents on the face A_1 = w|ψ⟩⟨ψ|. Log: `logs/face_descents.log`.
+- `code/sector_fast.py`, `code/search_sector_fast.py`: the sector function from the explicit sector formula, and
+  descents with it at n = 6. Logs: `logs/descent_n6_c*.log`.
 - `code/check_sector_geodesics.py`: sector functions along squeeze subgroups. Log: `logs/check_sector_geodesics.log`.
 
 ## Status

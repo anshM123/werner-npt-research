@@ -1,0 +1,2 @@
+sector descent n=6 c=3 start 0: 0.05409 -> 0.000000; smallest eigenvalue among A_s 6.3e-15; rank-<=1 elements 6/6; iterations 13
+sector descent n=6 c=3 start 1: 0.06400 -> 0.000000; smallest eigenvalue among A_s 9.6e-16; rank-<=1 elements 6/6; iterations 14
