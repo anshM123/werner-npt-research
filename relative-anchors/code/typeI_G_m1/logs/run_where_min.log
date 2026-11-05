@@ -1,0 +1,9 @@
+u = 1: worst margin 2.500e-01 in family "one tiny", row rho; row of the smallest U-weight: False (that weight is 1.0e+00 of S)
+u = 2: worst margin 7.846e-11 in family "sigma tiny", row z_1; row of the smallest U-weight: True (that weight is 2.1e-03 of S)
+u = 3: worst margin 1.132e-11 in family "all large", row z_2; row of the smallest U-weight: True (that weight is 9.6e-02 of S)
+u = 4: worst margin 3.105e-12 in family "all large", row z_3; row of the smallest U-weight: True (that weight is 4.7e-03 of S)
+u = 5: worst margin 1.624e-09 in family "all large", row z_3; row of the smallest U-weight: True (that weight is 4.5e-04 of S)
+u = 6: worst margin 2.182e-10 in family "sigma tiny", row z_5; row of the smallest U-weight: True (that weight is 3.8e-05 of S)
+u = 7: worst margin 3.206e-11 in family "sigma tiny", row z_5; row of the smallest U-weight: True (that weight is 1.3e-05 of S)
+u = 8: worst margin 1.432e-11 in family "all large", row z_3; row of the smallest U-weight: True (that weight is 3.7e-03 of S)
+PASS

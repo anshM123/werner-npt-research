@@ -22,7 +22,9 @@ This folder collects what we can prove about the group conditions for every k.
     on the copies without a letter 2 is positive definite (Theorem C), so each such block is equivalent to a single
     Schur-complement condition G ≻ 0 on its letter-2 states. That condition holds when exactly two copies are free
     of the letter 2 (Theorem U2), and for k = 4 also when three are (Theorem U3₁). So (R∞)_{k−1} holds completely
-    for k ≤ 4, and for k ≥ 5 it is open only on the type I blocks with at least three such copies.
+    for k ≤ 4, and for k ≥ 5 it is open only on the type I blocks with at least three such copies. When exactly one
+    copy carries the letter 2, it also holds for every k whenever the weights of the other copies take at most two
+    distinct values (Theorems EU and TL).
   - (R∞)_{k−2} has the explicit kernel vector vac ⊗ J⁻|1…1⟩ (Proposition K2). On its letter-1 block the vacuum row
     eliminates exactly and the soft directions are known exactly; the gap there is at most min_h s_h/(2(|s| − s_h))
     (Section 3e), so a proof has to be exact to first order in the smallest weight.
@@ -56,8 +58,9 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
 
 **Open.**
 - For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 and k ≥ 5
-  (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁), reduced to the condition G ≻ 0 of Theorem C; and the letter-1
-  and type I blocks of (R∞)_j for 1 ≤ j ≤ k − 2 (for k ≥ 5; at k = 4 everything is proved, Section 3f).
+  (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁, and for |T| = 1 the U-weights with at most two distinct values
+  are Theorems EU and TL), reduced to the condition G ≻ 0 of Theorem C; and the letter-1 and type I blocks of (R∞)_j
+  for 1 ≤ j ≤ k − 2 (for k ≥ 5; at k = 4 everything is proved, Section 3f).
 
 Nothing here is refereed. The endpoint problem itself is open.
 
@@ -339,13 +342,56 @@ indefinite at explicit rational points, so there is no room near S → 0.
   Proposition U1 and Theorem U2. We conjecture that it works for every (u, m): every leading principal minor of G_z,
   in the order (ρ_t, z_{t,·}) copy by copy, is a ratio of polynomials with only positive coefficients (Conjecture P in
   the notes). This would give all of (R∞)_{k−1}.
-- For m = 1 the Z-matrix certificate with the same vector v holds numerically for u ≤ 8 (Conjecture M in the notes).
-  A proof would settle every type I block of (R∞)_{k−1} with exactly one copy carrying the letter 2, for every k. For
-  m ≥ 2 the Z-pattern fails.
+- For m = 1 the Z-matrix certificate with the same vector v (Conjecture M in the notes) holds for every u when the
+  U-weights take at most two distinct values (Theorems EU and TL below). For general weights it is checked exactly at
+  280 rational points with u ≤ 10. A proof for all weights would settle every type I block of (R∞)_{k−1} with exactly
+  one copy carrying the letter 2, for every k. For m ≥ 2 the Z-pattern fails.
 - The comparison with the one-copy system obtained by merging the copies of U into one copy of weight √S, which
   Proposition U1 suggests, is not one-sided: the difference is indefinite, also at equal U-weights (notes,
   Section 4). So the constants of Proposition U1 do not transfer directly.
 - For k = 5 the same pipeline ((u, m) = (4, 1) and (3, 2)) did not finish in our runs.
+
+**Theorems EU and TL (one copy carrying the letter 2, every k).** Let |T| = 1, and suppose the weights of the copies
+in U take at most two distinct values: u₁ copies of weight s₁ and u₂ copies of weight s₂, for any u₁, u₂ ≥ 0, any
+s₁, s₂ > 0 and any weight σ = s_t of the copy in T. Then G_z is a symmetric Z-matrix and G_z v > 0 for the vector v of
+Theorem U3₁. Hence G ≻ 0, and by Theorem C the type I block of (R∞)_{k−1} is ⪰ 0 with kernel exactly
+span{p ⊗ f_h : h ∈ U}, for every k. (Theorem EU is the case of one value, Theorem TL that of two.)
+
+*Proof (computer-assisted, exact, symbolic in u₁ and u₂; `code/typeI_G_m1/`, `NOTES.md` there).*
+1. **Gauge.** Delete the coordinates P_{t,h} (h ∈ U) of the copy t ∈ T. This is a complement of the kernel, and it is
+   invariant under the permutations of U. The eliminated block is then exactly the (C_u) block of Theorem C, which is
+   positive definite, and G = diag(2, I_u) − BᵀC⁻¹B, where B couples the letter-2 states to (X_U, q). So
+   G_z[i, j] = −⟨b_i, C⁻¹b_j⟩ for i ≠ j: (Z) says that the couplings are pairwise positively correlated in the C⁻¹
+   metric.
+2. **Symmetry.** The block is invariant under the permutations of U that preserve the weights, and C ≻ 0. So the
+   minimiser for invariant letter-2 data is invariant (3 unknowns at one level, 7 at two). For data in the standard
+   representation of one level it lies in the matching isotypic part (at most 5 unknowns). Each sum over pairs of
+   copies in the closed form is split by levels and by r = r′ or r ≠ r′, which writes the restricted forms
+   symbolically in u₁ and u₂.
+3. **Reduced matrices.** Exact elimination gives the matrix Q of G_z summed over the levels (2 × 2 or 3 × 3) and the
+   eigenvalue λ_i of G_z on the standard part of level i. Every entry of G_z and of G_z v is read off from these. For
+   example G_z[h, h′] = (Q_{ii}/u_i − λ_i)/u_i for h ≠ h′ in level i.
+4. **Certificates.** Substitute u_i = u_i⁰ + x_i. Then every numerator and denominator of these entries has
+   coefficients of one sign as a polynomial in (σ, s₁, s₂, x₁, x₂) (at one level every factor, of degree at most 32;
+   at two levels up to about 249 000 terms). The remaining small cases have u ≤ 3, where the exact closed forms prove
+   (Z) and (D) for all weights.
+5. **Validation.** The reductions agree with direct exact elimination of the whole block at 36 points (one level,
+   u ≤ 12) and at 51 points (two levels). A second, independent implementation of the invariant two-level reduction
+   agrees exactly. ∎
+
+Further results in the notes:
+- At equal U-weights, the (ρ, z) block in the rescaled frame of `code/typeI_G_u3/` (Section 4 there) converges as
+  u → ∞ to an explicit matrix. That matrix is positive definite for all σ, S > 0. So its smallest eigenvalue is
+  bounded below uniformly in u at fixed σ, S.
+- Exact checks, not proofs:
+  - (Z), (D) and positive pivots hold at 280 rational weight vectors with u ≤ 10. The smallest margins, down to
+    3·10⁻¹², occur in the row of the smallest U-weight when σ ≪ S.
+  - With three weight levels (two single copies and u₃ equal ones), (D) and the cross-level part of (Z) hold
+    uniformly in u₃ at 12 rational weight triples.
+- Negative controls: with β doubled or halved in v, G_z v has a negative entry at explicit rational points.
+- For general U-weights, G_z is not a function of finitely many moment sums: the crossed term of the (C_u) form
+  creates pair functions of (s_r, s_h) (notes, Section 4). The two-level reduction works because these pair functions
+  then take only finitely many values.
 
 **Proposition K2.** The vector vac ⊗ J⁻|1…1⟩ lies in the kernel of (R∞)_{k−2}.
 
@@ -777,6 +823,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `num_generic.py`, `num_letter2.py` | Exact elimination of the corner forms for 14 ≤ k ≤ 38, and of every case I form for k ≤ 16 |
 | `typeI_u1/` (`run_all.sh`) | Proposition U1: the closed forms against the reduced form (exactly at rational points, and as identities of rational functions for m ≤ 4), the polynomials of (A) and (B), their Bernstein certificates, end-to-end checks, negative controls |
 | `typeI_u2/` (`run_all.sh`, notes in `typeI_u2/NOTES.md`) | Theorem C and the reduction before it: the closed form of every type I block (exactly against the builder, k = 3, 4, 5), the structure facts, the splitting formulas, the hard-part lemma, Φ1, every per-coordinate bound at 200 rational configurations, the chain at 32 points, exact pivots at 33 configurations, the Bernstein certificates of (I), (II), (III), negative controls |
+| `typeI_G_m1/` (`run_all.sh`, notes in `typeI_G_m1/NOTES.md`) | Theorems EU and TL: the gauge x_t = 0 and G = diag(2, I) − BᵀC⁻¹B; the symbolic reductions at one and two weight levels, their validation against direct elimination, the sign certificates, a second implementation of the two-level invariant part; the limit u → ∞ at equal U-weights; exact checks at rational points for u ≤ 10 and at three levels; negative controls; floating-point observations on the pair structure |
 | `typeI_G_u3/` (`run_all.sh`, notes in `typeI_G_u3/NOTES.md`) | Theorem U3₁: the exact Schur complement for u = 3, m = 1 over Q(s_0, …, s_3) and its agreement with direct elimination, the leading minors with factor stripping and expansion checks, the coefficient-sign certificate, the Z-matrix certificate, negative controls; the same minor certificate for (u, m) = (1, 1), (2, 1), (1, 2), (2, 2), (1, 3); numerical sweeps behind Conjectures P and M |
 | `typeI_G_u2/` (`run_all.sh`, notes in `typeI_G_u2/NOTES.md`) | Theorem U2: the exact symbolic Schur complement for u = 2, its agreement with direct elimination (m = 1, …, 5), the polynomial reductions, the blow-up charts and Bernstein certificates of (A_2) and (B_2), negative controls |
 | `positivity/` (`run_all.sh`, notes in `positivity/NOTES.md`) | Section 3g: every principal minor of every block at k = 2, 3 and the k = 4 tests, the row-group identities and lifts of Proposition R, the obstruction certificates (Newton, width, Farkas), the monomial-PSD tests, the Gram-type column-group lifts, the natural whole-block lift and its obstruction |

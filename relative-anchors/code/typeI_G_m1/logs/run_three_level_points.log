@@ -1,0 +1,13 @@
+point 0: w = (33/250, 1/25, 803/200): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (8.2 s)
+point 1: w = (1/1000, 29/100, 17/1000): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (14.1 s)
+point 2: w = (1089/1000, 7/500, 543/1000000): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (27.1 s)
+point 3: w = (7/1000, 23/1000, 499/1000): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (34.7 s)
+point 4: w = (43079/1000, 31/1000, 39/500): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (42.9 s)
+point 5: w = (1/1000, 1017/500, 193/500): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (50.2 s)
+point 6: w = (240589/1000, 3/200, 27157/1000000): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (71.7 s)
+point 7: w = (89/1000, 19/500, 3/100): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (76.8 s)
+point 8: w = (11/100, 18387/1000, 53/1000): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (85.2 s)
+point 9: w = (1/1000, 309/1000, 194/125): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (91.8 s)
+point 10: w = (7/1000, 17/1000, 67/1000000): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (101.0 s)
+point 11: w = (399/50, 513/1000, 181/1000): reduction = direct elimination at u3 = 2, 3, 5: True; (Z1), (Z3), (D) for every u3 >= 2: True  (110.3 s)
+PASS

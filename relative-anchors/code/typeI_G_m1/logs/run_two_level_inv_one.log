@@ -1,0 +1,4 @@
+inv one: form built (0.1 s, 42 terms)
+  converted (0.2 s); eliminating 6
+  done (1.4 s); symmetric True; wrote two_level_one.pkl
+PASS

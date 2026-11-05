@@ -1,0 +1,15 @@
+beta x 2, u = 1, w_t = 1, w_U = [1/10]: original v passes True; perturbed vector has a negative entry True
+beta x 2, u = 3, w_t = 1, w_U = [1/10, 1/10, 1/10]: original v passes True; perturbed vector has a negative entry True
+beta x 2, u = 5, w_t = 1, w_U = [1/10, 1/10, 1/10]...: original v passes True; perturbed vector has a negative entry True
+beta x 2, u = 1, w_t = 1, w_U = [1/10]: original v passes True; perturbed vector has a negative entry True
+beta x 2, u = 3, w_t = 1, w_U = [1/10, 1/20, 1/30]: original v passes True; perturbed vector has a negative entry True
+beta x 2, u = 5, w_t = 1, w_U = [1/10, 1/20, 1/30]...: original v passes True; perturbed vector has a negative entry True
+beta x 1/2, u = 1, w_t = 1, w_U = [10]: original v passes True; perturbed vector has a negative entry True
+beta x 1/2, u = 3, w_t = 1, w_U = [10, 10, 10]: original v passes True; perturbed vector has a negative entry True
+beta x 1/2, u = 5, w_t = 1, w_U = [10, 10, 10]...: original v passes True; perturbed vector has a negative entry True
+beta x 1/2, u = 1, w_t = 1, w_U = [10]: original v passes True; perturbed vector has a negative entry True
+beta x 1/2, u = 3, w_t = 1, w_U = [10, 13, 16]: original v passes True; perturbed vector has a negative entry True
+beta x 1/2, u = 5, w_t = 1, w_U = [10, 13, 16]...: original v passes True; perturbed vector has a negative entry True
+equal U-weights, beta x 2: the (D) numerators have mixed coefficients (certificate fails) True
+equal U-weights, beta x 1/2: the (D) numerators have mixed coefficients (certificate fails) True
+PASS

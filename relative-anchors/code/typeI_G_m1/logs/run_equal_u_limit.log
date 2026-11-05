@@ -1,0 +1,16 @@
+u = 1: smallest eigenvalue 0.5788 (Section 4 of typeI_G_u3 lists 0.579)  ok
+u = 2: smallest eigenvalue 0.5302 (Section 4 of typeI_G_u3 lists 0.53)  ok
+u = 3: smallest eigenvalue 0.5045 (Section 4 of typeI_G_u3 lists 0.505)  ok
+u = 4: smallest eigenvalue 0.4887 (Section 4 of typeI_G_u3 lists 0.489)  ok
+u = 5: smallest eigenvalue 0.4780 (Section 4 of typeI_G_u3 lists 0.478)  ok
+u = 6: smallest eigenvalue 0.4703 (Section 4 of typeI_G_u3 lists 0.47)  ok
+u = 7: smallest eigenvalue 0.4644 (Section 4 of typeI_G_u3 lists 0.464)  ok
+u = 8: smallest eigenvalue 0.4598 (Section 4 of typeI_G_u3 lists 0.46)  ok
+u = 12: smallest eigenvalue 0.4484 (Section 4 of typeI_G_u3 lists 0.448)  ok
+M(inf)[0,0] = S*(3*S**7 + 32*S**6*sigma + 144*S**5*sigma**2 + 352*S**4*sigma**3 + 508*S**3*sigma**4 + 424*S**2*sigma**5 + 184*S*sigma**6 + 32*sigma**7)/(2*(S + sigma)**2*(S**2 + 2*S*sigma + 2*sigma**2)*(S**2 + 4*S*sigma + 2*sigma**2)**2)
+M(inf)[1,1] = (5*S**7 + 44*S**6*sigma + 158*S**5*sigma**2 + 308*S**4*sigma**3 + 356*S**3*sigma**4 + 248*S**2*sigma**5 + 96*S*sigma**6 + 16*sigma**7)/(2*(S + sigma)*(S**2 + 2*S*sigma + 2*sigma**2)*(S**2 + 4*S*sigma + 2*sigma**2)**2)
+M(inf)[0,1]^2 = S*(S + 2*sigma)**2*(3*S**6 + 20*S**5*sigma + 54*S**4*sigma**2 + 84*S**3*sigma**3 + 80*S**2*sigma**4 + 40*S*sigma**5 + 8*sigma**6)**2/(4*(S + sigma)**3*(S**2 + 2*S*sigma + 2*sigma**2)**2*(S**2 + 4*S*sigma + 2*sigma**2)**4)
+det M(inf) = S*(S**2 + 6*S*sigma + 4*sigma**2)*(3*S**4 + 14*S**3*sigma + 24*S**2*sigma**2 + 16*S*sigma**3 + 4*sigma**4)/(2*(S + sigma)*(S**2 + 2*S*sigma + 2*sigma**2)*(S**2 + 4*S*sigma + 2*sigma**2)**2)
+M(inf)[0,0] > 0: True;  M(inf)[1,1] > 0: True;  det M(inf) > 0: True  (coefficient signs in (sigma, S))
+limit of the smallest eigenvalue at sigma = 0.004, S = 1: 0.4221
+PASS

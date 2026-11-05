@@ -1,0 +1,6 @@
+validation: lam1 = exact elimination at 24 points: all equal (0.3 s)
+(i) u1 = 3 + x1, u2 = 2 + x2: numerator 246468 terms sign +1, denominator 248724 terms sign +1: G_z[h,h'] < 0 certified
+(ii) u1 = 3 + x1, u2 = 1: numerator 13120 terms sign +1, denominator 13202 terms sign +1: G_z[h,h'] < 0 certified
+(iii) u1 = 2, u2 = 2 + x2: numerator 14190 terms sign +1, denominator 15180 terms sign +1: G_z[h,h'] < 0 certified
+certificates done (20.5 s)
+PASS

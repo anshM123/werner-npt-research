@@ -1,0 +1,9 @@
+validation: symbolic Q3 = exact elimination at 12 points: all equal (0.3 s)
+(Z1) Q3[rho,z1]: numerator 1771 terms sign -1, denominator 2024 terms sign +1
+(Z1) Q3[rho,z2]: numerator 2002 terms sign -1, denominator 2024 terms sign +1
+(Z3) Q3[z1,z2]: numerator 2002 terms sign -1, denominator 2024 terms sign +1
+(D) row rho: numerator 2299 terms sign +1, denominator 2024 terms sign +1
+(D) row z1: numerator 2024 terms sign +1, denominator 2024 terms sign +1
+(D) row z2: numerator 2277 terms sign +1, denominator 2024 terms sign +1
+certificates: [True, True, True, True, True, True] (0.1 s)
+PASS

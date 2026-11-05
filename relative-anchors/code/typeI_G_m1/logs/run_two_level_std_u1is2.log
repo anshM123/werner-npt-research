@@ -1,0 +1,4 @@
+std u1is2: form built (0.1 s, 15 terms)
+  converted (0.1 s); eliminating 4
+  done (0.1 s); symmetric True; wrote two_level_std_u1is2.pkl
+PASS

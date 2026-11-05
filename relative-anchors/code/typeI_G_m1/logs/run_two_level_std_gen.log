@@ -1,0 +1,4 @@
+std gen: form built (0.1 s, 21 terms)
+  converted (0.2 s); eliminating 5
+  done (1.2 s); symmetric True; wrote two_level_std_gen.pkl
+PASS

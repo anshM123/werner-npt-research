@@ -1,0 +1,9 @@
+forms are polynomial in (sigma, s) (no square roots): True
+Part 1: symbolic invariant/standard reduction = exact elimination at 36 points (u = 1..12): all equal (1.9 s)
+(Z1) -G_z[rho,h]: u >= 1: every factor sign-definite; overall sign +; factors (part, degree, terms, sign, exponent): [('num', 1, 1, '+', 1), ('num', 1, 1, '+', 1), ('num', 1, 2, '+', 1), ('num', 24, 91, '+', 1), ('den', 2, 3, '+', 2), ('den', 2, 3, '+', 2), ('den', 4, 6, '+', 2), ('den', 10, 21, '+', 1)]
+(D1) (G_z v)_rho: u >= 1: every factor sign-definite; overall sign +; factors (part, degree, terms, sign, exponent): [('num', 1, 1, '+', 1), ('num', 1, 1, '+', 1), ('num', 1, 2, '+', 1), ('num', 26, 105, '+', 1), ('den', 2, 3, '+', 2), ('den', 2, 3, '+', 2), ('den', 4, 6, '+', 2), ('den', 10, 21, '+', 1)]
+(D2) u (G_z v)_h: u >= 1: every factor sign-definite; overall sign +; factors (part, degree, terms, sign, exponent): [('num', 1, 1, '+', 1), ('num', 1, 2, '+', 1), ('num', 1, 1, '+', 2), ('num', 26, 105, '+', 1), ('den', 2, 3, '+', 2), ('den', 2, 3, '+', 2), ('den', 4, 6, '+', 2), ('den', 10, 21, '+', 1)]
+(Z2) -u G_z[h,hp]: u >= 3: every factor sign-definite; overall sign +; factors (part, degree, terms, sign, exponent): [('num', 1, 1, '+', 1), ('num', 1, 2, '+', 1), ('num', 1, 1, '+', 2), ('num', 32, 153, '+', 1), ('den', 2, 3, '+', 2), ('den', 2, 3, '+', 3), ('den', 4, 6, '+', 2), ('den', 6, 10, '+', 1), ('den', 10, 21, '+', 1)]
+(S) lam_std: u >= 3: every factor sign-definite; overall sign +; factors (part, degree, terms, sign, exponent): [('num', 1, 1, '+', 1), ('num', 1, 1, '+', 1), ('num', 20, 66, '+', 1), ('den', 2, 3, '+', 3), ('den', 4, 6, '+', 2), ('den', 6, 10, '+', 1)]
+Part 2 done (2.1 s)
+PASS

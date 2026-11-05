@@ -1,0 +1,4 @@
+inv gen: form built (0.3 s, 52 terms)
+  converted (0.4 s); eliminating 7
+  done (125.2 s); symmetric True; wrote two_level_gen.pkl
+PASS

@@ -1,0 +1,10 @@
+u = 4, sigma = 0.05: min f (numerical) = 0.297358 at sorted s_U = [0.25 0.25 0.25 0.25]; f at equal weights 0.297358; best on (a, b, ..., b) 0.297358; best on (a, a, b, ..., b) 0.297358
+u = 4, sigma = 1.0: min f (numerical) = 0.449146 at sorted s_U = [0.25 0.25 0.25 0.25]; f at equal weights 0.449146; best on (a, b, ..., b) 0.449146; best on (a, a, b, ..., b) 0.449146
+u = 4, sigma = 20.0: min f (numerical) = 0.281125 at sorted s_U = [0.25 0.25 0.25 0.25]; f at equal weights 0.281125; best on (a, b, ..., b) 0.281125; best on (a, a, b, ..., b) 0.281125
+u = 5, sigma = 0.05: min f (numerical) = 0.295174 at sorted s_U = [0.2 0.2 0.2 0.2 0.2]; f at equal weights 0.295174; best on (a, b, ..., b) 0.295174; best on (a, a, b, ..., b) 0.295174
+u = 5, sigma = 1.0: min f (numerical) = 0.443499 at sorted s_U = [0.2 0.2 0.2 0.2 0.2]; f at equal weights 0.443499; best on (a, b, ..., b) 0.443499; best on (a, a, b, ..., b) 0.443499
+u = 5, sigma = 20.0: min f (numerical) = 0.280084 at sorted s_U = [0.2 0.2 0.2 0.2 0.2]; f at equal weights 0.280084; best on (a, b, ..., b) 0.280084; best on (a, a, b, ..., b) 0.280084
+u = 4, sigma = 0.05: min over 300 random segments of [g(mid) - mean g(ends)]/max|g(ends)| = -2.740e-02 (not concave)
+u = 4, sigma = 1.0: min over 300 random segments of [g(mid) - mean g(ends)]/max|g(ends)| = -6.560e-02 (not concave)
+u = 4, sigma = 20.0: min over 300 random segments of [g(mid) - mean g(ends)]/max|g(ends)| = -1.920e-02 (not concave)
+PASS

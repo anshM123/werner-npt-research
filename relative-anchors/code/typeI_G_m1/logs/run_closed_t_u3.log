@@ -1,0 +1,14 @@
+u = 3: built and scaled (0.0 s), block size 17
+  pivot 1/10 done (0.0 s)
+  pivot 2/10 done (0.1 s)
+  pivot 3/10 done (0.7 s)
+  pivot 4/10 done (2.0 s)
+  pivot 5/10 done (4.6 s)
+  pivot 6/10 done (9.0 s)
+  pivot 7/10 done (16.4 s)
+  pivot 8/10 done (26.1 s)
+  pivot 9/10 done (41.6 s)
+  pivot 10/10 done (73.5 s)
+G symmetric: True
+total 73.6 s; wrote closed_t_u3.pkl
+PASS

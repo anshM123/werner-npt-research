@@ -1,0 +1,9 @@
+one: form built and converted (73.1 s), 6 pivots
+  pivot 1/6 (73.1 s)
+  pivot 2/6 (73.3 s)
+  pivot 3/6 (73.5 s)
+  pivot 4/6 (73.8 s)
+  pivot 5/6 (74.0 s)
+  pivot 6/6 (74.3 s)
+symmetric: True ; wrote two_level_one_exprtree.pkl
+PASS

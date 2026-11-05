@@ -1,0 +1,9 @@
+validation: symbolic Q3 = exact elimination at 15 points: all equal (4.4 s)
+(Z1) Q3[rho,z1]: numerator 31059 terms sign -1, denominator 31465 terms sign +1
+(Z1) Q3[rho,z2]: numerator 31059 terms sign -1, denominator 31465 terms sign +1
+(Z3) Q3[z1,z2]: numerator 35091 terms sign -1, denominator 31465 terms sign +1
+(D) row rho: numerator 35959 terms sign +1, denominator 31465 terms sign +1
+(D) row z1: numerator 35525 terms sign +1, denominator 31465 terms sign +1
+(D) row z2: numerator 35525 terms sign +1, denominator 31465 terms sign +1
+certificates: [True, True, True, True, True, True] (47.3 s)
+PASS

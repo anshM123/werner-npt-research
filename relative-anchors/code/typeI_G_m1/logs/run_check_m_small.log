@@ -1,0 +1,4 @@
+u = 1: (Z) pattern True; (D) every row of den*G_z v positive True (terms [9, 9]); denominator terms 9; closed form = direct elimination at 3 points True
+u = 2: (Z) pattern True; (D) every row of den*G_z v positive True (terms [152, 136, 136]); denominator terms 136; closed form = direct elimination at 3 points True
+u = 3: (Z) pattern True; (D) every row of den*G_z v positive True (terms [8435, 7770, 7770, 7770]); denominator terms 7770; closed form = direct elimination at 3 points True
+PASS

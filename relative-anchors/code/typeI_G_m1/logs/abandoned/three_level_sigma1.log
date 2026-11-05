@@ -1,0 +1,7 @@
+built and converted (0.8 s); eliminating 11
+  pivot 1/11 (0.8 s)
+  pivot 2/11 (1.1 s)
+  pivot 3/11 (3.0 s)
+  pivot 4/11 (19.7 s)
+  pivot 5/11 (136.7 s)
+stopped by hand at 03:52 during pivot 6 (pivot times 0.3, 1.9, 16.7, 117 s: growth about six-fold per pivot; eleven pivots needed)
