@@ -1,0 +1,9 @@
+k3_j0_(1, 0, 0, 0) (L1), size 5: no first- or second-order obstruction over the directions tested  [0.2s]
+k3_j1_(1, 1, 0, 0) (I), size 7: no first- or second-order obstruction over the directions tested  [0.9s]
+k3_j1_(2, 0, 0, 0) (L1), size 8: no first- or second-order obstruction over the directions tested  [1.7s]
+k3_j2_(1, 2, 0, 0) (II), size 2: no first- or second-order obstruction over the directions tested  [1.8s]
+k3_j2_(1, 1, 1, 0) (I), size 7: no first- or second-order obstruction over the directions tested  [2.4s]
+k3_j2_(2, 1, 0, 0) (I), size 8: no first- or second-order obstruction over the directions tested  [3.2s]
+k3_j2_(3, 0, 0, 0) (L1), size 5: no first- or second-order obstruction over the directions tested  [3.4s]
+RESULT k = 3: 0 of 7 blocks without a q = 1 representation have an exact jet obstruction: []
+PASS

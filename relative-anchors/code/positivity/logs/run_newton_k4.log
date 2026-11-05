@@ -1,0 +1,16 @@
+k4_j1_T- (L1), size 18: ordered pairs with M_ab/M_aa unbounded, exact certificate: 99 (of which 15 also with a width certificate); LP-only: skipped; e.g. M[(0001,0001),(0001,0010)]/M[(0001,0001),(0001,0001)] ~ t^1 along s = t^(0, 1, 0); width certificate for M[(0001,0010),(0010,0001)]/M[(0001,0010),(0001,0010)] in direction (0, -1, -2)
+   => fixed-vector representation IMPOSSIBLE (exact); with any monomial rescaling of the coordinates: IMPOSSIBLE (exact)
+k4_j1_T0 (I), size 10: ordered pairs with M_ab/M_aa unbounded, exact certificate: 12 (of which 0 also with a width certificate); LP-only: skipped; e.g. M[(0000,2001),(2000,0010)]/M[(0000,2001),(0000,2001)] ~ t^1 along s = t^(0, 1, 0)
+   => fixed-vector representation IMPOSSIBLE (exact); with any monomial rescaling of the coordinates: not excluded
+k4_j1_T01 (I), size 3: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: skipped
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k4_j2_T- (L1), size 21: ordered pairs with M_ab/M_aa unbounded, exact certificate: 161 (of which 19 also with a width certificate); LP-only: skipped; e.g. M[(0001,0011),(0001,0101)]/M[(0001,0011),(0001,0011)] ~ t^1 along s = t^(1, 0, 0); width certificate for M[(0001,0110),(0010,0101)]/M[(0001,0110),(0001,0110)] in direction (-1, 0, -2)
+   => fixed-vector representation IMPOSSIBLE (exact); with any monomial rescaling of the coordinates: IMPOSSIBLE (exact)
+k4_j2_T0 (I), size 18: ordered pairs with M_ab/M_aa unbounded, exact certificate: 46 (of which 10 also with a width certificate); LP-only: skipped; e.g. M[(0001,2001),(0001,2010)]/M[(0001,2001),(0001,2001)] ~ t^1 along s = t^(0, 1, 0); width certificate for M[(0001,2010),(0010,2001)]/M[(0001,2010),(0001,2010)] in direction (0, -1, -2)
+   => fixed-vector representation IMPOSSIBLE (exact); with any monomial rescaling of the coordinates: IMPOSSIBLE (exact)
+k4_j2_T01 (I), size 11: ordered pairs with M_ab/M_aa unbounded, exact certificate: 6 (of which 0 also with a width certificate); LP-only: skipped; e.g. M[(0000,2201),(0200,2010)]/M[(0000,2201),(0000,2201)] ~ t^1 along s = t^(0, 1, 0)
+   => fixed-vector representation IMPOSSIBLE (exact); with any monomial rescaling of the coordinates: not excluded
+k4_j2_T012 (I), size 4: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: skipped
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+RESULT k = 4: 5 of 7 blocks have an exact obstruction, 3 of them also against every monomial rescaling  [66.4s]
+PASS

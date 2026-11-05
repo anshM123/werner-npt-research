@@ -1,0 +1,7 @@
+k2_j0_(1, 0, 0): lift size 7 (2 block coordinates, 5 lifted); D' = C' + H K H^T exact: True; Schur complement of the lift = block (exact, rational point): True  [0.0s]
+   lift PSD at the point: True
+   symbolic lift: 8 obstructed ordered pairs (0 with a width certificate)
+   monomial-PSD test of the lift (q = 1): 5 non-PSD of 12 coefficient matrices  [0.0s]
+   monomial rescalings of the lift: none 0.0
+   after the LP rescaling: 0 obstructed pairs; monomial-PSD: 1 non-PSD of 7  [0.0s]
+PASS

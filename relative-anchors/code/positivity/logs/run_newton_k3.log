@@ -1,0 +1,42 @@
+k3_j-1_(0, 0, 0, 0) (L1), size 1: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j0_(0, 1, 0, 0) (I), size 2: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j0_(1, 0, 0, 0) (L1), size 5: ordered pairs with M_ab/M_aa unbounded, exact certificate: 6 (of which 0 also with a width certificate); LP-only: 0; e.g. M[(000,001),(000,010)]/M[(000,001),(000,001)] ~ t^1 along s = t^(0, 1, 0)
+   => fixed-vector representation IMPOSSIBLE (exact); with any monomial rescaling of the coordinates: not excluded
+k3_j1_(0, 2, 0, 0) (II), size 1: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j1_(0, 1, 1, 0) (I), size 3: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j1_(1, 1, 0, 0) (I), size 7: ordered pairs with M_ab/M_aa unbounded, exact certificate: 4 (of which 0 also with a width certificate); LP-only: 0; e.g. M[(000,201),(200,010)]/M[(000,201),(000,201)] ~ t^1 along s = t^(0, 1, 0)
+   => fixed-vector representation IMPOSSIBLE (exact); with any monomial rescaling of the coordinates: not excluded
+k3_j1_(2, 0, 0, 0) (L1), size 8: ordered pairs with M_ab/M_aa unbounded, exact certificate: 24 (of which 0 also with a width certificate); LP-only: 0; e.g. M[(001,001),(001,010)]/M[(001,001),(001,001)] ~ t^1 along s = t^(0, 1, 0)
+   => fixed-vector representation IMPOSSIBLE (exact); with any monomial rescaling of the coordinates: not excluded
+k3_j2_(0, 2, 1, 0) (II), size 1: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j2_(0, 1, 1, 1) (I), size 4: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j2_(1, 2, 0, 0) (II), size 2: ordered pairs with M_ab/M_aa unbounded, exact certificate: 2 (of which 0 also with a width certificate); LP-only: 0; e.g. M[(200,201),(200,210)]/M[(200,201),(200,201)] ~ t^1 along s = t^(0, 1, 0)
+   => fixed-vector representation IMPOSSIBLE (exact); with any monomial rescaling of the coordinates: not excluded
+k3_j2_(1, 1, 1, 0) (I), size 7: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j2_(2, 1, 0, 0) (I), size 8: ordered pairs with M_ab/M_aa unbounded, exact certificate: 6 (of which 2 also with a width certificate); LP-only: 0; e.g. M[(001,201),(001,210)]/M[(001,201),(001,201)] ~ t^1 along s = t^(0, 1, 0); width certificate for M[(001,210),(200,011)]/M[(001,210),(001,210)] in direction (-1, 0, 1)
+   => fixed-vector representation IMPOSSIBLE (exact); with any monomial rescaling of the coordinates: IMPOSSIBLE (exact)
+k3_j2_(3, 0, 0, 0) (L1), size 5: ordered pairs with M_ab/M_aa unbounded, exact certificate: 11 (of which 2 also with a width certificate); LP-only: 0; e.g. M[(001,101),(001,110)]/M[(001,101),(001,101)] ~ t^1 along s = t^(0, 1, 0); width certificate for M[(001,110),(100,101)]/M[(001,110),(001,110)] in direction (0, 0, -1)
+   => fixed-vector representation IMPOSSIBLE (exact); with any monomial rescaling of the coordinates: IMPOSSIBLE (exact)
+k3_j3_(0, 2, 1, 1) (II), size 1: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j3_(1, 2, 1, 0) (II), size 1: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j3_(1, 1, 1, 1) (I), size 5: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j3_(2, 2, 0, 0) (II), size 1: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j3_(2, 1, 1, 0) (I), size 4: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j3_(3, 1, 0, 0) (I), size 3: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+k3_j3_(4, 0, 0, 0) (L1), size 2: ordered pairs with M_ab/M_aa unbounded, exact certificate: 0 (of which 0 also with a width certificate); LP-only: 0
+   => fixed-vector representation not excluded by this test; with any monomial rescaling of the coordinates: not excluded
+RESULT k = 3: 6 of 20 blocks have an exact obstruction, 2 of them also against every monomial rescaling  [2.3s]
+PASS

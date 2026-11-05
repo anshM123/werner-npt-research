@@ -1,0 +1,4 @@
+k = 2: 198 entries checked so far, all equal: True
+k = 3: 2158 entries checked so far, all equal: True
+k = 4: 21368 entries checked so far, all equal: True
+PASS

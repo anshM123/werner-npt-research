@@ -1,0 +1,4 @@
+k4_j1_T01 (I), size 3, all subsets: 7 principal minors, cores with positive coefficients 7, mixed 0, point-check failures 0; den factors positive True; largest core degree 22, 2296 terms  [0.0s]
+k4_j2_T012 (I), size 4, all subsets: 15 principal minors, cores with positive coefficients 15, mixed 0, point-check failures 0; den factors positive True; largest core degree 31, 5980 terms  [0.0s]
+TOTAL: 22 principal minors, positive cores 22, mixed 0, point-check failures 0  [0.3s]
+PASS

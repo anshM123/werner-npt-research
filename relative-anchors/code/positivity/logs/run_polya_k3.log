@@ -1,0 +1,10 @@
+k3_j2_(1, 1, 1, 0): q = |s|^0: 6 non-PSD of 91 coefficient matrices  [0.0s]
+k3_j2_(1, 1, 1, 0): q = |s|^1: 6 non-PSD of 105 coefficient matrices  [0.0s]
+k3_j2_(1, 1, 1, 0): q = |s|^2: 6 non-PSD of 120 coefficient matrices  [0.1s]
+k3_j2_(1, 1, 1, 0): q = |s|^3: 6 non-PSD of 136 coefficient matrices  [0.1s]
+k3_j2_(1, 1, 1, 0): q = |s|^4: 6 non-PSD of 153 coefficient matrices  [0.1s]
+k3_j2_(1, 1, 1, 0): q = |s|^5: 6 non-PSD of 171 coefficient matrices  [0.1s]
+k3_j2_(1, 1, 1, 0): q = |s|^6: 6 non-PSD of 190 coefficient matrices  [0.2s]
+k3_j2_(1, 1, 1, 0): products of den factors: none works
+RESULT k3_j2_(1, 1, 1, 0): no representation found
+PASS

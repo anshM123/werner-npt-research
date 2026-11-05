@@ -1,0 +1,16 @@
+k3_j0_(1, 0, 0, 0) column 000: 2 states, lift size 3; Schur complement = column group (exact): True; lift PSD at the point: True; 0 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 3  [0.0s]
+k3_j1_(1, 1, 0, 0) column 200: 2 states, lift size 3; Schur complement = column group (exact): True; lift PSD at the point: True; 0 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 3  [0.0s]
+k3_j1_(2, 0, 0, 0) column 001: 2 states, lift size 5; Schur complement = column group (exact): True; lift PSD at the point: True; 2 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 6; monomial rescalings: none; after LP rescaling non-PSD 0 of 7  [0.1s]
+k3_j1_(2, 0, 0, 0) column 010: 2 states, lift size 5; Schur complement = column group (exact): True; lift PSD at the point: True; 0 obstructed pairs; monomial-PSD (q = 1): 2 non-PSD of 6  [0.1s]
+k3_j1_(2, 0, 0, 0) column 100: 2 states, lift size 5; Schur complement = column group (exact): True; lift PSD at the point: True; 2 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 6; monomial rescalings: none; after LP rescaling non-PSD 0 of 7  [0.1s]
+k3_j2_(1, 1, 1, 0) column 220: 2 states, lift size 3; Schur complement = column group (exact): True; lift PSD at the point: True; 0 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 3  [0.1s]
+k3_j2_(2, 1, 0, 0) column 201: 2 states, lift size 4; Schur complement = column group (exact): True; lift PSD at the point: True; 1 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 5; monomial rescalings: none; after LP rescaling non-PSD 0 of 5  [0.1s]
+k3_j2_(2, 1, 0, 0) column 210: 2 states, lift size 4; Schur complement = column group (exact): True; lift PSD at the point: True; 0 obstructed pairs; monomial-PSD (q = 1): 1 non-PSD of 5  [0.1s]
+k3_j2_(3, 0, 0, 0) column 101: 2 states, lift size 5; Schur complement = column group (exact): True; lift PSD at the point: True; 2 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 7; monomial rescalings: none; after LP rescaling non-PSD 0 of 6  [0.2s]
+k3_j2_(3, 0, 0, 0) column 110: 2 states, lift size 5; Schur complement = column group (exact): True; lift PSD at the point: True; 1 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 7; monomial rescalings: none; after LP rescaling non-PSD 0 of 6  [0.2s]
+k3_j3_(1, 1, 1, 1) column 222: 2 states, lift size 3; Schur complement = column group (exact): True; lift PSD at the point: True; 0 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 3  [0.2s]
+k3_j3_(2, 1, 1, 0) column 221: 2 states, lift size 3; Schur complement = column group (exact): True; lift PSD at the point: True; 0 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 3  [0.2s]
+k3_j3_(3, 1, 0, 0) column 211: 2 states, lift size 3; Schur complement = column group (exact): True; lift PSD at the point: True; 0 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 3  [0.2s]
+k3_j3_(4, 0, 0, 0) column 111: 2 states, lift size 3; Schur complement = column group (exact): True; lift PSD at the point: True; 0 obstructed pairs; monomial-PSD (q = 1): 0 non-PSD of 3  [0.2s]
+RESULT k = 3: 14 column groups with at least 2 states; lift exact and PSD for 14; a fixed-vector representation found for 12
+PASS

@@ -1,0 +1,7 @@
+k4_j1_T- (L1), size 18: EXACT certificate: 2 multipliers, objective -1 < 0 -> no monomial rescaling removes the obstruction  [6.3s]
+k4_j1_T0 (I), size 10: EXACT certificate: 18 multipliers, objective -2/3 < 0 -> no monomial rescaling removes the obstruction  [7.0s]
+k4_j2_T- (L1), size 21: EXACT certificate: 4 multipliers, objective -4/3 < 0 -> no monomial rescaling removes the obstruction  [21.0s]
+k4_j2_T0 (I), size 18: EXACT certificate: 4 multipliers, objective -4/5 < 0 -> no monomial rescaling removes the obstruction  [23.6s]
+k4_j2_T01 (I), size 11: EXACT certificate: 8 multipliers, objective -2/3 < 0 -> no monomial rescaling removes the obstruction  [24.1s]
+RESULT k = 4: 5 of 5 obstructed blocks have an exact certificate against every monomial rescaling
+PASS

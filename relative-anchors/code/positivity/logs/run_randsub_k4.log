@@ -1,0 +1,9 @@
+k4_j1_T- (L1), size 18, 12 random chains of length 7 (seed 2026): 84 principal minors, cores with positive coefficients 84, mixed 0, point-check failures 0; den factors positive True; largest core degree 64, 27403 terms  [39.5s]
+k4_j1_T0 (I), size 10, 12 random chains of length 7 (seed 2026): 84 principal minors, cores with positive coefficients 84, mixed 0, point-check failures 0; den factors positive True; largest core degree 48, 14093 terms  [50.8s]
+k4_j1_T01 (I), size 3, 12 random chains of length 3 (seed 2026): 36 principal minors, cores with positive coefficients 36, mixed 0, point-check failures 0; den factors positive True; largest core degree 22, 2296 terms  [0.0s]
+k4_j2_T- (L1), size 21, 12 random chains of length 7 (seed 2026): 84 principal minors, cores with positive coefficients 84, mixed 0, point-check failures 0; den factors positive True; largest core degree 62, 19337 terms  [39.9s]
+k4_j2_T0 (I), size 18, 12 random chains of length 7 (seed 2026): 84 principal minors, cores with positive coefficients 84, mixed 0, point-check failures 0; den factors positive True; largest core degree 73, 39700 terms  [87.0s]
+k4_j2_T01 (I), size 11, 12 random chains of length 7 (seed 2026): 84 principal minors, cores with positive coefficients 84, mixed 0, point-check failures 0; den factors positive True; largest core degree 59, 29196 terms  [92.5s]
+k4_j2_T012 (I), size 4, 12 random chains of length 4 (seed 2026): 48 principal minors, cores with positive coefficients 48, mixed 0, point-check failures 0; den factors positive True; largest core degree 31, 5980 terms  [0.2s]
+TOTAL: 504 principal minors, positive cores 504, mixed 0, point-check failures 0  [311.8s]
+PASS

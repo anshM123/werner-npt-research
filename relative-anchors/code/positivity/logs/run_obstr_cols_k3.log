@@ -1,0 +1,8 @@
+k3_j0_(1, 0, 0, 0) (L1): same row 6, same column 0, neither 0  [0.1s]
+k3_j1_(1, 1, 0, 0) (I): same row 2, same column 0, neither 2  [0.2s]
+k3_j1_(2, 0, 0, 0) (L1): same row 10, same column 0, neither 14  [0.5s]
+k3_j2_(1, 2, 0, 0) (II): same row 2, same column 0, neither 0  [0.6s]
+k3_j2_(2, 1, 0, 0) (I): same row 2, same column 0, neither 4  [0.8s]
+k3_j2_(3, 0, 0, 0) (L1): same row 4, same column 0, neither 7  [0.9s]
+RESULT k = 3: same row 26, same column 0, neither 27
+PASS

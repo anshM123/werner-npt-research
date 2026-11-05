@@ -1,0 +1,14 @@
+k = 2, j = -1, label (0, 0, 0) (L1), size 1, kernel dim [0, 0, 0], gauge-fixed size 1, deleted []; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+k = 2, j = 0, label (0, 1, 0) (I), size 2, kernel dim [0, 0, 0], gauge-fixed size 2, deleted []; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+k = 2, j = 0, label (1, 0, 0) (L1), size 4, kernel dim [2, 2, 2], gauge-fixed size 2, deleted ['(01,00)', '(00,01)']; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+k = 2, j = 1, label (0, 2, 0) (II), size 1, kernel dim [0, 0, 0], gauge-fixed size 1, deleted []; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+k = 2, j = 1, label (0, 1, 1) (I), size 3, kernel dim [0, 0, 0], gauge-fixed size 3, deleted []; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+k = 2, j = 1, label (1, 1, 0) (I), size 5, kernel dim [1, 1, 1], gauge-fixed size 4, deleted ['(01,20)']; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+k = 2, j = 1, label (2, 0, 0) (L1), size 5, kernel dim [3, 3, 3], gauge-fixed size 2, deleted ['(01,01)', '(01,10)', '(10,01)']; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+k = 2, j = 2, label (0, 2, 1) (II), size 1, kernel dim [0, 0, 0], gauge-fixed size 1, deleted []; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+k = 2, j = 2, label (1, 2, 0) (II), size 1, kernel dim [0, 0, 0], gauge-fixed size 1, deleted []; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+k = 2, j = 2, label (1, 1, 1) (I), size 4, kernel dim [1, 1, 1], gauge-fixed size 3, deleted ['(01,22)']; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+k = 2, j = 2, label (2, 1, 0) (I), size 3, kernel dim [1, 1, 1], gauge-fixed size 2, deleted ['(01,21)']; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+k = 2, j = 2, label (3, 0, 0) (L1), size 2, kernel dim [1, 1, 1], gauge-fixed size 1, deleted ['(01,11)']; symmetric True, agrees with point builder True, gauge-fixed PD at 3 points [True, True, True]  [0.0s]
+12 blocks; time 0.0s
+PASS

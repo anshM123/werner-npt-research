@@ -1,0 +1,19 @@
+== k2_j0_(0, 1, 0) (I), size 2  [0.0s]
+   INV: 0 obstructed pairs (0 width); monomial-PSD (q = 1): 0 non-PSD of 6
+== k2_j0_(1, 0, 0) (L1), size 2  [0.0s]
+   INV: 0 obstructed pairs (0 width); monomial-PSD (q = 1): 0 non-PSD of 7
+== k2_j1_(0, 1, 1) (I), size 3  [0.0s]
+   INV: 0 obstructed pairs (0 width); monomial-PSD (q = 1): 0 non-PSD of 9
+   SG1: 0 obstructed pairs (0 width); monomial-PSD (q = 1): 0 non-PSD of 7
+== k2_j1_(1, 1, 0) (I), size 4  [0.0s]
+   INV: 4 obstructed pairs (0 width); monomial-PSD (q = 1): 3 non-PSD of 10; LP rescaling 2*delta = [[0], [2], [0], [2]]: non-PSD 8 of 25
+   SG1: 1 obstructed pairs (0 width); monomial-PSD (q = 1): 3 non-PSD of 9; LP rescaling 2*delta = [[2], [0], [2]]: non-PSD 7 of 22
+   ROW 20 (2 states): 0 obstructed pairs (0 width); monomial-PSD (q = 1): 0 non-PSD of 2
+== k2_j1_(2, 0, 0) (L1), size 2  [0.0s]
+   INV: 1 obstructed pairs (1 width); monomial-PSD (q = 1): 1 non-PSD of 5; no monomial rescaling can help (width certificate, exact)
+== k2_j2_(1, 1, 1) (I), size 3  [0.0s]
+   INV: 0 obstructed pairs (0 width); monomial-PSD (q = 1): 0 non-PSD of 8
+== k2_j2_(2, 1, 0) (I), size 2  [0.0s]
+   INV: 0 obstructed pairs (0 width); monomial-PSD (q = 1): 0 non-PSD of 4
+time 0.0s
+PASS

@@ -1,0 +1,7 @@
+k4_j1_T- (L1): same row 42, same column 0, neither 57  [16.0s]
+k4_j1_T0 (I): same row 6, same column 0, neither 6  [17.6s]
+k4_j2_T- (L1): same row 60, same column 0, neither 101  [55.6s]
+k4_j2_T0 (I): same row 14, same column 0, neither 32  [61.8s]
+k4_j2_T01 (I): same row 2, same column 0, neither 4  [62.6s]
+RESULT k = 4: same row 124, same column 0, neither 200
+PASS

@@ -49,6 +49,11 @@ single-copy excitation, all ‖x_t‖ equal), for every finite set G of copies. 
 
 (Local unitaries fixing |0⟩ bring such a vector to Σ_{t∈G} |1_t⟩.)
 
+**A pattern behind the certificates** (Section 3g). In the rescaled basis every principal minor of every block we
+could test is a ratio of polynomials with only positive coefficients: every block at k = 2 and 3, and every test at
+k = 4. If this holds for every k (Conjecture SF), Conjecture 12 holds for every single excitation. For the row groups
+of the vacuum and letter-1 rows it is proved for every k (Proposition R).
+
 **Open.**
 - For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 and k ≥ 5
   (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁), reduced to the condition G ≻ 0 of Theorem C; and the letter-1
@@ -612,6 +617,43 @@ certificate above, one representative per orbit. ∎
 
 For five copies the same certificate would need blocks with four free parameters; we have not tried it.
 
+## 3g. A positivity pattern
+
+The certificates of Theorem U3₁ and Section 3f rest on one observation. Work in the rescaled basis of `code/ylib.py`,
+after deleting one coordinate per known kernel vector. Call a rational function *subtraction-free* if it is a ratio of
+polynomials with only positive coefficients. Then the leading principal minors are subtraction-free in the squared
+weights. Code and notes are in `code/positivity/`.
+
+- **Exact checks.**
+  - At k = 2 and 3, every principal minor of every torus block of every (R∞)_j is subtraction-free. This covers all
+    blocks up to permutations of the copies, type II included: 46 and 916 minors.
+  - At k = 4: every principal minor of the blocks j = 1, |T| = 2 and j = 2, |T| = 3; all 1 023 principal minors of
+    the block j = 1, |T| = 1; every principal minor inside each row group (447); and 504 random principal minors
+    across all seven blocks of Section 3f.
+- **Closure (Lemma 1).** The property is preserved by principal submatrices, Schur complements, inversion, and
+  diagonal scaling by subtraction-free functions. It holds for every positive definite sum Σ_e c_e x_e x_eᵀ with fixed
+  vectors x_e and subtraction-free weights c_e (Cauchy–Binet).
+- **Proposition R (every k, every j).** Take the row group of the vacuum row, or of any letter-1 row, in any block. Up to
+  a monomial rescaling and a power of 2, it is a Schur complement of an explicit sum Σ_e c_e x_e x_eᵀ, with 0/1 vectors
+  x_e and weights that are monomials or linear forms with nonnegative coefficients. So every principal minor inside such
+  a row group is subtraction-free. The proof uses Lemmas B and G. The explicit lifts are also checked exactly at k = 2,
+  3, 4 (21 368 entries).
+- **Obstruction (Lemmas 2 and 3).** A whole block usually has no representation Σ_e c_e x_e x_eᵀ with fixed vectors
+  and nonnegative weights, in any monomial rescaling. This fails for 1 of 12 blocks at k = 2, 6 of 20 at k = 3 and 5
+  of 7 at k = 4. In each case an explicit ratio M_ab/M_aa is unbounded, and there are exact Farkas or width
+  certificates against rescalings. The obstructed pairs lie inside one row group or differ in both row and column, so
+  they sit on the entries created by the partial transpose; none shares a column.
+
+**Conjecture SF.** For every k, every j and every torus block of (R∞)_j, every principal minor of the gauge-fixed
+rescaled block (deletion gauge of the notes) is subtraction-free.
+
+Conjecture SF gives (R∞) for every k and all weights: every gauge-fixed block is then positive definite on the open
+orthant. Hence it gives Conjecture 12 of `single-excitation-range/` for every single excitation, and Conjecture P of
+`code/typeI_G_u3/`. By the obstruction, a proof must be of Schur-complement type. The notes formulate this as
+Conjecture S: each block is a Schur complement of a fixed-vector matrix. Proposition R proves it for row groups. The
+missing piece is the coupling between rows created by the partial transpose. A natural whole-block lift, one copy of
+D′ per pair of rows with Woodbury for the antisymmetric part, is exact but obstructed (notes, Section 6).
+
 ## 4. Equal weights, every k
 
 At w_t = 1 the conditions commute with S_k.
@@ -737,6 +779,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `typeI_u2/` (`run_all.sh`, notes in `typeI_u2/NOTES.md`) | Theorem C and the reduction before it: the closed form of every type I block (exactly against the builder, k = 3, 4, 5), the structure facts, the splitting formulas, the hard-part lemma, Φ1, every per-coordinate bound at 200 rational configurations, the chain at 32 points, exact pivots at 33 configurations, the Bernstein certificates of (I), (II), (III), negative controls |
 | `typeI_G_u3/` (`run_all.sh`, notes in `typeI_G_u3/NOTES.md`) | Theorem U3₁: the exact Schur complement for u = 3, m = 1 over Q(s_0, …, s_3) and its agreement with direct elimination, the leading minors with factor stripping and expansion checks, the coefficient-sign certificate, the Z-matrix certificate, negative controls; the same minor certificate for (u, m) = (1, 1), (2, 1), (1, 2), (2, 2), (1, 3); numerical sweeps behind Conjectures P and M |
 | `typeI_G_u2/` (`run_all.sh`, notes in `typeI_G_u2/NOTES.md`) | Theorem U2: the exact symbolic Schur complement for u = 2, its agreement with direct elimination (m = 1, …, 5), the polynomial reductions, the blow-up charts and Bernstein certificates of (A_2) and (B_2), negative controls |
+| `positivity/` (`run_all.sh`, notes in `positivity/NOTES.md`) | Section 3g: every principal minor of every block at k = 2, 3 and the k = 4 tests, the row-group identities and lifts of Proposition R, the obstruction certificates (Newton, width, Farkas), the monomial-PSD tests, the Gram-type column-group lifts, the natural whole-block lift and its obstruction |
 | `middle_k4/` (`run_all.sh`, notes in `middle_k4/NOTES.md`) | Section 3f: the torus blocks of (R∞)_1 and (R∞)_2 at k = 4 over Q(s_1, s_2, s_3), the known kernels and the gauge, the Bareiss leading-minor certificates, minors against direct determinants at rational points, symbolic blocks against the point builder and the dense construction, negative controls |
 | `middle_k2/` (`run_all.sh`, notes in `middle_k2/NOTES.md`) | Section 3e: the closed form of the letter-1 block of (R∞)_{k−2} against a direct construction (k = 4, 5), Lemmas R1, J, W, BJ and Proposition S exactly (k = 4, 5, 6), and a numerical sweep (k = 4, …, 7) |
 | `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |

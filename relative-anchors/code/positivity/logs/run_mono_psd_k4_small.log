@@ -1,0 +1,22 @@
+== k4_j1_T01 (I), gauge-fixed size 3
+   den = 1/16 * [deg 1, 4 t, +]^1 * [deg 2, 10 t, +]^1 * [deg 3, 20 t, +]^1 * [deg 3, 20 t, +]^1 * [deg 3, 20 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: +++ (? = mixed);  off-diagonal: +: 1, -: 2
+   q=1: 455 monomials, 0 with C_m not PSD
+   q=|s|: 560 monomials, 0 with C_m not PSD
+   q=|s|^2: 680 monomials, 0 with C_m not PSD
+   [0.2s]
+== k4_j2_T012 (I), gauge-fixed size 4
+   den = 1/512 * [deg 1, 4 t, +]^1 * [deg 2, 10 t, +]^1 * [deg 2, 10 t, +]^1 * [deg 2, 10 t, +]^1 * [deg 3, 20 t, +]^1 * [deg 3, 20 t, +]^1 * [deg 3, 20 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: ++++ (? = mixed);  off-diagonal: +: 3, -: 3
+   q=1: 969 monomials, 0 with C_m not PSD
+   q=|s|: 1140 monomials, 0 with C_m not PSD
+   q=|s|^2: 1330 monomials, 0 with C_m not PSD
+   [0.3s]
+
+SUMMARY (block, kind, size, den factors positive, #diag mixed, #offdiag mixed, [(multiplier, #monomials, #non-PSD)])
+   ('k4_j1_T01', 'I', 3, True, 0, 0, [('q=1', 455, 0), ('q=|s|', 560, 0), ('q=|s|^2', 680, 0)])
+   ('k4_j2_T012', 'I', 4, True, 0, 0, [('q=1', 969, 0), ('q=|s|', 1140, 0), ('q=|s|^2', 1330, 0)])
+VERTEX k = 4: blocks with a non-PSD coefficient matrix at a vertex (no fixed-vector representation with subtraction-free weights): []
+RESULT k = 4: 2 of 2 blocks have every coefficient matrix of den*M_g PSD (q = 1); passing blocks: ['k4_j1_T01', 'k4_j2_T012']
+time 0.3s
+PASS

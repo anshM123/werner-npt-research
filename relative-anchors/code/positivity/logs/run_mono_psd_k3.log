@@ -1,0 +1,166 @@
+== k3_j-1_(0, 0, 0, 0) (L1), gauge-fixed size 1
+   den = 1 * [deg 3, 10 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: + (? = mixed);  off-diagonal: 
+   q=1: 7 monomials, 0 with C_m not PSD
+   q=|s|: 12 monomials, 0 with C_m not PSD
+   q=|s|^2: 18 monomials, 0 with C_m not PSD
+   [0.0s]
+== k3_j0_(0, 1, 0, 0) (I), gauge-fixed size 2
+   den = 1/2 * [deg 2, 6 t, +]^1 * [deg 3, 10 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: ++ (? = mixed);  off-diagonal: -: 1
+   q=1: 21 monomials, 0 with C_m not PSD
+   q=|s|: 28 monomials, 0 with C_m not PSD
+   q=|s|^2: 36 monomials, 0 with C_m not PSD
+   [0.0s]
+== k3_j0_(1, 0, 0, 0) (L1), gauge-fixed size 5
+   den = 1 * [deg 1, 3 t, +]^1 * [deg 3, 10 t, +]^1 * [deg 3, 10 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: +++++ (? = mixed);  off-diagonal: +: 4, -: 3, mixed: 3
+   q=1: 45 monomials, 21 with C_m not PSD (0 of them at vertices of the Newton polytope); e.g. monomial (0, 1, 7): witness [('(001,000)', '1/3'), ('(000,001)', '1/6'), ('(000,010)', '1')]
+   q=|s|: 55 monomials, 24 with C_m not PSD; e.g. monomial (0, 1, 8): witness [('(001,000)', '2/7'), ('(000,001)', '1/7'), ('(000,010)', '1')]
+   q=|s|^2: 66 monomials, 27 with C_m not PSD; e.g. monomial (0, 1, 9): witness [('(001,000)', '1/4'), ('(000,001)', '1/8'), ('(000,010)', '1')]
+   [0.1s]
+== k3_j1_(0, 2, 0, 0) (II), gauge-fixed size 1
+   den = 1 * [deg 3, 10 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: + (? = mixed);  off-diagonal: 
+   q=1: 7 monomials, 0 with C_m not PSD
+   q=|s|: 12 monomials, 0 with C_m not PSD
+   q=|s|^2: 18 monomials, 0 with C_m not PSD
+   [0.1s]
+== k3_j1_(0, 1, 1, 0) (I), gauge-fixed size 3
+   den = 1/8 * [deg 1, 3 t, +]^1 * [deg 2, 6 t, +]^1 * [deg 2, 6 t, +]^1 * [deg 3, 10 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: +++ (? = mixed);  off-diagonal: +: 1, -: 2
+   q=1: 45 monomials, 0 with C_m not PSD
+   q=|s|: 55 monomials, 0 with C_m not PSD
+   q=|s|^2: 66 monomials, 0 with C_m not PSD
+   [0.1s]
+== k3_j1_(1, 1, 0, 0) (I), gauge-fixed size 7
+   den = 1/4 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 2, 6 t, +]^1 * [deg 3, 10 t, +]^1 * [deg 3, 10 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: +++++++ (? = mixed);  off-diagonal: +: 7, -: 11, 0: 3
+   q=1: 78 monomials, 16 with C_m not PSD (0 of them at vertices of the Newton polytope); e.g. monomial (0, 1, 10): witness [('(001,200)', '195/1048'), ('(200,001)', '1/1048'), ('(200,010)', '-49/1048'), ('(000,201)', '49/524'), ('(000,210)', '1')]
+   q=|s|: 91 monomials, 17 with C_m not PSD; e.g. monomial (0, 1, 11): witness [('(001,200)', '207/1216'), ('(200,001)', '1/1216'), ('(200,010)', '-13/304'), ('(000,201)', '13/152'), ('(000,210)', '1')]
+   q=|s|^2: 105 monomials, 18 with C_m not PSD; e.g. monomial (0, 1, 12): witness [('(001,200)', '219/1396'), ('(200,001)', '1/1396'), ('(200,010)', '-55/1396'), ('(000,201)', '55/698'), ('(000,210)', '1')]
+   [0.2s]
+== k3_j1_(2, 0, 0, 0) (L1), gauge-fixed size 8
+   den = 1 * [deg 1, 3 t, +]^1 * [deg 3, 10 t, +]^1 * [deg 3, 10 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: ++++++++ (? = mixed);  off-diagonal: +: 8, -: 14, mixed: 6
+   q=1: 52 monomials, 43 with C_m not PSD (0 of them at vertices of the Newton polytope); e.g. monomial (0, 2, 7): witness [('(001,001)', '1/7'), ('(001,010)', '1')]
+   q=|s|: 63 monomials, 53 with C_m not PSD; e.g. monomial (0, 2, 8): witness [('(001,001)', '1/8'), ('(001,010)', '1')]
+   q=|s|^2: 75 monomials, 60 with C_m not PSD; e.g. monomial (0, 2, 9): witness [('(001,001)', '1/9'), ('(001,010)', '1')]
+   [0.4s]
+== k3_j2_(0, 2, 1, 0) (II), gauge-fixed size 1
+   den = 1/2 * [deg 2, 6 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: + (? = mixed);  off-diagonal: 
+   q=1: 4 monomials, 0 with C_m not PSD
+   q=|s|: 8 monomials, 0 with C_m not PSD
+   q=|s|^2: 13 monomials, 0 with C_m not PSD
+   [0.4s]
+== k3_j2_(0, 1, 1, 1) (I), gauge-fixed size 4
+   den = 1/32 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 2, 6 t, +]^1 * [deg 2, 6 t, +]^1 * [deg 2, 6 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: ++++ (? = mixed);  off-diagonal: +: 3, -: 3
+   q=1: 55 monomials, 0 with C_m not PSD
+   q=|s|: 66 monomials, 0 with C_m not PSD
+   q=|s|^2: 78 monomials, 0 with C_m not PSD
+   [0.4s]
+== k3_j2_(1, 2, 0, 0) (II), gauge-fixed size 2
+   den = 1 * [deg 3, 10 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: ++ (? = mixed);  off-diagonal: -: 1
+   q=1: 12 monomials, 3 with C_m not PSD (0 of them at vertices of the Newton polytope); e.g. monomial (0, 1, 3): witness [('(200,201)', '1/4'), ('(200,210)', '1')]
+   q=|s|: 18 monomials, 4 with C_m not PSD; e.g. monomial (0, 1, 4): witness [('(200,201)', '1/5'), ('(200,210)', '1')]
+   q=|s|^2: 25 monomials, 5 with C_m not PSD; e.g. monomial (0, 1, 5): witness [('(200,201)', '1/6'), ('(200,210)', '1')]
+   [0.4s]
+== k3_j2_(1, 1, 1, 0) (I), gauge-fixed size 7
+   den = 1/16 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 2, 6 t, +]^1 * [deg 2, 6 t, +]^1 * [deg 3, 10 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: +++++++ (? = mixed);  off-diagonal: +: 9, -: 10, 0: 2
+   q=1: 91 monomials, 6 with C_m not PSD (0 of them at vertices of the Newton polytope); e.g. monomial (0, 1, 11): witness [('(001,220)', '-25/22'), ('(020,201)', '23/352'), ('(020,210)', '1'), ('(000,221)', '-1/352')]
+   q=|s|: 105 monomials, 6 with C_m not PSD; e.g. monomial (0, 1, 12): witness [('(001,220)', '-53/47'), ('(020,201)', '49/799'), ('(020,210)', '1'), ('(000,221)', '-2/799')]
+   q=|s|^2: 120 monomials, 6 with C_m not PSD; e.g. monomial (0, 1, 13): witness [('(001,220)', '-28/25'), ('(020,201)', '13/225'), ('(020,210)', '1'), ('(000,221)', '-1/450')]
+   [0.5s]
+== k3_j2_(2, 1, 0, 0) (I), gauge-fixed size 8
+   den = 1/4 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 2, 6 t, +]^1 * [deg 3, 10 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: ++++++++ (? = mixed);  off-diagonal: +: 9, -: 15, 0: 3, mixed: 1
+   q=1: 52 monomials, 23 with C_m not PSD (0 of them at vertices of the Newton polytope); e.g. monomial (0, 2, 7): witness [('(001,201)', '17/104'), ('(001,210)', '1'), ('(000,211)', '-3/104')]
+   q=|s|: 63 monomials, 26 with C_m not PSD; e.g. monomial (0, 2, 8): witness [('(001,201)', '37/263'), ('(001,210)', '1'), ('(000,211)', '-6/263')]
+   q=|s|^2: 75 monomials, 29 with C_m not PSD; e.g. monomial (0, 2, 9): witness [('(001,201)', '10/81'), ('(001,210)', '1'), ('(000,211)', '-1/54')]
+   [0.7s]
+== k3_j2_(3, 0, 0, 0) (L1), gauge-fixed size 5
+   den = 1 * [deg 1, 3 t, +]^1 * [deg 3, 10 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: +++++ (? = mixed);  off-diagonal: +: 4, -: 3, mixed: 3
+   q=1: 23 monomials, 8 with C_m not PSD (0 of them at vertices of the Newton polytope); e.g. monomial (1, 2, 4): witness [('(001,101)', '19/23'), ('(001,110)', '1'), ('(000,111)', '-6/23')]
+   q=|s|: 31 monomials, 12 with C_m not PSD; e.g. monomial (1, 2, 5): witness [('(001,101)', '11/24'), ('(001,110)', '1'), ('(000,111)', '-1/8')]
+   q=|s|^2: 40 monomials, 16 with C_m not PSD; e.g. monomial (1, 2, 6): witness [('(001,101)', '25/79'), ('(001,110)', '1'), ('(000,111)', '-6/79')]
+   [0.7s]
+== k3_j3_(0, 2, 1, 1) (II), gauge-fixed size 1
+   den = 1 * [deg 1, 3 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: + (? = mixed);  off-diagonal: 
+   q=1: 2 monomials, 0 with C_m not PSD
+   q=|s|: 5 monomials, 0 with C_m not PSD
+   q=|s|^2: 9 monomials, 0 with C_m not PSD
+   [0.7s]
+== k3_j3_(1, 2, 1, 0) (II), gauge-fixed size 1
+   den = 1 * [deg 1, 3 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: + (? = mixed);  off-diagonal: 
+   q=1: 2 monomials, 0 with C_m not PSD
+   q=|s|: 5 monomials, 0 with C_m not PSD
+   q=|s|^2: 9 monomials, 0 with C_m not PSD
+   [0.7s]
+== k3_j3_(1, 1, 1, 1) (I), gauge-fixed size 5
+   den = 1/8 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: +++++ (? = mixed);  off-diagonal: +: 4, -: 6
+   q=1: 45 monomials, 0 with C_m not PSD
+   q=|s|: 55 monomials, 0 with C_m not PSD
+   q=|s|^2: 66 monomials, 0 with C_m not PSD
+   [0.7s]
+== k3_j3_(2, 2, 0, 0) (II), gauge-fixed size 1
+   den = 1 * [deg 1, 3 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: + (? = mixed);  off-diagonal: 
+   q=1: 2 monomials, 0 with C_m not PSD
+   q=|s|: 5 monomials, 0 with C_m not PSD
+   q=|s|^2: 9 monomials, 0 with C_m not PSD
+   [0.7s]
+== k3_j3_(2, 1, 1, 0) (I), gauge-fixed size 4
+   den = 1/4 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: ++++ (? = mixed);  off-diagonal: +: 3, -: 3
+   q=1: 20 monomials, 0 with C_m not PSD
+   q=|s|: 27 monomials, 0 with C_m not PSD
+   q=|s|^2: 35 monomials, 0 with C_m not PSD
+   [0.7s]
+== k3_j3_(3, 1, 0, 0) (I), gauge-fixed size 3
+   den = 1/2 * [deg 1, 3 t, +]^1 * [deg 1, 3 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: +++ (? = mixed);  off-diagonal: +: 1, -: 2
+   q=1: 8 monomials, 0 with C_m not PSD
+   q=|s|: 13 monomials, 0 with C_m not PSD
+   q=|s|^2: 19 monomials, 0 with C_m not PSD
+   [0.7s]
+== k3_j3_(4, 0, 0, 0) (L1), gauge-fixed size 2
+   den = 1 * [deg 1, 3 t, +]^1; den factors positive: True
+   diagonal of den*M sign profiles: ++ (? = mixed);  off-diagonal: -: 1
+   q=1: 3 monomials, 0 with C_m not PSD
+   q=|s|: 7 monomials, 0 with C_m not PSD
+   q=|s|^2: 12 monomials, 0 with C_m not PSD
+   [0.7s]
+
+SUMMARY (block, kind, size, den factors positive, #diag mixed, #offdiag mixed, [(multiplier, #monomials, #non-PSD)])
+   ('k3_j-1_(0, 0, 0, 0)', 'L1', 1, True, 0, 0, [('q=1', 7, 0), ('q=|s|', 12, 0), ('q=|s|^2', 18, 0)])
+   ('k3_j0_(0, 1, 0, 0)', 'I', 2, True, 0, 0, [('q=1', 21, 0), ('q=|s|', 28, 0), ('q=|s|^2', 36, 0)])
+   ('k3_j0_(1, 0, 0, 0)', 'L1', 5, True, 0, 3, [('q=1', 45, 21), ('q=|s|', 55, 24), ('q=|s|^2', 66, 27)])
+   ('k3_j1_(0, 2, 0, 0)', 'II', 1, True, 0, 0, [('q=1', 7, 0), ('q=|s|', 12, 0), ('q=|s|^2', 18, 0)])
+   ('k3_j1_(0, 1, 1, 0)', 'I', 3, True, 0, 0, [('q=1', 45, 0), ('q=|s|', 55, 0), ('q=|s|^2', 66, 0)])
+   ('k3_j1_(1, 1, 0, 0)', 'I', 7, True, 0, 0, [('q=1', 78, 16), ('q=|s|', 91, 17), ('q=|s|^2', 105, 18)])
+   ('k3_j1_(2, 0, 0, 0)', 'L1', 8, True, 0, 6, [('q=1', 52, 43), ('q=|s|', 63, 53), ('q=|s|^2', 75, 60)])
+   ('k3_j2_(0, 2, 1, 0)', 'II', 1, True, 0, 0, [('q=1', 4, 0), ('q=|s|', 8, 0), ('q=|s|^2', 13, 0)])
+   ('k3_j2_(0, 1, 1, 1)', 'I', 4, True, 0, 0, [('q=1', 55, 0), ('q=|s|', 66, 0), ('q=|s|^2', 78, 0)])
+   ('k3_j2_(1, 2, 0, 0)', 'II', 2, True, 0, 0, [('q=1', 12, 3), ('q=|s|', 18, 4), ('q=|s|^2', 25, 5)])
+   ('k3_j2_(1, 1, 1, 0)', 'I', 7, True, 0, 0, [('q=1', 91, 6), ('q=|s|', 105, 6), ('q=|s|^2', 120, 6)])
+   ('k3_j2_(2, 1, 0, 0)', 'I', 8, True, 0, 1, [('q=1', 52, 23), ('q=|s|', 63, 26), ('q=|s|^2', 75, 29)])
+   ('k3_j2_(3, 0, 0, 0)', 'L1', 5, True, 0, 3, [('q=1', 23, 8), ('q=|s|', 31, 12), ('q=|s|^2', 40, 16)])
+   ('k3_j3_(0, 2, 1, 1)', 'II', 1, True, 0, 0, [('q=1', 2, 0), ('q=|s|', 5, 0), ('q=|s|^2', 9, 0)])
+   ('k3_j3_(1, 2, 1, 0)', 'II', 1, True, 0, 0, [('q=1', 2, 0), ('q=|s|', 5, 0), ('q=|s|^2', 9, 0)])
+   ('k3_j3_(1, 1, 1, 1)', 'I', 5, True, 0, 0, [('q=1', 45, 0), ('q=|s|', 55, 0), ('q=|s|^2', 66, 0)])
+   ('k3_j3_(2, 2, 0, 0)', 'II', 1, True, 0, 0, [('q=1', 2, 0), ('q=|s|', 5, 0), ('q=|s|^2', 9, 0)])
+   ('k3_j3_(2, 1, 1, 0)', 'I', 4, True, 0, 0, [('q=1', 20, 0), ('q=|s|', 27, 0), ('q=|s|^2', 35, 0)])
+   ('k3_j3_(3, 1, 0, 0)', 'I', 3, True, 0, 0, [('q=1', 8, 0), ('q=|s|', 13, 0), ('q=|s|^2', 19, 0)])
+   ('k3_j3_(4, 0, 0, 0)', 'L1', 2, True, 0, 0, [('q=1', 3, 0), ('q=|s|', 7, 0), ('q=|s|^2', 12, 0)])
+VERTEX k = 3: blocks with a non-PSD coefficient matrix at a vertex (no fixed-vector representation with subtraction-free weights): []
+RESULT k = 3: 13 of 20 blocks have every coefficient matrix of den*M_g PSD (q = 1); passing blocks: ['k3_j-1_(0, 0, 0, 0)', 'k3_j0_(0, 1, 0, 0)', 'k3_j1_(0, 2, 0, 0)', 'k3_j1_(0, 1, 1, 0)', 'k3_j2_(0, 2, 1, 0)', 'k3_j2_(0, 1, 1, 1)', 'k3_j3_(0, 2, 1, 1)', 'k3_j3_(1, 2, 1, 0)', 'k3_j3_(1, 1, 1, 1)', 'k3_j3_(2, 2, 0, 0)', 'k3_j3_(2, 1, 1, 0)', 'k3_j3_(3, 1, 0, 0)', 'k3_j3_(4, 0, 0, 0)']
+time 0.7s
+PASS

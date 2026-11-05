@@ -1,0 +1,7 @@
+k4_j1_T- (L1): 99 obstructed ordered pairs, 42 inside one row group, 57 between row groups  [15.9s]
+k4_j1_T0 (I): 12 obstructed ordered pairs, 6 inside one row group, 6 between row groups  [17.4s]
+k4_j2_T- (L1): 161 obstructed ordered pairs, 60 inside one row group, 101 between row groups  [54.8s]
+k4_j2_T0 (I): 46 obstructed ordered pairs, 14 inside one row group, 32 between row groups  [60.9s]
+k4_j2_T01 (I): 6 obstructed ordered pairs, 2 inside one row group, 4 between row groups  [61.8s]
+RESULT k = 4: inside row groups 124, between row groups 200
+PASS

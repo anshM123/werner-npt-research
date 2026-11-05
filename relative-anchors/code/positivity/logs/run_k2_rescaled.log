@@ -1,0 +1,7 @@
+states ['(10,10)', '(00,11)']
+entry (0,0): (D M D) = target: True
+entry (0,1): (D M D) = target: True
+entry (1,0): (D M D) = target: True
+entry (1,1): (D M D) = target: True
+weights s0 s1 / 2, s0 s1 (s0^2 + s1^2) / (2 Delta), s0 s1 / 2 have positive coefficients: True by inspection
+PASS

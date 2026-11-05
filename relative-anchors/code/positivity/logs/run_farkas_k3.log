@@ -1,0 +1,8 @@
+k3_j0_(1, 0, 0, 0) (L1), size 5: EXACT certificate: 5 multipliers, objective -1/2 < 0 -> no monomial rescaling removes the obstruction  [0.0s]
+k3_j1_(1, 1, 0, 0) (I), size 7: EXACT certificate: 4 multipliers, objective -1/2 < 0 -> no monomial rescaling removes the obstruction  [0.0s]
+k3_j1_(2, 0, 0, 0) (L1), size 8: EXACT certificate: 3 multipliers, objective -6/7 < 0 -> no monomial rescaling removes the obstruction  [0.1s]
+k3_j2_(1, 2, 0, 0) (II), size 2: LP value 0: no certificate over these directions  [0.1s]
+k3_j2_(2, 1, 0, 0) (I), size 8: EXACT certificate: 3 multipliers, objective -2/3 < 0 -> no monomial rescaling removes the obstruction  [0.1s]
+k3_j2_(3, 0, 0, 0) (L1), size 5: EXACT certificate: 2 multipliers, objective -1 < 0 -> no monomial rescaling removes the obstruction  [0.1s]
+RESULT k = 3: 5 of 6 obstructed blocks have an exact certificate against every monomial rescaling
+PASS
