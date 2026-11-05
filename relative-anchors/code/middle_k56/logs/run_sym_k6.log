@@ -1,0 +1,6 @@
+j4m1: 60 (part, q) pairs, 404 minors: parts equal the projections of the Lemma B block, minors equal direct minors, parts PD: True [4.2s]
+j4m0: 54 (part, q) pairs, 216 minors: parts equal the projections of the Lemma B block, minors equal direct minors, parts PD: True [8.4s]
+j3m1: 60 (part, q) pairs, 452 minors: parts equal the projections of the Lemma B block, minors equal direct minors, parts PD: True [15.6s]
+j3m0: 54 (part, q) pairs, 300 minors: parts equal the projections of the Lemma B block, minors equal direct minors, parts PD: True [26.6s]
+time 26.6s
+PASS

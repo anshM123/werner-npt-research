@@ -1,0 +1,29 @@
+family T42: (R_inf)_4, k = 5, T = (0, 1), configuration (1, 2): squared weights ['1', 'q', '1', '1', 'q'], bscale 1
+  block over Q(q): 24 states [0.1s]
+  16 distinct entry denominators, all > 0 on (0, inf): True
+  3 known kernel vectors annihilated identically in q: True
+  gauge-fixed block: 21 states (deleted 3), symmetric True
+     minor 1: num deg 1, den deg 0: num (1, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 2: num deg 2, den deg 0: num (2, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 3: num deg 3, den deg 0: num (3, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 4: num deg 3, den deg 0: num (3, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 5: num deg 12, den deg 8: num (12, nonnegative coefficients); den (8, nonnegative coefficients)  [0.1s]
+     minor 6: num deg 16, den deg 10: num (16, nonnegative coefficients); den (10, nonnegative coefficients)  [0.1s]
+     minor 7: num deg 18, den deg 10: num (18, nonnegative coefficients); den (10, nonnegative coefficients)  [0.2s]
+     minor 8: num deg 19, den deg 10: num (19, nonnegative coefficients); den (10, nonnegative coefficients)  [0.2s]
+     minor 9: num deg 33, den deg 23: num (33, nonnegative coefficients); den (23, nonnegative coefficients)  [0.2s]
+     minor 10: num deg 36, den deg 25: num (36, nonnegative coefficients); den (25, nonnegative coefficients)  [0.2s]
+     minor 11: num deg 40, den deg 29: num (40, nonnegative coefficients); den (29, nonnegative coefficients)  [0.2s]
+     minor 12: num deg 50, den deg 37: num (50, nonnegative coefficients); den (37, nonnegative coefficients)  [0.2s]
+     minor 13: num deg 52, den deg 37: num (52, nonnegative coefficients); den (37, nonnegative coefficients)  [0.2s]
+     minor 14: num deg 57, den deg 41: num (57, nonnegative coefficients); den (41, nonnegative coefficients)  [0.3s]
+     minor 15: num deg 70, den deg 53: num (70, nonnegative coefficients); den (53, nonnegative coefficients)  [0.3s]
+     minor 16: num deg 74, den deg 56: num (74, nonnegative coefficients); den (56, nonnegative coefficients)  [0.3s]
+     minor 17: num deg 78, den deg 60: num (78, nonnegative coefficients); den (60, nonnegative coefficients)  [0.3s]
+     minor 18: num deg 87, den deg 68: num (87, nonnegative coefficients); den (68, nonnegative coefficients)  [0.3s]
+     minor 19: num deg 92, den deg 72: num (92, nonnegative coefficients); den (72, nonnegative coefficients)  [0.3s]
+     minor 20: num deg 98, den deg 78: num (98, nonnegative coefficients); den (78, nonnegative coefficients)  [0.3s]
+     minor 21: num deg 105, den deg 84: num (105, nonnegative coefficients); den (84, nonnegative coefficients)  [0.3s]
+  every leading principal minor > 0 on (0, inf): True; all numerators and denominators with only nonnegative coefficients: True; largest degrees: numerator 105, denominator 84
+time 0.3s
+PASS

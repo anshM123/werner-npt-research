@@ -1,0 +1,4 @@
+j4m0: 64 (T, A) patterns (22 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 16 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3)] [8.6s]
+j3m0: 64 (T, A) patterns (22 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 16 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3)] [31.3s]
+time 31.3s
+PASS

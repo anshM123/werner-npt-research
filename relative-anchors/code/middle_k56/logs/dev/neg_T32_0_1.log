@@ -1,0 +1,21 @@
+family T32: (R_inf)_3, k = 5, T = (0, 1), configuration (0, 1): squared weights ['q', 'q', '1', 'q', 'q'], bscale 1001/1000
+  block over Q(q): 30 states [0.2s]
+  11 distinct entry denominators, all > 0 on (0, inf): True
+  gauge-fixed block: 27 states (deleted 3), symmetric True
+     minor 1: num deg 2, den deg 0: num (2, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 2: num deg 3, den deg 0: num (3, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 3: num deg 4, den deg 0: num (4, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 4: num deg 6, den deg 0: num (6, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 5: num deg 8, den deg 0: num (8, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 6: num deg 9, den deg 0: num (9, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 7: num deg 21, den deg 10: num (21, nonnegative coefficients); den (10, nonnegative coefficients)  [0.2s]
+     minor 8: num deg 28, den deg 16: num (28, nonnegative coefficients); den (16, nonnegative coefficients)  [0.2s]
+     minor 9: num deg 29, den deg 16: num (29, nonnegative coefficients); den (16, nonnegative coefficients)  [0.2s]
+     minor 10: num deg 35, den deg 20: num (35, nonnegative coefficients); den (20, nonnegative coefficients)  [0.3s]
+     minor 11: num deg 37, den deg 20: num (37, nonnegative coefficients); den (20, nonnegative coefficients)  [0.3s]
+     minor 12: num deg 38, den deg 20: num (38, nonnegative coefficients); den (20, nonnegative coefficients)  [0.4s]
+     minor 13: num deg 51, den deg 31: num: Sturm: 1 root(s) in (0, inf); den: nonnegative coefficients  [0.7s]
+  minor 13 is not > 0 on (0, inf); nonpositive at q = 1/1000000
+  every leading principal minor > 0 on (0, inf): False; all numerators and denominators with only nonnegative coefficients: False; largest degrees: numerator 51, denominator 31
+time 0.8s
+FAIL

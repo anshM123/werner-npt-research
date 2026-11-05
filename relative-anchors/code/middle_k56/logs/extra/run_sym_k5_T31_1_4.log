@@ -1,0 +1,14 @@
+family T31: (R_inf)_3, k = 5, T = (0,), configuration (1, 4): squared weights ['1', '1', '1', '1', '1'], bscale 1
+  block over Q(q): 44 states [0.1s]
+  1 distinct entry denominators, all > 0 on (0, inf): True; lcm of degree 0
+  6 known kernel vectors annihilated identically in q: True
+  W: dimension 38 = 44 - 6: True
+  G = product of the symmetric groups of [[0], [1, 2, 3, 4]]: states G-stable and block G-invariant: True
+  4 parts; sum dim(lam) dim(e_lam W) = 38 = dim W: True [0.2s]
+  part ((1,), (4,)) (dim 1): size 5, symmetric True, every leading minor > 0 on (0, inf): True [0.2s]
+  part ((1,), (3, 1)) (dim 3): size 7, symmetric True, every leading minor > 0 on (0, inf): True [0.2s]
+  part ((1,), (2, 2)) (dim 2): size 3, symmetric True, every leading minor > 0 on (0, inf): True [0.2s]
+  part ((1,), (2, 1, 1)) (dim 3): size 2, symmetric True, every leading minor > 0 on (0, inf): True [0.2s]
+  every leading minor of every part > 0 on (0, inf): True; all with only nonnegative coefficients: True; largest degrees: numerator 0, denominator 0
+time 0.2s
+PASS

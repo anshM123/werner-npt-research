@@ -1,0 +1,4 @@
+j4m4: 960 (T, A) patterns (390 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 24 of them; configurations used [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1)] [0.5s]
+j4m1: 384 (T, A) patterns (192 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 10 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)] [4.1s]
+time 4.1s
+PASS

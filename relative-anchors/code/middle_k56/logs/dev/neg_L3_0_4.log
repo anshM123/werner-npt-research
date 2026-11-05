@@ -1,0 +1,15 @@
+family L3: (R_inf)_3, k = 5, T = (), configuration (0, 4): squared weights ['1', '1', '1', '1', 'q'], bscale 1001/1000
+  block over Q(q): 55 states [0.1s]
+  6 distinct entry denominators, all > 0 on (0, inf): True
+  gauge-fixed block: 44 states (deleted 11), symmetric True
+     minor 1: num deg 6, den deg 5: num (6, nonnegative coefficients); den (5, nonnegative coefficients)  [0.1s]
+     minor 2: num deg 10, den deg 8: num (10, nonnegative coefficients); den (8, nonnegative coefficients)  [0.2s]
+     minor 3: num deg 13, den deg 10: num (13, nonnegative coefficients); den (10, nonnegative coefficients)  [0.2s]
+     minor 4: num deg 13, den deg 10: num (13, nonnegative coefficients); den (10, nonnegative coefficients)  [0.2s]
+     minor 5: num deg 14, den deg 10: num (14, nonnegative coefficients); den (10, nonnegative coefficients)  [0.3s]
+     minor 6: num deg 15, den deg 10: num (15, nonnegative coefficients); den (10, nonnegative coefficients)  [0.4s]
+     minor 7: num deg 15, den deg 10: num: Sturm: 1 root(s) in (0, inf); den: nonnegative coefficients  [0.5s]
+  minor 7 is not > 0 on (0, inf); nonpositive at q = 10000
+  every leading principal minor > 0 on (0, inf): False; all numerators and denominators with only nonnegative coefficients: False; largest degrees: numerator 15, denominator 10
+time 0.6s
+FAIL

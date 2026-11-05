@@ -1,0 +1,14 @@
+j4m4 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 13 <= 0), the true one is PD
+j4m4 (0, 2): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 19 <= 0), the true one is PD
+j4m4 (1, 0): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 13 <= 0), the true one is PD
+j4m4 (1, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 17 <= 0), the true one is PD
+j4m4 (1, 2): at q = 10000 the scaled gauge-fixed block is not PD (pivot 16 <= 0), the true one is PD
+j4m4 (2, 0): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 14 <= 0), the true one is PD
+j4m4 (2, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 17 <= 0), the true one is PD
+j4m1 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 16 <= 0), the true one is PD
+j4m1 (0, 2): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 20 <= 0), the true one is PD
+j4m1 (0, 3): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 23 <= 0), the true one is PD
+j4m1 (0, 4): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 25 <= 0), the true one is PD
+j4m1 (0, 5): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 70 <= 0), the true one is PD
+time 15.0s
+PASS

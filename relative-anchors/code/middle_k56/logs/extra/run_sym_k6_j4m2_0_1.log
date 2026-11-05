@@ -1,0 +1,15 @@
+family j4m2: (R_inf)_4, k = 6, T = (0, 1), configuration (0, 1): squared weights ['q', 'q', '1', 'q', 'q', 'q'], bscale 1
+  block over Q(q): 60 states [1.1s]
+  11 distinct entry denominators, all > 0 on (0, inf): True; lcm of degree 18
+  6 known kernel vectors annihilated identically in q: True
+  W: dimension 54 = 60 - 6: True
+  G = product of the symmetric groups of [[0, 1], [2], [3, 4, 5]]: states G-stable and block G-invariant: True
+  5 parts; sum dim(lam) dim(e_lam W) = 54 = dim W: True [1.1s]
+  part ((2,), (1,), (3,)) (dim 1): size 12, symmetric True, every leading minor > 0 on (0, inf): True [1.2s]
+  part ((2,), (1,), (2, 1)) (dim 2): size 12, symmetric True, every leading minor > 0 on (0, inf): True [1.2s]
+  part ((2,), (1,), (1, 1, 1)) (dim 1): size 2, symmetric True, every leading minor > 0 on (0, inf): True [1.2s]
+  part ((1, 1), (1,), (3,)) (dim 1): size 6, symmetric True, every leading minor > 0 on (0, inf): True [1.2s]
+  part ((1, 1), (1,), (2, 1)) (dim 2): size 5, symmetric True, every leading minor > 0 on (0, inf): True [1.2s]
+  every leading minor of every part > 0 on (0, inf): True; all with only nonnegative coefficients: True; largest degrees: numerator 244, denominator 0
+time 1.2s
+PASS

@@ -1,0 +1,4 @@
+j4m4: 40 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [1.2s]
+j4m1: 30 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [60.8s]
+time 60.8s
+PASS

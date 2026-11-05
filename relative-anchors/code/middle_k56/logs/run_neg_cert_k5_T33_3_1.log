@@ -1,0 +1,18 @@
+family T33: (R_inf)_3, k = 5, T = (0, 1, 2), configuration (3, 1): squared weights ['1', '1', '1', '1', 'q'], bscale 1001/1000
+  block over Q(q): 16 states [0.1s]
+  10 distinct entry denominators, all > 0 on (0, inf): True
+  gauge-fixed block: 15 states (deleted 1), symmetric True
+     minor 1: num deg 1, den deg 0: num (1, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 2: num deg 1, den deg 0: num (1, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 3: num deg 1, den deg 0: num (1, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 4: num deg 10, den deg 8: num (10, nonnegative coefficients); den (8, nonnegative coefficients)  [0.1s]
+     minor 5: num deg 14, den deg 12: num (14, nonnegative coefficients); den (12, nonnegative coefficients)  [0.1s]
+     minor 6: num deg 14, den deg 12: num (14, nonnegative coefficients); den (12, nonnegative coefficients)  [0.1s]
+     minor 7: num deg 19, den deg 16: num (19, nonnegative coefficients); den (16, nonnegative coefficients)  [0.2s]
+     minor 8: num deg 21, den deg 18: num (21, nonnegative coefficients); den (18, nonnegative coefficients)  [0.2s]
+     minor 9: num deg 21, den deg 18: num (21, nonnegative coefficients); den (18, nonnegative coefficients)  [0.2s]
+     minor 10: num deg 28, den deg 25: nonpositive at q = 10000 (exact evaluation)  [0.2s]
+  minor 10 is not > 0 on (0, inf); nonpositive at q = 10000
+  every leading principal minor > 0 on (0, inf): False; all numerators and denominators with only nonnegative coefficients: False; largest degrees: numerator 28, denominator 25
+time 0.2s
+FAIL

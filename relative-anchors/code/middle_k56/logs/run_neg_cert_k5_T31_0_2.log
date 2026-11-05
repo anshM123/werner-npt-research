@@ -1,0 +1,22 @@
+family T31: (R_inf)_3, k = 5, T = (0,), configuration (0, 2): squared weights ['q', '1', '1', 'q', 'q'], bscale 1001/1000
+  block over Q(q): 44 states [0.2s]
+  17 distinct entry denominators, all > 0 on (0, inf): True
+  gauge-fixed block: 38 states (deleted 6), symmetric True
+     minor 1: num deg 2, den deg 0: num (2, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 2: num deg 4, den deg 0: num (4, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 3: num deg 5, den deg 0: num (5, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 4: num deg 6, den deg 0: num (6, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 5: num deg 9, den deg 0: num (9, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 6: num deg 11, den deg 0: num (11, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 7: num deg 13, den deg 0: num (13, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 8: num deg 15, den deg 0: num (15, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 9: num deg 17, den deg 0: num (17, nonnegative coefficients); den (0, nonnegative coefficients)  [0.2s]
+     minor 10: num deg 18, den deg 0: num (18, nonnegative coefficients); den (0, nonnegative coefficients)  [0.3s]
+     minor 11: num deg 34, den deg 13: num (34, nonnegative coefficients); den (13, nonnegative coefficients)  [0.3s]
+     minor 12: num deg 45, den deg 22: num (45, nonnegative coefficients); den (22, nonnegative coefficients)  [0.3s]
+     minor 13: num deg 49, den deg 24: num (49, nonnegative coefficients); den (24, nonnegative coefficients)  [0.4s]
+     minor 14: num deg 51, den deg 24: nonpositive at q = 1/1000000 (exact evaluation)  [0.6s]
+  minor 14 is not > 0 on (0, inf); nonpositive at q = 1/1000000
+  every leading principal minor > 0 on (0, inf): False; all numerators and denominators with only nonnegative coefficients: False; largest degrees: numerator 51, denominator 24
+time 0.6s
+FAIL

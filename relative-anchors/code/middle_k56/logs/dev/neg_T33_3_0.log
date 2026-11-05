@@ -1,0 +1,20 @@
+family T33: (R_inf)_3, k = 5, T = (0, 1, 2), configuration (3, 0): squared weights ['1', '1', '1', 'q', 'q'], bscale 1001/1000
+  block over Q(q): 16 states [0.1s]
+  9 distinct entry denominators, all > 0 on (0, inf): True
+  gauge-fixed block: 15 states (deleted 1), symmetric True
+     minor 1: num deg 1, den deg 0: num (1, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 2: num deg 2, den deg 0: num (2, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 3: num deg 2, den deg 0: num (2, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 4: num deg 12, den deg 9: num (12, nonnegative coefficients); den (9, nonnegative coefficients)  [0.1s]
+     minor 5: num deg 13, den deg 9: num (13, nonnegative coefficients); den (9, nonnegative coefficients)  [0.1s]
+     minor 6: num deg 14, den deg 10: num (14, nonnegative coefficients); den (10, nonnegative coefficients)  [0.1s]
+     minor 7: num deg 20, den deg 15: num (20, nonnegative coefficients); den (15, nonnegative coefficients)  [0.1s]
+     minor 8: num deg 21, den deg 15: num (21, nonnegative coefficients); den (15, nonnegative coefficients)  [0.2s]
+     minor 9: num deg 21, den deg 15: num (21, nonnegative coefficients); den (15, nonnegative coefficients)  [0.2s]
+     minor 10: num deg 26, den deg 20: num (26, nonnegative coefficients); den (20, nonnegative coefficients)  [0.2s]
+     minor 11: num deg 30, den deg 24: num (30, nonnegative coefficients); den (24, nonnegative coefficients)  [0.2s]
+     minor 12: num deg 34, den deg 28: num: Sturm: 1 root(s) in (0, inf); den: nonnegative coefficients  [0.2s]
+  minor 12 is not > 0 on (0, inf); nonpositive at q = 1/1000000
+  every leading principal minor > 0 on (0, inf): False; all numerators and denominators with only nonnegative coefficients: False; largest degrees: numerator 34, denominator 28
+time 0.3s
+FAIL

@@ -1,0 +1,14 @@
+family j3m2: (R_inf)_3, k = 6, T = (0, 1), configuration (1, 0): squared weights ['1', 'q', 'q', 'q', 'q', 'q'], bscale 1
+  block over Q(q): 50 states [1.0s]
+  15 distinct entry denominators, all > 0 on (0, inf): True; lcm of degree 22
+  4 known kernel vectors annihilated identically in q: True
+  W: dimension 46 = 50 - 4: True
+  G = product of the symmetric groups of [[0], [1], [2, 3, 4, 5]]: states G-stable and block G-invariant: True
+  4 parts; sum dim(lam) dim(e_lam W) = 46 = dim W: True [1.1s]
+  part ((1,), (1,), (4,)) (dim 1): size 8, symmetric True, every leading minor > 0 on (0, inf): True [1.1s]
+  part ((1,), (1,), (3, 1)) (dim 3): size 9, symmetric True, every leading minor > 0 on (0, inf): True [1.1s]
+  part ((1,), (1,), (2, 2)) (dim 2): size 4, symmetric True, every leading minor > 0 on (0, inf): True [1.1s]
+  part ((1,), (1,), (2, 1, 1)) (dim 3): size 1, symmetric True, every leading minor > 0 on (0, inf): True [1.1s]
+  every leading minor of every part > 0 on (0, inf): True; all with only nonnegative coefficients: True; largest degrees: numerator 214, denominator 0
+time 1.1s
+PASS

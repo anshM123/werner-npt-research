@@ -1,0 +1,21 @@
+j4m1 0 0: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 28, denominator 0, 2 s
+j4m1 0 1: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 263, denominator 0, 3 s
+j4m1 0 2: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 393, denominator 0, 2 s
+j4m1 0 3: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 394, denominator 0, 2 s
+j4m1 0 4: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 285, denominator 0, 2 s
+j4m1 0 5: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 91, denominator 0, 3 s
+j4m0 0 0: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 20, denominator 0, 2 s
+j4m0 0 1: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 104, denominator 0, 2 s
+j4m0 0 2: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 162, denominator 0, 3 s
+j4m0 0 3: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 119, denominator 0, 2 s
+j3m1 0 0: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 21, denominator 0, 2 s
+j3m1 0 1: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 396, denominator 0, 2 s
+j3m1 0 2: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 573, denominator 0, 4 s
+j3m1 0 3: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 600, denominator 0, 4 s
+j3m1 0 4: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 401, denominator 0, 2 s
+j3m1 0 5: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 119, denominator 0, 2 s
+j3m0 0 0: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 16, denominator 0, 2 s
+j3m0 0 1: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 173, denominator 0, 3 s
+j3m0 0 2: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 293, denominator 0, 3 s
+j3m0 0 3: exit 0, PASS, only nonnegative coefficients: True; largest degrees: numerator 263, denominator 0, 4 s
+DRIVER DONE

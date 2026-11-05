@@ -1,0 +1,23 @@
+family T42: (R_inf)_4, k = 5, T = (0, 1), configuration (1, 1): squared weights ['1', 'q', '1', 'q', 'q'], bscale 1001/1000
+  block over Q(q): 24 states [0.1s]
+  16 distinct entry denominators, all > 0 on (0, inf): True
+  gauge-fixed block: 21 states (deleted 3), symmetric True
+     minor 1: num deg 2, den deg 0: num (2, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 2: num deg 4, den deg 0: num (4, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 3: num deg 5, den deg 0: num (5, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 4: num deg 6, den deg 0: num (6, nonnegative coefficients); den (0, nonnegative coefficients)  [0.1s]
+     minor 5: num deg 16, den deg 8: num (16, nonnegative coefficients); den (8, nonnegative coefficients)  [0.1s]
+     minor 6: num deg 19, den deg 8: num (19, nonnegative coefficients); den (8, nonnegative coefficients)  [0.1s]
+     minor 7: num deg 23, den deg 10: num (23, nonnegative coefficients); den (10, nonnegative coefficients)  [0.2s]
+     minor 8: num deg 25, den deg 10: num (25, nonnegative coefficients); den (10, nonnegative coefficients)  [0.2s]
+     minor 9: num deg 37, den deg 20: num (37, nonnegative coefficients); den (20, nonnegative coefficients)  [0.2s]
+     minor 10: num deg 47, den deg 29: num (47, nonnegative coefficients); den (29, nonnegative coefficients)  [0.2s]
+     minor 11: num deg 48, den deg 29: num (48, nonnegative coefficients); den (29, nonnegative coefficients)  [0.3s]
+     minor 12: num deg 59, den deg 37: num (59, nonnegative coefficients); den (37, nonnegative coefficients)  [0.3s]
+     minor 13: num deg 65, den deg 41: num (65, nonnegative coefficients); den (41, nonnegative coefficients)  [0.3s]
+     minor 14: num deg 67, den deg 41: num (67, nonnegative coefficients); den (41, nonnegative coefficients)  [0.4s]
+     minor 15: num deg 77, den deg 49: num: Sturm: 1 root(s) in (0, inf); den: nonnegative coefficients  [2.5s]
+  minor 15 is not > 0 on (0, inf); nonpositive at q = 1/1000000
+  every leading principal minor > 0 on (0, inf): False; all numerators and denominators with only nonnegative coefficients: False; largest degrees: numerator 77, denominator 49
+time 2.6s
+FAIL

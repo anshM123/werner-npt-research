@@ -1,0 +1,7 @@
+L3: 30 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [11.5s]
+T31: 50 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [22.6s]
+T32: 60 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [27.1s]
+T33: 60 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [28.1s]
+T42: 60 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [29.8s]
+time 29.8s
+PASS

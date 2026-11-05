@@ -1,0 +1,13 @@
+j4m4: 960 (T, A) patterns (390 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 24 of them; configurations used [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1)] [0.5s]
+j3m3: 1280 (T, A) patterns (640 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 32 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3), (1, 0), (1, 1), (1, 2), (1, 3)] [1.5s]
+j5m3: 1280 (T, A) patterns (640 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 32 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3), (1, 0), (1, 1), (1, 2), (1, 3)] [2.4s]
+j5m2: 960 (T, A) patterns (390 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 24 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 0), (1, 1), (1, 2)] [3.4s]
+j4m3: 1280 (T, A) patterns (640 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 32 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3), (1, 0), (1, 1), (1, 2), (1, 3)] [5.4s]
+j3m2: 960 (T, A) patterns (390 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 24 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 0), (1, 1), (1, 2)] [9.2s]
+j4m2: 960 (T, A) patterns (390 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 24 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 0), (1, 1), (1, 2)] [13.3s]
+j4m1: 384 (T, A) patterns (192 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 10 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)] [16.9s]
+j4m0: 64 (T, A) patterns (22 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 2 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3)] [18.1s]
+j3m1: 384 (T, A) patterns (192 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 10 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)] [24.0s]
+j3m0: 64 (T, A) patterns (22 through the level exchange), each reduces to a certified configuration: True; exact identity checked for 2 of them; configurations used [(0, 0), (0, 1), (0, 2), (0, 3)] [27.2s]
+time 27.2s
+PASS

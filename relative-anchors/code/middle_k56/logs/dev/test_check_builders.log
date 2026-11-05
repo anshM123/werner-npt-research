@@ -1,0 +1,9 @@
+T33: (a) saved block = Lemma B block at 36 (configuration, q) pairs; (b) = ylib point block at 12 configurations: True [1.3s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 1 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 1 in the squared weights: True
+time 1.7s
+PASS

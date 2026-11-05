@@ -1,0 +1,9 @@
+j4m4: 304 saved minors equal direct minors of the Lemma B block: True [0.4s]
+j3m3: 320 saved minors equal direct minors of the Lemma B block: True [0.9s]
+j5m3: 448 saved minors equal direct minors of the Lemma B block: True [1.6s]
+j5m2: 496 saved minors equal direct minors of the Lemma B block: True [2.4s]
+j4m3: 576 saved minors equal direct minors of the Lemma B block: True [3.9s]
+j3m2: 736 saved minors equal direct minors of the Lemma B block: True [7.5s]
+j4m2: 864 saved minors equal direct minors of the Lemma B block: True [11.9s]
+time 11.9s
+PASS
