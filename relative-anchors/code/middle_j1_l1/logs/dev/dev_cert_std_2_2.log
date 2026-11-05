@@ -1,0 +1,9 @@
+std, u0 = 2, u1 = 2, bscale 1: S of size 4 (['S1', 'S3', 'S4', 'S5']), Q-vectors ['S7'] eliminated [0.0s]
+  S symmetric: True
+  kernel vector [-1, 1, 0, 1]: S kappa = 0 identically: True
+  gauge-fixed coordinates (order): ['S1', 'S4', 'S5']
+  minor 1: sign 1; numerator deg 9 (9 terms), denominator deg 9 (10 terms); factors (deg/terms^mult): [one-signed 9/9] [one-signed 9/10] [0.0s]
+  minor 2: sign 1; numerator deg 10 (9 terms), denominator deg 9 (10 terms); factors (deg/terms^mult): [one-signed 10/9] [one-signed 9/10] [0.0s]
+  minor 3: sign 1; numerator deg 11 (9 terms), denominator deg 10 (11 terms); factors (deg/terms^mult): [one-signed 11/9] [one-signed 10/11] [0.0s]
+time 0.0s
+PASS

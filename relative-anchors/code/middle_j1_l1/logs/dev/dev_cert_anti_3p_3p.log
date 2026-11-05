@@ -1,0 +1,6 @@
+anti, u0 = 3+, u1 = 3+, bscale 1: S of size 1 (['A1']), Q-vectors [] eliminated [0.0s]
+  S symmetric: True
+  gauge-fixed coordinates (order): ['A1']
+  minor 1: sign 1; numerator deg 6 (20 terms), denominator deg 6 (20 terms); factors (deg/terms^mult): [one-signed 6/20] [one-signed 6/20] [0.0s]
+time 0.0s
+PASS

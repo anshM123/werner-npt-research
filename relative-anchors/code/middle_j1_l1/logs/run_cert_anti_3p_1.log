@@ -1,0 +1,7 @@
+anti, u0 = 3+, u1 = 1, bscale 1: S of size 1 (['A1']), Q-vectors [] eliminated [0.0s]
+  S symmetric: True
+  det of the Gram matrix GP: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  gauge-fixed coordinates (order): ['A1']
+  minor 1: sign 1; numerator deg 3 (10 terms), denominator deg 3 (10 terms); factors (deg/terms^mult): [one-signed 3/10] [one-signed 3/10] [0.0s]
+time 0.0s
+PASS

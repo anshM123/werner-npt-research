@@ -1,0 +1,6 @@
+std, u0 = 2, u1 = 2, bscale 1001/1000: S of size 4 (['S1', 'S3', 'S4', 'S5']), Q-vectors ['S7'] eliminated [0.0s]
+  S symmetric: True
+  gauge-fixed coordinates (order): ['S1', 'S4', 'S5']
+  minor 1: sign None; numerator deg 10 (11 terms), denominator deg 10 (11 terms); factors (deg/terms^mult): factor with mixed signs: deg 10, 11 terms [0.0s]
+time 0.0s
+FAIL

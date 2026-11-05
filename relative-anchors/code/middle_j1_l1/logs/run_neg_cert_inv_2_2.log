@@ -1,0 +1,8 @@
+inv, u0 = 2, u1 = 2, bscale 1001/1000: S of size 6 (['T1', 'T2', 'T3', 'T4', 'T5', 'T6']), Q-vectors ['T7', 'T8', 'T9'] eliminated [0.0s]
+  S symmetric: True
+  det of the Gram matrix GP: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  det of the Gram matrix GQ: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  gauge-fixed coordinates (order): ['T1', 'T3', 'T4', 'T5']
+  minor 1: sign None; numerator deg 11 (12 terms), denominator deg 11 (12 terms); factors (deg/terms^mult): factor with mixed signs: deg 11, 12 terms [0.0s]
+time 0.0s
+FAIL

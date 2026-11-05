@@ -1,0 +1,12 @@
+std, u0 = 3+, u1 = 2, bscale 1: S of size 5 (['S1', 'S2', 'S3', 'S4', 'S5']), Q-vectors ['S6', 'S7'] eliminated [0.0s]
+  S symmetric: True
+  det of the Gram matrix GP: sign 1 ([one-signed 2/3] [one-signed 0/1])
+  det of the Gram matrix GQ: sign 1 ([one-signed 1/2] [one-signed 0/1])
+  kernel vector [0, 1, 1, 0, 1]: S kappa = 0 identically: True
+  gauge-fixed coordinates (order): ['S1', 'S2', 'S4', 'S5']
+  minor 1: sign 1; numerator deg 17 (167 terms), denominator deg 16 (151 terms); factors (deg/terms^mult): [one-signed 17/167] [one-signed 16/151] [0.0s]
+  minor 2: sign 1; numerator deg 25 (343 terms), denominator deg 23 (298 terms); factors (deg/terms^mult): [one-signed 25/343] [one-signed 23/298] [0.0s]
+  minor 3: sign 1; numerator deg 28 (398 terms), denominator deg 25 (349 terms); factors (deg/terms^mult): [one-signed 28/398] [one-signed 25/349] [0.0s]
+  minor 4: sign 1; numerator deg 29 (399 terms), denominator deg 26 (376 terms); factors (deg/terms^mult): [one-signed 29/399] [one-signed 26/376] [0.1s]
+time 0.1s
+PASS

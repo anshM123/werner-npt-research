@@ -1,0 +1,7 @@
+mix, u0 = 2, u1 = 3+, bscale 1: S of size 2 (['B1', 'B2']), Q-vectors ['B3'] eliminated [0.0s]
+  S symmetric: True
+  gauge-fixed coordinates (order): ['B1', 'B2']
+  minor 1: sign 1; numerator deg 11 (21 terms), denominator deg 10 (21 terms); factors (deg/terms^mult): [one-signed 11/21] [one-signed 10/21] [0.0s]
+  minor 2: sign 1; numerator deg 24 (78 terms), denominator deg 22 (78 terms); factors (deg/terms^mult): [one-signed 24/78] [one-signed 22/78] [0.0s]
+time 0.0s
+PASS

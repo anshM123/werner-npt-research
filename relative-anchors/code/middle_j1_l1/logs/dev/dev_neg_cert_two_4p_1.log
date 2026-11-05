@@ -1,0 +1,6 @@
+two, u0 = 4+, u1 = 1, bscale 1001/1000: S of size 1 (['H1']), Q-vectors ['H2'] eliminated [0.0s]
+  S symmetric: True
+  gauge-fixed coordinates (order): ['H1']
+  minor 1: sign None; numerator deg 9 (55 terms), denominator deg 9 (55 terms); factors (deg/terms^mult): factor with mixed signs: deg 9, 55 terms [0.0s]
+time 0.0s
+FAIL

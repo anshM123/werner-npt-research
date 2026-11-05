@@ -1,0 +1,9 @@
+inv, u0 = 4+, u1 = 0, bscale 1: S of size 2 (['T1', 'T2']), Q-vectors ['T7'] eliminated [0.0s]
+  S symmetric: True
+  det of the Gram matrix GP: sign 1 ([one-signed 3/4] [one-signed 0/1])
+  det of the Gram matrix GQ: sign 1 ([one-signed 2/3] [one-signed 0/1])
+  kernel vector [1, 1]: S kappa = 0 identically: True
+  gauge-fixed coordinates (order): ['T1']
+  minor 1: sign 1; numerator deg 2 (3 terms), denominator deg 1 (2 terms); factors (deg/terms^mult): [one-signed 2/3] [one-signed 1/2] [0.0s]
+time 0.0s
+PASS
