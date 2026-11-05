@@ -1,0 +1,11 @@
+j = 1: 88 states, 15 torus blocks {'letter-1': 1, 'type I': 10, 'type II': 4}, sizes {'letter-1': {22}, 'type I |T|=1': {11}, 'type I |T|=2': {3}}; off-block nonzero entries: 0; representatives cover all letter-1/type I blocks: True  [0.0s]
+j = 2: 224 states, 31 torus blocks {'letter-1': 1, 'type I': 14, 'type II': 16}, sizes {'letter-1': {28}, 'type I |T|=1': {21}, 'type I |T|=2': {12}, 'type I |T|=3': {4}}; off-block nonzero entries: 0; representatives cover all letter-1/type I blocks: True  [0.1s]
+block j = 1, T = (): size 22, known kernel 4, gauge-fixed size 18; kernel exact and complete, gauge-fixed block > 0 (exact LDL) at all 33 points: True; min eig gauge-fixed 1.653e-10, eig no. (nker+1) of full block 6.600e-10
+block j = 1, T = (0,): size 11, known kernel 1, gauge-fixed size 10; kernel exact and complete, gauge-fixed block > 0 (exact LDL) at all 33 points: True; min eig gauge-fixed 9.288e-07, eig no. (nker+1) of full block 9.288e-07
+block j = 1, T = (0, 1): size 3, known kernel 0, gauge-fixed size 3; kernel exact and complete, gauge-fixed block > 0 (exact LDL) at all 33 points: True; min eig gauge-fixed 1.113e-03, eig no. (nker+1) of full block 1.113e-03
+block j = 2, T = (): size 28, known kernel 7, gauge-fixed size 21; kernel exact and complete, gauge-fixed block > 0 (exact LDL) at all 33 points: True; min eig gauge-fixed 1.458e-13, eig no. (nker+1) of full block 4.975e-13
+block j = 2, T = (0,): size 21, known kernel 3, gauge-fixed size 18; kernel exact and complete, gauge-fixed block > 0 (exact LDL) at all 33 points: True; min eig gauge-fixed 1.118e-09, eig no. (nker+1) of full block 1.118e-09
+block j = 2, T = (0, 1): size 12, known kernel 1, gauge-fixed size 11; kernel exact and complete, gauge-fixed block > 0 (exact LDL) at all 33 points: True; min eig gauge-fixed 1.488e-06, eig no. (nker+1) of full block 1.488e-06
+block j = 2, T = (0, 1, 2): size 4, known kernel 0, gauge-fixed size 4; kernel exact and complete, gauge-fixed block > 0 (exact LDL) at all 33 points: True; min eig gauge-fixed 1.857e-03, eig no. (nker+1) of full block 1.857e-03
+time 1.8s
+PASS

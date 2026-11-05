@@ -1,0 +1,25 @@
+j = 1, T = (0,), size 10, order col: ['(2000,0001)', '(2000,0010)', '(2000,0100)', '(2000,1000)', '(0001,2000)', '(0010,2000)', '(1000,2000)', '(0000,2001)', '(0000,2010)', '(0000,2100)']
+  den = 16 * [deg 1, 4 t]^1 * [deg 1, 4 t]^1 * [deg 3, 20 t]^1 * [deg 3, 20 t]^1 * [deg 3, 20 t]^1 * [deg 6, 84 t]^1
+  den constant > 0 and den factors with positive coefficients: True
+  step 1: D_2 core deg 2, 1 terms, exps [2, 2, 2, 2, 2, 2], negative coeffs 0; max core terms in the rest 814  [0.0s]
+  step 2: D_3 core deg 3, 1 terms, exps [3, 3, 3, 3, 3, 3], negative coeffs 0; max core terms in the rest 814  [0.0s]
+  step 3: D_4 core deg 3, 1 terms, exps [4, 4, 4, 4, 4, 4], negative coeffs 0; max core terms in the rest 813  [0.1s]
+  step 4: D_5 core deg 13, 218 terms, exps [3, 4, 3, 5, 5, 5], negative coeffs 0; max core terms in the rest 813  [0.1s]
+  step 5: D_6 core deg 20, 798 terms, exps [4, 5, 2, 6, 6, 6], negative coeffs 0; max core terms in the rest 5451  [0.1s]
+  step 6: D_7 core deg 26, 1768 terms, exps [5, 6, 1, 7, 7, 7], negative coeffs 0; max core terms in the rest 9095  [0.5s]
+  step 7: D_8 core deg 48, 13234 terms, exps [6, 7, 2, 7, 6, 6], negative coeffs 0; max core terms in the rest 13234  [2.1s]
+  step 8: D_9 core deg 55, 19534 terms, exps [7, 8, 3, 8, 5, 7], negative coeffs 0; max core terms in the rest 19534  [6.7s]
+  step 9: D_10 core deg 62, 27536 terms, exps [8, 9, 4, 9, 4, 8], negative coeffs 0; max core terms in the rest 27536  [13.7s]
+  leading minor 1: point check True; core deg 1, 1 terms, exps [1, 1, 1, 1, 1, 1], all coefficients positive
+  leading minor 2: point check True; core deg 2, 1 terms, exps [2, 2, 2, 2, 2, 2], all coefficients positive
+  leading minor 3: point check True; core deg 3, 1 terms, exps [3, 3, 3, 3, 3, 3], all coefficients positive
+  leading minor 4: point check True; core deg 3, 1 terms, exps [4, 4, 4, 4, 4, 4], all coefficients positive
+  leading minor 5: point check True; core deg 13, 218 terms, exps [3, 4, 3, 5, 5, 5], all coefficients positive
+  leading minor 6: point check True; core deg 20, 798 terms, exps [4, 5, 2, 6, 6, 6], all coefficients positive
+  leading minor 7: point check True; core deg 26, 1768 terms, exps [5, 6, 1, 7, 7, 7], all coefficients positive
+  leading minor 8: point check True; core deg 48, 13234 terms, exps [6, 7, 2, 7, 6, 6], all coefficients positive
+  leading minor 9: point check True; core deg 55, 19534 terms, exps [7, 8, 3, 8, 5, 7], all coefficients positive
+  leading minor 10: point check True; core deg 62, 27536 terms, exps [8, 9, 4, 9, 4, 8], all coefficients positive
+CONCLUSION: all 10 leading principal minors of the gauge-fixed block are positive on the open orthant; the block j = 1, T = (0,) is >= 0 with kernel exactly the known one, for all positive weights
+time 14.0s
+PASS

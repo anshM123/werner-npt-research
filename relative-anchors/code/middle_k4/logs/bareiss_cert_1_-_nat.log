@@ -1,0 +1,41 @@
+j = 1, T = (), size 18, order nat: ['(0001,0001)', '(0001,0010)', '(0001,0100)', '(0001,1000)', '(0010,0001)', '(0010,0010)', '(0010,0100)', '(0010,1000)', '(1000,0001)', '(1000,0010)', '(1000,0100)', '(1000,1000)', '(0000,0011)', '(0000,0101)', '(0000,0110)', '(0000,1001)', '(0000,1010)', '(0000,1100)']
+  den = 8 * [deg 1, 4 t]^1 * [deg 3, 20 t]^1 * [deg 4, 35 t]^1 * [deg 6, 84 t]^1
+  den constant > 0 and den factors with positive coefficients: True
+  step 1: D_2 core deg 8, 26 terms, exps [1, 1, 2, 2], negative coeffs 0; max core terms in the rest 1761  [0.1s]
+  step 2: D_3 core deg 10, 20 terms, exps [2, 2, 3, 3], negative coeffs 0; max core terms in the rest 1741  [0.1s]
+  step 3: D_4 core deg 11, 12 terms, exps [3, 3, 4, 4], negative coeffs 0; max core terms in the rest 1720  [0.2s]
+  step 4: D_5 core deg 19, 231 terms, exps [4, 2, 5, 5], negative coeffs 0; max core terms in the rest 1696  [0.2s]
+  step 5: D_6 core deg 24, 449 terms, exps [5, 2, 6, 6], negative coeffs 0; max core terms in the rest 3515  [0.3s]
+  step 6: D_7 core deg 26, 404 terms, exps [6, 3, 7, 7], negative coeffs 0; max core terms in the rest 4712  [0.6s]
+  step 7: D_8 core deg 27, 354 terms, exps [7, 4, 8, 8], negative coeffs 0; max core terms in the rest 4587  [1.0s]
+  step 8: D_9 core deg 34, 1100 terms, exps [8, 3, 9, 9], negative coeffs 0; max core terms in the rest 4442  [1.4s]
+  step 9: D_10 core deg 41, 2380 terms, exps [9, 2, 10, 10], negative coeffs 0; max core terms in the rest 7308  [2.4s]
+  step 10: D_11 core deg 45, 3096 terms, exps [10, 2, 11, 11], negative coeffs 0; max core terms in the rest 11092  [8.8s]
+  step 11: D_12 core deg 44, 2452 terms, exps [12, 3, 12, 12], negative coeffs 0; max core terms in the rest 12942  [22.6s]
+  step 12: D_13 core deg 63, 12077 terms, exps [12, 4, 12, 11], negative coeffs 0; max core terms in the rest 12077  [38.3s]
+  step 13: D_14 core deg 77, 25788 terms, exps [13, 5, 13, 10], negative coeffs 0; max core terms in the rest 25885  [61.8s]
+  step 14: D_15 core deg 90, 45335 terms, exps [14, 6, 14, 9], negative coeffs 0; max core terms in the rest 47231  [171.5s]
+  step 15: D_16 core deg 91, 45101 terms, exps [15, 7, 15, 10], negative coeffs 0; max core terms in the rest 45101  [456.2s]
+  step 16: D_17 core deg 92, 42987 terms, exps [16, 8, 16, 11], negative coeffs 0; max core terms in the rest 42987  [582.2s]
+  step 17: D_18 core deg 93, 39341 terms, exps [17, 9, 17, 12], negative coeffs 0; max core terms in the rest 39341  [620.4s]
+  leading minor 1: point check True; core deg 6, 31 terms, exps [0, 0, 1, 1], all coefficients positive
+  leading minor 2: point check True; core deg 8, 26 terms, exps [1, 1, 2, 2], all coefficients positive
+  leading minor 3: point check True; core deg 10, 20 terms, exps [2, 2, 3, 3], all coefficients positive
+  leading minor 4: point check True; core deg 11, 12 terms, exps [3, 3, 4, 4], all coefficients positive
+  leading minor 5: point check True; core deg 19, 231 terms, exps [4, 2, 5, 5], all coefficients positive
+  leading minor 6: point check True; core deg 24, 449 terms, exps [5, 2, 6, 6], all coefficients positive
+  leading minor 7: point check True; core deg 26, 404 terms, exps [6, 3, 7, 7], all coefficients positive
+  leading minor 8: point check True; core deg 27, 354 terms, exps [7, 4, 8, 8], all coefficients positive
+  leading minor 9: point check True; core deg 34, 1100 terms, exps [8, 3, 9, 9], all coefficients positive
+  leading minor 10: point check True; core deg 41, 2380 terms, exps [9, 2, 10, 10], all coefficients positive
+  leading minor 11: point check True; core deg 45, 3096 terms, exps [10, 2, 11, 11], all coefficients positive
+  leading minor 12: point check True; core deg 44, 2452 terms, exps [12, 3, 12, 12], all coefficients positive
+  leading minor 13: point check True; core deg 63, 12077 terms, exps [12, 4, 12, 11], all coefficients positive
+  leading minor 14: point check True; core deg 77, 25788 terms, exps [13, 5, 13, 10], all coefficients positive
+  leading minor 15: point check True; core deg 90, 45335 terms, exps [14, 6, 14, 9], all coefficients positive
+  leading minor 16: point check True; core deg 91, 45101 terms, exps [15, 7, 15, 10], all coefficients positive
+  leading minor 17: point check True; core deg 92, 42987 terms, exps [16, 8, 16, 11], all coefficients positive
+  leading minor 18: point check True; core deg 93, 39341 terms, exps [17, 9, 17, 12], all coefficients positive
+CONCLUSION: all 18 leading principal minors of the gauge-fixed block are positive on the open orthant; the block j = 1, T = () is >= 0 with kernel exactly the known one, for all positive weights
+time 622.0s
+PASS

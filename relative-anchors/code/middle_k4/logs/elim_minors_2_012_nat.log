@@ -1,0 +1,7 @@
+j = 2, T = (0, 1, 2): gauge-fixed size 4, order nat: ['(0020,2200)', '(0200,2020)', '(2000,0220)', '(0000,2220)']
+  D_1: num deg 0, 1 terms, 0 negative; den deg 0; minor certified > 0: True; pivot itself one-signed: True  [0.0s]
+  D_2: num deg 6, 84 terms, 0 negative; den deg 6; minor certified > 0: True; pivot itself one-signed: True  [0.0s]
+  D_3: num deg 18, 1330 terms, 0 negative; den deg 18; minor certified > 0: True; pivot itself one-signed: True  [0.0s]
+  D_4: num deg 31, 5980 terms, 0 negative; den deg 31; minor certified > 0: True; pivot itself one-signed: True  [0.1s]
+time 0.1s
+PASS

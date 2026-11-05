@@ -1,0 +1,11 @@
+j = 1, T = (0, 1), size 3, order nat: ['(0200,2000)', '(2000,0200)', '(0000,2200)']
+  den = 16 * [deg 1, 4 t]^1 * [deg 2, 10 t]^1 * [deg 3, 20 t]^1 * [deg 3, 20 t]^1 * [deg 3, 20 t]^1
+  den constant > 0 and den factors with positive coefficients: True
+  step 1: D_2 core deg 8, 165 terms, exps [0, 2, 0, 2, 2], negative coeffs 0; max core terms in the rest 283  [0.0s]
+  step 2: D_3 core deg 22, 2296 terms, exps [1, 2, 1, 1, 1], negative coeffs 0; max core terms in the rest 2296  [0.0s]
+  leading minor 1: point check True; core deg 0, 1 terms, exps [1, 1, 1, 1, 1], all coefficients positive
+  leading minor 2: point check True; core deg 8, 165 terms, exps [0, 2, 0, 2, 2], all coefficients positive
+  leading minor 3: point check True; core deg 22, 2296 terms, exps [1, 2, 1, 1, 1], all coefficients positive
+CONCLUSION: all 3 leading principal minors of the gauge-fixed block are positive on the open orthant; the block j = 1, T = (0, 1) is >= 0 with kernel exactly the known one, for all positive weights
+time 0.0s
+PASS

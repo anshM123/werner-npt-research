@@ -29,6 +29,10 @@ This folder collects what we can prove about the group conditions for every k.
   - (R∞)_0 holds completely for k ≥ 3, with kernel exactly p ⊗ H_0 (Theorem B0, an algebraic proof).
   - In every (R∞)_j, every block in which one copy carries the letter 2 in row and column is positive definite, with
     an explicit lower bound (Proposition T2′).
+- **Four copies, every positive weight vector** (Section 3f, exact computer-assisted certificates). (R∞)_1 holds
+  (Theorem A4), and (R∞)_2 holds on every block except the four type I blocks in which exactly one copy carries the
+  letter 2 (Theorem B4); this includes the letter-1 block of Section 3e. With the results above, all of (R∞) at four
+  copies is reduced to those four blocks, which are images of each other under permutations of the copies.
 - **Equal weights** (w_t = 1).
   - The letter-1 block of every (R∞)_j is ⪰ 0 for every k, with the kernel described exactly (Theorem E1). The proof is
     computer-assisted, symbolic in k.
@@ -48,7 +52,8 @@ single-copy excitation, all ‖x_t‖ equal), for every finite set G of copies. 
 **Open.**
 - For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 and k ≥ 5
   (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁), reduced to the condition G ≻ 0 of Theorem C; and the letter-1
-  and type I blocks of (R∞)_j for 1 ≤ j ≤ k − 2 (for k ≥ 4). At k = 4 these are the conditions (R∞)_1 and (R∞)_2.
+  and type I blocks of (R∞)_j for 1 ≤ j ≤ k − 2 (for k ≥ 4). At k = 4 only the type I blocks of (R∞)_2 with one
+  copy carrying the letter 2 remain (Section 3f).
 
 Nothing here is refereed. The endpoint problem itself is open.
 
@@ -497,7 +502,8 @@ This contains Propositions T2 (j = k − 1) and E2 (equal weights). Numerically 
 **What blocks the rest.** Two parts are still open:
 - the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2: by Theorem C each is equivalent to
   G ≻ 0 on its letter-2 states (proved for two such copies, Theorem U2, and for k = 4, Theorem U3₁);
-- the letter-1 and type I blocks of the conditions (R∞)_j with 1 ≤ j ≤ k − 2.
+- the letter-1 and type I blocks of the conditions (R∞)_j with 1 ≤ j ≤ k − 2 (at k = 4 all but one orbit of
+  blocks are certified, Section 3f).
 
 In both, the method of Theorem T leaves soft directions: eigenvalues 0.01–0.1, and as small as 0.0015 for
 (R∞)_{k−2} at spread weights. They lie in the J⁻ part of the G1 columns and tend to 0 at the boundary of the weight
@@ -533,6 +539,68 @@ kernel, its gap lies between 0.37 and 1 times the bound of Corollary S, and F �
 directions. As s_h → 0 the k − 2 lowest eigenvalues are (s_h/(2|s|))κ_i + o(s_h), with κ_i ∈ [0.90, 0.97] in our
 examples. Positivity of the corresponding (k − 2) × (k − 2) first-order matrix, which depends only on the other k − 1
 copies, is a necessary condition; we have not proved it.
+
+## 3f. The middle conditions at four copies
+
+At k = 4 the conditions (R∞)_{−1}, (R∞)_0, (R∞)_3 and (R∞)_4 hold for all weights (Proposition M, Theorem B0, Theorem
+U3₁ with the results of Section 3, Theorem K), and the type II blocks of every (R∞)_j are positive definite
+(Proposition T2′). What remains are the letter-1 and type I blocks of (R∞)_1 and (R∞)_2. Code, logs and notes are in
+`code/middle_k4/`.
+
+**Reductions.**
+- *Permutations.* A permutation of the copies, applied to rows and columns at once and with the weights permuted
+  along, maps every torus block of (R∞)_j to a torus block of (R∞)_j. So a certificate symbolic in all four weights,
+  for one block of each orbit, covers the whole orbit. The representatives are T = ∅ (the letter-1 block), {0},
+  {0, 1} and, for j = 2, {0, 1, 2}.
+- *Coordinates.* In the rescaled basis of `code/ylib.py` (each state divided by ∏_t w_t^{N_t}, N_t the number of
+  letters 1 at copy t in row and column) every entry is a rational function of the squared weights s_t. It is
+  homogeneous of degree j + 1 − |T|, so s_0 = 1 loses nothing.
+- *Gauge.* The known kernel vectors are p ⊗ y for every column y of the block (in these coordinates, the all-ones
+  vector on the states (1@r, y)), and, for the letter-1 block of (R∞)_2, vac ⊗ J⁻|1111⟩ (Proposition K2). Delete the
+  coordinates (1@1, y), and for that block also (vac, hole 0). Each known kernel vector is the only one that is
+  nonzero on its deleted coordinate. So the block is ⪰ 0 with kernel exactly the span of the known vectors iff the
+  remaining principal submatrix is positive definite.
+
+**Certificate.** Let N = den·M, where M is the gauge-fixed block over Q(s_1, s_2, s_3) and den is the lcm of the
+denominators of its entries.
+- Fraction-free (Bareiss) elimination of N over Z[s_1, s_2, s_3] produces every leading principal minor exactly.
+- The irreducible factors of den all have only positive coefficients. They are divided out exactly after every step.
+- Then D_r(M) = core_r · ∏ f_i^{x_ir − rE_i}/cst^r.
+
+In every certified block, every core has only positive coefficients. So every leading principal minor is positive on
+the open orthant, and Sylvester's criterion applies. This is exact on the whole open orthant, as Corollary S
+requires: the minors may tend to 0 at its boundary.
+
+Checks:
+- every D_r is compared with a direct determinant at a random integer point;
+- the certified minors agree with minors of the block built directly over Q, at four rational points per block;
+- the symbolic blocks agree exactly with the point builder, and with the dense construction from M, V_p and D_p in
+  floating point;
+- with B replaced by (1 + 1/1000)B, every block fails, with an explicit rational witness.
+
+| j | T | blocks | size → gauge-fixed | kernel (exactly) | cores: largest degree, most terms | status |
+|---|---|---|---|---|---|---|
+| 1 | ∅ | 1 | 22 → 18 | p ⊗ \|1@c⟩ | 93, 45 335 | proved |
+| 1 | {t} | 4 | 11 → 10 | p ⊗ \|2@t⟩ | 62, 27 536 | proved |
+| 1 | {t, t′} | 6 | 3 | none | 22, 2 296 | proved |
+| 2 | ∅ | 1 | 28 → 21 | p ⊗ (letter-1 part of H_2) ⊕ span(vac ⊗ J⁻\|1111⟩) | 121, 47 905 | proved |
+| 2 | {t} | 4 | 21 → 18 | expected p ⊗ \|2@t 1@c⟩ | | open (positive definite after the gauge at 33 rational weight vectors, exact) |
+| 2 | {t, t′} | 6 | 12 → 11 | p ⊗ \|2@t 2@t′⟩ | 79, 59 548 | proved |
+| 2 | {t, t′, t″} | 4 | 4 | none | 31, 5 980 | proved |
+
+**Theorem A4 ((R∞)_1 at four copies).** For k = 4 and every positive weight vector, (R∞)_1 holds, and its kernel is
+exactly p ⊗ H_1.
+
+**Theorem B4.** For k = 4 and every positive weight vector, every block of (R∞)_2 except the type I blocks with
+|T| = 1 is ⪰ 0 with the kernel listed in the table. In particular, the letter-1 block of Section 3e holds at four
+copies, with kernel exactly p ⊗ (letter-1 part of H_2) ⊕ span(vac ⊗ J⁻|1111⟩).
+
+*Proofs (computer-assisted, exact).* Type II blocks by Proposition T2′; the others by the reductions and the
+certificate above, one representative per orbit. ∎
+
+If the four remaining blocks are ⪰ 0, then all of (R∞) holds at four copies. By Lemma 13 and the remark on (R2) in
+`single-excitation-range/`, Conjecture 12 then holds for every single excitation supported on at most four copies.
+We do not claim this yet.
 
 ## 4. Equal weights, every k
 
@@ -659,6 +727,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `typeI_u2/` (`run_all.sh`, notes in `typeI_u2/NOTES.md`) | Theorem C and the reduction before it: the closed form of every type I block (exactly against the builder, k = 3, 4, 5), the structure facts, the splitting formulas, the hard-part lemma, Φ1, every per-coordinate bound at 200 rational configurations, the chain at 32 points, exact pivots at 33 configurations, the Bernstein certificates of (I), (II), (III), negative controls |
 | `typeI_G_u3/` (`run_all.sh`, notes in `typeI_G_u3/NOTES.md`) | Theorem U3₁: the exact Schur complement for u = 3, m = 1 over Q(s_0, …, s_3) and its agreement with direct elimination, the leading minors with factor stripping and expansion checks, the coefficient-sign certificate, the Z-matrix certificate, negative controls; the same minor certificate for (u, m) = (1, 1), (2, 1), (1, 2), (2, 2), (1, 3); numerical sweeps behind Conjectures P and M |
 | `typeI_G_u2/` (`run_all.sh`, notes in `typeI_G_u2/NOTES.md`) | Theorem U2: the exact symbolic Schur complement for u = 2, its agreement with direct elimination (m = 1, …, 5), the polynomial reductions, the blow-up charts and Bernstein certificates of (A_2) and (B_2), negative controls |
+| `middle_k4/` (`run_all.sh`, notes in `middle_k4/NOTES.md`) | Section 3f: the torus blocks of (R∞)_1 and (R∞)_2 at k = 4 over Q(s_1, s_2, s_3), the known kernels and the gauge, the Bareiss leading-minor certificates, minors against direct determinants at rational points, symbolic blocks against the point builder and the dense construction, negative controls |
 | `middle_k2/` (`run_all.sh`, notes in `middle_k2/NOTES.md`) | Section 3e: the closed form of the letter-1 block of (R∞)_{k−2} against a direct construction (k = 4, 5), Lemmas R1, J, W, BJ and Proposition S exactly (k = 4, 5, 6), and a numerical sweep (k = 4, …, 7) |
 | `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |
 | `check_bottom_condition.py`, `c0_interval.py` | Theorem B0: closed form against a direct construction (k ≤ 5), the letter-2 blocks, the reduction to (C0), the bound chains at random points, and the two reduced inequalities in interval arithmetic |

@@ -1,0 +1,66 @@
+  dense vs exact, s = ['32/13', '4/13', '7/13', '10/13'], j = 1, T = (): max deviation 1.1e-16
+  dense vs exact, s = ['32/13', '4/13', '7/13', '10/13'], j = 1, T = (0,): max deviation 2.8e-17
+  dense vs exact, s = ['32/13', '4/13', '7/13', '10/13'], j = 1, T = (0, 1): max deviation 2.8e-17
+  dense vs exact, s = ['32/13', '4/13', '7/13', '10/13'], j = 2, T = (): max deviation 1.1e-16
+  dense vs exact, s = ['32/13', '4/13', '7/13', '10/13'], j = 2, T = (0,): max deviation 5.6e-17
+  dense vs exact, s = ['32/13', '4/13', '7/13', '10/13'], j = 2, T = (0, 1): max deviation 5.6e-17
+  dense vs exact, s = ['32/13', '4/13', '7/13', '10/13'], j = 2, T = (0, 1, 2): max deviation 0.0e+00
+  dense vs exact, s = ['8/13', '32/13', '34/13', '23/13'], j = 1, T = (): max deviation 2.2e-16
+  dense vs exact, s = ['8/13', '32/13', '34/13', '23/13'], j = 1, T = (0,): max deviation 5.6e-17
+  dense vs exact, s = ['8/13', '32/13', '34/13', '23/13'], j = 1, T = (0, 1): max deviation 1.4e-17
+  dense vs exact, s = ['8/13', '32/13', '34/13', '23/13'], j = 2, T = (): max deviation 8.9e-16
+  dense vs exact, s = ['8/13', '32/13', '34/13', '23/13'], j = 2, T = (0,): max deviation 4.4e-16
+  dense vs exact, s = ['8/13', '32/13', '34/13', '23/13'], j = 2, T = (0, 1): max deviation 2.2e-16
+  dense vs exact, s = ['8/13', '32/13', '34/13', '23/13'], j = 2, T = (0, 1, 2): max deviation 2.8e-17
+  dense vs exact, s = ['2/13', '4/13', '1', '17/13'], j = 1, T = (): max deviation 1.1e-16
+  dense vs exact, s = ['2/13', '4/13', '1', '17/13'], j = 1, T = (0,): max deviation 5.6e-17
+  dense vs exact, s = ['2/13', '4/13', '1', '17/13'], j = 1, T = (0, 1): max deviation 1.4e-17
+  dense vs exact, s = ['2/13', '4/13', '1', '17/13'], j = 2, T = (): max deviation 4.2e-17
+  dense vs exact, s = ['2/13', '4/13', '1', '17/13'], j = 2, T = (0,): max deviation 1.1e-16
+  dense vs exact, s = ['2/13', '4/13', '1', '17/13'], j = 2, T = (0, 1): max deviation 1.1e-16
+  dense vs exact, s = ['2/13', '4/13', '1', '17/13'], j = 2, T = (0, 1, 2): max deviation 2.8e-17
+(1) done [0.3s]
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/5', '7/47', '26/31'], j = 1, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/5', '7/47', '26/31'], j = 1, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/5', '7/47', '26/31'], j = 1, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/5', '7/47', '26/31'], j = 2, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/5', '7/47', '26/31'], j = 2, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/5', '7/47', '26/31'], j = 2, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/5', '7/47', '26/31'], j = 2, T = (0, 1, 2): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '5/3', '5/2', '13/18'], j = 1, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '5/3', '5/2', '13/18'], j = 1, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '5/3', '5/2', '13/18'], j = 1, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '5/3', '5/2', '13/18'], j = 2, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '5/3', '5/2', '13/18'], j = 2, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '5/3', '5/2', '13/18'], j = 2, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '5/3', '5/2', '13/18'], j = 2, T = (0, 1, 2): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '19/49', '4/15', '34/35'], j = 1, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '19/49', '4/15', '34/35'], j = 1, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '19/49', '4/15', '34/35'], j = 1, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '19/49', '4/15', '34/35'], j = 2, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '19/49', '4/15', '34/35'], j = 2, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '19/49', '4/15', '34/35'], j = 2, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '19/49', '4/15', '34/35'], j = 2, T = (0, 1, 2): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/3', '25/6', '7/17'], j = 1, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/3', '25/6', '7/17'], j = 1, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/3', '25/6', '7/17'], j = 1, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/3', '25/6', '7/17'], j = 2, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/3', '25/6', '7/17'], j = 2, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/3', '25/6', '7/17'], j = 2, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['1', '4/3', '25/6', '7/17'], j = 2, T = (0, 1, 2): True
+  symbolic (s0 = 1) vs exact point builder, s = ['5/2', '42/17', '18/13', '11/20'], j = 1, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['5/2', '42/17', '18/13', '11/20'], j = 1, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['5/2', '42/17', '18/13', '11/20'], j = 1, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['5/2', '42/17', '18/13', '11/20'], j = 2, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['5/2', '42/17', '18/13', '11/20'], j = 2, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['5/2', '42/17', '18/13', '11/20'], j = 2, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['5/2', '42/17', '18/13', '11/20'], j = 2, T = (0, 1, 2): True
+  symbolic (s0 = 1) vs exact point builder, s = ['6/7', '2/13', '22/43', '25/33'], j = 1, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['6/7', '2/13', '22/43', '25/33'], j = 1, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['6/7', '2/13', '22/43', '25/33'], j = 1, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['6/7', '2/13', '22/43', '25/33'], j = 2, T = (): True
+  symbolic (s0 = 1) vs exact point builder, s = ['6/7', '2/13', '22/43', '25/33'], j = 2, T = (0,): True
+  symbolic (s0 = 1) vs exact point builder, s = ['6/7', '2/13', '22/43', '25/33'], j = 2, T = (0, 1): True
+  symbolic (s0 = 1) vs exact point builder, s = ['6/7', '2/13', '22/43', '25/33'], j = 2, T = (0, 1, 2): True
+time 1.1s
+PASS
