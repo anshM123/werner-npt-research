@@ -219,7 +219,8 @@ contains p, with any co-range. Call such p a universal anchor. Y_p always vanish
 
 At n = 4, random vectors stay universal (gap 0.045), W is not (−0.0149), and GHZ is universal with a small gap
 (0.0014). At n = 5 (matrix-free Lanczos, tolerance 1e−5), two random real vectors (Gaussian entries, so uniform on
-the real unit sphere; not complex Haar samples) are universal with gaps 0.0267 and 0.0268, the GHZ vector Σ_a |aaaaa⟩ is universal with gap 0.0217, and the Dicke vector with two letters 1 is not
+the real unit sphere; not complex Haar samples) are universal with gaps 0.0267 and 0.0268, a complex Haar-random
+vector is universal with gap 0.0270, the GHZ vector Σ_a |aaaaa⟩ is universal with gap 0.0217, and the Dicke vector with two letters 1 is not
 (−0.131).
 
 **Two exact facts.** Put A = (M^{⊗n})^Γ and T_p = A^{−1/2} R_p^Γ A^{−1/2}, so that p is universal exactly when

@@ -1,0 +1,3 @@
+closed forms loaded and converted (0.6 s)
+exact comparison: 25 weight vectors, m = 1..7 (+3 extreme), 369 2x2 blocks, Phi_qq = kappa > 0 checked (3.5 s)
+PASS

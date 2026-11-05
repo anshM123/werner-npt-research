@@ -1,0 +1,5 @@
+max ||Ghat_tt'||_F S_T/sqrt(s_t s_t') = 0.2831 (proved <= 0.4)
+min lambda_min(Ghat_tt)/(1 - s_t/S_T)  = 0.7500 (proved > 0.4)
+max weighted dominance ratio           = 0.2902 (proved < 1)
+min eigenvalue of G                    = 8.165e-06 (proved > 0)
+PASS

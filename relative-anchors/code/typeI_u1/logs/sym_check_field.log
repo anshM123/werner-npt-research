@@ -1,0 +1,4 @@
+m = 1: Phi_qq formula and 1 blocks (t, u in [1]) identical as rational functions: True (0.1 s)
+m = 2: Phi_qq formula and 4 blocks (t, u in [1, 2]) identical as rational functions: True (2.5 s)
+m = 3: Phi_qq formula and 9 blocks (t, u in [1, 2, 3]) identical as rational functions: True (30.9 s)
+PASS

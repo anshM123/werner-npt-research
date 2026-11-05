@@ -1,0 +1,7 @@
+FA degrees (12, 12, 22) terms 1794
+FB1 degrees (7, 8) terms 51
+FB2 degrees (14, 16) terms 177
+closed forms homogeneous with the stated degrees (normalisation S_T = 1 legitimate): True
+E3 = 4 det E_tt' (S = 1): True
+built and checked (23.9 s)
+PASS

@@ -1,0 +1,6 @@
+(1) FA chart I: vertex values and interior reconstruction exact: True; min/max Bernstein coefficient 1.488e-07
+    Duffy map exact on random points: True
+(2) control H = 7/25, FA: certificate FAILED as it must (depth); value at the test point -4.8525e+04 (must be < 0)
+(2) control H = 4/5, FB2: certificate FAILED as it must (depth); value at the test point -6.8473e+03 (must be < 0)
+time 37.4 s
+PASS

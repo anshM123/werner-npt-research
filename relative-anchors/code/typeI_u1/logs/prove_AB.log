@@ -1,0 +1,15 @@
+H = 2/5
+(B) FB1: degrees (s, sig) = (7, 8), 51 terms
+(B) FB1 chart I: certified {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0]}; 72 Bernstein coefficients on the root box, 0 zero, smallest positive / largest = 2.66e-03 (0.0 s)
+(B) FB1 chart II: certified {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0]}; 72 Bernstein coefficients on the root box, 0 zero, smallest positive / largest = 1.42e-03 (0.0 s)
+(B) FB2: degrees (s, sig) = (14, 16), 177 terms
+(B) FB2 chart I [corner rule at (s, sig) = (1, 0)]: certified {'boxes': 1, 'corner_boxes': 1, 'maxL': [0, 0]}; 255 Bernstein coefficients on the root box, 1 zero, smallest positive / largest = 5.00e-07 (0.0 s)
+(B) FB2 chart II: certified {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0]}; 255 Bernstein coefficients on the root box, 0 zero, smallest positive / largest = 1.56e-06 (0.0 s)
+(B) FB2 at (s, sig) = (1 - e, sig): constant term 0, linear part 10368/5 e + 576 sig
+(A) FA after the triangle map: degrees (a, b, x) = (18, 12, 22), 2949 terms
+(A) FA chart I: certified {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0]}; 5681 Bernstein coefficients on the root box, 0 zero, smallest positive / largest = 1.49e-07 (0.0 s)
+(A) FA chart II: certified {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0]}; 5681 Bernstein coefficients on the root box, 0 zero, smallest positive / largest = 4.13e-09 (0.0 s)
+(D) E3 chart I: certified {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0]}; 64 Bernstein coefficients on the root box, 0 zero, smallest positive / largest = 6.62e-02 (0.0 s)
+(D) E3 chart II: certified {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0]}; 64 Bernstein coefficients on the root box, 0 zero, smallest positive / largest = 6.62e-02 (0.0 s)
+total 0.7 s
+PASS

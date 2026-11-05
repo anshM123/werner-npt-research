@@ -17,8 +17,9 @@ This folder collects what we can prove about the group conditions for every k.
   - The two extreme conditions hold: (R∞)_{−1} (Proposition M) and (R∞)_k, the latter with kernel exactly p ⊗ H_k and
     an explicit gap (Theorem K).
   - (R∞)_{k−1} holds on its letter-1 block (Theorem T), on every block in which one copy carries the letter 2 in row
-    and column (Proposition T2), and on the block in which every copy carries one letter 2 (Proposition U0). Each
-    remaining (type I) block reduces exactly to a smaller matrix (Remark after Proposition U0).
+    and column (Proposition T2), on the block in which every copy carries one letter 2 (Proposition U0), and on every
+    block in which all copies but one carry one letter 2 (Proposition U1). Each remaining (type I) block reduces exactly
+    to a smaller matrix (Remark after Proposition U0).
   - (R∞)_{k−2} has the explicit kernel vector vac ⊗ J⁻|1…1⟩ (Proposition K2).
   - (R∞)_0 holds completely for k ≥ 3, with kernel exactly p ⊗ H_0 (Theorem B0, an algebraic proof).
   - In every (R∞)_j, every block in which one copy carries the letter 2 in row and column is positive definite, with
@@ -40,7 +41,7 @@ single-copy excitation, all ‖x_t‖ equal), for every finite set G of copies. 
 (Local unitaries fixing |0⟩ bring such a vector to Σ_{t∈G} |1_t⟩.)
 
 **Open.**
-- For general weights: the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 1 (for k ≥ 5), and the letter-1 and type I
+- For general weights: the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 2 (for k ≥ 5), and the letter-1 and type I
   blocks of (R∞)_j for 1 ≤ j ≤ k − 2 (for k ≥ 4; k = 4 is being certified).
 
 Nothing here is refereed. The endpoint problem itself is open.
@@ -204,7 +205,33 @@ the states P_{t,h} with t ∈ T is
 Indeed K acts as ½E_0E^{−1} on the direction of w_T and as ½ on its complement, and E_0 ⪰ ½s_U. So these mu
 coordinates can be eliminated exactly. The u kernel vectors p ⊗ f_h survive the elimination and are removed by
 deleting one coordinate P_{r_0,h} (r_0 ∈ U fixed) for each h. The block is then ⪰ 0 iff an explicit matrix of size
-u(k − 1) + m + 1 is ⪰ 0. We have not proved that it is.
+u(k − 1) + m + 1 is ⪰ 0. We have not proved that it is in general; for u = 1 it is Proposition U1.
+
+**Proposition U1.** For every k ≥ 2 and every positive weight vector, every type I block of (R∞)_{k−1} with |U| = 1
+(all copies but one carry one letter 2) is ⪰ 0, with kernel exactly p ⊗ f_0.
+
+*Proof (computer-assisted, `code/typeI_u1/`, exact arithmetic).* Let U = {0}, σ = s_0, T = {1, …, m} (k = m + 1) and
+S_T = Σ_{t∈T} s_t.
+1. **Reduction.** Put the forced kernel coordinate x_0 to zero and eliminate the P_{t,0} (t ∈ T) with the explicit K^{−1}
+   of the Remark. What is left is an explicit form Φ(ρ, ζ, q) in the coordinates of R_t, Z_{t,0} and Q, and the block
+   is ⪰ 0 with kernel exactly p ⊗ f_0 iff Φ ≻ 0. Its q-entry is Φ_qq = (3S_T² + 2S_Tσ + σ²)/(2(S_T + σ/2)²) > 0;
+   eliminating q leaves a 2m × 2m matrix G with 2 × 2 blocks G_tt, G_tt′ in the coordinates (ρ_t, ζ_t).
+2. **Closed forms.** Every block depends only on (s_t, s_t′, σ, S_T): the other copies enter Φ only through S_T. The
+   blocks are explicit rational functions (homogeneous of degree 0), checked as identities of rational functions for
+   m ≤ 4 with S_T free, and exactly at 25 weight vectors with m ≤ 7.
+3. **Rescaling and a weighted Gershgorin bound.** Rescale ζ_t by c = √(1 + σ/S_T) and call the result Ĝ. If
+   λ_min(Ĝ_tt) > Σ_{t′≠t} ‖Ĝ_tt′‖ √(s_t′/s_t) for every t, then Ĝ ≻ 0 (weighted block Gershgorin with d_t = √s_t). This
+   follows from two inequalities with H = 2/5:
+   - (A) ‖Ĝ_tt′‖_F ≤ H √(s_t s_t′)/S_T for t ≠ t′;
+   - (B) λ_min(Ĝ_tt) > H (1 − s_t/S_T).
+   Indeed, (A) gives Σ_{t′≠t} ‖Ĝ_tt′‖ √(s_t′/s_t) ≤ (H/S_T) Σ_{t′≠t} s_t′ = H(1 − s_t/S_T).
+4. **Certificates.** After normalising S_T = 1, (A) and (B) are polynomial inequalities in (s_t, s_t′, σ) and (s_t, σ)
+   (degrees up to 22). On compactified domains (the triangle s_t + s_t′ ≤ 1 mapped to the unit square; σ ∈ [0, 1] and
+   σ = 1/x for σ ≥ 1), all tensor Bernstein coefficients are positive, except at one vertex (s_t = S_T, σ = 0) that lies
+   outside the domain of (B). ∎
+
+Numerically sup ‖Ĝ_tt′‖_F S_T/√(s_t s_t′) ≈ 0.283 and inf λ_min(Ĝ_tt)/(1 − s_t/S_T) = 3/4, so H = 2/5 has room on
+both sides; the certificate fails, as it must, for H = 7/25 and for H = 4/5.
 
 **Proposition K2.** The vector vac ⊗ J⁻|1…1⟩ lies in the kernel of (R∞)_{k−2}.
 
@@ -492,6 +519,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `orbit2.py`, `check_orbit2.py` | Orbit calculus for the case I letter-2 forms (numeric and over Q(q0, t, i, τ)); agreement with explicit vectors for every case I form with k ≤ 10 |
 | `prove_letter2.py`, `prove_letter2_split2.py`, `prove_letter2_split_tau.py`, `prove_tau_loop.py`, `prove_fixed_loop.py`, `sanity_generic.py` | Theorem E3: the symbolic families, the irrep split of the generic family, the fixed-parameter families τ = 1 and t = 4, 5, and the window and sample-point checks of the generic family |
 | `num_generic.py`, `num_letter2.py` | Exact elimination of the corner forms for 14 ≤ k ≤ 38, and of every case I form for k ≤ 16 |
+| `typeI_u1/` (`run_all.sh`) | Proposition U1: the closed forms against the reduced form (exactly at rational points, and as identities of rational functions for m ≤ 4), the polynomials of (A) and (B), their Bernstein certificates, end-to-end checks, negative controls |
 | `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |
 | `check_bottom_condition.py`, `c0_interval.py` | Theorem B0: closed form against a direct construction (k ≤ 5), the letter-2 blocks, the reduction to (C0), the bound chains at random points, and the two reduced inequalities in interval arithmetic |
 | `check_bottom_algebraic.py` | Theorem B0, algebraic proof: the identity E − D = G, the bound T ≤ G and the sum-of-squares identity exactly at rational points; the letter-2 estimate in SymPy; the bound L ≤ (2 + 2γ)S at random complex points |

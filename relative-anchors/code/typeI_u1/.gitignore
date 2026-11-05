@@ -1,0 +1,5 @@
+gstruct.pkl
+polys.pkl
+polys.txt
+__pycache__/
+*.pkl
