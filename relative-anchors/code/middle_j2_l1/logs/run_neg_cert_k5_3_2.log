@@ -1,0 +1,26 @@
+letter-1 block of (R_inf)_2, k = 5, sizes (u0, u1) = (3, 2), squared weights 1 and q, bscale 1001/1000
+  states: 50 P + 10 Q; inverses of Ehat_2, Ehat_3 over Q(q) [0.0s]
+  part ((3,), (2,)): dim 1, mult in M_P 9, in K 3, gauge-fixed size 6, Q-vectors 3
+  part ((3,), (1, 1)): dim 1, mult in M_P 6, in K 1, gauge-fixed size 5, Q-vectors 1
+  part ((2, 1), (2,)): dim 2, mult in M_P 10, in K 2, gauge-fixed size 8, Q-vectors 2
+  part ((2, 1), (1, 1)): dim 2, mult in M_P 6, in K 1, gauge-fixed size 5, Q-vectors 1
+  part ((1, 1, 1), (2,)): dim 1, mult in M_P 2, in K 0, gauge-fixed size 2, Q-vectors 0
+  part ((1, 1, 1), (1, 1)): dim 1, mult in M_P 1, in K 0, gauge-fixed size 1, Q-vectors 0
+  reduced forms built [0.1s]
+  dimension counts: P 50 = 50, K 10 = 10, Q 10 = 10, mult = kernel + gauge-fixed in every part: True
+  part ((3,), (2,)) (dim 1): gauge-fixed S of size 6, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): False [0.2s]
+     minor 1: num deg 22, den deg 20: num: value at q = 1 is -20792680359065833113/16375808; den: value at q = 1 is -574366187418463125/2046976
+  part ((3,), (1, 1)) (dim 1): gauge-fixed S of size 5, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): False [0.2s]
+     minor 1: num deg 17, den deg 15: num: Sturm: 2 root(s) in (0, inf); den: Sturm: 1 root(s) in (0, inf)
+  part ((2, 1), (2,)) (dim 2): gauge-fixed S of size 8, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): False [0.2s]
+     minor 1: num deg 15, den deg 15: num: value at q = 1 is -532941815917413/102400; den: value at q = 1 is -1705236212925/512
+  part ((2, 1), (1, 1)) (dim 2): gauge-fixed S of size 5, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): False [0.2s]
+     minor 1: num deg 14, den deg 12: num: Sturm: 1 root(s) in (0, inf); den: nonnegative coefficients
+  part ((1, 1, 1), (2,)) (dim 1): gauge-fixed S of size 2, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): True [0.2s]
+     minor 1: num deg 4, den deg 4: num (4, nonnegative coefficients); den (4, nonnegative coefficients)
+     minor 2: num deg 5, den deg 4: num (5, nonnegative coefficients); den (4, nonnegative coefficients)
+  part ((1, 1, 1), (1, 1)) (dim 1): gauge-fixed S of size 1, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): True [0.2s]
+     minor 1: num deg 3, den deg 2: num (3, nonnegative coefficients); den (2, nonnegative coefficients)
+  first failing minor: part ((3,), (2,)), minor 1; nonpositive at q = 668379765/890717918807
+time 0.2s
+FAIL

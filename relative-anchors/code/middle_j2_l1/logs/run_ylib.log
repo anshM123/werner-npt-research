@@ -1,0 +1,13 @@
+(a) k=5 s=['1', '4', '1', '4', '4']: 2^(k-2) ylib = l2block: True [0.1s]
+(a) k=5 s=['1/4', '9', '25/9', '1', '4']: 2^(k-2) ylib = l2block: True [0.2s]
+(a) k=6 s=['1/9', '1', '1/9', '1', '1', '1/9']: 2^(k-2) ylib = l2block: True [0.8s]
+(b) k=5 (u0, u1) = (5, 0), q = 1: symbolic S of every part = projection of the ylib Schur complement, e.K annihilated: True [1.0s]
+(b) k=5 (u0, u1) = (4, 1), q = 4: symbolic S of every part = projection of the ylib Schur complement, e.K annihilated: True [1.1s]
+(b) k=5 (u0, u1) = (3, 2), q = 4: symbolic S of every part = projection of the ylib Schur complement, e.K annihilated: True [1.3s]
+(b) k=5 (u0, u1) = (3, 2), q = 1/9: symbolic S of every part = projection of the ylib Schur complement, e.K annihilated: True [1.5s]
+(b) k=6 (u0, u1) = (6, 0), q = 1: symbolic S of every part = projection of the ylib Schur complement, e.K annihilated: True [2.3s]
+(b) k=6 (u0, u1) = (5, 1), q = 1/4: symbolic S of every part = projection of the ylib Schur complement, e.K annihilated: True [3.2s]
+(b) k=6 (u0, u1) = (4, 2), q = 9: symbolic S of every part = projection of the ylib Schur complement, e.K annihilated: True [4.2s]
+(b) k=6 (u0, u1) = (3, 3), q = 1/4: symbolic S of every part = projection of the ylib Schur complement, e.K annihilated: True [5.1s]
+(b) k=7 (u0, u1) = (4, 3), q = 4: symbolic S of every part = projection of the ylib Schur complement, e.K annihilated: True [10.2s]
+PASS

@@ -1,0 +1,9 @@
+run_crosscheck.sh started Thu Nov  5 16:03:08 EST 2026
+PASS  negative_controls  (python crosscheck.py N; 2 s)
+PASS  ylib  (python crosscheck.py B; 5 s)
+PASS  saved_forms  (python crosscheck.py C logs; 9 s)
+PASS  end_to_end_k5_k8  (python crosscheck.py A 5 8; 81 s)
+PASS  end_to_end_k9  (python crosscheck.py A 9 9; 218 s)
+PASS  end_to_end_k10  (python crosscheck.py A 10 10; 844 s)
+total 1160 s
+ALL PASS

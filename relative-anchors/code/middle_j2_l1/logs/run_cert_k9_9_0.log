@@ -1,0 +1,29 @@
+letter-1 block of (R_inf)_2, k = 9, sizes (u0, u1) = (9, 0), squared weights 1 and q, bscale 1
+  states: 324 P + 84 Q; inverses of Ehat_2, Ehat_3 over Q(q) [1.6s]
+  part ((9,), ()): dim 1, mult in M_P 2, in K 1, gauge-fixed size 1, Q-vectors 1
+  part ((8, 1), ()): dim 8, mult in M_P 4, in K 1, gauge-fixed size 3, Q-vectors 1
+  part ((7, 2), ()): dim 27, mult in M_P 3, in K 1, gauge-fixed size 2, Q-vectors 1
+  part ((7, 1, 1), ()): dim 28, mult in M_P 2, in K 0, gauge-fixed size 2, Q-vectors 0
+  part ((6, 3), ()): dim 48, mult in M_P 1, in K 0, gauge-fixed size 1, Q-vectors 1
+  part ((6, 2, 1), ()): dim 105, mult in M_P 1, in K 0, gauge-fixed size 1, Q-vectors 0
+  reduced forms built [3.8s]
+  kernel identities Y_PP 1_X = 0, Y_QP 1_X = 0 for all 36 pairs X, identically in q: True
+  dimension counts: P 324 = 324, K 36 = 36, Q 84 = 84, mult = kernel + gauge-fixed in every part: True
+  part ((9,), ()) (dim 1): gauge-fixed S of size 1, symmetric True, kernel (reduced) True; every leading minor > 0 on (0, inf): True [3.8s]
+     minor 1: num deg 0, den deg 0: num (0, nonnegative coefficients); den (0, nonnegative coefficients)
+  part ((8, 1), ()) (dim 8): gauge-fixed S of size 3, symmetric True, kernel (reduced) True; every leading minor > 0 on (0, inf): True [3.8s]
+     minor 1: num deg 0, den deg 0: num (0, nonnegative coefficients); den (0, nonnegative coefficients)
+     minor 2: num deg 0, den deg 0: num (0, nonnegative coefficients); den (0, nonnegative coefficients)
+     minor 3: num deg 0, den deg 0: num (0, nonnegative coefficients); den (0, nonnegative coefficients)
+  part ((7, 2), ()) (dim 27): gauge-fixed S of size 2, symmetric True, kernel (reduced) True; every leading minor > 0 on (0, inf): True [3.8s]
+     minor 1: num deg 0, den deg 0: num (0, nonnegative coefficients); den (0, nonnegative coefficients)
+     minor 2: num deg 0, den deg 0: num (0, nonnegative coefficients); den (0, nonnegative coefficients)
+  part ((7, 1, 1), ()) (dim 28): gauge-fixed S of size 2, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): True [3.8s]
+     minor 1: num deg 0, den deg 0: num (0, nonnegative coefficients); den (0, nonnegative coefficients)
+     minor 2: num deg 0, den deg 0: num (0, nonnegative coefficients); den (0, nonnegative coefficients)
+  part ((6, 3), ()) (dim 48): gauge-fixed S of size 1, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): True [3.8s]
+     minor 1: num deg 0, den deg 0: num (0, nonnegative coefficients); den (0, nonnegative coefficients)
+  part ((6, 2, 1), ()) (dim 105): gauge-fixed S of size 1, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): True [3.8s]
+     minor 1: num deg 0, den deg 0: num (0, nonnegative coefficients); den (0, nonnegative coefficients)
+time 3.8s
+PASS

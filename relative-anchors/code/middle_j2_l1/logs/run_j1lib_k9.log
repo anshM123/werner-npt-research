@@ -1,0 +1,6 @@
+k=9 (u0, u1) = (9, 0), q = 1: the certified S of all 6 parts = projections of the j1lib Schur complement, e.K annihilated, pivots > 0: True [32.2s]
+k=9 (u0, u1) = (8, 1), q = 1/9: the certified S of all 6 parts = projections of the j1lib Schur complement, e.K annihilated, pivots > 0: True [72.9s]
+k=9 (u0, u1) = (7, 2), q = 1/9: the certified S of all 10 parts = projections of the j1lib Schur complement, e.K annihilated, pivots > 0: True [115.4s]
+k=9 (u0, u1) = (6, 3), q = 1/9: the certified S of all 12 parts = projections of the j1lib Schur complement, e.K annihilated, pivots > 0: True [159.3s]
+k=9 (u0, u1) = (5, 4), q = 1/9: the certified S of all 13 parts = projections of the j1lib Schur complement, e.K annihilated, pivots > 0: True [203.0s]
+PASS

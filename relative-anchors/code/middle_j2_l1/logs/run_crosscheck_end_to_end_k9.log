@@ -1,0 +1,7 @@
+(A) k=9 (u0,u1)=(9,0) levels 000000000 w0=1 q=1: n=408, symmetric True, 36 kernel vectors M v = 0: True; gauge-fixed size 372 PD: True (round 1: strictly diagonally dominant, min relative margin 1) [32.4s]
+(A) k=9 (u0,u1)=(8,1) levels 100000000 w0=2/3 q=81/4: n=408, symmetric True, 36 kernel vectors M v = 0: True; gauge-fixed size 372 PD: True (round 1: strictly diagonally dominant, min relative margin 1) [38.7s]
+(A) k=9 (u0,u1)=(7,2) levels 001100000 w0=1 q=16/49: n=408, symmetric True, 36 kernel vectors M v = 0: True; gauge-fixed size 372 PD: True (round 1: strictly diagonally dominant, min relative margin 1) [46.3s]
+(A) k=9 (u0,u1)=(6,3) levels 100100001 w0=5/4 q=121/25: n=408, symmetric True, 36 kernel vectors M v = 0: True; gauge-fixed size 372 PD: True (round 1: strictly diagonally dominant, min relative margin 1) [49.6s]
+(A) k=9 (u0,u1)=(5,4) levels 000011011 w0=1 q=1/144: n=408, symmetric True, 36 kernel vectors M v = 0: True; gauge-fixed size 372 PD: True (round 1: strictly diagonally dominant, min relative margin 1) [50.2s]
+time 217.3s
+PASS

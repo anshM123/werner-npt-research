@@ -1,0 +1,8 @@
+k=7 (u0, u1) = (7, 0), q = 1: the certified S of all 6 parts = projections of the j1lib Schur complement, e.K annihilated, pivots > 0: True [2.7s]
+k=7 (u0, u1) = (6, 1), q = 1/9: the certified S of all 6 parts = projections of the j1lib Schur complement, e.K annihilated, pivots > 0: True [5.8s]
+k=7 (u0, u1) = (6, 1), q = 1/4: spectrum of the Schur complement (147 eigenvalues, 21 zero) = union of the parts with multiplicities: True [8.7s]
+k=7 (u0, u1) = (5, 2), q = 1/9: the certified S of all 9 parts = projections of the j1lib Schur complement, e.K annihilated, pivots > 0: True [11.9s]
+k=7 (u0, u1) = (5, 2), q = 1/4: spectrum of the Schur complement (147 eigenvalues, 21 zero) = union of the parts with multiplicities: True [15.0s]
+k=7 (u0, u1) = (4, 3), q = 1/9: the certified S of all 10 parts = projections of the j1lib Schur complement, e.K annihilated, pivots > 0: True [18.3s]
+k=7 (u0, u1) = (4, 3), q = 1/4: spectrum of the Schur complement (147 eigenvalues, 21 zero) = union of the parts with multiplicities: True [21.5s]
+PASS

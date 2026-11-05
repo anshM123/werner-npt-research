@@ -1,0 +1,6 @@
+k=8 (u0, u1) = (8, 0), q = 1: symbolic S of every part = projection of the j1lib Schur complement, e.K annihilated, pivots > 0: True [14.3s]
+k=8 (u0, u1) = (7, 1), q = 1/9: symbolic S of every part = projection of the j1lib Schur complement, e.K annihilated, pivots > 0: True [36.2s]
+k=8 (u0, u1) = (6, 2), q = 1/9: symbolic S of every part = projection of the j1lib Schur complement, e.K annihilated, pivots > 0: True [61.2s]
+k=8 (u0, u1) = (5, 3), q = 1/9: symbolic S of every part = projection of the j1lib Schur complement, e.K annihilated, pivots > 0: True [87.4s]
+k=8 (u0, u1) = (4, 4), q = 1/9: symbolic S of every part = projection of the j1lib Schur complement, e.K annihilated, pivots > 0: True [113.3s]
+PASS

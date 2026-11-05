@@ -1,0 +1,30 @@
+(C) cert_k10_10_0.pkl: 6 parts, sum dim * size = 405 = (k-1) C(k,2) = 405; symmetric, hook dimensions, PD at 1 values of q: True
+(C) cert_k10_5_5.pkl: 14 parts, sum dim * size = 405 = (k-1) C(k,2) = 405; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k10_6_4.pkl: 14 parts, sum dim * size = 405 = (k-1) C(k,2) = 405; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k10_7_3.pkl: 12 parts, sum dim * size = 405 = (k-1) C(k,2) = 405; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k10_8_2.pkl: 10 parts, sum dim * size = 405 = (k-1) C(k,2) = 405; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k10_9_1.pkl: 6 parts, sum dim * size = 405 = (k-1) C(k,2) = 405; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k5_3_2.pkl: 6 parts, sum dim * size = 40 = (k-1) C(k,2) = 40; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k5_4_1.pkl: 4 parts, sum dim * size = 40 = (k-1) C(k,2) = 40; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k5_5_0.pkl: 5 parts, sum dim * size = 40 = (k-1) C(k,2) = 40; symmetric, hook dimensions, PD at 1 values of q: True
+(C) cert_k6_3_3.pkl: 8 parts, sum dim * size = 75 = (k-1) C(k,2) = 75; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k6_4_2.pkl: 8 parts, sum dim * size = 75 = (k-1) C(k,2) = 75; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k6_5_1.pkl: 5 parts, sum dim * size = 75 = (k-1) C(k,2) = 75; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k6_6_0.pkl: 6 parts, sum dim * size = 75 = (k-1) C(k,2) = 75; symmetric, hook dimensions, PD at 1 values of q: True
+(C) cert_k7_4_3.pkl: 10 parts, sum dim * size = 126 = (k-1) C(k,2) = 126; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k7_5_2.pkl: 9 parts, sum dim * size = 126 = (k-1) C(k,2) = 126; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k7_6_1.pkl: 6 parts, sum dim * size = 126 = (k-1) C(k,2) = 126; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k7_7_0.pkl: 6 parts, sum dim * size = 126 = (k-1) C(k,2) = 126; symmetric, hook dimensions, PD at 1 values of q: True
+(C) cert_k8_4_4.pkl: 12 parts, sum dim * size = 196 = (k-1) C(k,2) = 196; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k8_5_3.pkl: 11 parts, sum dim * size = 196 = (k-1) C(k,2) = 196; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k8_6_2.pkl: 10 parts, sum dim * size = 196 = (k-1) C(k,2) = 196; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k8_7_1.pkl: 6 parts, sum dim * size = 196 = (k-1) C(k,2) = 196; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k8_8_0.pkl: 6 parts, sum dim * size = 196 = (k-1) C(k,2) = 196; symmetric, hook dimensions, PD at 1 values of q: True
+(C) cert_k9_5_4.pkl: 13 parts, sum dim * size = 288 = (k-1) C(k,2) = 288; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k9_6_3.pkl: 12 parts, sum dim * size = 288 = (k-1) C(k,2) = 288; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k9_7_2.pkl: 10 parts, sum dim * size = 288 = (k-1) C(k,2) = 288; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k9_8_1.pkl: 6 parts, sum dim * size = 288 = (k-1) C(k,2) = 288; symmetric, hook dimensions, PD at 31 values of q: True
+(C) cert_k9_9_0.pkl: 6 parts, sum dim * size = 288 = (k-1) C(k,2) = 288; symmetric, hook dimensions, PD at 1 values of q: True
+(C) all 27 size pairs with 5 <= k <= 10 present: True
+time 8.3s
+PASS

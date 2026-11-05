@@ -1,0 +1,22 @@
+letter-1 block of (R_inf)_2, k = 6, sizes (u0, u1) = (5, 1), squared weights 1 and q, bscale 1001/1000
+  states: 90 P + 20 Q; inverses of Ehat_2, Ehat_3 over Q(q) [0.1s]
+  part ((5,), (1,)): dim 1, mult in M_P 6, in K 2, gauge-fixed size 4, Q-vectors 2
+  part ((4, 1), (1,)): dim 4, mult in M_P 9, in K 2, gauge-fixed size 7, Q-vectors 2
+  part ((3, 2), (1,)): dim 5, mult in M_P 5, in K 1, gauge-fixed size 4, Q-vectors 2
+  part ((3, 1, 1), (1,)): dim 6, mult in M_P 3, in K 0, gauge-fixed size 3, Q-vectors 0
+  part ((2, 2, 1), (1,)): dim 5, mult in M_P 1, in K 0, gauge-fixed size 1, Q-vectors 0
+  reduced forms built [0.3s]
+  dimension counts: P 90 = 90, K 15 = 15, Q 20 = 20, mult = kernel + gauge-fixed in every part: True
+  part ((5,), (1,)) (dim 1): gauge-fixed S of size 4, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): False [0.4s]
+     minor 1: num deg 16, den deg 14: num: value at q = 1 is -18094481971845545448/625; den: value at q = 1 is -38430334296821376/5
+  part ((4, 1), (1,)) (dim 4): gauge-fixed S of size 7, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): False [0.4s]
+     minor 1: num deg 17, den deg 17: num: value at q = 1 is -14410315453580341534512/3125; den: value at q = 1 is -7541775098444111616/5
+  part ((3, 2), (1,)) (dim 5): gauge-fixed S of size 4, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): False [0.4s]
+     minor 1: num deg 13, den deg 13: num: value at q = 1 is -6511388554607395914/625; den: value at q = 1 is -582363863827200
+  part ((3, 1, 1), (1,)) (dim 6): gauge-fixed S of size 3, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): False [0.4s]
+     minor 1: num deg 5, den deg 5: num: Sturm: 1 root(s) in (0, inf); den: nonnegative coefficients
+  part ((2, 2, 1), (1,)) (dim 5): gauge-fixed S of size 1, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): True [0.4s]
+     minor 1: num deg 2, den deg 2: num (2, nonnegative coefficients); den (2, nonnegative coefficients)
+  first failing minor: part ((5,), (1,)), minor 1; nonpositive at q = 1000000
+time 0.4s
+FAIL

@@ -1,0 +1,8 @@
+(A) k=10 (u0,u1)=(10,0) levels 0000000000 w0=1 q=1: n=570, symmetric True, 45 kernel vectors M v = 0: True; gauge-fixed size 525 PD: True (round 1: strictly diagonally dominant, min relative margin 1) [101.6s]
+(A) k=10 (u0,u1)=(9,1) levels 0000000100 w0=2/3 q=36/25: n=570, symmetric True, 45 kernel vectors M v = 0: True; gauge-fixed size 525 PD: True (round 1: strictly diagonally dominant, min relative margin 1) [142.7s]
+(A) k=10 (u0,u1)=(8,2) levels 0011000000 w0=1 q=9/100: n=570, symmetric True, 45 kernel vectors M v = 0: True; gauge-fixed size 525 PD: True (round 1: strictly diagonally dominant, min relative margin 1) [146.6s]
+(A) k=10 (u0,u1)=(7,3) levels 0110001000 w0=5/4 q=9/16: n=570, symmetric True, 45 kernel vectors M v = 0: True; gauge-fixed size 525 PD: True (round 1: strictly diagonally dominant, min relative margin 1) [150.7s]
+(A) k=10 (u0,u1)=(6,4) levels 0101100010 w0=1 q=25/9: n=570, symmetric True, 45 kernel vectors M v = 0: True; gauge-fixed size 525 PD: True (round 1: strictly diagonally dominant, min relative margin 1) [155.7s]
+(A) k=10 (u0,u1)=(5,5) levels 0101111000 w0=1 q=4/25: n=570, symmetric True, 45 kernel vectors M v = 0: True; gauge-fixed size 525 PD: True (round 1: strictly diagonally dominant, min relative margin 1) [145.3s]
+time 842.6s
+PASS

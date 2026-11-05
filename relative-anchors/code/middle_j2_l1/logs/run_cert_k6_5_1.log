@@ -1,0 +1,36 @@
+letter-1 block of (R_inf)_2, k = 6, sizes (u0, u1) = (5, 1), squared weights 1 and q, bscale 1
+  states: 90 P + 20 Q; inverses of Ehat_2, Ehat_3 over Q(q) [0.1s]
+  part ((5,), (1,)): dim 1, mult in M_P 6, in K 2, gauge-fixed size 4, Q-vectors 2
+  part ((4, 1), (1,)): dim 4, mult in M_P 9, in K 2, gauge-fixed size 7, Q-vectors 2
+  part ((3, 2), (1,)): dim 5, mult in M_P 5, in K 1, gauge-fixed size 4, Q-vectors 2
+  part ((3, 1, 1), (1,)): dim 6, mult in M_P 3, in K 0, gauge-fixed size 3, Q-vectors 0
+  part ((2, 2, 1), (1,)): dim 5, mult in M_P 1, in K 0, gauge-fixed size 1, Q-vectors 0
+  reduced forms built [0.3s]
+  kernel identities Y_PP 1_X = 0, Y_QP 1_X = 0 for all 15 pairs X, identically in q: True
+  dimension counts: P 90 = 90, K 15 = 15, Q 20 = 20, mult = kernel + gauge-fixed in every part: True
+  part ((5,), (1,)) (dim 1): gauge-fixed S of size 4, symmetric True, kernel (reduced) True; every leading minor > 0 on (0, inf): True [0.3s]
+     minor 1: num deg 14, den deg 13: num (14, nonnegative coefficients); den (13, nonnegative coefficients)
+     minor 2: num deg 19, den deg 18: num (19, nonnegative coefficients); den (18, nonnegative coefficients)
+     minor 3: num deg 21, den deg 19: num (21, nonnegative coefficients); den (19, nonnegative coefficients)
+     minor 4: num deg 20, den deg 19: num (20, nonnegative coefficients); den (19, nonnegative coefficients)
+  part ((4, 1), (1,)) (dim 4): gauge-fixed S of size 7, symmetric True, kernel (reduced) True; every leading minor > 0 on (0, inf): True [0.4s]
+     minor 1: num deg 15, den deg 16: num (15, nonnegative coefficients); den (16, nonnegative coefficients)
+     minor 2: num deg 24, den deg 24: num (24, nonnegative coefficients); den (24, nonnegative coefficients)
+     minor 3: num deg 29, den deg 29: num (29, nonnegative coefficients); den (29, nonnegative coefficients)
+     minor 4: num deg 31, den deg 31: num (31, nonnegative coefficients); den (31, nonnegative coefficients)
+     minor 5: num deg 33, den deg 32: num (33, nonnegative coefficients); den (32, nonnegative coefficients)
+     minor 6: num deg 35, den deg 33: num (35, nonnegative coefficients); den (33, nonnegative coefficients)
+     minor 7: num deg 34, den deg 33: num (34, nonnegative coefficients); den (33, nonnegative coefficients)
+  part ((3, 2), (1,)) (dim 5): gauge-fixed S of size 4, symmetric True, kernel (reduced) True; every leading minor > 0 on (0, inf): True [0.4s]
+     minor 1: num deg 12, den deg 12: num (12, nonnegative coefficients); den (12, nonnegative coefficients)
+     minor 2: num deg 19, den deg 19: num (19, nonnegative coefficients); den (19, nonnegative coefficients)
+     minor 3: num deg 21, den deg 20: num (21, nonnegative coefficients); den (20, nonnegative coefficients)
+     minor 4: num deg 22, den deg 22: num (22, nonnegative coefficients); den (22, nonnegative coefficients)
+  part ((3, 1, 1), (1,)) (dim 6): gauge-fixed S of size 3, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): True [0.4s]
+     minor 1: num deg 4, den deg 5: num (4, nonnegative coefficients); den (5, nonnegative coefficients)
+     minor 2: num deg 6, den deg 7: num (6, nonnegative coefficients); den (7, nonnegative coefficients)
+     minor 3: num deg 7, den deg 7: num (7, nonnegative coefficients); den (7, nonnegative coefficients)
+  part ((2, 2, 1), (1,)) (dim 5): gauge-fixed S of size 1, symmetric True, kernel (reduced) -; every leading minor > 0 on (0, inf): True [0.4s]
+     minor 1: num deg 2, den deg 2: num (2, nonnegative coefficients); den (2, nonnegative coefficients)
+time 0.4s
+PASS
