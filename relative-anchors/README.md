@@ -21,7 +21,8 @@ This folder collects what we can prove about the group conditions for every k.
     block in which all copies but one carry one letter 2 (Proposition U1). On every remaining type I block, the part
     on the copies without a letter 2 is positive definite (Theorem C), so each such block is equivalent to a single
     Schur-complement condition G ≻ 0 on its letter-2 states. That condition holds when exactly two copies are free
-    of the letter 2 (Theorem U2). So (R∞)_{k−1} is open only on the type I blocks with at least three such copies.
+    of the letter 2 (Theorem U2), and for k = 4 also when three are (Theorem U3₁). So (R∞)_{k−1} holds completely
+    for k ≤ 4, and for k ≥ 5 it is open only on the type I blocks with at least three such copies.
   - (R∞)_{k−2} has the explicit kernel vector vac ⊗ J⁻|1…1⟩ (Proposition K2). On its letter-1 block the vacuum row
     eliminates exactly and the soft directions are known exactly; the gap there is at most min_h s_h/(2(|s| − s_h))
     (Section 3e), so a proof has to be exact to first order in the smallest weight.
@@ -45,9 +46,9 @@ single-copy excitation, all ‖x_t‖ equal), for every finite set G of copies. 
 (Local unitaries fixing |0⟩ bring such a vector to Σ_{t∈G} |1_t⟩.)
 
 **Open.**
-- For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 (|U| ≥ 3 and
-  |T| ≥ 1, so k ≥ 4), reduced to the condition G ≻ 0 of Theorem C; and the letter-1 and type I blocks of (R∞)_j for
-  1 ≤ j ≤ k − 2 (for k ≥ 4).
+- For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 and k ≥ 5
+  (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁), reduced to the condition G ≻ 0 of Theorem C; and the letter-1
+  and type I blocks of (R∞)_j for 1 ≤ j ≤ k − 2 (for k ≥ 4). At k = 4 these are the conditions (R∞)_1 and (R∞)_2.
 
 Nothing here is refereed. The endpoint problem itself is open.
 
@@ -298,6 +299,45 @@ extreme constants (5/18 and 3/4) as for u = 1, but its blocks have no closed for
 For |U| ≥ 3 the same pipeline applies in principle for each fixed u, but G then depends on w_U through more than
 one scalar functional, and no closed form uniform in u is known.
 
+**Theorem U3₁ (k = 4).** For k = 4, every type I block of (R∞)₃ with |U| = 3 (so |T| = 1) is ⪰ 0 with kernel exactly
+span{p ⊗ f_h : h ∈ U}, for all positive weights. Together with Theorem T, Propositions T2, U0, U1 and Theorems C and
+U2, the whole condition (R∞)_{k−1} holds for k ≤ 4 and all positive weights.
+
+*Proof (computer-assisted, exact; `code/typeI_G_u3/`, `NOTES.md` there).* By Theorem C it remains to show G ≻ 0, a
+4 × 4 matrix on the letter-2 states (ρ, ζ_{t,h}), h ∈ U.
+1. **Coordinates.** Put X_{r,h} = w_rw_h x_{r,h} and ζ_{t,h} = w_tw_h z_h. Modulo a common part, the states carry the
+   parity vectors e_r + e_h (P_{r,h}), e_t + e_h (Z_{t,h}) and 0 (R_t, Q) in (Z/2)^k, so every entry of the rescaled
+   block is a rational function of the squared weights s_i (checked: an odd exponent would raise an error). The Schur
+   complement in these coordinates is G_z = DGD with D diagonal and invertible, so G ≻ 0 ⟺ G_z ≻ 0.
+2. **Closed form.** Exact Gaussian elimination over Q(s_0, …, s_3) (python-flint) of the ten states other than the
+   gauge rows and the letter-2 states. The eliminated block is positive definite on the open orthant (Theorem C), so
+   the result is the Schur complement at every positive weight vector. It agrees with direct elimination over Q at
+   12 rational weight vectors, in two different gauges.
+3. **Certificate.** G_z = Ñ/den with den = 8 f₇ f₁₇ (s_0 + S)² e₄², where f₇, f₁₇, e₄ are irreducible of degrees 7,
+   17, 4 and S = s_U. Every factor has only positive coefficients. Every leading principal minor of G_z is a product
+   of powers of these factors times a core polynomial (degrees 34 to 56, up to 23 374 terms), and every core has only
+   positive coefficients. Sylvester's criterion gives G_z ≻ 0 on the open orthant.
+4. **A second certificate.** G_z is a symmetric Z-matrix: every off-diagonal numerator has only negative
+   coefficients. With v = (4s_t(s_t + S), 3(2s_t + S), 3(2s_t + S), 3(2s_t + S)), every entry of den·G_zv has only
+   positive coefficients. So diag(v)G_z diag(v) has nonpositive off-diagonal entries and positive row sums, and it
+   is strictly diagonally dominant. ∎
+
+Negative controls: G_z − W/10 (W the identity of the rescaled frame of Theorem U2) and G_z − e_ρe_ρᵀ/1000 are
+indefinite at explicit rational points, so there is no room near S → 0.
+
+**Remarks.**
+- The same minor certificate proves G ≻ 0 for (u, m) = (1, 1), (2, 1), (1, 2), (2, 2) and (1, 3), independently of
+  Proposition U1 and Theorem U2. We conjecture that it works for every (u, m): every leading principal minor of G_z,
+  in the order (ρ_t, z_{t,·}) copy by copy, is a ratio of polynomials with only positive coefficients (Conjecture P in
+  the notes). This would give all of (R∞)_{k−1}.
+- For m = 1 the Z-matrix certificate with the same vector v holds numerically for u ≤ 8 (Conjecture M in the notes).
+  A proof would settle every type I block of (R∞)_{k−1} with exactly one copy carrying the letter 2, for every k. For
+  m ≥ 2 the Z-pattern fails.
+- The comparison with the one-copy system obtained by merging the copies of U into one copy of weight √S, which
+  Proposition U1 suggests, is not one-sided: the difference is indefinite, also at equal U-weights (notes,
+  Section 4). So the constants of Proposition U1 do not transfer directly.
+- For k = 5 the same pipeline ((u, m) = (4, 1) and (3, 2)) did not finish in our runs.
+
 **Proposition K2.** The vector vac ⊗ J⁻|1…1⟩ lies in the kernel of (R∞)_{k−2}.
 
 *Proof.*
@@ -456,7 +496,7 @@ This contains Propositions T2 (j = k − 1) and E2 (equal weights). Numerically 
 
 **What blocks the rest.** Two parts are still open:
 - the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2: by Theorem C each is equivalent to
-  G ≻ 0 on its letter-2 states (proved for two such copies, Theorem U2);
+  G ≻ 0 on its letter-2 states (proved for two such copies, Theorem U2, and for k = 4, Theorem U3₁);
 - the letter-1 and type I blocks of the conditions (R∞)_j with 1 ≤ j ≤ k − 2.
 
 In both, the method of Theorem T leaves soft directions: eigenvalues 0.01–0.1, and as small as 0.0015 for
@@ -617,6 +657,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `num_generic.py`, `num_letter2.py` | Exact elimination of the corner forms for 14 ≤ k ≤ 38, and of every case I form for k ≤ 16 |
 | `typeI_u1/` (`run_all.sh`) | Proposition U1: the closed forms against the reduced form (exactly at rational points, and as identities of rational functions for m ≤ 4), the polynomials of (A) and (B), their Bernstein certificates, end-to-end checks, negative controls |
 | `typeI_u2/` (`run_all.sh`, notes in `typeI_u2/NOTES.md`) | Theorem C and the reduction before it: the closed form of every type I block (exactly against the builder, k = 3, 4, 5), the structure facts, the splitting formulas, the hard-part lemma, Φ1, every per-coordinate bound at 200 rational configurations, the chain at 32 points, exact pivots at 33 configurations, the Bernstein certificates of (I), (II), (III), negative controls |
+| `typeI_G_u3/` (`run_all.sh`, notes in `typeI_G_u3/NOTES.md`) | Theorem U3₁: the exact Schur complement for u = 3, m = 1 over Q(s_0, …, s_3) and its agreement with direct elimination, the leading minors with factor stripping and expansion checks, the coefficient-sign certificate, the Z-matrix certificate, negative controls; the same minor certificate for (u, m) = (1, 1), (2, 1), (1, 2), (2, 2), (1, 3); numerical sweeps behind Conjectures P and M |
 | `typeI_G_u2/` (`run_all.sh`, notes in `typeI_G_u2/NOTES.md`) | Theorem U2: the exact symbolic Schur complement for u = 2, its agreement with direct elimination (m = 1, …, 5), the polynomial reductions, the blow-up charts and Bernstein certificates of (A_2) and (B_2), negative controls |
 | `middle_k2/` (`run_all.sh`, notes in `middle_k2/NOTES.md`) | Section 3e: the closed form of the letter-1 block of (R∞)_{k−2} against a direct construction (k = 4, 5), Lemmas R1, J, W, BJ and Proposition S exactly (k = 4, 5, 6), and a numerical sweep (k = 4, …, 7) |
 | `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |

@@ -1,0 +1,6 @@
+u = 4, m = 1: built and scaled (0.2 s), block size 26
+  pivot 1/17 done (0.1 s)
+  pivot 2/17 done (4.2 s)
+  pivot 3/17 done (7.4 s)
+  pivot 4/17 done (10.2 s)
+  pivot 5/17 done (31.4 s)

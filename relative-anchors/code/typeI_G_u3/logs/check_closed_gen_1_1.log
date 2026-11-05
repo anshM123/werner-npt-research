@@ -1,0 +1,8 @@
+w = ['38/13', '35/23']: closed form = direct elimination (two gauges): True
+w = ['15/2', '33/14']: closed form = direct elimination (two gauges): True
+w = ['13/5', '19/32']: closed form = direct elimination (two gauges): True
+w = ['7/11', '29/5']: closed form = direct elimination (two gauges): True
+w = ['17/13', '11/6']: closed form = direct elimination (two gauges): True
+w = ['29/35', '24/13']: closed form = direct elimination (two gauges): True
+u = 1, m = 1: 6 exact comparisons (0.0 s)
+PASS

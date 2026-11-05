@@ -1,0 +1,25 @@
+(u, m) = (1, 1): Z-matrix pattern (diagonal ++, off-diagonal -+): True
+    ++ -+
+    -+ ++
+(u, m) = (2, 1): Z-matrix pattern (diagonal ++, off-diagonal -+): True
+    ++ -+ -+
+    -+ ++ -+
+    -+ -+ ++
+(u, m) = (3, 1): Z-matrix pattern (diagonal ++, off-diagonal -+): True
+    ++ -+ -+ -+
+    -+ ++ -+ -+
+    -+ -+ ++ -+
+    -+ -+ -+ ++
+(u, m) = (1, 2): Z-matrix pattern (diagonal ++, off-diagonal -+): False
+    ++ -+ ?+ ?+
+    -+ ++ ?+ ?+
+    ?+ ?+ ++ -+
+    ?+ ?+ -+ ++
+(u, m) = (2, 2): Z-matrix pattern (diagonal ++, off-diagonal -+): False
+    ++ -+ -+ ?+ ?+ ?+
+    -+ ++ -+ ?+ ?+ ++
+    -+ -+ ++ ?+ ++ ?+
+    ?+ ?+ ?+ ++ -+ -+
+    ?+ ?+ ++ -+ ++ -+
+    ?+ ++ ?+ -+ -+ ++
+PASS

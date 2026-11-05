@@ -1,0 +1,8 @@
+u = 1: max normalised off-diagonal entry -4.911e-01 (<= 0: Z-matrix); min relative z-row sum 1.000e+00; v = (1, beta 1) feasible in all samples: True (worst lo/hi = 0.500); min normalised entry of G_z^-1: 4.91e-01
+u = 2: max normalised off-diagonal entry -1.289e-05 (<= 0: Z-matrix); min relative z-row sum 1.552e-05; v = (1, beta 1) feasible in all samples: True (worst lo/hi = 0.531); min normalised entry of G_z^-1: 3.16e-03
+u = 3: max normalised off-diagonal entry -1.345e-06 (<= 0: Z-matrix); min relative z-row sum 9.582e-06; v = (1, beta 1) feasible in all samples: True (worst lo/hi = 0.533); min normalised entry of G_z^-1: 2.98e-04
+u = 4: max normalised off-diagonal entry -7.246e-08 (<= 0: Z-matrix); min relative z-row sum 5.746e-08; v = (1, beta 1) feasible in all samples: True (worst lo/hi = 0.550); min normalised entry of G_z^-1: 1.09e-04
+u = 5: max normalised off-diagonal entry -4.152e-07 (<= 0: Z-matrix); min relative z-row sum 1.206e-07; v = (1, beta 1) feasible in all samples: True (worst lo/hi = 0.555); min normalised entry of G_z^-1: 3.38e-05
+u = 6: max normalised off-diagonal entry -7.720e-08 (<= 0: Z-matrix); min relative z-row sum 3.372e-08; v = (1, beta 1) feasible in all samples: True (worst lo/hi = 0.552); min normalised entry of G_z^-1: 1.61e-05
+u = 7: max normalised off-diagonal entry -2.337e-07 (<= 0: Z-matrix); min relative z-row sum 1.698e-07; v = (1, beta 1) feasible in all samples: True (worst lo/hi = 0.559); min normalised entry of G_z^-1: 1.34e-05
+PASS

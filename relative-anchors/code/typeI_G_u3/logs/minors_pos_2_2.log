@@ -1,0 +1,18 @@
+u = 2, m = 2, n = 6: den = 64 * [deg 1, 2 t]^1 * [deg 1, 4 t]^1 * [deg 4, 35 t]^1 * [deg 6, 84 t]^1 * [deg 1, 4 t]^2 * [deg 1, 4 t]^2 * [deg 3, 20 t]^2 * [deg 3, 20 t]^2
+  den factors with all coefficients positive: [True, True, True, True, True, True, True, True]
+  level 1 done: 6 minors (0.3 s); leading core degree 16, 951 terms, exponents [0, 0, 1, 0, 0, 2, 0, 2]
+  level 2 done: 15 minors (2.0 s); leading core degree 24, 2274 terms, exponents [1, 1, 2, 1, 2, 4, 0, 4]
+  level 3 done: 20 minors (10.6 s); leading core degree 32, 4409 terms, exponents [2, 2, 3, 2, 4, 6, 0, 6]
+  level 4 done: 15 minors (26.7 s); leading core degree 48, 16080 terms, exponents [3, 3, 2, 3, 6, 6, 2, 6]
+  level 5 done: 6 minors (55.4 s); leading core degree 56, 23270 terms, exponents [4, 4, 3, 4, 8, 8, 4, 6]
+  level 6 done: 1 minors (64.3 s); leading core degree 64, 32173 terms, exponents [5, 5, 4, 5, 10, 10, 6, 6]
+  leading minor 1: check True; core coefficients: all positive (0 negative of 951)
+  leading minor 2: check True; core coefficients: all positive (0 negative of 2274)
+  leading minor 3: check True; core coefficients: all positive (0 negative of 4409)
+  leading minor 4: check True; core coefficients: all positive (0 negative of 16080)
+  leading minor 5: check True; core coefficients: all positive (0 negative of 23270)
+  leading minor 6: check True; core coefficients: all positive (0 negative of 32173)
+expansion checks: True; den constant > 0 and all den factors with positive coefficients: True; all leading-minor cores with positive coefficients: True
+CONCLUSION: every leading principal minor of G_z is positive on the open orthant, so G > 0 for u = 2, m = 2, all positive weights
+time 64.9 s
+PASS

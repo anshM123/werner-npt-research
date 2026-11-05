@@ -1,0 +1,10 @@
+u = 1, m = 1, n = 2: den = 2 * [deg 2, 3 t]^1 * [deg 1, 2 t]^2 * [deg 2, 3 t]^2
+  den factors with all coefficients positive: [True, True, True]
+  level 1 done: 2 minors (0.0 s); leading core degree 8, 8 terms, exponents [0, 0, 0]
+  level 2 done: 1 minors (0.0 s); leading core degree 10, 7 terms, exponents [1, 2, 2]
+  leading minor 1: check True; core coefficients: all positive (0 negative of 8)
+  leading minor 2: check True; core coefficients: all positive (0 negative of 7)
+expansion checks: True; den constant > 0 and all den factors with positive coefficients: True; all leading-minor cores with positive coefficients: True
+CONCLUSION: every leading principal minor of G_z is positive on the open orthant, so G > 0 for u = 1, m = 1, all positive weights
+time 0.0 s
+PASS

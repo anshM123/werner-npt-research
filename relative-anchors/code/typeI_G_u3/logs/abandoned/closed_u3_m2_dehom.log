@@ -1,0 +1,10 @@
+u = 3, m = 2: built and scaled (0.2 s), block size 24
+  pivot 1/13 done (0.1 s)
+  pivot 2/13 done (1.7 s)
+  pivot 3/13 done (3.0 s)
+  pivot 4/13 done (4.1 s)
+  pivot 5/13 done (5.1 s)
+  pivot 6/13 done (6.0 s)
+  pivot 7/13 done (9.8 s)
+  pivot 8/13 done (54.8 s)
+  pivot 9/13 done (139.9 s)

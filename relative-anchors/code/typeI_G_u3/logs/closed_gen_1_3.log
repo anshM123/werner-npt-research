@@ -1,0 +1,8 @@
+u = 1, m = 3: built and scaled (0.0 s), block size 11
+  pivot 1/4 done (0.0 s)
+  pivot 2/4 done (0.0 s)
+  pivot 3/4 done (0.0 s)
+  pivot 4/4 done (0.1 s)
+G symmetric: True
+total 0.1 s
+PASS

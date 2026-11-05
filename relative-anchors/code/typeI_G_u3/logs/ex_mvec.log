@@ -1,0 +1,9 @@
+u = 1 (150 samples): max normalised off-diagonal entry -4.91e-01; min (G_z v)_i/(G_ii v_i) = 2.500e-01  ok
+u = 2 (150 samples): max normalised off-diagonal entry -6.02e-09; min (G_z v)_i/(G_ii v_i) = 2.244e-09  ok
+u = 3 (150 samples): max normalised off-diagonal entry -1.52e-08; min (G_z v)_i/(G_ii v_i) = 2.714e-07  ok
+u = 4 (150 samples): max normalised off-diagonal entry -1.40e-09; min (G_z v)_i/(G_ii v_i) = 6.349e-09  ok
+u = 5 (150 samples): max normalised off-diagonal entry -1.66e-10; min (G_z v)_i/(G_ii v_i) = 6.634e-10  ok
+u = 6 (60 samples): max normalised off-diagonal entry -4.73e-08; min (G_z v)_i/(G_ii v_i) = 7.599e-07  ok
+u = 7 (60 samples): max normalised off-diagonal entry -2.51e-08; min (G_z v)_i/(G_ii v_i) = 5.481e-07  ok
+u = 8 (60 samples): max normalised off-diagonal entry -1.21e-09; min (G_z v)_i/(G_ii v_i) = 7.202e-10  ok
+PASS

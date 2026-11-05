@@ -1,0 +1,13 @@
+(1) the denominator den = cst * prod f_i^E_i
+  den factor f_0 (degree 7) ^ 1: all 120 coefficients positive
+  den factor f_1 (degree 17) ^ 1: all 1140 coefficients positive
+  den factor f_2 (degree 1) ^ 2: all 4 coefficients positive
+  den factor f_3 (degree 4) ^ 2: all 35 coefficients positive
+  signs of the factors on the open orthant: [1, 1, 1, 1]; constant sign 1
+(2) the cores of the leading minors: minor_j(G_z) = c_j prod f_i^(x_ij - j E_i) / cst^j
+  core c_1 (exponents [0, 0, 0, 0], degree 34), required sign 1: all 7769 coefficients positive
+  core c_2 (exponents [1, 1, 2, 0], degree 44), required sign 1: all 14188 coefficients positive
+  core c_3 (exponents [2, 2, 4, 0], degree 54), required sign 1: all 23374 coefficients positive
+  core c_4 (exponents [3, 3, 6, 2], degree 56), required sign 1: all 22099 coefficients positive
+total 0.1 s
+PASS

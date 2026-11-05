@@ -1,0 +1,14 @@
+w = ['29/36', '30/29', '33/38', '13/12']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+w = ['33/31', '10/3', '7/29', '2']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+w = ['6/35', '1/13', '26/29', '40/11']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+w = ['40', '34/5', '4/3', '13/16']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+w = ['39/2', '10/7', '29/38', '13/34']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+w = ['15/19', '32', '1/5', '2/3']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+w = ['6', '17/21', '5/11', '19/2']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+w = ['5/37', '7/26', '7/19', '5']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+w = ['2', '1', '4/31', '25/26']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+w = ['27/5', '37/13', '9/11', '3/10']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+w = ['22', '27/8', '9/16', '7']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+w = ['2/15', '8/3', '36/13', '29/33']: closed form = direct elimination (gauge rows P_1h and P_2h): True
+24 exact comparisons (4.4 s)
+PASS
