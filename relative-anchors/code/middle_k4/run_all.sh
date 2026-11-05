@@ -2,7 +2,7 @@
 # (R_inf)_1 and (R_inf)_2 at k = 4: letter-1 and type I torus blocks.  Reruns every step, one Python process at a
 # time, prints PASS/FAIL per step and ALL PASS / SOME FAIL at the end.  Logs in logs/.  Needs Python 3 with numpy and
 # python-flint (0.9 used).  ylib.py and flintfield.py are copies from relative-anchors/code/.
-# LONG=0 skips the three large certificates (sizes 18, 18, 21); see NOTES.md for their status and run times.
+# LONG=0 skips the three large certificates (sizes 18, 21, 18; about 10, 11 and 65 minutes); see NOTES.md.
 cd "$(dirname "$0")"
 mkdir -p logs
 : > logs/run_all.log
@@ -30,13 +30,10 @@ run elim_minors 2 012 nat
 if [ "${LONG:-1}" = "1" ]; then
   run bareiss_cert 1 - nat    # j = 1, letter-1 block (size 18, about 10 min)
   run bareiss_cert 2 - nat    # j = 2, letter-1 block (size 21); see NOTES.md for the run time
+  run bareiss_cert 2 0 nat    # j = 2, T = {t}        (size 18, about 65 min)
 fi
 # end-to-end: certified minors = leading minors of the directly built block at rational points (uses the cert_*.pkl
 # files written above; with LONG=0 the large ones come from earlier runs of the same commands)
 run check_minors_points   # all six certificates (default argument list in the script)
 run controls             # negative controls: (1 + 1/1000) B fails on every block, exact witnesses
-# The block j = 2, T = {t} (size 18) is not certified (NOTES.md, Section 5); FULL=1 attempts it (expected > 1 hour).
-if [ "${FULL:-0}" = "1" ]; then
-  run bareiss_cert 2 0 nat
-fi
 if [ $fail -eq 0 ]; then echo "ALL PASS" | tee -a logs/run_all.log; else echo "SOME FAIL" | tee -a logs/run_all.log; fi

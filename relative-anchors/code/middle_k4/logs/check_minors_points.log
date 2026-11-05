@@ -1,7 +1,8 @@
 j = 1, T = (0, 1), cert_j1_T01_nat.pkl: all 3 leading minors = certified formula and > 0 at 4 rational points: True  [0.0s]
 j = 2, T = (0, 1, 2), cert_j2_T012_nat.pkl: all 4 leading minors = certified formula and > 0 at 4 rational points: True  [0.1s]
 j = 1, T = (0,), cert_j1_T0_nat.pkl: all 10 leading minors = certified formula and > 0 at 4 rational points: True  [0.8s]
-j = 2, T = (0, 1), cert_j2_T01_nat.pkl: all 11 leading minors = certified formula and > 0 at 4 rational points: True  [2.6s]
-j = 1, T = (), cert_j1_T-_nat.pkl: all 18 leading minors = certified formula and > 0 at 4 rational points: True  [5.3s]
-j = 2, T = (), cert_j2_T-_nat.pkl: all 21 leading minors = certified formula and > 0 at 4 rational points: True  [8.2s]
+j = 2, T = (0, 1), cert_j2_T01_nat.pkl: all 11 leading minors = certified formula and > 0 at 4 rational points: True  [2.7s]
+j = 1, T = (), cert_j1_T-_nat.pkl: all 18 leading minors = certified formula and > 0 at 4 rational points: True  [5.5s]
+j = 2, T = (), cert_j2_T-_nat.pkl: all 21 leading minors = certified formula and > 0 at 4 rational points: True  [8.4s]
+j = 2, T = (0,), cert_j2_T0_nat.pkl: all 18 leading minors = certified formula and > 0 at 4 rational points: True  [15.8s]
 PASS

@@ -36,8 +36,10 @@ Qi–Gupur–Wu–Guo; Song–Chen).
 
 **What is known.**
 - At two copies the inequality holds [FHPV, BGH].
-- At three copies it is settled by Tomar's computer-assisted certificates [T1]. Wu and Zou prove it in every dimension
-  for positive and for normal rank-two C [WZ].
+- At three copies it is settled by Tomar's computer-assisted certificates [T1]. A second computer-assisted
+  certificate for the same unrestricted statement, built from four-replica moments and a coupled Gram map, was
+  released on 4 October 2026 [A3]; Liu and Qiao extend that construction to d = 4 [LQ]. Wu and Zou prove it in every
+  dimension for positive and for normal rank-two C [WZ].
 - At four copies, Tomar's certificates reach α ≤ 0.4979, strictly below the endpoint [T1]. Clarisse reported numerical
   evidence at the endpoint [Cl].
 - For every n the question is open.
@@ -328,9 +330,13 @@ size. Both still print VERIFIED.
 
 ## References
 
+- [A3] Anonymous, Three-copy undistillability of the boundary qutrit Werner state, version 1.1.0-candidate, Zenodo,
+  doi:10.5281/zenodo.23134454 (4 October 2026).
 - [BGH] K. Bharti, R. Gajjala, T. Haug, arXiv:2607.24479.
 - [Cl] L. Clarisse, The distillability problem revisited, Quantum Inf. Comput. 6, 539 (2006); arXiv:quant-ph/0510035.
 - [FHPV] Fraser, Huber, Pozsgay, Vona, arXiv:2607.24309.
+- [LQ] A.-X. Liu, C.-F. Qiao, Three-copy undistillability of the boundary two-ququart Werner state, manuscript and
+  certificate, github.com/GLiuax/d4-three-copy-werner (October 2026).
 - [T1] T. S. Tomar, Undistillability of Werner states from three, four and five copies, Zenodo 23718035 (2026).
 - [T2] T. S. Tomar, Equality cases and every-copy results for the Werner endpoint inequality, Zenodo 23718037 (2026).
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.

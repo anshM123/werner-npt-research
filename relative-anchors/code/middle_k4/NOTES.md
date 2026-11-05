@@ -12,10 +12,11 @@ and column) are positive definite by Proposition T2′ and are not treated here.
 Every torus block of (R∞)₁ and (R∞)₂ at k = 4 that is not of type II, one line per orbit under permutations of the
 copies. "Known kernel" lists the vectors that the certificate shows to be the whole kernel of the block.
 
-**Summary.** (R∞)₁ at k = 4 is proved for all positive weights (Theorem A). (R∞)₂ at k = 4 is proved on every
-block except the orbit of the four type I blocks with |T| = 1 (Theorem B); that orbit is open. In particular the
+**Summary.** (R∞)₁ and (R∞)₂ at k = 4 are proved for all positive weights (Theorems A and B). In particular the
 letter-1 block of (R∞)₂ (the block of Section 3e of the README, with the soft modes of Corollary S) is proved at
-k = 4. So Conjecture 12 for four copies is reduced to one orbit of blocks of size 21 (gauge-fixed 18).
+k = 4. With the results of the README this gives all of (R∞) at k = 4, and Conjecture 12 for every single excitation
+supported on at most four copies (Corollary, Section 4). The last orbit (j = 2, |T| = 1, gauge-fixed size 18) was
+certified after the first version of these notes, by the same script without a time limit (Section 5).
 
 | j | T | blocks in orbit | size | known kernel | gauge-fixed size | certificate | status |
 |---|---|---|---|---|---|---|---|
@@ -23,7 +24,7 @@ k = 4. So Conjecture 12 for four copies is reduced to one orbit of blocks of siz
 | 1 | {t} | 4 | 11 | p ⊗ \|2@t⟩ (1) | 10 | (a), natural order; cores up to degree 62, 27 536 terms | **proved** (exact; 17 s) |
 | 1 | {t, t′} | 6 | 3 | none | 3 | (a), natural order | **proved** (exact; < 1 s) |
 | 2 | ∅ (letter-1) | 1 | 28 | p ⊗ \|1@P⟩, P a pair (6), and vac ⊗ J⁻\|1111⟩ (Proposition K2) | 21 | (a), natural order: all 21 leading principal minors have only positive coefficients after the denominator factors are pulled out; cores up to degree 121, 47 905 terms | **proved** (exact, computer-assisted; 10.7 min) |
-| 2 | {t} | 4 | 21 | p ⊗ \|2@t, 1@c⟩, c ≠ t (3) | 18 | none: (a) not run (time budget, Section 5) | **open**; exact point checks only (gauge-fixed block ≻ 0 at 33 rational weight vectors, exact LDL) |
+| 2 | {t} | 4 | 21 | p ⊗ \|2@t, 1@c⟩, c ≠ t (3) | 18 | (a), natural order; cores up to degree 119, 112 777 terms | **proved** (exact, computer-assisted; 64 min) |
 | 2 | {t, t′} | 6 | 12 | p ⊗ \|2@t, 2@t′⟩ (1) | 11 | (a), natural order; cores up to degree 79, 59 548 terms | **proved** (exact; 2.4 min) |
 | 2 | {t, t′, t″} | 4 | 4 | none | 4 | (a), natural order | **proved** (exact; < 1 s) |
 
@@ -35,7 +36,7 @@ k = 4. So Conjecture 12 for four copies is reduced to one orbit of blocks of siz
 | The certified leading minors equal the leading minors of the directly built block at random rational points | **exact** (4 points per certificate, `check_minors_points.py`) |
 | Known kernel vectors annihilated identically; gauge-fixed blocks ≻ 0 at 33 rational weight vectors (spreads up to e^{±5} in s, near-degenerate points) | **exact** (`build_sym.py`, `num_k4.py`) |
 | Negative controls: with B replaced by (1 + 1/1000)B every block fails, with an explicit rational witness vector | **exact** (`controls.py`) |
-| Conjecture 12 for every p ∈ H₁ supported on at most four copies (all of (R∞) at k = 4) | **open**: it follows from what is proved here and in the README once the four blocks j = 2, T = {t} are certified (Section 5) |
+| Conjecture 12 for every p ∈ H₁ supported on at most four copies (all of (R∞) at k = 4) | **proved** (computer-assisted; Corollary in Section 4) |
 
 Nothing here says anything about Conjecture 12 in general or about the endpoint (NPT distillability) problem beyond
 the blocks listed.
@@ -116,6 +117,7 @@ of exact division, kept as `bareiss_cert_divrem_version.py.txt`; the arithmetic 
 | j = 1, letter-1 | 18 | 8 · \|s\| · [3] · [4] · [6] | (6, 31), (8, 26), (10, 20), (11, 12), (19, 231), (24, 449), (26, 404), (27, 354), (34, 1 100), (41, 2 380), (45, 3 096), (44, 2 452), (63, 12 077), (77, 25 788), (90, 45 335), (91, 45 101), (92, 42 987), (93, 39 341) | 10.4 min |
 | j = 2, T = {0, 1, 2} | 4 | 16 · \|s\| · [2]³ · [3]³ | (0, 1), (6, 84), (18, 1 330), (31, 5 980) | < 1 s |
 | j = 2, T = {0, 1} | 11 | 16 · (two linear) · [2] · [3]⁴ · [6] | (2, 3), (3, 2), (10, 112), (17, 546), (18, 544), (24, 1 328), (43, 9 137), (50, 14 188), (56, 20 817), (74, 50 100), (79, 59 548) | 2.4 min |
+| j = 2, T = {0} | 18 | 16 · [1] · [3] · [3] · [4] · [6] (two distinct factors of degree 3) | (5, 17), (7, 13), (9, 8), (17, 182), (22, 370), (24, 327), (31, 1 010), (38, 2 191), (42, 2 850), (56, 9 028), (70, 20 678), (84, 39 528), (85, 39 520), (86, 39 396), (87, 39 168), (104, 75 388), (112, 94 308), (119, 112 777) | 64 min |
 | j = 2, letter-1 | 21 | 8 · \|s\| · [4] · [6] | (9, 81), (12, 69), (14, 48), (16, 34), (18, 20), (20, 10), (35, 791), (44, 1 936), (46, 1 703), (48, 1 633), (50, 1 408), (52, 1 160), (66, 4 788), (80, 12 216), (88, 17 156), (89, 16 121), (90, 15 006), (91, 12 341), (102, 22 099), (112, 34 162), (121, 47 905) | 10.7 min |
 
 ([d] denotes an irreducible factor of degree d with only positive coefficients; the exact factors and exponents are
@@ -129,35 +131,35 @@ p ⊗ |2@t⟩, the blocks |T| = 2 and the type II blocks are positive definite).
 the three representatives j = 1, T = ∅, {0}, {0, 1}; for each, the gauge reduction of Section 2 and the certificate of
 Section 3 (rows 1–3 of the table). ∎
 
-**Theorem B (part of (R∞)₂ at k = 4).** For k = 4 and every positive weight vector:
-- the blocks of (R∞)₂ with |T| = 3 are positive definite, and those with |T| = 2 are ⪰ 0 with kernel exactly
-  p ⊗ |2@t 2@t′⟩;
+**Theorem B ((R∞)₂ at k = 4).** For k = 4 and every positive weight vector, the condition (R∞)₂ holds, with kernel
+exactly p ⊗ H₂ ⊕ span(vac ⊗ J⁻|1111⟩). Block by block:
+- the blocks of (R∞)₂ with |T| = 3 are positive definite, those with |T| = 2 are ⪰ 0 with kernel exactly
+  p ⊗ |2@t 2@t′⟩, and those with |T| = 1 are ⪰ 0 with kernel exactly p ⊗ |2@t 1@c⟩ (c ≠ t);
 - the letter-1 block of (R∞)₂ is ⪰ 0 with kernel exactly p ⊗ (letter-1 part of H₂) ⊕ span(vac ⊗ J⁻|1111⟩). This is the goal (Proposition K2⁺) of `relative-anchors/code/middle_k2/NOTES.md` at k = 4, for all positive weights. The certificate is exact on the whole open orthant, as Corollary S requires: the leading minors are positive there and are allowed to tend to 0 at its boundary.
 
 *Proof.* As for Theorem A, with the rows of the table for j = 2. ∎
 
-What is missing for all of (R∞)₂ at k = 4 is the orbit of the four blocks with |T| = 1 (Section 5). If they are
-⪰ 0 with kernel p ⊗ |2@t 1@c⟩, then (R∞)₂ holds at k = 4 with kernel exactly p ⊗ H₂ ⊕ span(vac ⊗ J⁻|1111⟩), and with
-Proposition M, Theorem B0, Theorem A, the README's results for (R∞)₃ (Theorems T, C, U2, U3₁, Propositions T2, U0,
-U1) and Theorem K, all of (R∞) holds at k = 4. By Lemma 13 and the remark that (R2) always holds, together with
-Theorem 16 for smaller supports, that would give Conjecture 12 for every p ∈ H₁ supported on at most four copies. We
-do not claim this.
+**Corollary (four copies).** For k = 4 and every positive weight vector all of (R∞) holds: (R∞)_{−1} (Proposition
+M), (R∞)₀ (Theorem B0), (R∞)₁ and (R∞)₂ (Theorems A and B), (R∞)₃ (Theorems T, C, U2, U3₁ and Propositions T2, U0,
+U1 of the README) and (R∞)₄ (Theorem K). By Lemma 13 of `single-excitation-range/` and the remark that (R2) always
+holds, together with Theorem 16 there for smaller supports, Conjecture 12 holds for every p ∈ H₁ supported on at most
+four copies, with arbitrary weights. This is computer-assisted; nothing here is refereed.
 
-## 5. What was not completed, and why
+## 5. The last block, and what was slow
 
-- **The block j = 2, T = {t} (size 21, gauge-fixed 18) is not certified.** It was not run within the time budget;
-  nothing is claimed for it beyond the exact point checks (positive definite after the gauge at 33
-  rational weight vectors, `num_k4.py`). The obstacle is computing time, not a sign failure that we observed. The
-  cost estimate comes from the other blocks: at equal size, the leading-minor cores of the type I blocks are about
+- **The block j = 2, T = {t} (size 21, gauge-fixed 18) was not certified in the first session.** It was then run
+  without a time limit (`bareiss_cert.py 2 0 nat`, 3 865 s, memory below 1.1 GB): all 18 leading-minor cores have only
+  positive coefficients, and the certified formula agrees with the directly built minors at four rational points
+  (`logs/bareiss_cert_2_0_nat.log`, `logs/check_minors_points_2_0.log`). It is now part of `run_all.sh` (with
+  `LONG=1`). The original estimate, kept for the record: the cost comes from the other blocks: at equal size, the leading-minor cores of the type I blocks are about
   ten times larger than those of the letter-1 blocks (e.g. D₁₀: 27 536 terms for j = 1, T = {0}, against 2 380 for the
   letter-1 block of (R∞)₁), and the letter-1 block of (R∞)₁ (size 18) already took 10.4 minutes, dominated by the last
   five steps. For T = {0} the denominator has five irreducible factors (one linear, two of degree 3, one of degree 4,
-  one of degree 6) and the entries have numerator degree up to 8. We expect a run of the order of hours with the present
-  code. `run_all.sh` attempts it with `FULL=1`.
-- Suggested routes for that block: (i) run `bareiss_cert.py 2 0 nat` without a time limit (memory stayed below 0.6 GB
-  in all our runs, so memory is not the issue); (ii) first eliminate the (2@t, ·) states, which play the role of the
-  letter-2 states of Theorem C, and certify the Schur complement on the remaining states, as in Theorem U3₁; (iii) the
-  Z-matrix route (c) was not tried.
+  one of degree 6) and the entries have numerator degree up to 8. Running the script without a time limit is what
+  finished it.
+- Other routes for that block, not needed in the end: first eliminate the (2@t, ·) states, which play the role of
+  the letter-2 states of Theorem C, and certify the Schur complement on the remaining states, as in Theorem U3₁; or
+  the Z-matrix route (c).
 - **Speed.** Elimination over the rational function field (`elim_minors.py`, reduced fractions with gcds at every
   step) is correct but about six times slower than the Bareiss scheme: 112 s against 17 s for j = 1, T = {0}; for
   j = 2, T = {0, 1} it needed 216 s for the first nine minors and was stopped (`logs/abandoned/`), while the Bareiss

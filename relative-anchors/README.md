@@ -29,10 +29,10 @@ This folder collects what we can prove about the group conditions for every k.
   - (R∞)_0 holds completely for k ≥ 3, with kernel exactly p ⊗ H_0 (Theorem B0, an algebraic proof).
   - In every (R∞)_j, every block in which one copy carries the letter 2 in row and column is positive definite, with
     an explicit lower bound (Proposition T2′).
-- **Four copies, every positive weight vector** (Section 3f, exact computer-assisted certificates). (R∞)_1 holds
-  (Theorem A4), and (R∞)_2 holds on every block except the four type I blocks in which exactly one copy carries the
-  letter 2 (Theorem B4); this includes the letter-1 block of Section 3e. With the results above, all of (R∞) at four
-  copies is reduced to those four blocks, which are images of each other under permutations of the copies.
+- **Four copies, every positive weight vector** (Section 3f, exact computer-assisted certificates). (R∞)_1 and
+  (R∞)_2 hold (Theorems A4 and B4); this includes the letter-1 block of Section 3e. With the results above, all of
+  (R∞) holds at four copies (Theorem 4). Hence Conjecture 12 of `single-excitation-range/` holds for every single
+  excitation supported on at most four copies, with arbitrary weights (Corollary 4).
 - **Equal weights** (w_t = 1).
   - The letter-1 block of every (R∞)_j is ⪰ 0 for every k, with the kernel described exactly (Theorem E1). The proof is
     computer-assisted, symbolic in k.
@@ -52,8 +52,7 @@ single-copy excitation, all ‖x_t‖ equal), for every finite set G of copies. 
 **Open.**
 - For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 and k ≥ 5
   (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁), reduced to the condition G ≻ 0 of Theorem C; and the letter-1
-  and type I blocks of (R∞)_j for 1 ≤ j ≤ k − 2 (for k ≥ 4). At k = 4 only the type I blocks of (R∞)_2 with one
-  copy carrying the letter 2 remain (Section 3f).
+  and type I blocks of (R∞)_j for 1 ≤ j ≤ k − 2 (for k ≥ 5; at k = 4 everything is proved, Section 3f).
 
 Nothing here is refereed. The endpoint problem itself is open.
 
@@ -502,8 +501,8 @@ This contains Propositions T2 (j = k − 1) and E2 (equal weights). Numerically 
 **What blocks the rest.** Two parts are still open:
 - the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2: by Theorem C each is equivalent to
   G ≻ 0 on its letter-2 states (proved for two such copies, Theorem U2, and for k = 4, Theorem U3₁);
-- the letter-1 and type I blocks of the conditions (R∞)_j with 1 ≤ j ≤ k − 2 (at k = 4 all but one orbit of
-  blocks are certified, Section 3f).
+- the letter-1 and type I blocks of the conditions (R∞)_j with 1 ≤ j ≤ k − 2, for k ≥ 5 (at k = 4 every block is
+  certified, Section 3f).
 
 In both, the method of Theorem T leaves soft directions: eigenvalues 0.01–0.1, and as small as 0.0015 for
 (R∞)_{k−2} at spread weights. They lie in the J⁻ part of the G1 columns and tend to 0 at the boundary of the weight
@@ -584,23 +583,34 @@ Checks:
 | 1 | {t} | 4 | 11 → 10 | p ⊗ \|2@t⟩ | 62, 27 536 | proved |
 | 1 | {t, t′} | 6 | 3 | none | 22, 2 296 | proved |
 | 2 | ∅ | 1 | 28 → 21 | p ⊗ (letter-1 part of H_2) ⊕ span(vac ⊗ J⁻\|1111⟩) | 121, 47 905 | proved |
-| 2 | {t} | 4 | 21 → 18 | expected p ⊗ \|2@t 1@c⟩ | | open (positive definite after the gauge at 33 rational weight vectors, exact) |
+| 2 | {t} | 4 | 21 → 18 | p ⊗ \|2@t 1@c⟩ | 119, 112 777 | proved |
 | 2 | {t, t′} | 6 | 12 → 11 | p ⊗ \|2@t 2@t′⟩ | 79, 59 548 | proved |
 | 2 | {t, t′, t″} | 4 | 4 | none | 31, 5 980 | proved |
 
 **Theorem A4 ((R∞)_1 at four copies).** For k = 4 and every positive weight vector, (R∞)_1 holds, and its kernel is
 exactly p ⊗ H_1.
 
-**Theorem B4.** For k = 4 and every positive weight vector, every block of (R∞)_2 except the type I blocks with
-|T| = 1 is ⪰ 0 with the kernel listed in the table. In particular, the letter-1 block of Section 3e holds at four
-copies, with kernel exactly p ⊗ (letter-1 part of H_2) ⊕ span(vac ⊗ J⁻|1111⟩).
+**Theorem B4 ((R∞)_2 at four copies).** For k = 4 and every positive weight vector, (R∞)_2 holds, and its kernel
+is exactly p ⊗ H_2 ⊕ span(vac ⊗ J⁻|1111⟩). In particular, the letter-1 block of Section 3e holds at four copies.
+
+**Theorem 4.** For k = 4 and every positive weight vector, all of (R∞) holds: (R∞)_{−1} (Proposition M), (R∞)_0
+(Theorem B0), (R∞)_1 and (R∞)_2 (Theorems A4 and B4), (R∞)_3 (Theorem T, Propositions T2, U0, U1, Theorems C, U2,
+U3₁) and (R∞)_4 (Theorem K).
+
+**Corollary 4.** Conjecture 12 of `single-excitation-range/` holds for every p ∈ H_1 supported on at most four
+copies, with arbitrary weights. Hence, for every n:
+- in the gauge Σ_t A_t = I of `single-excitation-range/`, every sector of a single-excitation range plane is
+  nonnegative whenever the sum of the A_t over some four copies has the eigenvalue 1;
+- every tangent plane whose single excitation is supported on at most four copies satisfies the endpoint, with any
+  co-range.
+
+*Proof.* For four nonzero weights, Theorem 4 with Lemma 13 and the remark that (R2) always holds; for fewer, Theorem
+16 there. The two consequences follow as in Corollary 17 there. ∎
 
 *Proofs (computer-assisted, exact).* Type II blocks by Proposition T2′; the others by the reductions and the
 certificate above, one representative per orbit. ∎
 
-If the four remaining blocks are ⪰ 0, then all of (R∞) holds at four copies. By Lemma 13 and the remark on (R2) in
-`single-excitation-range/`, Conjecture 12 then holds for every single excitation supported on at most four copies.
-We do not claim this yet.
+For five copies the same certificate would need blocks with four free parameters; we have not tried it.
 
 ## 4. Equal weights, every k
 

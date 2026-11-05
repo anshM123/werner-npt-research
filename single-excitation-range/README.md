@@ -35,8 +35,8 @@ because single excitations over a product are not anchors.
   Σ_t w_t |1⟩_t. Copies of weight zero reduce to a finite test on the others (Lemma 13). Theorem 16 (added 4 November
   2026) proves it whenever at most three weights are nonzero, by an exact certificate over Q(a, b, c). So every
   sector is nonnegative for every n whenever A_0 + A_1 + A_2 has the eigenvalue 1, and the same holds for the
-  corresponding tangent planes (Corollary 17). Larger supports hold in all numerical tests and at exact special
-  points.
+  corresponding tangent planes (Corollary 17). Four nonzero weights are proved in `relative-anchors/` (Corollary 4
+  there, added 5 November 2026). Larger supports hold in all numerical tests and at exact special points.
 
 Both classes are thick at every copy.
 
@@ -871,19 +871,21 @@ Corollary 17 (a) contains Propositions 9 (b), 10 (b) and 14.
 - at the rational point (1, 3/7, 11/5, 1/1000, 5/4) for k = 5.
 
 So the conclusions of Corollary 17 hold for single excitations of these shapes. The six-copy point takes about
-eight minutes. For the whole four-copy family the certificate is not complete. In a run with squared weights, eleven
-of the largest torus blocks (sizes 12 to 28, three parameters) did not finish.
+eight minutes. For the whole four-copy family this certificate is not complete: in a run with squared weights, eleven
+of the largest torus blocks (sizes 12 to 28, three parameters) did not finish. A different certificate (leading
+minors in a rescaled basis, `relative-anchors/`, Section 3f) does finish. **Conjecture 12 holds for every p ∈ H_1
+supported on at most four copies** (Corollary 4 there), so Corollary 17 holds with "three" replaced by "four".
 
 ## What remains for single-excitation ranges
 
 The open part is the sectors 3 ≤ c ≤ n − 2 outside the cases above (W-planes, Propositions 5, 8, 9 and 10).
 - **The shortest route is Conjecture 12.** It concerns one vector Σ_t w_t |1⟩_t and would settle every sector of every
   single-excitation plane, and with Corollary 15 every tangent plane, for every n. It is proved for at most three
-  nonzero weights (Theorem 16). The first open case is four nonzero weights. By Lemma 13 that is a three-parameter
-  family of finite matrix inequalities on four copies, independent of n. There the certificate of Theorem 16 has
-  finished on all but eleven torus blocks. Results for every number of copies are in `relative-anchors/`: closed
-  forms; for all weights the conditions (R∞)_{−1}, (R∞)_0 and (R∞)_k, every type II block, and most of (R∞)_{k−1};
-  and Conjecture 12 itself at equal weights, for every number of copies.
+  nonzero weights (Theorem 16), and for four (`relative-anchors/`, Corollary 4). The first open case is five
+  nonzero weights: by Lemma 13, a four-parameter family of finite matrix inequalities on five copies. Results for
+  every number of copies are in `relative-anchors/`: closed forms; for all weights the conditions (R∞)_{−1}, (R∞)_0
+  and (R∞)_k, every type II block, and most of (R∞)_{k−1}; and Conjecture 12 itself at equal weights, for every
+  number of copies.
 
 Three further precise statements would each make progress, and the first two would together settle the class for
 every n:

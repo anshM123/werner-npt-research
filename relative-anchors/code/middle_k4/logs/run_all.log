@@ -12,3 +12,4 @@ bareiss_cert 2 - nat: PASS (648 s)
 check_minors_points : PASS (8 s)
 controls : PASS (1 s)
 ALL PASS
+bareiss_cert 2 0 nat: PASS (3865 s)   [run separately with the same command after the run above; logs/bareiss_cert_2_0_nat.log, checked by check_minors_points (seven certificates)]
