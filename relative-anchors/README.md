@@ -29,9 +29,8 @@ This folder collects what we can prove about the group conditions for every k.
     eliminates exactly and the soft directions are known exactly; the gap there is at most min_h s_h/(2(|s| − s_h))
     (Section 3e), so a proof has to be exact to first order in the smallest weight.
   - (R∞)_0 holds completely for k ≥ 3, with kernel exactly p ⊗ H_0 (Theorem B0, an algebraic proof).
-  - In the middle conditions, every type I block of (R∞)_1 in which two copies carry the letter 2, and every type I
-    block of (R∞)_2 in which three copies do, is positive definite (Theorems D₁ and D₂, Section 3h). These are the
-    blocks of (R∞)_1 and (R∞)_2 without a letter 1. The other blocks of (R∞)_1 reduce exactly to two sign
+  - In every (R∞)_j with j ≥ 1, every block that contains no letter 1 is positive definite (Theorem DJ, Section 3h,
+    with Proposition T2′; for j = 1, 2 also Theorems D₁ and D₂). The other blocks of (R∞)_1 reduce exactly to two sign
     conditions on Schur complements (Conjectures L and L1, Section 3h), proved for k ≤ 4 and checked exactly for
     k ≤ 10 and k ≤ 7. The blocks of (R∞)_1 in which one copy carries the letter 2 hold for every k when the
     weights of the other copies take at most two distinct values (Theorems EQ and 2L).
@@ -66,9 +65,9 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
 - For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 and k ≥ 5
   (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁, and for |T| = 1 the U-weights with at most two distinct values
   are Theorems EU and TL), reduced to the condition G ≻ 0 of Theorem C; and the letter-1 and type I blocks of (R∞)_j
-  for 1 ≤ j ≤ k − 2 (for k ≥ 5; at k = 4 everything is proved, Section 3f). For every k, the blocks of (R∞)_1 and
-  (R∞)_2 without a letter 1 are Theorems D₁ and D₂, the rest of (R∞)_1 is reduced to Conjectures L and L1, and
-  its |T| = 1 blocks are proved when the U-weights take at most two values (Section 3h).
+  for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, Section 3f; the blocks
+  without a letter 1 are Theorem DJ for every k). The rest of (R∞)_1 is reduced to Conjectures L and L1, and its
+  |T| = 1 blocks are proved when the U-weights take at most two values (Section 3h).
 
 Nothing here is refereed. The endpoint problem itself is open.
 
@@ -768,8 +767,45 @@ on the part of the box where C ≻ 0. An exact certificate of the same kind (`ce
 that C ≻ 0 at the 8 vertices of the c-part of the box, hence on all of it, and that f > 0 at all 64 vertices (the
 largest numerator has 134 068 terms and degree 56). ∎
 
-For j ≥ 3 the same scheme applies to the blocks of (R∞)_j with |T| = j + 1 (size j + 2), with 2^{(j+1)(j+2)/2}
-vertices; we have not tried it.
+For j ≥ 3 the same scheme would need 2^{(j+1)(j+2)/2} vertices. Theorem DJ proves every j at once by a different
+route.
+
+**Theorem DJ (every j).** For every j ≥ 1, every k ≥ j + 1, every positive weight vector and every set T of j + 1
+copies, the type I block of (R∞)_j in which the copies of T carry the letter 2 (size j + 2) is positive definite.
+Together with Proposition T2′: every block of every (R∞)_j, j ≥ 1, that contains no letter 1 is positive definite,
+for every k.
+
+Theorem DJ contains Proposition U0 (k = j + 1) and Theorems D₁ and D₂, with a different proof. Code, logs and notes
+are in `code/no_letter1/`.
+
+*Proof (computer-assisted in two coefficient-sign certificates; notes there).* Let T = {t_0, …, t_j}, a_i = x_{t_i},
+x_T = Σ_i a_i, c = 2 − x_T, and for u ∈ U put t_u = c − 2x_u ∈ [x_T, c). Let μ = Σ_{u∈U} x_u δ_{t_u}, a positive
+measure of mass e = 1 − x_T, and Φ(d) = ∫ dμ(t)/(t + d).
+1. *Closed form* (from Lemma B, by hand). In units 2^{k−j} and in the basis X_i = (2@t_i, 2 on T ∖ t_i), X_vac =
+   (vac, 2 on T): M_ii = 2; for i ≠ l, M_il = (1 + G_i)(1 + G_l)/(2 + G_i + G_l + Φ(a_i + a_l)) with
+   G_i = a_i/(c − a_i + a_l); M_{i,vac} = −A_i = −2(1 + g_i)/(2 + g_i + Φ(a_i)) with g_i = a_i/(c − a_i); and
+   M_{vac,vac} = 2/(1 + Φ(0)/2). Each E⁻¹ is a diagonal matrix plus ½wwᵀ (Sherman–Morrison); the copies of T not
+   involved in a term only shift the diagonal. Checked exactly against the builder for 51 blocks (k ≤ 8, j ≤ 7).
+2. *Vacuum first.* M ≻ 0 if and only if F = C − (1 + Φ(0)/2)/2 · AAᵀ ≻ 0 (C: M without the vacuum row). It suffices
+   that, for all i ≠ l, (i) F_il < 0 and (ii) a_l F_ii + (x_T − a_i) F_il > 0: summing (ii) over l ≠ i gives
+   F_ii > Σ_{l≠i} |F_il|, so F is strictly diagonally dominant with positive diagonal.
+3. *The measure as the only input.* Writing every constant as an integral against μ (∫ dμ = e), (i) becomes a
+   quadratic and (ii) a quartic form in μ: −F_il is a positive multiple of ∫∫ Dk(t, t′) dμ(t) dμ(t′), and the left
+   side of (ii) a positive multiple of ∫∫∫∫ P(t₁, …, t₄)/(den(t₁)⋯den(t₄)) dμ⁴ with den(t) = t(t + a_i)(t + a_l)
+   (t + a_i + a_l). The symmetric kernels Dk and P are explicit polynomials in the positions and in
+   (a_i, a_l, x_T − a_i − a_l, e). So it suffices that Dk > 0 on [x_T, c)² and P > 0 on [x_T, ∞)⁴; this holds for every
+   positive measure, not only for the actual atoms.
+4. *Certificates* (exact). With t = x_T + 2es/(1 + s), the numerator of Dk has 7 092 terms with one negative
+   coefficient, which is absorbed by a term of the form c·s₁s₂(s₁ − s₂)²; with t_m = x_T + s_m, P has 357 055 terms,
+   all nonnegative, and a positive monomial in the weights alone. Without other copies (U = ∅) both inequalities are
+   rational functions with only positive coefficients (6 and 20 terms). ∎
+
+The kernel identities are checked exactly at rational configurations with the certified objects, the conclusions at
+161 weight vectors (|T| ≤ 8, |U| ≤ 12), and with B replaced by (1 + 1/1000)B the block is indefinite at 12 explicit
+points next to the corner where one copy of T carries almost all the weight, the only place where the block
+degenerates. Both certificates were also reimplemented separately from the formulas of the notes (same term counts,
+same signs). The kernel argument needs the other copies to enter through a single measure; for blocks with a letter 1
+they enter through pair and triple functions, and it does not apply as it stands.
 
 **The other blocks of (R∞)_1.** They contain letters 1, and their entries contain pair and triple functions of the
 weights, such as 1/(1 − x_c − x_u). These are not functions of finitely many sums over single copies: the entries
@@ -969,6 +1005,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `typeI_G_u2/` (`run_all.sh`, notes in `typeI_G_u2/NOTES.md`) | Theorem U2: the exact symbolic Schur complement for u = 2, its agreement with direct elimination (m = 1, …, 5), the polynomial reductions, the blow-up charts and Bernstein certificates of (A_2) and (B_2), negative controls |
 | `positivity/` (`run_all.sh`, notes in `positivity/NOTES.md`) | Section 3g: every principal minor of every block at k = 2, 3 and the k = 4 tests, the row-group identities and lifts of Proposition R, the obstruction certificates (Newton, width, Farkas), the monomial-PSD tests, the Gram-type column-group lifts, the natural whole-block lift and its obstruction |
 | `middle_k4/` (`run_all.sh`, notes in `middle_k4/NOTES.md`) | Section 3f: the torus blocks of (R∞)_1 and (R∞)_2 at k = 4 over Q(s_1, s_2, s_3), the known kernels and the gauge, the Bareiss leading-minor certificates, minors against direct determinants at rational points, symbolic blocks against the point builder and the dense construction, negative controls |
+| `no_letter1/` (`run_all.sh`, notes in `no_letter1/NOTES.md`) | Section 3h, Theorem DJ: the closed form of the blocks without a letter 1 for every j against the builder (51 blocks, k ≤ 8, j ≤ 7, also the A-part and the scaled block), the vacuum elimination and the two kernel identities at rational configurations with the certified objects, the two kernel certificates (7 092 terms with one square repair, and 357 055 terms all nonnegative), the conclusions at 161 weight vectors, negative controls, floating-point margins |
 | `middle_j1/` (`run_all.sh`, notes in `middle_j1/NOTES.md`) | Section 3h: the closed forms of the blocks without a letter 1 of (R∞)_1 and (R∞)_2 against the Lemma B blocks (k ≤ 8) and the builder (k ≤ 6), the moment bounds and vertex reductions at rational configurations, the Bernstein certificates of Theorems D₁ (8 functions) and D₂ (8 + 64), the certified formulas against the true blocks; the closed forms and inverse-free reductions of the |T| = 1 and letter-1 blocks (k ≤ 8 and k ≤ 7), Conjecture L proved at k = 3, 4 (symbolic pivots and Laplacian signs, and a leading-minor certificate at k = 4) and checked exactly for k ≤ 10, Conjecture L1 checked exactly for k ≤ 7; negative controls |
 | `middle_j1_t1/` (`run_all.sh`, notes in `middle_j1_t1/NOTES.md`) | Section 3h, Theorems EQ and 2L: the P-first reduction (Lemma P) and the closed form of Φ against the Lemma B blocks (k ≤ 8), the level reductions against exact projections (32 weight vectors, B scaled by 1 and by 1 + 1/1000), the leading-minor certificates for one and two levels, a second certificate at equal U-weights without Lemma P and a separate implementation of that case, negative controls; k = 3, 4 for all weights through Φ′; the stopped k = 5 and three-level attempts |
 | `middle_k2/` (`run_all.sh`, notes in `middle_k2/NOTES.md`) | Section 3e: the closed form of the letter-1 block of (R∞)_{k−2} against a direct construction (k = 4, 5), Lemmas R1, J, W, BJ and Proposition S exactly (k = 4, 5, 6), and a numerical sweep (k = 4, …, 7) |

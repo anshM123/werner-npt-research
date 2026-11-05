@@ -1,0 +1,5 @@
+(B) P: 357055 terms, total degree 22, degrees (20, 22, 21, 9, 4, 4, 4, 4), negative coefficients 0, positive monomial in (p, q, e) alone: True [3.6s]
+(A) numerator of Dk after removing gcd with the denominator: 7092 terms, total degree 20, negative coefficients: 1 [((1, 1, 0, 10, 2, 2), '-8192')] [3.8s]
+    after the repair: negative coefficients 0, positive monomial in (p, q, e) alone: True
+    denominator factors all positive coefficients: True
+PASS

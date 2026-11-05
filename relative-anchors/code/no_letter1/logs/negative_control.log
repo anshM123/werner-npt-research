@@ -1,0 +1,13 @@
+j = 1, k = 2, s = (10000, ...): true block positive definite True; scaled block has pivot -1.600e-03 <= 0 at position 3: True; pair/row inequalities true True, scaled False; ylib A - (1001/1000) B equals the scaled closed form: True [0.0s]
+j = 1, k = 3, s = (10000, ...): true block positive definite True; scaled block has pivot -1.250e-03 <= 0 at position 3: True; pair/row inequalities true True, scaled False; ylib A - (1001/1000) B equals the scaled closed form: True [0.0s]
+j = 1, k = 5, s = (10000, ...): true block positive definite True; scaled block has pivot -1.300e-04 <= 0 at position 3: True; pair/row inequalities true True, scaled False; ylib A - (1001/1000) B equals the scaled closed form: True [0.0s]
+j = 2, k = 3, s = (10000, ...): true block positive definite True; scaled block has pivot -1.160e-03 <= 0 at position 4: True; pair/row inequalities true True, scaled False; ylib A - (1001/1000) B equals the scaled closed form: True [0.0s]
+j = 2, k = 4, s = (10000, ...): true block positive definite True; scaled block has pivot -8.097e-04 <= 0 at position 4: True; pair/row inequalities true True, scaled False; ylib A - (1001/1000) B equals the scaled closed form: True [0.0s]
+j = 2, k = 6, s = (100000, ...): true block positive definite True; scaled block has pivot -1.770e-03 <= 0 at position 4: True; pair/row inequalities true True, scaled False [0.0s]
+j = 3, k = 4, s = (10000, ...): true block positive definite True; scaled block has pivot -6.797e-04 <= 0 at position 5: True; pair/row inequalities true True, scaled False; ylib A - (1001/1000) B equals the scaled closed form: True [0.0s]
+j = 3, k = 5, s = (10000, ...): true block positive definite True; scaled block has pivot -3.298e-04 <= 0 at position 5: True; pair/row inequalities true True, scaled False; ylib A - (1001/1000) B equals the scaled closed form: True [0.1s]
+j = 3, k = 7, s = (100000, ...): true block positive definite True; scaled block has pivot -1.723e-03 <= 0 at position 5: True; pair/row inequalities true True, scaled False [0.1s]
+j = 5, k = 6, s = (100000, ...): true block positive definite True; scaled block has pivot -1.763e-03 <= 0 at position 7: True; pair/row inequalities true True, scaled False [0.1s]
+j = 5, k = 7, s = (100000, ...): true block positive definite True; scaled block has pivot -1.728e-03 <= 0 at position 7: True; pair/row inequalities true True, scaled False [0.1s]
+j = 5, k = 9, s = (100000, ...): true block positive definite True; scaled block has pivot -1.615e-03 <= 0 at position 7: True; pair/row inequalities true True, scaled False [0.1s]
+PASS

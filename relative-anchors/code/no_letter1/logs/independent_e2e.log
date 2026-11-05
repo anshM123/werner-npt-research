@@ -1,0 +1,4 @@
+D (U empty): 6 terms, negative coefficients 0, monomial in (p, q) alone: True
+N (U empty): 20 terms, negative coefficients 0, monomial in (p, q) alone: True
+60 random configurations (|T| <= 12, |U| <= 15): block PD, F_il < 0, strict diagonal dominance: True
+PASS

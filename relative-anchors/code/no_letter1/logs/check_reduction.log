@@ -1,0 +1,15 @@
+objects built [2.5s]
+|T| = 2, |U| = 0: 2 ordered pairs, formulas (1): True [2.5s]
+|T| = 3, |U| = 0: 6 ordered pairs, formulas (1): True [2.5s]
+|T| = 5, |U| = 0: 20 ordered pairs, formulas (1): True [2.5s]
+|T| = 2, |U| = 1: 2 ordered pairs, formulas (1) and kernel identities (2), (3): True [3.2s]
+|T| = 3, |U| = 1: 6 ordered pairs, formulas (1) and kernel identities (2), (3): True [5.8s]
+|T| = 2, |U| = 2: 2 ordered pairs, formulas (1) and kernel identities (2), (3): True [8.5s]
+|T| = 4, |U| = 2: 12 ordered pairs, formulas (1) and kernel identities (2), (3): True [18.3s]
+|T| = 3, |U| = 3: 6 ordered pairs, formulas (1) and kernel identities (2), (3): True [57.8s]
+|T| = 2, |U| = 3: 2 ordered pairs, formulas (1) and kernel identities (2), (3): True [66.9s]
+|T| = 5, |U| = 3: 20 ordered pairs, formulas (1) and kernel identities (2), (3): True [93.3s]
+|T| = 2, |U| = 4: 2 ordered pairs, formulas (1) and kernel identities (2), (3): True [112.1s]
+|T| = 3, |U| = 4: 6 ordered pairs, formulas (1) and kernel identities (2), (3): True [195.3s]
+12 configurations
+PASS

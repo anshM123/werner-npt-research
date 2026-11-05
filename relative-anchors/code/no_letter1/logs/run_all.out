@@ -1,0 +1,13 @@
+run_all.sh started Thu Nov  5 09:36:04 EST 2026
+python 3.14.3, python-flint 0.9.0, numpy 2.4.6
+step check_closed: PASS (exit status 0, 55 s, last line: PASS)
+step cert_pair: PASS (exit status 0, 0 s, last line: PASS)
+step cert_row: PASS (exit status 0, 4 s, last line: PASS)
+step check_reduction: PASS (exit status 0, 196 s, last line: PASS)
+step check_pd: PASS (exit status 0, 4 s, last line: PASS)
+step negative_control: PASS (exit status 0, 1 s, last line: PASS)
+step independent_cert: PASS (exit status 0, 5 s, last line: PASS)
+step independent_e2e: PASS (exit status 0, 5 s, last line: PASS)
+step numerics: PASS (exit status 0, 2 s, last line: numerical illustration done)
+run_all.sh finished Thu Nov  5 09:40:37 EST 2026
+ALL PASS

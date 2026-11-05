@@ -1,0 +1,5 @@
+|T| <= 5, U empty: min eig M 4.890e-05; max F_il/(a_i a_l) -0.3744; min scaled pair-row margin 1.5000
+|T| <= 5, U nonempty: min eig M 9.784e-05; max F_il/(a_i a_l) -0.1600; min scaled pair-row margin 0.8018
+|T| > 5, U empty: min eig M 1.686e-04; max F_il/(a_i a_l) -0.3748; min scaled pair-row margin 1.5000
+|T| > 5, U nonempty: min eig M 1.555e-04; max F_il/(a_i a_l) -0.1610; min scaled pair-row margin 0.8039
+numerical illustration done
