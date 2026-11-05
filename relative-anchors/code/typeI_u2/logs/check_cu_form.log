@@ -1,0 +1,25 @@
+(a) k=3 T=[0]: principal block = closed form: max err 0; q-elimination err 0: True
+(a) k=4 T=[0]: principal block = closed form: max err 0; q-elimination err 0: True
+(a) k=4 T=[0, 2]: principal block = closed form: max err 0; q-elimination err 0: True
+(a) k=5 T=[0, 3]: principal block = closed form: max err 0; q-elimination err 0: True
+(a) k=5 T=[4]: principal block = closed form: max err 0; q-elimination err 0: True
+(a) k=5 T=[0, 1, 2]: principal block = closed form: max err 0; q-elimination err 0: True
+(a) k=6 T=[1, 5]: principal block = closed form: max err 0; q-elimination err 0: True
+(c) u=2 trial 0: F1 True, F2 True, F3 True
+(c) u=2 trial 1: F1 True, F2 True, F3 True
+(c) u=2 trial 2: F1 True, F2 True, F3 True
+(c) u=2 trial 3: F1 True, F2 True, F3 True
+(c) u=3 trial 0: F1 True, F2 True, F3 True
+(c) u=3 trial 1: F1 True, F2 True, F3 True
+(c) u=3 trial 2: F1 True, F2 True, F3 True
+(c) u=3 trial 3: F1 True, F2 True, F3 True
+(c) u=4 trial 0: F1 True, F2 True, F3 True
+(c) u=4 trial 1: F1 True, F2 True, F3 True
+(c) u=4 trial 2: F1 True, F2 True, F3 True
+(c) u=4 trial 3: F1 True, F2 True, F3 True
+(c) u=5 trial 0: F1 True, F2 True, F3 True
+(c) u=5 trial 1: F1 True, F2 True, F3 True
+(c) u=5 trial 2: F1 True, F2 True, F3 True
+(c) u=5 trial 3: F1 True, F2 True, F3 True
+time 0.3s
+PASS

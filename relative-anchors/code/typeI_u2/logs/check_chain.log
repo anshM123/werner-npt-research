@@ -1,0 +1,34 @@
+u=2 trial 0: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=2 trial 1: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=2 trial 2: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=2 trial 3: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=2 trial 4: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=2 trial 5: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=2 trial 6: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=2 trial 7: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=3 trial 0: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=3 trial 1: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=3 trial 2: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=3 trial 3: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=3 trial 4: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=3 trial 5: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=3 trial 6: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=3 trial 7: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=4 trial 0: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=4 trial 1: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=4 trial 2: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=4 trial 3: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=4 trial 4: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=4 trial 5: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=4 trial 6: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=4 trial 7: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=6 trial 0: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=6 trial 1: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=6 trial 2: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=6 trial 3: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=6 trial 4: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=6 trial 5: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=6 trial 6: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+u=6 trial 7: Phi1 - (1-t) diag(...) PSD (exact and bounded quantities): True
+64 matrices, time 0.3s
+PASS

@@ -1,0 +1,35 @@
+u=2 m=1 trial 0: all 5 pivots positive: True
+u=2 m=1 trial 1: all 5 pivots positive: True
+u=2 m=1 trial 2: all 5 pivots positive: True
+u=2 m=2 trial 0: all 5 pivots positive: True
+u=2 m=2 trial 1: all 5 pivots positive: True
+u=2 m=2 trial 2: all 5 pivots positive: True
+u=2 m=3 trial 0: all 5 pivots positive: True
+u=2 m=3 trial 1: all 5 pivots positive: True
+u=2 m=3 trial 2: all 5 pivots positive: True
+u=3 m=1 trial 0: all 10 pivots positive: True
+u=3 m=1 trial 1: all 10 pivots positive: True
+u=3 m=1 trial 2: all 10 pivots positive: True
+u=3 m=2 trial 0: all 10 pivots positive: True
+u=3 m=2 trial 1: all 10 pivots positive: True
+u=3 m=2 trial 2: all 10 pivots positive: True
+u=3 m=3 trial 0: all 10 pivots positive: True
+u=3 m=3 trial 1: all 10 pivots positive: True
+u=3 m=3 trial 2: all 10 pivots positive: True
+u=4 m=1 trial 0: all 17 pivots positive: True
+u=4 m=1 trial 1: all 17 pivots positive: True
+u=4 m=1 trial 2: all 17 pivots positive: True
+u=4 m=2 trial 0: all 17 pivots positive: True
+u=4 m=2 trial 1: all 17 pivots positive: True
+u=4 m=2 trial 2: all 17 pivots positive: True
+u=4 m=3 trial 0: all 17 pivots positive: True
+u=4 m=3 trial 1: all 17 pivots positive: True
+u=4 m=3 trial 2: all 17 pivots positive: True
+u=5 m=1 trial 0: all 26 pivots positive: True
+u=5 m=1 trial 1: all 26 pivots positive: True
+u=5 m=1 trial 2: all 26 pivots positive: True
+u=5 m=2 trial 0: all 26 pivots positive: True
+u=5 m=2 trial 1: all 26 pivots positive: True
+u=5 m=2 trial 2: all 26 pivots positive: True
+33 blocks, time 1.0s
+PASS

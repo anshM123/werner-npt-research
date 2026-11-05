@@ -1,0 +1,2 @@
+min lam(C_u block)/(sigma/(sigma+S)) = 0.4240;  min lam(Phi1)/(1-t) = 0.6667;  min (LB - 4/5 ROW) = 0.1888;  max COL = 0.7112  (22 s)
+PASS

@@ -1,0 +1,5 @@
+identity (1+2x)(1+2y)(2 + ra + rb - 12 ra rb) = 2 + 6(x+y) - 32xy: True
+2 + 6(x+y) - 32xy - 2(1-x-y)(1+4(x+y)) = 8 (x-y)^2: True
+d/dr1 [r1 r2/(2+r1+r2)] = r2 (2 + r2)/(2+r1+r2)^2 >= 0: True
+d_h Lam_h = 3/2 + x_h/2 (normalised units): True
+PASS

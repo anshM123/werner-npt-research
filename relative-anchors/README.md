@@ -18,8 +18,9 @@ This folder collects what we can prove about the group conditions for every k.
     an explicit gap (Theorem K).
   - (R∞)_{k−1} holds on its letter-1 block (Theorem T), on every block in which one copy carries the letter 2 in row
     and column (Proposition T2), on the block in which every copy carries one letter 2 (Proposition U0), and on every
-    block in which all copies but one carry one letter 2 (Proposition U1). Each remaining (type I) block reduces exactly
-    to a smaller matrix (Remark after Proposition U0).
+    block in which all copies but one carry one letter 2 (Proposition U1). On every remaining type I block, the part
+    on the copies without a letter 2 is positive definite (Theorem C), so each such block is equivalent to a single
+    Schur-complement condition G ≻ 0 on its letter-2 states.
   - (R∞)_{k−2} has the explicit kernel vector vac ⊗ J⁻|1…1⟩ (Proposition K2). On its letter-1 block the vacuum row
     eliminates exactly and the soft directions are known exactly; the gap there is at most min_h s_h/(2(|s| − s_h))
     (Section 3e), so a proof has to be exact to first order in the smallest weight.
@@ -43,8 +44,8 @@ single-copy excitation, all ‖x_t‖ equal), for every finite set G of copies. 
 (Local unitaries fixing |0⟩ bring such a vector to Σ_{t∈G} |1_t⟩.)
 
 **Open.**
-- For general weights: the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 2 (for k ≥ 5), and the letter-1 and type I
-  blocks of (R∞)_j for 1 ≤ j ≤ k − 2 (for k ≥ 4; k = 4 is being certified).
+- For general weights: the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 2 (for k ≥ 5), now reduced to the condition
+  G ≻ 0 of Theorem C; and the letter-1 and type I blocks of (R∞)_j for 1 ≤ j ≤ k − 2 (for k ≥ 4).
 
 Nothing here is refereed. The endpoint problem itself is open.
 
@@ -235,6 +236,42 @@ S_T = Σ_{t∈T} s_t.
 Numerically sup ‖Ĝ_tt′‖_F S_T/√(s_t s_t′) ≈ 0.283 and inf λ_min(Ĝ_tt)/(1 − s_t/S_T) = 3/4, so H = 2/5 has room on
 both sides; the certificate fails, as it must, for H = 7/25 and for H = 4/5.
 
+**Theorem C (the copies without a letter 2, every u).** Let k ≥ 2, let T ≠ ∅ be the copies carrying one letter 2 in a
+type I block of (R∞)_{k−1}, U = [k] ∖ T, u = |U| ≥ 1, and let the weights be positive. Then the principal submatrix on
+the states P_{r,h} (r, h ∈ U) and Q is positive definite. It depends on T only through σ = Σ_{t∈T} s_t. Consequently
+the block is ⪰ 0 with kernel exactly span{p ⊗ f_h : h ∈ U} if and only if G ≻ 0, where G is the Schur complement on
+the states R_t, Z_{t,h} (t ∈ T) after eliminating P_{r,h} (all r) and Q modulo the kernel. For u = 1, G ≻ 0 is
+Proposition U1; for u ≥ 2 it is open.
+
+*Proof (computer-assisted in the last step; `code/typeI_u2/`, `NOTES.md` there).*
+1. **Structure.** In the closed form of the block (derived from Lemmas B and N, checked exactly against the builder),
+   the states P_{t,h} (t ∈ T) couple to the rest only through ξ = Σ_t w_t X_{t·}, and the part with w_Tᵀ X_T = 0
+   decouples with identity block. So the statement reduces to the block on (X_U, q), where X ∈ R^{U×U} holds the
+   coordinates of P_{r,h}, r, h ∈ U. Eliminating q leaves a form F(X). It involves T only through σ, with
+   E = diag(s_h + S/2 + σ) + ½w_U w_Uᵀ and S = Σ_{h∈U} s_h.
+2. **Splitting.** Write X = X′ + a wᵀ + w cᵀ with X′w = 0 = wᵀX′ and a ⊥ w. Then:
+   - F(X′) is the form of step 5 of Theorem T, with every s_h + S/2 replaced by s_h + S/2 + σ;
+   - F(awᵀ + wcᵀ) = σ f(a, c), with f explicit;
+   - the cross term is σ⟨𝒢, X′⟩, with 𝒢 explicit.
+
+   Every coupling is a multiple of σ.
+3. **Hard part.** The crossed-pair bound of Theorem T gives
+   F(X′) ≥ (5/12) Σ_{r≠h} X′_rh² + Σ_h (3/2 − ρ_h) X′_hh², with ρ_h = s_h/(s_h + S/2 + σ).
+   Minimising entry by entry gives F(X) ≥ σ Φ1(a, c) for an explicit quadratic form Φ1 on R^{2u}.
+4. **Φ1 ≻ 0.** With t = σ/(σ + S/2):
+   - The a-block is ⪰ (1 − t)I.
+   - The off-diagonal entries of the c-block are ≤ 0, so a weighted Gershgorin bound with weights √s_h applies.
+   - A Schur test with parameter 4/5 bounds the cross block.
+
+   Exact identities such as Σ_{k≠h} s_kρ_k = S′ − Σ_{k≠h} ρ_k bound every sum over the other copies through three
+   parameters on [0, 1]. This reduces everything to three rational inequalities, (I), (II), (III), on [0, 1]³. All
+   their tensor Bernstein coefficients are positive; (III) needs the corner rule at one vertex. Negative controls
+   with the constants moved (4/5 → 7/10 or 2, and (III) shifted by 1/100) fail as they should. ∎
+
+The same certificates with margins give F(X) ≥ 9·10⁻⁵ (σ/|s|)‖X‖², uniformly in u; numerically the constant is about
+0.42. The weighted block Gershgorin route of Proposition U1 for G ≻ 0 is numerically sound for u = 2…5 with the same
+extreme constants (5/18 and 3/4) as for u = 1, but its blocks have no closed form yet.
+
 **Proposition K2.** The vector vac ⊗ J⁻|1…1⟩ lies in the kernel of (R∞)_{k−2}.
 
 *Proof.*
@@ -392,8 +429,8 @@ This contains Propositions T2 (j = k − 1) and E2 (equal weights). Numerically 
 9 to spare (`code/check_typeII_allj.py`).
 
 **What blocks the rest.** Two parts are still open:
-- the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 2 (the Remark after Proposition U0 reduces each to an explicit
-  matrix of size u(k − 1) + m + 1);
+- the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 2: by Theorem C each is equivalent to G ≻ 0 on its letter-2
+  states;
 - the letter-1 and type I blocks of the conditions (R∞)_j with 1 ≤ j ≤ k − 2.
 
 In both, the method of Theorem T leaves soft directions: eigenvalues 0.01–0.1, and as small as 0.0015 for
@@ -553,6 +590,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `prove_letter2.py`, `prove_letter2_split2.py`, `prove_letter2_split_tau.py`, `prove_tau_loop.py`, `prove_fixed_loop.py`, `sanity_generic.py` | Theorem E3: the symbolic families, the irrep split of the generic family, the fixed-parameter families τ = 1 and t = 4, 5, and the window and sample-point checks of the generic family |
 | `num_generic.py`, `num_letter2.py` | Exact elimination of the corner forms for 14 ≤ k ≤ 38, and of every case I form for k ≤ 16 |
 | `typeI_u1/` (`run_all.sh`) | Proposition U1: the closed forms against the reduced form (exactly at rational points, and as identities of rational functions for m ≤ 4), the polynomials of (A) and (B), their Bernstein certificates, end-to-end checks, negative controls |
+| `typeI_u2/` (`run_all.sh`, notes in `typeI_u2/NOTES.md`) | Theorem C and the reduction before it: the closed form of every type I block (exactly against the builder, k = 3, 4, 5), the structure facts, the splitting formulas, the hard-part lemma, Φ1, every per-coordinate bound at 200 rational configurations, the chain at 32 points, exact pivots at 33 configurations, the Bernstein certificates of (I), (II), (III), negative controls |
 | `middle_k2/` (`run_all.sh`, notes in `middle_k2/NOTES.md`) | Section 3e: the closed form of the letter-1 block of (R∞)_{k−2} against a direct construction (k = 4, 5), Lemmas R1, J, W, BJ and Proposition S exactly (k = 4, 5, 6), and a numerical sweep (k = 4, …, 7) |
 | `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |
 | `check_bottom_condition.py`, `c0_interval.py` | Theorem B0: closed form against a direct construction (k ≤ 5), the letter-2 blocks, the reduction to (C0), the bound chains at random points, and the two reduced inequalities in interval arithmetic |
