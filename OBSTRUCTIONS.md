@@ -97,7 +97,9 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
   cut with |K| ≥ 2 or |L| ≥ 2, and every grouped inequality with a block of two or more copies, has slack at some such
   pair. The remaining cuts relate only the top two levels. The linear programs at n = 5, 7 confirm infeasibility.
   So a proof has to resolve every copy individually. Positive semidefinite operators at n = 5 are the first open case
-  of this form, since n = 4 is covered for Hermitian operators by `four-replica-notes/`.
+  of this form, since n = 4 is covered for Hermitian operators by `four-replica-notes/`. Compare
+  `four-replica-notes/NOTES.md`, Section 6: the level-by-level and cut-by-cut forms of the Plücker inequality are
+  already false at n = 4, and the four-replica relaxation that is exact at n = 4 gives −7.47 × 10^{−3} at n = 5.
 
 ## What remains
 
