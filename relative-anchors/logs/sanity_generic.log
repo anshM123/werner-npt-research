@@ -1,0 +1,2 @@
+level offsets: delta >= 0 , delta' >= -2 -> window exact on the family: True
+81 sample points; PASS 1s

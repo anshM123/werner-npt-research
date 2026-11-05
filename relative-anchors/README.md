@@ -20,25 +20,29 @@ This folder collects what we can prove about the group conditions for every k.
     and column (Proposition T2), and on the block in which every copy carries one letter 2 (Proposition U0). Each
     remaining (type I) block reduces exactly to a smaller matrix (Remark after Proposition U0).
   - (R∞)_{k−2} has the explicit kernel vector vac ⊗ J⁻|1…1⟩ (Proposition K2).
-  - (R∞)_0 holds completely (Theorem B0, with one two-parameter inequality checked in interval arithmetic).
+  - (R∞)_0 holds completely for k ≥ 3, with kernel exactly p ⊗ H_0 (Theorem B0, an algebraic proof).
+  - In every (R∞)_j, every block in which one copy carries the letter 2 in row and column is positive definite, with
+    an explicit lower bound (Proposition T2′).
 - **Equal weights** (w_t = 1).
   - The letter-1 block of every (R∞)_j is ⪰ 0 for every k, with the kernel described exactly (Theorem E1). The proof is
     computer-assisted, symbolic in k.
   - The blocks with one copy carrying the letter 2 in row and column are positive definite for every k
     (Proposition E2).
-  - All of (R∞) holds, by exact computation, for every k ≤ 14.
+  - The blocks in which some copies carry the letter 2 once are ⪰ 0 for every k, except one piece (Theorem E3). The
+    proof is computer-assisted, symbolic in k and |T|.
+  - All of (R∞) holds, by exact computation, for every k ≤ 38.
 
 **Corollary.** Conjecture 12 of `single-excitation-range/` holds for every single excitation Σ_{t∈G} x_t (each x_t a
-single-copy excitation, all ‖x_t‖ equal) with |G| ≤ 14. Hence, for every n:
+single-copy excitation, all ‖x_t‖ equal) with |G| ≤ 38. Hence, for every n:
 - every sector of every single-excitation range plane that contains such a vector is nonnegative;
 - q_n ≥ 0 on every tangent plane that contains such a vector, with any co-range.
 
 (Local unitaries fixing |0⟩ bring such a vector to Σ_{t∈G} |1_t⟩.)
 
 **Open.**
-- For general weights: the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 1 (for k ≥ 5), and (R∞)_j for 1 ≤ j ≤ k − 2
-  (for k ≥ 4; k = 4 is being certified).
-- At equal weights: the "case I" letter-2 blocks for k ≥ 15.
+- For general weights: the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 1 (for k ≥ 5), and the letter-1 and type I
+  blocks of (R∞)_j for 1 ≤ j ≤ k − 2 (for k ≥ 4; k = 4 is being certified).
+- At equal weights: one piece of the case I letter-2 blocks (the corner of Theorem E3), for k ≥ 39.
 
 Nothing here is refereed. The endpoint problem itself is open.
 
@@ -216,7 +220,9 @@ j = k − 2.
 
 ## 3b. The condition (R∞)_0, every k
 
-**Theorem B0.** For every k ≥ 2 and every positive weight vector, the condition (R∞)_0 holds.
+**Theorem B0.** For every k ≥ 3 and every positive weight vector, the condition (R∞)_0 holds, and its kernel is exactly
+p ⊗ H_0. (For k = 2 the condition is part of Theorem 16 of `single-excitation-range/`; there the form (C0) below
+degenerates, since δ_12 = 0.)
 
 Normalise |s| = 1 and write x_t = s_t and λ_t = 1/(1 − x_t). Put γ = Σ_t x_t/(2(1 − x_t)) = ½Σ_t(λ_t − 1) ≥ ½. The
 blocks of (R∞)_0 are:
@@ -235,13 +241,13 @@ Sherman–Morrison gives u_r = w_r/(2(1 − x_r)(1 + γ/2)).
 
 It is ⪰ 0 iff (1 + γ/2)² ≥ ¼(1 + g_r)²(1 + γ_r/2).
 
-*Proof.* Put a = 1 + g_r and G′ = Σ_{t≠r} g_t, so that 1 + γ/2 = ½(a + 1 + G′).
-- Since (a + 1 + G′)² ≥ a² + 2a(1 + G′), it suffices that 4(1 + G′) ≥ aγ_r.
-- Now aγ_r − 4G′ = Σ_{t≠r} d_t with d_t = x_t[(2 − x_r)/(2(1 − x_r)(2 − x_r − 2x_t)) − 2/(1 − x_t)].
-- Each d_t ≤ 4x_t/(1 − x_r). Indeed, for y = x_t ∈ [0, 1 − x_r] we have 2 − x_r − 2y ≥ 1 − y, so
-  (2 − x_r)/(2(2 − x_r − 2y)) ≤ 1/(1 − y) ≤ 4 + 2(1 − x_r)/(1 − y). The last step uses (2x_r − 1)/(1 − y) ≤ 1 when
-  x_r > ½.
-- Summing gives Σ_t d_t ≤ 4. ∎
+*Proof.* Put a = 1 + g_r and G′ = Σ_{t≠r} g_t, so that 1 + γ/2 = ½(a + 1 + G′). With e = 1 − x_r and y = x_t ∈ [0, e],
+
+    (1 + e)y/(2e(1 + e − 2y)) − y/(1 − y) − y/(2e) = −y(e − y)(1 + e − y)/(e(1 − y)(1 + e − 2y)) ≤ 0.
+
+The first term is a·x_t/(2 − x_r − 2x_t) and the second is 2g_t. Summing over t ≠ r, where Σ_{t≠r} x_t = e, gives
+aγ_r ≤ 2G′ + ½. Hence (a + 1 + G′)² − a²(1 + γ_r/2) ≥ (a + 1 + G′)² − a² − a(G′ + ¼) = a(7/4 + G′) + (1 + G′)² > 0, so
+every letter-2 block is positive definite. ∎
 
 **Letter-1 block.**
 - **The cross block factors.** With τ = 1/(1 + γ/2), Λ = diag(λ_r) and P = I − ww^T, it equals −½τPΛ. This uses
@@ -253,35 +259,37 @@ It is ⪰ 0 iff (1 + γ/2)² ≥ ¼(1 + g_r)²(1 + γ_r/2).
 
       L := Σ_r x_r λ_r² ζ_r² + ¼ Σ_{r<t} W_rt (λ_r ζ_r + λ_t ζ_t)² ≤ (2 + γ)² S.               (C0)
 
-*Proof of (C0).* Order x_1 ≥ x_2 ≥ ⋯ and put q_r = x_r ζ_r²/S.
-- **A consequence of the constraint.** x_1ζ_1 = −Σ_{u≠1} x_u ζ_u, and similarly for every r, gives
-  x_r ζ_r² ≤ (1 − x_r)S. So q is a probability vector with q_r ≤ 1 − x_r = 1/λ_r.
-- **Regime A, x_1 + x_2 ≤ ¾.** Then every δ_rt ≥ ¼.
-  - With (a + b)² ≤ 2a² + 2b², L ≤ S Σ_r q_r λ_r(λ_r + 2).
-  - Maximising over q, the most mass goes to the largest λ. This gives L/S ≤ λ_1 + 2 + x_1λ_2(λ_2 + 2).
-  - Also γ ≥ γ_A := ½(λ_1 − 1) + ½(λ_2 − 1) + ½(1 − x_1 − x_2).
-  - The inequality λ_1 + 2 + x_1λ_2(λ_2 + 2) ≤ (2 + γ_A)², in the two variables x_1, x_2, holds on the whole region.
-    This is checked in interval arithmetic on an adaptive box subdivision. The largest ratio is 0.80.
-- **Regime B, x_1 + x_2 > ¾.**
-  - Pairs not containing copy 1 have δ ≥ 3/8. For them use the bound of Regime A with W ≤ (8/3)x_r x_t.
-  - For the pairs (1, t) use the identity λ_1ζ_1 + λ_tζ_t = λ_1λ_t[δ_1t(ζ_1 + ζ_t) − σ_1t], with
-    σ_1t = Σ_{u∉{1,t}} x_u ζ_u. Here σ_1t² ≤ δ_1t S.
-  - The elementary facts x_tλ_1 ≤ 1, x_1λ_t ≤ 1, λ_1²δ_1t ≤ min(λ_1, 1/(4x_t)) and Σ_{t≥2} x_tλ_1 = 1 give
-    L/S ≤ Σ_r c_r q_r + ½λ_1λ_2, with
-    - c_1 = λ_1² + λ_2²;
-    - c_2 = λ_2² + λ_2 min(λ_1, 1/(4x_2)) + (4/3)λ_2² ε, where ε = 1 − x_1 − x_2;
-    - c_t = λ_t² + λ_t min(λ_1, 1/(4x_t)) + (4/3)λ_t²(1 − x_1 − x_t) for t ≥ 3.
-  - Bound the tail copies by x_t ≤ ε and let the tail take any mass. This leaves a linear program in (q_1, q_2), and the
-    inequality U_2(x_1, x_2) ≤ (2 + γ_B)², where γ_B = ½(λ_1 − 1) + ½(λ_2 − 1) + ½ε.
-  - That inequality is checked in interval arithmetic for x_1 ≤ 0.99. The largest ratio, 0.944, occurs near
-    x_1 = x_2 = ½.
-  - For x_1 ≥ 0.99 a direct estimate gives ratio ≤ 4(2.52λ_1 + 1.06)/(λ_1 + 3)² < 0.11. ∎
+*Proof of (C0).* We prove the stronger bound L ≤ (2 + 2γ)S; it also holds for complex ζ. Since γ ≥ ½ and
+(2 + 2γ)/(2 + γ)² decreases for γ ≥ 0, it gives L ≤ (12/25)(2 + γ)²S. Write L = D + T, with D the first sum and T the
+second, put d_rt = ζ_r − ζ_t and δ_rt = 1 − x_r − x_t, and let
 
-The worst case of (C0) itself is the ratio 4/9, approached as x → (½, ½, 0, …).
+    E = Σ_{r<t} x_r x_t (λ_r + λ_t)|d_rt|²,   G = Σ_{r<t} x_r x_t (Σ_{u∉{r,t}} x_u λ_u²) |d_rt|².
+
+- **E − D = G.** The constraint gives, for each r, the weighted variance identity
+  λ_r Σ_{t≠r} x_t|d_rt|² − λ_r²|ζ_r|² = λ_r² Σ_{t<u; t,u≠r} x_t x_u |d_tu|². Multiply by x_r and sum over r.
+- **T ≤ G.** The constraint also gives λ_rζ_r + λ_tζ_t = Σ_{u∉{r,t}} x_u (λ_t d_ru + λ_r d_tu). Cauchy–Schwarz with total
+  weight δ_rt, and then |a + b|² ≤ 2|a|² + 2|b|², give
+  T ≤ ½ Σ_{r<t} Σ_{u∉{r,t}} x_r x_t x_u (λ_t²|d_ru|² + λ_r²|d_tu|²) = G, counting each triple with its three differences.
+- **E ≤ (2 + 2γ)S.** λ_r + λ_t = 2 + x_rλ_r + x_tλ_t ≤ 2 + 2γ, and Σ_{r<t} x_r x_t |d_rt|² = S.
+
+So L = D + T ≤ D + G = E ≤ (2 + 2γ)S. The three gaps add up to an exact identity on the constraint subspace:
+
+    (2 + 2γ)S − L = Σ_{r<t} Σ_{u∉{r,t}} x_r x_t x_u λ_u |d_rt|² + ¼ Σ_{r<t} Σ_{u∉{r,t}} x_r x_t x_u |λ_t d_ru − λ_r d_tu|²
+                    + ¼ Σ_{r<t} (x_r x_t/δ_rt) Σ_{u<v; u,v∉{r,t}} x_u x_v (λ_r + λ_t)² |d_uv|²,
+
+with every coefficient nonnegative. ∎
+
+**Kernel.** In units of 2^{k−1} the letter-1 block is [[P, X], [X^*, B]] with P = I − ww^T (|w| = 1), X = −½τPΛ and
+B = (I + ½N)^{−1} ≻ 0. The bound gives XB^{−1}X^* ⪯ (12/25)P, so eliminating the columns leaves
+P − XB^{−1}X^* ⪰ (13/25)P on the rows. Hence the kernel of the block is exactly (w, 0), that is p ⊗ H_0 (note X^*w = 0).
+The letter-2 blocks are positive definite.
+
+The worst case of (C0) itself is the ratio 4/9, approached as x → (½, ½, 0, …). (The first version of this proof used a
+regime analysis and interval arithmetic, `code/c0_interval.py`; we keep it as an independent check.)
 
 ## 3c. The conditions (R∞)_{−1} and (R∞)_k, every k
 
-**Proposition M.** For every k and every positive weight vector, (R∞)_{−1} holds.
+**Proposition M.** For every k ≥ 2 and every positive weight vector, (R∞)_{−1} holds (for k = 1 the entry is 0).
 
 *Proof.* It is the 1 × 1 block (vac, vac). By Lemma G it equals 2^{−k}(1 − ½w^TE_1^{−1}w), where on the letter-1 part
 of H_1, E_1 = 2 diag(|s| − s_r) + ½ww^T. Sherman–Morrison gives w^TE_1^{−1}w = γ/(1 + γ/2) with
@@ -328,10 +336,37 @@ Together they contain all 2k·2^k states. Put N_r = 1 for r ∈ T and ½ otherwi
 In our samples the smallest type I eigenvalue off the kernel is about 0.44, so 11/48 is not sharp. This fits the
 searches, where (R∞)_k never came close to binding.
 
+## 3d. The type II blocks of every (R∞)_j
+
+**Proposition T2′.** For every k ≥ 2, every j and every positive weight vector, every torus block of (R∞)_j in which a
+copy t carries the letter 2 in row and column is positive definite. More precisely, let u = |2@t⟩ be the row of such a
+block and x_t = s_t/|s|. The compression of Y to u ⊗ (all columns) satisfies
+
+    Y|_{u ⊗ ·} ⪰ (4/9) 4^{−k} min{x_t, 1 − x_t} · I.
+
+*Proof.*
+1. **Positivity.** u is a product vector, so by Theorem 1 of `support-and-projector-notes/` the form q_k is ≥ 0 on every
+   operator whose range lies in span{u, p}, whatever the co-range. So the compression of M^{⊗k} to span{u, p} ⊗ (all
+   columns) is ⪰ 0. In the basis (u, p) write it as [[D_u, C], [C^*, D_p]]. Its Schur complement D_u − CD_p^{−1}C^* is the
+   compression of M^{⊗k} − R_p to the row u. Since u is a real product vector, this equals the compression of
+   Y = (M^{⊗k} − R_p)^Γ to the row u. A type II block has the single row u, so it is a principal submatrix.
+2. **One-copy facts.** For a one-copy computational vector v, Y_v has kernel K_v = (v ⊗ C³) ⊕ Sym²(v^⊥) (for v = |0⟩,
+   Y_v = |10⟩⟨10| + |20⟩⟨20| + (|12⟩ − |21⟩)(⟨12| − ⟨21|), row ⊗ column), and T_v has spectrum {1, −1/3}. By
+   tensorisation every eigenvalue of T_u other than 1 is at most 1/9, so Y_u ⪰ (8/9)2^{−k} Π_{K^⊥} with K = ⊗_i K_{u_i}.
+3. **The other Schur complement.** At the copy t (where u has the letter 2), K_{|2⟩}^⊥ is spanned by |02⟩, |12⟩ and
+   (|01⟩ − |10⟩)/√2, and the row of p at copy t has density (|s| − s_t)|0⟩⟨0| + s_t|1⟩⟨1|. Hence, for every column
+   vector z, ⟨p ⊗ z, Y_u(p ⊗ z)⟩ ≥ ε‖z‖² with ε = (4/9)2^{−k} min{s_t, |s| − s_t}. By the product identity this says
+   D_p − C^*D_u^{−1}C ⪰ εI.
+4. **Exchange.** Put K = D_u^{−1/2}CD_p^{−1/2}. Since D_p ⪯ |s| (‖M^{⊗k}‖ = 1), step 3 gives I − K^*K ⪰ (ε/|s|)I, hence
+   I − KK^* ⪰ (ε/|s|)I, hence D_u − CD_p^{−1}C^* ⪰ (ε/|s|)D_u ⪰ (ε/|s|)2^{−k}I. ∎
+
+This contains Propositions T2 (j = k − 1) and E2 (equal weights). Numerically the bound holds with a factor of at least
+9 to spare (`code/check_typeII_allj.py`).
+
 **What blocks the rest.** Two parts are still open:
 - the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 1 (the Remark after Proposition U0 reduces each to an explicit
   matrix of size u(k − 1) + m + 1);
-- the conditions (R∞)_j with j ≤ k − 2.
+- the letter-1 and type I blocks of the conditions (R∞)_j with 1 ≤ j ≤ k − 2.
 
 In both, the method of Theorem T leaves soft directions: eigenvalues 0.01–0.1, and as small as 0.0015 for
 (R∞)_{k−2} at spread weights. They lie in the J⁻ part of the G1 columns and tend to 0 at the boundary of the weight
@@ -383,13 +418,38 @@ kernel is exactly:
 definite, for every k and j. Its reduced form is one-dimensional per i, with a closed Clebsch–Gordan formula; the
 formula is checked against the explicit forms (`code/check_caseII.py`).
 
-**Letter-2 blocks, k ≤ 14.** For the type I blocks the symmetry is S_T × S_U. They reduce to forms of size at most
-10 × 10 (S_T-symmetric) and 3 × 3 (sign twist on a pair in T). These reduced forms are checked against the independent
-builder for k = 3 and 4. They are ⪰ 0 by exact elimination for every k ≤ 14, every j and every pattern
-(`code/run2.py`).
+**Letter-2 blocks of case I.** For the type I blocks the symmetry is S_T × S_U, with τ = |T| and u = k − τ. The T-part
+carries only the irreps (τ) and (τ − 1, 1): the S_T-invariant vectors ("sym", at most 10) and the sign twist on a pair
+of T ("anti", at most 3). The U-part is the letter-1 module on u copies with the twists of the reduction above. The
+entries come from the same orbit calculus, with τ as a fourth parameter; it enters only through 𝒩 (each letter-2 copy
+adds 1) and through orbit sizes. The reduced forms agree with the independent builder for k = 3, 4 (598 entries), with
+explicit vectors for k ≤ 10 (1003 forms), and are ⪰ 0 by exact elimination for every k ≤ 14 (`code/run2.py`) and
+k ≤ 16 (`code/num_letter2.py`, 4998 forms).
 
-Together with Theorem E1, Proposition E2 and the remark that (R2) always holds, all group conditions hold at equal
-weights for every k ≤ 14. This proves the Corollary stated at the top.
+**Theorem E3.** At equal weights, for every k, every j and every T ≠ ∅ with no copy carrying the letter 2 twice, every
+reduced form of the case I block is ⪰ 0, with one exception. Anti forms are positive definite; sym forms have kernel
+exactly the part of p ⊗ H_j in the block. The exception is the part of the sym forms that belongs to the irreps
+(u − i, i) when (q0, t, i, τ) lies in the corner C = {q0 ≥ 2, t ≥ 6, i ≥ 2, τ ≥ 2}, where q0 = j − τ − i and
+t = k − j − i. C starts at k = 14, and there the forms are ⪰ 0 for every k ≤ 38.
+
+*Proof (computer-assisted).*
+1. **Families** (`code/prove_letter2.py`). The parameters split into families q0 ∈ {−1, 0, 1, ≥ 2},
+   t ∈ {−1, …, 3, ≥ 4}, i ∈ {0, 1, ≥ 2}, plus the line q0 = 2, t = −1; τ is always symbolic, and both modes are
+   treated. In each family the script checks that the Newton window is exact, compares the symbolic form with the
+   numeric calculus at sample points, checks the kernel vector, and eliminates with pivots that are ratios of
+   one-signed polynomials after each parameter is shifted to its minimum. All anti families pass, and all sym
+   families except the generic one [q0 ≥ 2, t ≥ 4, i ≥ 2].
+2. **The generic sym family** (`code/prove_letter2_split2.py`). An explicit basis without poles, with one-signed
+   determinant, splits the form by S_U-irreps. The (u − i − 1, i, 1) part has two positive pivots, for every k. The
+   (u − i, i) part is a 7 × 7 form: its first four pivots are positive on the whole family. With one more parameter
+   fixed the elimination closes: τ = 1 for all q0 ≥ 2, t ≥ 4, i ≥ 2 (`code/prove_tau_loop.py 1`), and t = 4, 5 for all
+   q0 ≥ 2, i ≥ 2, τ ≥ 1 (`code/prove_fixed_loop.py t 4 5`).
+3. **The corner.** What is left is C. There every form is eliminated exactly for 14 ≤ k ≤ 38: 11 011 forms, each
+   ⪰ 0 with nullity exactly 1 (`code/num_generic.py 14 38 6 2`). ∎
+
+Together with Theorem E1, Proposition E2, Theorem E3 and the remark that (R2) always holds, all group conditions hold
+at equal weights for every k ≤ 38, and for every k every torus block except the corner piece of Theorem E3 is ⪰ 0.
+This proves the Corollary stated at the top.
 
 ## Code and checks
 
@@ -410,6 +470,11 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `check_vs_builder.py`, `check_orbit_vs_eqlib.py` | Reduced letter-1 forms against the builder (k ≤ 5) and against explicit vectors (k ≤ 9) |
 | `check_caseII.py` | Proposition E2 |
 | `check2_vs_builder.py`, `run2.py` | Reduced letter-2 forms against the builder (k = 3, 4); exact elimination for every k ≤ 14 |
+| `orbit2.py`, `check_orbit2.py` | Orbit calculus for the case I letter-2 forms (numeric and over Q(q0, t, i, τ)); agreement with explicit vectors for every case I form with k ≤ 10 |
+| `prove_letter2.py`, `prove_letter2_split2.py`, `prove_letter2_split_tau.py`, `prove_tau_loop.py`, `prove_fixed_loop.py`, `sanity_generic.py` | Theorem E3: the symbolic families, the irrep split of the generic family, the fixed-parameter families τ = 1 and t = 4, 5, and the window and sample-point checks of the generic family |
+| `num_generic.py`, `num_letter2.py` | Exact elimination of the corner forms for 14 ≤ k ≤ 38, and of every case I form for k ≤ 16 |
 | `check_bottom_condition.py`, `c0_interval.py` | Theorem B0: closed form against a direct construction (k ≤ 5), the letter-2 blocks, the reduction to (C0), the bound chains at random points, and the two reduced inequalities in interval arithmetic |
+| `check_bottom_algebraic.py` | Theorem B0, algebraic proof: the identity E − D = G, the bound T ≤ G and the sum-of-squares identity exactly at rational points; the letter-2 estimate in SymPy; the bound L ≤ (2 + 2γ)S at random complex points |
+| `check_typeII_allj.py` | Proposition T2′: the one-copy facts exactly, and the lower bound for the row u = 2@t against a direct construction (k = 2, …, 5, random and extreme weights) |
 | `check_top_condition.py` | Theorem K: closed form against a direct construction (k ≤ 5, every T, all 2k·2^k states), the identities C = PL and the entries of F exactly at rational weights, the dominance margin 11/16, and the gap at random and extreme weights |
 | `check_typeI_reduction.py` | The Remark after Proposition U0 (the block K, its inverse and lower bound, block sizes; k = 3, 4, 5) and the constant 5/24 in Theorem T (the scalar lemma in SymPy, the smallest eigenvalue of the form) |

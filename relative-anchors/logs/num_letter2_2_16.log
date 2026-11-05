@@ -1,0 +1,17 @@
+k=2 done, 7 forms so far (0s)
+k=3 done, 24 forms so far (0s)
+k=4 done, 56 forms so far (0s)
+k=5 done, 110 forms so far (0s)
+k=6 done, 193 forms so far (0s)
+k=7 done, 314 forms so far (0s)
+k=8 done, 482 forms so far (1s)
+k=9 done, 708 forms so far (1s)
+k=10 done, 1003 forms so far (2s)
+k=11 done, 1380 forms so far (3s)
+k=12 done, 1852 forms so far (5s)
+k=13 done, 2434 forms so far (9s)
+k=14 done, 3141 forms so far (15s)
+k=15 done, 3990 forms so far (22s)
+k=16 done, 4998 forms so far (31s)
+4998 case I forms; (mode, nullity) histogram {('sym', 0): 751, ('sym', 1): 2159, ('anti', 0): 2088}
+PASS 31s

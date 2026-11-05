@@ -1,0 +1,3 @@
+(a) Y_|0> closed form, rank 3 (kernel dimension 6), spec T = {1: 6, -1/3: 3}: PASS
+(b) 60 rows u = 2@t, k = 2..5: smallest ratio lambda_min / bound = 9.000 (must be >= 1)
+PASS

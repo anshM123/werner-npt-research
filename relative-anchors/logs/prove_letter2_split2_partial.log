@@ -1,0 +1,12 @@
+built 0.2s
+rank of functionals 4 nullspace dim 2 0.2s
+block diagonal (8 + 2): True 0.4s
+P entries pole-free on the family: True ; det P one-signed: True 0.4s
+  (u-i-1,i,1) pivot 1: 187/95 terms, positive (0.4s)
+  (u-i-1,i,1) pivot 2: 508/479 terms, positive (0.4s)
+kappa in ker Q8: True ; kappa in V8: True ; drop X1
+  (u-i,i) pivot 1: 4/5 terms, positive (0.4s)
+  (u-i,i) pivot 2: 81/125 terms, positive (0.4s)
+  (u-i,i) pivot 3: 6594/6616 terms, positive (0.7s)
+  (u-i,i) pivot 4: 8242/9208 terms, positive (86.8s)
+(run stopped by the 420 s time limit during the fifth pivot of the (u-i,i) form; see README, Theorem E3)

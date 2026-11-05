@@ -1,0 +1,6 @@
+m=2: A - B - P/64 PSD True, rank 72 (nullity 9); B + 215/216 A PSD True, rank 81 of 81; component sizes {15: 1, 8: 6, 1: 6, 2: 6}
+m=3: A - B - P/64 PSD True, rank 702 (nullity 27); B + 215/216 A PSD True, rank 729 of 729; component sizes {27: 1, 14: 18, 12: 6, 1: 24, 2: 63, 4: 45, 8: 6}
+D_b (normalised) charpoly: (1/8192, [(x + (-1), 1), (2*x + (-1), 3), (4*x + (-3), 5)])
+B_b v = -(11/9) A_2 v: True;  |v|^2 = 28, <v, A_2 v> = 9
+E_0 compression charpoly: (1/67108864, [(2*x + (-1), 2), (4*x + (-1), 3), (x + (-1), 4), (4*x + (-3), 9)])
+PASS

@@ -1,0 +1,4 @@
+(a) exact, 40 rational points (k = 3..7): E - D = G, T <= G, sum-of-squares identity: PASS
+(b) letter-2 termwise identity and the final determinant bound: PASS
+(c) complex zeta, 3000 points: max L/((2 + 2 gamma) S) = 0.999999; max (2 + 2 gamma)/((12/25)(2 + gamma)^2) = 0.989862
+PASS

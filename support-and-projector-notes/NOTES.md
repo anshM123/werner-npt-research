@@ -14,7 +14,9 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
 - **Section 5.** Which single vectors of a plane certify it in the Schur argument ("universal anchors"). Numerics,
   and three exact facts for every n ≥ 3: the W-plane and every plane near it contain no anchor (Proposition 7); a
   single excitation is an anchor exactly when it lives on at most two copies (Proposition 8); and the endpoint still
-  holds, with a margin, on all planes near the W-plane (Corollary 9).
+  holds, with a margin, on all planes near the W-plane (Corollary 9). Also: when a tensor product is an anchor
+  (Proposition 10), a second open family of anchor-free planes (Proposition 11), and strict anchors with explicit
+  open balls for every n (Theorem 12).
 
 **None of this settles the all-copy problem.**
 
@@ -309,6 +311,72 @@ most 2‖U − U′‖, since ‖M^{⊗n}‖ = 1. ∎
 At n = 3 the exact minimum on the W-plane is 1/4 (`single-excitation-range/code/check_wplanes.py`), so there the margin
 is 1/4 − 2η. The radii are small (β_3/(2K_3) = 1/752328); the point is that both sets are open.
 
+**Proposition 10 (anchors of tensor products).** Let p = p_1 ⊗ ⋯ ⊗ p_m be a product over disjoint blocks of copies,
+put a_j = max{0, −λ_min(T_{p_j})} and order them a_(1) ≥ a_(2) ≥ ⋯ (a missing second value counts as 0). Then p is a
+universal anchor if and only if every p_j is one and a_(1)a_(2) ≤ 1.
+
+*Proof.* T_p = ⊗_j T_{p_j}, and every T_{p_j} has the eigenvalue 1. Necessity: take the eigenvalue 1 in all factors
+but one, or the two most negative eigenvalues in two factors and 1 elsewhere. Sufficiency: a positive eigenvalue of
+T_p uses an even number of negative factors; pair their magnitudes in decreasing order. Each pair is at most
+a_(1)a_(2) ≤ 1 (note a_(2)² ≤ a_(1)a_(2)), and the positive factors are at most 1. ∎
+
+For b = (|10⟩ + |01⟩)/√2, which is an anchor with λ_min(T_b) = −11/9 (`single-excitation-range/`, Proposition 10),
+b ⊗ b is not an anchor, while b ⊗ |0…0⟩ is (the vacuum has a = 1/3).
+
+**Proposition 11 (a second family of anchor-free planes).** Let n ≥ 4, let b be as above, let E be any two-dimensional
+subspace of the antisymmetric space Λ²C³ ⊂ C³ ⊗ C³, and put L_n = b ⊗ E ⊗ |0⟩^{⊗(n−4)} (copies 1–2, 3–4, then the
+rest). Then every unit p ∈ L_n has λ_min(Y_p) ≤ −(5/98)·2^{4−n}, and every C with range in L_n, with any co-range,
+has q_n(C) ≥ 2^{1−n}‖C‖_F², with equality attained.
+
+*Proof.*
+- **Witness.** With A_2 = (M^{⊗2})^Γ and B_b = R_b^Γ, an exact computation shows that
+  v = 2|00⟩|11⟩ + 3|01⟩|01⟩ + |01⟩|10⟩ + |10⟩|01⟩ + 3|10⟩|10⟩ + 2|11⟩|00⟩ (row ⊗ column) satisfies B_b v = −(11/9)A_2 v,
+  ‖v‖² = 28 and ⟨v, A_2 v⟩ = 9. Every unit a ∈ Λ²C³ has two equal Schmidt coefficients, so it is locally unitarily
+  equivalent to b and has a transformed witness v_a. Since D and R factor over products of row vectors,
+  Y_{b⊗a} = A_2 ⊗ A_2 − B_b ⊗ B_a, and ⟨v ⊗ v_a, Y_{b⊗a}(v ⊗ v_a)⟩ = 81 − 121 = −40 with ‖v ⊗ v_a‖² = 784. Each further
+  vacuum copy, with the witness |0⟩|0⟩, halves the form and keeps the norm.
+- **Margin.** The compression of M^{⊗n} to L_n ⊗ (columns) is the tensor product of D_b, the compression of M^{⊗2} to
+  E ⊗ C⁹, and D_{|0⟩} = ½ on each further copy. For normalised b, D_b has spectrum {1/2 (three times), 3/4 (five times),
+  1}. All two-dimensional E are equivalent under U ⊗ U (Λ²C³ is the conjugate defining representation of U(3) times the
+  determinant), and for E_0 = span{|01⟩ − |10⟩, |02⟩ − |20⟩} the compression has spectrum {1/4 (three times), 1/2 (twice),
+  3/4 (nine times), 1 (four times)}. The minimum is ½ · ¼ · 2^{−(n−4)} = 2^{1−n}, attained by products of minimisers. ∎
+
+At four copies every vector of L_4 factors across the cut {1,2}|{3,4}, while every vector of the W-plane has Schmidt
+rank two across every two-two cut, so the two families are not related by invertible maps on single copies (even with
+permutations). Their neighbourhoods (as in Corollary 9) are further open sets of anchor-free planes on which the
+endpoint holds.
+
+**Theorem 12 (strict anchors for every n).** Let g_2 = (|00⟩ + |11⟩ + |22⟩)/√3, g_3 = (|000⟩ + |111⟩ + |222⟩)/√3, and let
+p_n = g_2^{⊗n/2} for even n and p_n = g_3 ⊗ g_2^{⊗(n−3)/2} for odd n ≥ 3. Then the kernel of Y_{p_n} is exactly
+p̄_n ⊗ (C³)^{⊗n}, and Y_{p_n} ⪰ δ_n on its orthogonal complement, with δ_n = 2^{−n}/216.
+
+*Proof.* For m = 2, 3 put A_m = (M^{⊗m})^Γ, B_m = R_{g_m}^Γ and P_m = (I − |g_m⟩⟨g_m|) ⊗ I. Exact elimination
+(`code/check_anchor_families.py`) gives A_m − B_m − P_m/64 ⪰ 0 with nullity exactly 3^m, and B_m + (215/216)A_m ≻ 0.
+The nonzero eigenvalues of I − T_{g_m} = A_m^{−1/2}(A_m − B_m)A_m^{−1/2} are those of (A_m − B_m)^{1/2}A_m^{−1}(A_m − B_m)^{1/2},
+hence at least (1/64)/λ_max(A_m) = (1/64)(2/3)^m ≥ 1/216. So T_{g_m} has the eigenvalue 1 with multiplicity exactly
+3^m, and all its other eigenvalues lie in [−215/216, 215/216]. By tensorisation the same holds for T_{p_n}, with
+eigenvalue 1 of multiplicity 3^n (a product of eigenvalues equals 1 only if every factor is 1). Congruence by A^{1/2},
+with λ_min(A) = 2^{−n}, gives the gap. ∎
+
+Consequences, with K_n as in the consequences of Proposition 7.
+- **Open sets of anchors.** The lifted matrix Ŷ_p = Y_p + |p̄⟩⟨p̄| ⊗ I is ⪰ 0 exactly at anchors, ≻ 0 exactly at strict
+  anchors, and (K_n + 2)-Lipschitz in unit p. So every unit q with min_θ ‖q − e^{iθ}p_n‖ < 2^{−n}/(432(K_n + 2)) is a strict
+  anchor with gap at least δ_n/2.
+- **Margins through strict anchors.** If p is a unit vector with Y_p ⪰ g > 0 off its forced kernel (g ≤ 1), then
+  q_n(C) ≥ g·2^{−n−1}‖C‖_F² for every C whose range lies in a plane containing p. (In an orthonormal row frame (p, u) the
+  compressed form is [[D_p, X], [X^*, D_u]] with 2^{−n} ⪯ D_p, D_u ⪯ I and D_u − X^*D_p^{−1}X ⪰ g; after normalising the
+  diagonal blocks the off-diagonal block has norm at most √(1 − g), and 1 − √(1 − g) ≥ g/2.) Every plane through p_n
+  has margin at least 4^{−n}/432.
+- **Measure.** For every n ≥ 3, both the anchors and the non-anchors contain nonempty open sets, and so do the planes
+  with and without an anchor. The boundary of the set of anchors lies in the real algebraic set det Ŷ_p = 0, which is
+  not everything because of p_n; so almost every anchor is strict. Whether anchors become typical as n grows is open.
+
+**Remark (certifying a given plane).** f(p) = λ_min(Ŷ_p) is ≥ 0 exactly at anchors, and H(L) = max_{p∈L, |p|=1} f(p)
+satisfies |H(L) − H(L′)| ≤ (K_n + 2)η(L, L′). A mesh of the projective line of L with rigorous eigenvalue bounds therefore
+certifies either H(L) < 0 (no anchor near L) or H(L) > 0 (a strict anchor, and q_n ≥ H(L)·2^{−n−2}‖C‖² on all nearby
+planes) whenever H(L) ≠ 0. H(L) < 0 says nothing against the endpoint: the W-plane and the planes of Proposition 11
+have H < 0 and a positive margin.
+
 ## Code
 
 Python 3 with NumPy and SymPy. `code/check_pair_anchor.py` uses python-flint for the exact characteristic polynomials;
@@ -321,6 +389,9 @@ without it, it falls back to floating point. Outputs are in `logs/`.
 - `code/check_projector_reduction.py`: the flattening and flag identities of Proposition 4, on a random rank-two C, and
   the Gram identity behind Proposition 5.
 - `code/check_anchors.py`: Section 5 at n = 2, 3.
+- `code/check_anchor_families.py`: Theorem 12 and Proposition 11 in exact arithmetic (python-flint): the two
+  certificates for g_2 and g_3 (with their ranks and component sizes), the spectrum of D_b, the witness v, and the
+  spectrum of the compression to E_0.
 - `code/check_anchor_obstruction.py`: Propositions 7 and 8 in exact rational arithmetic for n = 3, …, 7: the rows of
   MV_p live on the vacuum column, the Gram matrix on (a_n, b_n), and the weighted identities at rational weights.
 

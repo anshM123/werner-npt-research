@@ -1,0 +1,22 @@
+=== prove_letter2.py anti [19:12:46]
+[anti: q0=2, t=-1, i>=2, tau>=2] empty  (0.0s)
+ALL LETTER-2 CASE I FAMILIES PROVED 1s
+=== prove_letter2.py sym [19:12:47]
+[sym: q0=2, t=-1, i>=2, tau>=1] PSD (pivots 1, kappa no)  (0.1s)
+ALL LETTER-2 CASE I FAMILIES PROVED 93s
+=== prove_fixed_loop.py t 4 5 [19:14:21]
+t = 5: PROVED (65s) ['GENERIC SYM FAMILY PROVED (pivots 2 + 7) 65s']
+proved for t = [4, 5]
+=== prove_tau_loop.py 1 [19:16:30]
+tau = 1: PROVED (78s) ['GENERIC SYM FAMILY PROVED (pivots 2 + 7) 78s']
+proved for tau = [1]
+=== num_generic.py 14 38 6 2 [19:17:49]
+k=38: 11011 generic forms so far (388s)
+11011 generic sym forms; PASS (PSD, nullity exactly 1) 388s
+=== sanity_generic.py [19:24:18]
+level offsets: delta >= 0 , delta' >= -2 -> window exact on the family: True
+81 sample points; PASS 1s
+=== check_orbit2.py 10 [19:24:20]
+k=10 done (35s)
+1003 forms compared; PASS
+=== done [19:24:55]
