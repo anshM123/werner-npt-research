@@ -1,0 +1,16 @@
+exact k=3 T=[0]: max |cf - 2 Y_lemmaB| = 0  ok
+exact k=3 T=[1]: max |cf - 2 Y_lemmaB| = 0  ok
+exact k=4 T=[0]: max |cf - 2 Y_lemmaB| = 0  ok
+exact k=4 T=[0, 2]: max |cf - 2 Y_lemmaB| = 0  ok
+exact k=4 T=[1, 2, 3]: max |cf - 2 Y_lemmaB| = 0  ok
+exact k=5 T=[0, 3]: max |cf - 2 Y_lemmaB| = 0  ok
+exact k=5 T=[4]: max |cf - 2 Y_lemmaB| = 0  ok
+exact k=5 T=[0, 1, 2]: max |cf - 2 Y_lemmaB| = 0  ok
+float k=4 T=[0, 1]: rel err vs direct = 1.11e-16  ok
+float k=4 T=[2]: rel err vs direct = 5.55e-17  ok
+float k=5 T=[1]: rel err vs direct = 5.55e-17  ok
+float k=5 T=[0, 3]: rel err vs direct = 1.11e-16  ok
+float k=6 T=[0, 2, 3, 5]: rel err vs direct = 2.22e-16  ok
+float k=6 T=[0, 1, 4]: rel err vs direct = 1.67e-16  ok
+time 1.4s
+PASS

@@ -1,0 +1,10 @@
+test_bern : PASS (1 s)
+check_cf : PASS (1 s)
+closed_u2 : PASS (16 s)
+check_closed : PASS (14 s)
+build_B : PASS (1 s)
+prove_B 2/5: PASS (2 s)
+build_A 2/5: PASS (3 s)
+prove_A 2/5: PASS (5 s)
+controls : PASS (4 s)
+ALL PASS

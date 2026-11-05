@@ -1,0 +1,16 @@
+den = 1/1152 * 8 factors
+  factor mu - 1 ^ 1: nonzero for mu < 1 (sigma > 0)
+  den factor ^1 (deg 1): degrees (0, 0, 1, 0), 2 terms: certified > 0 on [0,1]^4 {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0, 0]} (0.0 s)
+  den factor ^1 (deg 12): degrees (0, 0, 6, 6), 25 terms: certified > 0 on [0,1]^4 {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0, 0]} (0.0 s)
+  den factor ^1 (deg 2): degrees (1, 1, 1, 0), 6 terms: certified > 0 on [0,1]^4 {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0, 0]} (0.0 s)
+  den factor ^1 (deg 6): degrees (3, 3, 3, 2), 49 terms: FAILED {'boxes': 0, 'failed_box': ((41, 2199023255551), (41, 2199023255551), (41, 2199023255551), (41, 2199023255551)), 'reason': 'depth'} (0.0 s)
+  minus den factor ^1: degrees (3, 3, 3, 2), 49 terms: certified > 0 on [0,1]^4 {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0, 0]} (0.0 s)
+  den factor ^1 (deg 2): degrees (1, 0, 1, 0), 4 terms: certified > 0 on [0,1]^4 {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0, 0]} (0.0 s)
+  den factor ^1 (deg 6): degrees (3, 0, 3, 2), 22 terms: FAILED {'boxes': 0, 'failed_box': ((41, 2199023255551), (41, 2199023255551), (41, 2199023255551), (41, 2199023255551)), 'reason': 'depth'} (0.0 s)
+  minus den factor ^1: degrees (3, 0, 3, 2), 22 terms: certified > 0 on [0,1]^4 {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0, 0]} (0.0 s)
+  den factor ^1 (deg 8): degrees (4, 4, 4, 2), 161 terms: FAILED {'boxes': 0, 'failed_box': ((41, 2199023255551), (41, 2199023255551), (41, 2199023255551), (41, 2199023255551)), 'reason': 'depth'} (0.0 s)
+  minus den factor ^1: degrees (4, 4, 4, 2), 161 terms: certified > 0 on [0,1]^4 {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0, 0]} (0.0 s)
+FA = [('th', 2), ('ph', 2), ('mu', 4), ('la', 2), ('1-la', 2), ('1-mu', 6)] * PA, PA degrees (th, ph, mu, la) = (16, 16, 38, 28), 149753 terms
+  PA after the triangle map (H = 2/5): degrees (24, 16, 38, 28), 235064 terms: certified > 0 on [0,1]^4 {'boxes': 1, 'corner_boxes': 0, 'maxL': [0, 0, 0, 0]} (0.9 s)
+total 4.3 s
+PASS

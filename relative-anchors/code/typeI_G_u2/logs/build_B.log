@@ -1,0 +1,8 @@
+H = 2/5: m1: degrees (th, mu, la) = (9, 15, 12), terms 1104, removed [('1-mu', 1)]
+H = 2/5: m2: degrees (th, mu, la) = (18, 31, 23), terms 8644, removed [('th', 1), ('mu', 1), ('la', 1), ('1-mu', 3)]
+H = 2/5: m3: degrees (th, mu, la) = (27, 45, 32), terms 25406, removed [('th', 2), ('mu', 2), ('la', 1), ('1-la', 1), ('1-mu', 6)]
+H = 9/20: m1: degrees (th, mu, la) = (9, 15, 12), terms 1104, removed [('1-mu', 1)]
+H = 9/20: m2: degrees (th, mu, la) = (18, 31, 23), terms 8644, removed [('th', 1), ('mu', 1), ('la', 1), ('1-mu', 3)]
+H = 9/20: m3: degrees (th, mu, la) = (27, 45, 32), terms 25404, removed [('th', 2), ('mu', 2), ('la', 1), ('1-la', 1), ('1-mu', 6)]
+time 1.1 s
+PASS

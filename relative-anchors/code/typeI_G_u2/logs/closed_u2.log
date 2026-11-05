@@ -1,0 +1,22 @@
+Schur complement done (11.9 s)
+G symmetric: True
+G00 0 0 num terms 4827 den terms 4828 num deg 16 den deg 16
+G00 0 1 num terms 3860 den terms 4828 num deg 17 den deg 16
+G00 0 2 num terms 3860 den terms 4828 num deg 17 den deg 16
+G00 1 0 num terms 3860 den terms 4828 num deg 17 den deg 16
+G00 1 1 num terms 4825 den terms 4828 num deg 18 den deg 16
+G00 1 2 num terms 3860 den terms 4828 num deg 18 den deg 16
+G00 2 0 num terms 3860 den terms 4828 num deg 17 den deg 16
+G00 2 1 num terms 3860 den terms 4828 num deg 18 den deg 16
+G00 2 2 num terms 4825 den terms 4828 num deg 18 den deg 16
+G01 0 0 num terms 7313 den terms 10605 num deg 20 den deg 20
+G01 0 1 num terms 7311 den terms 10605 num deg 21 den deg 20
+G01 0 2 num terms 7311 den terms 10605 num deg 21 den deg 20
+G01 1 0 num terms 7311 den terms 10605 num deg 21 den deg 20
+G01 1 1 num terms 8445 den terms 10605 num deg 22 den deg 20
+G01 1 2 num terms 7307 den terms 10605 num deg 22 den deg 20
+G01 2 0 num terms 7311 den terms 10605 num deg 21 den deg 20
+G01 2 1 num terms 7307 den terms 10605 num deg 22 den deg 20
+G01 2 2 num terms 8445 den terms 10605 num deg 22 den deg 20
+total 15.8 s
+PASS
