@@ -1,0 +1,23 @@
+family 2, part inv, u0 = 2, u1 = 2, t-weight 0, bscale 1, variables ['q']: vectors (['R_t0', 'R_t1', 'R_00', 'R_01', 'R_11'], ['P_t0', 'P_t1', 'P_00d', 'P_00', 'P_01', 'P_10', 'P_11d', 'P_11'], ['Q_00', 'Q_01', 'Q_11']) [0.0s]
+  det of the Gram matrix GR: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  det of the Gram matrix GP: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  det of the Gram matrix GQ: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  kernel vector [1, 0, 1, 1, 0, 1, 0, 0]: F kappa = 0 identically: True
+  kernel vector [0, 1, 0, 0, 1, 0, 1, 1]: F kappa = 0 identically: True
+  R-block diagonal: True
+  R-entry 1: sign 1; numerator deg 0 (1 terms), denominator deg 0 (1 terms); [one-signed 0/1] [one-signed 0/1] [0.0s]
+  R-entry 2: sign 1; numerator deg 1 (1 terms), denominator deg 0 (1 terms); [one-signed 1/1] [one-signed 0/1] [0.0s]
+  R-entry 3: sign 1; numerator deg 0 (1 terms), denominator deg 0 (1 terms); [one-signed 0/1] [one-signed 0/1] [0.0s]
+  R-entry 4: sign 1; numerator deg 1 (1 terms), denominator deg 0 (1 terms); [one-signed 1/1] [one-signed 0/1] [0.0s]
+  R-entry 5: sign 1; numerator deg 2 (1 terms), denominator deg 0 (1 terms); [one-signed 2/1] [one-signed 0/1] [0.0s]
+  minor 1 (P): sign 1; numerator deg 11 (12 terms), denominator deg 11 (12 terms); [one-signed 11/12] [one-signed 11/12] [0.1s]
+  minor 2 (P): sign 1; numerator deg 12 (12 terms), denominator deg 12 (13 terms); [one-signed 12/12] [one-signed 12/13] [0.1s]
+  minor 3 (P): sign 1; numerator deg 24 (24 terms), denominator deg 24 (25 terms); [one-signed 24/24] [one-signed 24/25] [0.1s]
+  minor 4 (P): sign 1; numerator deg 30 (28 terms), denominator deg 29 (30 terms); [one-signed 30/28] [one-signed 29/30] [0.1s]
+  minor 5 (P): sign 1; numerator deg 31 (28 terms), denominator deg 30 (31 terms); [one-signed 31/28] [one-signed 30/31] [0.1s]
+  minor 6 (P): sign 1; numerator deg 40 (35 terms), denominator deg 37 (38 terms); [one-signed 40/35] [one-signed 37/38] [0.1s]
+  minor 7 (Q): sign 1; numerator deg 60 (55 terms), denominator deg 57 (58 terms); [one-signed 60/55] [one-signed 57/58] [0.1s]
+  minor 8 (Q): sign 1; numerator deg 66 (60 terms), denominator deg 63 (64 terms); [one-signed 66/60] [one-signed 63/64] [0.1s]
+  minor 9 (Q): sign 1; numerator deg 68 (60 terms), denominator deg 63 (64 terms); [one-signed 68/60] [one-signed 63/64] [0.1s]
+time 0.1s
+PASS

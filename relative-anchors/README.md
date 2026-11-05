@@ -34,7 +34,10 @@ This folder collects what we can prove about the group conditions for every k.
     conditions on Schur complements (Conjectures L and L1, Section 3h), proved for k ≤ 4 and checked exactly for
     k ≤ 10 and k ≤ 7. The blocks of (R∞)_1 in which one copy carries the letter 2 hold for every k when the
     weights of the other copies take at most two distinct values (Theorems EQ and 2L), and with Theorem 2V for the
-    letter-1 block, all of (R∞)_1 holds for every k whenever the weights take at most two distinct values.
+    letter-1 block, all of (R∞)_1 holds for every k whenever the weights take at most two distinct values. In
+    (R∞)_2 the type I blocks with one or two letters 1 hold for every k when the weights outside T are equal
+    (Theorems F1a and F2a, arbitrary weights on T), and at two weight values for every k ≤ 26 (Theorems F1b and
+    F2b; for larger k outside two configurations); the letter-1 block of (R∞)_2 is open for k ≥ 5.
   - In every (R∞)_j, every block in which one copy carries the letter 2 in row and column is positive definite, with
     an explicit lower bound (Proposition T2′).
 - **Four copies, every positive weight vector** (Section 3f, exact computer-assisted certificates). (R∞)_1 and
@@ -68,7 +71,9 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
   are Theorems EU and TL), reduced to the condition G ≻ 0 of Theorem C; and the letter-1 and type I blocks of (R∞)_j
   for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, Section 3f; the blocks
   without a letter 1 are Theorem DJ for every k). The rest of (R∞)_1 is reduced to Conjectures L and L1, and all of it
-  is proved when the weights take at most two values (Section 3h).
+  is proved when the weights take at most two values (Section 3h). In (R∞)_2 the letter-1 block is open for k ≥ 5
+  even at two weight values, and the type I blocks with a letter 1 are proved at two weight values only for
+  k ≤ 26 and outside two configurations (Theorems F1b and F2b).
 
 Nothing here is refereed. The endpoint problem itself is open.
 
@@ -928,6 +933,55 @@ through Conjectures L and L1): the type II blocks are Proposition T2′ and the 
 At two weight values both are proved (Theorems EQ, 2L and 2V); these prove the block statements, not the Laplacian
 properties of Conjectures L and L1.
 
+**(R∞)_2: the blocks with one or two letters 1** (`code/middle_j2/`, notes with the proofs there). The torus blocks of
+(R∞)_2 are the letter-1 block (three letters 1), the type I blocks with |T| = 1, 2, 3 (two, one and no letters 1) and
+the type II blocks. The blocks with |T| = 3 and the type II blocks hold for all weights (Theorems D₂ and DJ,
+Proposition T2′), and at k = 4 everything is Theorem B4. For the type I blocks with a letter 1:
+
+**Lemma P2.** Let T = {t, τ}. In the type I block of (R∞)_2 labelled by T (4k − 4 states) the states
+P_r = (1@r, 2@t 2@τ) form the Laplacian Π = diag(N) − (N∘w)(N∘w)ᵀ/(2|s| − s_t − s_τ), with N_r = 2 off T and 1 on
+T. The block is congruent to diag(Π, Φ) with Φ = C − Bᵀ diag(1/N) B of size 3k − 4, so it is ⪰ 0 with kernel exactly
+p ⊗ |2@t 2@τ⟩ if and only if Φ ≻ 0. (The same argument as Lemma P for (R∞)_1.)
+
+**Theorem F1a.** For every k ≥ 4, every T = {t, τ} and all weights that are equal on the copies outside T (the weights
+of t and τ arbitrary), the type I block of (R∞)_2 labelled by T is ⪰ 0 with kernel exactly p ⊗ |2@t 2@τ⟩.
+
+**Theorem F2a.** For every k ≥ 4, every t and all weights that are equal on the copies other than t (the weight of t
+arbitrary), the type I block of (R∞)_2 labelled by T = {t} is ⪰ 0 with kernel exactly
+span{p ⊗ |2@t 1@c⟩ : c ≠ t}.
+
+**Theorems F1b and F2b (two weight values).** Let k ≥ 5 and let the weights take at most two distinct values. Then
+the two blocks above are ⪰ 0 with these kernels, except possibly in two configurations, which need k ≥ 28 and k ≥ 27:
+for T = {t, τ}, t and τ of different weights and more than 12 copies of each weight outside T; for T = {t}, more than
+12 copies of each weight outside t. In particular both hold at two weight values for every k ≤ 26.
+
+*Proof (computer-assisted in the last step).*
+1. *Closed forms* of all entries of both blocks, for all weights (Lemma B with j = 2, Woodbury and Sherman–Morrison;
+   checked entry by entry against the Lemma B builder).
+2. *Symmetry.* Permutations inside each weight level outside T act on the blocks. For T = {t, τ}, Lemma P2 reduces
+   the block to Φ, which splits into an invariant part (8 × 8 on the orbit indicators) and a 3 × 3 standard part for
+   each level. For T = {t} the block splits into five families of parts (trivial; the standard, two-row and hook irreps
+   of one level; standard ⊗ standard), with explicit test vectors and pattern sums in which the level sizes are
+   symbolic; the R-states are eliminated (that block is diagonal), and one P-state per kernel vector is deleted.
+3. *Certificates.* Every leading principal minor of every part is a ratio of polynomials with only positive
+   coefficients, in size regimes (sizes fixed, or u = o + x symbolic) that cover every configuration of the
+   statements: one level with free weights on T, and two levels in each case left after exchanging the levels (and t
+   with τ). The largest minor has a numerator with 63 948 terms. ∎
+
+The two excluded configurations are where the two largest certificates did not finish: one passed 7 of its 8 leading
+minors and the other 7 of its 9 before they were stopped (time and memory limits); with a fixed number m ≤ 12 of
+copies on one level they pass. The reduced forms agree exactly with projections of the block built from the
+definitions, and, for T = {t, τ}, with a Schur complement taken directly from that block; for T = {t} the spectra of
+the parts, with the irrep dimensions as multiplicities, add up to the spectrum of the block at k = 7, 8. Both blocks
+are ⪰ 0 with exactly these kernels at 24 weight vectors with k ≤ 8, and with B replaced by (1 + 1/1000)B the
+gauge-fixed blocks fail at explicit two-value points.
+
+So at two weight values every torus block of (R∞)_2 except the letter-1 block holds for 5 ≤ k ≤ 26 (and for larger k
+outside the two configurations above). The letter-1 block of (R∞)_2 is open for k ≥ 5, at two weight values as for
+general weights: at the points tested (k = 5, 6, 7) its kernel is exactly p ⊗ |1@P⟩ (P a pair of copies) and it is
+positive definite after the gauge, but no proof is known. So (R∞)_2 itself is not proved for any k ≥ 5 at two weight
+values.
+
 ## 4. Equal weights, every k
 
 At w_t = 1 the conditions commute with S_k.
@@ -1060,6 +1114,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `middle_j1/` (`run_all.sh`, notes in `middle_j1/NOTES.md`) | Section 3h: the closed forms of the blocks without a letter 1 of (R∞)_1 and (R∞)_2 against the Lemma B blocks (k ≤ 8) and the builder (k ≤ 6), the moment bounds and vertex reductions at rational configurations, the Bernstein certificates of Theorems D₁ (8 functions) and D₂ (8 + 64), the certified formulas against the true blocks; the closed forms and inverse-free reductions of the |T| = 1 and letter-1 blocks (k ≤ 8 and k ≤ 7), Conjecture L proved at k = 3, 4 (symbolic pivots and Laplacian signs, and a leading-minor certificate at k = 4) and checked exactly for k ≤ 10, Conjecture L1 checked exactly for k ≤ 7; negative controls |
 | `middle_j1_t1/` (`run_all.sh`, notes in `middle_j1_t1/NOTES.md`) | Section 3h, Theorems EQ and 2L: the P-first reduction (Lemma P) and the closed form of Φ against the Lemma B blocks (k ≤ 8), the level reductions against exact projections (32 weight vectors, B scaled by 1 and by 1 + 1/1000), the leading-minor certificates for one and two levels, a second certificate at equal U-weights without Lemma P and a separate implementation of that case, negative controls; k = 3, 4 for all weights through Φ′; the stopped k = 5 and three-level attempts |
 | `middle_j1_l1/` (`run_all.sh`, notes in `middle_j1_l1/NOTES.md`) | Section 3h, Theorem 2V: the closed forms of the letter-1 block of (R∞)_1 entry by entry against the Lemma B builder, the S_{u₁} × S_{u₂} test vectors and pattern sums, the reduced forms against exact projections (14 size pairs and k = 9) and against the builder from the definitions identically in the weight ratio, the 22 regime certificates and their coverage, the whole block at 54 weight vectors, negative controls |
+| `middle_j2/` (`run_all.sh`, `run_crosscheck.sh`, notes in `middle_j2/NOTES.md`) | Section 3h, (R∞)_2: the closed forms of the type I blocks with one and two letters 1 entry by entry against the Lemma B builder, Lemma P2, the reduced forms against exact projections of the Lemma B block and of the block from the definitions, the leading-minor certificates of Theorems F1a, F1b, F2a and F2b and their coverage, the dimension counts, kernels and gauge-fixed positivity of all three families at k = 5, 6, 7, negative controls; a second check (a Schur complement taken directly from the builder, the spectra of the parts against the spectrum of the block, and end-to-end kernels and positivity at k = 7, 8); the two unfinished regimes in `attempts.sh` |
 | `middle_j1_t1_sub/` (`run_all.sh`, notes in `middle_j1_t1_sub/NOTES.md`) | Section 3h, general weights: Propositions Q and RP and Lemma K (reductions, identities and conclusions exactly at rational points, the identity of Proposition Q symbolically for |U| = 2, 3), negative controls; the exact two-copy certificates behind Conjecture TC at 25 weight vectors and their controls; floating-point surveys |
 | `middle_k2/` (`run_all.sh`, notes in `middle_k2/NOTES.md`) | Section 3e: the closed form of the letter-1 block of (R∞)_{k−2} against a direct construction (k = 4, 5), Lemmas R1, J, W, BJ and Proposition S exactly (k = 4, 5, 6), and a numerical sweep (k = 4, …, 7) |
 | `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |

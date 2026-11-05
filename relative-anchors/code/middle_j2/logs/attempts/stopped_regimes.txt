@@ -1,0 +1,35 @@
+The two regimes that did not finish (NOTES.md, rows 5b and 10b). In the first complete run
+(first_run_all.out) they were the steps f2_inv_3_3 and f1_cert_B_2_2 of the runner (in the current run_all.sh the
+name f1_cert_B_2_2 is the fixed-size regime (2, 2+), a different command); their per-step logs were
+overwritten afterwards by a later run that used the same step names (a naming mistake). Below are the lines
+of those two logs as they were displayed while they ran (copied from the terminal output; lines not displayed
+then are not reproduced; the line marked * was displayed through a filter that dropped its coefficient-sign
+brackets). The commands are those of attempts.sh.
+
+--- first run, step f2_inv_3_3: python cert_f2.py inv 3+ 3+ tw=0, stopped after 1521 s
+  kernel vector [1, 0, 1, 1, 0, 1, 0, 0]: F kappa = 0 identically: True
+  kernel vector [0, 1, 0, 0, 1, 0, 1, 1]: F kappa = 0 identically: True
+  R-block diagonal: True
+  R-entry 1: sign 1; numerator deg 1 (2 terms), denominator deg 0 (1 terms); [one-signed 1/2] [one-signed 0/1] [0.2s]
+  R-entry 2: sign 1; numerator deg 2 (2 terms), denominator deg 0 (1 terms); [one-signed 2/2] [one-signed 0/1] [0.2s]
+  R-entry 3: sign 1; numerator deg 2 (3 terms), denominator deg 0 (1 terms); [one-signed 2/3] [one-signed 0/1] [0.2s]
+  R-entry 4: sign 1; numerator deg 3 (4 terms), denominator deg 0 (1 terms); [one-signed 3/4] [one-signed 0/1] [0.2s]
+  R-entry 5: sign 1; numerator deg 4 (3 terms), denominator deg 0 (1 terms); [one-signed 4/3] [one-signed 0/1] [0.2s]
+  minor 1 (P): sign 1; numerator deg 25 (546 terms), denominator deg 24 (455 terms); [one-signed 25/546] [one-signed 24/455] [0.4s]
+  minor 2 (P): sign 1; numerator deg 27 (650 terms), denominator deg 24 (455 terms); [one-signed 27/650] [one-signed 24/455] [1.3s]
+  minor 3 (P): sign 1; numerator deg 65 (7531 terms), denominator deg 60 (5456 terms); [one-signed 65/7531] [one-signed 60/5456] [14.1s]
+  minor 4 (P): sign 1; numerator deg 80 (13526 terms), denominator deg 72 (9139 terms); [one-signed 80/13526] [one-signed 72/9139] [76.9s]
+  minor 5 (P): sign 1; numerator deg 85 (16206 terms), denominator deg 76 (10660 terms); [one-signed 85/16206] [one-signed 76/10660] [331.8s]
+  minor 6 (P): sign 1; numerator deg 108 (30879 terms), denominator deg 96 (20825 terms); [one-signed 108/30879] [one-signed 96/20825] [643.2s]
+  minor 7 (Q): sign 1; numerator deg 166 (109975 terms), denominator deg 152 (79079 terms); [one-signed 166/109975] [one-signed 152/79079] [1124.4s]
+guard: memory 2680564 KB above 2.5 GB, killed PID 37916
+
+--- first run, step f1_cert_B_2_2: python cert_t2.py 2+ 2+ tw=0,1, stopped after 1410 s
+  inv minor 1: sign 1; numerator deg 10 (56 terms), denominator deg 10 (56 terms); [one-signed 10/56] [one-signed 10/56] [0.1s]
+  inv minor 2: sign 1; numerator deg 25 (546 terms), denominator deg 24 (455 terms); [one-signed 25/546] [one-signed 24/455] [0.3s]
+  inv minor 3: sign 1; numerator deg 35 (1292 terms), denominator deg 32 (969 terms); [one-signed 35/1292] [one-signed 32/969] [3.6s]
+  inv minor 4: sign 1; numerator deg 80 (12259 terms), denominator deg 76 (10660 terms); [one-signed 80/12259] [one-signed 76/10660] [14.0s]
+* inv minor 5: sign 1; numerator deg 89 (17114 terms), denominator deg 84 (14190 terms) [98.9s]
+  inv minor 6: sign 1; numerator deg 103 (25921 terms), denominator deg 96 (20825 terms); [one-signed 103/25921] [one-signed 96/20825] [375.7s]
+  inv minor 7: sign 1; numerator deg 158 (91162 terms), denominator deg 150 (76076 terms); [one-signed 158/91162] [one-signed 150/76076] [739.1s]
+stopped by hand after about 23 minutes in all, during minor 8 (memory up to 1.8 GB), to leave time for the remaining checks

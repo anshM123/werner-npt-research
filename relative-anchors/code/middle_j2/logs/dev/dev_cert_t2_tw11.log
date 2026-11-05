@@ -1,0 +1,21 @@
+family 1, levels ['2+', '2+'], T-weights (0, 0), form Phi, bscale 1, variables ['q1', 'x0', 'x1'] [0.1s]
+  forms built: invariant 8 x 8 [0.1s]
+  inv: size 8, symmetric: True
+  inv minor 1: sign 1; numerator deg 10 (56 terms), denominator deg 10 (56 terms); [one-signed 10/56] [one-signed 10/56] [0.1s]
+  inv minor 2: sign 1; numerator deg 25 (546 terms), denominator deg 24 (455 terms); [one-signed 25/546] [one-signed 24/455] [0.1s]
+  inv minor 3: sign 1; numerator deg 35 (1292 terms), denominator deg 32 (969 terms); [one-signed 35/1292] [one-signed 32/969] [0.1s]
+  inv minor 4: sign 1; numerator deg 63 (6479 terms), denominator deg 60 (5456 terms); [one-signed 63/6479] [one-signed 60/5456] [1.0s]
+  inv minor 5: sign 1; numerator deg 72 (9730 terms), denominator deg 68 (7770 terms); [one-signed 72/9730] [one-signed 68/7770] [7.2s]
+  inv minor 6: sign 1; numerator deg 74 (10430 terms), denominator deg 68 (7770 terms); [one-signed 74/10430] [one-signed 68/7770] [29.9s]
+  inv minor 7: sign 1; numerator deg 109 (32006 terms), denominator deg 102 (24804 terms); [one-signed 109/32006] [one-signed 102/24804] [106.2s]
+  inv minor 8: sign 1; numerator deg 119 (40932 terms), denominator deg 110 (30856 terms); [one-signed 119/40932] [one-signed 110/30856] [292.6s]
+  std0: size 3, symmetric: True
+  std0 minor 1: sign 1; numerator deg 12 (84 terms), denominator deg 12 (84 terms); [one-signed 12/84] [one-signed 12/84] [292.7s]
+  std0 minor 2: sign 1; numerator deg 24 (455 terms), denominator deg 24 (455 terms); [one-signed 24/455] [one-signed 24/455] [292.7s]
+  std0 minor 3: sign 1; numerator deg 44 (2300 terms), denominator deg 44 (2300 terms); [one-signed 44/2300] [one-signed 44/2300] [292.7s]
+  std1: size 3, symmetric: True
+  std1 minor 1: sign 1; numerator deg 9 (35 terms), denominator deg 8 (35 terms); [one-signed 9/35] [one-signed 8/35] [292.7s]
+  std1 minor 2: sign 1; numerator deg 22 (282 terms), denominator deg 20 (282 terms); [one-signed 22/282] [one-signed 20/282] [292.7s]
+  std1 minor 3: sign 1; numerator deg 43 (1736 terms), denominator deg 40 (1736 terms); [one-signed 43/1736] [one-signed 40/1736] [292.8s]
+time 292.8s
+PASS

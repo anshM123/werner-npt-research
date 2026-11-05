@@ -1,0 +1,17 @@
+family 1, levels ['1', '2+'], T-weights (0, 0), form Phi, bscale 1, variables ['q1', 'x1'] [0.0s]
+  forms built: invariant 8 x 8 [0.0s]
+  inv: size 8, symmetric: True
+  inv minor 1: sign 1; numerator deg 10 (21 terms), denominator deg 10 (21 terms); [one-signed 10/21] [one-signed 10/21] [0.0s]
+  inv minor 2: sign 1; numerator deg 24 (91 terms), denominator deg 24 (91 terms); [one-signed 24/91] [one-signed 24/91] [0.0s]
+  inv minor 3: sign 1; numerator deg 34 (170 terms), denominator deg 32 (153 terms); [one-signed 34/170] [one-signed 32/153] [0.1s]
+  inv minor 4: sign 1; numerator deg 58 (464 terms), denominator deg 56 (435 terms); [one-signed 58/464] [one-signed 56/435] [0.2s]
+  inv minor 5: sign 1; numerator deg 66 (594 terms), denominator deg 64 (561 terms); [one-signed 66/594] [one-signed 64/561] [0.5s]
+  inv minor 6: sign 1; numerator deg 68 (627 terms), denominator deg 64 (561 terms); [one-signed 68/627] [one-signed 64/561] [0.8s]
+  inv minor 7: sign 1; numerator deg 96 (1222 terms), denominator deg 92 (1128 terms); [one-signed 96/1222] [one-signed 92/1128] [1.0s]
+  inv minor 8: sign 1; numerator deg 106 (1478 terms), denominator deg 100 (1326 terms); [one-signed 106/1478] [one-signed 100/1326] [1.0s]
+  std1: size 3, symmetric: True
+  std1 minor 1: sign 1; numerator deg 9 (15 terms), denominator deg 8 (15 terms); [one-signed 9/15] [one-signed 8/15] [1.0s]
+  std1 minor 2: sign 1; numerator deg 22 (63 terms), denominator deg 20 (63 terms); [one-signed 22/63] [one-signed 20/63] [1.0s]
+  std1 minor 3: sign 1; numerator deg 43 (216 terms), denominator deg 40 (216 terms); [one-signed 43/216] [one-signed 40/216] [1.0s]
+time 1.0s
+PASS

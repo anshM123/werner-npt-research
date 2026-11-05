@@ -1,0 +1,9 @@
+90 candidate points scanned with the reduced forms; 64 with a failing scaled part [4.5s]
+  w = ['1/30', '1', '1', '1', '1/10']: failing scaled parts ['inv']; j1lib gauge-fixed block PD: true True, scaled False -> control confirmed [4.7s]
+  w = ['1/30', '1', '1', '1', '1/30']: failing scaled parts ['inv']; j1lib gauge-fixed block PD: true True, scaled False -> control confirmed [4.8s]
+  w = ['1/30', '1', '1', '1/10', '1/10']: failing scaled parts ['inv', 'std[1]']; j1lib gauge-fixed block PD: true True, scaled False -> control confirmed [5.0s]
+  w = ['1/30', '1', '1', '1/30', '1/30']: failing scaled parts ['inv', 'std', 'std[1]']; j1lib gauge-fixed block PD: true True, scaled False -> control confirmed [5.1s]
+  w = ['1/30', '1', '1/10', '1/10', '1/10']: failing scaled parts ['inv', 'std[1]']; j1lib gauge-fixed block PD: true True, scaled False -> control confirmed [5.3s]
+  w = ['1/30', '1', '1/30', '1/30', '1/30']: failing scaled parts ['inv', 'std[1]']; j1lib gauge-fixed block PD: true True, scaled False -> control confirmed [5.4s]
+  points with all weights taking two values among the failures: 22
+PASS

@@ -1,0 +1,18 @@
+family 2, part std, u0 = 3+, u1 = 1, t-weight 1, bscale 1, variables ['q', 'x0']: vectors (['R_t0f', 'R_00f', 'R_01f'], ['P_t0f', 'P_ddf', 'P_00fr', 'P_00fc', 'P_01fr', 'P_10fc'], ['Q_00f', 'Q_01f']) [0.0s]
+  det of the Gram matrix GR: sign 1 ([one-signed 1/2] [one-signed 0/1])
+  det of the Gram matrix GP: sign 1 ([one-signed 2/3] [one-signed 0/1])
+  det of the Gram matrix GQ: sign 1 ([one-signed 1/2] [one-signed 0/1])
+  kernel vector [1, 1, 0, 1, 0, 1]: F kappa = 0 identically: True
+  R-block diagonal: True
+  R-entry 1: sign 1; numerator deg 1 (1 terms), denominator deg 0 (1 terms); [one-signed 1/1] [one-signed 0/1] [0.0s]
+  R-entry 2: sign 1; numerator deg 1 (2 terms), denominator deg 0 (1 terms); [one-signed 1/2] [one-signed 0/1] [0.0s]
+  R-entry 3: sign 1; numerator deg 1 (1 terms), denominator deg 0 (1 terms); [one-signed 1/1] [one-signed 0/1] [0.0s]
+  minor 1 (P): sign 1; numerator deg 8 (36 terms), denominator deg 7 (36 terms); [one-signed 8/36] [one-signed 7/36] [0.0s]
+  minor 2 (P): sign 1; numerator deg 28 (405 terms), denominator deg 26 (378 terms); [one-signed 28/405] [one-signed 26/378] [0.1s]
+  minor 3 (P): sign 1; numerator deg 36 (662 terms), denominator deg 33 (595 terms); [one-signed 36/662] [one-signed 33/595] [0.2s]
+  minor 4 (P): sign 1; numerator deg 39 (737 terms), denominator deg 35 (666 terms); [one-signed 39/737] [one-signed 35/666] [0.7s]
+  minor 5 (P): sign 1; numerator deg 41 (777 terms), denominator deg 37 (741 terms); [one-signed 41/777] [one-signed 37/741] [1.2s]
+  minor 6 (Q): sign 1; numerator deg 60 (1699 terms), denominator deg 55 (1590 terms); [one-signed 60/1699] [one-signed 55/1590] [1.5s]
+  minor 7 (Q): sign 1; numerator deg 65 (1941 terms), denominator deg 59 (1824 terms); [one-signed 65/1941] [one-signed 59/1824] [1.7s]
+time 1.7s
+PASS

@@ -1,0 +1,11 @@
+family 2, part mix, u0 = 2, u1 = 3+, t-weight 0, bscale 1, variables ['q', 'x1']: vectors (['R_fg'], ['P_fg', 'P_gf'], ['Q_fg']) [0.0s]
+  det of the Gram matrix GR: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  det of the Gram matrix GP: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  det of the Gram matrix GQ: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  R-block diagonal: True
+  R-entry 1: sign 1; numerator deg 1 (1 terms), denominator deg 0 (1 terms); [one-signed 1/1] [one-signed 0/1] [0.0s]
+  minor 1 (P): sign 1; numerator deg 13 (28 terms), denominator deg 12 (28 terms); [one-signed 13/28] [one-signed 12/28] [0.0s]
+  minor 2 (P): sign 1; numerator deg 30 (120 terms), denominator deg 28 (120 terms); [one-signed 30/120] [one-signed 28/120] [0.0s]
+  minor 3 (Q): sign 1; numerator deg 53 (351 terms), denominator deg 50 (351 terms); [one-signed 53/351] [one-signed 50/351] [0.0s]
+time 0.0s
+PASS

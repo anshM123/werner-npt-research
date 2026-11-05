@@ -1,0 +1,10 @@
+family 2, part two, u0 = 4+, u1 = 3+, t-weight 1, bscale 1, variables ['q', 'x0', 'x1']: vectors (['R_h'], ['P_h'], ['Q_h']) [0.0s]
+  det of the Gram matrix GR: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  det of the Gram matrix GP: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  det of the Gram matrix GQ: sign 1 ([one-signed 0/1] [one-signed 0/1])
+  R-block diagonal: True
+  R-entry 1: sign 1; numerator deg 0 (1 terms), denominator deg 0 (1 terms); [one-signed 0/1] [one-signed 0/1] [0.0s]
+  minor 1 (P): sign 1; numerator deg 14 (120 terms), denominator deg 14 (120 terms); [one-signed 14/120] [one-signed 14/120] [0.0s]
+  minor 2 (Q): sign 1; numerator deg 34 (1140 terms), denominator deg 34 (1140 terms); [one-signed 34/1140] [one-signed 34/1140] [0.0s]
+time 0.0s
+PASS

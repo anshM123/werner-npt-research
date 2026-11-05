@@ -1,0 +1,3 @@
+family 1: 4158 two-level configurations with 5 <= k <= 60 covered: True (2450 configurations with T-weights 1, q and both U-levels > 4 excluded)
+family 2: 9360 (k, sizes, t-weight, part) cases with 5 <= k <= 60 and U in one level or min(u0, u1) <= 6, all covered: True
+PASS

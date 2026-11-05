@@ -1,0 +1,13 @@
+family 2, part inv, u0 = 3+, u1 = 0, t-weight free, bscale 1, variables ['a', 'x0']: vectors (['R_t0', 'R_00'], ['P_t0', 'P_00d', 'P_00'], ['Q_00']) [0.0s]
+  det of the Gram matrix GR: sign 1 ([one-signed 3/4] [one-signed 0/1])
+  det of the Gram matrix GP: sign 1 ([one-signed 4/5] [one-signed 0/1])
+  det of the Gram matrix GQ: sign 1 ([one-signed 2/3] [one-signed 0/1])
+  kernel vector [1, 1, 1]: F kappa = 0 identically: True
+  R-block diagonal: True
+  R-entry 1: sign 1; numerator deg 2 (2 terms), denominator deg 0 (1 terms); [one-signed 2/2] [one-signed 0/1] [0.0s]
+  R-entry 2: sign 1; numerator deg 2 (3 terms), denominator deg 0 (1 terms); [one-signed 2/3] [one-signed 0/1] [0.0s]
+  minor 1 (P): sign 1; numerator deg 7 (25 terms), denominator deg 5 (21 terms); [one-signed 7/25] [one-signed 5/21] [0.0s]
+  minor 2 (P): sign 1; numerator deg 15 (114 terms), denominator deg 12 (91 terms); [one-signed 15/114] [one-signed 12/91] [0.0s]
+  minor 3 (Q): sign 1; numerator deg 26 (329 terms), denominator deg 21 (253 terms); [one-signed 26/329] [one-signed 21/253] [0.0s]
+time 0.0s
+PASS

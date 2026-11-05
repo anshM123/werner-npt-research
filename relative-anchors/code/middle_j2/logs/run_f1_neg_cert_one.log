@@ -1,0 +1,15 @@
+family 1, levels ['2+'], T-weights (None, None), form G, bscale 1001/1000, variables ['a', 'b', 'x0'] [0.0s]
+  forms built: invariant 7 x 7 [0.0s]
+  inv: size 7, symmetric: True
+  inv minor 1: sign 1; numerator deg 1 (1 terms), denominator deg 0 (1 terms); [one-signed 1/1] [one-signed 0/1] [0.0s]
+  inv minor 2: sign 1; numerator deg 2 (2 terms), denominator deg 0 (1 terms); [one-signed 2/2] [one-signed 0/1] [0.0s]
+  inv minor 3: sign 1; numerator deg 11 (210 terms), denominator deg 8 (165 terms); [one-signed 11/210] [one-signed 8/165] [0.0s]
+  inv minor 4: sign 1; numerator deg 12 (255 terms), denominator deg 8 (165 terms); [one-signed 12/255] [one-signed 8/165] [0.1s]
+  inv minor 5: sign None; numerator deg 22 (1482 terms), denominator deg 17 (1140 terms); factor with mixed signs: deg 17, 1140 terms [0.2s]
+  std0: size 4, symmetric: True
+  std0 minor 1: sign 1; numerator deg 0 (1 terms), denominator deg 0 (1 terms); [one-signed 0/1] [one-signed 0/1] [0.2s]
+  std0 minor 2: sign 1; numerator deg 6 (80 terms), denominator deg 6 (80 terms); [one-signed 6/80] [one-signed 6/80] [0.2s]
+  std0 minor 3: sign 1; numerator deg 14 (676 terms), denominator deg 14 (676 terms); [one-signed 14/676] [one-signed 14/676] [0.3s]
+  std0 minor 4: sign None; numerator deg 25 (3192 terms), denominator deg 25 (3192 terms); factor with mixed signs: deg 25, 3192 terms [0.3s]
+time 0.3s
+FAIL

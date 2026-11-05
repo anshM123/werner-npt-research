@@ -1,0 +1,7 @@
+family 1, levels [0, 0, 1], w = ['1/2', '3', '1', '1', '2']: gauge-fixed reduced forms = projections of the ylib block: True [0.1s]
+family 1, levels [0, 1, 1], w = ['2', '1', '1', '1/3', '1/3']: gauge-fixed reduced forms = projections of the ylib block: True [0.1s]
+family 1, levels [0, 1, 0, 1], w = ['1', '1/2', '1', '3', '1', '3']: gauge-fixed reduced forms = projections of the ylib block: True [0.5s]
+family 2, levels [0, 0, 1, 1], w = ['1/2', '1', '1', '3', '3']: every reduced block of every part = projections of the ylib block: True [0.6s]
+family 2, levels [0, 0, 0, 1], w = ['2', '1', '1', '1', '1/3']: every reduced block of every part = projections of the ylib block: True [0.7s]
+family 2, levels [0, 1, 0, 1, 1], w = ['1', '1', '1/2', '1', '1/2', '1/2']: every reduced block of every part = projections of the ylib block: True [1.3s]
+PASS

@@ -1,0 +1,17 @@
+run_extra.sh started Thu Nov  5 13:26:45 EST 2026
+PASS  ylib_reduced  (python check_ylib_reduced.py; 2 s)
+PASS  kernels_k7  (python explore_kernel.py 7; 63 s)
+PASS  f2_inv_3_3  (python cert_f2.py inv 3 3+ tw=0; 12 s)
+PASS  f2_inv_3_3  (python cert_f2.py inv 3+ 3 tw=0; 10 s)
+PASS  f2_inv_4_3  (python cert_f2.py inv 4 3+ tw=0; 13 s)
+PASS  f2_inv_3_4  (python cert_f2.py inv 3+ 4 tw=0; 12 s)
+PASS  f2_inv_5_3  (python cert_f2.py inv 5 3+ tw=0; 13 s)
+PASS  f2_inv_3_5  (python cert_f2.py inv 3+ 5 tw=0; 11 s)
+PASS  f2_inv_6_3  (python cert_f2.py inv 6 3+ tw=0; 13 s)
+PASS  f2_inv_3_6  (python cert_f2.py inv 3+ 6 tw=0; 12 s)
+PASS  f1_cert_B_2_2  (python cert_t2.py 2 2+ tw=0,1; 5 s)
+PASS  f1_cert_B_3_2  (python cert_t2.py 3 2+ tw=0,1; 6 s)
+PASS  f1_cert_B_4_2  (python cert_t2.py 4 2+ tw=0,1; 6 s)
+PASS  coverage2  (python coverage2.py 6 f1b22=0 M1=4; 1 s)
+run_extra.sh finished Thu Nov  5 13:29:46 EST 2026
+ALL PASS
