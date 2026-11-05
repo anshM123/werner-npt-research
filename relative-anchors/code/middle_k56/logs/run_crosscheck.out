@@ -1,0 +1,7 @@
+run_crosscheck.sh started Thu Nov  5 18:03:28 EST 2026
+PASS  negative_controls  (python crosscheck.py N; 3 s)
+PASS  all_blocks_k5  (python crosscheck.py A 5 12 20261105; 20 s)
+PASS  all_blocks_k6  (python crosscheck.py A 6 24 6206; 315 s)
+PASS  saved_blocks  (python crosscheck.py C logs 31; 721 s)
+total 1060 s
+ALL PASS

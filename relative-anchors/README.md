@@ -46,6 +46,10 @@ This folder collects what we can prove about the group conditions for every k.
   (R∞)_2 hold (Theorems A4 and B4); this includes the letter-1 block of Section 3e. With the results above, all of
   (R∞) holds at four copies (Theorem 4). Hence Conjecture 12 of `single-excitation-range/` holds for every single
   excitation supported on at most four copies, with arbitrary weights (Corollary 4).
+- **Five and six copies, two weight values** (Section 3f, exact computer-assisted certificates in the weight ratio).
+  For k = 5 and k = 6 and every weight vector whose weights take at most two distinct values, all of (R∞) holds
+  (Theorems 5₂ and 6₂). Hence Conjecture 12 holds for every single excitation supported on at most six copies whose
+  nonzero weights take at most two distinct values (Corollaries 5₂ and 6₂).
 - **Equal weights** (w_t = 1).
   - The letter-1 block of every (R∞)_j is ⪰ 0 for every k, with the kernel described exactly (Theorem E1). The proof is
     computer-assisted, symbolic in k.
@@ -71,7 +75,8 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
 - For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 and k ≥ 5
   (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁, and for |T| = 1 the U-weights with at most two distinct values
   are Theorems EU and TL), reduced to the condition G ≻ 0 of Theorem C; and the letter-1 and type I blocks of (R∞)_j
-  for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, Section 3f; the blocks
+  for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, and at k = 5, 6 everything
+  is proved when the weights take at most two values, Section 3f; the blocks
   without a letter 1 are Theorem DJ for every k). The rest of (R∞)_1 is reduced to Conjectures L and L1, and all of it
   is proved when the weights take at most two values (Section 3h). In (R∞)_2, at two weight values, the letter-1
   block is proved only for k ≤ 10 (Theorem L), and the type I blocks with a letter 1 only for k ≤ 26 and outside two
@@ -679,6 +684,49 @@ certificate above, one representative per orbit. ∎
 For five copies the same certificate would need blocks with four free parameters. For the type I blocks of (R∞)_1
 with |T| = 1 we tried it; it did not finish (Section 3h).
 
+**Five and six copies at two weight values** (`code/middle_k56/`, notes with the proofs there). With a single weight
+ratio q the certificates become small. For weights with at most two distinct values, the blocks not covered by earlier
+results are: at k = 5, the letter-1 block and the type I blocks with |T| = 1, 2, 3 of (R∞)_3, and the type I blocks
+with |T| = 2 of (R∞)_4; at k = 6, the letter-1 block and the type I blocks with a letter 1 of (R∞)_3 and (R∞)_4, and
+the type I blocks with |T| = 2, 3 of (R∞)_5.
+
+**Theorem 5₂.** For k = 5 and every weight vector whose weights take at most two distinct values, all of (R∞) holds.
+The kernel of (R∞)_3 is exactly p ⊗ H_3 ⊕ span(vac ⊗ J⁻|11111⟩).
+
+**Theorem 6₂.** For k = 6 and every weight vector whose weights take at most two distinct values, all of (R∞) holds.
+The kernels of (R∞)_3 and (R∞)_4 are exactly p ⊗ H_3 and p ⊗ H_4 ⊕ span(vac ⊗ J⁻|111111⟩).
+
+*Proof (computer-assisted in the last step).*
+1. *Known blocks.* (R∞)_{−1}, (R∞)_0 and (R∞)_k (Proposition M, Theorems B0 and K); (R∞)_1 (the Corollary of
+   Section 3h); (R∞)_2 (Corollary L); the type II blocks (Propositions T2 and T2′); the blocks without a letter 1
+   (Theorem DJ); in (R∞)_{k−1} the letter-1 block (Theorem T) and the type I blocks with |T| = 1 (Theorems EU and TL)
+   or |U| ≤ 2 (Theorem U2, Propositions U1 and U0).
+2. *Reductions.* Permutations of the copies and the homogeneity of degree j + 1 − |T| reduce every remaining block, at
+   every two-value weight vector, to one of finitely many configurations (which copies of T and of U carry which
+   weight) with squared weights 1 and q. The gauge deletes one coordinate per known kernel vector.
+3. *Certificates.* For every configuration (52 at k = 5; 76 at k = 6, up to exchanging the levels) every leading
+   principal minor of the gauge-fixed block is a ratio of polynomials in q with only nonnegative coefficients. For
+   the four largest families at k = 6 (80 to 135 states) this is done for the parts of a reduction by Young
+   symmetrizers of the permutations that keep T and the levels, on an invariant complement of the kernel. ∎
+
+The certified blocks agree exactly with the Lemma B builder and with the builder from the definitions, and the
+certified minors equal direct determinants at rational points; with B replaced by (1 + 1/1000)B every two-level
+certificate fails at an explicit point. A second check, written separately and using only the Lemma B builder, finds
+every torus block of every (R∞)_j ⪰ 0 with exactly its known kernel (exact positive-definiteness certificates) at 12
+random two-value points at k = 5 and 24 at k = 6, and the certified blocks ⪰ 0 with exactly their kernels at 31
+values of q from 10⁻⁸ to 10⁸.
+
+**Corollaries 5₂ and 6₂.** Conjecture 12 of `single-excitation-range/` holds for every p ∈ H_1 supported on at most
+six copies whose nonzero weights take at most two distinct values. Hence, for every n, every tangent plane whose
+single excitation is of this kind satisfies the endpoint, with any co-range.
+
+*Proof.* For five or six nonzero weights, Theorems 5₂ and 6₂ with Lemma 13 and the remark that (R2) always holds; for
+fewer, Corollary 4. The tangent planes follow as in Corollary 17 there. ∎
+
+At seven copies the same certificates look feasible (one configuration of the largest block, the letter-1 block of
+(R∞)_3 with 280 states, passes in 15 s), but this has not been done. Three or more weight values need certificates in
+more variables.
+
 ## 3g. A positivity pattern
 
 The certificates of Theorem U3₁ and Section 3f rest on one observation. Work in the rescaled basis of `code/ylib.py`,
@@ -1138,6 +1186,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `typeI_G_u2/` (`run_all.sh`, notes in `typeI_G_u2/NOTES.md`) | Theorem U2: the exact symbolic Schur complement for u = 2, its agreement with direct elimination (m = 1, …, 5), the polynomial reductions, the blow-up charts and Bernstein certificates of (A_2) and (B_2), negative controls |
 | `positivity/` (`run_all.sh`, notes in `positivity/NOTES.md`) | Section 3g: every principal minor of every block at k = 2, 3 and the k = 4 tests, the row-group identities and lifts of Proposition R, the obstruction certificates (Newton, width, Farkas), the monomial-PSD tests, the Gram-type column-group lifts, the natural whole-block lift and its obstruction |
 | `middle_k4/` (`run_all.sh`, notes in `middle_k4/NOTES.md`) | Section 3f: the torus blocks of (R∞)_1 and (R∞)_2 at k = 4 over Q(s_1, s_2, s_3), the known kernels and the gauge, the Bareiss leading-minor certificates, minors against direct determinants at rational points, symbolic blocks against the point builder and the dense construction, negative controls |
+| `middle_k56/` (`run_all.sh`, `run_crosscheck.sh`, notes in `middle_k56/NOTES.md`) | Section 3f, Theorems 5₂ and 6₂: the remaining blocks at k = 5 and 6 over Q(q) built from the definitions, the known kernels and the gauge, the leading-minor certificates (direct, or after a reduction by Young symmetrizers for the largest families at k = 6) and their coverage of every two-value weight vector, the blocks against the Lemma B builder, the minors against direct determinants, end-to-end kernels and positivity, negative controls; a second check (every torus block of every (R∞)_j at random two-value points, from the Lemma B builder, with exact positive-definiteness certificates; the certified blocks at 31 values of q) |
 | `no_letter1/` (`run_all.sh`, notes in `no_letter1/NOTES.md`) | Section 3h, Theorem DJ: the closed form of the blocks without a letter 1 for every j against the builder (51 blocks, k ≤ 8, j ≤ 7, also the A-part and the scaled block), the vacuum elimination and the two kernel identities at rational configurations with the certified objects, the two kernel certificates (7 092 terms with one square repair, and 357 055 terms all nonnegative), the conclusions at 161 weight vectors, negative controls, floating-point margins |
 | `middle_j1/` (`run_all.sh`, notes in `middle_j1/NOTES.md`) | Section 3h: the closed forms of the blocks without a letter 1 of (R∞)_1 and (R∞)_2 against the Lemma B blocks (k ≤ 8) and the builder (k ≤ 6), the moment bounds and vertex reductions at rational configurations, the Bernstein certificates of Theorems D₁ (8 functions) and D₂ (8 + 64), the certified formulas against the true blocks; the closed forms and inverse-free reductions of the |T| = 1 and letter-1 blocks (k ≤ 8 and k ≤ 7), Conjecture L proved at k = 3, 4 (symbolic pivots and Laplacian signs, and a leading-minor certificate at k = 4) and checked exactly for k ≤ 10, Conjecture L1 checked exactly for k ≤ 7; negative controls |
 | `middle_j1_t1/` (`run_all.sh`, notes in `middle_j1_t1/NOTES.md`) | Section 3h, Theorems EQ and 2L: the P-first reduction (Lemma P) and the closed form of Φ against the Lemma B blocks (k ≤ 8), the level reductions against exact projections (32 weight vectors, B scaled by 1 and by 1 + 1/1000), the leading-minor certificates for one and two levels, a second certificate at equal U-weights without Lemma P and a separate implementation of that case, negative controls; k = 3, 4 for all weights through Φ′; the stopped k = 5 and three-level attempts |

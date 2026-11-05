@@ -36,7 +36,8 @@ because single excitations over a product are not anchors.
   2026) proves it whenever at most three weights are nonzero, by an exact certificate over Q(a, b, c). So every
   sector is nonnegative for every n whenever A_0 + A_1 + A_2 has the eigenvalue 1, and the same holds for the
   corresponding tangent planes (Corollary 17). Four nonzero weights are proved in `relative-anchors/` (Corollary 4
-  there, added 5 November 2026). Larger supports hold in all numerical tests and at exact special points.
+  there, added 5 November 2026), and five or six nonzero weights when they take at most two distinct values
+  (Corollaries 5₂ and 6₂ there). Larger supports hold in all numerical tests and at exact special points.
 
 Both classes are thick at every copy.
 
@@ -881,8 +882,10 @@ supported on at most four copies** (Corollary 4 there), so Corollary 17 holds wi
 The open part is the sectors 3 ≤ c ≤ n − 2 outside the cases above (W-planes, Propositions 5, 8, 9 and 10).
 - **The shortest route is Conjecture 12.** It concerns one vector Σ_t w_t |1⟩_t and would settle every sector of every
   single-excitation plane, and with Corollary 15 every tangent plane, for every n. It is proved for at most three
-  nonzero weights (Theorem 16), and for four (`relative-anchors/`, Corollary 4). The first open case is five
-  nonzero weights: by Lemma 13, a four-parameter family of finite matrix inequalities on five copies. Results for
+  nonzero weights (Theorem 16), for four (`relative-anchors/`, Corollary 4), and for five or six when the nonzero
+  weights take at most two distinct values (`relative-anchors/`, Corollaries 5₂ and 6₂). The first open case is
+  five nonzero weights with at least three distinct values: by Lemma 13, a family of finite matrix inequalities on
+  five copies. Results for
   every number of copies are in `relative-anchors/`: closed forms; for all weights the conditions (R∞)_{−1}, (R∞)_0
   and (R∞)_k, every type II block, and most of (R∞)_{k−1}; and Conjecture 12 itself at equal weights, for every
   number of copies.
