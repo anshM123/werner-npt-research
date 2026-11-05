@@ -19,6 +19,10 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   open balls for every n (Theorem 12). Finally, anchor-free planes all of whose vectors have maximally mixed one-copy
   marginals (Proposition 13), and an exact reduction of the endpoint to range planes of that balanced kind
   (Theorem 14): anchors alone cannot give every n.
+- **Section 6.** Local structure at zero planes: spin-flip wedge zeros have nonnegative second variation for every n
+  (Proposition 15); the GHZ plane and generic local-qubit planes have open neighbourhoods on which the endpoint holds,
+  and m(L) ≤ 2σ(L) for every plane (Theorem 16); at projector-core zeros the second variation is equivalent to the
+  endpoint on one copy fewer (Proposition 17); Kronecker forms of flattenings do not detect anchors (Proposition 18).
 
 **None of this settles the all-copy problem.**
 
@@ -214,8 +218,8 @@ contains p, with any co-range. Call such p a universal anchor. Y_p always vanish
   over a product, has smallest eigenvalue −0.0239.
 
 At n = 4, random vectors stay universal (gap 0.045), W is not (−0.0149), and GHZ is universal with a small gap
-(0.0014). At n = 5 (matrix-free Lanczos, tolerance 1e−5), two Haar-random vectors are universal with gaps 0.0267 and
-0.0268, the GHZ vector Σ_a |aaaaa⟩ is universal with gap 0.0217, and the Dicke vector with two letters 1 is not
+(0.0014). At n = 5 (matrix-free Lanczos, tolerance 1e−5), two random real vectors (Gaussian entries, so uniform on
+the real unit sphere; not complex Haar samples) are universal with gaps 0.0267 and 0.0268, the GHZ vector Σ_a |aaaaa⟩ is universal with gap 0.0217, and the Dicke vector with two letters 1 is not
 (−0.131).
 
 **Two exact facts.** Put A = (M^{⊗n})^Γ and T_p = A^{−1/2} R_p^Γ A^{−1/2}, so that p is universal exactly when
@@ -450,6 +454,73 @@ Proposition 13 such ranges need not contain an anchor, although every vector in 
 marginals. So a proof of the endpoint for every n cannot come from anchors alone, and in particular not from showing
 that vectors of full local rank are anchors.
 
+## 6. Local structure at zero planes
+
+q_n vanishes on many rank-two operators, so a proof of the endpoint has to understand q_n near its zeros. This section
+records what can be said locally. Throughout, Q = span{|0⟩, |1⟩} at each copy, J|0⟩ = |1⟩, J|1⟩ = −|0⟩, Θv = J^{⊗n}v̄ on
+Q^{⊗n}, and for a plane L with orthogonal projector Π_L we write ρ_ν(L) = Tr_{other copies} Π_L (a 3 × 3 matrix of trace
+2), τ(L) = max_ν λ_min(ρ_ν(L)), σ(L) = Σ_ν λ_min(ρ_ν(L)), and m(L) = min q_n(C)/‖C‖_F² over C ≠ 0 with range in L (any
+co-range).
+
+**Proposition 15 (spin-flip wedges).** For every n and independent a, b ∈ Q^{⊗n}, the rank-two operator
+C_0 = a(Θb)^* − b(Θa)^* has q_n(C_0) = 0, is a critical point of q_n on the manifold of rank-two operators, and q_n has
+nonnegative second variation there.
+
+*Proof sketch.* After the column change C ↦ CJ^{⊗n}, C_0 becomes the skew matrix ab^T − ba^T, and on qubit rows and
+columns M^{⊗n} becomes the tensor product of the local symmetric projections, which kills antisymmetric tensors; so
+q_n(C_0) = 0. For a set S of copies at which row and column carry the letter 2, the residual M^{⊗n}C_0 has the block
+(−½)^{|S|} 𝒫(Tr_S C_0). It vanishes for |S| even, and otherwise has row and column outside Q^{⊗n}, so the residual is
+orthogonal to the tangent space and C_0 is critical. In the second variation the masks decouple. Even masks contribute
+squared norms. For an odd mask of size s, a symplectic basis of Θ_S (2^{s−1} pairs, each a one-qubit spin flip) writes
+the contribution as an average of models with one effective qutrit. Each such model is nonnegative on rank-two
+operators: the qubit projection I − ½|Ω_2⟩⟨Ω_2| is separable (one half the sum of the projectors onto |01⟩, |10⟩, |+−⟩,
+|−+⟩, |+i +i⟩, |−i −i⟩), and the one-qutrit endpoint form is nonnegative on rank-two operators. ∎
+
+**Theorem 16 (positive neighbourhoods of local-qubit planes).**
+- (a) At the GHZ zero C_* (a = |0…0⟩, b = |1…1⟩), the kernel of the second variation is exactly the tangent space of the
+  smooth family of zeros U K (J^{⊗n})^* U^* (U a product of local frames of two-dimensional subspaces, K skew of rank
+  two), of real dimension 4·2^n − 6 + 4n, and the transverse second variation is at least 2^{1−n}. The range compression
+  of L_* = span{|0…0⟩, |1…1⟩} has the single zero C_*, and its other eigenvalues are at least 2^{1−n}. Hence (a
+  Morse–Bott estimate near the zero, compactness away from it) every plane in some neighbourhood of L_* satisfies the
+  endpoint, with any co-range.
+- (b) The same holds for every plane inside a fixed product of local two-dimensional subspaces, outside a proper real
+  algebraic subset: two polynomial rank conditions, both satisfied at L_*.
+- (c) For every plane L, m(L) ≤ 2σ(L). Near the planes in (a) and (b), also m(L) ≥ c τ(L) for some c > 0, so there the
+  margin vanishes exactly on planes inside a product of local two-dimensional subspaces.
+
+The radii in (a) and (b) and the constant c are not explicit.
+
+*Proof of the upper bound in (c).* If σ(L) ≥ ½ the bound is trivial (m ≤ ‖M^{⊗n}‖ = 1). Otherwise let Q_ν be the top two
+eigenvectors of ρ_ν(L), P = ⊗_ν Q_ν, U a frame of L and A = U^*PU. The union bound gives ‖I − A‖ ≤ σ(L), so
+U′ = PUA^{−1/2} is a frame of a local-qubit plane L′ with ‖U − U′‖² ≤ 2(1 − √(1 − σ)) ≤ 2σ. Let C′ = U′X be a unit wedge
+zero of L′ (Proposition 15) and C = UX. Then C − C′ has co-range inside that of C′, so it is tangent at the critical zero
+C′, and q_n(C) = q_n(C − C′) ≤ ‖U − U′‖² ≤ 2σ(L). ∎
+
+**Proposition 17 (projector-core zeros).** For vectors a, b on k copies and P = |0⟩⟨0| + |1⟩⟨1| on one more copy,
+Z = P ⊗ ab^* is a critical zero of q_{k+1} on rank-two operators, with residual −|2⟩⟨2| ⊗ M^{⊗k}(ab^*). Along the rank-two
+curve C(t) = Z + t|0⟩⟨1| ⊗ (xb^* + ay^*),
+
+    q_{k+1}(C(t)) = t² q_k(xb^* + ay^*).
+
+Every rank-two operator on k copies has the form xb^* + ay^*, so nonnegative second variation at all these zeros on
+k + 1 copies is equivalent to EP_k: a local statement at all zeros already contains the whole problem. In the other
+direction, suppose a has a range margin h > 0, that is q_k(X) ≥ h‖X‖² for every X of rank at most two whose range lies in
+a plane containing a. (For the strict anchors of Theorem 12 one can take h = 4^{−k}/432.) Then the second variation at Z
+has kernel exactly the tangent space of the family P_{Q′} ⊗ (rank one) and transverse gap min{h, 2^{−k}}. So every plane
+near Q ⊗ span{a} satisfies the endpoint, with margin comparable to 2 − λ_max(Tr_{first copy} Π_L). ∎
+
+**Proposition 18 (Kronecker data do not see anchors).** At n = 3 let g = Σ_a |aaa⟩, h = |012⟩ + |120⟩ + |201⟩, w_ℓ the
+unnormalised vectors of Proposition 13, A = span{g, h}, and B_ε = span{w_1 + εg, w_2 + εh} with ε = 10^{−8}.
+- A contains the strict anchor g (Theorem 12), and every vector of A has one-copy marginals I/3.
+- B_ε lies within ε of the W-plane, so it contains no anchor and q_3 ≥ (1/4 − 2ε)‖C‖_F² on it (Proposition 7 and its
+  consequences).
+- Yet at every copy the stacked 6 × 9 coefficient matrix of both planes has rank 6 (for B_ε a 6 × 6 minor equals ε³), so
+  every flattened pencil of either plane has the Kronecker form [I_3, zI_3, 0].
+
+A genericity argument gives anchored and anchor-free planes with identical flattened Kronecker forms at every
+bipartition for every odd n ≥ 3. So the Kronecker forms of the flattenings cannot decide whether a plane contains an
+anchor. ∎
+
 ## Code
 
 Python 3 with NumPy and SymPy. `code/check_pair_anchor.py` uses python-flint for the exact characteristic polynomials;
@@ -467,6 +538,10 @@ without it, it falls back to floating point. Outputs are in `logs/`.
 - `code/check_anchor_families.py`: Theorem 12 and Proposition 11 in exact arithmetic (python-flint): the two
   certificates for g_2 and g_3 (with their ranks and component sizes), the spectrum of D_b, the witness v, and the
   spectrum of the compression to E_0.
+- `code/check_local_structure.py`: Section 6 numerically: the projector-core identities (k = 1, 2), the wedge zeros
+  (value, criticality, nonnegative second variation and its kernel dimension at n = 1, 2) and m(L) ≤ 2σ(L) on 300 planes.
+- `code/check_kronecker_example.py`: Proposition 18 (exact ranks and the minor ε³; anchors numerically) and the range
+  compressions of the GHZ plane and of a generic local-qubit plane (n = 2, 3).
 - `code/check_balanced_encoding.py`: Proposition 13 and Theorem 14: the flag factors of the proofs (exactly, for all
   flag strings when r = 2, 4 and on samples when r = 12), the reduction identity by direct partial traces at
   (k, r) = (1, 2) and (2, 2), the marginals of encoded vectors, and the numbers 387, 961 and −1087/198144.

@@ -1,0 +1,7 @@
+V1 k=1: q(Z) = 0.0e+00; |L(Z) - pred| = 2.9e-17; rank C(t) = 2; q(C(t)) - t^2 q_k(xb*+ay*) = 0.0e+00
+V1 k=2: q(Z) = 1.2e-31; |L(Z) - pred| = 4.4e-16; rank C(t) = 2; q(C(t)) - t^2 q_k(xb*+ay*) = 3.6e-15
+V2 n=1 generic: q(C0) = 4.1e-31; |tangent part of L(C0)| = 4.5e-16; Hessian min eig -3.64e-15; kernel dim 14 (GHZ prediction 14)
+V2 n=1 GHZ: q(C0) = 0.0e+00; |tangent part of L(C0)| = 0.0e+00; Hessian min eig -7.75e-16; kernel dim 14 (GHZ prediction 14)
+V2 n=2 generic: q(C0) = 1.6e-32; |tangent part of L(C0)| = 4.0e-17; Hessian min eig -2.11e-15; kernel dim 26 (GHZ prediction 26)
+V2 n=2 GHZ: q(C0) = 0.0e+00; |tangent part of L(C0)| = 0.0e+00; Hessian min eig -4.98e-16; kernel dim 26 (GHZ prediction 26)
+V4 n=2: max m(L)/(2 sigma(L)) over 300 planes (random and near GHZ) = 0.1856 (claim <= 1)
