@@ -1,0 +1,5 @@
+k = 3, x = (sigma, 2/5, 3/5 - sigma), sigma = 1e-02: r = 0.2528001439
+k = 3, x = (sigma, 2/5, 3/5 - sigma), sigma = 1e-04: r = 0.2500279266
+k = 3, x = (sigma, 2/5, 3/5 - sigma), sigma = 1e-06: r = 0.2500002793
+largest r over 300 rational weight vectors: 0.9999565026 at x = [0.999949, 4.5e-05, 6e-06]
+numerical exploration done

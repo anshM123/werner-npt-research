@@ -1,0 +1,10 @@
+21 weight vectors with |w| = 1, k = 2..8
+(a) closed form of Pi_R and the constraint, exactly: PASS
+(b) bounds a_c >= A(sigma), 2 - tau bound, b_t >= -sigma br, final inequality; (R,P) block PD with P_t deleted: PASS
+  F(s) = 3 s p(s)/(2 (2 - s)(2 s^2 - 2 s - 1)^2): True; Bernstein coefficients of p on [0, 1]: [2, 4, 2, 1]
+(c) one-variable inequality F > 0 on (0, 1), exact: PASS
+  w = ['1/100', '1', '1/100'], t = 0: true (R,P) block with P_t deleted PD True; scaled PD False
+  w = ['1/60', '1', '1/50', '1/70'], t = 0: true (R,P) block with P_t deleted PD True; scaled PD False
+  w = ['1', '1/80', '1/90', '1/100', '30'], t = 1: true (R,P) block with P_t deleted PD True; scaled PD False
+(d) negative controls (B scaled by 1001/1000) at 3 explicit points: PASS
+ALL PASS

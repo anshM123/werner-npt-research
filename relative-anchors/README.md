@@ -872,6 +872,27 @@ about 10⁻⁶ in the limits s_t → 0 and s_t → |s| with concentrated U-weigh
 Theorem EQ by monotonicity, and lossy bounds cannot work near these limits. Every certificate above is consistent with
 Conjecture SF of Section 3g (Φ is a Schur complement of the gauge-fixed block).
 
+**General weights: two of the three sub-blocks** (`code/middle_j1_t1_sub/`, every k ≥ 2, every t, all weights). In
+the |T| = 1 block of (R∞)_1, the principal sub-block on the P- and Q-states and the one on the R- and P-states are
+each ⪰ 0 with kernel exactly p ⊗ |2@t⟩.
+- *P- and Q-states (Proposition Q).* Π − Y_PQ Y_QQ⁻¹ Y_PQᵀ ⪰ cΠ with c = (2 + 2γ′ + γ′²)/(2 + γ′)² ≥ ½, where
+  γ′ = Σ_{u∈U} x_u/(2 − s_t − 2x_u). With y_c = 2x_c/(2 − s_t) on U and y₀ = s_t/(2 − s_t) for an extra index 0, this
+  is inequality (C0) of Theorem B0 on the copies {0} ∪ U, except that the "phantom" copy 0 appears in the constraint
+  and in the norm but not in the pair terms. The sum-of-squares identity of Theorem B0 extends, with two more families
+  of terms, all with nonnegative coefficients (checked exactly at rational points and symbolically for |U| = 2, 3).
+- *R- and P-states (Proposition RP).* Explicit bounds and a one-variable polynomial with positive Bernstein
+  coefficients.
+- *A factorisation (Lemma K).* The P-states couple to the R- and Q-states only through k combinations ρ + Kq, with K
+  explicit.
+
+These are necessary conditions for the block, not the block itself; the third sub-block (R- and Q-states, part of
+Conjecture L) is open. A structural conjecture that would give the block for every k (Conjecture TC of the notes): with
+the state P_t deleted, the block is a sum of positive definite matrices each supported on the states of at most two
+copies (R_t for t; R_c, P_c, Q_c for c ∈ U). It holds by exact rational certificates at 25 weight vectors (k = 3, …,
+10, both degenerate limits included, margins down to 6·10⁻⁶) and fails, as it should, with B replaced by
+(1 + 1/1000)B; random positive definite matrices of the same shape are not of this form. A proof needs an explicit
+choice of the terms.
+
 So (R∞)_1 holds for every k if its |T| = 1 blocks and its letter-1 block do (for instance through Conjectures L and
 L1): the type II blocks are Proposition T2′ and the blocks with |T| = 2 are Theorem D₁. The |T| = 1 blocks are
 proved for every k when the U-weights take at most two values (Theorems EQ and 2L); these prove the block
@@ -1008,6 +1029,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `no_letter1/` (`run_all.sh`, notes in `no_letter1/NOTES.md`) | Section 3h, Theorem DJ: the closed form of the blocks without a letter 1 for every j against the builder (51 blocks, k ≤ 8, j ≤ 7, also the A-part and the scaled block), the vacuum elimination and the two kernel identities at rational configurations with the certified objects, the two kernel certificates (7 092 terms with one square repair, and 357 055 terms all nonnegative), the conclusions at 161 weight vectors, negative controls, floating-point margins |
 | `middle_j1/` (`run_all.sh`, notes in `middle_j1/NOTES.md`) | Section 3h: the closed forms of the blocks without a letter 1 of (R∞)_1 and (R∞)_2 against the Lemma B blocks (k ≤ 8) and the builder (k ≤ 6), the moment bounds and vertex reductions at rational configurations, the Bernstein certificates of Theorems D₁ (8 functions) and D₂ (8 + 64), the certified formulas against the true blocks; the closed forms and inverse-free reductions of the |T| = 1 and letter-1 blocks (k ≤ 8 and k ≤ 7), Conjecture L proved at k = 3, 4 (symbolic pivots and Laplacian signs, and a leading-minor certificate at k = 4) and checked exactly for k ≤ 10, Conjecture L1 checked exactly for k ≤ 7; negative controls |
 | `middle_j1_t1/` (`run_all.sh`, notes in `middle_j1_t1/NOTES.md`) | Section 3h, Theorems EQ and 2L: the P-first reduction (Lemma P) and the closed form of Φ against the Lemma B blocks (k ≤ 8), the level reductions against exact projections (32 weight vectors, B scaled by 1 and by 1 + 1/1000), the leading-minor certificates for one and two levels, a second certificate at equal U-weights without Lemma P and a separate implementation of that case, negative controls; k = 3, 4 for all weights through Φ′; the stopped k = 5 and three-level attempts |
+| `middle_j1_t1_sub/` (`run_all.sh`, notes in `middle_j1_t1_sub/NOTES.md`) | Section 3h, general weights: Propositions Q and RP and Lemma K (reductions, identities and conclusions exactly at rational points, the identity of Proposition Q symbolically for |U| = 2, 3), negative controls; the exact two-copy certificates behind Conjecture TC at 25 weight vectors and their controls; floating-point surveys |
 | `middle_k2/` (`run_all.sh`, notes in `middle_k2/NOTES.md`) | Section 3e: the closed form of the letter-1 block of (R∞)_{k−2} against a direct construction (k = 4, 5), Lemmas R1, J, W, BJ and Proposition S exactly (k = 4, 5, 6), and a numerical sweep (k = 4, …, 7) |
 | `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |
 | `check_bottom_condition.py`, `c0_interval.py` | Theorem B0: closed form against a direct construction (k ≤ 5), the letter-2 blocks, the reduction to (C0), the bound chains at random points, and the two reduced inequalities in interval arithmetic |

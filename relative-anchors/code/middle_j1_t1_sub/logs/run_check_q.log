@@ -1,0 +1,15 @@
+18 weight vectors with |w| = 1, k = 3..8
+(a) Pi and X22 equal the phantom forms S and S - tp^2 L/4 (times 2 - sigma), exactly: PASS
+(c) X22 - c Pi >= 0 with kernel exactly span(w), c = (2 + 2gp + gp^2)/(2 + gp)^2, exactly: PASS
+(e) Lemma K: Y_PQ = Y_RP^T K with the explicit K, exactly: PASS
+(b) identity (2 + 2gp) S - L = R1 + R2 + R3 + R4 as a quadratic form on the constraint subspace, 32 rational points, |U| = 1..8; all coefficients >= 0: PASS
+  symbolic, |U| = 2: numerator of the difference is 0
+  symbolic, |U| = 3: numerator of the difference is 0
+(b) identity symbolically in the phantom weights, |U| = 2, 3: PASS
+(d) (P, Q) block of j1lib: (w, 0) in the kernel and positive definite with P_t deleted, 21 weight vectors, k = 2..8: PASS
+  w = ['1/300', '1', '1'], t = 0: true block value on (w,0) = 0, gauge-fixed PD = True; scaled: value -4.000e-03, gauge-fixed PD = False
+  w = ['1/200', '1', '1', '1/3'], t = 0: true block value on (w,0) = 0, gauge-fixed PD = True; scaled: value -4.222e-03, gauge-fixed PD = False
+  w = ['1/2', '1/500', '1', '2'], t = 1: true block value on (w,0) = 0, gauge-fixed PD = True; scaled: value -1.050e-02, gauge-fixed PD = False
+  w = ['1', '2', '1/400', '1', '1/2'], t = 2: true block value on (w,0) = 0, gauge-fixed PD = True; scaled: value -1.250e-02, gauge-fixed PD = False
+(f) negative controls (B scaled by 1001/1000 fails, true block passes) at 4 explicit points: PASS
+ALL PASS

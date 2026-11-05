@@ -1,0 +1,7 @@
+1. smallest ratio X22 : Pi on w-perp over 1500 samples: 0.5570
+2. comparison matrix not positive definite: Phi 245, Phi' 1488, X (gauge-fixed) 402 of 1500
+3. block norm-comparison matrix of X not positive definite: 653 of 1500
+4. decomposition over pairs of the state groups R, P, Q: SDP margin negative at 7 of 13 points
+5. smallest normalised eigenvalues of C: 6.12e-05 at [9.998e-01 0.000e+00 2.000e-04]; 1.12e-04 at [9.997e-01 2.000e-04 0.000e+00]; 1.67e-04 at [9.994e-01 6.000e-04 0.000e+00]
+6. undeleted block, 12 points: largest |SDP margin| 2.3e-09; inverse-free congruent form, same points: margin below -1e-6 at 5 of 12 (smallest -4.39e-02)
+numerical exploration done
