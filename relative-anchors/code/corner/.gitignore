@@ -1,0 +1,4 @@
+nodes/
+core.pkl
+*.tmp
+__pycache__/

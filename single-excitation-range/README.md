@@ -881,8 +881,9 @@ The open part is the sectors 3 ≤ c ≤ n − 2 outside the cases above (W-plan
   single-excitation plane, and with Corollary 15 every tangent plane, for every n. It is proved for at most three
   nonzero weights (Theorem 16). The first open case is four nonzero weights. By Lemma 13 that is a three-parameter
   family of finite matrix inequalities on four copies, independent of n. There the certificate of Theorem 16 has
-  finished on all but eleven torus blocks. Results for every number of copies (closed forms, the condition
-  (R∞)_{k−1} on most blocks, and equal weights up to 14 copies) are in `relative-anchors/`.
+  finished on all but eleven torus blocks. Results for every number of copies are in `relative-anchors/`: closed
+  forms; for all weights the conditions (R∞)_{−1}, (R∞)_0 and (R∞)_k, every type II block, and most of (R∞)_{k−1};
+  and Conjecture 12 itself at equal weights, for every number of copies.
 
 Three further precise statements would each make progress, and the first two would together settle the class for
 every n:

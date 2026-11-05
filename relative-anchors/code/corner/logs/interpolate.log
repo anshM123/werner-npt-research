@@ -1,0 +1,8 @@
+node denominators all equal: True ; A terms 24851 total degree 82
+scaled node numerators 1.2s
+tau-degree of A*det: 12 ; nonzero tau-powers [3, 4, 5, 6, 7, 8, 9, 10, 11, 12] 1.7s
+N terms 171100 degrees (38, 43, 42, 12) total 84
+N divisible by L = tau^3 i^2 (i+m+1)^2: True; R terms 80573 degrees (36, 41, 38, 5)
+tau-content g = q0*t^3 (2.3s)
+core P: terms 80573 degrees (35, 38, 38, 5) total 73 2.4s
+saved core.pkl 7.7s

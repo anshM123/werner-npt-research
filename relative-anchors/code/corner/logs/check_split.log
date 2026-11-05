@@ -1,0 +1,8 @@
+built 0.2s
+rank of functionals 4 nullspace dim 2 0.2s
+block diagonal (8 + 2): True 0.4s
+P entries pole-free on the family: True ; det P one-signed: True 0.4s
+  (u-i-1,i,1) pivot 1: 187/95 terms, positive (0.4s)
+  (u-i-1,i,1) pivot 2: 508/479 terms, positive (0.4s)
+kappa in ker Q8: True ; kappa in V8: True ; drop X1
+SPLIT CHECKS PASS (P invertible, Q = Q8 (+) Q2 after P, kappa in ker Q8, Q2 positive definite) 0s

@@ -1,0 +1,11 @@
+(a) det Q7 = N/A = c L g P / A at 69 points (c = 8): True  (17.1s)
+(b) Q7 at (q0, t, i, tau) = (2, 4, 2, 1), k = 11: pivots [90.38344988344988, 56.53230391576469, 36.186856046012, 605.0304547721869, 52.81354310899121, 131.00823774877375, 32.08884634173757] -> positive definite: True
+    det there (symbolic matrix) = 8.8726e+00, N/A = 8.8726e+00
+    (c) k = 36, (q0, t, i, tau) = (7, 9, 6, 8): det(Num2) = N/A: True, positive: True
+    (c) k = 41, (q0, t, i, tau) = (3, 18, 4, 12): det(Num2) = N/A: True, positive: True
+    (c) k = 36, (q0, t, i, tau) = (12, 4, 9, 2): det(Num2) = N/A: True, positive: True
+    (c) k = 31, (q0, t, i, tau) = (2, 4, 2, 21): det(Num2) = N/A: True, positive: True
+    (c) k = 40, (q0, t, i, tau) = (5, 6, 14, 1): det(Num2) = N/A: True, positive: True
+    (c) k = 32, (q0, t, i, tau) = (10, 13, 3, 3): det(Num2) = N/A: True, positive: True
+(c) Num2 determinants agree with N/A at 6 larger points: True
+POINT CHECKS PASS 18s

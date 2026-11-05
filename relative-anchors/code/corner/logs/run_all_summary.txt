@@ -1,0 +1,8 @@
+logs/check_det_points_corner.log:POINT CHECKS PASS 17s
+logs/check_det_points_generic.log:POINT CHECKS PASS 18s
+logs/check_split.log:SPLIT CHECKS PASS (P invertible, Q = Q8 (+) Q2 after P, kappa in ker Q8, Q2 positive definite) 0s
+logs/check_structure_corner.log:STRUCTURE CHECKS PASS 7s
+logs/check_structure_generic.log:STRUCTURE CHECKS PASS 7s
+logs/shift_check_corner.log:P ONE-SIGNED ON THE BOX (all coefficients of one sign, nonzero constant term): PASS
+logs/shift_check_generic.log:P ONE-SIGNED ON THE BOX (all coefficients of one sign, nonzero constant term): PASS
+exit 0

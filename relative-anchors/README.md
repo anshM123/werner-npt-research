@@ -28,12 +28,12 @@ This folder collects what we can prove about the group conditions for every k.
     computer-assisted, symbolic in k.
   - The blocks with one copy carrying the letter 2 in row and column are positive definite for every k
     (Proposition E2).
-  - The blocks in which some copies carry the letter 2 once are ⪰ 0 for every k, except one piece (Theorem E3). The
-    proof is computer-assisted, symbolic in k and |T|.
-  - All of (R∞) holds, by exact computation, for every k ≤ 38.
+  - The blocks in which some copies carry the letter 2 once are ⪰ 0 for every k (Theorem E3, whose last family is
+    Proposition C, an exact determinant certificate). The proofs are computer-assisted, symbolic in k and |T|.
+  - Hence all of (R∞) holds at equal weights, for every k.
 
 **Corollary.** Conjecture 12 of `single-excitation-range/` holds for every single excitation Σ_{t∈G} x_t (each x_t a
-single-copy excitation, all ‖x_t‖ equal) with |G| ≤ 38. Hence, for every n:
+single-copy excitation, all ‖x_t‖ equal), for every finite set G of copies. Hence, for every n:
 - every sector of every single-excitation range plane that contains such a vector is nonnegative;
 - q_n ≥ 0 on every tangent plane that contains such a vector, with any co-range.
 
@@ -42,7 +42,6 @@ single-copy excitation, all ‖x_t‖ equal) with |G| ≤ 38. Hence, for every n
 **Open.**
 - For general weights: the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 1 (for k ≥ 5), and the letter-1 and type I
   blocks of (R∞)_j for 1 ≤ j ≤ k − 2 (for k ≥ 4; k = 4 is being certified).
-- At equal weights: one piece of the case I letter-2 blocks (the corner of Theorem E3), for k ≥ 39.
 
 Nothing here is refereed. The endpoint problem itself is open.
 
@@ -427,10 +426,8 @@ explicit vectors for k ≤ 10 (1003 forms), and are ⪰ 0 by exact elimination f
 k ≤ 16 (`code/num_letter2.py`, 4998 forms).
 
 **Theorem E3.** At equal weights, for every k, every j and every T ≠ ∅ with no copy carrying the letter 2 twice, every
-reduced form of the case I block is ⪰ 0, with one exception. Anti forms are positive definite; sym forms have kernel
-exactly the part of p ⊗ H_j in the block. The exception is the part of the sym forms that belongs to the irreps
-(u − i, i) when (q0, t, i, τ) lies in the corner C = {q0 ≥ 2, t ≥ 6, i ≥ 2, τ ≥ 2}, where q0 = j − τ − i and
-t = k − j − i. C starts at k = 14, and there the forms are ⪰ 0 for every k ≤ 38.
+reduced form of the case I block is ⪰ 0. Anti forms are positive definite; sym forms have kernel exactly the part of
+p ⊗ H_j in the block. (Here q0 = j − τ − i and t = k − j − i.)
 
 *Proof (computer-assisted).*
 1. **Families** (`code/prove_letter2.py`). The parameters split into families q0 ∈ {−1, 0, 1, ≥ 2},
@@ -444,12 +441,34 @@ t = k − j − i. C starts at k = 14, and there the forms are ⪰ 0 for every k
    (u − i, i) part is a 7 × 7 form: its first four pivots are positive on the whole family. With one more parameter
    fixed the elimination closes: τ = 1 for all q0 ≥ 2, t ≥ 4, i ≥ 2 (`code/prove_tau_loop.py 1`), and t = 4, 5 for all
    q0 ≥ 2, i ≥ 2, τ ≥ 1 (`code/prove_fixed_loop.py t 4 5`).
-3. **The corner.** What is left is C. There every form is eliminated exactly for 14 ≤ k ≤ 38: 11 011 forms, each
-   ⪰ 0 with nullity exactly 1 (`code/num_generic.py 14 38 6 2`). ∎
+3. **The (u − i, i) part of the generic family** is Proposition C below. (Before it was found, the corner
+   {q0 ≥ 2, t ≥ 6, i ≥ 2, τ ≥ 2} was eliminated exactly for 14 ≤ k ≤ 38: 11 011 forms, each ⪰ 0 with nullity exactly 1,
+   `code/num_generic.py 14 38 6 2`; this is now a consistency check.) ∎
 
-Together with Theorem E1, Proposition E2, Theorem E3 and the remark that (R2) always holds, all group conditions hold
-at equal weights for every k ≤ 38, and for every k every torus block except the corner piece of Theorem E3 is ⪰ 0.
-This proves the Corollary stated at the top.
+**Proposition C.** On the whole generic family F = {q0 ≥ 2, t ≥ 4, i ≥ 2, τ ≥ 1}, the form Q8 on
+span{X1, X2, X3, X4, G0, C1, D0, D1} (the (u − i, i) part) is ⪰ 0 with kernel exactly span(κ), κ = X1 + X2 + C1.
+
+*Proof (computer-assisted, `code/corner/`, about 15 minutes, exact arithmetic throughout).*
+1. **Reduction.** κ lies in the kernel identically and has coefficient 1 on C1, so in the basis
+   X1, X2, X3, X4, G0, D0, D1, κ the form is Q7 ⊕ 0. It suffices to show Q7 ≻ 0 on F.
+2. **Continuity.** The entries of Q7 are rational functions whose denominators are products of 17 explicit factors,
+   each of which has one-signed coefficients after shifting the parameters to their minimum. So Q7 is continuous on
+   the real box F_R = [2, ∞) × [4, ∞) × [2, ∞) × [1, ∞), which is connected, and equals the reduced form at every
+   integer point of F (the Newton window is exact there).
+3. **A structure lemma.** With ν = 2i + τ, the calculus depends on (i, τ) only through ν and through orbit sizes of
+   degree at most 2. So every entry of Q7 is a polynomial of degree at most 2 in τ over Q(q0, t, ν), with a τ-free
+   denominator (checked for all 49 entries), and A·det Q7 has degree at most 14 in τ for the common denominator A.
+4. **The determinant.** Exact determinants over Q(q0, t, ν) at τ = 2, …, 16 and Lagrange interpolation give
+   det Q7 = 8 τ³ i² (i + q0 + t + 1)² q0 t³ · P/A, with P an integer polynomial of 80 573 terms (total degree 73) and A a
+   product of the 17 factors. This is cross-checked against direct determinants at 69 random points and against the
+   independent numeric calculus at 6 more points (k up to 44).
+5. **No zero on the box.** After q0 = 2 + x, t = 4 + y, i = 2 + z, τ = 1 + w, all coefficients of P are positive and
+   its constant term is nonzero. So det Q7 > 0 on F_R.
+6. **Conclusion.** Q7 ≻ 0 at (q0, t, i, τ) = (2, 4, 2, 1) by exact elimination. Since det Q7 never vanishes on the
+   connected set F_R, the inertia of Q7 is constant there, so Q7 ≻ 0 on all of F_R. ∎
+
+Together with Theorem E1, Proposition E2, Theorem E3, Proposition M and the remark that (R2) always holds, all group
+conditions hold at equal weights, for every k. This proves the Corollary stated at the top.
 
 ## Code and checks
 
@@ -473,6 +492,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `orbit2.py`, `check_orbit2.py` | Orbit calculus for the case I letter-2 forms (numeric and over Q(q0, t, i, τ)); agreement with explicit vectors for every case I form with k ≤ 10 |
 | `prove_letter2.py`, `prove_letter2_split2.py`, `prove_letter2_split_tau.py`, `prove_tau_loop.py`, `prove_fixed_loop.py`, `sanity_generic.py` | Theorem E3: the symbolic families, the irrep split of the generic family, the fixed-parameter families τ = 1 and t = 4, 5, and the window and sample-point checks of the generic family |
 | `num_generic.py`, `num_letter2.py` | Exact elimination of the corner forms for 14 ≤ k ≤ 38, and of every case I form for k ≤ 16 |
+| `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |
 | `check_bottom_condition.py`, `c0_interval.py` | Theorem B0: closed form against a direct construction (k ≤ 5), the letter-2 blocks, the reduction to (C0), the bound chains at random points, and the two reduced inequalities in interval arithmetic |
 | `check_bottom_algebraic.py` | Theorem B0, algebraic proof: the identity E − D = G, the bound T ≤ G and the sum-of-squares identity exactly at rational points; the letter-2 estimate in SymPy; the bound L ≤ (2 + 2γ)S at random complex points |
 | `check_typeII_allj.py` | Proposition T2′: the one-copy facts exactly, and the lower bound for the row u = 2@t against a direct construction (k = 2, …, 5, random and extreme weights) |

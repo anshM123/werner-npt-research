@@ -1,0 +1,16 @@
+tau = 2: num 25981 terms (deg (38, 43, 42)), den 24851 terms; 44.5s; rss 0.11 GB
+tau = 3: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 29.4s; rss 0.12 GB
+tau = 4: num 25993 terms (deg (38, 43, 42)), den 24851 terms; 39.9s; rss 0.13 GB
+tau = 5: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 52.4s; rss 0.13 GB
+tau = 6: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 51.1s; rss 0.13 GB
+tau = 7: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 48.5s; rss 0.13 GB
+tau = 8: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 49.6s; rss 0.13 GB
+tau = 9: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 52.5s; rss 0.13 GB
+tau = 10: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 50.9s; rss 0.13 GB
+tau = 11: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 51.2s; rss 0.13 GB
+tau = 12: num 25999 terms (deg (38, 43, 42)), den 24851 terms; 42.8s; rss 0.13 GB
+tau = 13: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 41.8s; rss 0.13 GB
+tau = 14: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 41.8s; rss 0.13 GB
+tau = 15: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 41.4s; rss 0.13 GB
+tau = 16: num 26000 terms (deg (38, 43, 42)), den 24851 terms; 40.4s; rss 0.13 GB
+done 678s

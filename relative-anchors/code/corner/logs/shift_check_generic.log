@@ -1,0 +1,5 @@
+shift: q0 = 2 + x, t = 4 + y, i = 2 + z, tau = 1 + w  (nu = 5 + 2z + w)
+P terms 80573 max exponents [35, 38, 38, 5] total degree 73
+(1) shifted (q0, t) in 202 slices; 1404 (x, y)-slices (0.6s)
+(2) box expansion: 212820 nonzero terms, positive 212820, negative 0; constant term sign 1 (0.9s)
+P ONE-SIGNED ON THE BOX (all coefficients of one sign, nonzero constant term): PASS
