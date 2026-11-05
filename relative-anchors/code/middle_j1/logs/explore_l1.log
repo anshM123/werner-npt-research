@@ -1,0 +1,9 @@
+gap/min_x: min 1.741, max 1.913e+08
+kernel_eigs_max: min 2.219e-16, max 2.333e-15
+colgroup offmax/diag: min -0.2433, max -6.298e-16
+colgroup rowsum: min 5.857e-17, max 8.873e-11
+P|Q same row: min -1, max 0.1423
+P|Q same col: min -1, max -1.405e-08
+P|Q one diagonal: min -0.09397, max 1
+P|Q transposed: min -0.000502, max 1
+P|Q generic: min -0.04653, max 0.05784

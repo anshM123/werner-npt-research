@@ -1,0 +1,6 @@
+(a) closed form = Lemma B block, exactly, 30 blocks (k = 3..8): True
+(b) moment bounds at 300 rational configurations: True
+(c) c < 2, det = 2f/G3, and f >= min of the 8 vertex values > 0 at the same configurations: True
+(d) negative control: B -> (1 + 1/1000) B is indefinite at k = 3, w = ['1/98', '1', '1/70'] (the true block is PD there; scaled block equals ylib A - 1.001 B: True)
+(e) block positive definite at 60 rational weight vectors (k = 3..9): True
+PASS

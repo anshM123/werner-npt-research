@@ -1,0 +1,14 @@
+k = 3: block of size 8 built over Q(s0,s2) with s1 = 1 [0.0s]
+(i) all-ones on P annihilated identically: True
+  pivot 1/5: numerator degree 1, 1 terms, positive: True [0.0s]
+  pivot 2/5: numerator degree 0, 1 terms, positive: True [0.0s]
+  pivot 3/5: numerator degree 1, 1 terms, positive: True [0.0s]
+  pivot 4/5: numerator degree 7, 34 terms, positive: True [0.0s]
+  pivot 5/5: numerator degree 8, 25 terms, positive: True [0.0s]
+(ii) all 5 pivots of the (R, Q) block are ratios of positive-coefficient polynomials: True
+(iii) S_P 1 = 0 identically and every off-diagonal entry negative (one-signed coefficients): True
+    (0, 1, 17, 149, True)
+    (0, 2, 18, 149, True)
+    (1, 2, 17, 150, True)
+time 0.0s
+PASS

@@ -1,0 +1,11 @@
+k = 5, T = (0,): gauge-fixed size 13, built [7.1s]
+  den = 64 * [deg 1, 5 t]^1 * [deg 1, 5 t]^1 * [deg 3, 35 t]^1 * [deg 5, 126 t]^1 * [deg 6, 210 t]^1 * [deg 9, 715 t]^1
+  den constant > 0 and den factors with positive coefficients: True
+  step 1: D_2 core deg 1, 1 terms, negative coeffs 0 [10.4s]
+  step 2: D_3 core deg 2, 1 terms, negative coeffs 0 [11.1s]
+  step 3: D_4 core deg 3, 1 terms, negative coeffs 0 [11.7s]
+  step 4: D_5 core deg 4, 1 terms, negative coeffs 0 [12.5s]
+  step 5: D_6 core deg 16, 1360 terms, negative coeffs 0 [13.6s]
+  step 6: D_7 core deg 27, 12622 terms, negative coeffs 0 [37.1s]
+stopped by hand at Thu Nov  5 05:41:47 EST 2026 (step 7 of 12 still running after 3 minutes, 1.27 GB)
+exit 1

@@ -1,0 +1,11 @@
+k = 3: 15 weight vectors done (structure and Laplacian property: True)
+k = 4: 15 weight vectors done (structure and Laplacian property: True)
+k = 5: 15 weight vectors done (structure and Laplacian property: True)
+k = 6: 15 weight vectors done (structure and Laplacian property: True)
+k = 7: 15 weight vectors done (structure and Laplacian property: True)
+k = 8: 15 weight vectors done (structure and Laplacian property: True)
+k = 9: 15 weight vectors done (structure and Laplacian property: True)
+k = 10: 15 weight vectors done (structure and Laplacian property: True)
+(a), (b): 120 blocks, all pass: True; smallest |S_P[r,r']|/S_P[r,r] = 1.003e-08
+(c) negative control: B -> (1 + 1/1000) B fails (gauge-fixed block not PD) at (4, 1, [Fraction(1, 39), Fraction(1, 1), Fraction(1, 26), Fraction(1, 39)])
+PASS

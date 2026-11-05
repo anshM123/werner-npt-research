@@ -1,0 +1,6 @@
+k=4: closed form error 2.22e-16; Lemma B entries (units 2^(k-2)) = ylib: True
+k=5: closed form error 2.22e-16; Lemma B entries (units 2^(k-2)) = ylib: True
+k=6: closed form error 1.11e-16; Lemma B entries (units 2^(k-2)) = ylib: True
+vertex relaxation: min f/(1 - max x_t) = 1.066675071476298 [0.33210806 0.32668881 0.33671575 0.00448738] ; C > 0 at all c-vertices: True
+true blocks: min f/(1 - max x_t) = 1.119295063049315
+PASS

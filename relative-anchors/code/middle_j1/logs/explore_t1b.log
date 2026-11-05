@@ -1,0 +1,5 @@
+P|RQ offmax: min -0.4304, max -1.218e-17
+P|RQ rowsum: min 1.735e-18, max 3.487e-16
+elim RQ mineig: min 4.134e-13, max 0.1598
+P|Q offmax: min -0.1196, max -1.871e-18
+P|R offmax: min -0.08658, max -1.198e-18

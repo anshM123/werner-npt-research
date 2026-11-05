@@ -1,0 +1,24 @@
+k = 4, T = (0,): gauge-fixed size 10, built [0.1s]
+  den = 16 * [deg 1, 4 t]^1 * [deg 1, 4 t]^1 * [deg 3, 20 t]^1 * [deg 3, 20 t]^1 * [deg 3, 20 t]^1 * [deg 6, 84 t]^1
+  den constant > 0 and den factors with positive coefficients: True
+  step 1: D_2 core deg 1, 1 terms, negative coeffs 0 [0.1s]
+  step 2: D_3 core deg 2, 1 terms, negative coeffs 0 [0.1s]
+  step 3: D_4 core deg 3, 1 terms, negative coeffs 0 [0.1s]
+  step 4: D_5 core deg 13, 216 terms, negative coeffs 0 [0.1s]
+  step 5: D_6 core deg 20, 796 terms, negative coeffs 0 [0.2s]
+  step 6: D_7 core deg 26, 1768 terms, negative coeffs 0 [0.6s]
+  step 7: D_8 core deg 47, 13234 terms, negative coeffs 0 [2.2s]
+  step 8: D_9 core deg 54, 19534 terms, negative coeffs 0 [6.6s]
+  step 9: D_10 core deg 61, 27536 terms, negative coeffs 0 [13.5s]
+  leading minor 1: point check True; core deg 1, 1 terms, all coefficients positive
+  leading minor 2: point check True; core deg 1, 1 terms, all coefficients positive
+  leading minor 3: point check True; core deg 2, 1 terms, all coefficients positive
+  leading minor 4: point check True; core deg 3, 1 terms, all coefficients positive
+  leading minor 5: point check True; core deg 13, 216 terms, all coefficients positive
+  leading minor 6: point check True; core deg 20, 796 terms, all coefficients positive
+  leading minor 7: point check True; core deg 26, 1768 terms, all coefficients positive
+  leading minor 8: point check True; core deg 47, 13234 terms, all coefficients positive
+  leading minor 9: point check True; core deg 54, 19534 terms, all coefficients positive
+  leading minor 10: point check True; core deg 61, 27536 terms, all coefficients positive
+time 13.5s
+PASS

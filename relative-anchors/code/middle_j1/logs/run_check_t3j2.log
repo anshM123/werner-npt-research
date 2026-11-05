@@ -1,0 +1,5 @@
+(a) closed form = Lemma B block = ylib block, exactly, 15 blocks (k = 4..8): True
+(b) moment bounds, C > 0, and f >= min of the 64 vertex values > 0 at 200 rational configurations: True
+(c) negative control: B -> (1 + 1/1000) B indefinite at k = 4, T = (0, 1, 2), w = ['1', '1/160', '1/161', '1/162']
+(d) positive definite at 40 rational weight vectors (k = 4..9): True
+PASS

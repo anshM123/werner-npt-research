@@ -1,0 +1,5 @@
+(a) D1, k = 3, lam = 1: all 8 vertex values equal the true f, 30 weight vectors: True
+(b) D1, k = 4..8: vertex values positive and min <= true f, 30 weight vectors: True
+(c) D2, k = 4, lam = 1: all 64 vertex values equal the true value (and P/det C agrees), 20 weight vectors: True
+(d) D2, k = 5..8: vertex values positive and min <= true value, 20 weight vectors: True
+PASS

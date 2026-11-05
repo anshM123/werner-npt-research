@@ -29,6 +29,11 @@ This folder collects what we can prove about the group conditions for every k.
     eliminates exactly and the soft directions are known exactly; the gap there is at most min_h s_h/(2(|s| − s_h))
     (Section 3e), so a proof has to be exact to first order in the smallest weight.
   - (R∞)_0 holds completely for k ≥ 3, with kernel exactly p ⊗ H_0 (Theorem B0, an algebraic proof).
+  - In the middle conditions, every type I block of (R∞)_1 in which two copies carry the letter 2, and every type I
+    block of (R∞)_2 in which three copies do, is positive definite (Theorems D₁ and D₂, Section 3h). These are the
+    blocks of (R∞)_1 and (R∞)_2 without a letter 1. The other blocks of (R∞)_1 reduce exactly to two sign
+    conditions on Schur complements (Conjectures L and L1, Section 3h), proved for k ≤ 4 and checked exactly for
+    k ≤ 10 and k ≤ 7.
   - In every (R∞)_j, every block in which one copy carries the letter 2 in row and column is positive definite, with
     an explicit lower bound (Proposition T2′).
 - **Four copies, every positive weight vector** (Section 3f, exact computer-assisted certificates). (R∞)_1 and
@@ -60,7 +65,9 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
 - For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 and k ≥ 5
   (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁, and for |T| = 1 the U-weights with at most two distinct values
   are Theorems EU and TL), reduced to the condition G ≻ 0 of Theorem C; and the letter-1 and type I blocks of (R∞)_j
-  for 1 ≤ j ≤ k − 2 (for k ≥ 5; at k = 4 everything is proved, Section 3f).
+  for 1 ≤ j ≤ k − 2 (for k ≥ 5; at k = 4 everything is proved, Section 3f). For every k, the blocks of (R∞)_1 and
+  (R∞)_2 without a letter 1 are Theorems D₁ and D₂, and the rest of (R∞)_1 is reduced to Conjectures L and L1
+  (Section 3h).
 
 Nothing here is refereed. The endpoint problem itself is open.
 
@@ -661,7 +668,8 @@ copies, with arbitrary weights. Hence, for every n:
 *Proofs (computer-assisted, exact).* Type II blocks by Proposition T2′; the others by the reductions and the
 certificate above, one representative per orbit. ∎
 
-For five copies the same certificate would need blocks with four free parameters; we have not tried it.
+For five copies the same certificate would need blocks with four free parameters. For the type I blocks of (R∞)_1
+with |T| = 1 we tried it; it did not finish (Section 3h).
 
 ## 3g. A positivity pattern
 
@@ -699,6 +707,104 @@ orthant. Hence it gives Conjecture 12 of `single-excitation-range/` for every si
 Conjecture S: each block is a Schur complement of a fixed-vector matrix. Proposition R proves it for row groups. The
 missing piece is the coupling between rows created by the partial transpose. A natural whole-block lift, one copy of
 D′ per pair of rows with Woodbury for the antisymmetric part, is exact but obstructed (notes, Section 6).
+
+## 3h. The middle conditions for every k: the blocks without a letter 1
+
+Code, logs and notes (with the proofs in full) are in `code/middle_j1/`. Normalise |s| = 1, so x_t = s_t.
+
+**Theorem D₁ ((R∞)_1, two copies carrying the letter 2).** For every k ≥ 3 and every positive weight vector, every
+type I block of (R∞)_1 in which two copies carry the letter 2 is positive definite.
+
+**Theorem D₂ ((R∞)_2, three copies carrying the letter 2).** For every k ≥ 4 and every positive weight vector, every
+type I block of (R∞)_2 in which three copies carry the letter 2 is positive definite.
+
+These are the type I blocks of (R∞)_1 and (R∞)_2 that contain no letter 1. With Proposition T2′ (and Proposition
+U0 when T contains every copy), every block of (R∞)_1 and (R∞)_2 without a letter 1 is positive definite for every
+k. Their size does not depend on k (3 and 4 states). At k = 4 they are the rows j = 1, T = {t, t′} and j = 2, T = {t, t′, t″} of the table in Section 3f.
+
+*Proof of Theorem D₁.* Let T = {t, t′}, α = x_t, β = x_{t′}, U = [k] ∖ T and e = Σ_{u∈U} x_u = 1 − α − β > 0. Put
+F_i = Σ_{u∈U} x_u/(c_i − 2x_u) with c_0 = 2, c_1 = 2 − β, c_2 = 2 − α and c_3 = 2 − α − β.
+1. *Closed form.* By Lemma B, in units 2^{k−1} and in the basis (2@t, 2@t′), (2@t′, 2@t), (vac, 2@t 2@t′), the block
+   is M = [[2, c, −A], [c, 2, −B], [−A, −B, 2/Γ₃]]. Each E⁻¹ that occurs is a diagonal matrix plus ½wwᵀ, and
+   Sherman–Morrison gives, with g(x) = x/(2(1 − x)) and a′ = 1 + α/(2 − 2α − β),
+
+       c = (1 + g(α))(1 + g(β))/(2 + g(α) + g(β) + F_0),   A = a′/(½(1 + a′) + ½F_1),   Γ₃ = 1 + ½F_3,
+
+   and B is A with α and β exchanged and F_2 in place of F_1. So the other copies enter only through the four sums F_i.
+2. *Sylvester.* c < 2, and det M = (2/Γ₃) f with f = 4 − c² − Γ₃(A² + B² − cAB). So M ≻ 0 if and only if f > 0.
+3. *One sum exact, three bounded.* Put z_u = 1/(c_3 − 2x_u) and Z = F_3/e, the mean of the z_u with weights x_u/e.
+   Since 0 < x_u ≤ e, every z_u lies in (Z₀, Z₁] with Z₀ = 1/(2 − α − β) and Z₁ = 1/(α + β). Moreover
+   1/(c_i − 2x_u) = h_i(z_u) with h_i(z) = z/(1 + d_i z) and d_0 = α + β, d_1 = α, d_2 = β. Each h_i is concave and
+   increasing, so Jensen's inequality and the chord ℓ_i of h_i on [Z₀, Z₁] give e ℓ_i(Z) ≤ F_i ≤ e h_i(Z).
+4. *Vertices.* For fixed Z, hence fixed Γ₃ = 1 + eZ/2, f is concave in each of c, A and B separately, and c, A and B
+   are decreasing functions of F_0, F_1 and F_2. So f is at least the smallest of its values at the eight vertices of
+   the box of step 3.
+5. *Certificate* (exact, `cert_t2.py`, under a second). Put λ = (Z − Z₀)/(Z₁ − Z₀) ∈ [0, 1]. At each vertex f is a
+   rational function of (α, β, e, λ), homogeneous of degree 0 in (α, β, e). Its denominator is a product of
+   polynomials with only positive coefficients. Its numerator, written in the Bernstein basis of [0, 1] in λ, has
+   coefficients that are nonzero polynomials in (α, β, e) with only nonnegative coefficients (at most 1 333 terms,
+   degree at most 28). So f > 0. ∎
+
+The proof uses k only through e > 0. In Theorem B0 the other copies enter through a few moments of the weights; here
+they enter through four values of one Stieltjes-type function of the measure Σ_{u∈U} x_u δ_{x_u}, and keeping one
+value exact confines the other three to explicit intervals. Simpler relaxations fail: independent bounds on all four
+sums, and a cone relaxation in the moment space (notes, Section 2). Numerically the vertex bound keeps the margin of
+f, which tends to 0 only when one copy of T carries all the weight.
+
+*Proof of Theorem D₂.* Let T = {t₁, t₂, t₃}, a_i = x_{t_i}, x_T = a₁ + a₂ + a₃, U = [k] ∖ T and e = 1 − x_T > 0. In
+units 2^{k−2} and in the basis (2@t_i, 2 on T ∖ t_i), i = 1, 2, 3, and (vac, 2 on T), the block is
+[[C, −a], [−aᵀ, 2/Γ_T]]. Here C has diagonal 2 and off-diagonal entries c_ij, a = (A₁, A₂, A₃), and, with l the third
+index and g_l(y) = y/(2 − 2y − a_l),
+
+    c_ij = (1 + g_l(a_i))(1 + g_l(a_j))/(2 + g_l(a_i) + g_l(a_j) + F^{(l)}),   A_i = (1 + g′_i)/(1 + ½(g′_i + F′_i)),
+
+where g′_i = a_i/(2 − a_i − x_T), Γ_T = 1 + ½F_T, and F^{(l)}, F′_i and F_T are the sums
+Σ_{u∈U} x_u/(2 − 2x_u − x_T + d) with d = a_i + a_j, d = a_i and d = 0. With z_u = 1/(2 − 2x_u − x_T), which lies in
+(1/(2 − x_T), 1/x_T], all seven sums have the form of step 3, so given Z = F_T/e each c_ij and each A_i lies in an
+explicit interval. The block is positive definite if and only if C ≻ 0 and f = 2 − Γ_T aᵀC⁻¹a > 0. The map
+(C, a) ↦ aᵀC⁻¹a is jointly convex (the matrix-fractional function), so for fixed Z the function f is jointly concave
+on the part of the box where C ≻ 0. An exact certificate of the same kind (`cert_t3j2.py`, about 52 minutes) shows
+that C ≻ 0 at the 8 vertices of the c-part of the box, hence on all of it, and that f > 0 at all 64 vertices (the
+largest numerator has 134 068 terms and degree 56). ∎
+
+For j ≥ 3 the same scheme applies to the blocks of (R∞)_j with |T| = j + 1 (size j + 2), with 2^{(j+1)(j+2)/2}
+vertices; we have not tried it.
+
+**The other blocks of (R∞)_1.** They contain letters 1, and their entries contain pair and triple functions of the
+weights, such as 1/(1 − x_c − x_u). These are not functions of finitely many sums over single copies: the entries
+change when the other weights are redistributed with the same total. The notes reduce both kinds exactly.
+- *|T| = 1* (3k − 1 states: R_c = (2@t, 1@c), P_r = (1@r, 2@t) and Q_c = (vac, 2@t 1@c)). Every entry is explicit,
+  and a congruence followed by the elimination of the Q-states with an explicit inverse leaves a 2k × 2k form without
+  inverses (notes, Lemma T1.3). In the rescaled basis the kernel vector p ⊗ |2@t⟩ is the all-ones vector on the
+  P-states, so the Schur complement S_P onto the P-states has zero row sums. If the block on the R- and Q-states is
+  positive definite and every off-diagonal entry of S_P is negative, then S_P is a weighted Laplacian, and the block
+  is ⪰ 0 with kernel exactly p ⊗ |2@t⟩.
+- *The letter-1 block* ((3k² − k)/2 states). The vacuum states eliminate with the explicit inverse ½(I + ½N₂) of
+  Lemma G, and a congruence by I + ½N₁ removes every other inverse except the Sherman–Morrison inverse of E₁ (notes,
+  Lemma L1.1). Eliminate the vacuum states, then the column groups {(1@r, 1@c) : r ∈ [k]} one at a time, each with
+  one coordinate deleted. If at every stage the block of the next group is a Laplacian with negative off-diagonal
+  entries (its row sums vanish because p ⊗ |1@c⟩ is in the kernel), then the letter-1 block is ⪰ 0 with kernel
+  exactly p ⊗ (letter-1 part of H_1).
+
+**Conjecture L.** For every k ≥ 3, every copy t and every positive weight vector, the |T| = 1 block of (R∞)_1 is
+positive definite on its R- and Q-states, and S_P has negative off-diagonal entries.
+
+**Conjecture L1.** For every k ≥ 4 and every positive weight vector, the elimination above produces, at every stage
+and in any order of the column groups, a Laplacian with negative off-diagonal entries.
+
+Evidence:
+- Conjecture L is proved for k = 3 and 4. Over Q(s), every pivot of the block on the R- and Q-states is a ratio of
+  polynomials with only positive coefficients, S_P has zero row sums identically, and the numerator of every
+  off-diagonal entry of S_P has only negative coefficients (about 4 900 terms at k = 4) over a denominator with only
+  positive ones. At k = 4 this is a second proof of the |T| = 1 rows of Theorem A4. Conjecture L holds exactly at 120
+  rational weight vectors with k = 3, …, 10. The smallest ratio |S_P[r, r′]|/S_P[r, r] seen is 10⁻⁸, so the sign
+  condition is tight in some limits. The symbolic certificate at k = 5 (four free parameters) did not finish.
+- Conjecture L1 holds exactly at 32 rational weight vectors with k = 4, …, 7, in two orders each, and at 1 108
+  floating-point stages.
+- With B replaced by (1 + 1/1000)B, every block family of this section fails at an explicit rational point.
+
+So (R∞)_1 holds for every k if Conjectures L and L1 hold: the type II blocks are Proposition T2′ and the blocks with
+|T| = 2 are Theorem D₁.
 
 ## 4. Equal weights, every k
 
@@ -828,6 +934,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `typeI_G_u2/` (`run_all.sh`, notes in `typeI_G_u2/NOTES.md`) | Theorem U2: the exact symbolic Schur complement for u = 2, its agreement with direct elimination (m = 1, …, 5), the polynomial reductions, the blow-up charts and Bernstein certificates of (A_2) and (B_2), negative controls |
 | `positivity/` (`run_all.sh`, notes in `positivity/NOTES.md`) | Section 3g: every principal minor of every block at k = 2, 3 and the k = 4 tests, the row-group identities and lifts of Proposition R, the obstruction certificates (Newton, width, Farkas), the monomial-PSD tests, the Gram-type column-group lifts, the natural whole-block lift and its obstruction |
 | `middle_k4/` (`run_all.sh`, notes in `middle_k4/NOTES.md`) | Section 3f: the torus blocks of (R∞)_1 and (R∞)_2 at k = 4 over Q(s_1, s_2, s_3), the known kernels and the gauge, the Bareiss leading-minor certificates, minors against direct determinants at rational points, symbolic blocks against the point builder and the dense construction, negative controls |
+| `middle_j1/` (`run_all.sh`, notes in `middle_j1/NOTES.md`) | Section 3h: the closed forms of the blocks without a letter 1 of (R∞)_1 and (R∞)_2 against the Lemma B blocks (k ≤ 8) and the builder (k ≤ 6), the moment bounds and vertex reductions at rational configurations, the Bernstein certificates of Theorems D₁ (8 functions) and D₂ (8 + 64), the certified formulas against the true blocks; the closed forms and inverse-free reductions of the |T| = 1 and letter-1 blocks (k ≤ 8 and k ≤ 7), Conjecture L proved at k = 3, 4 (symbolic pivots and Laplacian signs, and a leading-minor certificate at k = 4) and checked exactly for k ≤ 10, Conjecture L1 checked exactly for k ≤ 7; negative controls |
 | `middle_k2/` (`run_all.sh`, notes in `middle_k2/NOTES.md`) | Section 3e: the closed form of the letter-1 block of (R∞)_{k−2} against a direct construction (k = 4, 5), Lemmas R1, J, W, BJ and Proposition S exactly (k = 4, 5, 6), and a numerical sweep (k = 4, …, 7) |
 | `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |
 | `check_bottom_condition.py`, `c0_interval.py` | Theorem B0: closed form against a direct construction (k ≤ 5), the letter-2 blocks, the reduction to (C0), the bound chains at random points, and the two reduced inequalities in interval arithmetic |

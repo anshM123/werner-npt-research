@@ -1,0 +1,8 @@
+mineig_gauge: min 4.432e-10, max 0.09084
+mineig_PQ: min 1.173e-09, max 0.1183
+S_offdiag_max: min 2.135e-07, max 0.124
+S_offdiag_min: min -0.1863, max -2.365e-09
+S_mineig: min 8.047e-10, max 0.2154
+S2_offdiag_max: min 1.996e-07, max 0.1381
+RR_offdiag_max: min 0, max 0
+RR_offdiag_min: min 0, max 0

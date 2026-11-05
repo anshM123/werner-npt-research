@@ -1,0 +1,13 @@
+PASS  check_ylib (3 s)
+PASS  cert_t2 (0 s)
+PASS  check_t2 (0 s)
+PASS  check_t1_closed (4 s)
+PASS  check_t1 (47 s)
+PASS  sym_t1_k3 (1 s)
+PASS  sym_t1_k4 (10 s)
+PASS  bareiss_t1_k4 (15 s)
+PASS  check_l1_closed (3 s)
+PASS  check_l1 (15 s)
+FAIL  cert_t3j2 (exit 1; see logs/run_cert_t3j2.log)
+PASS  check_t3j2 (5 s)
+SOME STEPS FAILED

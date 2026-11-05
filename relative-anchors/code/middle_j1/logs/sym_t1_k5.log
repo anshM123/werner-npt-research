@@ -1,0 +1,8 @@
+k = 5: block of size 14 built over Q(s0,s2,s3,s4) with s1 = 1 [7.0s]
+(i) all-ones on P annihilated identically: True
+  pivot 1/9: numerator degree 1, 1 terms, positive: True [7.2s]
+  pivot 2/9: numerator degree 0, 1 terms, positive: True [7.8s]
+  pivot 3/9: numerator degree 1, 1 terms, positive: True [8.4s]
+  pivot 4/9: numerator degree 1, 1 terms, positive: True [9.0s]
+  pivot 5/9: numerator degree 1, 1 terms, positive: True [9.7s]
+exit 1

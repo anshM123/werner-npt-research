@@ -1,0 +1,2 @@
+trials 4000 interior min below both extremes: 0
+min of f / min(1-al, 1-be) over grids: (np.float64(2.440126414050206), (np.float64(0.4980802675585284), np.float64(0.5014197324414715), 1))

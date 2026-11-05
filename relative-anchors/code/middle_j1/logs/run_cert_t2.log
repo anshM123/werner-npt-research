@@ -1,0 +1,10 @@
+c < 2: 2 - kap/(2 G0) has numerator and denominator with positive coefficients: True
+F0,F1,F2 = lll: numerator 894 terms, total degree 27, lam-degree 6; Bernstein coefficients nonnegative: True (zero ones: 0); denominator factors [(1, 2, 1, 'pos'), (4, 11, 2, 'pos'), (4, 11, 2, 'pos'), (5, 18, 2, 'pos')]; ok True [0.0s]
+F0,F1,F2 = llh: numerator 1076 terms, total degree 28, lam-degree 7; Bernstein coefficients nonnegative: True (zero ones: 0); denominator factors [(1, 2, 1, 'pos'), (4, 14, 2, 'pos'), (4, 11, 2, 'pos'), (5, 18, 2, 'pos')]; ok True [0.0s]
+F0,F1,F2 = lhl: numerator 1076 terms, total degree 28, lam-degree 7; Bernstein coefficients nonnegative: True (zero ones: 0); denominator factors [(1, 2, 1, 'pos'), (4, 14, 2, 'pos'), (4, 11, 2, 'pos'), (5, 18, 2, 'pos')]; ok True [0.0s]
+F0,F1,F2 = lhh: numerator 1230 terms, total degree 28, lam-degree 7; Bernstein coefficients nonnegative: True (zero ones: 0); denominator factors [(1, 2, 1, 'pos'), (4, 14, 2, 'pos'), (4, 14, 2, 'pos'), (5, 18, 2, 'pos')]; ok True [0.0s]
+F0,F1,F2 = hll: numerator 1088 terms, total degree 27, lam-degree 6; Bernstein coefficients nonnegative: True (zero ones: 0); denominator factors [(1, 2, 1, 'pos'), (4, 11, 2, 'pos'), (4, 11, 2, 'pos'), (5, 24, 2, 'pos')]; ok True [0.1s]
+F0,F1,F2 = hlh: numerator 1239 terms, total degree 28, lam-degree 7; Bernstein coefficients nonnegative: True (zero ones: 0); denominator factors [(1, 2, 1, 'pos'), (4, 14, 2, 'pos'), (4, 11, 2, 'pos'), (5, 24, 2, 'pos')]; ok True [0.1s]
+F0,F1,F2 = hhl: numerator 1239 terms, total degree 28, lam-degree 7; Bernstein coefficients nonnegative: True (zero ones: 0); denominator factors [(1, 2, 1, 'pos'), (4, 14, 2, 'pos'), (4, 11, 2, 'pos'), (5, 24, 2, 'pos')]; ok True [0.1s]
+F0,F1,F2 = hhh: numerator 1333 terms, total degree 28, lam-degree 7; Bernstein coefficients nonnegative: True (zero ones: 0); denominator factors [(1, 2, 1, 'pos'), (4, 14, 2, 'pos'), (4, 14, 2, 'pos'), (5, 24, 2, 'pos')]; ok True [0.1s]
+PASS
