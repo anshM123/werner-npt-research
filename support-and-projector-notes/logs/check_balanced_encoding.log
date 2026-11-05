@@ -1,0 +1,7 @@
+(1) r = 2: flag factors and match counts: PASS
+(1) r = 4: flag factors and match counts: PASS
+(1) r = 12: flag factors and match counts: PASS
+(2,3) k=1, r=2 (N=9): identity diff 4.4e-15; min q_N over 3 random encoded operators +3.085e+04; marginal error 5.6e-17
+(2,3) k=2, r=2 (N=10): identity diff 1.6e-13; min q_N over 3 random encoded operators +5.360e+05; marginal error 1.7e-16
+(4) witness numbers 387, 961 and the bound -1087/198144: PASS
+PASS

@@ -16,7 +16,9 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   single excitation is an anchor exactly when it lives on at most two copies (Proposition 8); and the endpoint still
   holds, with a margin, on all planes near the W-plane (Corollary 9). Also: when a tensor product is an anchor
   (Proposition 10), a second open family of anchor-free planes (Proposition 11), and strict anchors with explicit
-  open balls for every n (Theorem 12).
+  open balls for every n (Theorem 12). Finally, anchor-free planes all of whose vectors have maximally mixed one-copy
+  marginals (Proposition 13), and an exact reduction of the endpoint to range planes of that balanced kind
+  (Theorem 14): anchors alone cannot give every n.
 
 **None of this settles the all-copy problem.**
 
@@ -377,6 +379,75 @@ certifies either H(L) < 0 (no anchor near L) or H(L) > 0 (a strict anchor, and q
 planes) whenever H(L) ≠ 0. H(L) < 0 says nothing against the endpoint: the W-plane and the planes of Proposition 11
 have H < 0 and a positive margin.
 
+**Proposition 13 (anchor-free planes with maximally mixed marginals).** Let X|j⟩ = |j + 1⟩ and Z|j⟩ = ω^j|j⟩ on C³
+(ω = e^{2πi/3}, labels in F_3), let c(a, b) = (a, b, a + b, a + 2b) ∈ F_3⁴, and let C(a, b) be the 48-letter word that
+repeats each coordinate of c(a, b) twelve times. For t ≥ 0 define the isometry from three copies into n = 51 + t copies
+
+    ℰ_t v = (1/3) Σ_{a,b∈F_3} (X^aZ^b)^{⊗3} v ⊗ |C(a, b)⟩ ⊗ |a⟩^{⊗t},
+
+and let L_n = ℰ_t(span{w_1, w_2}) with w_ℓ = (|ℓ00⟩ + |0ℓ0⟩ + |00ℓ⟩)/√3 (the three-copy W-plane). Then every unit vector
+of L_n has all one-copy marginals equal to I/3, and λ_min(Y_p) ≤ −1087/198144 for every unit p ∈ L_n.
+
+*Proof.*
+- **Marginals.** Distinct codewords differ in at least three groups, so the nine branches stay orthogonal after any
+  one copy is traced out, and the marginal is the average of the branch marginals. On a core copy this is the twirl
+  (1/9) Σ_{a,b} X^aZ^b ρ (X^aZ^b)^* = (Tr ρ) I/3. On a flag copy each symbol occurs in three of the nine branches.
+- **A compression.** Let y be the column flag word with six letters 1 and then six letters 2 in each group of twelve,
+  and the letter 1 on the appended flags, and fix the row flags to 0…0. Copy by copy, with the entries
+  δ_{ab}δ_{yx} − ½δ_{ay}δ_{bx}:
+  - the column flag string y spans an invariant block of D_{ℰv}: two different codewords differ on a whole group,
+    where y takes both values 1 and 2, so the cross terms vanish. On the block, D_{ℰv} = (1/9)(D_v + N_v) with
+    N_v = Σ_{(a,b)≠0} ε_{ab} D_{U_{ab}v} and 0 ≤ ε_{ab} ≤ 2^{−18}, since a nonzero codeword matches y at 18 of the 48
+    flags and the zero codeword at none (U_{ab} = (X^aZ^b)^{⊗3});
+  - the rows of M V_{ℰv} with row flags 0…0 and column flags y receive only the branch (0, 0), with coefficient 1/3;
+  - on these states A contributes the factor 1 at every flag.
+
+  So, with J the embedding of the three-copy row-column space at these flags,
+
+      J^* Y_{ℰv} J = A_3 − [M_3 V_v (D_v + N_v)^{−1} V_v^* M_3]^Γ = Y_v + (ΔR)^Γ,
+      ΔR = M_3 V_v [D_v^{−1} − (D_v + N_v)^{−1}] V_v^* M_3,   0 ⪯ ΔR,   ‖ΔR‖ ≤ 8 · 8ε · 8 = 512ε,
+
+  using D_v ⪰ I/8 for unit v, ‖N_v‖ ≤ 8ε (ε = 2^{−18}) and ‖M_3‖ = 1.
+- **The W witness survives.** For unit v in the W-plane, Proposition 7 gives (after the local unitary) a vector z_v
+  with ‖z_v‖² = 387 and ⟨z_v, Y_v z_v⟩ = −4. Its coefficient matrix is 8J − 7I, with singular values 17, 7, 7, so
+  ‖(|z_v⟩⟨z_v|)^Γ‖_1 = 31² = 961. Trace duality bounds the change of the form by 512ε · 961, so
+  λ_min(Y_{ℰv}) ≤ (−4 + 961/512)/387 = −1087/198144. ∎
+
+So no property of the one-copy marginals of a vector (full local rank, or even maximally mixed marginals) makes it an
+anchor.
+
+**Theorem 14 (a balanced reduction of the endpoint).** For k ≥ 1 and even r ≥ 2 put N = k + 4r and
+
+    ℰ_{k,r} v = (1/3) Σ_{a,b∈F_3} (X^aZ^b)^{⊗k} v ⊗ |c(a, b)^{[r]}⟩,
+
+where c^{[r]} repeats each coordinate of c r times. This is an isometry from k copies into N copies, and every unit
+vector in its image has all one-copy marginals I/3 (as in Proposition 13). Then EP_k holds if and only if, for every
+even r ≥ 2, q_N(C) ≥ 0 for every C of rank at most two whose range lies in the image of ℰ_{k,r}, with any co-range.
+
+*Proof.*
+- **(⇒)** On one group of r flag copies, compress M^{⊗r} to the rows span{|b^r⟩} (a qutrit). Nonconstant column strings
+  give a diagonal block with entries 2^{−(number of matches)}. On constant columns the block is
+  σ_r = 2^{−r}|Ω⟩⟨Ω| + Σ_{a≠b} |ab⟩⟨ab| (here r even is used: the cross entries are (−½)^r). It is separable, because
+  E_ξ[|ξ⟩⟨ξ| ⊗ |ξ̄⟩⟨ξ̄|] = |Ω⟩⟨Ω| + Σ_{a≠b} |ab⟩⟨ab| for ξ with independent unit phases (the 27 choices of cube roots
+  suffice). Tensoring the four groups and compressing the rows to the nine codewords keeps separability between the
+  codeword label and the flag columns: the compression is Σ_i |α_i⟩⟨α_i| ⊗ β_i with β_i ⪰ 0. Writing C = ℰ_{k,r}C̃, this
+  gives q_N(C) = (1/9) Σ_i Σ_f q_k(C_{i,f}), where C_{i,f} is the slice at flag column f of
+  (Σ_λ ᾱ_{iλ} U_λ) C̃ (I ⊗ β_i^{1/2}). Every slice has rank at most two, so EP_k gives q_N(C) ≥ 0.
+- **(⇐)** Let y be the column flag word with r/2 letters 1 and then r/2 letters 2 in each group, and for a k-copy
+  operator C put C′ = ℰ_{k,r} C J_y^* with J_y z = z ⊗ |y⟩. Then C′ has the same rank and norm, its range lies in the
+  image of ℰ_{k,r}, and the same flag computation gives the exact identity
+
+      q_N(C′) = (1/9)[ q_k(C) + 2^{−3r/2} Σ_{(a,b)≠(0,0)} q_k((X^aZ^b)^{⊗k} C) ].
+
+  Since |q_k| ≤ ‖·‖_F², a C with q_k(C) = −d‖C‖_F² < 0 gives q_N(C′) ≤ (1/9)(−d + 8·2^{−3r/2})‖C‖_F² < 0 once
+  2^{3r/2} > 8/d. ∎
+
+**Consequence.** The endpoint for every number of copies is equivalent to the endpoint on rank-two operators whose range
+lies in one of these balanced encoded spaces, all of whose vectors have maximally mixed one-copy marginals. By
+Proposition 13 such ranges need not contain an anchor, although every vector in them has maximally mixed one-copy
+marginals. So a proof of the endpoint for every n cannot come from anchors alone, and in particular not from showing
+that vectors of full local rank are anchors.
+
 ## Code
 
 Python 3 with NumPy and SymPy. `code/check_pair_anchor.py` uses python-flint for the exact characteristic polynomials;
@@ -392,6 +463,9 @@ without it, it falls back to floating point. Outputs are in `logs/`.
 - `code/check_anchor_families.py`: Theorem 12 and Proposition 11 in exact arithmetic (python-flint): the two
   certificates for g_2 and g_3 (with their ranks and component sizes), the spectrum of D_b, the witness v, and the
   spectrum of the compression to E_0.
+- `code/check_balanced_encoding.py`: Proposition 13 and Theorem 14: the flag factors of the proofs (exactly, for all
+  flag strings when r = 2, 4 and on samples when r = 12), the reduction identity by direct partial traces at
+  (k, r) = (1, 2) and (2, 2), the marginals of encoded vectors, and the numbers 387, 961 and −1087/198144.
 - `code/check_anchor_obstruction.py`: Propositions 7 and 8 in exact rational arithmetic for n = 3, …, 7: the rows of
   MV_p live on the vacuum column, the Gram matrix on (a_n, b_n), and the weighted identities at rational weights.
 
