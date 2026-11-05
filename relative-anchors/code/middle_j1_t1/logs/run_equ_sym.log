@@ -1,0 +1,8 @@
+Finv and Fstd built [0.0s]; symmetric: True
+Finv[0][0]: numerator 15 terms deg 9, denominator 21 terms
+Finv[0][1]: numerator 14 terms deg 9, denominator 21 terms
+Finv[0][2]: numerator 17 terms deg 11, denominator 28 terms
+Finv[1][1]: numerator 20 terms deg 10, denominator 21 terms
+Finv[1][2]: numerator 26 terms deg 12, denominator 28 terms
+Finv[2][2]: numerator 13 terms deg 8, denominator 15 terms
+PASS

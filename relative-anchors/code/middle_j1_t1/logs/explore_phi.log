@@ -1,0 +1,25 @@
+3 smallest eigenvalue of Phi and of the scaled Phi (60 samples): (1.1440147884119568e-06, 7.626765174613271e-07, array([1.5e-03, 1.0e+00, 1.0e-04]), 1)
+4 smallest eigenvalue of Phi and of the scaled Phi (60 samples): (2.3450990096718597e-06, 4.2891189178490184e-06, array([8.000e-04, 6.531e-01, 7.573e-01, 1.000e-04]), 0)
+5 smallest eigenvalue of Phi and of the scaled Phi (60 samples): (3.1691559166410506e-05, 2.112762051670094e-05, array([1.    , 0.0026, 0.0016, 0.0017, 0.0016]), 0)
+6 smallest eigenvalue of Phi and of the scaled Phi (60 samples): (1.851082545266183e-05, 1.2340529297685763e-05, array([0.0011, 0.0011, 0.0011, 0.0011, 1.    , 0.0011]), 4)
+8 smallest eigenvalue of Phi and of the scaled Phi (60 samples): (0.0006323318420185147, 0.00042151844006931065, array([0.9999, 0.006 , 0.0061, 0.0013, 0.008 , 0.0075, 0.0037, 0.0052]), 0)
+equal U k=3 sigma=0.0001: lmin Phi 3.4656e-04, scaled 6.2359e-04
+equal U k=3 sigma=0.01: lmin Phi 3.3606e-02, scaled 5.8439e-02
+equal U k=3 sigma=0.3: lmin Phi 4.2002e-01, scaled 3.8992e-01
+equal U k=3 sigma=0.9: lmin Phi 1.6465e-01, scaled 1.1029e-01
+equal U k=3 sigma=0.999: lmin Phi 1.9959e-03, scaled 1.3304e-03
+equal U k=5 sigma=0.0001: lmin Phi 6.0937e-01, scaled 6.0895e-01
+equal U k=5 sigma=0.01: lmin Phi 6.0874e-01, scaled 6.0572e-01
+equal U k=5 sigma=0.3: lmin Phi 5.7913e-01, scaled 5.0766e-01
+equal U k=5 sigma=0.9: lmin Phi 2.1442e-01, scaled 1.4277e-01
+equal U k=5 sigma=0.999: lmin Phi 2.7424e-03, scaled 1.8278e-03
+equal U k=8 sigma=0.0001: lmin Phi 6.2434e-01, scaled 5.9934e-01
+equal U k=8 sigma=0.01: lmin Phi 6.2387e-01, scaled 5.9691e-01
+equal U k=8 sigma=0.3: lmin Phi 6.0058e-01, scaled 5.1565e-01
+equal U k=8 sigma=0.9: lmin Phi 2.3429e-01, scaled 1.5560e-01
+equal U k=8 sigma=0.999: lmin Phi 3.0621e-03, scaled 2.0408e-03
+equal U k=12 sigma=0.0001: lmin Phi 6.3052e-01, scaled 5.9617e-01
+equal U k=12 sigma=0.01: lmin Phi 6.3008e-01, scaled 5.9399e-01
+equal U k=12 sigma=0.3: lmin Phi 6.0883e-01, scaled 5.1886e-01
+equal U k=12 sigma=0.9: lmin Phi 2.4361e-01, scaled 1.6159e-01
+equal U k=12 sigma=0.999: lmin Phi 3.2170e-03, scaled 2.1440e-03

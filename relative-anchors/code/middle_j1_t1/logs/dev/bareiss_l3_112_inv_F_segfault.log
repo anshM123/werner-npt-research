@@ -1,0 +1,39 @@
+first run of: bareiss_phic.py levels 3 1,1,2 1,1,0 inv F (without bigstack.py); shell output and log:
+./guard.sh: line 23: 127089 Segmentation fault      python "$@" > "$log" 2>&1
+exit 139
+levels [1, 1, 2], fixed [True, True, False], inv, form F: congruence identity (form C only): True
+levels [1, 1, 2], fixed [True, True, False], inv, form F: Phi1 (= Phi prime) of size 7 over Q(p,q1,q2,q3,x3) (p = 1), built [0.3s]
+  den = 64 * [deg 2, 5 t]^1 * [deg 8, 70 t]^1 * [deg 14, 330 t]^1 * [deg 6, 35 t]^2 * [deg 8, 70 t]^2
+  den constant > 0 and den factors with positive coefficients: True
+  D_1 core deg 16, 493 terms, negative coeffs 0
+  step 1: D_2 core deg 33, 4843 terms, negative coeffs 0 [5.0s]
+  step 2: D_3 core deg 50, 20473 terms, negative coeffs 0 [58.6s]
+Thu Nov  5 08:09:25 EST 2026
+
+[exited with code 0]
+third run (bigstack.py, no divisibility filter):
+./guard.sh: line 31: 130389 Segmentation fault      python "$@" > "$log" 2>&1
+exit 139
+levels [1, 1, 2], fixed [True, True, False], inv, form F: congruence identity (form C only): True
+levels [1, 1, 2], fixed [True, True, False], inv, form F: matrix of size 7 over Q(p,q1,q2,q3,x3) (p = 1), built [0.3s]
+  den = 64 * [deg 2, 5 t]^1 * [deg 8, 70 t]^1 * [deg 14, 330 t]^1 * [deg 6, 35 t]^2 * [deg 8, 70 t]^2
+  den constant > 0 and den factors with positive coefficients: True
+  D_1 core deg 16, 493 terms, negative coeffs 0
+  step 1: D_2 core deg 33, 4843 terms, negative coeffs 0 [6.0s]
+  step 2: D_3 core deg 50, 20473 terms, negative coeffs 0 [61.9s]
+Thu Nov  5 08:20:18 EST 2026
+
+[exited with code 0]
+second run (bigstack.py, with divisibility filter):
+./guard.sh: line 31: 128533 Segmentation fault      python "$@" > "$log" 2>&1
+exit 139
+levels [1, 1, 2], fixed [True, True, False], inv, form F: congruence identity (form C only): True
+levels [1, 1, 2], fixed [True, True, False], inv, form F: matrix of size 7 over Q(p,q1,q2,q3,x3) (p = 1), built [0.3s]
+  den = 64 * [deg 2, 5 t]^1 * [deg 8, 70 t]^1 * [deg 14, 330 t]^1 * [deg 6, 35 t]^2 * [deg 8, 70 t]^2
+  den constant > 0 and den factors with positive coefficients: True
+  D_1 core deg 16, 493 terms, negative coeffs 0
+  step 1: D_2 core deg 33, 4843 terms, negative coeffs 0 [5.1s]
+  step 2: D_3 core deg 50, 20473 terms, negative coeffs 0 [57.7s]
+Thu Nov  5 08:14:41 EST 2026
+
+[exited with code 0]

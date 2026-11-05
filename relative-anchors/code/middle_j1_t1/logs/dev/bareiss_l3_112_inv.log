@@ -1,0 +1,6 @@
+levels [1, 1, 2], fixed [True, True, False], inv: congruence identity Phi1 = A Phi A in the operator algebra: True
+levels [1, 1, 2], fixed [True, True, False], inv: Phi1 (= Phi prime) of size 7 over Q(p,q1,q2,q3,x3) (p = 1), built [1.4s]
+  den = 2048 * [deg 2, 3 t]^1 * [deg 2, 5 t]^1 * [deg 2, 3 t]^2 * [deg 2, 4 t]^2 * [deg 2, 3 t]^2 * [deg 2, 4 t]^2 * [deg 2, 4 t]^2 * [deg 2, 3 t]^2 * [deg 2, 4 t]^2 * [deg 2, 4 t]^2 * [deg 2, 4 t]^2 * [deg 2, 4 t]^2 * [deg 6, 35 t]^2 * [deg 8, 70 t]^2
+  den constant > 0 and den factors with positive coefficients: True
+  D_1 core deg 28, 2988 terms, negative coeffs 0
+  step 1: D_2 core deg 53, 27352 terms, negative coeffs 0 [24.7s]

@@ -1,0 +1,19 @@
+k = 4, form C (the congruent form): matrix of size 7 over Q(p,q1,q2,q3) (p = 1), built [0.1s]
+  den = 256 * [deg 1, 2 t]^1 * [deg 1, 2 t]^1 * [deg 1, 2 t]^1 * [deg 1, 2 t]^2 * [deg 1, 2 t]^2 * [deg 1, 2 t]^2 * [deg 1, 2 t]^2 * [deg 1, 2 t]^2 * [deg 1, 2 t]^2 * [deg 3, 20 t]^2 * [deg 3, 20 t]^2 * [deg 1, 4 t]^3
+  den constant > 0 and den factors with positive coefficients: True
+  D_1 core deg 14, 642 terms, negative coeffs 0
+  step 1: D_2 core deg 25, 2887 terms, negative coeffs 0 [0.4s]
+  step 2: D_3 core deg 34, 6527 terms, negative coeffs 0 [1.4s]
+  step 3: D_4 core deg 35, 6542 terms, negative coeffs 0 [7.5s]
+  step 4: D_5 core deg 46, 14074 terms, negative coeffs 0 [17.2s]
+  step 5: D_6 core deg 55, 23241 terms, negative coeffs 0 [27.2s]
+  step 6: D_7 core deg 62, 32316 terms, negative coeffs 0 [37.2s]
+  leading minor 1: point check True; core deg 14, 642 terms, all coefficients positive
+  leading minor 2: point check True; core deg 25, 2887 terms, all coefficients positive
+  leading minor 3: point check True; core deg 34, 6527 terms, all coefficients positive
+  leading minor 4: point check True; core deg 35, 6542 terms, all coefficients positive
+  leading minor 5: point check True; core deg 46, 14074 terms, all coefficients positive
+  leading minor 6: point check True; core deg 55, 23241 terms, all coefficients positive
+  leading minor 7: point check True; core deg 62, 32316 terms, all coefficients positive
+time 37.2s
+PASS

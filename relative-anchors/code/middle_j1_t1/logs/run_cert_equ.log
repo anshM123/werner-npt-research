@@ -1,0 +1,7 @@
+Finv leading minor 1: sign 1; factors: deg 1/1t^1, deg 8/15t^1, deg 2/3t^1, deg 4/6t^2
+Finv leading minor 2: sign 1; factors: deg 1/2t^1, deg 1/1t^1, deg 1/1t^1, deg 8/15t^1, deg 2/3t^2, deg 4/6t^2
+Finv leading minor 3: sign 1; factors: deg 1/1t^1, deg 21/76t^1, deg 1/2t^2, deg 1/1t^3, deg 2/3t^1, deg 2/3t^2, deg 4/6t^2, deg 4/6t^2, deg 2/3t^3
+Fstd leading minor 1: sign 1; factors: deg 1/1t^1, deg 4/6t^1, deg 4/6t^1, deg 2/3t^1, deg 4/6t^2
+Fstd leading minor 2: sign 1; factors: deg 21/71t^1, deg 1/1t^3, deg 2/2t^1, deg 2/3t^2, deg 2/3t^2, deg 4/5t^2, deg 4/6t^2
+time 0.0s
+PASS

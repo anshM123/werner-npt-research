@@ -1,0 +1,10 @@
+k = 3: Phi' of size 5 over Q(q1,q2), order [0, 1, 2, 3, 4] [0.0s]
+  (1) validation at w = ['900/2269', '240/2269', '2069/2269']: True [0.0s]
+  (1) validation at w = ['1764/7081', '6804/7081', '857/7081']: True [0.0s]
+  (2) pivot 1/5: numerator deg 10 (56 terms), denominator deg 11 (36 terms); sign 1 [one-signed 10/56] [one-signed 11/36] [0.0s]
+  (2) pivot 2/5: numerator deg 19 (183 terms), denominator deg 17 (161 terms); sign 1 [one-signed 19/183] [one-signed 17/161] [0.0s]
+  (2) pivot 3/5: numerator deg 19 (188 terms), denominator deg 19 (203 terms); sign 1 [one-signed 19/188] [one-signed 19/203] [0.0s]
+  (2) pivot 4/5: numerator deg 24 (295 terms), denominator deg 23 (298 terms); sign 1 [one-signed 24/295] [one-signed 23/298] [0.1s]
+  (2) pivot 5/5: numerator deg 28 (401 terms), denominator deg 28 (430 terms); sign 1 [one-signed 28/401] [one-signed 28/430] [0.1s]
+time 0.1s
+PASS

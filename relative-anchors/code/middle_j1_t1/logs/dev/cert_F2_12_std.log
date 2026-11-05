@@ -1,0 +1,5 @@
+F, l = 2, offsets [1, 2], fixed None, bscale 1, order stored: invariant form of size 5 [0.1s]
+  standard, level 2 (symmetric True) minor 1: sign 1; numerator deg 13 (210 terms); factors (deg/terms^mult): [one-signed 13/210] [one-signed 14/330] [0.1s]
+  standard, level 2 (symmetric True) minor 2: sign 1; numerator deg 38 (7298 terms); factors (deg/terms^mult): [one-signed 38/7298] [one-signed 40/10611] [0.1s]
+time 0.1s
+PASS

@@ -1,0 +1,4 @@
+levels [1, 1, 2], fixed [True, True, False], inv: matrix of size 7 over Q(p,q1,q2,q3,x3) (p = 1) [0.3s]
+  pivot 1/7: numerator deg 16 (493 terms), denominator deg 18 (715 terms); sign 1 [one-signed 16/493] [one-signed 18/715] [0.3s]
+  pivot 2/7: numerator deg 33 (4843 terms), denominator deg 34 (5983 terms); sign 1 [one-signed 33/4843] [one-signed 34/5983] [3.9s]
+(stopped by hand during pivot 3, after about 4 minutes, to leave time for the final run)

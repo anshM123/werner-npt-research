@@ -1,0 +1,10 @@
+G, l = 1, offsets [2], bscale 1: invariant form of size 4 [0.0s]
+  invariant (symmetric True) minor 1: sign 1; numerator deg 1 (1 terms); factors (deg/terms^mult): 1/1^1 2/3^1 [0.0s]
+  invariant (symmetric True) minor 2: sign 1; numerator deg 3 (2 terms); factors (deg/terms^mult): 1/2^1 1/1^1 1/1^1 2/3^2 [0.0s]
+  invariant (symmetric True) minor 3: sign 1; numerator deg 14 (25 terms); factors (deg/terms^mult): 8/15^1 1/2^2 1/1^2 1/1^2 2/3^1 4/6^2 2/3^3 [0.0s]
+  invariant (symmetric True) minor 4: sign 1; numerator deg 30 (109 terms); factors (deg/terms^mult): 21/76^1 1/1^2 1/2^3 1/1^4 2/3^1 2/3^1 2/3^2 4/6^2 4/6^2 2/3^4 [0.0s]
+  standard, level 1 (symmetric True) minor 1: sign 1; numerator deg 1 (1 terms); factors (deg/terms^mult): 1/1^1 2/3^1 [0.0s]
+  standard, level 1 (symmetric True) minor 2: sign 1; numerator deg 10 (15 terms); factors (deg/terms^mult): 4/6^1 4/6^1 1/1^2 2/3^2 4/6^2 [0.0s]
+  standard, level 1 (symmetric True) minor 3: sign 1; numerator deg 25 (71 terms); factors (deg/terms^mult): 21/71^1 1/1^4 2/2^1 2/3^2 4/5^2 4/6^2 2/3^3 [0.0s]
+time 0.0s
+PASS

@@ -1,0 +1,5 @@
+F, l = 2, offsets [1, 1], bscale 1: invariant form of size 5 [0.1s]
+  invariant (symmetric True) minor 1: sign 1; numerator deg 13 (208 terms); factors (deg/terms^mult): 1/1^1 12/208^1 2/5^1 6/35^2 [0.1s]
+  invariant (symmetric True) minor 2: sign 1; numerator deg 27 (2272 terms); factors (deg/terms^mult): 1/2^1 1/1^1 1/1^1 24/1818^1 2/5^2 6/35^4 [0.1s]
+  invariant (symmetric True) minor 3: sign 1; numerator deg 29 (2817 terms); factors (deg/terms^mult): 1/2^1 1/2^1 1/1^1 1/1^1 1/1^1 24/1818^1 2/5^3 6/35^4 [0.4s]
+  invariant (symmetric True) minor 4: sign None; numerator deg 65 (56709 terms); factors (deg/terms^mult): factor with mixed signs: deg 58, 40913 terms [12.9s]

@@ -1,0 +1,6 @@
+k = 5: Phi' of size 9, built [3.8s]
+  den = 2048 * [deg 1, 3 t]^1 * [deg 1, 3 t]^1 * [deg 1, 3 t]^1 * [deg 1, 5 t]^1 * [deg 1, 3 t]^1 * [deg 1, 3 t]^1 * [deg 1, 3 t]^1 * [deg 1, 5 t]^1 * [deg 1, 3 t]^2 * [deg 1, 3 t]^2 * [deg 1, 3 t]^2 * [deg 1, 3 t]^2 * [deg 1, 3 t]^2 * [deg 1, 3 t]^2 * [deg 1, 3 t]^2 * [deg 1, 3 t]^2 * [deg 1, 3 t]^2 * [deg 1, 3 t]^2 * [deg 3, 35 t]^2 * [deg 5, 126 t]^2
+  den constant > 0 and den factors with positive coefficients: True
+  D_1 core deg 18, 7101 terms, negative coeffs 0
+  step 1: D_2 core deg 35, 73614 terms, negative coeffs 0 [165.5s]
+guard: memory 2998588 KB above 2.5 GB, killed PID 12792

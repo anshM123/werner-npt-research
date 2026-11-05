@@ -1,0 +1,29 @@
+   bscale 1: invariant gauge form size 4, std forms [3], G_inv[0][0] = 32/113 = 32/113
+   bscale 1001/1000: invariant gauge form size 4, std forms [3], G_inv[0][0] = 32/113 = 32/113
+l = 1, u = [2]: done, all pass so far: True [0.0s]
+   bscale 1: invariant gauge form size 4, std forms [3], G_inv[0][0] = 1024/1051 = 1024/1051
+   bscale 1001/1000: invariant gauge form size 4, std forms [3], G_inv[0][0] = 1024/1051 = 1024/1051
+l = 1, u = [3]: done, all pass so far: True [0.0s]
+   bscale 1: invariant gauge form size 4, std forms [3], G_inv[0][0] = 9/12553 = 9/12553
+   bscale 1001/1000: invariant gauge form size 4, std forms [3], G_inv[0][0] = 9/12553 = 9/12553
+l = 1, u = [4]: done, all pass so far: True [0.1s]
+   bscale 1: invariant gauge form size 4, std forms [3], G_inv[0][0] = 1/1537 = 1/1537
+   bscale 1001/1000: invariant gauge form size 4, std forms [3], G_inv[0][0] = 1/1537 = 1/1537
+l = 1, u = [6]: done, all pass so far: True [0.3s]
+   bscale 1: invariant gauge form size 7, std forms [None, 3], G_inv[0][0] = 108/127 = 108/127
+   bscale 1001/1000: invariant gauge form size 7, std forms [None, 3], G_inv[0][0] = 108/127 = 108/127
+l = 2, u = [1, 2]: done, all pass so far: True [0.9s]
+   bscale 1: invariant gauge form size 7, std forms [3, 3], G_inv[0][0] = 225/923 = 225/923
+   bscale 1001/1000: invariant gauge form size 7, std forms [3, 3], G_inv[0][0] = 225/923 = 225/923
+l = 2, u = [2, 2]: done, all pass so far: True [1.6s]
+   bscale 1: invariant gauge form size 7, std forms [3, 3], G_inv[0][0] = 64/195 = 64/195
+   bscale 1001/1000: invariant gauge form size 7, std forms [3, 3], G_inv[0][0] = 64/195 = 64/195
+l = 2, u = [2, 3]: done, all pass so far: True [2.2s]
+   bscale 1: invariant gauge form size 7, std forms [3, None], G_inv[0][0] = 5292/6529 = 5292/6529
+   bscale 1001/1000: invariant gauge form size 7, std forms [3, None], G_inv[0][0] = 5292/6529 = 5292/6529
+l = 2, u = [3, 1]: done, all pass so far: True [2.8s]
+   bscale 1: invariant gauge form size 7, std forms [None, 3], G_inv[0][0] = 9/19 = 9/19
+   bscale 1001/1000: invariant gauge form size 7, std forms [None, 3], G_inv[0][0] = 9/19 = 9/19
+l = 2, u = [1, 4]: done, all pass so far: True [3.5s]
+36 exact comparisons
+PASS

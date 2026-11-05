@@ -1,0 +1,8 @@
+k = 3: P-first reduction, explicit Phi and Phi > 0, exact: True
+k = 4: P-first reduction, explicit Phi and Phi > 0, exact: True
+k = 5: P-first reduction, explicit Phi and Phi > 0, exact: True
+k = 6: P-first reduction, explicit Phi and Phi > 0, exact: True
+k = 7: P-first reduction, explicit Phi and Phi > 0, exact: True
+k = 8: P-first reduction, explicit Phi and Phi > 0, exact: True
+18 blocks checked
+PASS

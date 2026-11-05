@@ -1,0 +1,8 @@
+F, l = 2, offsets [2, 2], bscale 1, order stored: invariant form of size 5 [0.1s]
+  invariant (symmetric True) minor 1: sign 1; numerator deg 13 (210 terms); factors (deg/terms^mult): 1/1^1 12/210^1 2/5^1 6/35^2 [0.1s]
+  invariant (symmetric True) minor 2: sign 1; numerator deg 27 (2275 terms); factors (deg/terms^mult): 1/2^1 1/1^1 1/1^1 24/1820^1 2/5^2 6/35^4 [0.1s]
+  invariant (symmetric True) minor 3: sign 1; numerator deg 29 (2821 terms); factors (deg/terms^mult): 1/2^1 1/2^1 1/1^1 1/1^1 1/1^1 24/1820^1 2/5^3 6/35^4 [0.4s]
+  invariant (symmetric True) minor 4: sign 1; numerator deg 65 (56722 terms); factors (deg/terms^mult): 1/2^1 1/1^1 1/1^1 58/40918^1 1/2^2 1/1^2 6/35^1 4/15^2 10/126^2 2/5^4 6/35^4 [14.5s]
+  invariant (symmetric True) minor 5: sign 1; numerator deg 75 (96946 terms); factors (deg/terms^mult): 1/1^1 66/66038^1 1/2^2 1/2^2 1/1^2 1/1^2 6/35^1 10/126^2 4/15^4 6/35^4 2/5^5 [389.5s]
+time 389.5s
+PASS
