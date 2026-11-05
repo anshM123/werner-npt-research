@@ -1,0 +1,4 @@
+n=5 rand seed=1: min eig of Y_p on complement of kernel = +0.02672  [1430s]
+n=5 dicke2 seed=1: min eig of Y_p on complement of kernel = -0.13124  [228s]
+n=5 rand seed=2: min eig of Y_p on complement of kernel = +0.02682  [1493s]
+n=5 GHZ seed=1: min eig of Y_p on complement of kernel = +0.02165  [349s]

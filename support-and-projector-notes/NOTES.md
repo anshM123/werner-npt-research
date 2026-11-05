@@ -214,7 +214,9 @@ contains p, with any co-range. Call such p a universal anchor. Y_p always vanish
   over a product, has smallest eigenvalue −0.0239.
 
 At n = 4, random vectors stay universal (gap 0.045), W is not (−0.0149), and GHZ is universal with a small gap
-(0.0014).
+(0.0014). At n = 5 (matrix-free Lanczos, tolerance 1e−5), two Haar-random vectors are universal with gaps 0.0267 and
+0.0268, the GHZ vector Σ_a |aaaaa⟩ is universal with gap 0.0217, and the Dicke vector with two letters 1 is not
+(−0.131).
 
 **Two exact facts.** Put A = (M^{⊗n})^Γ and T_p = A^{−1/2} R_p^Γ A^{−1/2}, so that p is universal exactly when
 T_p ≤ 1.
@@ -460,6 +462,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
 - `code/check_projector_reduction.py`: the flattening and flag identities of Proposition 4, on a random rank-two C, and
   the Gram identity behind Proposition 5.
 - `code/check_anchors.py`: Section 5 at n = 2, 3.
+- `code/check_anchors_matrixfree.py`: the smallest eigenvalue of Y_p off its kernel, matrix-free (Lanczos), used for the
+  n = 5 values (`python code/check_anchors_matrixfree.py 5 rand 1`, etc.; log in `logs/check_anchors_matrixfree_n5.log`).
 - `code/check_anchor_families.py`: Theorem 12 and Proposition 11 in exact arithmetic (python-flint): the two
   certificates for g_2 and g_3 (with their ranks and component sizes), the spectrum of D_b, the witness v, and the
   spectrum of the compression to E_0.
