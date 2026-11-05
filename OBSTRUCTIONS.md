@@ -75,6 +75,30 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
   - Script: `single-excitation-range/code/check_sector_anchor_failures.py`. It also re-checks that the
     single-excitation sector passes at the same sizes.
 
+- **Weight-enumerator linear programs** (added 4 November 2026; `support-and-projector-notes/`, Section 7, and
+  `support-and-projector-notes/code/lp_obstructions/`). By Theorem 14″ there, it suffices to treat rank-two projectors
+  whose range is balanced. For them, the two-replica relations of quantum codes prove positivity up to eight copies
+  and fail at nine. Asking the range to be t-uniform (maximally mixed marginals on any t copies) helps. The least t
+  with a positive optimum, found by an exact rational simplex, is 1 for n ≤ 8; 2 at n = 9; 3 for 10–16; 4 for 17–18;
+  5 for 19–23; 6 for 24–27; 7 for 28–32; and 8 at 33. So it grows linearly, roughly like n/4.3. The flag encodings we
+  know give much weaker uniformity on N copies, so uniformity does not rescue the linear program.
+  A three-replica relaxation helps only slightly. It twirls Π^{⊗3} over U(3) at every copy and imposes Λ³(ran Π) = 0,
+  the rank-two condition. It reproduces the linear-programming bound for n ≤ 8, except at n = 7, where it gives
+  0.252 against 0.232.
+- **Extending the three-copy proof of Wu and Zou** (added 4 November 2026). Their proof for positive semidefinite
+  rank-two operators (Wu and Zou, arXiv:2608.02647) combines nonnegatively the two-block "cut" inequalities
+  z_{A∪K} + z_{A∪L} − z_A ≤ √(e_A(u) e_A(v)), with C = λP_u + μP_v, z_T = Tr(ρ^u_T ρ^v_T), e_A the linear entropy of
+  the cut A, and (A, K, L) any partition of the copies into three nonempty parts. With the dilation of
+  `support-and-projector-notes/` (Proposition 4′, which works for either parity of the number of added copies), the
+  endpoint for every n is equivalent to positivity on positive semidefinite rank-two operators for every odd n.
+  For odd n ≥ 5, however, no certificate of this kind exists, even after adding the three-copy theorem for every way
+  of grouping the copies into three blocks. The obstruction comes from product pairs u = ⊗u_i, v = ⊗v_i with
+  u_i ⊥ v_i on an odd set D and u_i = v_i elsewhere. The n-copy statement is an equality at every such pair. Every
+  cut with |K| ≥ 2 or |L| ≥ 2, and every grouped inequality with a block of two or more copies, has slack at some such
+  pair. The remaining cuts relate only the top two levels. The linear programs at n = 5, 7 confirm infeasibility.
+  So a proof has to resolve every copy individually. Positive semidefinite operators at n = 5 are the first open case
+  of this form, since n = 4 is covered for Hermitian operators by `four-replica-notes/`.
+
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
