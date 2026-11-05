@@ -1,0 +1,9 @@
+k=4 (300 weight vectors): min eig/scale -4.7e-16; max |Y kappa| rel 1.2e-16; gap/ub in [0.3690, 1.0000]; min gap/x_min 0.2410; min lambda(F|R) 0.4519  (0s)
+k=5 (200 weight vectors): min eig/scale -3.8e-16; max |Y kappa| rel 9.6e-17; gap/ub in [0.5011, 1.0000]; min gap/x_min 0.2914; min lambda(F|R) 0.4506  (1s)
+k=6 (80 weight vectors): min eig/scale -4.8e-16; max |Y kappa| rel 8.2e-17; gap/ub in [0.7460, 1.0000]; min gap/x_min 0.3965; min lambda(F|R) 0.4556  (2s)
+k=7 (30 weight vectors): min eig/scale -3.5e-16; max |Y kappa| rel 7.9e-17; gap/ub in [0.7521, 1.0000]; min gap/x_min 0.3973; min lambda(F|R) 0.4551  (3s)
+direct vs closed form, k=4: 5.6e-17
+direct vs closed form, k=4: 1.1e-16
+direct vs closed form, k=5: 2.2e-16
+direct vs closed form, k=5: 1.7e-16
+PASS

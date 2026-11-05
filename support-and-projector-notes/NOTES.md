@@ -9,7 +9,8 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   thick at one copy.
 - **Section 2.** The same holds with anchors built from maximally entangled qutrit pairs.
 - **Section 3.** The endpoint for every number of copies is equivalent to its restriction to rank-two orthogonal
-  projectors.
+  projectors. Proposition 4′ does this with k + r copies instead of 2k + r, through an exact identity, and gives a
+  rate: positivity on projectors at N copies implies q_k ≥ −8·2^{−(N−k)}‖·‖_F² on rank two at k copies.
 - **Section 4.** A negative witness forces the rank-two minimum to fall exponentially below the rank-one scale 2^{−N}.
 - **Section 5.** Which single vectors of a plane certify it in the Schur argument ("universal anchors"). Numerics,
   and three exact facts for every n ≥ 3: the W-plane and every plane near it contain no anchor (Proposition 7); a
@@ -18,11 +19,15 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   (Proposition 10), a second open family of anchor-free planes (Proposition 11), and strict anchors with explicit
   open balls for every n (Theorem 12). Finally, anchor-free planes all of whose vectors have maximally mixed one-copy
   marginals (Proposition 13), and an exact reduction of the endpoint to range planes of that balanced kind
-  (Theorem 14): anchors alone cannot give every n.
+  (Theorem 14): anchors alone cannot give every n. Theorem 14′ balances the range and the co-range at once, the
+  balancing keeps every anchor obstruction (Remark), and Theorem 14″ reduces the endpoint for every n to rank-two
+  orthogonal projectors onto planes all of whose vectors have maximally mixed one-copy marginals.
 - **Section 6.** Local structure at zero planes: spin-flip wedge zeros have nonnegative second variation for every n
   (Proposition 15); the GHZ plane and generic local-qubit planes have open neighbourhoods on which the endpoint holds,
   and m(L) ≤ 2σ(L) for every plane (Theorem 16); at projector-core zeros the second variation is equivalent to the
   endpoint on one copy fewer (Proposition 17); Kronecker forms of flattenings do not detect anchors (Proposition 18).
+- **Section 7.** For balanced rank-two projectors, the standard weight-enumerator relations of quantum codes alone give
+  q_n > 0 for n ≤ 8 (Proposition 19, exact certificates). They cannot give it at n = 9.
 
 **None of this settles the all-copy problem.**
 
@@ -148,6 +153,37 @@ Hence
 The construction raises the number of copies, so it says nothing at a fixed n. Our four-copy theorem
 (`four-replica-notes/`) already covers every projector at n = 4. Flag constructions of this kind are standard; we have
 not seen the reduction stated for this problem.
+
+**Proposition 4′ (a dilation without flattening).** Let C = l_1r_1^* + l_2r_2^* on k copies. On r further copies let
+f_0 = |0^r⟩ and f_1 = |1^r⟩, and put w_i = l_i ⊗ f_0 + r_i ⊗ f_1, P = w_1w_1^* + w_2w_2^*, D_0 = Σ_i l_il_i^* and
+D_1 = Σ_i r_ir_i^*. Then
+
+    q_{k+r}(P) = 2 q_k(C) + 2^{−r} q_k(D_0 + (−1)^r D_1).
+
+Let C have singular values σ_1 ≥ σ_2 > 0 and singular vectors u_i, v_i. Put λ = 2σ_1, let α_i ≥ β_i > 0 be the roots of
+t² − λt + σ_i², and take l_i = √α_i u_i, r_i = √β_i v_i. Then w_1 ⊥ w_2 and |w_i|² = λ, so P = λΠ for a rank-two
+orthogonal projector Π, and
+
+    q_{k+r}(Π) ≤ 2q_k(C)/λ² + 4·2^{−r}.
+
+Consequently, if q_N(Π) ≥ 0 for every rank-two orthogonal projector Π on N copies, then q_k(C) ≥ −8·2^{−(N−k)}‖C‖_F²
+for every k < N and every C of rank at most two.
+
+*Proof.* The flag blocks of P are D_0, C, C^* and D_1. On the flag copies, the entry of M^{⊗r} between |f_a⟩|f_b⟩ and
+|f_c⟩|f_d⟩ (row, column) is 1 if (a, b) = (c, d) with a ≠ b, 2^{−r} if (a, b) = (c, d) with a = b, (−½)^r between
+(0, 0) and (1, 1), and 0 otherwise. So q_{k+r}(P) = q_k(C) + q_k(C^*) + 2^{−r}[q_k(D_0) + q_k(D_1) + 2(−1)^r q_k(D_0, D_1)],
+and q_k(C^*) = q_k(C) because M is real and invariant under the swap. For the bound, |q_k(X)| ≤ ‖X‖_F²,
+‖D_0 ± D_1‖_F ≤ Tr D_0 + Tr D_1 = 2λ, and ‖C‖_F² ≥ σ_1² = λ²/4. The last statement follows with r = N − k, since
+λ² ≤ 4‖C‖_F². ∎
+
+Compared with Proposition 4, this uses k + r copies instead of 2k + r and gives a rate. Since P ⪰ 0, it also shows that
+the endpoint for every n is equivalent to q_n(P) ≥ 0 for every positive semidefinite P of rank at most two. Writing
+P = aa^* + bb^* and rescaling a and b separately, this is the scalar inequality
+
+    q_n(aa^*, bb^*) ≥ −√(q_n(aa^*) q_n(bb^*))   for all vectors a, b,
+
+where q_n(X, Y) is the polarised form. In terms of the marginals ρ^a_S = Tr_{S^c} aa^*, it reads
+q_n(aa^*, bb^*) = Σ_S (−½)^{n−|S|} Tr[ρ^a_S ρ^b_S].
 
 For a projector P_V onto V = span{v_1, v_2}, the swap trick gives
 
@@ -455,6 +491,65 @@ Proposition 13 such ranges need not contain an anchor, although every vector in 
 marginals. So a proof of the endpoint for every n cannot come from anchors alone, and in particular not from showing
 that vectors of full local rank are anchors.
 
+**Theorem 14′ (range and co-range balanced at once).** Index the eight nonzero linear forms ℓ on F_3². For λ ∈ F_3² let
+c_λ ∈ F_3^{8r} list the values ℓ·λ, each repeated r times, and let d_λ = c_λ + (1, …, 1). With U_λ = (X^aZ^b)^{⊗k} for
+λ = (a, b), put
+
+    E_r v = (1/3) Σ_λ U_λ v ⊗ |c_λ⟩,   F_r v = (1/3) Σ_λ U_λ v ⊗ |d_λ⟩.
+
+These are isometries from k copies into N = k + 8r copies, every vector in either image has all one-copy marginals
+I/3, and for every operator C on k copies
+
+    q_N(E_r C F_r^*) = (1/9) [ q_k(C) + 2^{−3r} Σ_{ν≠0} q_k(C U_ν) ].
+
+So EP_k holds if and only if, for every r ≥ 1, q_N ≥ 0 on every operator of rank at most two whose range lies in the
+image of E_r and whose co-range lies in the image of F_r.
+
+*Proof.* The marginals are as in Proposition 13: each nonzero ℓ takes each value at three labels λ, and two different
+codewords differ at 6r places. The 81 flag pair states |c_λ⟩ ⊗ |d_μ⟩ (row, column) are mutually q-orthogonal. A
+diagonal entry is 2^{−a}, where a is the number of places at which the row and column flags agree: a = 0 when λ = μ,
+and a = 3r when λ ≠ μ, because ℓ·(λ − μ) = 1 for exactly three of the eight ℓ. An entry between two different pair
+states can be nonzero only if the row and column flags of the first state agree at every place where the two row
+codewords, or the two column codewords, differ. That is 6r places, while a pair state has at most 3r agreements.
+Finally q_k(U_λ C U_μ^*) = q_k(C U_μ^* U_λ) = q_k(C U_{λ−μ}), since q_k is invariant under X ↦ UXU^* for local unitaries
+U and phases do not matter. An operator with range in the image of E_r and co-range in the image of F_r is E_r C F_r^*
+with C = E_r^* X F_r of the same rank. For the converse, q_k(C) = −d‖C‖_F² < 0 gives
+q_N(E_rCF_r^*) ≤ (−d + 8·2^{−3r})‖C‖_F²/9 < 0 once 2^{3r} > 8/d. ∎
+
+**Remark (balancing keeps the anchor obstructions).** Let p be a unit vector on k copies and P = E_r p. The column
+flag word y = 1…1 spans an invariant block of D_P, on which D_P = (D_p + N)/9 with 0 ⪯ N ⪯ 8·2^{−3r} I, and the rows
+of MV_P with row flags 0…0 and column flags y come from the branch λ = 0 alone (the flag computation is the one in the
+proof above). Hence the compression of Y_P to these flags is Y_p + (ΔR)^Γ with 0 ⪯ ΔR and
+‖ΔR‖ ≤ ζ = 8·4^k·2^{−3r}/(1 + 8·2^k·2^{−3r}), using D_p ⪰ 2^{−k}I. A unit witness w with ⟨w, Y_p w⟩ = −β < 0 therefore
+still gives a negative value once t(w)ζ < β, where t(w) ≤ 3^k is the squared trace norm of the coefficient matrix of
+w (trace duality). So every non-anchor stays a non-anchor after encoding with r large: the balanced test spaces of
+Theorems 14 and 14′ keep all the anchor obstructions.
+
+**Theorem 14″ (balanced projectors suffice).** Keep the notation of Theorem 14′, let r ≥ 2 be even, let E_r^{(s)} be
+E_r with every codeword shifted by s(1, …, 1) (s ∈ F_3), and put
+
+    H_r v = (1/√3) Σ_{s∈F_3} E_r^{(s)} v ⊗ |s, s⟩,
+
+an isometry from k copies into N = k + 8r + 2 copies. Every vector in its image has all one-copy marginals I/3. For
+every operator Π on k copies, with ε = 2^{−3r}, η = 2^{−2r−2} and ζ = 2^{−8r−2},
+
+    q_N(H_r Π H_r^*) = (2/27) q_k(Π) + ((2ε + η)/27) Σ_{ν≠0} q_k(Π U_ν) + (ζ/81) q_k(Σ_λ U_λ Π U_λ^*).
+
+If Π is a rank-two orthogonal projector, so is H_rΠH_r^*, and the last two terms together are at most 2^{−2r−1} in
+absolute value. With Proposition 4′: the endpoint holds for every number of copies if and only if q_N(Π) ≥ 0 for every
+N and every rank-two orthogonal projector Π onto a plane all of whose vectors have maximally mixed one-copy marginals.
+
+*Proof.* The 27 branch words α = (λ, s) have the codewords (c_λ + s(1, …, 1), s, s) ∈ F_3^{8r+2}, and
+H_rΠH_r^* = (1/27) Σ_{α,β} U_λΠU_μ^* ⊗ |code_α⟩⟨code_β|. Two different codewords differ at 8r + 2, 5r + 2 or 6r places.
+Among the 729 flag pair states, those with α ≠ β are isolated, by the argument of Theorem 14′ (they have at most 3r or
+2r + 2 agreements), and their diagonal entries are 1 (s ≠ t, λ = μ: no agreement), ε (s ≠ t, λ ≠ μ: 3r agreements)
+and η (s = t, λ ≠ μ: 2r + 2 agreements). The pair states with α = β have row and column flags equal; they do not
+couple to the others, and among themselves the entries are ζ(−1)^{dist(α, α′)} = ζ, because all distances are even
+when r is even. Counting: the 54 pairs of the first kind give (2/27)q_k(Π); the 432 of the second kind and the 216 of
+the third give ((2ε + η)/27) Σ_ν q_k(ΠU_ν), each ν occurring equally often; and the α = β block gives
+(ζ/729)q_k(3Σ_λ U_λΠU_λ^*). The marginals are as before: tracing out the last two flags removes the cross terms in s.
+For the bound, |q_k(ΠU_ν)| ≤ 2, ‖Σ_λ U_λΠU_λ^*‖_F² ≤ 162, ε ≤ η and ζ ≤ 2^{−6r}η. ∎
+
 ## 6. Local structure at zero planes
 
 q_n vanishes on many rank-two operators, so a proof of the endpoint has to understand q_n near its zeros. This section
@@ -522,6 +617,49 @@ A genericity argument gives anchored and anchor-free planes with identical flatt
 bipartition for every odd n ≥ 3. So the Kronecker forms of the flattenings cannot decide whether a plane contains an
 anchor. ∎
 
+## 7. Weight enumerators of balanced projectors
+
+For a rank-two orthogonal projector Π on n copies and the 9^n Weyl operators E = ⊗_ν X^{a_ν}Z^{b_ν} (the weight of E is
+the number of ν with (a_ν, b_ν) ≠ (0, 0)) put
+
+    A_j = ¼ Σ_{wt E = j} |Tr ΠE|²,   B_j = ½ Σ_{wt E = j} Tr(ΠEΠE^*).
+
+Φ multiplies a Weyl operator of weight j by (−½)^{n−j}, so
+
+    q_n(Π) = (4/3^n) Σ_j (−½)^{n−j} A_j.
+
+The usual relations of quantum codes hold: A_0 = B_0 = 1, Σ_j A_j = 3^n/2, B_j ≥ A_j ≥ 0, the MacWilliams identity
+B(x, y) = (2/3^n) A(x + 8y, x − y) for A(x, y) = Σ_j A_j x^{n−j} y^j, and the coefficients of A(4x + 2y, x − y) are
+nonnegative (this polynomial is (6^n/4) Tr[(Π ⊗ Π) ⊗_ν (xP_+ + yP_−)], with P_± the local symmetric and antisymmetric
+projectors on two replicas). If every vector of ran Π has maximally mixed one-copy marginals, then ΠEΠ = 0 for every E
+of weight one, so A_1 = B_1 = 0; the MacWilliams identity then gives Σ_j jA_j = 4n·3^{n−2}.
+
+**Proposition 19.** Let Π be a rank-two orthogonal projector on n copies whose range consists of vectors with maximally
+mixed one-copy marginals. Then q_3(Π) = 3/2 and
+
+    q_4(Π) ≥ 11/12,  q_5(Π) ≥ 5/8,  q_6(Π) ≥ 9/16,  q_7(Π) ≥ 1239/5344,  q_8(Π) ≥ 6487/45408.
+
+At n = 9 the relations above do not imply q_9(Π) ≥ 0: the linear program they define has optimum
+−5515759/22425216, attained by an explicit rational enumerator.
+
+*Proof.* At n = 3 the two moment equalities force A = (1, 0, 3/2, 11). For n = 4, …, 8 put F_n = A(−½, 1) and let S_j
+be the coefficients of A(4x + 2y, x − y). On the affine space cut out by the equalities,
+
+    F_4 = 297/16 + (9/4) A_2,
+    F_5 = 1215/32 + (27/8)(B_2 − A_2),
+    F_6 = 6561/64 + (81/16)(B_2 − A_2) + (1/8) S_6,
+    F_7 = 2709693/21376 + (729/1336) A_5 + (67959/5344)(B_2 − A_2) + (891/2672)(B_4 − A_4) + (51/2672) S_6,
+    F_8 = 14187069/60544 + (50301/30272) A_5 + (19683/60544) A_6 + (1400409/60544)(B_2 − A_2)
+          + (62937/60544)(B_4 − A_4) + (6517/60544) S_8.
+
+Every term after the constant is nonnegative, and q_n(Π) = (4/3^n) F_n. At n = 9 a dual certificate of the same kind
+and a feasible enumerator with the same value give the stated optimum. ∎
+
+These are bounds for balanced projectors at a fixed n ≤ 8. Theorems 14′ and 14″ need N ≥ k + 18 copies, so
+Proposition 19 gives the endpoint at no copy number. The negative optimum at n = 9 is the value of a relaxation; no
+projector is constructed. Rank-two codes satisfy further constraints that these relations do not see, for instance
+that Λ²(ran Π) is one-dimensional.
+
 ## Code
 
 Python 3 with NumPy and SymPy. `code/check_pair_anchor.py` uses python-flint for the exact characteristic polynomials;
@@ -548,6 +686,12 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   (k, r) = (1, 2) and (2, 2), the marginals of encoded vectors, and the numbers 387, 961 and −1087/198144.
 - `code/check_anchor_obstruction.py`: Propositions 7 and 8 in exact rational arithmetic for n = 3, …, 7: the rows of
   MV_p live on the vacuum column, the Gram matrix on (a_n, b_n), and the weighted identities at rational weights.
+- `code/global_reductions/` (`run_all.sh`): Proposition 4′ (the identity and the projector choice, k = 1, 2,
+  r = 1, 2, 3); Theorem 14′ (the identity by direct partial traces on 9 and 10 copies, the 81-state flag compression
+  exactly for r = 1, 2, 3, marginals); the Remark after it (the flag block structure at r = 1, over all 3^8 column
+  flag words); Theorem 14″ (the 729-state flag compression exactly at r = 2, the identity contracted with core data at
+  k = 1, 2, isometry and marginals); Section 7 (the enumerator identities on random projectors at n = 2, 3, the
+  three-copy code, and the certificates for n = 4, …, 9 in exact rational arithmetic).
 
 ## References
 

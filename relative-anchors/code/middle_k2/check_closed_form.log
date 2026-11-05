@@ -1,0 +1,10 @@
+k=4 w=[0.712 1.15  0.344 1.149]: |direct - closed| = 5.55e-17; eig min -2.74e-16, #|ev|<1e-9 = 7
+k=4 w=[0.512 0.623 1.028 0.609]: |direct - closed| = 5.55e-17; eig min -1.24e-16, #|ev|<1e-9 = 7
+k=4 w=[0.05  0.228 0.954 0.738]: |direct - closed| = 1.67e-16; eig min -1.68e-16, #|ev|<1e-9 = 7
+k=5 w=[0.53  0.988 0.503 0.653 0.334]: |direct - closed| = 2.22e-16; eig min -1.67e-16, #|ev|<1e-9 = 11
+k=5 w=[0.603 0.403 0.462 0.95  0.48 ]: |direct - closed| = 5.55e-17; eig min -1.31e-16, #|ev|<1e-9 = 11
+k=5 w=[0.05  1.181 1.162 0.925 0.741]: |direct - closed| = 1.11e-16; eig min -1.26e-16, #|ev|<1e-9 = 11
+k=4 exact: |Y kappa| over the 7 kernel vectors = 0
+k=5 exact: |Y kappa| over the 11 kernel vectors = 0
+k=6 exact: |Y kappa| over the 16 kernel vectors = 0
+PASS

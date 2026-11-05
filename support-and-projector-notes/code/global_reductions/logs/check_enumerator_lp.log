@@ -1,0 +1,9 @@
+enumerator identities (n = 2, 3, random rank-two projectors): True
+three-copy balanced code: A1 = B1 = 0, q_3 = 3/2: True True 1.5000000000000009
+n=4: dual identity True, primal feasible True, primal vector consistent True, bound 4/3^n * const = 11/12 (+0.91667) matches True
+n=5: dual identity True, primal feasible True, primal vector consistent True, bound 4/3^n * const = 5/8 (+0.62500) matches True
+n=6: dual identity True, primal feasible True, primal vector consistent True, bound 4/3^n * const = 9/16 (+0.56250) matches True
+n=7: dual identity True, primal feasible True, primal vector consistent True, bound 4/3^n * const = 1239/5344 (+0.23185) matches True
+n=8: dual identity True, primal feasible True, primal vector consistent True, bound 4/3^n * const = 6487/45408 (+0.14286) matches True
+n=9: dual identity True, primal feasible True, primal vector consistent True, bound 4/3^n * const = -5515759/22425216 (-0.24596) matches True
+PASS

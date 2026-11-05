@@ -1,0 +1,7 @@
+k=4 w=['4', '4', '13/6', '9/4']: R1 True  J True  W True  BJ True  S True
+k=4 w=['1/40', '23/6', '3/5', '12/5']: R1 True  J True  W True  BJ True  S True
+k=5 w=['7', '2', '5/4', '1/2', '1']: R1 True  J True  W True  BJ True  S True
+k=5 w=['1/40', '7/2', '24/7', '4', '7/3']: R1 True  J True  W True  BJ True  S True
+k=6 w=['11/10', '3', '6', '1', '29/10', '13/7']: R1 True  J True  W True  BJ True  S True
+k=6 w=['1/40', '7', '9', '22/7', '12', '9']: R1 True  J True  W True  BJ True  S True
+PASS

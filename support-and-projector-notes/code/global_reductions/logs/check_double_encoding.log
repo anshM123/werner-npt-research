@@ -1,0 +1,10 @@
+k=1 r=1 copies=9: q direct 4.355489152139  formula 4.355489152139  rel dev 1.2e-15
+   shift 0: max marginal deviation from I/3: 1.3e-15
+   shift 1: max marginal deviation from I/3: 2.2e-16
+k=2 r=1 copies=10: q direct 74.733483351844  formula 74.733483351844  rel dev 1.9e-16
+   shift 0: max marginal deviation from I/3: 2.7e-15
+   shift 1: max marginal deviation from I/3: 2.7e-15
+flag compression r=1: entries off the stated pattern: 0
+flag compression r=2: entries off the stated pattern: 0
+flag compression r=3: entries off the stated pattern: 0
+PASS

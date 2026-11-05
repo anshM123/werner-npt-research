@@ -1,0 +1,6 @@
+selftest : PASS (1 s)
+check_dilation : PASS (0 s)
+check_double_encoding : PASS (1 s)
+check_anchor_persistence : PASS (0 s)
+check_balanced_projector : PASS (0 s)
+check_enumerator_lp : PASS (1 s)

@@ -20,7 +20,9 @@ This folder collects what we can prove about the group conditions for every k.
     and column (Proposition T2), on the block in which every copy carries one letter 2 (Proposition U0), and on every
     block in which all copies but one carry one letter 2 (Proposition U1). Each remaining (type I) block reduces exactly
     to a smaller matrix (Remark after Proposition U0).
-  - (R∞)_{k−2} has the explicit kernel vector vac ⊗ J⁻|1…1⟩ (Proposition K2).
+  - (R∞)_{k−2} has the explicit kernel vector vac ⊗ J⁻|1…1⟩ (Proposition K2). On its letter-1 block the vacuum row
+    eliminates exactly and the soft directions are known exactly; the gap there is at most min_h s_h/(2(|s| − s_h))
+    (Section 3e), so a proof has to be exact to first order in the smallest weight.
   - (R∞)_0 holds completely for k ≥ 3, with kernel exactly p ⊗ H_0 (Theorem B0, an algebraic proof).
   - In every (R∞)_j, every block in which one copy carries the letter 2 in row and column is positive definite, with
     an explicit lower bound (Proposition T2′).
@@ -390,13 +392,44 @@ This contains Propositions T2 (j = k − 1) and E2 (equal weights). Numerically 
 9 to spare (`code/check_typeII_allj.py`).
 
 **What blocks the rest.** Two parts are still open:
-- the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 1 (the Remark after Proposition U0 reduces each to an explicit
+- the type I blocks of (R∞)_{k−1} with 1 ≤ |T| ≤ k − 2 (the Remark after Proposition U0 reduces each to an explicit
   matrix of size u(k − 1) + m + 1);
 - the letter-1 and type I blocks of the conditions (R∞)_j with 1 ≤ j ≤ k − 2.
 
 In both, the method of Theorem T leaves soft directions: eigenvalues 0.01–0.1, and as small as 0.0015 for
 (R∞)_{k−2} at spread weights. They lie in the J⁻ part of the G1 columns and tend to 0 at the boundary of the weight
-simplex. So no uniform crossed-pair bound can work, and these directions have to be treated exactly.
+simplex. So no uniform crossed-pair bound can work, and these directions have to be treated exactly. Section 3e
+makes this precise for the letter-1 block of (R∞)_{k−2}.
+
+## 3e. The letter-1 block of (R∞)_{k−2}: an exact reduction and a sharpness bound
+
+The block has the states (1@r, holes P) with |P| = 2 and (vac, hole h). Write Ψ = Σ_r e_r ⊗ ψ_r + vac ⊗ φ and
+X[r, P] = ψ_r(P). Proofs and checks are in `code/middle_k2/` (`NOTES.md` there); here are the statements.
+
+- **Lemma R1 (the vacuum row).** 4⟨Ψ, YΨ⟩ = F(X) + 2|φ_⊥ − ½c(X)|², where F = Y11 − ½Y10Y01 is explicit, c(X) ⊥ w,
+  and φ_⊥ is the part of φ orthogonal to w. So the block is ⪰ 0 with kernel exactly
+  p ⊗ H_{k−2} ⊕ span(vac ⊗ J⁻|1…1⟩) iff F ≻ 0 on {Σ_r w_r ψ_r = 0}.
+- **Lemma W (the only nonlocal object).** Let 𝒩|P⟩ = (½|s| + s_P)|P⟩ and M = I + ½J⁺𝒩^{−1}J⁻, a k × k matrix with
+  M_hg = ½w_hw_g/(½|s| + s_h + s_g) for h ≠ g. Then E_{k−2}^{−1} = 𝒩^{−1} − ½𝒩^{−1}J⁻M^{−1}J⁺𝒩^{−1} and
+  E_{k−2}^{−1}J⁻ = 𝒩^{−1}J⁻M^{−1}.
+- **Proposition S (soft directions).** Fix a copy h and a ∈ R^k with a_h = 0 and a ⊥ w. Put
+  Ψ(a, h) = Σ_r a_r e_r ⊗ J⁻|h⟩ and u = Σ_t a_t|{h, t}⟩. Then Ψ(a, h) ⊥ p ⊗ H_{k−2}, |Ψ(a, h)|² = (|s| − s_h)|a|², and
+
+      F(Ψ(a, h)) = 2s_h|a|² − 4s_h²⟨u, E_{k−2}^{−1}u⟩ − ½|c|²,
+      c = 4s_h [½⟨E_{k−1}^{−1}e_h, a⟩ w + (E_{k−1}^{−1}e_h) ∘ a ∘ w].
+
+- **Corollary S (sharpness).** For every k ≥ 3 and all weights, the smallest eigenvalue of the block on the orthogonal
+  complement of its kernel is at most min_h s_h/(2(|s| − s_h)).
+
+*Proof of Corollary S.* Take v = (Ψ(a, h), ½c), which is orthogonal to the kernel because c ⊥ w. By Lemma R1 and
+Proposition S, ⟨v, Yv⟩ = F(Ψ(a, h))/4 ≤ s_h|a|²/2, while |v|² ≥ (|s| − s_h)|a|². ∎
+
+So the gap tends to 0 linearly when any weight does, and a proof has to be exact to first order in the smallest weight
+along the directions Ψ(a, h). Numerically (k = 4, …, 7, 610 weight vectors) the block is ⪰ 0 with exactly the stated
+kernel, its gap lies between 0.37 and 1 times the bound of Corollary S, and F ⪰ 0.45 on the complement of the soft
+directions. As s_h → 0 the k − 2 lowest eigenvalues are (s_h/(2|s|))κ_i + o(s_h), with κ_i ∈ [0.90, 0.97] in our
+examples. Positivity of the corresponding (k − 2) × (k − 2) first-order matrix, which depends only on the other k − 1
+copies, is a necessary condition; we have not proved it.
 
 ## 4. Equal weights, every k
 
@@ -520,6 +553,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `prove_letter2.py`, `prove_letter2_split2.py`, `prove_letter2_split_tau.py`, `prove_tau_loop.py`, `prove_fixed_loop.py`, `sanity_generic.py` | Theorem E3: the symbolic families, the irrep split of the generic family, the fixed-parameter families τ = 1 and t = 4, 5, and the window and sample-point checks of the generic family |
 | `num_generic.py`, `num_letter2.py` | Exact elimination of the corner forms for 14 ≤ k ≤ 38, and of every case I form for k ≤ 16 |
 | `typeI_u1/` (`run_all.sh`) | Proposition U1: the closed forms against the reduced form (exactly at rational points, and as identities of rational functions for m ≤ 4), the polynomials of (A) and (B), their Bernstein certificates, end-to-end checks, negative controls |
+| `middle_k2/` (`run_all.sh`, notes in `middle_k2/NOTES.md`) | Section 3e: the closed form of the letter-1 block of (R∞)_{k−2} against a direct construction (k = 4, 5), Lemmas R1, J, W, BJ and Proposition S exactly (k = 4, 5, 6), and a numerical sweep (k = 4, …, 7) |
 | `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |
 | `check_bottom_condition.py`, `c0_interval.py` | Theorem B0: closed form against a direct construction (k ≤ 5), the letter-2 blocks, the reduction to (C0), the bound chains at random points, and the two reduced inequalities in interval arithmetic |
 | `check_bottom_algebraic.py` | Theorem B0, algebraic proof: the identity E − D = G, the bound T ≤ G and the sum-of-squares identity exactly at rational points; the letter-2 estimate in SymPy; the bound L ≤ (2 + 2γ)S at random complex points |

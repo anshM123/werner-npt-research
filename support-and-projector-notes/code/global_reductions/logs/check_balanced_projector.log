@@ -1,0 +1,6 @@
+nonzero flag entries 1431  off-pattern 0  diagonal-pair block entries 729 (expect 729)
+k=1: contraction 0.026039123535156 formula 0.026039123535156 dev 1.9e-16
+   isometry ok: True; superposition marginal deviation from I/3: 2.2e-16
+k=2: contraction 0.119483157194954 formula 0.119483157194955 dev 6.0e-16
+   isometry ok: True; superposition marginal deviation from I/3: 1.1e-16
+PASS
