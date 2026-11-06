@@ -1,0 +1,12 @@
+  form computed (3.3s), 16 vectors
+  sanity against mlib done (5.5s)
+  split, kernel vectors and gauge checked (6.2s)
+1. form and preliminaries checked [6.5s]
+2. factor exponents of D* [8, 4, 8, 8, 4, 3, 2, 4, 4, 2, 6, 1], of Den_c [6, 4, 4, 4, 4, 2, 1, 2, 2, 1, 1, 1]: Den_c divides D*: True
+3. degree bounds of T: {'q0': 95, 't': 98, 'i': 102, 's': 95}; degrees of R: {'q0': 43, 't': 42, 'i': 42, 's': 42}; grid y = 0..98, z = 0..102; low degrees y^56, z^60
+4. every factor of Den_c positive after the shifts: True
+5. Q positive definite at (q0, t, i, s) = (4, 4, 7, 1): True
+6. slices missing: 0; columns not passing stage A: []; stage B passed: True
+    N~(x, y, z, s): 1117575 positive coefficients, 0 negative, 4070109 zero (inside the box); degrees (x, y, z, s) <= (52, 54, 56, 52); nonzero above y^56: 0; a positive coefficient free of x, y, z: True [22s]
+total 8s
+PASS

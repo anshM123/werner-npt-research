@@ -1,0 +1,6 @@
+worker 0: PASS
+worker 1: PASS
+worker 2: PASS
+worker 3: PASS
+worker 4: PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'g2out\\s_64_87.pkl.tmp' -> 'g2out\\s_64_87.pkl'
+stage B: PASS

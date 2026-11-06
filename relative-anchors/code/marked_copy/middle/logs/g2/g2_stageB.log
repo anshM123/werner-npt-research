@@ -1,0 +1,15 @@
+1492 monomials x^a s^b; every column vanishes above z^60: True [1s]
+  monomials 0..199: so far 161340 positive, 0 negative, 0 nonzero above y^56 [4s]
+  monomials 200..399: so far 310530 positive, 0 negative, 0 nonzero above y^56 [7s]
+  monomials 400..599: so far 458929 positive, 0 negative, 0 nonzero above y^56 [10s]
+  monomials 600..799: so far 613484 positive, 0 negative, 0 nonzero above y^56 [13s]
+  monomials 800..999: so far 766545 positive, 0 negative, 0 nonzero above y^56 [16s]
+  monomials 1000..1199: so far 923400 positive, 0 negative, 0 nonzero above y^56 [18s]
+  monomials 1200..1399: so far 1065360 positive, 0 negative, 0 nonzero above y^56 [21s]
+  monomials 1400..1491: so far 1117575 positive, 0 negative, 0 nonzero above y^56 [22s]
+  N~ at (x, y, z, s) = ('3', '131', '157', '2/7'): 6.558433e+182
+  N~ at (x, y, z, s) = ('40', '250', '9', '5'): 7.796574e+224
+  N~ at (x, y, z, s) = ('0', '0', '400', '1/1000'): 1.545110e+159
+  N~ at (x, y, z, s) = ('17', '1000', '1000', '1000'): 9.156853e+272
+N~(x, y, z, s): 1117575 positive coefficients, 0 negative, 4070109 zero (inside the box); degrees (x, y, z, s) <= (52, 54, 56, 52); nonzero above y^56: 0; a positive coefficient free of x, y, z: True [22s]
+PASS

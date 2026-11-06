@@ -1,0 +1,3 @@
+column y=0: 1492 monomials, interpolated in z (degree <= 102); nonzero coefficients above z^60: 62664 [1.1s]
+perturbed column y = 0: nonzero coefficients above z^60: 62664 (of 62664)
+FAIL

@@ -1,0 +1,4 @@
+(a) kernel vectors annihilated with B scaled: False
+(b) det at (t, i) = (4, 7) with B scaled, after q0 = 4 + x: 1469 positive, 214 negative coefficients
+    a point (q0, s) with negative determinant: (4, Fraction(1000, 1)) [18.4s]
+FAIL
