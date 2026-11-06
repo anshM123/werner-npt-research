@@ -1,0 +1,7 @@
+(b) (30, 14): all W-blocks PD at b = 1; at b = 1001/1000, q = 1/10000: not PD for ['inv', 'mix', 'std0', 'std1', 'two1'] [1.7s]
+(b) (25, 20): all W-blocks PD at b = 1; at b = 1001/1000, q = 1/10000: not PD for ['inv', 'mix', 'std0', 'std1', 'two1'] [3.8s]
+(b) (41, 27): all W-blocks PD at b = 1; at b = 1001/1000, q = 1/10000: not PD for ['inv', 'mix', 'std0', 'std1', 'two1'] [6.4s]
+(b) (50, 33): all W-blocks PD at b = 1; at b = 1001/1000, q = 1/10000: not PD for ['inv', 'mix', 'std0', 'std1', 'two1'] [9.1s]
+(b) (41, 40): all W-blocks PD at b = 1; at b = 1001/1000, q = 1/10000: not PD for ['inv', 'mix', 'std0', 'std1', 'two1'] [11.9s]
+time 11.9s
+PASS

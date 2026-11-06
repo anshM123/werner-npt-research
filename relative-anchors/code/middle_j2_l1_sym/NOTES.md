@@ -8,13 +8,14 @@
 |---|---|---|
 | 1 | **Theorem L₁₃.** Let k ≥ 11 and let the squared weights take two values, on two levels of sizes a ≥ b with 2 ≤ b ≤ 13 (a = k − b arbitrary, any weight ratio q > 0). Then the letter-1 block of (R∞)₂ (states P_{r,X} = (1@r, 1@X), X a pair; Q_T = (vac, 1@T), T a triple) is ⪰ 0 with kernel exactly span{p ⊗ \|1@X⟩ : X a pair} | **proved**, computer-assisted, exact, symbolic in the size of the other level and in q (Sections 2–5); 12 size regimes × 16 families of parts, every pivot a ratio of polynomials with coefficients of one sign |
 | 2 | **Corollary.** The letter-1 block of (R∞)₂ is ⪰ 0 with kernel exactly span{p ⊗ \|1@X⟩} for every k ≥ 5 and every weight vector whose weights take at most two values and whose smaller level has at most 13 copies; in particular for every two-value weight vector with 5 ≤ k ≤ 27 | **proved**, given row 1 and, for the other cases, Theorem L (5 ≤ k ≤ 10, `code/middle_j2_l1/`), Theorem E1 (one level) and Theorem MB (a level of size 1, `code/marked_copy/`) of the README (all computer-assisted, not refereed) (Section 5) |
+| 2b | **Theorem L₄₀.** The statement of row 1 for 2 ≤ b ≤ 40. Hence the letter-1 block of (R∞)₂ holds at two weight values for every k ≥ 5 whose smaller level has at most 40 copies, in particular for 5 ≤ k ≤ 81 | **proved**, computer-assisted, exact: the regimes (b+, b) for 14 ≤ b ≤ 40 (`run_ext30.sh`, `run_ext40.sh`; 27 × 16 certificates), forms, coverage for k ≤ 81 and negative controls (`run_ext_checks.sh`) (Section 6b) |
 | 3 | **Corollary.** (R∞)₂ ⪰ 0 with kernel exactly p ⊗ H₂ (a) for every two-value weight vector with 5 ≤ k ≤ 26, and (b) for every k ≥ 5 and every two-value weight vector whose smaller level has at most 12 copies | **proved**, given row 2 and Theorems F1b, F2b (`code/middle_j2/`), D₂/DJ and Proposition T2′ of the README (Section 5) |
 | 4 | Lemma 1 (the P–P entries with Ê₂⁻¹ in Woodbury form through the singles), Lemma 2 (Ỹ_PQ = (I ⊗ Â₂⁻¹)K with an inverse-free K), Lemma 3 (the congruence S′ = (I ⊗ Â₂)S(I ⊗ Â₂) has the same kernel) | **proved** by hand (Section 2); **exact check** entry by entry against the Lemma B builder (`fastj1.py`, the fast copy of `j1lib.py`) at 17 two-level points (15 size pairs) with k = 5, 6, 7, 8, 11, 12 (`check_points.py`) |
 | 5 | Lemma 4 (the reduction: tableau test vectors, bases of the parts, products through the reduced bases, pattern sums with falling-factorial counts) | **proved** (Section 3); **exact check**: at the same 17 points every reduced form (Gram matrices and the whole reduced S′ on the K- and W-vectors, for each of the 16 families) equals the projection of the explicit S′ built from the Lemma B block; the dimension counts add up (`check_points.py`; at k = 11, 12 with the bases of the certified regimes) |
 | 6 | The certified symbolic forms (whole W-blocks) equal the same reduction in exact rational arithmetic in 603 comparisons (q ∈ {1/9, 4, 49/25}, three values of the symbolic size, every family) in the regimes (9+, 2), (8+, 3), (7+, 4), (6+, 5), (13+, 13) | **exact check** (`check_forms.py`) |
 | 7 | Coverage: every two-value configuration with 11 ≤ k ≤ 80 whose smaller level has at most 13 copies lies in a certified regime (or has a level of size 0 or 1: Theorems E1, MB), with all dimension counts right; the configurations with both levels ≥ 14 (smallest k = 28) are listed as outside the statement | **exact** bookkeeping (`coverage.py`) |
 | 8 | Negative controls: with B → (1 + 1/1000)B the reduced forms of the parts inv, mix, std₀, std₁ (and two₁ at some sizes) are not positive definite at q = 1/10⁴ at (u₀, u₁) = (9, 2), (8, 3), (7, 4), (6, 5), (12, 9), (21, 20), while all parts are positive definite for the true B; at (3, 2) and (4, 2) these scaled reduced forms equal the projections of the scaled explicit block | **exact** (`neg.py`) |
-| 9 | Both level sizes symbolic (both levels ≥ 14, k ≥ 28) | **open**. Attempted in three variables (q, x₀, x₁) at (6+, 6+): the part anti₀ passes; the part mix passed 4 of its 7 pivots (pivot 4: numerator degree 80 with 12 299 terms) and was stopped (`logs/dev/dev_cert2_*.log`). The parts inv, std₀, std₁ (7 and 9 pivots) were not attempted in three variables. A determinant-and-inertia certificate (Proposition C of the README) or a larger M are the next steps |
+| 9 | Both level sizes symbolic (both levels ≥ 14; after row 2b needed only when both levels are ≥ 41, k ≥ 82) | **open**. Attempted in three variables (q, x₀, x₁) at (6+, 6+): the part anti₀ passes; the part mix passed 4 of its 7 pivots (pivot 4: numerator degree 80 with 12 299 terms) and was stopped (`logs/dev/dev_cert2_*.log`). The parts inv, std₀, std₁ (7 and 9 pivots) were not attempted in three variables. A determinant-and-inertia certificate (Proposition C of the README) or a larger M are the next steps |
 | 10 | Three or more weight values; general weights | **open**; not attempted |
 
 Nothing here says anything about Conjecture 12 of `single-excitation-range/` in general, or about the NPT (Werner
@@ -198,15 +199,30 @@ All exact.
   the parts inv, mix, std₀, std₁ (and two₁ from (7, 4) on) are not for the scaled one.
 - `coverage.py`: Section 5.
 
+## 6b. The regimes (b+, b) for 14 ≤ b ≤ 40 (`run_ext30.sh`, `run_ext40.sh`, `run_ext_checks.sh`)
+
+**Theorem L₄₀.** The statement of Theorem L₁₃ holds for 2 ≤ b ≤ 40.
+
+*Proof.* For 14 ≤ b ≤ 40 the offset is o(b) = b, and `batch.py "b+,b"` runs the sixteen certificates of Section 4
+in the regime (b + x, b), x ≥ 0 real. All 27 × 16 pass (`logs/ext_cert_*.log`; each regime about a minute). The
+bases are complete at every size by the dimension counts of `coverage.py 40 none 81`, which also checks that every
+two-value configuration with 11 ≤ k ≤ 81 lies in a certified regime or has a level of size 0 or 1. ∎
+
+Checks (`run_ext_checks.sh`, ALL PASS): the saved forms of the regimes (14+, 14), (20+, 20), (27+, 27), (33+, 33),
+(40+, 40) equal the rational-arithmetic reduction at the points of `check_forms.py`; `neg_ext.py`: at (u₀, u₁) =
+(30, 14), (25, 20), (41, 27), (50, 33), (41, 40) every W-block is positive definite for the true B, and with
+B → (1 + 1/1000)B the parts inv, mix, std₀, std₁ and two₁ are not, at q = 1/10⁴.
+
 ## 7. What is not covered
 
-- Both levels larger than 13 (k ≥ 28). The reduction of Section 3 is symbolic in both sizes (the code takes u₁ = o + x₁
+- Both levels larger than 40 (k ≥ 82; before Section 6b: larger than 13, k ≥ 28). The reduction of Section 3 is symbolic in both sizes (the code takes u₁ = o + x₁
   as well), but the certificates in three variables (q, x₀, x₁) grow fast: at (6+, 6+) the part mix passed 4 of its 7
   pivots (the fourth with 12 299 terms) before it was stopped; the parts inv, std₀, std₁ have 7, 9, 9 pivots. A
   determinant-and-inertia certificate (Proposition C of the README) or a larger fixed range M (each regime takes under a
-  minute, so M can be raised at a linear cost) are the obvious next steps. Theorem L₁₃ is not claimed beyond b ≤ 13.
-- The exclusions of Theorems F1b and F2b (both U-levels larger than 12), so (R∞)₂ at two weight values for k ≥ 27 with
-  both levels larger than 12.
+  minute, so M can be raised at a linear cost, as Section 6b does) are the obvious next steps. Theorem L₄₀ is not
+  claimed beyond b ≤ 40.
+- The exclusions of Theorems F1b and F2b (both U-levels larger than 40 after `middle_j2/run_fext.sh`), so (R∞)₂ at
+  two weight values for k ≥ 82 with both levels larger than 40.
 - Three or more weight values, and general weights.
 
 ## Files
@@ -216,6 +232,7 @@ All exact.
 | `r2v.py` | the closed forms (two-level operators, Lemma 1, Â₂, K, Ŵ₃), the sixteen families, tableau test vectors, bases, pattern sums, the reduced S′ (`reduce_family`), the scaled reduction for the controls (`reduce_scaled`) |
 | `cert.py` | certificate for one family and one regime |
 | `batch.py` | the sixteen certificates of one or more regimes in one process; saves the forms (`logs/forms_*.pkl`) |
+| `run_ext30.sh`, `run_ext40.sh`, `run_ext_checks.sh`, `neg_ext.py` | Section 6b: the regimes (b+, b) for 14 ≤ b ≤ 30 and 31 ≤ b ≤ 40 (`logs/ext_cert_*.log`, `logs/run_ext30.out`, `logs/run_ext40.out`), then the forms, the coverage for k ≤ 81 and the negative controls (`logs/run_ext_checks.out`) |
 | `check_points.py` | the reduction against the explicit Lemma B block (Sections 2, 3) |
 | `check_forms.py` | the saved symbolic forms against the rational-arithmetic reduction |
 | `neg.py` | negative controls |

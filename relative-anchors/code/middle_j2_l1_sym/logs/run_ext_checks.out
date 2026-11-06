@@ -1,0 +1,4 @@
+PASS  forms_ext  (python check_forms.py 14+,14 20+,20 27+,27 33+,33 40+,40; expect PASS; 67 s)
+PASS  coverage_40_k81  (python coverage.py 40 none 81; expect PASS; 9 s)
+PASS  neg_ext  (python neg_ext.py; expect PASS; 13 s)
+ALL PASS

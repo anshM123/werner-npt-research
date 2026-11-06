@@ -1,7 +1,7 @@
 """Coverage of the statements of Theorems F1b and F2b by the certified regimes of run_all.sh (bookkeeping), for
 5 <= k <= 60.  The regimes are uniform in the sizes they leave symbolic, so the same bookkeeping holds for every k.
 
-python coverage.py M2 [M1=n]
+python coverage.py M2 [M1=n] [KMAX=n]  (KMAX: largest k checked, default 60)
 
 Two symmetries reduce the regimes:
   (S1) exchanging the names of the two levels: divide every squared weight by q (the rescaled blocks are homogeneous of
@@ -20,6 +20,7 @@ import sys
 M = int(sys.argv[1])
 opts = dict(a.split('=', 1) for a in sys.argv[2:] if '=' in a)
 M1 = int(opts.get("M1", "1"))
+KMAX = int(opts.get("KMAX", "60"))
 ok = True
 
 
@@ -40,7 +41,7 @@ def f1_cert(la, lb, u0, u1):
 
 n1 = 0
 nskip1 = 0
-for k in range(5, 61):
+for k in range(5, KMAX + 1):
     u = k - 2
     for la in (0, 1):
         for lb in (0, 1):
@@ -58,7 +59,7 @@ for k in range(5, 61):
                 n1 += 1
                 if not cov:
                     print('  family 1 not covered:', k, la, lb, u0, u1)
-print(f'family 1: {n1} two-level configurations with 5 <= k <= 60 covered: {ok} ({nskip1} configurations with '
+print(f'family 1: {n1} two-level configurations with 5 <= k <= {KMAX} covered: {ok} ({nskip1} configurations with '
       f'T-weights 1, q and both U-levels > {M1} are outside the statement)')
 
 # ---------------- family 2
@@ -84,7 +85,7 @@ def f2_cert(part, lt, v0, v1):
 
 n2 = 0
 ok2 = True
-for k in range(5, 61):
+for k in range(5, KMAX + 1):
     u = k - 1
     for u0 in range(0, u + 1):
         u1 = u - u0
@@ -105,7 +106,7 @@ for k in range(5, 61):
                 ok2 &= cov
                 if not cov:
                     print('  family 2 not covered:', k, (u0, u1), lt, part, pl)
-print(f'family 2: {n2} (k, sizes, t-weight, part) cases with 5 <= k <= 60 and U in one level or min(u0, u1) <= {M}, '
+print(f'family 2: {n2} (k, sizes, t-weight, part) cases with 5 <= k <= {KMAX} and U in one level or min(u0, u1) <= {M}, '
       f'all covered: {ok2}')
 ok &= ok2
 print('PASS' if ok else 'FAIL')

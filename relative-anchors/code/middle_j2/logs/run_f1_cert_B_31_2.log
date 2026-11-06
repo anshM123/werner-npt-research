@@ -1,0 +1,21 @@
+family 1, levels ['31', '2+'], T-weights (0, 1), form Phi, bscale 1, variables ['q1', 'x1'] [0.0s]
+  forms built: invariant 8 x 8 [0.0s]
+  inv: size 8, symmetric: True
+  inv minor 1: sign 1; numerator deg 10 (21 terms), denominator deg 10 (21 terms); [one-signed 10/21] [one-signed 10/21] [0.0s]
+  inv minor 2: sign 1; numerator deg 24 (91 terms), denominator deg 24 (91 terms); [one-signed 24/91] [one-signed 24/91] [0.1s]
+  inv minor 3: sign 1; numerator deg 34 (170 terms), denominator deg 32 (153 terms); [one-signed 34/170] [one-signed 32/153] [0.2s]
+  inv minor 4: sign 1; numerator deg 79 (819 terms), denominator deg 76 (780 terms); [one-signed 79/819] [one-signed 76/780] [0.5s]
+  inv minor 5: sign 1; numerator deg 87 (989 terms), denominator deg 84 (946 terms); [one-signed 87/989] [one-signed 84/946] [1.5s]
+  inv minor 6: sign 1; numerator deg 101 (1323 terms), denominator deg 96 (1225 terms); [one-signed 101/1323] [one-signed 96/1225] [3.3s]
+  inv minor 7: sign 1; numerator deg 155 (3078 terms), denominator deg 150 (2926 terms); [one-signed 155/3078] [one-signed 150/2926] [5.9s]
+  inv minor 8: sign 1; numerator deg 165 (3480 terms), denominator deg 158 (3240 terms); [one-signed 165/3480] [one-signed 158/3240] [8.0s]
+  std0: size 3, symmetric: True
+  std0 minor 1: sign 1; numerator deg 12 (28 terms), denominator deg 12 (28 terms); [one-signed 12/28] [one-signed 12/28] [8.0s]
+  std0 minor 2: sign 1; numerator deg 28 (120 terms), denominator deg 28 (120 terms); [one-signed 28/120] [one-signed 28/120] [8.0s]
+  std0 minor 3: sign 1; numerator deg 56 (435 terms), denominator deg 56 (435 terms); [one-signed 56/435] [one-signed 56/435] [8.0s]
+  std1: size 3, symmetric: True
+  std1 minor 1: sign 1; numerator deg 9 (15 terms), denominator deg 8 (15 terms); [one-signed 9/15] [one-signed 8/15] [8.0s]
+  std1 minor 2: sign 1; numerator deg 30 (120 terms), denominator deg 28 (120 terms); [one-signed 30/120] [one-signed 28/120] [8.0s]
+  std1 minor 3: sign 1; numerator deg 59 (435 terms), denominator deg 56 (435 terms); [one-signed 59/435] [one-signed 56/435] [8.0s]
+time 8.0s
+PASS
