@@ -1,0 +1,5 @@
+k=4 j=1: 22 states, max |exact - float| = 2.22e-16, |Y K| = 5.55e-16, min eig = -7.287e-17
+k=5 j=2: 60 states, max |exact - float| = 2.22e-16, |Y K| = 3.47e-16, min eig = -7.767e-16
+k=5 j=3: 55 states, max |exact - float| = 3.33e-16, |Y K| = 6.66e-16, min eig = -5.976e-16
+k=6 j=3: 135 states, max |exact - float| = 2.22e-16, |Y K| = 7.77e-16, min eig = -7.551e-16
+k=7 j=4: 266 states, max |exact - float| = 3.33e-16, |Y K| = 8.60e-16, min eig = -8.241e-16

@@ -1,0 +1,15 @@
+k=10 j=1: min eigenvalue above kernel 6.439e-02 (kernel eigenvalues up to 3.4e-15); at s = [0.0047 0.0047 0.0047 0.0047 0.0047 1.     0.0047 0.0047 0.0047 0.0047] [2s]
+k=10 j=2: min eigenvalue above kernel 3.969e-03 (kernel eigenvalues up to 8.3e-15); at s = [9.00e-04 2.91e-02 2.00e-04 1.00e+00 2.09e-02 1.00e-04 3.00e-04 1.00e-04
+ 1.00e-04 5.00e-04] [11s]
+k=10 j=3: min eigenvalue above kernel 7.255e-04 (kernel eigenvalues up to 1.2e-14); at s = [4.000e-04 1.000e+00 2.090e-02 0.000e+00 1.000e-04 1.000e-04 3.600e-03
+ 8.379e-01 1.000e-04 1.000e-04] [39s]
+k=10 j=4: min eigenvalue above kernel 1.072e-03 (kernel eigenvalues up to 1.3e-14); at s = [8.000e-04 5.200e-03 1.380e-02 1.000e-04 0.000e+00 7.529e-01 1.000e-04
+ 1.000e-04 3.410e-02 1.000e+00] [73s]
+k=10 j=5: min eigenvalue above kernel 5.135e-04 (kernel eigenvalues up to 4.6e-15); at s = [1.000e-04 3.800e-03 3.000e-04 0.000e+00 5.178e-01 1.300e-03 1.000e-04
+ 3.500e-03 1.000e+00 4.480e-02] [111s]
+k=10 j=6: min eigenvalue above kernel 1.624e-04 (kernel eigenvalues up to 1.1e-14); at s = [0.000e+00 1.000e-04 0.000e+00 1.037e-01 0.000e+00 1.000e+00 1.300e-02
+ 2.000e-03 1.000e-04 1.800e-03] [134s]
+k=10 j=7: min eigenvalue above kernel 3.148e-05 (kernel eigenvalues up to 7.6e-15); at s = [3.965e-01 4.740e-02 0.000e+00 1.000e-04 1.000e+00 1.020e-02 1.600e-03
+ 0.000e+00 2.000e-04 0.000e+00] [142s]
+k=10 j=8: min eigenvalue above kernel 6.578e-06 (kernel eigenvalues up to 3.7e-15); at s = [2.248e-01 9.200e-03 0.000e+00 4.000e-04 2.000e-04 4.000e-04 7.878e-01
+ 1.157e-01 1.000e+00 8.780e-02] [143s]

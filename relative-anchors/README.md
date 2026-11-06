@@ -190,7 +190,9 @@ I − F/2 is PPT). The group conditions do not follow from this: they are a stro
 sector, and in other qubit sectors the same kind of certificate fails (`OBSTRUCTIONS.md`, "Same sector, qubit
 corners"). So the letter-1 blocks of Theorems T, B0, E1, MF, L∞ and of Section 3f are statements about qubits.
 (`code/check_qubit_letter1.py` builds the qubit operator from its definition and compares it with the letter-1
-blocks of Lemma B exactly, for k = 3, 4 and j = 0, …, k − 1.)
+blocks of Lemma B exactly, for k = 3, 4 and j = 0, …, k − 1.) In floating point (`code/numerics_letter1/`, evidence only) the letter-1
+blocks of every (R∞)_j with 1 ≤ j ≤ k − 2 have all eigenvalues above the known kernel positive at random and extreme
+weight vectors for k = 9, 10 and 11 (40, 24 and 8 samples per j), cases not reached by the exact results.
 
 **Lemma BA (a Bethe ansatz for E_c).** Work on the strings with the letters 0 and 1. (On a sector whose letters 2 sit
 on a set T, E_c is s_T plus the same operator on the other copies.) Put σ_t⁺ = |1⟩⟨0|_t and
@@ -1523,6 +1525,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `check_g0_inverse.py` | Lemma G, exactly, k ≤ 4 |
 | `check_qubit_letter1.py` | The Remark after Lemma G: the letter-1 blocks equal the qubit (d = 2) operator built from its definition, exactly, k = 3, 4 |
 | `check_bethe.py` | Lemma BA: the off-shell identity for B(x_1)⋯B(x_c)\|vac⟩, exactly (symbolic roots; symbolic weights for k ≤ 4, rational weights for k = 5) |
+| `numerics_letter1/` (notes there) | Floating-point evidence only: the letter-1 blocks at random weights for k = 9, 10, 11, the two-value gaps for k ≤ 9, and the Bethe states of Lemma BA fitted to the eigenvectors of E_c |
 | `check_top_block.py` | Theorem T: closed form, both radicals, the reduction and the bound, exactly, k = 2, …, 6 |
 | `check_typeII.py`, `check_typeI_u0.py` | Propositions T2 and U0 (closed forms, exact pivots, coefficient signs) |
 | `eqlib.py`, `eqlib2.py`, `orbit.py`, `orbit3.py`, `symf.py` | Equal-weight reduced forms and the orbit calculus |
