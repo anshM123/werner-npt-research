@@ -1,0 +1,3 @@
+part tl_inv_gen (u1 = 2 + x1, u2 = 2 + x2)
+    tl_inv_gen A_inv (s_t, s_t') = (s, s)    num  552653 terms (+552653 -0), degrees [56, 56, 58, 60], free monomial True, den 9 factors one-signed True -> CERTIFIED [40.1s]
+guard: memory 2753924 KB above 2.5 GB, killed PID 59020

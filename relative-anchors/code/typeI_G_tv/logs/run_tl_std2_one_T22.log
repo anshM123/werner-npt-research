@@ -1,0 +1,11 @@
+std2 one: form built (0.2 s, 28 terms)
+  converted (0.2 s); eliminating 5
+  pivot 0 done (0.2 s)
+  pivot 1 done (0.3 s)
+  pivot 2 done (0.3 s)
+  pivot 3 done (0.3 s)
+  pivot 4 done (0.3 s)
+  G[zA,zA]: num 1242 terms, den 1118 terms
+  G[zA,zB]: num 931 terms, den 1295 terms
+  done (0.3 s); wrote tl_std2_one_T22.pkl
+PASS

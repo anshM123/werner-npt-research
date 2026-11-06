@@ -1,0 +1,33 @@
+N = 2, T11: equal
+N = 2, T22: equal
+N = 3, T11: equal
+N = 3, T22: equal
+N = 4, T11: equal
+N = 4, T22: equal
+N = 5, T11: equal
+N = 5, T22: equal
+N = 6, T11: equal
+N = 6, T22: equal
+N = 7, T11: equal
+N = 7, T22: equal
+N = 8, T11: equal
+N = 8, T22: equal
+N = 9, T11: equal
+N = 9, T22: equal
+N = 10, T11: equal
+N = 10, T22: equal
+N = 11, T11: equal
+N = 11, T22: equal
+N = 12, T11: equal
+N = 12, T22: equal
+N = 13, T11: equal
+N = 13, T22: equal
+N = 14, T11: equal
+N = 14, T22: equal
+N = 15, T11: equal
+N = 15, T22: equal
+N = 16, T11: equal
+N = 16, T22: equal
+1800 entry values compared
+part 2: (B_inv) pivots positive at 288 rational points with u1, u2 >= 17: True; smallest third pivot relative to H (1 - theta) kappa_2^2: 0.5
+PASS

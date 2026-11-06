@@ -1,0 +1,10 @@
+std2 onetwo: form built (0.1 s, 19 terms)
+  converted (0.1 s); eliminating 4
+  pivot 0 done (0.1 s)
+  pivot 1 done (0.1 s)
+  pivot 2 done (0.1 s)
+  pivot 3 done (0.1 s)
+  G[zA,zA]: num 128 terms, den 110 terms
+  G[zA,zB]: num 124 terms, den 126 terms
+  done (0.1 s); wrote tl_std2_onetwo_T11.pkl
+PASS

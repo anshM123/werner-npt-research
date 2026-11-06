@@ -26,7 +26,9 @@ This folder collects what we can prove about the group conditions for every k.
     copy carries the letter 2, it also holds for every k whenever the weights of the other copies take at most two
     distinct values (Theorems EU and TL); and for any number of copies carrying the letter 2 it holds for every k
     whenever the copies free of it all have the same weight, whatever the weights of the others (Theorem EM and
-    Corollary EM).
+    Corollary EM). When all weights but one are equal it holds completely for every k (Theorem M1 and
+    Corollary M1), and when the weights take at most two values it holds completely for k ≤ 35, and for every k
+    when one of the two values is carried by at most 16 copies (Theorem TV and Corollary TV).
   - (R∞)_{k−2} has the explicit kernel vector vac ⊗ J⁻|1…1⟩ (Proposition K2). On its letter-1 block the vacuum row
     eliminates exactly and the soft directions are known exactly; the gap there is at most min_h s_h/(2(|s| − s_h))
     (Section 3e), so a proof has to be exact to first order in the smallest weight.
@@ -61,7 +63,8 @@ This folder collects what we can prove about the group conditions for every k.
   (Theorems MS and MP). With Theorems F1a–F2b this gives all of (R∞)_2 for every k
   at such weights (Corollary M2). For 8 ≤ k ≤ 29 every type I block with a letter 1 holds as well (Theorem I1), so
   all of (R∞) holds there, and Conjecture 12 holds for every single excitation supported on at most 29 copies whose
-  nonzero weights are all equal but one (Corollary I2).
+  nonzero weights are all equal but one (Corollary I2). At such weights (R∞)_{k−1} holds completely for every k
+  (Corollary M1).
 - **Equal weights** (w_t = 1).
   - The letter-1 block of every (R∞)_j is ⪰ 0 for every k, with the kernel described exactly (Theorem E1). The proof is
     computer-assisted, symbolic in k.
@@ -86,7 +89,8 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
 **Open.**
 - For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 and k ≥ 5
   (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁, for |T| = 1 the U-weights with at most two distinct values are
-  Theorems EU and TL, and equal U-weights are Theorem EM for every |T|), reduced to the condition G ≻ 0 of
+  Theorems EU and TL, equal U-weights are Theorem EM for every |T|, and two-valued weights are Theorem TV when
+  one U-level has at most 16 copies), reduced to the condition G ≻ 0 of
   Theorem C; and the letter-1 and type I blocks of (R∞)_j
   for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, and at k = 5, 6, 7
   everything is proved when the weights take at most two values, Section 3f; the blocks
@@ -461,6 +465,47 @@ For general U-weights the off-diagonal Frobenius constant grows with u (numerica
 while the spectral-norm constant stays near 5/18. So a proof for all weights needs a bound of the spectral norm
 that does not pass through the Frobenius norm.
 
+**Two U-levels** (`code/typeI_G_tv/`, `NOTES.md` there). Let U = U₁ ⊔ U₂ with u_i copies of squared weight s_i.
+The permutations of each level commute with G, so G = G^inv ⊕ (G^{std,1} ⊗ I_{u₁−1}) ⊕ (G^{std,2} ⊗ I_{u₂−1}),
+where G^inv has 3 × 3 blocks (t, t′) in (ρ_t, z_t¹, z_t²) (the level sums) and G^{std,i} is m × m. The blocks are
+computed in closed form with the level sizes symbolic (sums over U split by the levels and by r = r′ or r ≠ r′),
+and checked against exact elimination of whole blocks (685 blocks (t, t′) at 152 configurations).
+
+**Theorem M1.** Let U = {h₀} ⊔ U₂ with u₂ ≥ 2 and m ≥ 2, let every copy of U₂ and of T have the same weight, and
+let h₀ have any weight. Then G ≻ 0.
+
+*Proof (computer-assisted, exact).* Here the block also commutes with the permutations of T, so with D = G_tt and
+O = G_tt′ (on each part) G ≻ 0 if and only if D − O ≻ 0 and D + (m − 1)O ≻ 0. For real m ≥ 2, u₂ ≥ 2 and any
+weight of h₀, the three pivots of each 3 × 3 condition and the four scalars of the standard parts are rational
+functions whose numerators and denominator factors have only positive coefficients after the shifts (ten
+certificates). ∎
+
+**Theorem TV.** Let u₁, u₂ ≥ 1 with u₁ + u₂ ≥ 3 and min(u₁, u₂) ≤ 16, let m ≥ 2, and let the squared weights of
+all copies of U and of T take the two values s₁, s₂ (U_i carries s_i; the values on T are arbitrary in {s₁, s₂}).
+Then G ≻ 0.
+
+*Proof (computer-assisted, exact).* The weighted block Gershgorin criterion of Theorem EM with H = 1/2, on each part
+in the frame of Proposition U1 with the second invariant direction unscaled: for every pair (s_t, s_t′) of values
+the off-diagonal Frobenius conditions and the pivots of the diagonal conditions are rational functions of the level
+sizes, the weight r of the other copies of T and s = s₁/s₂, with only positive coefficients after the shifts
+(129 certificates: u₁ = 1; u₁, u₂ ≥ 2 both symbolic; u₁ = 2, …, 16 fixed). With both sizes symbolic all of them
+pass except the third pivot of the invariant diagonal condition, which is certified at each fixed u₁ ≤ 16; the
+exchange of the two levels gives min(u₁, u₂) ≤ 16. ∎
+
+**Corollaries M1 and TV.** For every k, (R∞)_{k−1} holds completely (every torus block ⪰ 0 with exactly its known
+kernel) at every weight vector whose squared weights are all equal but one (M1), and at every weight vector whose
+squared weights take at most two values when k ≤ 35 or when one of the two values is carried by at most 16 copies
+(TV). (Theorems T, C, U2, EU, TL, EM, M1, TV and Propositions T2, U0, U1; with min(u₁, u₂) ≥ 17 and m ≥ 2 a block
+needs k ≥ 36.)
+
+The closed forms equal the Schur complement of the whole block computed by exact elimination, with the Lemma B
+builder at 18 configurations; with H = 1/10 and H = 4/5 the certificates fail and the inequalities are false at
+explicit points; with B → (1 + 1/1000)B the reduced block has negative pivots where the true one has none. A second
+check, independent of the closed forms, builds every torus group of (R∞)_{k−1} from Lemma B at two-valued weight
+vectors with k = 10, …, 13 (one to six copies of the other value) and finds each ⪰ 0 with exactly its known kernel.
+The remaining two-valued case, both U-levels with at least 17 copies, is open only on the third pivot of that
+diagonal condition; it is positive at 288 exact points with u₁, u₂ ≤ 200.
+
 **Proposition K2.** The vector vac ⊗ J⁻|1…1⟩ lies in the kernel of (R∞)_{k−2}.
 
 *Proof.*
@@ -619,8 +664,9 @@ This contains Propositions T2 (j = k − 1) and E2 (equal weights). Numerically 
 
 **What blocks the rest.** Two parts are still open:
 - the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2: by Theorem C each is equivalent to
-  G ≻ 0 on its letter-2 states (proved for two such copies, Theorem U2, for k = 4, Theorem U3₁, and when those
-  copies have equal weights, Theorem EM);
+  G ≻ 0 on its letter-2 states (proved for two such copies, Theorem U2, for k = 4, Theorem U3₁, when those
+  copies have equal weights, Theorem EM, when all weights but one are equal, Theorem M1, and at two weight values
+  when one U-level has at most 16 copies, Theorem TV);
 - the letter-1 and type I blocks of the conditions (R∞)_j with 1 ≤ j ≤ k − 2, for k ≥ 5 (at k = 4 every block is
   certified, Section 3f).
 
@@ -1380,9 +1426,9 @@ seven copies are Corollary 7₂. ∎
 **Open here.** The letter-1 blocks for k ≥ 56 on the two-row parts with i ≥ 7, q0 = j − i ≥ 4 and t = k − 1 − j − i ≥ 4:
 the generic family with i symbolic. Its first five pivots pass, but in four variables the remaining entries grow to
 10⁵-term polynomials; at fixed i the same family takes about twenty minutes per value of i. At such weights and
-k ≥ 30 the type I blocks with a letter 1 of (R∞)_j for 3 ≤ j ≤ k − 1 are open as well (for k ≤ 29 they are
-Theorem I1; in (R∞)_{k−1}, when the copy of the other weight carries a letter 2, they are Corollary EM for every k):
-an every-k proof needs those reduced forms with the sizes symbolic, in up to five variables.
+k ≥ 30 the type I blocks with a letter 1 of (R∞)_j for 3 ≤ j ≤ k − 2 are open as well (for k ≤ 29 they are
+Theorem I1; those of (R∞)_{k−1} hold for every k, Corollary M1): an every-k proof needs those reduced forms with
+the sizes symbolic, in up to five variables.
 
 ## Code and checks
 
@@ -1411,6 +1457,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `typeI_G_m1/` (`run_all.sh`, notes in `typeI_G_m1/NOTES.md`) | Theorems EU and TL: the gauge x_t = 0 and G = diag(2, I) − BᵀC⁻¹B; the symbolic reductions at one and two weight levels, their validation against direct elimination, the sign certificates, a second implementation of the two-level invariant part; the limit u → ∞ at equal U-weights; exact checks at rational points for u ≤ 10 and at three levels; negative controls; floating-point observations on the pair structure |
 | `typeI_G_u3/` (`run_all.sh`, notes in `typeI_G_u3/NOTES.md`) | Theorem U3₁: the exact Schur complement for u = 3, m = 1 over Q(s_0, …, s_3) and its agreement with direct elimination, the leading minors with factor stripping and expansion checks, the coefficient-sign certificate, the Z-matrix certificate, negative controls; the same minor certificate for (u, m) = (1, 1), (2, 1), (1, 2), (2, 2), (1, 3); numerical sweeps behind Conjectures P and M |
 | `typeI_G_em/` (`run_all.sh`, notes in `typeI_G_em/NOTES.md`) | Theorem EM: the closed forms of the invariant and standard parts at equal U-weights symbolic in u, against direct elimination (44 configurations) and the Lemma B builder (21), the five coefficient-sign certificates (H = 1/2, 2/5, 29/100, 7/10), negative controls, the exact witness that G is not a function of the first two power sums of the U-weights, numerical constants for general U-weights; the second check `emcheck.py` (every torus group of (R∞)_{k−1} from Lemma B, k = 5, …, 8) |
+| `typeI_G_tv/` (`run_all.sh`, notes in `typeI_G_tv/NOTES.md`) | Theorems M1 and TV: the splitting at two U-levels, the closed forms with the level sizes symbolic against exact elimination of whole blocks, Theorem M1 (exact splitting under the permutations of T, Sylvester), Theorem TV (weighted block Gershgorin, 129 certificates), end-to-end checks with the Lemma B builder, negative controls; `marked_copy/run_markall2.sh` (`markall2.py`): every torus group of (R∞)_{k−1} at two-valued weights, k = 10, …, 13 |
 | `typeI_G_u2/` (`run_all.sh`, notes in `typeI_G_u2/NOTES.md`) | Theorem U2: the exact symbolic Schur complement for u = 2, its agreement with direct elimination (m = 1, …, 5), the polynomial reductions, the blow-up charts and Bernstein certificates of (A_2) and (B_2), negative controls |
 | `positivity/` (`run_all.sh`, notes in `positivity/NOTES.md`) | Section 3g: every principal minor of every block at k = 2, 3 and the k = 4 tests, the row-group identities and lifts of Proposition R, the obstruction certificates (Newton, width, Farkas), the monomial-PSD tests, the Gram-type column-group lifts, the natural whole-block lift and its obstruction |
 | `middle_k4/` (`run_all.sh`, notes in `middle_k4/NOTES.md`) | Section 3f: the torus blocks of (R∞)_1 and (R∞)_2 at k = 4 over Q(s_1, s_2, s_3), the known kernels and the gauge, the Bareiss leading-minor certificates, minors against direct determinants at rational points, symbolic blocks against the point builder and the dense construction, negative controls |

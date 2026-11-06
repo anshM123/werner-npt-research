@@ -1,0 +1,26 @@
+inv gen: form built (2.9 s, 87 terms)
+  converted (3.5 s); eliminating 7
+  pivot 0 done (3.6 s)
+  pivot 1 done (6.1 s)
+  pivot 2 done (30.7 s)
+  pivot 3 done (69.9 s)
+  pivot 4 done (112.0 s)
+  pivot 5 done (167.1 s)
+  pivot 6 done (230.0 s)
+  G[rA,rA]: num 23631 terms, den 21686 terms
+  G[rA,zA1]: num 21083 terms, den 21686 terms
+  G[rA,zA2]: num 20926 terms, den 21686 terms
+  G[rA,rB]: num 33554 terms, den 39447 terms
+  G[rA,zB1]: num 21896 terms, den 25935 terms
+  G[rA,zB2]: num 34106 terms, den 39447 terms
+  G[zA1,zA1]: num 24105 terms, den 21686 terms
+  G[zA1,zA2]: num 21286 terms, den 21686 terms
+  G[zA1,rB]: num 34106 terms, den 39447 terms
+  G[zA1,zB1]: num 24877 terms, den 25935 terms
+  G[zA1,zB2]: num 34768 terms, den 39447 terms
+  G[zA2,zA2]: num 23939 terms, den 21686 terms
+  G[zA2,rB]: num 21896 terms, den 25935 terms
+  G[zA2,zB1]: num 18831 terms, den 22286 terms
+  G[zA2,zB2]: num 24877 terms, den 25935 terms
+  done (231.3 s); wrote tl_inv_gen_T12.pkl
+PASS

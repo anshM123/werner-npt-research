@@ -1,0 +1,4 @@
+part tl_inv_gen (u1 = 2 + x1, u2 = 2 + x2)
+    tl_inv_gen B_inv s_t = s pivot 1         num   27027 terms (+27027 -0), degrees [25, 25, 26, 26], free monomial True, den 7 factors one-signed True -> CERTIFIED [0.2s]
+    tl_inv_gen B_inv s_t = s pivot 2         num   78539 terms (+78539 -0), degrees [32, 32, 34, 36], free monomial True, den 6 factors one-signed True -> CERTIFIED [1.8s]
+guard: memory 2520936 KB above 2.5 GB, killed PID 38352

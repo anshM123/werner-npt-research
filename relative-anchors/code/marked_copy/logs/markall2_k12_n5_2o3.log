@@ -1,0 +1,3 @@
+k=12, 5 copies of amplitude 2/3, (R_inf)_11: 593920 states in 28660 torus groups (letter-1: 1/1; type I with a letter 1: 4094/4094; type I without a letter 1: 1/1; type II: 24564/24564 passed); kernel dimension 24587 (expected 24587): True [1322.2s]
+total 1322s
+PASS

@@ -1,0 +1,16 @@
+G[rA,rA]: monomial content {'u2': 0, 'sig': 0, 's1': 0, 'a': 0, 'b': 0}, num coeffs +6241 -5467; den negative coeffs 5557
+G[rA,zA1]: monomial content {'u2': 0, 'sig': 0, 's1': 1, 'a': 1, 'b': 0}, num coeffs +3998 -5572; den negative coeffs 5557
+G[rA,zA2]: monomial content {'u2': 1, 'sig': 0, 's1': 0, 'a': 1, 'b': 0}, num coeffs +3836 -5893; den negative coeffs 5557
+G[rA,rB]: monomial content {'u2': 0, 'sig': 0, 's1': 0, 'a': 1, 'b': 1}, num coeffs +35110 -35547; den negative coeffs 54122
+G[rA,zB1]: monomial content {'u2': 0, 'sig': 0, 's1': 1, 'a': 1, 'b': 1}, num coeffs +36780 -37370; den negative coeffs 54122
+G[rA,zB2]: monomial content {'u2': 1, 'sig': 0, 's1': 0, 'a': 1, 'b': 1}, num coeffs +37506 -37530; den negative coeffs 54122
+G[zA1,zA1]: monomial content {'u2': 0, 'sig': 0, 's1': 1, 'a': 1, 'b': 0}, num coeffs +5998 -5826; den negative coeffs 5557
+G[zA1,zA2]: monomial content {'u2': 1, 'sig': 0, 's1': 1, 'a': 1, 'b': 0}, num coeffs +4436 -5720; den negative coeffs 5557
+G[zA1,rB]: monomial content {'u2': 0, 'sig': 0, 's1': 1, 'a': 1, 'b': 1}, num coeffs +36780 -37370; den negative coeffs 54122
+G[zA1,zB1]: monomial content {'u2': 0, 'sig': 0, 's1': 1, 'a': 1, 'b': 1}, num coeffs +46067 -40574; den negative coeffs 54122
+G[zA1,zB2]: monomial content {'u2': 1, 'sig': 0, 's1': 1, 'a': 1, 'b': 1}, num coeffs +39218 -38653; den negative coeffs 54122
+G[zA2,zA2]: monomial content {'u2': 1, 'sig': 0, 's1': 0, 'a': 1, 'b': 0}, num coeffs +5990 -6017; den negative coeffs 5557
+G[zA2,rB]: monomial content {'u2': 1, 'sig': 0, 's1': 0, 'a': 1, 'b': 1}, num coeffs +37506 -37530; den negative coeffs 54122
+G[zA2,zB1]: monomial content {'u2': 1, 'sig': 0, 's1': 1, 'a': 1, 'b': 1}, num coeffs +39218 -38653; den negative coeffs 54122
+G[zA2,zB2]: monomial content {'u2': 1, 'sig': 0, 's1': 0, 'a': 1, 'b': 1}, num coeffs +48569 -42338; den negative coeffs 54122
+exploration done

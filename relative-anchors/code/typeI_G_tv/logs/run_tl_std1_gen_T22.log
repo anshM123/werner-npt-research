@@ -1,0 +1,11 @@
+std1 gen: form built (0.3 s, 26 terms)
+  converted (0.4 s); eliminating 5
+  pivot 0 done (0.4 s)
+  pivot 1 done (0.5 s)
+  pivot 2 done (1.1 s)
+  pivot 3 done (2.0 s)
+  pivot 4 done (2.5 s)
+  G[zA,zA]: num 6430 terms, den 5717 terms
+  G[zA,zB]: num 6011 terms, den 7046 terms
+  done (2.5 s); wrote tl_std1_gen_T22.pkl
+PASS

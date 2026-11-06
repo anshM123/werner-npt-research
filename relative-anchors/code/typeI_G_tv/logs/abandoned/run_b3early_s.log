@@ -1,0 +1,5 @@
+composed: entry sizes [27027, 26650, 26650, 30652, 30250, 30600] [1.2s]
+matrix built [1.7s]
+    tl_inv_gen B_inv s_t = s pivot 1 (orthant variables) num   27027 terms (+27027 -0), degrees [25, 25, 26, 26], free monomial True, den 7 factors one-signed True -> CERTIFIED [0.2s]
+    tl_inv_gen B_inv s_t = s pivot 2 (orthant variables) num   78539 terms (+78539 -0), degrees [32, 32, 34, 36], free monomial True, den 6 factors one-signed True -> CERTIFIED [1.8s]
+guard: memory 3097204 KB above 2.5 GB, killed PID 16204

@@ -1,0 +1,7 @@
+part tl_inv_gen (u1 = 2 + x1, u2 = 2 + x2)
+    (A_inv (1, 1)_zz in the variables ['u1', 'u2', 'sig', 's1']: numerator 484670 terms, denominator 442322 terms [25.2s])
+    tl_inv_gen A_inv (s_t, s_t') = (1, 1) zz part, budget H^2/2 num  552653 terms (+552653 -0), degrees [56, 56, 58, 56], free monomial True, den 9 factors one-signed True -> CERTIFIED [70.5s]
+part tl_std1_gen (u1 = 3 + x1, u2 = 1 + x2)
+part tl_std1_two (u1 = 2, u2 = 1 + x2)
+H = 1/2: all certified: True [104.1s]
+PASS

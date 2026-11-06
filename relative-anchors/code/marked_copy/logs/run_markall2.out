@@ -1,0 +1,7 @@
+markall2_k10_n3_3o2: PASS total 105s
+markall2_k10_n5_2o5: PASS total 105s
+markall2_k11_n4_3: PASS total 365s
+markall2_k11_n1_1o4: PASS total 358s
+markall2_k12_n5_2o3: PASS total 1322s
+markall2_k12_n1_7o3: PASS total 1271s
+markall2_k13_n6_1o2: PASS total 4122s

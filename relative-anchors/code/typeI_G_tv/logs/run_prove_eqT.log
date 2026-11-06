@@ -1,0 +1,13 @@
+O = G_tt' symmetric: True
+inv D - O minor 1            numerator    120 terms (+120, -0), monomial free of ('x', 'y'): True; denominator: 3 factors, one-signed True, sign +1 -> CERTIFIED [0.0s]
+inv D - O minor 2            numerator    285 terms (+285, -0), monomial free of ('x', 'y'): True; denominator: 4 factors, one-signed True, sign +1 -> CERTIFIED [0.0s]
+inv D - O minor 3            numerator    340 terms (+340, -0), monomial free of ('x', 'y'): True; denominator: 4 factors, one-signed True, sign +1 -> CERTIFIED [0.0s]
+inv D + (sigma - 1) O minor 1 numerator   1771 terms (+1771, -0), monomial free of ('x', 'y'): True; denominator: 6 factors, one-signed True, sign +1 -> CERTIFIED [0.0s]
+inv D + (sigma - 1) O minor 2 numerator   4959 terms (+4959, -0), monomial free of ('x', 'y'): True; denominator: 7 factors, one-signed True, sign +1 -> CERTIFIED [0.0s]
+inv D + (sigma - 1) O minor 3 numerator   5394 terms (+5394, -0), monomial free of ('x', 'y'): True; denominator: 7 factors, one-signed True, sign +1 -> CERTIFIED [0.0s]
+std2 (u2 = 3 + x) d - o      numerator     20 terms (+20, -0), monomial free of ('x', 'y'): True; denominator: 2 factors, one-signed True, sign +1 -> CERTIFIED [0.0s]
+std2 (u2 = 3 + x) d + (sigma - 1) o numerator   1330 terms (+1330, -0), monomial free of ('x', 'y'): True; denominator: 5 factors, one-signed True, sign +1 -> CERTIFIED [0.0s]
+std2 (u2 = 2) d - o          numerator     10 terms (+10, -0), monomial free of ('y',): True; denominator: 2 factors, one-signed True, sign +1 -> CERTIFIED [0.0s]
+std2 (u2 = 2) d + (sigma - 1) o numerator    136 terms (+136, -0), monomial free of ('y',): True; denominator: 5 factors, one-signed True, sign +1 -> CERTIFIED [0.0s]
+all certified: True [0.9s]
+PASS
