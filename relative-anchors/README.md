@@ -180,6 +180,18 @@ J⁺J⁻ − J⁻J⁺ = Σ_t s_t(|1⟩⟨1|_t − |0⟩⟨0|_t). ∎
 **Lemma G (the vacuum-row block).** On G0_{j+1}, Y = 2^{−(k−j−1)}(I − ½J⁻E_{j+2}^{−1}J⁺). If C is invertible on H_{j+2},
 this equals 2^{−(k−j−1)}(I + ½J⁻C^{−1}J⁺)^{−1}, by the Woodbury identity with E = C + XX^*, X = J⁺/√2. ∎
 
+**Remark (the letter-1 blocks are a qubit problem).** In a letter-1 block every state uses only the letters 0 and 1,
+and so does every term of Lemma B: for such a state G_{(a,y)} is supported on strings with the letters 0 and 1 (in the
+proof of Lemma B the column letter at each copy is either kept or set to that of e_t), G_{(vac,y)} = −2^{−Z(y)}J⁺|y⟩,
+and D_c preserves the positions of the letters 2. So the letter-1 block of (R∞)_j is the same matrix when every copy
+is a qubit (d = 2, with M = I − ½|Ω⟩⟨Ω| on C² ⊗ C²); with qubits it is the whole of (R∞)_j. For qubits M is the
+projector onto the complement of |Ω⟩, and the endpoint inequality itself holds trivially (the two-qubit state
+I − F/2 is PPT). The group conditions do not follow from this: they are a stronger certificate restricted to one
+sector, and in other qubit sectors the same kind of certificate fails (`OBSTRUCTIONS.md`, "Same sector, qubit
+corners"). So the letter-1 blocks of Theorems T, B0, E1, MF, L∞ and of Section 3f are statements about qubits.
+(`code/check_qubit_letter1.py` builds the qubit operator from its definition and compares it with the letter-1
+blocks of Lemma B exactly, for k = 3, 4 and j = 0, …, k − 1.)
+
 ## 3. The condition (R∞)_{k−1}, every k
 
 **Theorem T.** For every k ≥ 2 and all w_t > 0, the letter-1 block of (R∞)_{k−1} is ⪰ 0. Its kernel is exactly
@@ -1483,6 +1495,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `check_boson_Y.py` | Lemma B, exactly, k ≤ 4, every j, all letters |
 | `check_normal_order.py` | Lemma N and Proposition K2, exactly, k ≤ 6 |
 | `check_g0_inverse.py` | Lemma G, exactly, k ≤ 4 |
+| `check_qubit_letter1.py` | The Remark after Lemma G: the letter-1 blocks equal the qubit (d = 2) operator built from its definition, exactly, k = 3, 4 |
 | `check_top_block.py` | Theorem T: closed form, both radicals, the reduction and the bound, exactly, k = 2, …, 6 |
 | `check_typeII.py`, `check_typeI_u0.py` | Propositions T2 and U0 (closed forms, exact pivots, coefficient signs) |
 | `eqlib.py`, `eqlib2.py`, `orbit.py`, `orbit3.py`, `symf.py` | Equal-weight reduced forms and the orbit calculus |
