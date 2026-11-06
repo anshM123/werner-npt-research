@@ -30,9 +30,11 @@ G_z = Dg G Dg with ζ_h = w_t w_h z_h.
 | 8e | The local block D(s_h) depends on the other copies only through the four bounded sums g = Σ s_k/d_k, N = Σ s_k/d_k², g0 = Σ s_k/d0_k, N0 = Σ s_k/d0_k² (u cancels identically) | **derived** (`D_natural.py`, symbolic); **exact check** against the reduced system, 132 blocks (`check_D.py`) |
 | 8f | **Theorem D (condition (i) for all weights).** For every u ≥ 1, all positive weights and every h ∈ U, D(s_h) ≻ 0 | **proved**, computer-assisted, exact (Section 11): monotonicity in N, N0 by one-signed coefficients; the three leading minors of the extreme block on the region (t, ξ, θ, θ0) ∈ (0,1) × (0,1] × [0,1]² certified factor by factor (positive coefficients or tensor Bernstein coefficients, one corner rule) (`prove_D.py`, PASS); negative control: a 1/10 diagonal shift breaks it at an explicit point |
 | 8g | Measurements for condition (ii): it has no slack (Section 9), so per-copy Cauchy–Schwarz alone cannot prove it; all degeneracy sits in the global 3 × 3 block on (γ, ξ, ρ); on the perpendicular subspace the global part takes at most 31 % of the local part (u = 3; 15 % at u = 4, less for larger u); the plan "Theorem D + per-copy bound on the perpendicular part + exact 3 × 3 condition" holds at all 32 weight vectors tested; C has rank 16 with 7 negative eigenvalues and a moment-dependent kernel | **numerical** (Section 12; `ex_globperp.py`, `ex_perpeps.py`, `ex_plan.py`, `ex_inertiaC.py`, `ex_kerC.py`) |
-| 11 | (Z) and (D) of Conjecture M themselves, and Conjecture R, for general weights and every u ≥ 4; in particular condition (ii) of Lemma F for all weights, and Conjecture R for U-weights with two or three distinct values (symbolic in the weights and level sizes) | **open** (Sections 10 and 12 explain what blocked them) |
+| 8h | **Lemmas P1, P2.** (A_κ) Ψ_pp ⪰ κD_pp on p and (B_κ) Ψ_gg − Ψ_gp(κD_pp)⁻¹Ψ_gpᵀ ≻ 0 imply Ψ ≻ 0; the coupling term equals (1/κ)(B0 − B1ᵀB2⁻¹B1) with three sums over copies of explicit 3 × 3 matrices | **proved** (linear algebra, Section 13); identity of P2 **exact check** at 16 weight vectors (`check_Blambda.py`) |
+| 8i | (A_1/2) and (B_1/2) at 56 rational weight vectors, u = 3, 4, 5, 6, 8, 10, 12 (so Conjecture R there, by P1); control: (A_99/100) fails at 14 of them | **exact check** (`check_plan.py`, PASS) |
+| 11 | (Z) and (D) of Conjecture M themselves, and Conjecture R, for general weights and every u ≥ 4; in particular condition (ii) of Lemma F for all weights, (A_κ) and (B_κ) of Section 13 for all weights, and Conjecture R for U-weights with two or three distinct values (symbolic in the weights and level sizes) | **open** (Sections 10, 12 and 13 explain what blocked them) |
 
-| 12 | The exact checks rerun separately with other seeds: `check_identity.py` (seed 777; I1–I6 at every trial), `certify_points.py` (u = 3…8, 12 weight vectors each, seed 5: Ψ ≻ 0 at all 72), `check_reduced.py` (seeds 99 and 11), `equal_R.py 3`, `controls_R.py`, `certify_reduced.py` in mode `both` (u = 10, 11, 12, seed 3); and Theorem D from scratch: `reduce_cas.py` and `D_natural.py` rerun (the same `D_natural.pkl`), `prove_D.py`, `check_D.py` (seed 23), `check_D_homog.py` (seed 4) | **exact**, all as stated (`logs_rerun_*.log`, `logs_rerun2_*.log`) |
+| 12 | The exact checks rerun separately with other seeds: `check_identity.py` (seed 777; I1–I6 at every trial), `certify_points.py` (u = 3…8, 12 weight vectors each, seed 5: Ψ ≻ 0 at all 72), `check_reduced.py` (seeds 99 and 11), `equal_R.py 3`, `controls_R.py`, `certify_reduced.py` in mode `both` (u = 10, 11, 12, seed 3); Theorem D from scratch: `reduce_cas.py` and `D_natural.py` rerun (the same `D_natural.pkl`), `prove_D.py`, `check_D.py` (seed 23), `check_D_homog.py` (seed 4); Lemmas P1 and P2: `check_plan.py` (u = 3…6, seed 29) and `check_Blambda.py` (seed 43) | **exact**, all as stated (`logs_rerun_*.log`, `logs_rerun2_*.log`, `logs_rerun3_*.log`) |
 Nothing here says anything about Conjecture 12 or the NPT problem in general. Conjecture M and Conjecture R are open.
 
 ## 1. What was measured first
@@ -406,7 +408,53 @@ N = 2g/c, N0 = 2g0/c0, stayed positive definite on the grid tried; so the bound 
   coupling to p. So a proof of Conjecture R can be organised as: Theorem D (proved), a per-copy bound ε ≤ 0.35 on p (to
   do; measured ε* ≤ 0.31), and an exact 3 × 3 condition in natural sums that keeps the soft directions exact (to do).
 
-## 13. Files
+## 13. The two-part plan for Conjecture R: lemmas, exact pointwise checks, and what did not close
+
+Notation: V = {Σ_h s_h ah_h = 0} (the constraint a ⊥ w), g = (γ, ξ, ρ) with ch = γ·1, zh = ξ·1, and
+p = {Σ s_h ah_h = Σ s_h ch_h = Σ s_h zh_h = 0, ρ = 0}; then V = g ⊕ p. D_pp is the local part Σ_h v_hᵀ D(s_h) v_h
+restricted to p (positive definite by Theorem D).
+
+**Lemma P1 (assembly).** If for some κ ∈ (0, 1]
+- (A_κ) Ψ_pp − κ D_pp ⪰ 0 on p, and
+- (B_κ) Ψ_gg − Ψ_gp (κ D_pp)⁻¹ Ψ_gpᵀ ≻ 0 (a 3 × 3 matrix),
+
+then Ψ ≻ 0 on V, i.e. Conjecture R holds at that weight vector. *Proof.* (A_κ) gives Ψ_pp ⪰ κD_pp ≻ 0, hence
+Ψ_pp⁻¹ ⪯ (κD_pp)⁻¹, and the Schur complement of Ψ onto g dominates the matrix of (B_κ). ∎
+
+**Lemma P2 (per-copy form of the coupling term).** Let b_h be the 3 × 3 coupling of g to the local variables of copy h
+(the full-space representative), and B0 = Σ_h b_hᵀD_h⁻¹b_h, B1 = Σ_h s_h D_h⁻¹b_h, B2 = Σ_h s_h² D_h⁻¹. Then
+Ψ_gp D_pp⁻¹ Ψ_gpᵀ = B0 − B1ᵀ B2⁻¹ B1. *Proof.* Minimise Σ_h v_hᵀD_hv_h − 2Σ_h b_h(g)ᵀv_h under the three constraints
+of p with a Lagrange multiplier λ ∈ R³ (one per class): the optimum is min_λ Σ_h (b_h − s_hλ)ᵀD_h⁻¹(b_h − s_hλ). ∎
+So (B_κ) is a condition on Ψ_gg and on three sums over copies of explicit 3 × 3 matrices. The multiplier is essential:
+with the full-space representative alone (λ = 0) the condition fails at all 24 weight vectors tried (u = 4, 6, 8;
+`ex_Bcrude.py`), since that representative carries large components along the constraint directions.
+
+**Exact checks.**
+- `check_Blambda.py` (PASS): Lemma P2's identity holds exactly at 16 weight vectors (u = 3, 4, 6, 8).
+- `check_plan.py` (PASS): (A_1/2) and (B_1/2) both hold in exact arithmetic at 56 rational weight vectors (8 each for
+  u = 3, 4, 5, 6, 8, 10, 12; all eight families, including the degenerate ones), so Conjecture R holds there by Lemma
+  P1 (also known from the direct certificates). Control: (A_99/100) fails at 2, 4, 3, 2, 1, 1, 1 of the 8 vectors for
+  u = 3, 4, 5, 6, 8, 10, 12, so the global part on p is genuinely negative and (A) is not the statement D ≻ 0 alone.
+- `ctl_plan.py` (control for (B)): with the coupling term inflated, (B_κ) fails at 3 of 8 vectors for κ = 1/100 and at
+  5 (u = 4) and 4 (u = 6) of 8 for κ = 1/1000, while it holds at all 8 for κ = 1/20 and κ = 1/2. So the coupling to p is
+  not negligible in (B); the margin in κ is between 1/100 and 1/20 at these vectors.
+
+**What did not close (this session).**
+- **(A_κ) for all weights.** Not proved.
+  - A natural-functional version of the reduced system on p (`reduce_perp.py`: no partial fractions, the constraint
+    functionals set to zero) has 95 functionals with complicated weights, too many for term-by-term Cauchy–Schwarz.
+  - A direct per-copy lower bound was tried (`ex_Qlb.py`): T ≤ (12/5)‖R̂‖²_s with ‖A + B‖² ≤ (1 + δ)‖A‖² +
+    (1 + 1/δ)‖B‖², the centring and the variances N − g²/S, N0 − g0²/S for the rank-one parts, and Cauchy–Schwarz for
+    the coupling term (σ²IGT/2)Γ_cΓ_z. The resulting 3 × 3 blocks have negative diagonal entries for every tried
+    (δ, θ). The loss is the dropped diagonal correction Σ_h (1/Λ_h − 12/5) s_h² R̂_hh² of the relaxation, which reduces
+    the local part of T by a factor 2 to 3; a bound that keeps it needs the copy-by-copy pair kernel of T (products of
+    natural sums such as Σ_h s_h² ah_h/d_h²), which we did not derive.
+- **(B_κ) for all weights.** Not proved. Its soft directions require exact treatment, and by Lemma P2 it involves sums
+  of the per-copy matrices D_h⁻¹, D_h⁻¹b_h, b_hᵀD_h⁻¹b_h, which are not functions of finitely many natural sums.
+- So Conjecture R is still open for general weights; Lemma P1 together with Theorem D reduces it to (A_κ) and (B_κ) for
+  one κ, both verified exactly at the 56 weight vectors above.
+
+## 14. Files
 
 | File | Content |
 |---|---|
@@ -428,7 +476,7 @@ N = 2g/c, N0 = 2g0/c0, stayed positive definite on the grid tried; so the bound 
 | `certify_reduced.py` | conditions (i), (ii) of Lemma F at rational weight vectors; mode `both` compares with the direct certificate (`logs_certify_reduced_both.log`), mode `controlB` uses 1.001 B_F (`logs_certify_reduced_controlB.log`); `logs_certify_reduced_time.log` is the u = 20 run stopped by hand |
 | `equal_R.py` | Theorem R_EU: symbolic minors at equal U-weights (`logs_equal_R_u3.log`, PASS; `logs_equal_R_u1.log`, see Section 8) |
 | `controls_R.py` | negative controls C0–C4 (`logs_controls_R.log`) |
-| `logs_rerun_*.log`, `logs_rerun2_*.log` | the exact checks rerun with other seeds (status row 12) |
+| `logs_rerun_*.log`, `logs_rerun2_*.log`, `logs_rerun3_*.log` | the exact checks rerun with other seeds (status row 12) |
 | `*.pkl` | written by `reduce_cas.py` (about four minutes), `D_natural.py` and `equal_R.py`; not in the repository |
 | `reduced_eval.py`, `show_D.py` | first (SymPy-based) loader of `reduced.pkl`, superseded by `reduced_c.py`; display of D(s) (`logs_show_D.log`) |
 | `D_natural.py` → `D_natural.pkl` | D(s) in the natural sums g, N, g0, N0 (`logs_D_natural.log`: u cancels) |
@@ -436,3 +484,6 @@ N = 2g/c, N0 = 2g0/c0, stayed positive definite on the grid tried; so the bound 
 | `check_D.py`, `check_D_homog.py` | exact checks and controls for Theorem D (`logs_check_D.log`, PASS); the homogeneity used in the normalisation (`logs_check_D_homog.log`, PASS) |
 | `ex_Du.py`, `ex_Dbox.py`, `ex_Dbox2.py` | the u-independence at random points (exact) and the margin of D over the region (floating point) |
 | `ex_globperp.py`, `ex_inertiaC.py`, `ex_kerC.py`, `ex_perpeps.py`, `ex_plan.py` | measurements of Section 12 (`logs_ex_globperp.log`, `logs_ex_inertiaC.log`, `logs_ex_kerC.log`, `logs_ex_perpeps.log`, `logs_ex_perpeps_large.log`, `logs_ex_plan.log`) |
+| `check_plan.py`, `check_Blambda.py`, `ctl_plan.py` | exact checks and the control of Section 13 (`logs_check_plan.log`, `logs_check_plan_more.log`, `logs_check_Blambda.log`, PASS; `logs_ctl_plan.log`) |
+| `reduce_perp.py` → `perp_compact.pkl` | the reduced system on p with natural functionals (95 of them; `logs_reduce_perp.log`); not used further |
+| `ex_Qlb.py`, `ex_Bcrude.py` | the failed crude bounds of Section 13 (`logs_ex_Qlb.log`, `logs_ex_Bcrude.log`) |

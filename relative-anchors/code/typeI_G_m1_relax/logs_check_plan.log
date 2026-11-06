@@ -1,0 +1,5 @@
+u = 4: (A_1/2) holds at 8/8, (B_1/2) at 8/8; (A_99/100) fails at 4/8
+u = 5: (A_1/2) holds at 8/8, (B_1/2) at 8/8; (A_99/100) fails at 3/8
+u = 6: (A_1/2) holds at 8/8, (B_1/2) at 8/8; (A_99/100) fails at 2/8
+u = 8: (A_1/2) holds at 8/8, (B_1/2) at 8/8; (A_99/100) fails at 1/8
+PASS

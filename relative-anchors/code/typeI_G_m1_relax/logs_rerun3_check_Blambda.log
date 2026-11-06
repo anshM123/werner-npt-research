@@ -1,0 +1,5 @@
+u = 3: Psi_gp D_pp^-1 Psi_gp^T == B0 - B1^T B2^-1 B1 exactly at 4 weight vectors: True
+u = 4: Psi_gp D_pp^-1 Psi_gp^T == B0 - B1^T B2^-1 B1 exactly at 4 weight vectors: True
+u = 6: Psi_gp D_pp^-1 Psi_gp^T == B0 - B1^T B2^-1 B1 exactly at 4 weight vectors: True
+u = 8: Psi_gp D_pp^-1 Psi_gp^T == B0 - B1^T B2^-1 B1 exactly at 4 weight vectors: True
+PASS
