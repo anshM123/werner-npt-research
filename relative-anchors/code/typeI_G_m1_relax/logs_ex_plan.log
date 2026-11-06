@@ -1,0 +1,4 @@
+u = 3: smallest normalised eigenvalue of the global 3 x 3 condition: kappa = 0.65: 2.770e-09; kappa = 0.85: 2.770e-09
+u = 4: smallest normalised eigenvalue of the global 3 x 3 condition: kappa = 0.65: 6.110e-10; kappa = 0.85: 6.110e-10
+u = 6: smallest normalised eigenvalue of the global 3 x 3 condition: kappa = 0.65: 1.456e-07; kappa = 0.85: 1.456e-07
+u = 8: smallest normalised eigenvalue of the global 3 x 3 condition: kappa = 0.65: 7.715e-09; kappa = 0.85: 7.715e-09

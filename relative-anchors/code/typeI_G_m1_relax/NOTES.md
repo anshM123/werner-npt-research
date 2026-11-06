@@ -1,4 +1,4 @@
-# Conjecture M (one copy carrying the letter 2): a pair-function-free lower bound for G, the reduced finite system, and Conjecture R at equal U-weights
+# Conjecture M (one copy carrying the letter 2): a pair-function-free lower bound for G, the reduced finite system, Conjecture R at equal U-weights, and its local condition for all weights
 
 Ansh Mishra and Aryan Senthilkumar, 6 November 2026. Nothing here is refereed.
 
@@ -27,9 +27,12 @@ G_z = Dg G Dg with ζ_h = w_t w_h z_h.
 | 8d | Negative controls: with the couplings between (a, c) and (ρ, ζ) multiplied by 1.001, Ψ is indefinite at explicit points with S ≫ σ; with the coupling m to Q multiplied by 1.001, at explicit points with S ≪ σ; without the projection Π, at points with S ≳ σ; condition (ii) with B_F replaced by 1.001 B_F fails at explicit points (Section 9) | **exact** (`controls_R.py`, `certify_reduced.py ... controlB`) |
 | 9 | Route 1 on the relaxed system: in the scaled coordinates (a_h/w_h, c_h/w_h, ρ, z_h) many entries of Ψ change sign with the weights, so no sign change independent of the weights makes it a Z-matrix; without the constraint a ⊥ w it is indefinite | **numerical** (`signs1.py`, u = 4, 200 weight vectors) |
 | 10 | Choice of the representative of the hard-part couplings: with both couplings projected by Π = I − wwᵀ/S (the form Ψ) the bound is within 10⁻⁴; with Theorem C's unprojected 𝒢 the bound loses about 30 % at u = 8; with the unprojected full coupling it is indefinite | **numerical** (`relax2.py`) |
-| 11 | (Z) and (D) of Conjecture M themselves, and Conjecture R, for general weights and every u ≥ 4; in particular conditions (i) and (ii) of Lemma F for all weights, and Conjecture R for U-weights with two or three distinct values (symbolic in the weights and level sizes) | **open** (Section 10 explains what blocked them) |
+| 8e | The local block D(s_h) depends on the other copies only through the four bounded sums g = Σ s_k/d_k, N = Σ s_k/d_k², g0 = Σ s_k/d0_k, N0 = Σ s_k/d0_k² (u cancels identically) | **derived** (`D_natural.py`, symbolic); **exact check** against the reduced system, 132 blocks (`check_D.py`) |
+| 8f | **Theorem D (condition (i) for all weights).** For every u ≥ 1, all positive weights and every h ∈ U, D(s_h) ≻ 0 | **proved**, computer-assisted, exact (Section 11): monotonicity in N, N0 by one-signed coefficients; the three leading minors of the extreme block on the region (t, ξ, θ, θ0) ∈ (0,1) × (0,1] × [0,1]² certified factor by factor (positive coefficients or tensor Bernstein coefficients, one corner rule) (`prove_D.py`, PASS); negative control: a 1/10 diagonal shift breaks it at an explicit point |
+| 8g | Measurements for condition (ii): it has no slack (Section 9), so per-copy Cauchy–Schwarz alone cannot prove it; all degeneracy sits in the global 3 × 3 block on (γ, ξ, ρ); on the perpendicular subspace the global part takes at most 31 % of the local part (u = 3; 15 % at u = 4, less for larger u); the plan "Theorem D + per-copy bound on the perpendicular part + exact 3 × 3 condition" holds at all 32 weight vectors tested; C has rank 16 with 7 negative eigenvalues and a moment-dependent kernel | **numerical** (Section 12; `ex_globperp.py`, `ex_perpeps.py`, `ex_plan.py`, `ex_inertiaC.py`, `ex_kerC.py`) |
+| 11 | (Z) and (D) of Conjecture M themselves, and Conjecture R, for general weights and every u ≥ 4; in particular condition (ii) of Lemma F for all weights, and Conjecture R for U-weights with two or three distinct values (symbolic in the weights and level sizes) | **open** (Sections 10 and 12 explain what blocked them) |
 
-| 12 | The exact checks rerun separately with other seeds: `check_identity.py` (seed 777; I1–I6 at every trial), `certify_points.py` (u = 3…8, 12 weight vectors each, seed 5: Ψ ≻ 0 at all 72), `check_reduced.py` (seed 99), `equal_R.py 3`, `controls_R.py`, `certify_reduced.py` in mode `both` (u = 10, 11, 12, seed 3) | **exact**, all as stated (`logs_rerun_*.log`) |
+| 12 | The exact checks rerun separately with other seeds: `check_identity.py` (seed 777; I1–I6 at every trial), `certify_points.py` (u = 3…8, 12 weight vectors each, seed 5: Ψ ≻ 0 at all 72), `check_reduced.py` (seeds 99 and 11), `equal_R.py 3`, `controls_R.py`, `certify_reduced.py` in mode `both` (u = 10, 11, 12, seed 3); and Theorem D from scratch: `reduce_cas.py` and `D_natural.py` rerun (the same `D_natural.pkl`), `prove_D.py`, `check_D.py` (seed 23), `check_D_homog.py` (seed 4) | **exact**, all as stated (`logs_rerun_*.log`, `logs_rerun2_*.log`) |
 Nothing here says anything about Conjecture 12 or the NPT problem in general. Conjecture M and Conjecture R are open.
 
 ## 1. What was measured first
@@ -304,9 +307,8 @@ vector with B_F singular, where the route does not apply.)
 
 ## 10. What blocked a proof for all weights, and the classes with two or three values
 
-- **Condition (i).** D(s_h) depends on (s_h, σ, S) and on IG, IGT, u, M_0, …, M_3. Proving D(s_h) ≻ 0 for all weights
-  needs the joint range of these quantities for given s_h (a projection of the moment cone), as Theorem C did with its
-  parameters (S, ξ, θ, ν). We did not set this up.
+- **Condition (i).** (This was open when this section was written; it is now proved for all weights, Theorem D in
+  Section 11.)
 - **Condition (ii).** It is a 30 × 30 condition. Bounding its entries one by one is hopeless in the present basis,
   because of the cancellations described in Section 7.
 - **Two or three U-weight values, symbolically.** At L distinct values, Ψ reduces exactly to the standard parts
@@ -314,9 +316,97 @@ vector with B_F singular, where the route does not apply.)
   (σ, s_1, …, s_L, u_1, …, u_L). At equal weights (L = 1, three variables) the minors already reach degree 33. For L = 2
   (a 6 × 6 block in five variables) and L = 3 (9 × 9 in seven) the determinants would have degree well above 100; we
   did not attempt them in the time. So Conjecture R for three distinct values, which would be new beyond Theorem TL, is
-  still open.
+  still open. Update: by Theorem D (Section 11) the standard parts D(s_i) ≻ 0 are now proved for every L, so only the
+  invariant block remains. For one free U-weight and the others equal (L = 2 with u_1 = 1; three variables after
+  normalisation, plus the level size) the invariant block is 6 × 6; the entries of C, after the moments are written for
+  two levels, have common denominators of degree around 50 to 80, so the determinant would have degree of several
+  hundred. We did not attempt it, and that class is covered for G by Theorem TL anyway. For three values, uniformly in
+  the level sizes at fixed weight values, a rough count gives degree several hundred in three variables; also not
+  attempted.
 
-## 11. Files
+## 11. Theorem D: condition (i) for all weights
+
+**The local block in natural sums** (`D_natural.py`, exact). With c = S/2 + σ and c0 = (σ + S)/2, the identities
+s/d = 1 − c/d and s/d0 = 1 − c0/d0 give u − c M_1 = g, M_1 − c M_3 = N, u − c0 M_0 = g0, M_0 − c0 M_2 = N0, where
+
+    g = Σ_k s_k/d_k,   N = Σ_k s_k/d_k²,   g0 = Σ_k s_k/d0_k,   N0 = Σ_k s_k/d0_k²   (sums over all k ∈ U).
+
+Substituting, u cancels identically (degree 0 in u, symbolic), and D(s) becomes a rational function of
+(s, σ, S, g, N, g0, N0) only (with IG = 1/(2 + g), IGT = 1/(2 + σ/d0_t + g0)): the (ah, ch) block depends on (g, N),
+the zh entry on (g0, N0), the cross entries on (g, g0). N enters only D_aa and D_cc, N0 only D_zz, each linearly.
+Check (`check_D.py`, exact): at 24 rational weight vectors (u = 3, …, 8) the natural-sum form evaluated at the true
+sums equals the local blocks of the reduced system, for all 132 blocks.
+
+**Theorem D.** For every u ≥ 1, all positive weights and every h ∈ U, the local block D(s_h) of the reduced system
+(Section 7) is positive definite.
+
+*Proof (computer-assisted, exact; `prove_D.py`).*
+- **Part A (monotonicity).** The coefficient of N in D_aa and in D_cc, and that of N0 in D_zz, is minus a polynomial with
+  only positive coefficients (10 terms each) over a denominator with only positive coefficients, in the positive
+  variables (s, σ, S, IG, IGT, g, g0). Since d_k ≥ c and d0_k ≥ c0, N ≤ g/c and N0 ≤ g0/c0. Hence
+  D ⪰ Dt := D(N = g/c, N0 = g0/c0), the difference being diagonal and positive semidefinite.
+- **Part B (the region).** Dt depends on (s, σ, S, g, g0). Normalise K = σ + S/2 = 1: every entry of D satisfies
+  D(λs, λσ, λS, g, N/λ, g0, N0/λ) = λ² D(s, σ, S, g, N, g0, N0) (checked exactly, `check_D_homog.py`; g, g0, IG, IGT are
+  scale invariant), so positivity is unchanged. Then t = σ ∈ (0, 1), S = 2(1 − t), b = c0 = 1 − t/2,
+  s = S ξ with ξ ∈ (0, 1]. Because g′ = Σ_{k≠h} s_k/(1 + s_k) ∈ [0, S − s] and g0′ = Σ_{k≠h} s_k/(s_k + b) ∈
+  [0, (S − s)/b], every configuration has g = s/(1 + s) + θ(S − s) and g0 = s/(s + b) + θ0(S − s)/b for some
+  θ, θ0 ∈ [0, 1].
+- **Part C (certificate).** The three leading principal minors of Dt are rational functions of (t, ξ, θ, θ0). Every
+  irreducible factor of every numerator and denominator is shown to have a fixed sign on t ∈ (0, 1), ξ ∈ (0, 1],
+  θ, θ0 ∈ [0, 1]: the monomial factors t, ξ trivially; the factor t − 1 by Bernstein coefficients with the corner rule at
+  t = 1; every other factor (the largest has degrees (19, 20, 4, 2) in (t, ξ, θ, θ0) and 4641 terms) by its tensor
+  Bernstein coefficients on [0, 1]⁴, all of one sign without subdivision. Multiplying the signs, the three minors are
+  positive, so Dt ≻ 0 by Sylvester's criterion, and D ⪰ Dt ≻ 0. ∎
+
+Last lines of `logs_prove_D.log`: `m3: certified sign 1 (3.5 s)`, `PASS`.
+
+**Checks and controls** (`check_D.py`, PASS): at the 24 weight vectors above, every D(s_h) is positive definite in exact
+arithmetic, the parameters (t, ξ, θ, θ0) computed from the weights lie in the certified domain, and D(s_h) − Dt(s_h) is
+diagonal with nonnegative entries. Control: Dt − diag(Dt)/10 is not positive definite at t = 9999/10000, ξ = 1,
+θ = θ0 = 0, so the certificate has a margin below 1/10 of the diagonal there (floating point over the region: smallest
+Jacobi-normalised eigenvalue of Dt about 0.089, `ex_Dbox2.py`). A second control, D evaluated at the false bounds
+N = 2g/c, N0 = 2g0/c0, stayed positive definite on the grid tried; so the bound N ≤ g/c is not the critical step.
+
+**What Theorem D gives.** With Lemma F: for every weight vector with B_F ≻ 0, Conjecture R holds if and only if condition
+(ii) holds. Theorem D does not by itself prove Conjecture R or G ≻ 0 anywhere new.
+
+## 12. Condition (ii) and the direct route: what was measured
+
+- **No slack.** Condition (ii) fails at explicit points when B_F is replaced by 1.001 B_F (Section 9), and Ψ fails when
+  the soft couplings or the Q-coupling are scaled by 1.001. So a certificate must be exact in the soft directions; a
+  per-copy Cauchy–Schwarz bound of the bounded-rank part (Ψ ⪰ Σ_h v_hᵀ(D_h − W_h)v_h) cannot work on its own, because it
+  loses a constant factor in exactly those directions.
+- **Where the soft directions are** (`ex_globperp.py`, floating point from exact matrices, u = 4, 6, 8, 16 weight vectors
+  each). Split c = γ w/|w| + c⊥ and ζ = ξ w/|w| + ζ⊥ with c⊥, ζ⊥ ⊥ w (a ⊥ w already). After Jacobi scaling, the
+  perpendicular block on (a, c⊥, ζ⊥) has smallest eigenvalue at least 0.49, the global 3 × 3 block on (γ, ξ, ρ) carries
+  all the degeneracy (down to 4·10⁻¹⁰), and the coupling satisfies ‖C_gp‖² ≤ 0.67 λ_min(global) λ_min(perp). So a
+  proof could keep (γ, ξ, ρ) exact (a 3 × 3 matrix of sums), bound the perpendicular block per copy (Theorem D is the
+  local ingredient), and control the coupling by a Schur complement.
+- **The rank of C** (`ex_inertiaC.py`, eigenvalues in 300-digit arithmetic from exact entries, u = 4 and 8, eight weight
+  vectors): C has rank 16 (15 or 16 zero eigenvalues), with 7 negative and 8 or 9 positive eigenvalues, of size up to
+  10²⁶ with cancellations. The kernel of C is not determined by (σ, S) alone: at two weight vectors with the same σ, S
+  and u (and at an equal-weight vector with the same σ, S) the kernels differ (`ex_kerC.py`, exact). So no change of
+  basis depending only on (σ, S) reduces the 31 functionals to 16; a well-conditioned rewrite of C has to use
+  moment-dependent combinations, or (better) be restricted to the perpendicular subspace as below.
+- **The perpendicular part is dominated by the local part** (`ex_perpeps.py`, exact data, 120-digit generalized
+  eigenvalues, eight weight vectors per u). On the subspace p = {Σ s_h ah_h = Σ s_h ch_h = Σ s_h zh_h = 0, ρ = 0} let
+  ε* = max (−yᵀCy)/(Σ_h v_hᵀD_hv_h). Then Ψ ⪰ (1 − ε*)Σ_h v_hᵀD_hv_h on p, and
+
+  | u | 3 | 4 | 6 | 8 | 10 | 12 | 16 |
+  |---|---|---|---|---|---|---|---|
+  | max ε* | 0.31 | 0.15 | 0.11 | 0.066 | 0.016 | 0.12 | 0.008 |
+
+  On p the soft-direction terms vanish (ρ = 0, p = w·c = 0, Y0 = 0, m = 0, so 𝒜 = |ζ|² is local), and the remaining
+  global terms are products of a bounded number of natural sums such as Σ_h s_h²ah_h/d_h², Σ_h ρ_h ah_h. So a per-copy
+  Cauchy–Schwarz bound of the global part on p has a factor of about 3 to spare.
+- **The whole plan, tested** (`ex_plan.py`, same data). With g = (γ, ξ, ρ) (ch = γ·1, zh = ξ·1, ρ) and the subspace p:
+  if Ψ_pp ⪰ κ D_pp, then Ψ ≻ 0 follows from the 3 × 3 condition Ψ_gg − Ψ_gp (κ D_pp)⁻¹ Ψ_gpᵀ ≻ 0. For κ = 0.65 and
+  κ = 0.85 this 3 × 3 matrix is positive definite at all 32 weight vectors tried (u = 3, 4, 6, 8); its smallest
+  normalised eigenvalue (down to 6·10⁻¹⁰) is the same for both κ, i.e. it is set by the soft directions and not by the
+  coupling to p. So a proof of Conjecture R can be organised as: Theorem D (proved), a per-copy bound ε ≤ 0.35 on p (to
+  do; measured ε* ≤ 0.31), and an exact 3 × 3 condition in natural sums that keeps the soft directions exact (to do).
+
+## 13. Files
 
 | File | Content |
 |---|---|
@@ -338,6 +428,11 @@ vector with B_F singular, where the route does not apply.)
 | `certify_reduced.py` | conditions (i), (ii) of Lemma F at rational weight vectors; mode `both` compares with the direct certificate (`logs_certify_reduced_both.log`), mode `controlB` uses 1.001 B_F (`logs_certify_reduced_controlB.log`); `logs_certify_reduced_time.log` is the u = 20 run stopped by hand |
 | `equal_R.py` | Theorem R_EU: symbolic minors at equal U-weights (`logs_equal_R_u3.log`, PASS; `logs_equal_R_u1.log`, see Section 8) |
 | `controls_R.py` | negative controls C0–C4 (`logs_controls_R.log`) |
-| `logs_rerun_*.log` | the exact checks rerun with other seeds (status row 12) |
-| `*.pkl` | written by `reduce_cas.py` (about four minutes) and `equal_R.py`; not in the repository |
+| `logs_rerun_*.log`, `logs_rerun2_*.log` | the exact checks rerun with other seeds (status row 12) |
+| `*.pkl` | written by `reduce_cas.py` (about four minutes), `D_natural.py` and `equal_R.py`; not in the repository |
 | `reduced_eval.py`, `show_D.py` | first (SymPy-based) loader of `reduced.pkl`, superseded by `reduced_c.py`; display of D(s) (`logs_show_D.log`) |
+| `D_natural.py` → `D_natural.pkl` | D(s) in the natural sums g, N, g0, N0 (`logs_D_natural.log`: u cancels) |
+| `prove_D.py`, `bern.py` | Theorem D (`logs_prove_D.log`, PASS); `bern.py` copied from `typeI_u2/` (tensor Bernstein certificates) |
+| `check_D.py`, `check_D_homog.py` | exact checks and controls for Theorem D (`logs_check_D.log`, PASS); the homogeneity used in the normalisation (`logs_check_D_homog.log`, PASS) |
+| `ex_Du.py`, `ex_Dbox.py`, `ex_Dbox2.py` | the u-independence at random points (exact) and the margin of D over the region (floating point) |
+| `ex_globperp.py`, `ex_inertiaC.py`, `ex_kerC.py`, `ex_perpeps.py`, `ex_plan.py` | measurements of Section 12 (`logs_ex_globperp.log`, `logs_ex_inertiaC.log`, `logs_ex_kerC.log`, `logs_ex_perpeps.log`, `logs_ex_perpeps_large.log`, `logs_ex_plan.log`) |

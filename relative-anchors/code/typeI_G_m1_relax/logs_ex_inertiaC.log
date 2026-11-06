@@ -1,0 +1,8 @@
+u = 4, family 0: C has 7 negative, 15 zero, 9 positive eigenvalues; most negative -3.695e+04, largest 3.419e+04
+u = 4, family 1: C has 7 negative, 15 zero, 9 positive eigenvalues; most negative -5.638e+02, largest 4.489e+02
+u = 4, family 2: C has 7 negative, 15 zero, 9 positive eigenvalues; most negative -1.592e+06, largest 1.136e+06
+u = 4, family 3: C has 7 negative, 15 zero, 9 positive eigenvalues; most negative -1.740e+14, largest 1.724e+14
+u = 8, family 0: C has 7 negative, 15 zero, 9 positive eigenvalues; most negative -3.290e+06, largest 3.121e+06
+u = 8, family 1: C has 7 negative, 15 zero, 9 positive eigenvalues; most negative -1.451e+04, largest 1.454e+04
+u = 8, family 2: C has 7 negative, 15 zero, 9 positive eigenvalues; most negative -1.049e+21, largest 7.379e+20
+u = 8, family 3: C has 7 negative, 16 zero, 8 positive eigenvalues; most negative -2.550e+26, largest 2.528e+26

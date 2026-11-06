@@ -1,0 +1,7 @@
+('ah', 'ah') numerator terms 84 degrees (num, den): {'u': (0, 0), 'IG': (2, 0), 'IGT': (0, 0), 'g': (2, 0), 'N': (1, 0), 'g0': (0, 0), 'N0': (0, 0), 's': (7, 5)}
+('ah', 'ch') numerator terms 68 degrees (num, den): {'u': (0, 0), 'IG': (2, 0), 'IGT': (0, 0), 'g': (2, 0), 'N': (0, 0), 'g0': (0, 0), 'N0': (0, 0), 's': (7, 5)}
+('ch', 'ch') numerator terms 84 degrees (num, den): {'u': (0, 0), 'IG': (2, 0), 'IGT': (0, 0), 'g': (2, 0), 'N': (1, 0), 'g0': (0, 0), 'N0': (0, 0), 's': (7, 5)}
+('zh', 'zh') numerator terms 85 degrees (num, den): {'u': (0, 0), 'IG': (0, 0), 'IGT': (2, 0), 'g': (0, 0), 'N': (0, 0), 'g0': (2, 0), 'N0': (1, 0), 's': (7, 5)}
+('ah', 'zh') numerator terms 149 degrees (num, den): {'u': (0, 0), 'IG': (1, 0), 'IGT': (1, 0), 'g': (1, 0), 'N': (0, 0), 'g0': (1, 0), 'N0': (0, 0), 's': (7, 5)}
+('ch', 'zh') numerator terms 117 degrees (num, den): {'u': (0, 0), 'IG': (1, 0), 'IGT': (1, 0), 'g': (1, 0), 'N': (0, 0), 'g0': (1, 0), 'N0': (0, 0), 's': (7, 5)}
+saved D_natural.pkl (0.1 s)

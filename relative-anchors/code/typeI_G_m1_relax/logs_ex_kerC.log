@@ -1,0 +1,5 @@
+S_A = 3  S_B = 3  S_C = 3
+rank C at A: 16 ; kernel dimension 15
+kernel of C at A is contained in the kernel at B (same sigma, S, u): False
+... and at C2 (same sigma, S, u = 12, equal weights): False
+dependent functionals (free columns) at A: ['F_ch_12', 'F_ch_16', 'F_zh_17', 'F_ah_18', 'F_ch_19', 'F_zh_20', 'F_ah_21', 'F_ah_22', 'F_ah_23', 'F_ch_24', 'F_ch_25', 'F_ch_26', 'F_zh_27', 'F_zh_28', 'F_zh_29']

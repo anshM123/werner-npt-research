@@ -1,0 +1,15 @@
+loaded reduced system: J = 31 global directions (rho and 30 functionals), 4952 C-terms, 73 D-terms (0.0 s)
+u = 3, trial 0: T^T (D + U C U^T) T == Psi exactly: True
+u = 3, trial 1: T^T (D + U C U^T) T == Psi exactly: True
+u = 4, trial 0: T^T (D + U C U^T) T == Psi exactly: True
+u = 4, trial 1: T^T (D + U C U^T) T == Psi exactly: True
+u = 5, trial 0: T^T (D + U C U^T) T == Psi exactly: True
+u = 5, trial 1: T^T (D + U C U^T) T == Psi exactly: True
+u = 6, trial 0: T^T (D + U C U^T) T == Psi exactly: True
+u = 6, trial 1: T^T (D + U C U^T) T == Psi exactly: True
+u = 7, trial 0: T^T (D + U C U^T) T == Psi exactly: True
+u = 7, trial 1: T^T (D + U C U^T) T == Psi exactly: True
+u = 8, trial 0: T^T (D + U C U^T) T == Psi exactly: True
+u = 8, trial 1: T^T (D + U C U^T) T == Psi exactly: True
+total 1.0 s
+PASS

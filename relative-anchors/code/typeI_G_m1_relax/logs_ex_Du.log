@@ -1,0 +1,4 @@
+trial 0 D independent of u at fixed natural sums: True {('ah', 'ah'): 0.0, ('ah', 'ch'): 0.0, ('ch', 'ch'): 0.0, ('zh', 'zh'): 0.0, ('ah', 'zh'): 0.0, ('ch', 'zh'): 0.0}
+trial 1 D independent of u at fixed natural sums: True {('ah', 'ah'): 0.0, ('ah', 'ch'): 0.0, ('ch', 'ch'): 0.0, ('zh', 'zh'): 0.0, ('ah', 'zh'): 0.0, ('ch', 'zh'): 0.0}
+trial 2 D independent of u at fixed natural sums: True {('ah', 'ah'): 0.0, ('ah', 'ch'): 0.0, ('ch', 'ch'): 0.0, ('zh', 'zh'): 0.0, ('ah', 'zh'): 0.0, ('ch', 'zh'): 0.0}
+trial 3 D independent of u at fixed natural sums: True {('ah', 'ah'): 0.0, ('ah', 'ch'): 0.0, ('ch', 'ch'): 0.0, ('zh', 'zh'): 0.0, ('ah', 'zh'): 0.0, ('ch', 'zh'): 0.0}

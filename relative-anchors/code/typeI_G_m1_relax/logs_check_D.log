@@ -1,0 +1,4 @@
+(a) 132 blocks D(s_h) at 24 weight vectors (u = 3..8): D_natural = D, D > 0, parameters in the domain, D - Dt diagonal >= 0: True
+(b1) Dt - diag(Dt)/10 not positive definite at t = 9999/10000, xi = 1, th = 0, th0 = 0
+controls found: (b1) True, (b2) False
+PASS

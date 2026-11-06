@@ -1,0 +1,6 @@
+smallest Jacobi-normalised eigenvalue of D over the box: (np.float64(0.09456093143938696), (0.9907, 0.9903, [0.498, 0.174, 0.901, 0.684]))
+d/dN of (D_aa, D_cc, D_zz) at a random point: [-0.000751 -0.000751 -0.000175]  off-diagonal change: 0.0
+d/dN of (D_aa, D_cc, D_zz) at a random point: [-0.003045 -0.003045 -0.000711]  off-diagonal change: 0.0
+d/dN of (D_aa, D_cc, D_zz) at a random point: [-0.004151 -0.004151 -0.001178]  off-diagonal change: 0.0
+d/dN of (D_aa, D_cc, D_zz) at a random point: [-3.12e-04 -3.12e-04 -7.20e-05]  off-diagonal change: 0.0
+d/dN of (D_aa, D_cc, D_zz) at a random point: [-1.41e-04 -1.41e-04 -6.30e-05]  off-diagonal change: 0.0
