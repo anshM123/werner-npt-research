@@ -1,0 +1,3 @@
+k = 2..120, every j and i: 3909 nonempty forms with k <= 32; 5035 certified one by one; 72705 in whole-form families; 0 by a (u - i, i) family together with a (u - i - 1, i, 1) family; 78658 not covered (smallest k 56), all with k >= 56, 9 <= j <= k - 9, q0 >= 4, t >= 4, i >= 7; three-row parts: ({'three-row part covered by a family': 78658})
+families read: 172 whole-form, 0 (u - i, i) part, 1 (u - i - 1, i, 1) part, 8 empty; 5035 certified members
+PASS

@@ -1,0 +1,10 @@
+n,n,n (i >= 5 if symbolic): 16 vectors, members up to k = 76 agree (7s)
+n,n,5 (i >= 5 if symbolic): 16 vectors, members up to k = 71 agree (9s)
+n,-2,n (i >= 5 if symbolic): 1 vectors, members up to k = 66 agree (9s)
+n,-1,n (i >= 5 if symbolic): 6 vectors, members up to k = 67 agree (9s)
+n,0,n (i >= 5 if symbolic): 13 vectors, members up to k = 68 agree (9s)
+n,1,n (i >= 5 if symbolic): 16 vectors, members up to k = 69 agree (11s)
+n,2,n (i >= 5 if symbolic): 16 vectors, members up to k = 70 agree (12s)
+n,3,n (i >= 5 if symbolic): 16 vectors, members up to k = 71 agree (13s)
+258 (member, sigma) points, 50874 entries compared
+PASS 13s

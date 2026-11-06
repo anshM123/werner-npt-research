@@ -1,6 +1,6 @@
 # The letter-1 block with one marked copy: the parts of low irrep index for every k
 
-5 November 2026. Nothing here is refereed. In `relative-anchors/README.md` (Section 4b) Theorems N1 to N4 with Corollary P4 are summarized as Theorem MS, and Theorem M′ extends Theorem MK to k ≤ 40. Before running `run_all.sh` here, run the parent `run_all.sh` and then `prepare_frozen.sh`. This folder continues `marked_copy/` (the parent folder) (read its `NOTES.md` for the setting,
+5 November 2026. Nothing here is refereed. In `relative-anchors/README.md` (Section 4b) Theorems N1 to N4 with Corollary P4 are summarized as Theorem MS, and Theorem M′ extends Theorem MK to k ≤ 40. Before running `run_all.sh` here, run the parent `run_all.sh` and then `prepare_frozen.sh`. The parts with irrep index i ≥ 5 are continued in `NOTES_MI.md` (run `run_all_mi.sh` and `run_extra_mi.sh` after the extensions here). This folder continues `marked_copy/` (the parent folder) (read its `NOTES.md` for the setting,
 the reduction and Theorems M, B, F, I); `marked_copy/` (the parent folder) itself is not modified.
 
 ## Status

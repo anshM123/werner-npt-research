@@ -55,9 +55,10 @@ This folder collects what we can prove about the group conditions for every k.
   holds (Theorems 5₂, 6₂ and 7₂). Hence Conjecture 12 holds for every single excitation supported on at most seven
   copies whose nonzero weights take at most two distinct values (Corollaries 5₂, 6₂ and 7₂).
 - **One copy with a different weight** (Section 4b, exact computer-assisted certificates symbolic in the odd weight).
-  When all weights but one are equal, the letter-1 block of every (R∞)_j holds for k ≤ 40 (Theorem MK), for every
-  k when j ≤ 8 or j ≥ k − 8 (Theorem MB), and for every k and j on the isotypic parts of the permutations of the
-  equal copies with irrep index at most 4 (Theorem MS). With Theorems F1a–F2b this gives all of (R∞)_2 for every k
+  When all weights but one are equal, the letter-1 block of every (R∞)_j holds for k ≤ 55 (Theorem MK), for every
+  k when j ≤ 8 or j ≥ k − 8 (Theorem MB), and for every k and j on every isotypic part of the permutations of the
+  equal copies except possibly the two-row parts (k − 1 − i, i) with i ≥ 7, j − i ≥ 4 and k − 1 − j − i ≥ 4
+  (Theorems MS and MP). With Theorems F1a–F2b this gives all of (R∞)_2 for every k
   at such weights (Corollary M2).
 - **Equal weights** (w_t = 1).
   - The letter-1 block of every (R∞)_j is ⪰ 0 for every k, with the kernel described exactly (Theorem E1). The proof is
@@ -91,8 +92,8 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
   is proved when the weights take at most two values (Section 3h). In (R∞)_2, at two weight values, only the type I
   blocks with two letters 1 are open, and only when both levels outside their copy t have more than 40 copies
   (Theorem F2b, k ≥ 83). When all weights but one are equal, all of (R∞)_2 holds for every k, and the
-  letter-1 blocks of the other middle conditions are open only for k ≥ 41, 9 ≤ j ≤ k − 9 and irrep index at least 5
-  (Section 4b).
+  letter-1 blocks of the other middle conditions are open only for k ≥ 56, on the two-row parts with irrep index
+  i ≥ 7, j − i ≥ 4 and k − 1 − j − i ≥ 4 (Section 4b).
 
 Nothing here is refereed. The endpoint problem itself is open.
 
@@ -1272,7 +1273,7 @@ this covers every weight vector whose squared weights are all equal but one. Wri
 vectors of the letter-1 block of (R∞)_j: p ⊗ |1@Y⟩ for the j-subsets Y; also vac ⊗ J⁻|1…1⟩ at j = k − 2
 (Proposition K2); also u ⊗ J⁻|1…1⟩ with u ⊥ p at j = k − 1 (Theorem T).
 
-**Theorem MK.** For 2 ≤ k ≤ 40, every j = −1, …, k and every σ > 0, the letter-1 block of (R∞)_j is ⪰ 0 with kernel
+**Theorem MK.** For 2 ≤ k ≤ 55, every j = −1, …, k and every σ > 0, the letter-1 block of (R∞)_j is ⪰ 0 with kernel
 exactly K_j.
 
 **Theorem MB.** The same holds for every k ≥ 2 whenever j ≤ 8 or j ≥ k − 8.
@@ -1283,6 +1284,11 @@ permutations of the k − 1 copies of equal weight is ⪰ 0 with kernel exactly 
 **Theorem MS.** For every k ≥ 2, every j and every σ > 0, on the isotypic parts of the irreps (k − 1 − i, i) and
 (k − 2 − i, i, 1) of the permutations of the k − 1 copies of equal weight with i ≤ 4, the letter-1 block of (R∞)_j is
 ⪰ 0 with kernel exactly the part of K_j there (Theorem MI is the case i = 0).
+
+**Theorem MP.** For every k ≥ 2, every j and every σ > 0, the letter-1 block of (R∞)_j is ⪰ 0 with kernel exactly the
+part of K_j on every isotypic part of the permutations of the k − 1 copies of equal weight, except possibly the
+two-row parts (k − 1 − i, i) with i ≥ 7, j − i ≥ 4 and k − 1 − j − i ≥ 4. Those occur only for k ≥ 23, and for
+k ≤ 55 they are part of Theorem MK.
 
 At σ = 1 these are parts of Theorem E1. For j = −1, 0, k − 1 and k they also follow from Proposition M and Theorems
 B0, T and K (all weights), for j = 1 from Theorem 2V, and for j = 2 and k ≤ 10 from Theorem L.
@@ -1314,15 +1320,22 @@ B0, T and K (all weights), for j = 1 from Theorem 2V, and for j = 2 and k ≤ 10
    deletes U instead of an orbit sum of the odd copy, the families [q0 ≥ 4, t ≥ 4, i = b] with two symbolic sizes
    are certified for b = 1, 2, 3, 4 (4 + 10 pivots each, all with positive coefficients after the shifts). With the
    band families of step 4 and the one-size families this gives Theorem MS. For 33 ≤ k ≤ 40 every remaining reduced
-   form is certified at fixed k as in step 3 (1 978 forms), which extends Theorem MK to k ≤ 40. ∎
+   form is certified at fixed k as in step 3 (1 978 forms), which extends Theorem MK to k ≤ 40.
+6. *Irrep index i ≥ 5* (`code/marked_copy/middle/`, `NOTES_MI.md` there). The three-row parts of the generic
+   family [q0 ≥ 4, t ≥ 4, i ≥ 5] with i symbolic (four variables; 4 pivots), the eleven edge families
+   [q0 = a, t ≥ 4, i ≥ 6] (a ≤ 3) and [q0 ≥ 4, t = c, i ≥ 5] (c ≤ 3) on the whole form with i symbolic (largest
+   pivot 23 137 terms), and the families [q0 ≥ 4, t ≥ 4, i = 5] and [q0 ≥ 4, t ≥ 4, i = 6] are certified in the
+   same way. With steps 4 and 5 this gives Theorem MP. For 41 ≤ k ≤ 55 every remaining reduced form is certified at
+   fixed k (3 057 forms), which extends Theorem MK to k ≤ 55. ∎
 
 The reduced forms agree exactly with projections of the Lemma B block onto the explicit twisted vectors (k ≤ 9, every
 j and i, several σ). The dimension counts of the parts add up (k ≤ 6), and the symbolic forms agree with the numeric
 ones (k ≤ 16). The family forms agree with the numeric forms at members up to k ≈ 66. A second check, using only Lemma B
 and an exact positive-definiteness test, finds the block ⪰ 0 with kernel exactly K_j at several σ for every k ≤ 9 and
 every j; the split agrees with the Lemma B block for k ≤ 7, and at 40 members of the families of step 5 with
-41 ≤ k ≤ 60 the reduced form is ⪰ 0 with exactly the expected nullity (exact rank and elimination). With B replaced
-by (1 + 1/1000)B the certificates fail.
+41 ≤ k ≤ 60 the reduced form is ⪰ 0 with exactly the expected nullity (exact rank and elimination); the same holds
+at 240 members with 56 ≤ k ≤ 100 of the families of step 6 and, as a check only, of the open two-row family. With B
+replaced by (1 + 1/1000)B the certificates fail.
 
 **Corollary M2.** For every k ≥ 5 and every weight vector whose weights are all equal but one, (R∞)_2 is ⪰ 0 with
 kernel exactly p ⊗ H_2. (At k = 4, all of (R∞)_2 is Theorem B4, for every weight vector.)
@@ -1332,9 +1345,9 @@ letter 1 is Theorem F1a or F2a when the copy of the other weight lies in T, and 
 configuration excluded from F2b needs more than 40 copies of each weight. The blocks without a letter 1 are Theorem D₂,
 and the type II blocks are Proposition T2′. ∎
 
-**Open here.** The letter-1 blocks for k ≥ 41 and 9 ≤ j ≤ k − 9, on the parts i ≥ 5 (they need the families
-[q0 ≥ 4, t ≥ 4, i = b] for every b ≥ 5, or the generic family with i symbolic, and the edge families
-[q0 = a, t ≥ 4, i ≥ 2] and [q0 ≥ 4, t = c, i ≥ 2]). At such weights and k ≥ 8, the type I blocks with a letter 1 of
+**Open here.** The letter-1 blocks for k ≥ 56 on the two-row parts with i ≥ 7, q0 = j − i ≥ 4 and t = k − 1 − j − i ≥ 4:
+the generic family with i symbolic. Its first five pivots pass, but in four variables the remaining entries grow to
+10⁵-term polynomials; at fixed i the same family takes about twenty minutes per value of i. At such weights and k ≥ 8, the type I blocks with a letter 1 of
 (R∞)_j for 3 ≤ j ≤ k − 2, and the type I blocks of (R∞)_{k−1} with at least two copies carrying the letter 2 and at
 least three free of it, one of them the copy of the other weight, are open as well (when that copy carries a
 letter 2 they are Corollary EM). So these results do not yet give new cases of Conjecture 12.
@@ -1378,8 +1391,8 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `middle_j2/` (`run_all.sh`, `run_crosscheck.sh`, notes in `middle_j2/NOTES.md`) | Section 3h, (R∞)_2: the closed forms of the type I blocks with one and two letters 1 entry by entry against the Lemma B builder, Lemma P2, the reduced forms against exact projections of the Lemma B block and of the block from the definitions, the leading-minor certificates of Theorems F1a, F1b, F2a and F2b and their coverage, the dimension counts, kernels and gauge-fixed positivity of all three families at k = 5, 6, 7, negative controls; a second check (a Schur complement taken directly from the builder, the spectra of the parts against the spectrum of the block, and end-to-end kernels and positivity at k = 7, 8); the two unfinished regimes in `attempts.sh`; `run_fext.sh`: the fixed-size regimes for 13 ≤ m ≤ 40 and the coverage for k ≤ 100; `run_open.sh`: the regime of family 1 with both U-levels symbolic, so Theorem F1b for every k |
 | `middle_j2_l1/` (`run_all.sh`, `run_crosscheck.sh`, notes in `middle_j2_l1/NOTES.md`) | Section 3h, Theorem L: the closed forms of the letter-1 block of (R∞)_2 and its vacuum block (Lemmas A and V) entry by entry against the Lemma B builder and the builder from the definitions, the reduction by Young symmetrizers of S_{u₀} × S_{u₁} at fixed level sizes with its dimension counts, the leading-minor certificates for all 27 size pairs with 5 ≤ k ≤ 10 and their coverage, the certified forms against exact projections of the Schur complement of both builders, negative controls; a second check (end-to-end kernels and exact positive-definiteness certificates at a fresh point for each size pair, the builder from the definitions at non-square weight ratios, the saved forms at 31 values of q) |
 | `middle_j2_l1_sym/` (`run_all.sh`, notes in `middle_j2_l1_sym/NOTES.md`) | Section 3h, Theorem L₁₃: the closed forms (Woodbury through the singles, the inverse-free P–Q block, the congruence by I ⊗ Â₂) and the reduction to the parts of S_{u₀} × S_{u₁} against the Lemma B block at 17 points, the certificates in (q, x) for the 12 regimes and 16 parts, the certified forms against the rational reduction, negative controls, coverage for k ≤ 80; the second check `r2check.py` (whole blocks from Lemma B, 11 ≤ k ≤ 14); Theorem L₄₀: `run_ext30.sh`, `run_ext40.sh` (regimes (b+, b), 14 ≤ b ≤ 40) and `run_ext_checks.sh` (forms, coverage for k ≤ 81, negative controls); Theorem L∞: `run_both.sh` (the regime (14+, 14+), both sizes symbolic) and `run_both_checks.sh` (forms, coverage for k ≤ 120) |
-| `marked_copy/` (`run_all.sh`, `run_check.sh`, notes in `marked_copy/NOTES.md`) | Section 4b, Theorems MK, MB and MI: the reduced forms of the letter-1 blocks with one copy of a different weight against exact projections of the Lemma B block (k ≤ 9) and the dimension counts (k ≤ 6), the fixed-k certificates in σ (k ≤ 32, 3 909 forms) and their coverage, the families symbolic in one size (two for i = 0) with the bookkeeping of both bands, negative controls; the second check: a separate builder against Lemma B, the blocks end to end (k ≤ 9) and the family forms at members far from the sample points |
-| `marked_copy/middle/` (`prepare_frozen.sh`, `run_all.sh`, `run_extra*.sh`, notes in `marked_copy/middle/NOTES.md`) | Section 4b, Theorem MS and the extension of Theorem MK to k ≤ 40: the irrep split against the Lemma B block (k ≤ 7) and class sums, the families [q0 ≥ 4, t ≥ 4, i = b] (b = 1, …, 4) certified with the split, the one-size families again in the new basis, the fixed-k certificates for 33 ≤ k ≤ 40, coverage for every k ≤ 80, negative controls |
+| `marked_copy/` (`run_all.sh`, `run_check.sh`, notes in `marked_copy/NOTES.md`) | Section 4b, Theorems MK, MB and MI: the reduced forms of the letter-1 blocks with one copy of a different weight against exact projections of the Lemma B block (k ≤ 9) and the dimension counts (k ≤ 6), the fixed-k certificates in σ (k ≤ 32, 3 909 forms) and their coverage, the families symbolic in one size (two for i = 0) with the bookkeeping of both bands, negative controls; the second check: a separate builder against Lemma B, the blocks end to end (k ≤ 9) and the family forms at members far from the sample points; `run_check_mi.sh` (`mfcheck.py`): 240 members of the families of Theorem MP with 56 ≤ k ≤ 100 |
+| `marked_copy/middle/` (`prepare_frozen.sh`, `run_all.sh`, `run_extra*.sh`, notes in `marked_copy/middle/NOTES.md`) | Section 4b, Theorem MS and the extension of Theorem MK to k ≤ 40: the irrep split against the Lemma B block (k ≤ 7) and class sums, the families [q0 ≥ 4, t ≥ 4, i = b] (b = 1, …, 4) certified with the split, the one-size families again in the new basis, the fixed-k certificates for 33 ≤ k ≤ 40, coverage for every k ≤ 80, negative controls; `run_all_mi.sh`, `run_extra_mi.sh` (notes in `marked_copy/middle/NOTES_MI.md`): Theorem MP (the three-row parts with i symbolic, the eleven edge families, i = 5, 6) and the fixed-k certificates for 41 ≤ k ≤ 55 |
 | `middle_j1_t1_sub/` (`run_all.sh`, notes in `middle_j1_t1_sub/NOTES.md`) | Section 3h, general weights: Propositions Q and RP and Lemma K (reductions, identities and conclusions exactly at rational points, the identity of Proposition Q symbolically for |U| = 2, 3), negative controls; the exact two-copy certificates behind Conjecture TC at 25 weight vectors and their controls; floating-point surveys |
 | `middle_k2/` (`run_all.sh`, notes in `middle_k2/NOTES.md`) | Section 3e: the closed form of the letter-1 block of (R∞)_{k−2} against a direct construction (k = 4, 5), Lemmas R1, J, W, BJ and Proposition S exactly (k = 4, 5, 6), and a numerical sweep (k = 4, …, 7) |
 | `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |

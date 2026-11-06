@@ -1,0 +1,3 @@
+n,n,6 (i >= 5 if symbolic): 16 vectors, members up to k = 73 agree (2s)
+27 (member, sigma) points, 6912 entries compared
+PASS 2s

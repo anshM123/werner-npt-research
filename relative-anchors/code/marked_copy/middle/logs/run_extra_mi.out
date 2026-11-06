@@ -1,0 +1,8 @@
+run_extra_mi.sh started Fri Nov  6 02:06:34 EST 2026
+PASS  mid_i6  (python prove_gen.py logs/mid_i6.pkl n,n,6; expect PASS; 933 s)
+PASS  cert_rest_mi2  (python cert_rest_mi.py 51 55 logs/members_51_55.pkl logs/mid_i6.pkl logs/gen3.pkl logs/edges_q.pkl logs/edges_t.pkl logs/mid_i5.pkl logs/mid_i1.pkl logs/mid_i2.pkl logs/mid_i3.pkl logs/mid_i4.pkl logs/fam_1_1.pkl logs/fam_lowirr_0.pkl logs/frozen/band_bottom_8.pkl logs/frozen/band_top_8.pkl; expect PASS; 223 s)
+PASS  coverage_mi2  (python coverage_mi.py 120 32 7 56 logs/members_33_40.pkl logs/members_41_50.pkl logs/members_51_55.pkl logs/mid_i6.pkl logs/gen3.pkl logs/edges_q.pkl logs/edges_t.pkl logs/mid_i5.pkl logs/mid_i1.pkl logs/mid_i2.pkl logs/mid_i3.pkl logs/mid_i4.pkl logs/fam_1_1.pkl logs/fam_lowirr_0.pkl logs/frozen/band_bottom_8.pkl logs/frozen/band_top_8.pkl; expect PASS; 5 s)
+PASS  famcheck_i6  (python famcheck_mi.py n,n,6; expect PASS; 3 s)
+PASS  neg_i6  (python prove_gen.py logs/unused.pkl n,n,6 --bscale=1001/1000 --tlimit=300; expect FAIL; 4 s)
+total 1169 s
+ALL PASS

@@ -1,0 +1,70 @@
+[q0>=4, t>=4, i=6] parts 32, bscale 1
+  form computed (1.4s), 16 vectors, largest entry 1174 terms
+  sanity against mlib done (2.0s)
+  congruence done (2.3s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4; largest entries 1178 / 729 terms
+    part3 pivot S10: num 359 terms, den 280 terms (2.3s)
+      row S00 updated (2.3s), largest entry 1773 terms
+      row S01 updated (2.3s), largest entry 1773 terms
+      row S11 updated (2.4s), largest entry 1862 terms
+    part3 pivot S00: num 976 terms, den 797 terms (2.4s)
+      row S01 updated (2.4s), largest entry 1773 terms
+      row S11 updated (2.4s), largest entry 1862 terms
+    part3 pivot S01: num 976 terms, den 797 terms (2.5s)
+    part3 pivot S11: num 976 terms, den 886 terms (2.5s)
+    part2 pivot G1: num 9 terms, den 12 terms (2.5s)
+      row O0 updated (2.5s), largest entry 3205 terms
+      row O1 updated (2.5s), largest entry 3167 terms
+      row G0 updated (2.5s), largest entry 568 terms
+      row U00 updated (2.5s), largest entry 11445 terms
+      row U01 updated (2.5s), largest entry 11108 terms
+      row W00 updated (2.5s), largest entry 6932 terms
+      row W01 updated (2.5s), largest entry 6519 terms
+      row W10 updated (2.5s), largest entry 6242 terms
+      row W11 updated (2.5s), largest entry 6078 terms
+    part2 pivot G0: num 5 terms, den 15 terms (2.5s)
+      row O0 updated (2.6s), largest entry 2676 terms
+      row O1 updated (2.6s), largest entry 2643 terms
+      row U00 updated (2.8s), largest entry 10826 terms
+      row U01 updated (2.9s), largest entry 10521 terms
+      row W00 updated (2.9s), largest entry 6490 terms
+      row W01 updated (3.0s), largest entry 6245 terms
+      row W10 updated (3.0s), largest entry 5822 terms
+      row W11 updated (3.0s), largest entry 5807 terms
+    part2 pivot O0: num 182 terms, den 189 terms (3.0s)
+      row O1 updated (3.1s), largest entry 3753 terms
+      row U00 updated (3.7s), largest entry 29263 terms
+      row U01 updated (4.2s), largest entry 28699 terms
+      row W00 updated (4.3s), largest entry 16794 terms
+      row W01 updated (4.4s), largest entry 16337 terms
+      row W10 updated (4.5s), largest entry 15551 terms
+      row W11 updated (4.6s), largest entry 15528 terms
+    part2 pivot O1: num 147 terms, den 215 terms (4.6s)
+      row U00 updated (6.4s), largest entry 33177 terms
+      row U01 updated (7.9s), largest entry 32512 terms
+      row W00 updated (8.5s), largest entry 19514 terms
+      row W01 updated (9.0s), largest entry 19002 terms
+      row W10 updated (9.4s), largest entry 18125 terms
+      row W11 updated (9.5s), largest entry 18105 terms
+    part2 pivot W10: num 8293 terms, den 7965 terms (9.6s)
+      row U00 updated (45.4s), largest entry 55587 terms
+      row U01 updated (72.9s), largest entry 54657 terms
+      row W00 updated (89.3s), largest entry 35727 terms
+      row W01 updated (100.9s), largest entry 34977 terms
+      row W11 updated (106.3s), largest entry 33595 terms
+    part2 pivot W11: num 12673 terms, den 13277 terms (106.3s)
+      row U00 updated (196.0s), largest entry 74444 terms
+      row U01 updated (262.5s), largest entry 73285 terms
+      row W00 updated (289.7s), largest entry 49912 terms
+      row W01 updated (304.5s), largest entry 48963 terms
+    part2 pivot W01: num 19136 terms, den 18474 terms (304.6s)
+      row U00 updated (452.1s), largest entry 84204 terms
+      row U01 updated (547.7s), largest entry 80650 terms
+      row W00 updated (572.3s), largest entry 49912 terms
+    part2 pivot W00: num 19099 terms, den 18576 terms (572.4s)
+      row U00 updated (706.8s), largest entry 79285 terms
+      row U01 updated (775.3s), largest entry 80554 terms
+    part2 pivot U00: num 38513 terms, den 40772 terms (775.6s)
+    part2 pivot U01: num 39873 terms, den 40986 terms (932.5s)
+[q0>=4, t>=4, i=6] PD on complement (pivots 10 + 4, kernel 2)  (932.5s)  largest pivot 40986 terms
+1 families proved (parts 32), 0 empty, of 1; 933s
+PASS

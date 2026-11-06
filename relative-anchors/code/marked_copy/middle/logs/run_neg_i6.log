@@ -1,0 +1,14 @@
+[q0>=4, t>=4, i=6] parts 32, bscale 1001/1000
+  form computed (1.4s), 16 vectors, largest entry 1200 terms
+  sanity against mlib done (1.8s)
+  congruence done (2.0s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4; largest entries 1200 / 749 terms
+    part3 pivot S00: num 370 terms, den 280 terms (2.0s)
+      row S01 updated (2.1s), largest entry 1798 terms
+      row S10 updated (2.1s), largest entry 1798 terms
+      row S11 updated (2.1s), largest entry 1993 terms
+    part3 pivot S01: num 990 terms, den 808 terms (2.1s)
+      row S10 updated (2.3s), largest entry 1798 terms
+      row S11 updated (2.4s), largest entry 1993 terms
+[q0>=4, t>=4, i=6] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 990 terms, den 808)  (2.4s)  largest pivot 990 terms
+0 families proved (parts 32), 0 empty, of 1; 2s
+FAIL

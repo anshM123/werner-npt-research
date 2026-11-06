@@ -1,0 +1,6 @@
+run_check_mi.sh started Fri Nov  6 02:28:42 EST 2026
+PASS  members_mi_n56  (python mfcheck.py n56 60 501 100; 3 s)
+PASS  members_mi_eq  (python mfcheck.py eq 60 502 100; 2 s)
+PASS  members_mi_et  (python mfcheck.py et 60 503 100; 3 s)
+PASS  members_mi_g7  (python mfcheck.py g7 60 504 100; 2 s)
+ALL PASS

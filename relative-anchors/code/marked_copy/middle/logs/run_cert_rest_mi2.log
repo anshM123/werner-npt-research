@@ -1,0 +1,7 @@
+k=51: 225 reduced forms outside the proved families certified (39.1s)
+k=52: 240 reduced forms outside the proved families certified (41.5s)
+k=53: 256 reduced forms outside the proved families certified (43.9s)
+k=54: 272 reduced forms outside the proved families certified (47.5s)
+k=55: 289 reduced forms outside the proved families certified (50.1s)
+1282 forms with 51 <= k <= 55; 222s
+PASS
