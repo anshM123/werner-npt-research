@@ -192,6 +192,32 @@ corners"). So the letter-1 blocks of Theorems T, B0, E1, MF, L∞ and of Section
 (`code/check_qubit_letter1.py` builds the qubit operator from its definition and compares it with the letter-1
 blocks of Lemma B exactly, for k = 3, 4 and j = 0, …, k − 1.)
 
+**Lemma BA (a Bethe ansatz for E_c).** Work on the strings with the letters 0 and 1. (On a sector whose letters 2 sit
+on a set T, E_c is s_T plus the same operator on the other copies.) Put σ_t⁺ = |1⟩⟨0|_t and
+B(x) = Σ_t w_t σ_t⁺/(s_t − x). For distinct x_1, …, x_c outside {s_t} put |x⟩ = B(x_1)⋯B(x_c)|vac⟩, and let |x^{(a)}⟩ be
+the same product without B(x_a). Then
+
+    E_c|x⟩ = (2|s| − 2 Σ_a x_a)|x⟩ + Σ_a (½Λ_a − 2) J⁺|x^{(a)}⟩,   Λ_a = Σ_t s_t/(s_t − x_a) + 2 Σ_{b≠a} x_b/(x_a − x_b).
+
+So whenever the Bethe equations Λ_a = 4 hold (a = 1, …, c) and |x⟩ ≠ 0, |x⟩ is an eigenvector of E_c with eigenvalue
+2|s| − 2 Σ_a x_a.
+
+*Proof.* Here C = 2Σ_t s_t(1 − n_t). The operators B(x), J⁺ commute among themselves, and:
+- [C, B(x)] = −2Σ_t s_t w_t σ_t⁺/(s_t − x) = −2J⁺ − 2xB(x);
+- [J⁻, B(x)] = K(x) := Σ_t s_t(1 − 2n_t)/(s_t − x), with K(x)|vac⟩ = Σ_t s_t/(s_t − x)|vac⟩;
+- [K(x), B(y)] = −2(xB(x) − yB(y))/(x − y), by s_t/((s_t − x)(s_t − y)) = (x/(s_t − x) − y/(s_t − y))/(x − y).
+
+Moving C and then J⁻ to the right gives C|x⟩ = (2|s| − 2Σ_a x_a)|x⟩ − 2Σ_a J⁺|x^{(a)}⟩ and J⁻|x⟩ = Σ_a Λ_a|x^{(a)}⟩,
+and E_c = C + ½J⁺J⁻. ∎
+
+So E_c on the letters 0, 1 is a pairing Hamiltonian of Richardson–Gaudin type, with single-particle levels s_t and
+pair amplitudes w_t, w_t² = s_t, for every weight vector. In floating point every eigenvector we tested (k = 6 with
+c = 2, k = 7 with c = 3, random weights) is such a Bethe state. Fitted Bethe roots satisfy the equations and give the
+eigenvalues; slightly perturbed matrices have no such eigenvectors. Tools for these models might give the E⁻¹ terms of
+Lemma B in closed form for general weights; we have not used them yet. (`code/check_bethe.py` checks the identity
+above exactly, with symbolic x_a and symbolic weights, for 1 ≤ c ≤ k ≤ 4, and with rational weights for k = 5,
+c ≤ 3.)
+
 ## 3. The condition (R∞)_{k−1}, every k
 
 **Theorem T.** For every k ≥ 2 and all w_t > 0, the letter-1 block of (R∞)_{k−1} is ⪰ 0. Its kernel is exactly
@@ -1496,6 +1522,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `check_normal_order.py` | Lemma N and Proposition K2, exactly, k ≤ 6 |
 | `check_g0_inverse.py` | Lemma G, exactly, k ≤ 4 |
 | `check_qubit_letter1.py` | The Remark after Lemma G: the letter-1 blocks equal the qubit (d = 2) operator built from its definition, exactly, k = 3, 4 |
+| `check_bethe.py` | Lemma BA: the off-shell identity for B(x_1)⋯B(x_c)\|vac⟩, exactly (symbolic roots; symbolic weights for k ≤ 4, rational weights for k = 5) |
 | `check_top_block.py` | Theorem T: closed form, both radicals, the reduction and the bound, exactly, k = 2, …, 6 |
 | `check_typeII.py`, `check_typeI_u0.py` | Propositions T2 and U0 (closed forms, exact pivots, coefficient signs) |
 | `eqlib.py`, `eqlib2.py`, `orbit.py`, `orbit3.py`, `symf.py` | Equal-weight reduced forms and the orbit calculus |
