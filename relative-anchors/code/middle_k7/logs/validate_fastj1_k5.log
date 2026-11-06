@@ -1,0 +1,4 @@
+point 0: weights ['5/6', '3', '3/4', '3/2', '5/2'] done [3.9s]
+point 1: weights ['2/5', '1/3', '5/2', '4/3', '3'] done [9.0s]
+1536 groups, 229012 entries compared
+PASS

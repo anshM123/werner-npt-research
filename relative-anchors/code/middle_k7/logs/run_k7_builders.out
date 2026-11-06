@@ -1,0 +1,3 @@
+run_k7_builders.sh started Thu Nov  5 20:38:33 EST 2026
+PASS  builders_k7  (python check_builders.py j3m0,j3m1,j3m2,j3m3,j4m0,j4m1,j4m2,j4m3,j4m4,j5m0,j5m1,j5m2,j5m3,j5m4,j5m5,j6m2,j6m3,j6m4 k=7 reps=1; expect PASS; 2230 s)
+ALL PASS

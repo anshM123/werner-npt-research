@@ -1,0 +1,128 @@
+j3m0: (a) saved block = Lemma B block at 12 (configuration, q) pairs; (b) = ylib point block at 4 configurations: True [212.0s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 4 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 4 in the squared weights: True
+j3m1: (a) saved block = Lemma B block at 21 (configuration, q) pairs; (b) = ylib point block at 7 configurations: True [572.3s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 3 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 3 in the squared weights: True
+j3m2: (a) saved block = Lemma B block at 27 (configuration, q) pairs; (b) = ylib point block at 9 configurations: True [717.1s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 2 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 2 in the squared weights: True
+j3m3: (a) saved block = Lemma B block at 30 (configuration, q) pairs; (b) = ylib point block at 10 configurations: True [775.7s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 1 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 1 in the squared weights: True
+j4m0: (a) saved block = Lemma B block at 12 (configuration, q) pairs; (b) = ylib point block at 4 configurations: True [967.9s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 5 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 5 in the squared weights: True
+j4m1: (a) saved block = Lemma B block at 21 (configuration, q) pairs; (b) = ylib point block at 7 configurations: True [1294.6s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 4 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 4 in the squared weights: True
+j4m2: (a) saved block = Lemma B block at 27 (configuration, q) pairs; (b) = ylib point block at 9 configurations: True [1482.6s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 3 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 3 in the squared weights: True
+j4m3: (a) saved block = Lemma B block at 30 (configuration, q) pairs; (b) = ylib point block at 10 configurations: True [1580.4s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 2 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 2 in the squared weights: True
+j4m4: (a) saved block = Lemma B block at 30 (configuration, q) pairs; (b) = ylib point block at 10 configurations: True [1632.8s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 1 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 1 in the squared weights: True
+j5m0: (a) saved block = Lemma B block at 12 (configuration, q) pairs; (b) = ylib point block at 4 configurations: True [1694.6s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 6 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 6 in the squared weights: True
+j5m1: (a) saved block = Lemma B block at 21 (configuration, q) pairs; (b) = ylib point block at 7 configurations: True [1798.5s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 5 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 5 in the squared weights: True
+j5m2: (a) saved block = Lemma B block at 27 (configuration, q) pairs; (b) = ylib point block at 9 configurations: True [1899.7s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 4 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 4 in the squared weights: True
+j5m3: (a) saved block = Lemma B block at 30 (configuration, q) pairs; (b) = ylib point block at 10 configurations: True [1985.8s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 3 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 3 in the squared weights: True
+j5m4: (a) saved block = Lemma B block at 30 (configuration, q) pairs; (b) = ylib point block at 10 configurations: True [2052.5s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 2 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 2 in the squared weights: True
+j5m5: (a) saved block = Lemma B block at 27 (configuration, q) pairs; (b) = ylib point block at 9 configurations: True [2097.2s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 1 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 1 in the squared weights: True
+j6m2: (a) saved block = Lemma B block at 27 (configuration, q) pairs; (b) = ylib point block at 9 configurations: True [2136.6s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 5 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 5 in the squared weights: True
+j6m3: (a) saved block = Lemma B block at 30 (configuration, q) pairs; (b) = ylib point block at 10 configurations: True [2180.5s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 4 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 4 in the squared weights: True
+j6m4: (a) saved block = Lemma B block at 30 (configuration, q) pairs; (b) = ylib point block at 10 configurations: True [2218.7s]
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['1', '4/9', '9/16', '25/36', '49/4', '81/49', '121/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 3 in the squared weights: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1: ylib = Lemma B: True
+  (c) general weights s = ['9/4', '1/25', '16/9', '1', '25/49', '64/9', '36/25'], bscale 1001/1000: ylib = Lemma B: True
+  (d) homogeneous of degree 3 in the squared weights: True
+time 2229.6s
+PASS

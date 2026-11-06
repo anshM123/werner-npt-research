@@ -1,0 +1,6 @@
+run_crosscheck_k7.sh started Thu Nov  5 20:35:54 EST 2026
+PASS  negative_controls  (python crosscheck.py N; 1 s)
+PASS  all_blocks_k7  (python crosscheck.py A 7 24 7207; 3651 s)
+FAIL  saved_blocks_k7  (python crosscheck.py C logs 16; 2768 s)
+total 6420 s
+SOME STEP FAILED

@@ -1,0 +1,16 @@
+j3m0: (a) saved block = Lemma B block at 12 (configuration, q) pairs; (b) = ylib point block at 4 configurations: True [160.4s]
+Traceback (most recent call last):
+  File "check_builders.py", line 67, in <module>
+    st, Mj = K.build_j1(k, j, T, w, bscale=bs)
+             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "k5lib.py", line 185, in build_j1
+    v = J.entry(to_j1(states[i], k), to_j1(states[l], k)) * mu(states[i], w) * mu(states[l], w) / 2 ** Z
+        ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "j1lib.py", line 151, in entry
+    t2 = self.Einv(self.Tm(a, {y: F(1)}))
+  File "j1lib.py", line 133, in Einv
+    val = sum((Mi[i][idx[z]] * c for z, c in vv.items()), self.F(0))
+  File "j1lib.py", line 133, in <genexpr>
+    val = sum((Mi[i][idx[z]] * c for z, c in vv.items()), self.F(0))
+                     ~~~^^^
+KeyError: (0, 0, 0, 0, 1, 1, 1)
