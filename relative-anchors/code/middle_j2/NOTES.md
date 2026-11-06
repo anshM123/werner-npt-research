@@ -10,8 +10,8 @@
 | 2 | **Lemma P2** (family 1, P-states first). For every k ≥ 3, every T = {t, τ} and every positive weight vector, the family-1 block is ⪰ 0 with kernel exactly p ⊗ \|2@t 2@τ⟩ if and only if the explicit matrix Φ = C − Bᵀ diag(1/N) B of size 3k − 4 is positive definite | **proved** (by hand, Section 2); identities **checked exactly** (`check_t2.py`) |
 | 3 | Closed forms of all ten sub-blocks of family 1 (Lemma F1), all weights | **proved** (by hand from Lemma B, Section 2); **exact check** entry by entry against the Lemma B builder `j1lib.py` at 6 random rational weight vectors (k = 4, 5, 6; every copy of U treated as its own orbit, so no symmetry is used), with the B-part scaled by 1 and by 1001/1000; `j1lib.py` = `ylib.py` on the blocks (`check_ylib_r2.py`) |
 | 4 | **Theorem F1a.** Family 1 for every k ≥ 4 when the weights of U = [k] ∖ {t, τ} are all equal, with **arbitrary** weights on t and τ: ⪰ 0 with kernel exactly p ⊗ \|2@t 2@τ⟩ | **proved**, computer-assisted, exact, symbolic in u = k − 2 ≥ 2 and in the three weights (Section 2.4) |
-| 5 | **Theorem F1b.** Family 1 for every k ≥ 5 whenever all k weights take at most two values **and** either t and τ have equal weights, or U lies in one level, or one of the two U-levels has at most M_1 = 40 copies (M_1 = 12 in `run_all.sh`, extended to 40 by `run_fext.sh`, Section 5b). In particular every two-value weight vector with 5 ≤ k ≤ 83 | **proved**, computer-assisted, exact (Section 2.4: regimes, certificates, coverage) |
-| 5b | The remaining two-value configurations of family 1: t and τ with different weights and both U-levels with more than M_1 = 40 copies (possible only for k ≥ 84). The certificate of the regime tw = (0, 1), (2+, 2+) passed 7 of the 8 leading minors of the invariant form (minor 7: numerator degree 158 with 91 162 terms) and was stopped by hand during minor 8 after about 23 minutes in all (memory up to 1.8 GB), to leave time for the other checks (`logs/attempts/stopped_regimes.txt`) | **open** beyond M_1 (Section 2.4) |
+| 5 | **Theorem F1b.** Family 1 for every k ≥ 5 and every weight vector whose k weights take at most two values | **proved**, computer-assisted, exact (Section 2.4: regimes, certificates, coverage; the regime of row 5b in `run_open.sh`, Section 5c) |
+| 5b | The two-value configurations of family 1 with t and τ of different weights and both U-levels with more than M_1 = 40 copies (possible only for k ≥ 84): the regime tw = (0, 1), (2+, 2+), with both U-levels symbolic | **proved** (`run_open.sh`, Section 5c): all 8 leading minors of the invariant form (the last with numerator degree 168 and 108 720 terms, under an hour) and the two standard forms pass. An earlier attempt passed 7 of the 8 and was stopped by hand during minor 8 (`logs/attempts/stopped_regimes.txt`) |
 | 6 | Family 1 with arbitrary weights on t and τ and U-weights on two levels (the full target for this family) | **open**. Attempted: 8 × 8 invariant form in five variables; the standard part passed its first two minors (53 124 terms) and the run was stopped during the third (Section 2.6) |
 | 7 | Closed forms of all six sub-blocks of family 2 (Lemma F2), all weights | **proved** (by hand from Lemma B and Woodbury, Section 3); **exact check** entry by entry against `j1lib.py` at 6 two-level weight vectors (k = 4, 5, 6), B-part scaled by 1 and 1001/1000 (`check_f2.py`) |
 | 8 | Symmetry reduction of family 2 (Lemma F2.2): parts, test vectors, pattern sums | **proved**; **exact checks**: reduced blocks against explicit projections of the `j1lib.py` block at 13 size pairs (both scalings, irreps on either level), kernels, and dimension counts for every size pair with 5 ≤ k ≤ 60 (`check_f2.py`, `dims.py`) |
@@ -351,6 +351,16 @@ the invariant part at (m, 3+) and (3+, m), for family 1 the regime tw = (0, 1) a
 KMAX=100` checks that every configuration with 5 ≤ k ≤ 100 inside the statements of Theorems F1b and F2b with
 M_1 = M_2 = 40 lies in a certified regime (`coverage.py` takes the largest k as an option; the default 60 is the
 one used by `run_all.sh`). All steps pass (`logs/run_fext.out`).
+
+## 5c. The open regime of family 1 (`run_open.sh`)
+
+`run_open.sh` certifies family 1 in the regime tw = (0, 1), (2+, 2+): t and τ of different weights, both U-levels
+symbolic (u₀ = 2 + x₀, u₁ = 2 + x₁), variables (q, x₀, x₁). The two standard forms (3 × 3) pass in a second; the
+invariant form (8 × 8) passes with all 8 leading minors one-signed (minor 8: numerator degree 168, 108 720 terms;
+denominator degree 158, 88 560 terms; under an hour, under 2.5 GB). With this regime, `coverage.py 40 M1=40
+KMAX=120 F1OPEN=1` finds every configuration of family 1 with 5 ≤ k ≤ 120 in a certified regime and none outside
+the statement, so Theorem F1b holds for every k (the regimes are uniform in the symbolic sizes). Family 2 at
+(3+, 3+) (row 10b) is still open.
 
 ## 6. Files and the final run
 

@@ -1,0 +1,8 @@
+family 1, levels ['2+', '2+'], T-weights (0, 1), form Phi, bscale 1, variables ['q1', 'x0', 'x1'] [0.1s]
+  forms built: invariant 8 x 8 [0.1s]
+  std1: size 3, symmetric: True
+  std1 minor 1: sign 1; numerator deg 9 (35 terms), denominator deg 8 (35 terms); [one-signed 9/35] [one-signed 8/35] [0.1s]
+  std1 minor 2: sign 1; numerator deg 30 (680 terms), denominator deg 28 (680 terms); [one-signed 30/680] [one-signed 28/680] [0.1s]
+  std1 minor 3: sign 1; numerator deg 59 (4495 terms), denominator deg 56 (4495 terms); [one-signed 59/4495] [one-signed 56/4495] [0.2s]
+time 0.2s
+PASS

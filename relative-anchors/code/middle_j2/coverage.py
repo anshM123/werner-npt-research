@@ -2,6 +2,8 @@
 5 <= k <= 60.  The regimes are uniform in the sizes they leave symbolic, so the same bookkeeping holds for every k.
 
 python coverage.py M2 [M1=n] [KMAX=n]  (KMAX: largest k checked, default 60)
+  F1OPEN=1 / F2OPEN=1: include the regimes certified by run_open.sh (family 1: tw = (0, 1) at (2+, 2+); family 2:
+  the inv part at (3+, 3+)); then the corresponding configurations are no longer outside the statement
 
 Two symmetries reduce the regimes:
   (S1) exchanging the names of the two levels: divide every squared weight by q (the rescaled blocks are homogeneous of
@@ -21,6 +23,8 @@ M = int(sys.argv[1])
 opts = dict(a.split('=', 1) for a in sys.argv[2:] if '=' in a)
 M1 = int(opts.get("M1", "1"))
 KMAX = int(opts.get("KMAX", "60"))
+F1OPEN = opts.get("F1OPEN", "0") == "1"   # the regime tw = (0, 1), (2+, 2+) of family 1 is certified (run_open.sh)
+F2OPEN = opts.get("F2OPEN", "0") == "1"   # the inv part of family 2 at (3+, 3+) is certified (run_open.sh)
 ok = True
 
 
@@ -33,6 +37,8 @@ def inreg(spec, u):
 # ---------------- family 1
 F1_TWO = {(0, 0): [('1', '2+'), ('2+', '1'), ('2+', '2+')],
           (0, 1): [('1', '2+')] + [(str(m), '2+') for m in range(2, M1 + 1)]}
+if F1OPEN:
+    F1_TWO[(0, 1)].append(('2+', '2+'))
 
 
 def f1_cert(la, lb, u0, u1):
@@ -66,6 +72,8 @@ print(f'family 1: {n1} two-level configurations with 5 <= k <= {KMAX} covered: {
 REG = {('inv', 0): [('1', '3+'), ('3+', '1'), ('2', '2'), ('2', '3+'), ('3+', '2')] +
        [(str(m), '3+') for m in range(3, M + 1)] + [('3+', str(m)) for m in range(3, M + 1)],
        ('mix', 0): [('2', '2'), ('2', '3+'), ('3+', '2'), ('3+', '3+')]}
+if F2OPEN:
+    REG[('inv', 0)].append(('3+', '3+'))
 for lt in (0, 1):
     REG[('std', lt)] = [('2', '2'), ('2', '3+'), ('3+', '1'), ('3+', '2'), ('3+', '3+')]
     REG[('two', lt)] = [('4+', '1'), ('4+', '2'), ('4+', '3+')]

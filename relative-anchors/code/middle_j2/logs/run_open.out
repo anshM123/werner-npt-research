@@ -1,0 +1,6 @@
+run_open.sh started Fri Nov  6 00:49:01 EST 2026
+PASS  f1_open_std0  (python cert_t2.py 2+ 2+ part=std0 tw=0,1; expect PASS; 1 s)
+PASS  f1_open_std1  (python cert_t2.py 2+ 2+ part=std1 tw=0,1; expect PASS; 1 s)
+PASS  f1_open_inv  (python cert_t2.py 2+ 2+ part=inv tw=0,1; expect PASS; 2237 s)
+PASS  coverage_open  (python coverage.py 40 M1=40 KMAX=120 F1OPEN=1; expect PASS; 1 s)
+ALL PASS
