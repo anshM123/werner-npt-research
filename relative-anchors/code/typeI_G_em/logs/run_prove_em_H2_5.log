@@ -1,0 +1,7 @@
+A_inv      numerator:   58905 terms, degrees [33, 33, 32, 32, 32], negative coefficients 0, positive 58905; monomial free of ('x', 'r'): True; denominator factors one-signed: True (sign +1) -> CERTIFIED [0.7s]
+A_std      numerator:   14950 terms, degrees [23, 23, 22, 22, 22], negative coefficients 0, positive 14950; monomial free of ('x', 'r'): True; denominator factors one-signed: True (sign +1) -> CERTIFIED [0.1s]
+B_inv_00   numerator:     664 terms, degrees [13, 0, 14, 13, 13], negative coefficients 0, positive 664; monomial free of ('x',): True; denominator factors one-signed: True (sign +1) -> CERTIFIED [0.0s]
+B_inv_det  numerator:    1687 terms, degrees [19, 0, 19, 18, 18], negative coefficients 0, positive 1687; monomial free of ('x',): True; denominator factors one-signed: True (sign +1) -> CERTIFIED [0.0s]
+B_std      numerator:     352 terms, degrees [11, 0, 11, 10, 10], negative coefficients 0, positive 352; monomial free of ('x',): True; denominator factors one-signed: True (sign +1) -> CERTIFIED [0.0s]
+H = 2/5: all five conditions certified: True [1.8s]
+PASS

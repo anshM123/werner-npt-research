@@ -1,0 +1,18 @@
+forms built in 47.0 s
+inv eliminated in 48.6 s
+  G[rho1,rho1]: num terms 477, den terms 477
+  G[rho1,z1]: num terms 370, den terms 477
+  G[rho1,rho2]: num terms 1887, den terms 3435
+  G[rho1,z2]: num terms 2032, den terms 3435
+  G[z1,z1]: num terms 470, den terms 477
+  G[z1,rho2]: num terms 2032, den terms 3435
+  G[z1,z2]: num terms 2576, den terms 3435
+  G[rho2,rho2]: num terms 477, den terms 477
+  G[rho2,z2]: num terms 370, den terms 477
+  G[z2,z2]: num terms 470, den terms 477
+std eliminated in 49.4 s
+  G[z1,z1]: num terms 281, den terms 252
+  G[z1,z2]: num terms 551, den terms 905
+  G[z2,z2]: num terms 281, den terms 252
+done in 49.4 s
+PASS

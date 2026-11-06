@@ -1,0 +1,16 @@
+run_all.sh started Thu Nov  5 23:29:00 EST 2026
+python 3.14.3, python-flint 0.9.0, sympy 1.14.0, numpy 2.4.6
+step equal_m: PASS (exit status 0, 51 s, last line: PASS)
+step check_equal_m: PASS (exit status 0, 2 s, last line: PASS)
+step prove_em: PASS (exit status 0, 2 s, last line: PASS)
+step prove_em_H2_5: PASS (exit status 0, 3 s, last line: PASS)
+step prove_em_H29_100: PASS (exit status 0, 2 s, last line: PASS)
+step prove_em_H7_10: PASS (exit status 0, 3 s, last line: PASS)
+step check_e2e: PASS (exit status 0, 16 s, last line: PASS)
+step controls_em: PASS (exit status 0, 6 s, last line: PASS)
+step witness_moments: PASS (exit status 0, 1 s, last line: PASS)
+step ex_frame: PASS (exit status 0, 34 s, last line: PASS)
+step sweep_general: PASS (exit status 0, 3 s, last line: PASS)
+step ex_Agrowth: PASS (exit status 0, 27 s, last line: exploration done)
+run_all.sh finished Thu Nov  5 23:31:32 EST 2026
+ALL PASS

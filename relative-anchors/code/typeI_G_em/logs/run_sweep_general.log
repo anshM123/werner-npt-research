@@ -1,0 +1,14 @@
+u=3 m=2: worst so far A=0.2933 (at (3, 2, 1)) B=0.7500 (at (3, 2, 1)) ratio=0.2858 lam_min=2.46e-04 [0s]
+u=3 m=3: worst so far A=0.2933 (at (3, 2, 1)) B=0.7500 (at (3, 2, 1)) ratio=0.2858 lam_min=2.46e-04 [0s]
+u=4 m=2: worst so far A=0.2933 (at (3, 2, 1)) B=0.7500 (at (3, 2, 1)) ratio=0.2858 lam_min=2.46e-04 [0s]
+u=4 m=3: worst so far A=0.2933 (at (3, 2, 1)) B=0.7500 (at (3, 2, 1)) ratio=0.2885 lam_min=2.46e-04 [0s]
+u=5 m=2: worst so far A=0.2933 (at (3, 2, 1)) B=0.7500 (at (3, 2, 1)) ratio=0.2916 lam_min=2.46e-04 [0s]
+u=5 m=3: worst so far A=0.2933 (at (3, 2, 1)) B=0.7500 (at (3, 2, 1)) ratio=0.2916 lam_min=2.46e-04 [0s]
+u=6 m=2: worst so far A=0.2933 (at (3, 2, 1)) B=0.7500 (at (3, 2, 1)) ratio=0.2916 lam_min=2.46e-04 [0s]
+u=6 m=3: worst so far A=0.2933 (at (3, 2, 1)) B=0.7500 (at (3, 2, 1)) ratio=0.2916 lam_min=2.46e-04 [0s]
+u=8 m=2: worst so far A=0.2933 (at (3, 2, 1)) B=0.7500 (at (3, 2, 1)) ratio=0.2916 lam_min=2.46e-04 [1s]
+u=8 m=3: worst so far A=0.3128 (at (8, 3, 1)) B=0.7500 (at (3, 2, 1)) ratio=0.2916 lam_min=2.46e-04 [1s]
+u=10 m=2: worst so far A=0.3165 (at (10, 2, 5)) B=0.7500 (at (3, 2, 1)) ratio=0.2916 lam_min=2.46e-04 [1s]
+u=10 m=3: worst so far A=0.3165 (at (10, 2, 5)) B=0.7500 (at (3, 2, 1)) ratio=0.2916 lam_min=2.46e-04 [2s]
+families: 0 log-uniform, 1 S shrunk, 2 sigma shrunk, 3 one U-weight dominant, 4 one U-weight tiny, 5 two values, 6 equal U-weights
+PASS
