@@ -50,8 +50,9 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
   dimension-free two-copy theorem of Bharti–Gajjala–Haug, Tomar's three-copy theorem) plus nonnegative terms is
   infeasible at N = 4. The N singleton coefficients −1/2 cannot be supplied with total weight at most one.
 - **Single-vector anchors** (`support-and-projector-notes/`, Section 5).
-  - The Schur certificate of the product-ray theorem extends to "universal anchors", and generic vectors are anchors
-    at N ≤ 4.
+  - The Schur certificate of the product-ray theorem extends to "universal anchors". Random vectors sampled at
+    N ≤ 4 were anchors, but anchors are not generic: for every N ≥ 3 both the anchors and the non-anchors contain
+    nonempty open sets (Section 5 there; the W-plane and its neighbours contain no anchor).
   - Single excitations over a product are not anchors, and badness passes to tensor products
     (T_{u⊗g} = T_u ⊗ T_g with T_g ∋ 1).
   - So arguments that try to force a universal anchor into the range of a negative witness, after doubling or
