@@ -1,0 +1,5 @@
+  A built for s_t = s (u_i = 2 + x_i): symmetric True; entry numerator/denominator terms [(27027, 27027), (27026, 31058), (22605, 27026), (34712, 40450), (25651, 31054), (30246, 27022)] [2.0s]
+x1 = 40: specialisation 0.1s, entry gcds 0.0s, determinant 14.9s, composition back 0.1s; num 11910, den 12996 terms
+variant without entry gcds: determinant 14.8s, equal True
+variant with the common factor C (2313 terms) taken out: 37.5s, equal True
+PASS

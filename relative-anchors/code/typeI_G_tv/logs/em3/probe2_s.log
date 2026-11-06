@@ -1,0 +1,5 @@
+  A built for s_t = s (u_i = 2 + x_i): symmetric True; entry numerator/denominator terms [(27027, 27027), (27026, 31058), (22605, 27026), (34712, 40450), (25651, 31054), (30246, 27022)] [1.8s]
+built [1.8s]
+x1 = 0: closed-form variables 9.0s, orthant variables 12.5s; equal True; num 11910 terms, den 12996 terms
+x1 = 40: closed-form variables 13.8s, orthant variables 16.9s; equal True; num 11910 terms, den 12996 terms
+PASS

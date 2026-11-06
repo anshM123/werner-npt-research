@@ -1,8 +1,8 @@
 part tl_inv_one (u1 = 1, u2 = 2 + x2)
-    (A_inv (s, s) in the variables ['u2', 'sig', 's1']: numerator 19508 terms, denominator 17707 terms [0.8s])
-    tl_inv_one A_inv (s_t, s_t') = (s, s)    num   23275 terms (+23275 -0), degrees [0, 48, 50, 52], free monomial True, den 9 factors one-signed True -> CERTIFIED [0.3s]
-    (A_inv (s, 1) in the variables ['u2', 'sig', 's1']: numerator 21891 terms, denominator 19964 terms [1.1s])
-    tl_inv_one A_inv (s_t, s_t') = (s, 1)    num   23422 terms (+23422 -0), degrees [0, 48, 50, 51], free monomial True, den 13 factors one-signed True -> CERTIFIED [0.3s]
+    (A_inv (s, s) in the variables ['u2', 'sig', 's1']: numerator 19508 terms, denominator 17707 terms [0.7s])
+    tl_inv_one A_inv (s_t, s_t') = (s, s)    num   23275 terms (+23275 -0), degrees [0, 48, 50, 52], free monomial True, den 9 factors one-signed True -> CERTIFIED [0.2s]
+    (A_inv (s, 1) in the variables ['u2', 'sig', 's1']: numerator 21891 terms, denominator 19964 terms [1.0s])
+    tl_inv_one A_inv (s_t, s_t') = (s, 1)    num   23422 terms (+23422 -0), degrees [0, 48, 50, 51], free monomial True, den 13 factors one-signed True -> CERTIFIED [0.2s]
     (A_inv (1, 1) in the variables ['u2', 'sig', 's1']: numerator 17570 terms, denominator 15991 terms [0.7s])
     tl_inv_one A_inv (s_t, s_t') = (1, 1)    num   18285 terms (+18285 -0), degrees [0, 44, 46, 44], free monomial True, den 8 factors one-signed True -> CERTIFIED [0.2s]
     tl_inv_one B_inv s_t = s pivot 1         num    2277 terms (+2277 -0), degrees [0, 21, 22, 22], free monomial True, den 7 factors one-signed True -> CERTIFIED [0.0s]
@@ -10,7 +10,7 @@ part tl_inv_one (u1 = 1, u2 = 2 + x2)
     tl_inv_one B_inv s_t = s pivot 3         num    8752 terms (+8752 -0), degrees [0, 32, 35, 37], free monomial True, den 3 factors one-signed True -> CERTIFIED [0.1s]
     tl_inv_one B_inv s_t = 1 pivot 1         num    1750 terms (+1750 -0), degrees [0, 19, 20, 19], free monomial True, den 6 factors one-signed True -> CERTIFIED [0.0s]
     tl_inv_one B_inv s_t = 1 pivot 2         num    4787 terms (+4787 -0), degrees [0, 26, 28, 26], free monomial True, den 6 factors one-signed True -> CERTIFIED [0.0s]
-    tl_inv_one B_inv s_t = 1 pivot 3         num    7405 terms (+7405 -0), degrees [0, 30, 33, 30], free monomial True, den 3 factors one-signed True -> CERTIFIED [0.1s]
+    tl_inv_one B_inv s_t = 1 pivot 3         num    7405 terms (+7405 -0), degrees [0, 30, 33, 30], free monomial True, den 3 factors one-signed True -> CERTIFIED [0.0s]
 part tl_std2_one (u2 = 3 + x2)
     tl_std2_one A_std (s_t, s_t') = (s, s)   num    9139 terms (+9139 -0), degrees [0, 36, 36, 38], free monomial True, den 6 factors one-signed True -> CERTIFIED [0.1s]
     tl_std2_one A_std (s_t, s_t') = (s, 1)   num    9139 terms (+9139 -0), degrees [0, 36, 36, 37], free monomial True, den 8 factors one-signed True -> CERTIFIED [0.1s]
@@ -23,5 +23,5 @@ part tl_std2_onetwo (u2 = 2)
     tl_std2_onetwo A_std (s_t, s_t') = (1, 1) num     496 terms (+496 -0), degrees [0, 0, 30, 30], free monomial True, den 6 factors one-signed True -> CERTIFIED [0.0s]
     tl_std2_onetwo B_std s_t = s             num     135 terms (+135 -0), degrees [0, 0, 15, 15], free monomial True, den 5 factors one-signed True -> CERTIFIED [0.0s]
     tl_std2_onetwo B_std s_t = 1             num     135 terms (+135 -0), degrees [0, 0, 15, 14], free monomial True, den 5 factors one-signed True -> CERTIFIED [0.0s]
-H = 1/2: all certified: True [9.3s]
+H = 1/2: all certified: True [8.3s]
 PASS

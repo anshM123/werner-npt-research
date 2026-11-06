@@ -55,7 +55,7 @@ TK = ('A', 'B')
 
 
 # (u1, u2): an integer, or None for symbolic
-CASES = {'inv': dict([('one', (1, None)), ('gen', (None, None))] + [('f%d' % n, (n, None)) for n in range(2, 61)]),
+CASES = {'inv': dict([('one', (1, None)), ('gen', (None, None))] + [('f%d' % n, (n, None)) for n in list(range(2, 61)) + [77, 100, 200, 500]]),
          'std1': {'gen': (None, None), 'two': (2, None)},
          'std2': {'one': (1, None), 'onetwo': (1, 2), 'gen': (None, None), 'two': (None, 2)}}
 

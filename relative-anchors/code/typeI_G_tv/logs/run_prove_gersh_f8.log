@@ -5,5 +5,5 @@ part tl_inv_f8 (u1 = 8, u2 = 2 + x2): (B_inv)
     tl_inv_f8 B_inv s_t = 1 pivot 1          num    3627 terms (+3627 -0), degrees [0, 25, 26, 25], free monomial True, den 7 factors one-signed True -> CERTIFIED [0.0s]
     tl_inv_f8 B_inv s_t = 1 pivot 2          num    8227 terms (+8227 -0), degrees [0, 32, 34, 32], free monomial True, den 6 factors one-signed True -> CERTIFIED [0.1s]
     tl_inv_f8 B_inv s_t = 1 pivot 3          num   11910 terms (+11910 -0), degrees [0, 36, 39, 36], free monomial True, den 3 factors one-signed True -> CERTIFIED [0.1s]
-H = 1/2: all certified: True [32.9s]
+H = 1/2: all certified: True [26.0s]
 PASS

@@ -1,0 +1,11 @@
+  A built for s_t = 1 (u_i = 2 + x_i): symmetric True; entry numerator/denominator terms [(27027, 27027), (27026, 31058), (22605, 27026), (34712, 40450), (25651, 31054), (30246, 27022)] [1.1s]
+  9 irreducible factors of the entry denominators, all with positive coefficients and a monomial free of x1, x2, r: True; exponents of D*: [3, 3, 3, 4, 6, 6, 6, 4, 1] [2.7s]
+  slice x1 = 0: det numerator 11910 terms, denominator 12996 terms; exponents of the factors in the denominator: 3 1 1 2 4 2 6 2 1 [6.5s]
+  slice x1 = 7: det numerator 11910 terms, denominator 12996 terms; exponents of the factors in the denominator: 3 1 1 2 4 2 6 2 1 [10.0s]
+  slice x1 = 31: det numerator 11910 terms, denominator 12996 terms; exponents of the factors in the denominator: 3 1 1 2 4 2 6 2 1 [12.2s]
+  exponents of D*: [3, 3, 3, 4, 6, 6, 6, 4, 1]; of Den_c: [3, 1, 1, 2, 4, 2, 6, 2, 1]; Den_c divides D*: True
+  degree bounds of T = D* det A (x1, x2, r, s): {'x1': 76, 'x2': 76, 'r': 77, 's': 76}; deg D*: {'x1': 78, 'x2': 78, 'r': 77, 's': 78}
+  x1: B = 76, deg D* = 78, deg Den_c = 38, deg R = 40, low degree L = B - deg R = 36; grid x1 = 0..76 (77 slices)
+  every factor of Den_c has positive coefficients and a monomial free of x1, x2, r: True
+bounds s_t = 1 [31.4s]
+PASS

@@ -1,15 +1,15 @@
 part tl_inv_gen (u1 = 2 + x1, u2 = 2 + x2)
 part tl_std1_gen (u1 = 3 + x1, u2 = 1 + x2)
-    tl_std1_gen A_std (s_t, s_t') = (s, s)   num   91390 terms (+91390 -0), degrees [36, 36, 36, 38], free monomial True, den 6 factors one-signed True -> CERTIFIED [5.3s]
-    tl_std1_gen A_std (s_t, s_t') = (s, 1)   num   91390 terms (+91390 -0), degrees [36, 36, 36, 37], free monomial True, den 8 factors one-signed True -> CERTIFIED [2.2s]
-    tl_std1_gen A_std (s_t, s_t') = (1, 1)   num   91390 terms (+91390 -0), degrees [36, 36, 36, 36], free monomial True, den 6 factors one-signed True -> CERTIFIED [5.2s]
+    tl_std1_gen A_std (s_t, s_t') = (s, s)   num   91390 terms (+91390 -0), degrees [36, 36, 36, 38], free monomial True, den 6 factors one-signed True -> CERTIFIED [3.4s]
+    tl_std1_gen A_std (s_t, s_t') = (s, 1)   num   91390 terms (+91390 -0), degrees [36, 36, 36, 37], free monomial True, den 8 factors one-signed True -> CERTIFIED [1.5s]
+    tl_std1_gen A_std (s_t, s_t') = (1, 1)   num   91390 terms (+91390 -0), degrees [36, 36, 36, 36], free monomial True, den 6 factors one-signed True -> CERTIFIED [3.6s]
     tl_std1_gen B_std s_t = s                num    7125 terms (+7125 -0), degrees [17, 17, 18, 18], free monomial True, den 5 factors one-signed True -> CERTIFIED [0.0s]
-    tl_std1_gen B_std s_t = 1                num    7125 terms (+7125 -0), degrees [17, 17, 18, 17], free monomial True, den 5 factors one-signed True -> CERTIFIED [0.1s]
+    tl_std1_gen B_std s_t = 1                num    7125 terms (+7125 -0), degrees [17, 17, 18, 17], free monomial True, den 5 factors one-signed True -> CERTIFIED [0.0s]
 part tl_std1_two (u1 = 2, u2 = 1 + x2)
     tl_std1_two A_std (s_t, s_t') = (s, s)   num    5456 terms (+5456 -0), degrees [0, 30, 30, 32], free monomial True, den 6 factors one-signed True -> CERTIFIED [0.0s]
     tl_std1_two A_std (s_t, s_t') = (s, 1)   num    5456 terms (+5456 -0), degrees [0, 30, 30, 31], free monomial True, den 8 factors one-signed True -> CERTIFIED [0.0s]
     tl_std1_two A_std (s_t, s_t') = (1, 1)   num    5456 terms (+5456 -0), degrees [0, 30, 30, 30], free monomial True, den 6 factors one-signed True -> CERTIFIED [0.0s]
     tl_std1_two B_std s_t = s                num     800 terms (+800 -0), degrees [0, 14, 15, 15], free monomial True, den 5 factors one-signed True -> CERTIFIED [0.0s]
     tl_std1_two B_std s_t = 1                num     800 terms (+800 -0), degrees [0, 14, 15, 14], free monomial True, den 5 factors one-signed True -> CERTIFIED [0.0s]
-H = 1/2: all certified: True [19.0s]
+H = 1/2: all certified: True [12.4s]
 PASS

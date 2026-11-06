@@ -1,12 +1,12 @@
-inv f16: form built (1.0 s, 87 terms)
-  converted (1.2 s); eliminating 7
-  pivot 0 done (1.2 s)
-  pivot 1 done (1.6 s)
-  pivot 2 done (3.0 s)
-  pivot 3 done (5.3 s)
-  pivot 4 done (7.7 s)
-  pivot 5 done (11.3 s)
-  pivot 6 done (15.5 s)
+inv f16: form built (0.7 s, 87 terms)
+  converted (0.8 s); eliminating 7
+  pivot 0 done (0.9 s)
+  pivot 1 done (1.2 s)
+  pivot 2 done (2.2 s)
+  pivot 3 done (4.0 s)
+  pivot 4 done (5.9 s)
+  pivot 5 done (8.7 s)
+  pivot 6 done (12.2 s)
   G[rA,rA]: num 3038 terms, den 2820 terms
   G[rA,zA1]: num 2780 terms, den 2820 terms
   G[rA,zA2]: num 2779 terms, den 2820 terms
@@ -22,5 +22,5 @@ inv f16: form built (1.0 s, 87 terms)
   G[zA2,rB]: num 2791 terms, den 3093 terms
   G[zA2,zB1]: num 2533 terms, den 2820 terms
   G[zA2,zB2]: num 3750 terms, den 3814 terms
-  done (15.7 s); wrote tl_inv_f16_T11.pkl
+  done (12.4 s); wrote tl_inv_f16_T11.pkl
 PASS

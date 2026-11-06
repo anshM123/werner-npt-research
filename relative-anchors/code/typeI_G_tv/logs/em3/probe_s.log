@@ -1,0 +1,21 @@
+  A built for s_t = s (u_i = 2 + x_i): symmetric True; entry numerator/denominator terms [(27027, 27027), (27026, 31058), (22605, 27026), (34712, 40450), (25651, 31054), (30246, 27022)] [2.2s]
+factors of the entry denominators (9) [4.5s]:
+  f0: 2 terms, degrees (0, 0, 1, 1), positive coefficients and a monomial free of x1, x2, r: True; multiplicities [[1, 1, 1], [1, 1, 1], [1, 1, 1]]; e_f = 3
+  f1: 5 terms, degrees (1, 1, 1, 1), positive coefficients and a monomial free of x1, x2, r: True; multiplicities [[1, 1, 1], [1, 1, 1], [1, 1, 1]]; e_f = 3
+  f2: 3060 terms, degrees (14, 14, 14, 14), positive coefficients and a monomial free of x1, x2, r: True; multiplicities [[1, 1, 1], [1, 1, 1], [1, 1, 1]]; e_f = 3
+  f3: 5 terms, degrees (1, 1, 1, 1), positive coefficients and a monomial free of x1, x2, r: True; multiplicities [[2, 2, 1], [2, 2, 1], [1, 1, 0]]; e_f = 4
+  f4: 5 terms, degrees (1, 1, 1, 1), positive coefficients and a monomial free of x1, x2, r: True; multiplicities [[2, 2, 2], [2, 2, 2], [2, 2, 2]]; e_f = 6
+  f5: 5 terms, degrees (1, 1, 1, 1), positive coefficients and a monomial free of x1, x2, r: True; multiplicities [[2, 2, 2], [2, 2, 2], [2, 2, 2]]; e_f = 6
+  f6: 15 terms, degrees (2, 2, 2, 2), positive coefficients and a monomial free of x1, x2, r: True; multiplicities [[2, 2, 2], [2, 2, 2], [2, 2, 2]]; e_f = 6
+  f7: 4 terms, degrees (1, 1, 0, 1), positive coefficients and a monomial free of x1, x2, r: True; multiplicities [[0, 1, 1], [1, 2, 2], [1, 2, 2]]; e_f = 4
+  f8: 5 terms, degrees (1, 1, 1, 1), positive coefficients and a monomial free of x1, x2, r: True; multiplicities [[0, 0, 0], [0, 1, 0], [0, 0, 0]]; e_f = 1
+  x1: deg D* = 78, bound B = 76
+  x2: deg D* = 78, bound B = 76
+  r: deg D* = 77, bound B = 77
+  s: deg D* = 81, bound B = 82
+num degrees of the entries: [(25, 25, 26, 26), (25, 25, 25, 27), (22, 22, 22, 26), (26, 26, 27, 29), (22, 22, 22, 27), (25, 25, 24, 27)]
+den degrees of the entries: [(25, 25, 26, 26), (26, 26, 26, 27), (25, 25, 25, 26), (28, 28, 27, 29), (26, 26, 25, 27), (25, 25, 24, 26)]
+slice x1 = 0: det num 11910 terms, degrees (36, 39, 42); den 12996 terms, degrees (38, 39, 41); det 21.3s; observed exponents [3, 1, 1, 2, 2, 4, 6, 2, 1]; num coefficients all positive: True [21.4s]
+slice x1 = 7: det num 11910 terms, degrees (36, 39, 42); den 12996 terms, degrees (38, 39, 41); det 24.6s; observed exponents [3, 1, 1, 2, 2, 4, 6, 2, 1]; num coefficients all positive: True [24.8s]
+done [50.7s]
+PASS

@@ -1,11 +1,11 @@
-inv one: form built (5.0 s, 78 terms)
-  converted (9.1 s); eliminating 6
-  pivot 0 done (9.1 s)
-  pivot 1 done (10.1 s)
-  pivot 2 done (13.8 s)
-  pivot 3 done (19.1 s)
-  pivot 4 done (25.6 s)
-  pivot 5 done (42.9 s)
+inv one: form built (4.9 s, 78 terms)
+  converted (8.6 s); eliminating 6
+  pivot 0 done (8.7 s)
+  pivot 1 done (9.5 s)
+  pivot 2 done (13.0 s)
+  pivot 3 done (18.0 s)
+  pivot 4 done (24.2 s)
+  pivot 5 done (40.5 s)
   G[rA,rA]: num 11708 terms, den 10844 terms
   G[rA,zA1]: num 9570 terms, den 10844 terms
   G[rA,zA2]: num 9729 terms, den 10844 terms
@@ -21,5 +21,5 @@ inv one: form built (5.0 s, 78 terms)
   G[zA2,rB]: num 75036 terms, den 101315 terms
   G[zA2,zB1]: num 77871 terms, den 101315 terms
   G[zA2,zB2]: num 90907 terms, den 101315 terms
-  done (46.4 s); wrote tl_inv_one.pkl
+  done (43.7 s); wrote tl_inv_one.pkl
 PASS

@@ -1,0 +1,10 @@
+  monomials 0..1499 of 11910 interpolated [0s]
+  monomials 1500..2999 of 11910 interpolated [0s]
+  monomials 3000..4499 of 11910 interpolated [1s]
+  monomials 4500..5999 of 11910 interpolated [1s]
+  monomials 6000..7499 of 11910 interpolated [1s]
+  monomials 7500..8999 of 11910 interpolated [1s]
+  monomials 9000..10499 of 11910 interpolated [2s]
+  monomials 10500..11909 of 11910 interpolated [2s]
+N~(x1, x2, r, s) for s_t = 1: 11910 monomials x2^a r^b s^e interpolated over x1 = 0..76; nonzero coefficients above x1^36: 0; 139005 nonzero coefficients, 139005 positive, 0 negative; degrees (x1, x2, r, s) [36, 36, 39, 36]; a positive coefficient free of x1, x2, r: True (free of x1, x2: True) [2s]
+PASS

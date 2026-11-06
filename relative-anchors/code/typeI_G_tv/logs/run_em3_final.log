@@ -1,0 +1,16 @@
+  A built for s_t = s (u_i = 2 + x_i): symmetric True; entry numerator/denominator terms [(27027, 27027), (27026, 31058), (22605, 27026), (34712, 40450), (25651, 31054), (30246, 27022)] [1.6s]
+  9 irreducible factors of the entry denominators, all with positive coefficients and a monomial free of x1, x2, r: True; exponents of D*: [3, 3, 3, 4, 6, 6, 6, 4, 1] [3.2s]
+s_t = s: setup recomputed and equal to the saved one: True; Den_c divides D*: True; Den_c > 0 on the region: True; entry denominators > 0 on the region: True; B = 76, deg R = 40, L = 36 (as saved: True)
+s_t = s: pivots 1 and 2 of A equal the functions of prove_gersh.py gen only=B_s12: True
+    A (s_t = s) pivot 1                      num   27027 terms (+27027 -0), degrees [25, 25, 26, 26], free monomial True, den 7 factors one-signed True -> CERTIFIED [0.3s]
+    A (s_t = s) pivot 2                      num   78539 terms (+78539 -0), degrees [32, 32, 34, 36], free monomial True, den 6 factors one-signed True -> CERTIFIED [2.1s]
+s_t = s: slices missing: []; interpolation passed (no coefficient above x1^36, 139005 coefficients of N~, none negative, a positive one free of x1, x2, r): True
+  A built for s_t = 1 (u_i = 2 + x_i): symmetric True; entry numerator/denominator terms [(27027, 27027), (27026, 31058), (22605, 27026), (34712, 40450), (25651, 31054), (30246, 27022)] [1.3s]
+  9 irreducible factors of the entry denominators, all with positive coefficients and a monomial free of x1, x2, r: True; exponents of D*: [3, 3, 3, 4, 6, 6, 6, 4, 1] [2.8s]
+s_t = 1: setup recomputed and equal to the saved one: True; Den_c divides D*: True; Den_c > 0 on the region: True; entry denominators > 0 on the region: True; B = 76, deg R = 40, L = 36 (as saved: True)
+s_t = 1: pivots 1 and 2 of A equal the functions of prove_gersh.py gen only=B_112: True
+    A (s_t = 1) pivot 1                      num   27027 terms (+27027 -0), degrees [25, 25, 26, 25], free monomial True, den 7 factors one-signed True -> CERTIFIED [0.2s]
+    A (s_t = 1) pivot 2                      num   78539 terms (+78539 -0), degrees [32, 32, 34, 32], free monomial True, den 6 factors one-signed True -> CERTIFIED [0.7s]
+s_t = 1: slices missing: []; interpolation passed (no coefficient above x1^36, 139005 coefficients of N~, none negative, a positive one free of x1, x2, r): True
+conclusion: det A = N~/Den_c > 0 on {x1, x2 >= 0, r > 0, s > 0} for s_t = s and s_t = 1, so the third pivot of (B_inv) is positive for all u1, u2 >= 2: True [509s]
+PASS

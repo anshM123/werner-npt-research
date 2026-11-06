@@ -1,12 +1,12 @@
-inv gen: form built (2.3 s, 87 terms)
-  converted (2.7 s); eliminating 7
-  pivot 0 done (2.8 s)
-  pivot 1 done (4.7 s)
-  pivot 2 done (25.8 s)
-  pivot 3 done (58.8 s)
-  pivot 4 done (94.8 s)
-  pivot 5 done (142.6 s)
-  pivot 6 done (199.1 s)
+inv gen: form built (2.2 s, 87 terms)
+  converted (2.5 s); eliminating 7
+  pivot 0 done (2.5 s)
+  pivot 1 done (4.4 s)
+  pivot 2 done (24.4 s)
+  pivot 3 done (57.1 s)
+  pivot 4 done (92.4 s)
+  pivot 5 done (139.9 s)
+  pivot 6 done (193.0 s)
   G[rA,rA]: num 23631 terms, den 21686 terms
   G[rA,zA1]: num 21083 terms, den 21686 terms
   G[rA,zA2]: num 20926 terms, den 21686 terms
@@ -22,5 +22,5 @@ inv gen: form built (2.3 s, 87 terms)
   G[zA2,rB]: num 21162 terms, den 24639 terms
   G[zA2,zB1]: num 18700 terms, den 21686 terms
   G[zA2,zB2]: num 31666 terms, den 32510 terms
-  done (200.3 s); wrote tl_inv_gen_T11.pkl
+  done (194.1 s); wrote tl_inv_gen_T11.pkl
 PASS

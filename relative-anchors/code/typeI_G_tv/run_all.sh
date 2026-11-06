@@ -2,10 +2,14 @@
 # Reruns every step of NOTES.md, one Python process at a time, each under guard.sh (memory limit 2 500 000 KB and a
 # time limit).  Prints PASS or FAIL per step and ALL PASS at the end.
 # Usage: bash run_all.sh > logs/run_all.out 2>&1      (one log logs/run_<step>.log per step)
+#        NEW_ONLY=1 bash run_all.sh > logs/run_all.out 2>&1   runs only section 7 (Section 10 of NOTES.md); it needs
+#        the closed forms tl_inv_gen_T11.pkl and tl_inv_gen_T22.pkl of section 1
 cd "$(dirname "$0")" || exit 1
 mkdir -p logs
 echo "run_all.sh started $(date)"
-echo "python $(python -c 'import sys; print(sys.version.split()[0])'), python-flint $(python -c 'import flint; print(flint.__version__)'), sympy $(python -c 'import sympy; print(sympy.__version__)'), numpy $(python -c 'import numpy; print(numpy.__version__)')"
+bash ./guard.sh logs/run_versions.log 120 -c "import sys, flint, sympy, numpy; print('python %s, python-flint %s, sympy %s, numpy %s' % (sys.version.split()[0], flint.__version__, sympy.__version__, numpy.__version__))"
+tr -d '\r' < logs/run_versions.log
+NEW_ONLY=${NEW_ONLY:-0}
 allok=1
 step () {
   name="$1"; lim="$2"; want="$3"; shift 3
@@ -17,6 +21,7 @@ step () {
   if [ "$st" = 0 ] && [ "$last" = "$want" ]; then res=PASS; else res=FAIL; allok=0; fi
   echo "step ${name}: ${res} (exit status ${st}, $((t1 - t0)) s, last line: ${last})"
 }
+if [ "$NEW_ONLY" != 1 ]; then
 # 1. closed forms (Sections 2-3): u1 = 1 (general T-weights; T-weights in {s, 1}), and u1, u2 >= 2 (T-weights in {s, 1})
 step tl_inv_one 1500 PASS tl_m.py inv one
 for md in T11 T12 T22; do
@@ -59,5 +64,24 @@ step ex_numframe 900 "exploration done" ex_numframe.py
 step ex_twoval 900 "exploration done" ex_twoval.py
 step ex_factor_one 900 "exploration done" ex_factor_one.py
 step ex_signs_one 900 "exploration done" ex_signs_one.py
+fi
+# 7. the third pivot of (B_inv) with both level sizes symbolic (u_i = 2 + x_i), by the determinant route (Section 10):
+# bounds and candidate denominator, the exact slices x1 = 0..B, the interpolation in x1, the assembly; then the check
+# at points far outside the grid and the negative controls.  The slice files are written to em3_out/ (removed first;
+# with EM3_KEEP=1 the slice files already there are reused and the step says how many)
+EM3_KEEP=${EM3_KEEP:-0}
+if [ "$EM3_KEEP" != 1 ]; then rm -rf em3_out; fi
+for ka in s 1; do
+  step em3_bounds_$ka 1800 PASS em3det.py bounds $ka
+  if [ "$EM3_KEEP" = 1 ]; then
+    step em3_slices_${ka}_resume 7200 PASS em3det.py slices $ka resume
+  else
+    step em3_slices_$ka 7200 PASS em3det.py slices $ka
+  fi
+  step em3_interp_$ka 3600 PASS em3det.py interp $ka
+done
+step em3_final 1800 PASS em3det.py final
+step em3_points 1800 PASS em3points.py
+step em3_neg 1800 PASS em3neg.py
 echo "run_all.sh finished $(date)"
 if [ "$allok" = 1 ]; then echo "ALL PASS"; else echo "SOME STEP FAILED"; fi

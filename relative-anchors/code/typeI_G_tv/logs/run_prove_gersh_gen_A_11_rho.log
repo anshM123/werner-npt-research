@@ -1,7 +1,7 @@
 part tl_inv_gen (u1 = 2 + x1, u2 = 2 + x2)
-    (A_inv (1, 1)_rho in the variables ['u1', 'u2', 'sig', 's1']: numerator 346736 terms, denominator 331468 terms [11.3s])
-    tl_inv_gen A_inv (s_t, s_t') = (1, 1) rho part, budget H^2/2 num  393525 terms (+393525 -0), degrees [52, 52, 53, 52], free monomial True, den 8 factors one-signed True -> CERTIFIED [44.8s]
+    (A_inv (1, 1)_rho in the variables ['u1', 'u2', 'sig', 's1']: numerator 346736 terms, denominator 331468 terms [8.7s])
+    tl_inv_gen A_inv (s_t, s_t') = (1, 1) rho part, budget H^2/2 num  393525 terms (+393525 -0), degrees [52, 52, 53, 52], free monomial True, den 8 factors one-signed True -> CERTIFIED [31.8s]
 part tl_std1_gen (u1 = 3 + x1, u2 = 1 + x2)
 part tl_std1_two (u1 = 2, u2 = 1 + x2)
-H = 1/2: all certified: True [61.6s]
+H = 1/2: all certified: True [44.4s]
 PASS

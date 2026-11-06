@@ -27,8 +27,8 @@ This folder collects what we can prove about the group conditions for every k.
     distinct values (Theorems EU and TL); and for any number of copies carrying the letter 2 it holds for every k
     whenever the copies free of it all have the same weight, whatever the weights of the others (Theorem EM and
     Corollary EM). When all weights but one are equal it holds completely for every k (Theorem M1 and
-    Corollary M1), and when the weights take at most two values it holds completely for k ≤ 35, and for every k
-    when one of the two values is carried by at most 16 copies (Theorem TV and Corollary TV).
+    Corollary M1), and when the weights take at most two values it holds completely for every k (Theorem TV and
+    Corollary TV).
   - (R∞)_{k−2} has the explicit kernel vector vac ⊗ J⁻|1…1⟩ (Proposition K2). On its letter-1 block the vacuum row
     eliminates exactly and the soft directions are known exactly; the gap there is at most min_h s_h/(2(|s| − s_h))
     (Section 3e), so a proof has to be exact to first order in the smallest weight.
@@ -88,8 +88,8 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
 **Open.**
 - For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 and k ≥ 5
   (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁, for |T| = 1 the U-weights with at most two distinct values are
-  Theorems EU and TL, equal U-weights are Theorem EM for every |T|, and two-valued weights are Theorem TV when
-  one U-level has at most 16 copies), reduced to the condition G ≻ 0 of
+  Theorems EU and TL, equal U-weights are Theorem EM for every |T|, and two-valued weights are Theorem TV),
+  reduced to the condition G ≻ 0 of
   Theorem C; and the letter-1 and type I blocks of (R∞)_j
   for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, and at k = 5, 6, 7
   everything is proved when the weights take at most two values, Section 3f; the blocks
@@ -478,7 +478,7 @@ weight of h₀, the three pivots of each 3 × 3 condition and the four scalars o
 functions whose numerators and denominator factors have only positive coefficients after the shifts (ten
 certificates). ∎
 
-**Theorem TV.** Let u₁, u₂ ≥ 1 with u₁ + u₂ ≥ 3 and min(u₁, u₂) ≤ 16, let m ≥ 2, and let the squared weights of
+**Theorem TV.** Let u₁, u₂ ≥ 1 with u₁ + u₂ ≥ 3, let m ≥ 2, and let the squared weights of
 all copies of U and of T take the two values s₁, s₂ (U_i carries s_i; the values on T are arbitrary in {s₁, s₂}).
 Then G ≻ 0.
 
@@ -487,22 +487,28 @@ in the frame of Proposition U1 with the second invariant direction unscaled: for
 the off-diagonal Frobenius conditions and the pivots of the diagonal conditions are rational functions of the level
 sizes, the weight r of the other copies of T and s = s₁/s₂, with only positive coefficients after the shifts
 (129 certificates: u₁ = 1; u₁, u₂ ≥ 2 both symbolic; u₁ = 2, …, 16 fixed). With both sizes symbolic all of them
-pass except the third pivot of the invariant diagonal condition, which is certified at each fixed u₁ ≤ 16; the
-exchange of the two levels gives min(u₁, u₂) ≤ 16. ∎
+pass except the third pivot of the invariant diagonal condition. That pivot is certified at each fixed u₁ ≤ 16, and
+for all real u₁, u₂ ≥ 2 by determinant and interpolation (Proposition B3): its first two pivots are certified, so it
+suffices that the determinant A of the 3 × 3 condition is positive. A multiple D* of the denominator of det A from the
+factored entry denominators bounds the degree of D* det A in u₁ by 76; det A is computed exactly on the 77 slices
+u₁ = 2, …, 78, times a candidate denominator D_c it is a polynomial on each, and exact interpolation in u₁ shows
+that det A = Ñ/D_c with Ñ a polynomial (degree 36 in u₁) whose 139 005 coefficients are all nonnegative. ∎
 
 **Corollaries M1 and TV.** For every k, (R∞)_{k−1} holds completely (every torus block ⪰ 0 with exactly its known
 kernel) at every weight vector whose squared weights are all equal but one (M1), and at every weight vector whose
-squared weights take at most two values when k ≤ 35 or when one of the two values is carried by at most 16 copies
-(TV). (Theorems T, C, U2, EU, TL, EM, M1, TV and Propositions T2, U0, U1; with min(u₁, u₂) ≥ 17 and m ≥ 2 a block
-needs k ≥ 36.)
+squared weights take at most two values (TV). (Theorems T, C, U2, EU, TL, EM, M1, TV and Propositions T2, U0,
+U1.)
 
 The closed forms equal the Schur complement of the whole block computed by exact elimination, with the Lemma B
 builder at 18 configurations; with H = 1/10 and H = 4/5 the certificates fail and the inequalities are false at
 explicit points; with B → (1 + 1/1000)B the reduced block has negative pivots where the true one has none. A second
 check, independent of the closed forms, builds every torus group of (R∞)_{k−1} from Lemma B at two-valued weight
 vectors with k = 10, …, 13 (one to six copies of the other value) and finds each ⪰ 0 with exactly its known kernel.
-The remaining two-valued case, both U-levels with at least 17 copies, is open only on the third pivot of that
-diagonal condition; it is positive at 288 exact points with u₁, u₂ ≤ 200.
+For Proposition B3, the interpolant equals det A computed directly from the closed forms at five points far outside
+the grid (u₁ up to 100 000, one point with u₁ and u₂ not integers), with H = 1 the determinant is negative at
+explicit points while the first two pivots are positive, and lowering any exponent of D_c breaks the polynomial
+test; the fixed-u₁ elimination certificate used for u₁ ≤ 16 also certifies all three pivots at u₁ = 17, 18, 20,
+24, 30, 40, 50, 77, 100, 200 and 500 (all u₂ ≥ 2), by the other method (`run_fN_check.sh`).
 
 **Proposition K2.** The vector vac ⊗ J⁻|1…1⟩ lies in the kernel of (R∞)_{k−2}.
 
@@ -663,8 +669,8 @@ This contains Propositions T2 (j = k − 1) and E2 (equal weights). Numerically 
 **What blocks the rest.** Two parts are still open:
 - the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2: by Theorem C each is equivalent to
   G ≻ 0 on its letter-2 states (proved for two such copies, Theorem U2, for k = 4, Theorem U3₁, when those
-  copies have equal weights, Theorem EM, when all weights but one are equal, Theorem M1, and at two weight values
-  when one U-level has at most 16 copies, Theorem TV);
+  copies have equal weights, Theorem EM, when all weights but one are equal, Theorem M1, and at two weight values,
+  Theorem TV);
 - the letter-1 and type I blocks of the conditions (R∞)_j with 1 ≤ j ≤ k − 2, for k ≥ 5 (at k = 4 every block is
   certified, Section 3f).
 
@@ -1455,7 +1461,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `typeI_G_m1/` (`run_all.sh`, notes in `typeI_G_m1/NOTES.md`) | Theorems EU and TL: the gauge x_t = 0 and G = diag(2, I) − BᵀC⁻¹B; the symbolic reductions at one and two weight levels, their validation against direct elimination, the sign certificates, a second implementation of the two-level invariant part; the limit u → ∞ at equal U-weights; exact checks at rational points for u ≤ 10 and at three levels; negative controls; floating-point observations on the pair structure |
 | `typeI_G_u3/` (`run_all.sh`, notes in `typeI_G_u3/NOTES.md`) | Theorem U3₁: the exact Schur complement for u = 3, m = 1 over Q(s_0, …, s_3) and its agreement with direct elimination, the leading minors with factor stripping and expansion checks, the coefficient-sign certificate, the Z-matrix certificate, negative controls; the same minor certificate for (u, m) = (1, 1), (2, 1), (1, 2), (2, 2), (1, 3); numerical sweeps behind Conjectures P and M |
 | `typeI_G_em/` (`run_all.sh`, notes in `typeI_G_em/NOTES.md`) | Theorem EM: the closed forms of the invariant and standard parts at equal U-weights symbolic in u, against direct elimination (44 configurations) and the Lemma B builder (21), the five coefficient-sign certificates (H = 1/2, 2/5, 29/100, 7/10), negative controls, the exact witness that G is not a function of the first two power sums of the U-weights, numerical constants for general U-weights; the second check `emcheck.py` (every torus group of (R∞)_{k−1} from Lemma B, k = 5, …, 8) |
-| `typeI_G_tv/` (`run_all.sh`, notes in `typeI_G_tv/NOTES.md`) | Theorems M1 and TV: the splitting at two U-levels, the closed forms with the level sizes symbolic against exact elimination of whole blocks, Theorem M1 (exact splitting under the permutations of T, Sylvester), Theorem TV (weighted block Gershgorin, 129 certificates), end-to-end checks with the Lemma B builder, negative controls; `marked_copy/run_markall2.sh` (`markall2.py`): every torus group of (R∞)_{k−1} at two-valued weights, k = 10, …, 13 |
+| `typeI_G_tv/` (`run_all.sh`, notes in `typeI_G_tv/NOTES.md`) | Theorems M1 and TV: the splitting at two U-levels, the closed forms with the level sizes symbolic against exact elimination of whole blocks, Theorem M1 (exact splitting under the permutations of T, Sylvester), Theorem TV (weighted block Gershgorin, 129 certificates, and Proposition B3 by determinant and interpolation in u₁), end-to-end checks with the Lemma B builder, negative controls; `marked_copy/run_markall2.sh` (`markall2.py`): every torus group of (R∞)_{k−1} at two-valued weights, k = 10, …, 13 |
 | `typeI_G_u2/` (`run_all.sh`, notes in `typeI_G_u2/NOTES.md`) | Theorem U2: the exact symbolic Schur complement for u = 2, its agreement with direct elimination (m = 1, …, 5), the polynomial reductions, the blow-up charts and Bernstein certificates of (A_2) and (B_2), negative controls |
 | `positivity/` (`run_all.sh`, notes in `positivity/NOTES.md`) | Section 3g: every principal minor of every block at k = 2, 3 and the k = 4 tests, the row-group identities and lifts of Proposition R, the obstruction certificates (Newton, width, Farkas), the monomial-PSD tests, the Gram-type column-group lifts, the natural whole-block lift and its obstruction |
 | `middle_k4/` (`run_all.sh`, notes in `middle_k4/NOTES.md`) | Section 3f: the torus blocks of (R∞)_1 and (R∞)_2 at k = 4 over Q(s_1, s_2, s_3), the known kernels and the gauge, the Bareiss leading-minor certificates, minors against direct determinants at rational points, symbolic blocks against the point builder and the dense construction, negative controls |

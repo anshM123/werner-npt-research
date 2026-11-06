@@ -1,6 +1,6 @@
 std1 two: form built (0.1 s, 19 terms)
-  converted (0.2 s); eliminating 4
-  pivot 0 done (0.2 s)
+  converted (0.1 s); eliminating 4
+  pivot 0 done (0.1 s)
   pivot 1 done (0.2 s)
   pivot 2 done (0.2 s)
   pivot 3 done (0.2 s)

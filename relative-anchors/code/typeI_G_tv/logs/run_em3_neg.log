@@ -1,0 +1,10 @@
+s_t = s: at (u1, u2, s, r) = (17, 17, 1/1000, 2) with H = 1: pivots 1, 2 = 5.0041e-01, 4.4686e-06 > 0 and det A = -9.4751e-12 < 0 (third pivot negative); with H = 1/2 all pivots positive there: True
+  slice x1 = 15 at H = 1: numerator 11910 terms, 4183 positive and 7727 negative coefficients; its value at the witness equals the direct det: True [12s]
+s_t = 1: at (u1, u2, s, r) = (17, 17, 1, 50) with H = 1: pivots 1, 2 = 5.1039e-01, 5.1913e-04 > 0 and det A = -5.1884e-04 < 0 (third pivot negative); with H = 1/2 all pivots positive there: True
+  slice x1 = 15 at H = 1: numerator 11910 terms, 6964 positive and 4946 negative coefficients; its value at the witness equals the direct det: True [12s]
+s_t = s, first 1500 monomials: nonzero coefficients above x1^36: 0 as computed, 60000 with the slice x1 = 38 multiplied by 1 + 1/1000
+s_t = s: lowering the exponent of each of the 9 factors of Den_c by 1, Den_c det A is not a polynomial on the slice x1 = 0: True
+s_t = 1, first 1500 monomials: nonzero coefficients above x1^36: 0 as computed, 60000 with the slice x1 = 38 multiplied by 1 + 1/1000
+s_t = 1: lowering the exponent of each of the 9 factors of Den_c by 1, Den_c det A is not a polynomial on the slice x1 = 0: True
+every control behaves as expected: True [32s]
+PASS

@@ -1,0 +1,14 @@
+s_t = s: N~ with 139005 terms loaded [1s]
+  (u1, u2, s, r) = (300, 17, 2/7, 5/3): N~/Den_c = det A: True; det A = 9.468065e-05; pivots 1.0679e+00, 6.7684e-05, 1.3099e+00
+  (u1, u2, s, r) = (1000, 1000, 1000, 1/1000): N~/Den_c = det A: True; det A = 1.121252e+00; pivots 1.4980e+00, 9.9899e-07, 7.4925e+05
+  (u1, u2, s, r) = (79, 5000, 1/1000, 50): N~/Den_c = det A: True; det A = 5.751722e-14; pivots 1.0000e+00, 2.9122e-09, 1.9750e-05
+  (u1, u2, s, r) = (2003/7, 41/3, 7/5, 3): N~/Den_c = det A: True; det A = 3.690843e-04; pivots 1.1526e+00, 4.2308e-05, 7.5691e+00
+  (u1, u2, s, r) = (100000, 23, 3/11, 1/7): N~/Den_c = det A: True; det A = 7.646156e-10; pivots 1.3281e+00, 1.5889e-10, 3.6234e+00
+s_t = 1: N~ with 139005 terms loaded [3s]
+  (u1, u2, s, r) = (300, 17, 2/7, 5/3): N~/Den_c = det A: True; det A = 2.051175e-03; pivots 1.1696e+00, 2.8256e-04, 6.2068e+00
+  (u1, u2, s, r) = (1000, 1000, 1000, 1/1000): N~/Den_c = det A: True; det A = 1.122748e-09; pivots 1.4995e+00, 1.0000e-12, 7.4875e+02
+  (u1, u2, s, r) = (79, 5000, 1/1000, 50): N~/Den_c = det A: True; det A = 6.056110e-08; pivots 1.0094e+00, 2.9232e-06, 2.0524e-02
+  (u1, u2, s, r) = (2003/7, 41/3, 7/5, 3): N~/Den_c = det A: True; det A = 1.586945e-04; pivots 1.1203e+00, 2.8582e-05, 4.9559e+00
+  (u1, u2, s, r) = (100000, 23, 3/11, 1/7): N~/Den_c = det A: True; det A = 3.502487e-08; pivots 1.4374e+00, 1.5423e-09, 1.5799e+01
+all equal, all pivots positive: True [5s]
+PASS

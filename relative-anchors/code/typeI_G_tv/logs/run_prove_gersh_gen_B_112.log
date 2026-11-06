@@ -1,7 +1,7 @@
 part tl_inv_gen (u1 = 2 + x1, u2 = 2 + x2)
-    tl_inv_gen B_inv s_t = 1 pivot 1         num   27027 terms (+27027 -0), degrees [25, 25, 26, 25], free monomial True, den 7 factors one-signed True -> CERTIFIED [0.4s]
-    tl_inv_gen B_inv s_t = 1 pivot 2         num   78539 terms (+78539 -0), degrees [32, 32, 34, 32], free monomial True, den 6 factors one-signed True -> CERTIFIED [0.9s]
+    tl_inv_gen B_inv s_t = 1 pivot 1         num   27027 terms (+27027 -0), degrees [25, 25, 26, 25], free monomial True, den 7 factors one-signed True -> CERTIFIED [0.2s]
+    tl_inv_gen B_inv s_t = 1 pivot 2         num   78539 terms (+78539 -0), degrees [32, 32, 34, 32], free monomial True, den 6 factors one-signed True -> CERTIFIED [0.7s]
 part tl_std1_gen (u1 = 3 + x1, u2 = 1 + x2)
 part tl_std1_two (u1 = 2, u2 = 1 + x2)
-H = 1/2: all certified: True [73.1s]
+H = 1/2: all certified: True [55.0s]
 PASS

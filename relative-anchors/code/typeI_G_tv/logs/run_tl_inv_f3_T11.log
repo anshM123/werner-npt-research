@@ -1,12 +1,12 @@
-inv f3: form built (1.0 s, 87 terms)
-  converted (1.2 s); eliminating 7
-  pivot 0 done (1.2 s)
-  pivot 1 done (1.6 s)
-  pivot 2 done (2.3 s)
-  pivot 3 done (3.5 s)
-  pivot 4 done (4.6 s)
-  pivot 5 done (6.6 s)
-  pivot 6 done (9.5 s)
+inv f3: form built (0.7 s, 87 terms)
+  converted (0.8 s); eliminating 7
+  pivot 0 done (0.8 s)
+  pivot 1 done (1.1 s)
+  pivot 2 done (1.7 s)
+  pivot 3 done (2.6 s)
+  pivot 4 done (3.4 s)
+  pivot 5 done (4.6 s)
+  pivot 6 done (6.6 s)
   G[rA,rA]: num 3038 terms, den 2820 terms
   G[rA,zA1]: num 2780 terms, den 2820 terms
   G[rA,zA2]: num 2779 terms, den 2820 terms
@@ -22,5 +22,5 @@ inv f3: form built (1.0 s, 87 terms)
   G[zA2,rB]: num 2791 terms, den 3093 terms
   G[zA2,zB1]: num 2533 terms, den 2820 terms
   G[zA2,zB2]: num 3750 terms, den 3814 terms
-  done (9.6 s); wrote tl_inv_f3_T11.pkl
+  done (6.7 s); wrote tl_inv_f3_T11.pkl
 PASS
