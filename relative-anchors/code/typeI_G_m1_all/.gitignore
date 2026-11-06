@@ -1,0 +1,6 @@
+__pycache__/
+*.pkl
+cross_cases.json
+cross_harness.js
+stress_certificate.js
+*.pid

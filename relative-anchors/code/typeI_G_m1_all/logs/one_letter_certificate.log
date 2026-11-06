@@ -1,0 +1,448 @@
+{
+ "status": "PASS",
+ "theorem": "For every probability measure on [0,1] and every sigma>0, the full m1 energy A-B-8R is strictly positive on the constrained nonzero amplitude space.",
+ "scope": "Computer-assisted exact finite algebra proof for m1. Multiple letter-2 copies, full SF, the remaining middle conditions and unrestricted all-copy NPT remain open.",
+ "certificate": {
+  "families": 9,
+  "leadingMinors": 45,
+  "positiveCoefficients": 20406,
+  "negativeCoefficients": 0,
+  "denominatorDegrees": [
+   18,
+   20,
+   19,
+   17,
+   19,
+   18,
+   18,
+   20,
+   19
+  ],
+  "wrongCenter": {
+   "negativeCoefficients": 280,
+   "expectedFailure": true
+  }
+ },
+ "independent": {
+  "assembly": {
+   "status": "PASS",
+   "entries": 2025,
+   "determinants": 405,
+   "profile": [
+    {
+     "fi": 0,
+     "gi": 0,
+     "allFiveMinorsPositive": true
+    },
+    {
+     "fi": 0,
+     "gi": 1,
+     "allFiveMinorsPositive": true
+    },
+    {
+     "fi": 0,
+     "gi": 2,
+     "allFiveMinorsPositive": true
+    },
+    {
+     "fi": 1,
+     "gi": 0,
+     "allFiveMinorsPositive": true
+    },
+    {
+     "fi": 1,
+     "gi": 1,
+     "allFiveMinorsPositive": true
+    },
+    {
+     "fi": 1,
+     "gi": 2,
+     "allFiveMinorsPositive": true
+    },
+    {
+     "fi": 2,
+     "gi": 0,
+     "allFiveMinorsPositive": true
+    },
+    {
+     "fi": 2,
+     "gi": 1,
+     "allFiveMinorsPositive": true
+    },
+    {
+     "fi": 2,
+     "gi": 2,
+     "allFiveMinorsPositive": true
+    }
+   ]
+  },
+  "energy": {
+   "status": "PASS",
+   "energyProfiles": [
+    {
+     "sigma": "1/100",
+     "u": 3,
+     "dimension": 8,
+     "gap": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     },
+     "lower": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     }
+    },
+    {
+     "sigma": "1/100",
+     "u": 3,
+     "dimension": 8,
+     "gap": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     },
+     "lower": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     }
+    },
+    {
+     "sigma": "1/4",
+     "u": 3,
+     "dimension": 8,
+     "gap": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     },
+     "lower": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     }
+    },
+    {
+     "sigma": "1/4",
+     "u": 3,
+     "dimension": 8,
+     "gap": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     },
+     "lower": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     }
+    },
+    {
+     "sigma": "1",
+     "u": 3,
+     "dimension": 8,
+     "gap": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     },
+     "lower": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     }
+    },
+    {
+     "sigma": "1",
+     "u": 3,
+     "dimension": 8,
+     "gap": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     },
+     "lower": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     }
+    },
+    {
+     "sigma": "9",
+     "u": 3,
+     "dimension": 8,
+     "gap": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     },
+     "lower": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     }
+    },
+    {
+     "sigma": "9",
+     "u": 3,
+     "dimension": 8,
+     "gap": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     },
+     "lower": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     }
+    },
+    {
+     "sigma": "100",
+     "u": 3,
+     "dimension": 8,
+     "gap": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     },
+     "lower": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     }
+    },
+    {
+     "sigma": "100",
+     "u": 3,
+     "dimension": 8,
+     "gap": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     },
+     "lower": {
+      "positive": 8,
+      "negative": 0,
+      "zero": 0,
+      "rank": 8
+     }
+    }
+   ],
+   "concavityProfiles": [
+    {
+     "sigma": "1/100",
+     "s": "2/5",
+     "barycentricWeights": [
+      "12721449996/38163431875",
+      "6663482171/38163431875",
+      "18778499708/38163431875",
+      "572149066644/1714787568125",
+      "298962160469/1714787568125",
+      "843676341012/1714787568125"
+     ],
+     "gap": {
+      "positive": 5,
+      "negative": 0,
+      "zero": 0,
+      "rank": 5
+     }
+    },
+    {
+     "sigma": "1/100",
+     "s": "2/5",
+     "barycentricWeights": [
+      "57714564697599/168797744408524",
+      "281628360771/1671264796124",
+      "41319357636527/84398872204262",
+      "631576350259967/1839432100275692",
+      "6469263368105803/38628074105789532",
+      "9447853691112211/19314037052894766"
+     ],
+     "gap": {
+      "positive": 5,
+      "negative": 0,
+      "zero": 0,
+      "rank": 5
+     }
+    },
+    {
+     "sigma": "1/4",
+     "s": "2/5",
+     "barycentricWeights": [
+      "90828/271795",
+      "9583/54359",
+      "133052/271795",
+      "68/201",
+      "637/3685",
+      "5404/11055"
+     ],
+     "gap": {
+      "positive": 5,
+      "negative": 0,
+      "zero": 0,
+      "rank": 5
+     }
+    },
+    {
+     "sigma": "1/4",
+     "s": "2/5",
+     "barycentricWeights": [
+      "892143/2954380",
+      "118803/590876",
+      "734111/1477190",
+      "19260527/59346348",
+      "32568685/178039044",
+      "43844389/89019522"
+     ],
+     "gap": {
+      "positive": 5,
+      "negative": 0,
+      "zero": 0,
+      "rank": 5
+     }
+    },
+    {
+     "sigma": "1",
+     "s": "2/5",
+     "barycentricWeights": [
+      "45/136",
+      "49/272",
+      "133/272",
+      "27/80",
+      "7/40",
+      "39/80"
+     ],
+     "gap": {
+      "positive": 5,
+      "negative": 0,
+      "zero": 0,
+      "rank": 5
+     }
+    },
+    {
+     "sigma": "1",
+     "s": "2/5",
+     "barycentricWeights": [
+      "23763/98032",
+      "12615/49016",
+      "49039/98032",
+      "529/1897",
+      "361/1626",
+      "5681/11382"
+     ],
+     "gap": {
+      "positive": 5,
+      "negative": 0,
+      "zero": 0,
+      "rank": 5
+     }
+    },
+    {
+     "sigma": "9",
+     "s": "2/5",
+     "barycentricWeights": [
+      "3922721/12316090",
+      "934941/4926436",
+      "12112033/24632180",
+      "80771/250549",
+      "234024/1252745",
+      "614866/1252745"
+     ],
+     "gap": {
+      "positive": 5,
+      "negative": 0,
+      "zero": 0,
+      "rank": 5
+     }
+    },
+    {
+     "sigma": "9",
+     "s": "2/5",
+     "barycentricWeights": [
+      "553457597/3280602960",
+      "341735539/984180888",
+      "4764080699/9841808880",
+      "9019979/49116276",
+      "96237395/294697656",
+      "144340387/294697656"
+     ],
+     "gap": {
+      "positive": 5,
+      "negative": 0,
+      "zero": 0,
+      "rank": 5
+     }
+    },
+    {
+     "sigma": "100",
+     "s": "2/5",
+     "barycentricWeights": [
+      "163271449368/519761957405",
+      "100410756607/519761957405",
+      "51215950286/103952391481",
+      "472044725352/1500262315045",
+      "289225446223/1500262315045",
+      "147798428694/300052463009"
+     ],
+     "gap": {
+      "positive": 5,
+      "negative": 0,
+      "zero": 0,
+      "rank": 5
+     }
+    },
+    {
+     "sigma": "100",
+     "s": "2/5",
+     "barycentricWeights": [
+      "837485538440817/5475633770438920",
+      "40202769466641/108428391493840",
+      "1043163349573093/2190253508175568",
+      "1862387091576989/12043744878542240",
+      "26604260946830141/72262469271253440",
+      "6896777154992273/14452493854250688"
+     ],
+     "gap": {
+      "positive": 5,
+      "negative": 0,
+      "zero": 0,
+      "rank": 5
+     }
+    }
+   ]
+  },
+  "wrong": {
+   "status": "PASS",
+   "sigma": "10000",
+   "s": "0",
+   "expectedIndefinite": {
+    "positive": 4,
+    "negative": 1,
+    "zero": 0,
+    "rank": 5
+   }
+  }
+ }
+}

@@ -1,0 +1,11 @@
+  u=2 wt=88/31 wU=['1/5', '3/8']: (29/30)A - corr PD True; coarse PD False
+u = 2: (1/2) A - corr > 0 and the coarse version > 0 at 7/8 weight vectors
+  u=3 wt=2041/24 wU=['403/34', '129/14', '1/2']: (29/30)A - corr PD True; coarse PD False
+u = 3: (1/2) A - corr > 0 and the coarse version > 0 at 7/8 weight vectors
+u = 4: (1/2) A - corr > 0 and the coarse version > 0 at 8/8 weight vectors
+u = 5: (1/2) A - corr > 0 and the coarse version > 0 at 8/8 weight vectors
+  u=6 wt=4508/29 wU=['409/36', '107/7', '1/14', '5/4', '89/16', '1/5']: (29/30)A - corr PD True; coarse PD False
+u = 6: (1/2) A - corr > 0 and the coarse version > 0 at 7/8 weight vectors
+  u=8 wt=1153/13 wU=['391/24', '1/15', '17/8', '788/33', '7/4', '1/14', '4/37', '23/4']: (29/30)A - corr PD True; coarse PD False
+u = 8: (1/2) A - corr > 0 and the coarse version > 0 at 7/8 weight vectors
+FAIL

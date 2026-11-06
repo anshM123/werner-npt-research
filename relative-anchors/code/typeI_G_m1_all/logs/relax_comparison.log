@@ -1,0 +1,138 @@
+{
+ "status": "PASS",
+ "cases": [
+  {
+   "u": 2,
+   "sigma": "1/100",
+   "seed": 1,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  },
+  {
+   "u": 2,
+   "sigma": "1",
+   "seed": 2,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  },
+  {
+   "u": 2,
+   "sigma": "9/4",
+   "seed": 3,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  },
+  {
+   "u": 3,
+   "sigma": "1/100",
+   "seed": 1,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  },
+  {
+   "u": 3,
+   "sigma": "1",
+   "seed": 2,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  },
+  {
+   "u": 3,
+   "sigma": "9/4",
+   "seed": 3,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  },
+  {
+   "u": 4,
+   "sigma": "1/100",
+   "seed": 1,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  },
+  {
+   "u": 4,
+   "sigma": "1",
+   "seed": 2,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  },
+  {
+   "u": 4,
+   "sigma": "9/4",
+   "seed": 3,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  },
+  {
+   "u": 5,
+   "sigma": "1/100",
+   "seed": 1,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  },
+  {
+   "u": 5,
+   "sigma": "1",
+   "seed": 2,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  },
+  {
+   "u": 5,
+   "sigma": "9/4",
+   "seed": 3,
+   "baseConvention": "as-written",
+   "sourceConvention": "as-written",
+   "entrywiseIdentity": true,
+   "positiveEnergy": true,
+   "PsiPositive": true,
+   "relativeMarginAboveBaseOverThirty": true
+  }
+ ],
+ "scope": "Independent rational checks of the new Lemma R1 normalization, full projected source, entrywise relaxation, and its strict lower bound from the already proved one-letter energy theorem."
+}

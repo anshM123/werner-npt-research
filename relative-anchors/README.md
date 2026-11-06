@@ -23,8 +23,8 @@ This folder collects what we can prove about the group conditions for every k.
     Schur-complement condition G ≻ 0 on its letter-2 states. That condition holds when exactly two copies are free
     of the letter 2 (Theorem U2), and for k = 4 also when three are (Theorem U3₁). So (R∞)_{k−1} holds completely
     for k ≤ 4, and for k ≥ 5 it is open only on the type I blocks with at least three such copies. When exactly one
-    copy carries the letter 2, it also holds for every k whenever the weights of the other copies take at most two
-    distinct values (Theorems EU and TL); and for any number of copies carrying the letter 2 it holds for every k
+    copy carries the letter 2, it holds for every k and every weight vector (Theorem W; earlier, for at most two
+    distinct weights of the other copies, Theorems EU and TL); and for any number of copies carrying the letter 2 it holds for every k
     whenever the copies free of it all have the same weight, whatever the weights of the others (Theorem EM and
     Corollary EM). When all weights but one are equal it holds completely for every k (Theorem M1 and
     Corollary M1), and when the weights take at most two values it holds completely for every k (Theorem TV and
@@ -88,10 +88,10 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
 
 **Open.**
 - For general weights: the type I blocks of (R∞)_{k−1} with at least three copies free of the letter 2 and k ≥ 5
-  (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁, for |T| = 1 the U-weights with at most two distinct values are
-  Theorems EU and TL, equal U-weights are Theorem EM for every |T|, and two-valued weights are Theorem TV),
+  (|U| ≥ 3, |T| ≥ 2; |T| = 1 is Theorem W for every weight vector, the case k = 4 is Theorem U3₁, equal U-weights
+  are Theorem EM for every |T|, and two-valued weights are Theorem TV),
   reduced to the condition G ≻ 0 of
-  Theorem C (for |T| = 1 further to Conjecture R by Lemma R1); and the letter-1 and type I blocks of (R∞)_j
+  Theorem C; and the letter-1 and type I blocks of (R∞)_j
   for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, and at k = 5, 6, 7
   everything is proved when the weights take at most two values, Section 3f; the blocks
   without a letter 1 are Theorem DJ for every k). The rest of (R∞)_1 is reduced to Conjectures L and L1, and all of it
@@ -484,8 +484,8 @@ block and no pair function, so G ≻ 0 wherever Ψ ≻ 0 (Corollary R1).
   other copies only through four bounded sums, it is monotone in two of them, and its leading minors are certified
   on the resulting box by Bernstein coefficients. So what is left of Conjecture R is the global condition of
   Lemma F; in floating point it holds at every weight vector tested.
-- **Conjecture R.** Ψ ≻ 0 for every u ≥ 3 and all positive weights. It would give every type I block of
-  (R∞)_{k−1} with |T| = 1, for every k and every weight vector.
+- **Conjecture R.** Ψ ≻ 0 for every u ≥ 3 and all positive weights. It gives every type I block of (R∞)_{k−1}
+  with |T| = 1, for every k and every weight vector. It is now proved (Corollary R below), by a different route.
 - Evidence:
   - It holds at equal U-weights for every u (Theorem R_EU, symbolic in u).
   - It holds exactly at 284 rational weight vectors with u ≤ 20 (all leading minors of Ψ positive), so G ≻ 0
@@ -493,6 +493,42 @@ block and no pair function, so G ≻ 0 wherever Ψ ≻ 0 (Corollary R1).
   - In floating point, over samples with u ≤ 8, the smallest eigenvalue of G_rel in a normalised frame is within
     3·10⁻⁴ of that of G.
 - Negative controls fail as they should: couplings scaled by 1.001, or the projection dropped.
+
+**Theorem W (one copy carrying the letter 2, every weight vector; `code/typeI_G_m1_all/`, notes there).** For
+every k ≥ 2, every positive weight vector and every copy t, the type I block of (R∞)_{k−1} with T = {t} is ⪰ 0 with
+kernel exactly span{p ⊗ f_h : h ∈ U}.
+
+*Proof (computer-assisted in one step).* For u = 1 it is Proposition U1. For u ≥ 2 normalise S_U = 1 and read the
+free squared weights as a probability measure on [0, 1] (mass x_h at x_h). In the relaxed form of Lemma R1,
+Ψ = A − ¼Σ_rh R_rh²/λ_rh, the base A is the q-eliminated form at X′ = 0 and R the projected hard source.
+1. **The source.** R/2 = Π diag(x∘V) Π − K_rank exactly, for an explicit field V and an explicit sum K_rank of three
+   centered rank-one terms, each with one fixed factor. Put B = E[(x + ¼)V²] + (EV)²/4 and R_K = ‖K_rank‖_F².
+2. **The energy theorem.** E = A − B − 8R_K > 0 on every nonzero amplitude with a ⊥ w, for every σ > 0 and every
+   probability measure on [0, 1] (not only the physical ones). An exact coherent square removes one amplitude.
+   The rank part is bounded with the means kept inside the squares, and the collective terms by resolvent
+   variance bounds. This gives E ≥ ∫ yᵀP y dμ with an explicit 5 × 5 matrix P(x; α, γ, F, B), jointly
+   matrix-concave in the four resolvent statistics. Each of the curves α = 1/(2 + F) and γ = 1/(2 + σ/δ + B) lies in
+   a triangle (chord and endpoint tangents), so P is bounded below by a convex combination of nine vertex matrices.
+   After a positive congruence, every leading principal minor of the nine families (45 polynomials in σ and x) has
+   only nonnegative coefficients and a positive term free of x: 20 406 positive coefficients, none negative.
+3. **The bound.** The rational identity (5/18)B − ‖Π diag(x∘V) Π‖² = 2 Var((x − b)V) + (E[(x − 2b)V])² + d(EV² + (EV)²),
+   with b = 13/72 and d = 11/2592, gives ‖R/2‖² ≤ (29/72)(B + 8R_K). With λ ≥ 5/12:
+
+       Ψ ≥ A − (12/5)‖R/2‖² ≥ A/30 + (29/30)E > A/30 > 0.
+
+   This is **Corollary R** (Conjecture R, for every u ≥ 2). Lemma R1 gives G ⪰ G_rel ≻ 0, and Theorem C gives the
+   block. ∎
+
+The certificate program regenerates the nine families and their 45 minors in exact integer arithmetic. Checks
+written separately use our own construction of Ψ (`code/typeI_G_m1_relax/psi_exact.py`):
+- the energy model of the program equals our base A and our ‖R/2‖² exactly;
+- the decomposition of R/2 and the rational identity hold exactly;
+- E ≻ 0 at 30 rational weight vectors and Ψ − A/30 ≻ 0 at 72;
+- the reduction holds as a matrix inequality at 40 further random measures.
+
+Negative controls fail as they should: Ψ − A/2 is not positive definite at explicit weights, and doubling the
+source-centering correction gives 280 negative coefficients. Theorem W contains Theorems EU and TL. The M-matrix
+structure (Z), (D) of Conjecture M is not needed for it and stays open.
 
 **Theorem EM (equal weights on the copies without a letter 2, every number of letter-2 copies).** Let u = |U| ≥ 3
 and m = |T| ≥ 2, let every copy of U have the same weight s > 0, and let the weights of T be arbitrary. Then G ≻ 0.
@@ -1564,6 +1600,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `typeI_u2/` (`run_all.sh`, notes in `typeI_u2/NOTES.md`) | Theorem C and the reduction before it: the closed form of every type I block (exactly against the builder, k = 3, 4, 5), the structure facts, the splitting formulas, the hard-part lemma, Φ1, every per-coordinate bound at 200 rational configurations, the chain at 32 points, exact pivots at 33 configurations, the Bernstein certificates of (I), (II), (III), negative controls |
 | `typeI_G_m1/` (`run_all.sh`, notes in `typeI_G_m1/NOTES.md`) | Theorems EU and TL: the gauge x_t = 0 and G = diag(2, I) − BᵀC⁻¹B; the symbolic reductions at one and two weight levels, their validation against direct elimination, the sign certificates, a second implementation of the two-level invariant part; the limit u → ∞ at equal U-weights; exact checks at rational points for u ≤ 10 and at three levels; negative controls; floating-point observations on the pair structure |
 | `typeI_G_m1_relax/` (notes in `typeI_G_m1_relax/NOTES.md`) | Lemma R1, Lemma F, Theorems R_EU and D, Conjecture R: the identities of Lemma R1 exactly against the closed form of the block, the reduced system D + U C Uᵀ against Ψ, pointwise certificates of Ψ (u ≤ 20), the symbolic certificate at equal U-weights, negative controls; the exact checks were rerun with other seeds |
+| `typeI_G_m1_all/` (`run_all.sh`, notes in `typeI_G_m1_all/NOTES.md`) | Theorem W, the energy theorem and Corollary R: the certificate program (nine vertex families, 45 minors, with its own checks and negative control), the energy model against the relaxed form of `typeI_G_m1_relax/`, and checks written separately from our construction of Ψ (exact equality of the energy model, the source decomposition and the rational identity; E ≻ 0 and Ψ − A/30 ≻ 0 at rational weights; the reduction at 40 random measures) |
 | `typeI_G_u3/` (`run_all.sh`, notes in `typeI_G_u3/NOTES.md`) | Theorem U3₁: the exact Schur complement for u = 3, m = 1 over Q(s_0, …, s_3) and its agreement with direct elimination, the leading minors with factor stripping and expansion checks, the coefficient-sign certificate, the Z-matrix certificate, negative controls; the same minor certificate for (u, m) = (1, 1), (2, 1), (1, 2), (2, 2), (1, 3); numerical sweeps behind Conjectures P and M |
 | `typeI_G_em/` (`run_all.sh`, notes in `typeI_G_em/NOTES.md`) | Theorem EM: the closed forms of the invariant and standard parts at equal U-weights symbolic in u, against direct elimination (44 configurations) and the Lemma B builder (21), the five coefficient-sign certificates (H = 1/2, 2/5, 29/100, 7/10), negative controls, the exact witness that G is not a function of the first two power sums of the U-weights, numerical constants for general U-weights; the second check `emcheck.py` (every torus group of (R∞)_{k−1} from Lemma B, k = 5, …, 8) |
 | `typeI_G_tv/` (`run_all.sh`, notes in `typeI_G_tv/NOTES.md`) | Theorems M1 and TV: the splitting at two U-levels, the closed forms with the level sizes symbolic against exact elimination of whole blocks, Theorem M1 (exact splitting under the permutations of T, Sylvester), Theorem TV (weighted block Gershgorin, 129 certificates, and Proposition B3 by determinant and interpolation in u₁), end-to-end checks with the Lemma B builder, negative controls; `marked_copy/run_markall2.sh` (`markall2.py`): every torus group of (R∞)_{k−1} at two-valued weights, k = 10, …, 13 |
