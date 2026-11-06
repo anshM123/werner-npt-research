@@ -1,0 +1,10 @@
+n=1 r=1: lhs +0.888537810620 rhs +0.888537810620 |diff| 4.4e-16; max |Im C_r| 0.0e+00; rank 2; norm diff 2.2e-16
+n=1 r=1: lhs +1.240185670332 rhs +1.240185670332 |diff| 2.2e-16; max |Im C_r| 0.0e+00; rank 2; norm diff 0.0e+00
+n=1 r=1: lhs +3.504047866810 rhs +3.504047866810 |diff| 4.4e-16; max |Im C_r| 0.0e+00; rank 2; norm diff 0.0e+00
+n=1 r=2: lhs +2.765880348538 rhs +2.765880348538 |diff| 1.3e-15; max |Im C_r| 0.0e+00; rank 2; norm diff 4.4e-16
+n=1 r=2: lhs +2.550772989911 rhs +2.550772989911 |diff| 1.8e-15; max |Im C_r| 0.0e+00; rank 2; norm diff 8.9e-16
+n=1 r=2: lhs +0.677247744098 rhs +0.677247744098 |diff| 3.3e-16; max |Im C_r| 0.0e+00; rank 2; norm diff 2.2e-16
+n=2 r=1: lhs +3.119177804762 rhs +3.119177804762 |diff| 0.0e+00; max |Im C_r| 0.0e+00; rank 2; norm diff 0.0e+00
+n=2 r=1: lhs +1.053074213153 rhs +1.053074213153 |diff| 0.0e+00; max |Im C_r| 0.0e+00; rank 2; norm diff 0.0e+00
+n=2 r=1: lhs +0.407673555769 rhs +0.407673555769 |diff| 5.6e-17; max |Im C_r| 0.0e+00; rank 2; norm diff 0.0e+00
+PASS

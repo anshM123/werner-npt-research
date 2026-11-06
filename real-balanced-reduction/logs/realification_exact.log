@@ -1,0 +1,73 @@
+{
+ "flag": {
+  "arithmetic": "exact BigInt in Z[omega], omega^2+omega+1=0",
+  "normalizedFlagVectors": "f=(|00>+omega|11>+omega^2|22>)/sqrt(3), g=conj(f), <f,g>=0",
+  "basis": "|f><f|, |g><g|, |f><g|, |g><f|",
+  "gramTimes36": [
+   [
+    "33",
+    "-3",
+    "0",
+    "0"
+   ],
+   [
+    "-3",
+    "33",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "0",
+    "24",
+    "0"
+   ],
+   [
+    "0",
+    "0",
+    "0",
+    "24"
+   ]
+  ],
+  "constants": {
+   "a": "11/12",
+   "b": "-1/12",
+   "c": "2/3"
+  },
+  "errorRatios": [
+   "1/11",
+   "8/11"
+  ]
+ },
+ "independentDirectChecks": [
+  {
+   "name": "complex non-Hermitian rank 2",
+   "rank": 2,
+   "twiceInputQ": "27",
+   "eightTimesUnnormalisedOutputQ": "1728",
+   "identity": true
+  },
+  {
+   "name": "complex PSD rank 2",
+   "rank": 2,
+   "twiceInputQ": "0",
+   "eightTimesUnnormalisedOutputQ": "1404",
+   "identity": true
+  },
+  {
+   "name": "negative rank-3 control only",
+   "rank": 3,
+   "twiceInputQ": "-3",
+   "eightTimesUnnormalisedOutputQ": "-324",
+   "identity": true
+  }
+ ],
+ "balancedExample": {
+  "inputCopies": 3,
+  "addedCopies": 4,
+  "outputCopies": 7,
+  "rank": 2,
+  "allOneCopyCompressions": "I_2 delta_ij/3 exactly"
+ },
+ "scope": "All-copy reduction with added copies; no fixed-copy restriction to real matrices and no proof of endpoint positivity."
+}

@@ -1,0 +1,30 @@
+{
+ "arithmetic": "exact BigInt in Z[omega] and integers",
+ "flagGramEntryChecks": 160,
+ "independentResidueTransferChecks": 32,
+ "projectorFactorNormChecks": 12,
+ "realOneDesignEntryChecks": 81,
+ "flagErasureCombinatorialChecks": 2112,
+ "realProjectorFamily": "N=1+2R, P_R=(x_R x_R^T+y_R y_R^T)/(2*3^(R+1)); amplitudes 2 cos(2pi sum(k)/3) and 2 cos(2pi(sum(k)-i)/3)",
+ "closedForm": "q_(M_z)^(1+2R)(P_R)=((z-1)*a_z^R-(1+z)*b_z^R+3*c_z^R)/4",
+ "phaseConstants": {
+  "a": "(4+6z+z^2)/12",
+  "b": "(4-6z+z^2)/12",
+  "c": "(1+z^2)/3"
+ },
+ "example": {
+  "z": "1/2",
+  "R": 5,
+  "copies": 11,
+  "q": "-330131/509607936",
+  "endpointQ": "49153/497664"
+ },
+ "realBalancingFlagConstants": {
+  "a": "(7+4z^2)/12",
+  "b": "-1/12",
+  "c": "(3+4z+z^2)/12",
+  "d": "(3-4z+z^2)/12",
+  "eta": "(z^2+4z+3)/(4z^2+7)<=8/11<1 for 0<=z<=1; difference numerator 21z^2-44z+23=(1-z)(23-21z)"
+ },
+ "scope": "For every 0<z<1 some real PSD rank-two projector, and after the proved balancing construction some real balanced rank-two projector at an odd copy count, has negative M_z form. M_0 has the separate all-copy real PSD rank-two SOS; M_1 is the still-open Werner endpoint."
+}
