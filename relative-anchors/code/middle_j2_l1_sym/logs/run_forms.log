@@ -1,0 +1,6 @@
+(9+, 2): 90 comparisons of saved forms with the rational reduction [5.8s]
+(8+, 3): 108 comparisons of saved forms with the rational reduction [16.2s]
+(7+, 4): 126 comparisons of saved forms with the rational reduction [27.8s]
+(6+, 5): 135 comparisons of saved forms with the rational reduction [40.2s]
+(13+, 13): 144 comparisons of saved forms with the rational reduction [53.6s]
+PASS

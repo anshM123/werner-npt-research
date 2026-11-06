@@ -1,0 +1,10 @@
+(a) (3, 2): explicit projections = reduced S_b for b = 1, 1001/1000: True; failing point w = 1/30 (q = 1/900), families with a W-block not PD at b = 1001/1000: ['inv', 'mix', 'std0', 'std1'] [0.8s]
+(a) (4, 2): explicit projections = reduced S_b for b = 1, 1001/1000: True; failing point w = 1/30 (q = 1/900), families with a W-block not PD at b = 1001/1000: ['inv', 'mix', 'std0', 'std1'] [2.0s]
+(b) (9, 2): all W-blocks PD at b = 1; at b = 1001/1000, q = 1/10000: not PD for ['inv', 'mix', 'std0', 'std1'] [3.3s]
+(b) (8, 3): all W-blocks PD at b = 1; at b = 1001/1000, q = 1/10000: not PD for ['inv', 'mix', 'std0', 'std1'] [5.6s]
+(b) (7, 4): all W-blocks PD at b = 1; at b = 1001/1000, q = 1/10000: not PD for ['inv', 'mix', 'std0', 'std1', 'two1'] [8.3s]
+(b) (6, 5): all W-blocks PD at b = 1; at b = 1001/1000, q = 1/10000: not PD for ['inv', 'mix', 'std0', 'std1', 'two1'] [11.2s]
+(b) (12, 9): all W-blocks PD at b = 1; at b = 1001/1000, q = 1/10000: not PD for ['inv', 'mix', 'std0', 'std1', 'two1'] [14.0s]
+(b) (21, 20): all W-blocks PD at b = 1; at b = 1001/1000, q = 1/10000: not PD for ['inv', 'mix', 'std0', 'std1', 'two1'] [16.7s]
+time 16.7s
+PASS

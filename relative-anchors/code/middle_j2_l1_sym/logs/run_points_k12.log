@@ -1,0 +1,19 @@
+bases chosen at the sample size (10, 4) (as in cert.py for the regime containing (8, 4))
+(8, 4) q = 1/4: (I x A2) Y_PQ = K: True; Y_QQ W3 = 2I: True; Y_PP = PP oracle entrywise: True [14.5s]
+  inv: |K| 3, |W| 7, |Q| 4: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [17.5s]
+  mix: |K| 1, |W| 7, |Q| 2: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [17.9s]
+  std0: |K| 2, |W| 9, |Q| 3: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [18.3s]
+  two0: |K| 1, |W| 4, |Q| 2: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [18.6s]
+  anti0: |K| 0, |W| 3, |Q| 0: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [18.8s]
+  three0: |K| 0, |W| 1, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [18.9s]
+  tto0: |K| 0, |W| 1, |Q| 0: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [19.1s]
+  twostd0: |K| 0, |W| 2, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [19.3s]
+  antistd0: |K| 0, |W| 1, |Q| 0: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [19.5s]
+  std1: |K| 2, |W| 9, |Q| 3: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [19.9s]
+  two1: |K| 1, |W| 3, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [20.2s]
+  anti1: |K| 0, |W| 3, |Q| 0: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [20.4s]
+  twostd1: |K| 0, |W| 2, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [20.7s]
+  antistd1: |K| 0, |W| 1, |Q| 0: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [20.9s]
+  dimension counts (P, K, Q): (True, True, True)
+time 20.9s
+PASS

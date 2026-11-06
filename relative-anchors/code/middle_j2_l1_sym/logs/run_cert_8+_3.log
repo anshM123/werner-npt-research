@@ -1,0 +1,18 @@
+(8+, 3) inv: PASS {'nK': 3, 'nW': 7, 'nQ': 4, 'largest pivot numerator (terms, degree)': (989, 43)} [2.0s]
+(8+, 3) mix: PASS {'nK': 1, 'nW': 7, 'nQ': 2, 'largest pivot numerator (terms, degree)': (1595, 55)} [5.4s]
+(8+, 3) std0: PASS {'nK': 2, 'nW': 9, 'nQ': 3, 'largest pivot numerator (terms, degree)': (2141, 64)} [26.8s]
+(8+, 3) two0: PASS {'nK': 1, 'nW': 4, 'nQ': 2, 'largest pivot numerator (terms, degree)': (496, 31)} [27.1s]
+(8+, 3) anti0: PASS {'nK': 0, 'nW': 3, 'nQ': 0, 'largest pivot numerator (terms, degree)': (210, 19)} [27.2s]
+(8+, 3) three0: PASS {'nK': 0, 'nW': 1, 'nQ': 1, 'largest pivot numerator (terms, degree)': (55, 9)} [27.2s]
+(8+, 3) tto0: PASS {'nK': 0, 'nW': 1, 'nQ': 0, 'largest pivot numerator (terms, degree)': (36, 7)} [27.3s]
+(8+, 3) twostd0: PASS {'nK': 0, 'nW': 2, 'nQ': 1, 'largest pivot numerator (terms, degree)': (171, 18)} [27.4s]
+(8+, 3) antistd0: PASS {'nK': 0, 'nW': 1, 'nQ': 0, 'largest pivot numerator (terms, degree)': (36, 7)} [27.4s]
+(8+, 3) std1: PASS {'nK': 2, 'nW': 8, 'nQ': 2, 'largest pivot numerator (terms, degree)': (1175, 47)} [34.3s]
+(8+, 3) two1: PASS {'nK': 0, 'nW': 0, 'nQ': 0} [34.3s]
+(8+, 3) anti1: PASS {'nK': 0, 'nW': 2, 'nQ': 0, 'largest pivot numerator (terms, degree)': (65, 10)} [34.4s]
+(8+, 3) three1: PASS {'nK': 0, 'nW': 0, 'nQ': 0} [34.4s]
+(8+, 3) tto1: PASS {'nK': 0, 'nW': 0, 'nQ': 0} [34.4s]
+(8+, 3) twostd1: PASS {'nK': 0, 'nW': 0, 'nQ': 0} [34.4s]
+(8+, 3) antistd1: PASS {'nK': 0, 'nW': 1, 'nQ': 0, 'largest pivot numerator (terms, degree)': (36, 7)} [34.4s]
+time 34.4s
+PASS

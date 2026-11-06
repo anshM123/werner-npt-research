@@ -1,0 +1,22 @@
+(4, 2) q = 1/4: (I x A2) Y_PQ = K: True; Y_QQ W3 = 2I: True; Y_PP = PP oracle entrywise: True [0.1s]
+  inv: |K| 3, |W| 6, |Q| 3: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.2s]
+  mix: |K| 1, |W| 5, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.3s]
+  std0: |K| 2, |W| 9, |Q| 3: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.4s]
+  two0: |K| 1, |W| 3, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.4s]
+  anti0: |K| 0, |W| 3, |Q| 0: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.4s]
+  twostd0: |K| 0, |W| 2, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.5s]
+  antistd0: |K| 0, |W| 1, |Q| 0: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.5s]
+  std1: |K| 1, |W| 5, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.5s]
+  dimension counts (P, K, Q): (True, True, True)
+(4, 2) q = 9/4: (I x A2) Y_PQ = K: True; Y_QQ W3 = 2I: True; Y_PP = PP oracle entrywise: True [0.6s]
+  inv: |K| 3, |W| 6, |Q| 3: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.7s]
+  mix: |K| 1, |W| 5, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.8s]
+  std0: |K| 2, |W| 9, |Q| 3: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.9s]
+  two0: |K| 1, |W| 3, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.9s]
+  anti0: |K| 0, |W| 3, |Q| 0: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.9s]
+  twostd0: |K| 0, |W| 2, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [1.0s]
+  antistd0: |K| 0, |W| 1, |Q| 0: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [1.0s]
+  std1: |K| 1, |W| 5, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [1.0s]
+  dimension counts (P, K, Q): (True, True, True)
+time 1.0s
+PASS

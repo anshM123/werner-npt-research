@@ -1,0 +1,12 @@
+(2, 4) q = 4: (I x A2) Y_PQ = K: True; Y_QQ W3 = 2I: True; Y_PP = PP oracle entrywise: True [0.1s]
+  inv: |K| 3, |W| 6, |Q| 3: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.2s]
+  mix: |K| 1, |W| 5, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.3s]
+  std0: |K| 1, |W| 5, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.3s]
+  std1: |K| 2, |W| 9, |Q| 3: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.4s]
+  two1: |K| 1, |W| 3, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.5s]
+  anti1: |K| 0, |W| 3, |Q| 0: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.5s]
+  twostd1: |K| 0, |W| 2, |Q| 1: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.5s]
+  antistd1: |K| 0, |W| 1, |Q| 0: Gram P True, Gram Q True, reduced S' = projection True, K-rows vanish True [0.5s]
+  dimension counts (P, K, Q): (True, True, True)
+time 0.5s
+PASS
