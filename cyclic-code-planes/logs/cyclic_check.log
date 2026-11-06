@@ -1,0 +1,2 @@
+n = 4: one-sided least eigenvalue 0.333333333333 (144/432 = 0.333333333333); two-sided 0.333333333333
+n = 5: one-sided least eigenvalue 0.246527777778 (639/2592 = 0.246527777778); two-sided 0.246527777778 (Theorem A, n = 5: 0.246527777778)

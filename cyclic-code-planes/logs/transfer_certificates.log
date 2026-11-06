@@ -1,0 +1,104 @@
+{
+ "passed": true,
+ "homogeneousPowers": "8..15",
+ "allMixedWords": [
+  {
+   "n": 12,
+   "words": 531441,
+   "negProductWords": 0,
+   "zeroProductWords": 0,
+   "minCoeff": "365472",
+   "minTrace": "68934240",
+   "worstWord": [
+    0,
+    1,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    1,
+    0
+   ]
+  },
+  {
+   "n": 13,
+   "words": 1594323,
+   "negProductWords": 0,
+   "zeroProductWords": 0,
+   "minCoeff": "2773116",
+   "minTrace": "332300799",
+   "worstWord": [
+    0,
+    1,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    2,
+    0
+   ]
+  }
+ ],
+ "directPhysicalChecks": 31,
+ "finiteAllCosetMinimum": [
+  {
+   "n": 4,
+   "numerator": "144",
+   "denominator": "432"
+  },
+  {
+   "n": 5,
+   "numerator": "639",
+   "denominator": "2592"
+  },
+  {
+   "n": 6,
+   "numerator": "3888",
+   "denominator": "15552"
+  },
+  {
+   "n": 7,
+   "numerator": "15903",
+   "denominator": "93312"
+  },
+  {
+   "n": 8,
+   "numerator": "108864",
+   "denominator": "559872"
+  },
+  {
+   "n": 9,
+   "numerator": "483327",
+   "denominator": "3359232"
+  },
+  {
+   "n": 10,
+   "numerator": "2717712",
+   "denominator": "20155392"
+  },
+  {
+   "n": 11,
+   "numerator": "13049343",
+   "denominator": "120932352"
+  },
+  {
+   "n": 12,
+   "numerator": "68934240",
+   "denominator": "725594112"
+  },
+  {
+   "n": 13,
+   "numerator": "332300799",
+   "denominator": "4353564672"
+  }
+ ]
+}
