@@ -1,0 +1,11 @@
+MT_anti_1 exit 0 23 families proved, 0 empty, of 23; 0s PASS 2s
+MT_anti_2 exit 0 33 families proved, 0 empty, of 33; 1s PASS 2s
+MT_anti_3 exit 0 11 families proved, 0 empty, of 11; 1s PASS 1s
+MT_anti_4 exit 0 1 families proved, 0 empty, of 1; 0s PASS 2s
+MU_anti_1 exit 0 31 families proved, 0 empty, of 31; 1s PASS 3s
+MU_anti_2 exit 0 38 families proved, 0 empty, of 38; 8s PASS 9s
+MU_anti_4 exit 0 1 families proved, 0 empty, of 1; 31s PASS 34s
+MU_anti_3 exit 0 12 families proved, 0 empty, of 12; 64s PASS 66s
+MT_sym_1 exit 0 89 families proved, 0 empty, 0 stopped by the time limit (open), of 89; 74s PASS 75s
+MU_sym_1 exit 127 MU sym [q0=1, t>=4, i=1, tp=1] PD on complement (pivots 18, kernel 2)  (17.2s)  [20 vectors, gauge ['O0', 'O1'], largest entry 71 terms, largest pivot 3391 terms] MU sym [q0=2, t>=4, i=0, tp=1] PD on complement (pivots 12, kernel 2)  (4.9s)  [14 vectors, gauge ['O0', 'O1'], largest entry 54 terms, largest pivot 2113 terms] 116s
+BATCH1 DONE

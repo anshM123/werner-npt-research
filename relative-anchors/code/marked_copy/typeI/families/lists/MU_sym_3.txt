@@ -1,0 +1,14 @@
+MU/sym/n,n,0,n
+MU/sym/n,n,1,n
+MU/sym/n,n,n,1
+MU/sym/-1,n,n,n
+MU/sym/0,n,n,n
+MU/sym/1,n,n,n
+MU/sym/2,n,n,n
+MU/sym/3,n,n,n
+MU/sym/n,-2,n,n
+MU/sym/n,-1,n,n
+MU/sym/n,0,n,n
+MU/sym/n,1,n,n
+MU/sym/n,2,n,n
+MU/sym/n,3,n,n

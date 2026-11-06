@@ -1,0 +1,16 @@
+MT sym [q0=1, t=1, i>=2, tp>=2]
+  form: 13 vectors, largest entry 112 terms [0.1s]
+  preliminaries: symmetric, 18 sanity points, 37 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.3s]
+  structure: every entry of the gauge-fixed form (12 x 12) is p/d with d free of i and deg_i p <= 2 [0.3s]
+  13 irreducible factors of the entry denominators, exponents of D* [2, 4, 4, 2, 4, 4, 4, 2, 4, 4, 7, 10, 7]; deg_i T <= B = 14 [0.4s]
+    slice i = 2: det 1367/1275 terms [0.6s]
+    slice i = 7: det 1367/1275 terms [0.6s]
+    slice i = 12: det 1367/1275 terms [0.5s]
+  D_c exponents [2, 2, 4, 2, 2, 2, 2, 2, 4, 4, 4, 7, 4]; every slice gives a polynomial D_c det [9.3s]
+  N~(z, nu, s): 15316 terms, degrees (12, 51, 49) [9.3s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 29968 terms, 0 negative coefficients, a positive one free of z, w: True [9.4s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [9.4s]
+MT sym [q0=1, t=1, i>=2, tp>=2] PD on complement (determinant route) (9.4s)
+1 families proved of 1; 9s
+PASS

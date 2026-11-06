@@ -1,0 +1,2 @@
+MU sym [q0=1, t>=4, i=1, tp=1] PD on complement (pivots 18, kernel 2)  (17.2s)  [20 vectors, gauge ['O0', 'O1'], largest entry 71 terms, largest pivot 3391 terms]
+MU sym [q0=2, t>=4, i=0, tp=1] PD on complement (pivots 12, kernel 2)  (4.9s)  [14 vectors, gauge ['O0', 'O1'], largest entry 54 terms, largest pivot 2113 terms]

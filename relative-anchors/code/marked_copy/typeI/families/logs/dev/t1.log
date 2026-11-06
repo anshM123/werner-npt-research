@@ -1,0 +1,12 @@
+MT sym [q0>=4, t=1, i=0, tp=0] PD on complement (pivots 5, kernel 1)  (0.0s)  [6 vectors, gauge ['CM'], largest entry 19 terms, largest pivot 103 terms]
+MT sym [q0=1, t>=4, i=0, tp=0] PD on complement (pivots 5, kernel 1)  (0.0s)  [6 vectors, gauge ['CM'], largest entry 24 terms, largest pivot 241 terms]
+MT sym [q0=1, t=1, i>=2, tp=0] PD on complement (pivots 9, kernel 1)  (0.4s)  [10 vectors, gauge ['CM'], largest entry 42 terms, largest pivot 559 terms]
+MT sym [q0=1, t=1, i=0, tp>=2] PD on complement (pivots 8, kernel 1)  (0.1s)  [9 vectors, gauge ['CM'], largest entry 20 terms, largest pivot 526 terms]
+MU sym [q0>=4, t=1, i=0, tp=1] PD on complement (pivots 12, kernel 2)  (2.4s)  [14 vectors, gauge ['O0', 'O1'], largest entry 47 terms, largest pivot 1594 terms]
+MU sym [q0=1, t>=4, i=1, tp=1] PD on complement (pivots 18, kernel 2)  (17.2s)  [20 vectors, gauge ['O0', 'O1'], largest entry 71 terms, largest pivot 3391 terms]
+MU sym [q0=1, t=1, i>=2, tp=1] PD on complement (pivots 18, kernel 2)  (79.3s)  [20 vectors, gauge ['O0', 'O1'], largest entry 79 terms, largest pivot 2993 terms]
+MU sym [q0=1, t=1, i=1, tp>=2] PD on complement (pivots 18, kernel 2)  (10.5s)  [20 vectors, gauge ['O0', 'O1'], largest entry 48 terms, largest pivot 2844 terms]
+MT anti [q0=1, t=1, i=1, tp>=2] PD on complement (pivots 3, kernel 0)  (0.0s)  [3 vectors, gauge [], largest entry 6 terms, largest pivot 15 terms]
+MU anti [q0=1, t=1, i=1, tp>=2] PD on complement (pivots 6, kernel 0)  (0.0s)  [6 vectors, gauge [], largest entry 42 terms, largest pivot 135 terms]
+MT anti [q0>=4, t>=4, i>=2, tp>=2] PD on complement (pivots 3, kernel 0)  (0.3s)  [3 vectors, gauge [], largest entry 176 terms, largest pivot 2430 terms]
+guard: time limit 110 s exceeded, killed PID 57496

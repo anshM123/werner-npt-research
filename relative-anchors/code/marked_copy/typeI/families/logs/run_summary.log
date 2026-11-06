@@ -1,0 +1,8 @@
+res/anti_MT.pkl: 68 families: PD 68; sanity (member, sigma) points 828; largest form 3 vectors; largest entry 111 terms; largest pivot 923 terms
+res/anti_MU.pkl: 82 families: PD 82; sanity (member, sigma) points 948; largest form 6 vectors; largest entry 741 terms; largest pivot 9604 terms
+res/sym1_MT.pkl: 89 families: PD 89; sanity (member, sigma) points 534; largest form 13 vectors; largest entry 62 terms; largest pivot 1945 terms
+res/sym1_MU.pkl: 67 families: PD 67; sanity (member, sigma) points 402; largest form 22 vectors; largest entry 143 terms; largest pivot 5237 terms
+res/det_MT.pkl: 22 families: PD 22; sanity (member, sigma) points 0; largest form 13 vectors; largest entry 0 terms; largest pivot 0 terms; determinant route: B in [2, 4, 8, 10, 12, 14] (B + 1 slices each), N~ up to 51330 terms, 181s in all
+res/det1_MT.pkl: 19 families: PD 19; sanity (member, sigma) points 0; largest form 10 vectors; largest entry 0 terms; largest pivot 0 terms; determinant route: B in [2, 13, 17, 30, 39, 44, 52, 54, 55, 57, 60, 62, 63, 64, 66, 72, 74] (B + 1 slices each), N~ up to 104169 terms, 445s in all
+all files: PD 347
+PASS

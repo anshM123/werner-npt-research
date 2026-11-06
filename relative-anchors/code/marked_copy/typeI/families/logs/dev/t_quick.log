@@ -1,0 +1,63 @@
+MT anti (4, 4, 2, 2) 3 0.02s None 2 38 3 0 3
+         15508 function calls (15506 primitive calls) in 0.015 seconds
+
+   Ordered by: cumulative time
+   List reduced from 90 to 12 due to restriction <12>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.015    0.015 tfamlib.py:505(reduced)
+       12    0.000    0.000    0.009    0.001 tfamlib.py:369(einv)
+       10    0.000    0.000    0.006    0.001 tfamlib.py:393(newton)
+      765    0.003    0.000    0.004    0.000 flintfield.py:77(__mul__)
+       40    0.000    0.000    0.004    0.000 tfamlib.py:357(DU)
+      821    0.002    0.000    0.004    0.000 flintfield.py:54(__add__)
+       10    0.000    0.000    0.003    0.000 tfamlib.py:125(einv_data)
+     1867    0.001    0.000    0.002    0.000 flintfield.py:51(_c)
+      126    0.000    0.000    0.002    0.000 tfamlib.py:278(add)
+       64    0.000    0.000    0.002    0.000 tfamlib.py:296(jUp)
+      464    0.002    0.000    0.002    0.000 flintfield.py:26(__call__)
+      558    0.000    0.000    0.002    0.000 tfamlib.py:269(addto)
+
+
+MT sym (0, 1, 0, 0) 5 0.01s None 2 5 4 0 1
+         9541 function calls (9533 primitive calls) in 0.007 seconds
+
+   Ordered by: cumulative time
+   List reduced from 96 to 12 due to restriction <12>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.007    0.007 tfamlib.py:505(reduced)
+      437    0.002    0.000    0.002    0.000 flintfield.py:77(__mul__)
+       15    0.000    0.000    0.002    0.000 tfamlib.py:369(einv)
+       49    0.000    0.000    0.002    0.000 tfamlib.py:405(dot)
+       33    0.000    0.000    0.001    0.000 tfamlib.py:199(weight)
+      317    0.001    0.000    0.001    0.000 flintfield.py:26(__call__)
+      897    0.000    0.000    0.001    0.000 flintfield.py:51(_c)
+       28    0.000    0.000    0.001    0.000 tfamlib.py:393(newton)
+       13    0.000    0.000    0.001    0.000 tfamlib.py:125(einv_data)
+      328    0.000    0.000    0.001    0.000 flintfield.py:54(__add__)
+      945    0.001    0.000    0.001    0.000 flintfield.py:36(__init__)
+      180    0.000    0.000    0.001    0.000 tlib.py:397(psi)
+
+
+MT sym (4, 4, 2, 2) 13 0.19s None 2 62 9 -2 3
+         249691 function calls (249679 primitive calls) in 0.186 seconds
+
+   Ordered by: cumulative time
+   List reduced from 96 to 12 due to restriction <12>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.003    0.003    0.186    0.186 tfamlib.py:505(reduced)
+       95    0.001    0.000    0.130    0.001 tfamlib.py:369(einv)
+      142    0.001    0.000    0.115    0.001 tfamlib.py:393(newton)
+      562    0.001    0.000    0.074    0.000 tfamlib.py:357(DU)
+    11845    0.041    0.000    0.053    0.000 flintfield.py:77(__mul__)
+    14546    0.022    0.000    0.052    0.000 flintfield.py:54(__add__)
+    13050    0.009    0.000    0.042    0.000 tfamlib.py:269(addto)
+     1588    0.003    0.000    0.041    0.000 tfamlib.py:278(add)
+      585    0.004    0.000    0.040    0.000 tfamlib.py:308(jUm)
+      765    0.005    0.000    0.039    0.000 tfamlib.py:296(jUp)
+    30372    0.007    0.000    0.032    0.000 flintfield.py:51(_c)
+    34700    0.029    0.000    0.029    0.000 flintfield.py:36(__init__)
+
+

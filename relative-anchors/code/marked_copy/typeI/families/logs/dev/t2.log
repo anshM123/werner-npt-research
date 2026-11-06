@@ -1,0 +1,10 @@
+MT anti [q0>=1, t>=1, i>=2, tp>=2] INTERMEDIATE DENOMINATOR NOT ONE-SIGNED (('node difference', ('N', 0, 0), 2, 1))  (0.2s)  [3 vectors, gauge None, largest entry 176 terms, largest pivot None terms]
+MT sym [q0>=1, t=1, i=0, tp=0] PD on complement (pivots 5, kernel 1)  (0.0s)  [6 vectors, gauge ['CM'], largest entry 19 terms, largest pivot 103 terms]
+MT sym [q0=1, t>=1, i=0, tp=0] INTERMEDIATE DENOMINATOR NOT ONE-SIGNED (('node difference', ('N', 0, 1), 2, 1))  (0.0s)  [6 vectors, gauge None, largest entry 24 terms, largest pivot None terms]
+MT sym [q0>=1, t>=1, i=0, tp=0] INTERMEDIATE DENOMINATOR NOT ONE-SIGNED (('N value', ('N', 0, 1), 2))  (0.0s)  [6 vectors, gauge None, largest entry 80 terms, largest pivot None terms]
+MT sym [q0=0, t=0, i>=2, tp>=2] PD on complement (pivots 5, kernel 1)  (0.2s)  [6 vectors, gauge ['CM'], largest entry 37 terms, largest pivot 944 terms]
+MT sym [q0>=1, t=0, i=0, tp>=2] NONUNIFORM m >= 2 holds only for some members  (0.0s)
+MT anti [q0>=1, t>=1, i=0, tp>=2] INTERMEDIATE DENOMINATOR NOT ONE-SIGNED (('node difference', ('N', 0, 0), 2, 1))  (0.0s)  [3 vectors, gauge None, largest entry 111 terms, largest pivot None terms]
+MT anti [q0>=1, t>=1, i=1, tp>=2] INTERMEDIATE DENOMINATOR NOT ONE-SIGNED (('node difference', ('N', 0, 0), 2, 1))  (0.0s)  [3 vectors, gauge None, largest entry 102 terms, largest pivot None terms]
+2 families proved, 0 empty, of 8; 0s
+FAIL

@@ -1,0 +1,8 @@
+MT sym [q0>=4, t=1, i>=2, tp>=2]
+  form: 13 vectors, largest entry 308 terms [0.2s]
+  preliminaries: symmetric, 54 sanity points, 41 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.6s]
+  structure holds; entries in ['q0', 'i', 'nu', 's']: numerators up to 56 terms, denominators up to 77 terms [0.6s]
+  14 irreducible factors of the entry denominators; exponents of D* [7, 4, 4, 4, 2, 4, 4, 7, 2, 4, 4, 10, 2, 4] [0.6s]
+  degree bounds of T = D* det Qg: {'q0': 69, 'i': 14, 'nu': 71, 's': 69} [0.7s]
+  one slice ({'q0': 4, 'i': 2} fixed, det over Q(nu, s)): 1420/1326 terms, 0.5s
+PASS

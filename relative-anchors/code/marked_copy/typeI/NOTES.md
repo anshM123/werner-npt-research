@@ -18,7 +18,7 @@ P_T := span{p ⊗ y : y ∈ H_j with the letter 2 on every copy of T and j − |
 | 5 | Checks: (a) every entry of every reduced form equals the projection of the rescaled Lemma B block (`fastj1.py`, exact) onto the explicit twisted vectors, for k = 3, …, 9 and every j ≥ 1 and at k = 10 for j = 3, 8, 9, every T-size and case, B scaled by 1 and by 1001/1000; the twisted spaces split into exactly the two expected U′-irreps and the T′-irrep of the mode, and the dimension counts add up to the number of states of every block; (b) symbolic forms against numeric ones and the Newton window against all Johnson nodes, every form with k ≤ 10 and every 20th form with 18 ≤ k ≤ 24; every sector denominator has nonnegative coefficients; (c) whole blocks end to end, without the reduction: at k = 8 (σ = 4, 1/9) and k = 9 (σ = 9/4) for every j = 3, …, k − 1, at k = 10 (σ = 1/4; j = 3, 8, 9) and k = 12 (σ = 4; j = 3, 10, 11), every T-size and case: ⪰ 0 with kernel exactly P_T by an exact positive-definiteness certificate | **exact checks**, not proofs (Sections 6 and 8) |
 | 6 | Negative controls, B → (1 + 1/1000)B: the certificates fail for many forms at every k = 8, …, 12, with an explicit σ; in every end-to-end block ⟨κ, Ỹκ⟩ < 0 for a known kernel vector κ | **exact** (Section 6) |
 | 7 | Coverage: for each k = 4, …, 29 every (j, \|T\|, case, mode, i) with a nonzero twisted space has a certificate with the expected kernel; for k ≤ 8 every torus group of every (R∞)_j is one of the block types used, and the type I blocks with a letter 1 have exactly the states used by the checks | **exact bookkeeping** (`coverage_t.py`, `blocks_t.py`) |
-| 8 | Families symbolic in the sizes (every k, step 2 of the plan: not attempted); k ≥ 30; two or more marked copies; general weights | **open** (Section 7) |
+| 8 | Families symbolic in the sizes (every k): begun in `families/` (Theorems AT, S1, SD, S2 there: the anti mode and the sym-mode families with few large sizes, for every k); the rest of k ≥ 30; two or more marked copies; general weights | **open** (Section 7; `families/NOTES.md`) |
 
 Nothing here says that Conjecture 12 of `single-excitation-range/` holds in general, or anything about the NPT (Werner
 distillability) problem. Computer-assisted means exact rational arithmetic (python-flint `fmpq`, `fmpq_poly`) and sign
@@ -236,7 +236,7 @@ All exact unless said otherwise; `run_all.sh` reruns them (`logs/run_all.out`).
 
 ## 7. What is not done
 
-- **Families symbolic in the sizes** (step 2 of the plan): not attempted. With copy 0 in T the U-part is the
+- **Families symbolic in the sizes** (step 2 of the plan): begun in `families/` (see `families/NOTES.md`). With copy 0 in T the U-part is the
   equal-weight calculus of Theorem E3 (`orbit2.SymF2`) and σ enters only through copy 0, so the families
   [q0, t, i, τ′ fixed or symbolic] with σ free are the natural next step; the generic family has four symbolic sizes
   and σ, and at equal weights already needed Proposition C (a determinant certificate). Case MU adds the letter y0 at

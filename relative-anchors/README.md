@@ -62,7 +62,9 @@ This folder collects what we can prove about the group conditions for every k.
   at such weights (Corollary M2). For 8 ≤ k ≤ 29 every type I block with a letter 1 holds as well (Theorem I1), so
   all of (R∞) holds there, and Conjecture 12 holds for every single excitation supported on at most 29 copies whose
   nonzero weights are all equal but one (Corollary I2). At such weights (R∞)_{k−1} holds completely for every k
-  (Corollary M1).
+  (Corollary M1), and for every k the type I blocks with a letter 1 of the other conditions hold on the parts of
+  the anti mode and on the families of the sym mode with few large sizes (Theorems AT, S1, SD and S2); about half
+  of their reduced forms with k ≥ 30 are still open.
 - **Equal weights** (w_t = 1).
   - The letter-1 block of every (R∞)_j is ⪰ 0 for every k, with the kernel described exactly (Theorem E1). The proof is
     computer-assisted, symbolic in k.
@@ -1443,9 +1445,32 @@ without a letter 1 Theorem DJ, the type II blocks Proposition T2′, and the typ
 Conjecture 12 then follows with Lemma 13 of `single-excitation-range/` as in Corollary 4, and supports of at most
 seven copies are Corollary 7₂. ∎
 
+**Families in the sizes** (`code/marked_copy/typeI/families/`, notes there). The reduced forms of the type I blocks
+with a letter 1 (Lemma R′ of `typeI/`) have four sizes, q0, t, i and τ′ (the copies of T other than the marked
+one), with k = τ′ + q0 + t + 2i + 1. Their calculus is written with each size fixed or symbolic (a formal
+continuation, valid when every denominator it creates is one-signed, which every certificate checks), and with
+ν = τ′ + 2i every entry of a sym form is a polynomial of degree at most 2 in i with a denominator free of i
+(Lemma N, as the structure lemma of Proposition C). For every k, every j with 3 ≤ j ≤ k − 2 and every σ > 0:
+- **Theorem AT.** Every reduced form of the anti mode (the isotypic part of the standard irrep of the copies of T
+  other than the marked one) is positive definite (150 families, both cases, all sizes symbolic where needed).
+- **Theorem S1.** Every reduced form of the sym mode with at least three of q0 ≤ 3, t ≤ 3, i ≤ 1, τ′ ≤ 1 is ⪰ 0 with
+  kernel exactly the span of its known kernel vectors (156 families with one symbolic size, by elimination).
+- **Theorem SD.** The same when the marked copy lies in T, q0 ≤ 3 and t ≤ 3 (22 families with i and τ′ symbolic, by
+  determinant and interpolation in i).
+- **Theorem S2.** The same when the marked copy lies in T, two sizes are large but not both i and τ′, and i = 0 or
+  τ′ = 0 (19 families, by determinant and interpolation in one size).
+
+The family forms equal the numeric ones at 1 476 far (member, σ) points (k up to 67), and a check written
+separately finds the numeric reduced form ⪰ 0 with exactly the expected kernel at 2 082 sampled members of the
+certified families with 30 ≤ k ≤ 90. With B replaced by (1 + 1/1000)B 83 of the 89 one-size certificates of case MT
+fail. Of the 18 722 836 reduced forms with k ≤ 120 and 3 ≤ j ≤ k − 2, 73 467 are covered by Theorem I1 and 9 138 903
+by these families; the other 9 510 466 (all of the sym mode, with k ≥ 30) are open.
+
 **Open here.** At such weights only the type I blocks with a letter 1 of (R∞)_j for 3 ≤ j ≤ k − 2 and k ≥ 30 are
-open (for k ≤ 29 they are Theorem I1; those of (R∞)_{k−1} hold for every k, Corollary M1): an every-k proof needs
-those reduced forms with the sizes symbolic, in up to five variables.
+open (for k ≤ 29 they are Theorem I1; those of (R∞)_{k−1} hold for every k, Corollary M1), and of those only the
+sym-mode reduced forms whose family has several large sizes: with the marked copy in T the families with three or
+four symbolic sizes and some with two (about 100 CPU hours for the generic one by the same route), with the marked
+copy outside T those with two or more (out of reach by this route for the generic one).
 
 ## Code and checks
 
@@ -1490,6 +1515,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `marked_copy/` (`run_all.sh`, `run_check.sh`, notes in `marked_copy/NOTES.md`) | Section 4b, Theorems MK, MB and MI: the reduced forms of the letter-1 blocks with one copy of a different weight against exact projections of the Lemma B block (k ≤ 9) and the dimension counts (k ≤ 6), the fixed-k certificates in σ (k ≤ 32, 3 909 forms) and their coverage, the families symbolic in one size (two for i = 0) with the bookkeeping of both bands, negative controls; the second check: a separate builder against Lemma B, the blocks end to end (k ≤ 9) and the family forms at members far from the sample points; `run_check_mi.sh` (`mfcheck.py`): 240 members of the families of Theorem MP with 56 ≤ k ≤ 100 |
 | `marked_copy/middle/` (`prepare_frozen.sh`, `run_all.sh`, `run_extra*.sh`, notes in `marked_copy/middle/NOTES.md`) | Section 4b, Theorem MS and the extension of Theorem MK to k ≤ 40: the irrep split against the Lemma B block (k ≤ 7) and class sums, the families [q0 ≥ 4, t ≥ 4, i = b] (b = 1, …, 4) certified with the split, the one-size families again in the new basis, the fixed-k certificates for 33 ≤ k ≤ 40, coverage for every k ≤ 80, negative controls; `run_all_mi.sh`, `run_extra_mi.sh` (notes in `marked_copy/middle/NOTES_MI.md`): Theorem MP (the three-row parts with i symbolic, the eleven edge families, i = 5, 6) and the fixed-k certificates for 41 ≤ k ≤ 55; `run_g2.sh`, `g2final.py` (notes in `marked_copy/middle/NOTES_G2.md`): Theorem G2 by determinant and inertia (10 197 exact slices, exact interpolation, the signs of Ñ, the base point), with the check `g2points.py` and the control `g2neg.py` |
 | `marked_copy/typeI/` (`run_all.sh`, `run_extra.sh`, `run_check2.sh`, `run_extra2.sh`, notes in `marked_copy/typeI/NOTES.md`) | Section 4b, Theorem I1 and Corollary I2: the reduction by S_{T′} × S_{U′} (sym and anti modes, twisted vectors), the orbit calculus with letters 2, the certificates over Q(σ) for 4 ≤ k ≤ 29, the reduced forms against projections of the Lemma B block (k ≤ 10), symbolic against numeric, whole blocks end to end (k = 8, 9, 10, 12), negative controls, coverage; the second check `run_markall.sh` in `marked_copy/` |
+| `marked_copy/typeI/families/` (`run_all.sh`, `run_extra.sh`, `run_st3check.sh`, notes in `marked_copy/typeI/families/NOTES.md`) | Section 4b, Theorems AT, S1, SD, S2: the formal continuation in the four sizes against the numeric calculus (sample points and 1 476 far points), the structure lemma, the certificates by elimination and by determinant and interpolation, coverage for k ≤ 120, negative controls; the check `st3check.py` at 2 082 members with 30 ≤ k ≤ 90 |
 | `middle_j1_t1_sub/` (`run_all.sh`, notes in `middle_j1_t1_sub/NOTES.md`) | Section 3h, general weights: Propositions Q and RP and Lemma K (reductions, identities and conclusions exactly at rational points, the identity of Proposition Q symbolically for |U| = 2, 3), negative controls; the exact two-copy certificates behind Conjecture TC at 25 weight vectors and their controls; floating-point surveys |
 | `middle_k2/` (`run_all.sh`, notes in `middle_k2/NOTES.md`) | Section 3e: the closed form of the letter-1 block of (R∞)_{k−2} against a direct construction (k = 4, 5), Lemmas R1, J, W, BJ and Proposition S exactly (k = 4, 5, 6), and a numerical sweep (k = 4, …, 7) |
 | `corner/` (`run_all.sh`) | Proposition C: the node determinants and the interpolation (`compute_nodes.py`, `interpolate.py`), the coefficient signs (`shift_check.py`), the structure lemma, window exactness and agreement with the numeric calculus (`check_structure.py`), the determinant at random points and the base point (`check_det_points.py`), and the irrep split (`check_split.py`); logs in `corner/logs/` |

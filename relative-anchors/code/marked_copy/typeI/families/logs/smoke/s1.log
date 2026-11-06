@@ -1,0 +1,4 @@
+MT/anti/1,1,n,n: 3 vectors; with tau' = nu - 2i every denominator is free of i and the largest degree in i of a numerator is 0 (allowed 0); its 23 intermediate denominators free of i: True: True [0.0s]
+MU/anti/2,2,n,n: 6 vectors; with tau' = nu - 2i every denominator is free of i and the largest degree in i of a numerator is 0 (allowed 0); its 35 intermediate denominators free of i: True: True [0.1s]
+2 forms
+PASS

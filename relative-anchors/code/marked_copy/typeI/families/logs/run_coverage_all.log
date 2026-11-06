@@ -1,0 +1,16 @@
+closed form of the presence of twisted vectors equals tlib.norm_of on all 141120 forms with k <= 30
+k=8: Theorem I1 165, j=k-1 (Corollary M1) 51
+k=29: Theorem I1 9404, j=k-1 (Corollary M1) 261
+k=30: family 5343, j=k-1 (Corollary M1) 271, open 5041
+k=40: family 12013, j=k-1 (Corollary M1) 371, open 12056
+k=60: family 38653, j=k-1 (Corollary M1) 571, open 40136
+k=80: family 89693, j=k-1 (Corollary M1) 771, open 93616
+k=100: family 173133, j=k-1 (Corollary M1) 971, open 180496
+k=120: family 296973, j=k-1 (Corollary M1) 1171, open 308776
+k = 4..120: Theorem I1 73467, family 9138903, j=k-1 (Corollary M1) 69148, open 9510466
+MT sym: 30 <= k <= 120: 157703 forms in proved families; not covered: 4683764 (by symbolic sizes of the canonical family: {2: 83310, 3: 1768790, 4: 2831664}); smallest k not covered: 30
+MT anti: 30 <= k <= 120: 4418101 forms in proved families; not covered: 0 (by symbolic sizes of the canonical family: {}); smallest k not covered: none
+MU sym: 30 <= k <= 120: 5006 forms in proved families; not covered: 4826702 (by symbolic sizes of the canonical family: {2: 214327, 3: 1780711, 4: 2831664}); smallest k not covered: 30
+MU anti: 30 <= k <= 120: 4558093 forms in proved families; not covered: 0 (by symbolic sizes of the canonical family: {}); smallest k not covered: none
+families read: 347 proved, 0 empty
+PASS

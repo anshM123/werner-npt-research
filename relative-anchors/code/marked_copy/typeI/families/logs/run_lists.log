@@ -1,0 +1,21 @@
+MT sym 1 89
+MT sym 2 60
+MT sym 3 14
+MT sym 4 1
+MT sym 2e 38 2d 22
+MT anti 1 23
+MT anti 2 33
+MT anti 3 11
+MT anti 4 1
+MT anti all 68
+MU sym 1 67
+MU sym 2 53
+MU sym 3 14
+MU sym 4 1
+MU sym 2e 29 2d 24
+MU anti 1 31
+MU anti 2 38
+MU anti 3 12
+MU anti 4 1
+MU anti all 82
+PASS

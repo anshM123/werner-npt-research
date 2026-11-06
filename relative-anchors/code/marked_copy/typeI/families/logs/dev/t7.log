@@ -1,0 +1,7 @@
+MU sym [q0=1, t=1, i>=2, tp>=2]
+  form: 20 vectors, largest entry 275 terms [0.7s]
+  preliminaries: symmetric, 18 sanity points, 35 intermediate denominators and the entry denominators one-signed, 2 kernel vectors annihilated, gauge ['O0', 'O1'] [1.2s]
+  structure: every entry of the gauge-fixed form (18 x 18) is p/d with d free of i and deg_i p <= 2 [1.2s]
+  14 irreducible factors of the entry denominators, exponents of D* [10, 4, 2, 4, 8, 12, 8, 8, 7, 2, 8, 8, 7, 7]; deg_i T <= B = 26 [7.3s]
+    slice i = 2: det 4028/3741 terms [31.2s]
+guard: time limit 112 s exceeded, killed PID 30348

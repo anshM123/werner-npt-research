@@ -1,0 +1,331 @@
+MT sym [q0=-1, t=1, i>=2, tp>=2]
+  form: 4 vectors, largest entry 20 terms [0.0s]
+  preliminaries: symmetric, 18 sanity points, 27 intermediate denominators and the entry denominators one-signed, 0 kernel vectors annihilated, gauge [] [0.1s]
+  structure: every entry of the gauge-fixed form (4 x 4) is p/d with d free of i and deg_i p <= 2 [0.1s]
+  8 irreducible factors of the entry denominators, exponents of D* [2, 2, 2, 2, 2, 1, 2, 1]; deg_i T <= B = 4 [0.1s]
+    slice i = 2: det 203/184 terms [0.0s]
+    slice i = 7: det 203/184 terms [0.0s]
+  D_c exponents [2, 2, 2, 2, 2, 1, 2, 1]; every slice gives a polynomial D_c det [0.1s]
+  interpolation over z = 0..5: the coefficient of z^5 vanishes for all 203 monomials
+  N~(z, nu, s): 829 terms, degrees (4, 19, 17) [0.1s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 1725 terms, 0 negative coefficients, a positive one free of z, w: True [0.1s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [0.1s]
+MT sym [q0=-1, t=1, i>=2, tp>=2] PD on complement (determinant route) (0.1s)
+MT sym [q0=-1, t=2, i>=2, tp>=2]
+  form: 4 vectors, largest entry 26 terms [0.0s]
+  preliminaries: symmetric, 18 sanity points, 34 intermediate denominators and the entry denominators one-signed, 0 kernel vectors annihilated, gauge [] [0.1s]
+  structure: every entry of the gauge-fixed form (4 x 4) is p/d with d free of i and deg_i p <= 2 [0.1s]
+  9 irreducible factors of the entry denominators, exponents of D* [1, 1, 3, 2, 2, 2, 1, 2, 1]; deg_i T <= B = 4 [0.1s]
+    slice i = 2: det 228/210 terms [0.0s]
+    slice i = 7: det 228/210 terms [0.0s]
+  D_c exponents [1, 1, 3, 2, 2, 2, 1, 2, 1]; every slice gives a polynomial D_c det [0.1s]
+  interpolation over z = 0..5: the coefficient of z^5 vanishes for all 228 monomials
+  N~(z, nu, s): 941 terms, degrees (4, 20, 18) [0.1s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 1976 terms, 0 negative coefficients, a positive one free of z, w: True [0.1s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [0.1s]
+MT sym [q0=-1, t=2, i>=2, tp>=2] PD on complement (determinant route) (0.1s)
+MT sym [q0=-1, t=3, i>=2, tp>=2]
+  form: 4 vectors, largest entry 26 terms [0.0s]
+  preliminaries: symmetric, 18 sanity points, 37 intermediate denominators and the entry denominators one-signed, 0 kernel vectors annihilated, gauge [] [0.1s]
+  structure: every entry of the gauge-fixed form (4 x 4) is p/d with d free of i and deg_i p <= 2 [0.1s]
+  11 irreducible factors of the entry denominators, exponents of D* [2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 1]; deg_i T <= B = 4 [0.1s]
+    slice i = 2: det 322/300 terms [0.0s]
+    slice i = 7: det 322/300 terms [0.0s]
+  D_c exponents [2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 1]; every slice gives a polynomial D_c det [0.1s]
+  interpolation over z = 0..5: the coefficient of z^5 vanishes for all 322 monomials
+  N~(z, nu, s): 1367 terms, degrees (4, 24, 22) [0.1s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 3220 terms, 0 negative coefficients, a positive one free of z, w: True [0.1s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [0.1s]
+MT sym [q0=-1, t=3, i>=2, tp>=2] PD on complement (determinant route) (0.1s)
+MT sym [q0=0, t=0, i>=2, tp>=2]
+  form: 6 vectors, largest entry 37 terms [0.0s]
+  preliminaries: symmetric, 18 sanity points, 20 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.1s]
+  structure: every entry of the gauge-fixed form (5 x 5) is p/d with d free of i and deg_i p <= 2 [0.1s]
+  8 irreducible factors of the entry denominators, exponents of D* [2, 2, 2, 2, 3, 3, 2, 1]; deg_i T <= B = 8 [0.1s]
+    slice i = 2: det 165/143 terms [0.0s]
+    slice i = 7: det 165/143 terms [0.0s]
+  D_c exponents [2, 2, 2, 2, 2, 2, 1, 1]; every slice gives a polynomial D_c det [0.1s]
+  interpolation over z = 0..9: the coefficient of z^9 vanishes for all 165 monomials
+  N~(z, nu, s): 953 terms, degrees (6, 17, 17) [0.1s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 1424 terms, 0 negative coefficients, a positive one free of z, w: True [0.1s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [0.1s]
+MT sym [q0=0, t=0, i>=2, tp>=2] PD on complement (determinant route) (0.1s)
+MT sym [q0=0, t=1, i>=2, tp>=2]
+  form: 11 vectors, largest entry 70 terms [0.1s]
+  preliminaries: symmetric, 18 sanity points, 32 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.2s]
+  structure: every entry of the gauge-fixed form (10 x 10) is p/d with d free of i and deg_i p <= 2 [0.2s]
+  11 irreducible factors of the entry denominators, exponents of D* [4, 5, 2, 4, 4, 2, 4, 2, 4, 8, 4]; deg_i T <= B = 12 [0.2s]
+    slice i = 2: det 974/893 terms [0.2s]
+    slice i = 7: det 974/893 terms [0.2s]
+    slice i = 12: det 974/893 terms [0.2s]
+  D_c exponents [4, 4, 2, 2, 2, 2, 4, 2, 4, 5, 2]; every slice gives a polynomial D_c det [3.0s]
+  interpolation over z = 0..13: the coefficient of z^13 vanishes for all 974 monomials
+  N~(z, nu, s): 9163 terms, degrees (10, 43, 41) [3.0s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 17860 terms, 0 negative coefficients, a positive one free of z, w: True [3.1s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [3.1s]
+MT sym [q0=0, t=1, i>=2, tp>=2] PD on complement (determinant route) (3.1s)
+MT sym [q0=0, t=2, i>=2, tp>=2]
+  form: 11 vectors, largest entry 70 terms [0.1s]
+  preliminaries: symmetric, 18 sanity points, 41 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.3s]
+  structure: every entry of the gauge-fixed form (10 x 10) is p/d with d free of i and deg_i p <= 2 [0.3s]
+  14 irreducible factors of the entry denominators, exponents of D* [2, 4, 2, 4, 4, 2, 4, 1, 2, 6, 5, 4, 3, 3]; deg_i T <= B = 12 [0.3s]
+    slice i = 2: det 1118/1035 terms [0.2s]
+    slice i = 7: det 1118/1035 terms [0.2s]
+    slice i = 12: det 1118/1035 terms [0.2s]
+  D_c exponents [2, 4, 2, 4, 2, 2, 2, 1, 1, 5, 4, 3, 1, 1]; every slice gives a polynomial D_c det [3.4s]
+  interpolation over z = 0..13: the coefficient of z^13 vanishes for all 1118 monomials
+  N~(z, nu, s): 10626 terms, degrees (10, 46, 44) [3.4s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 21500 terms, 0 negative coefficients, a positive one free of z, w: True [3.5s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [3.5s]
+MT sym [q0=0, t=2, i>=2, tp>=2] PD on complement (determinant route) (3.5s)
+MT sym [q0=0, t=3, i>=2, tp>=2]
+  form: 11 vectors, largest entry 70 terms [0.1s]
+  preliminaries: symmetric, 18 sanity points, 50 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.2s]
+  structure: every entry of the gauge-fixed form (10 x 10) is p/d with d free of i and deg_i p <= 2 [0.2s]
+  16 irreducible factors of the entry denominators, exponents of D* [4, 5, 4, 4, 4, 2, 4, 4, 4, 4, 3, 3, 4, 7, 4, 2]; deg_i T <= B = 12 [0.3s]
+    slice i = 2: det 1316/1225 terms [0.5s]
+    slice i = 7: det 1316/1225 terms [0.6s]
+    slice i = 12: det 1316/1225 terms [0.6s]
+  D_c exponents [4, 4, 4, 2, 2, 2, 2, 2, 2, 2, 1, 2, 4, 6, 2, 1]; every slice gives a polynomial D_c det [7.7s]
+  interpolation over z = 0..13: the coefficient of z^13 vanishes for all 1316 monomials
+  N~(z, nu, s): 12645 terms, degrees (10, 50, 48) [7.7s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 27072 terms, 0 negative coefficients, a positive one free of z, w: True [7.8s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [7.8s]
+MT sym [q0=0, t=3, i>=2, tp>=2] PD on complement (determinant route) (7.8s)
+MT sym [q0=1, t=-1, i>=2, tp>=2]
+  form: 1 vectors, largest entry 15 terms [0.0s]
+  preliminaries: symmetric, 18 sanity points, 3 intermediate denominators and the entry denominators one-signed, 0 kernel vectors annihilated, gauge [] [0.0s]
+  structure: every entry of the gauge-fixed form (1 x 1) is p/d with d free of i and deg_i p <= 2 [0.0s]
+  2 irreducible factors of the entry denominators, exponents of D* [1, 1]; deg_i T <= B = 2 [0.0s]
+    slice i = 2: det 3/4 terms [0.0s]
+  D_c exponents [1, 1]; every slice gives a polynomial D_c det [0.0s]
+  interpolation over z = 0..3: the coefficient of z^3 vanishes for all 4 monomials
+  N~(z, nu, s): 8 terms, degrees (2, 2, 2) [0.0s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 16 terms, 0 negative coefficients, a positive one free of z, w: True [0.0s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [0.0s]
+MT sym [q0=1, t=-1, i>=2, tp>=2] PD on complement (determinant route) (0.0s)
+MT sym [q0=1, t=0, i>=2, tp>=2]
+  form: 8 vectors, largest entry 40 terms [0.0s]
+  preliminaries: symmetric, 18 sanity points, 22 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.1s]
+  structure: every entry of the gauge-fixed form (7 x 7) is p/d with d free of i and deg_i p <= 2 [0.1s]
+  8 irreducible factors of the entry denominators, exponents of D* [5, 3, 1, 2, 2, 2, 2, 5]; deg_i T <= B = 10 [0.1s]
+    slice i = 2: det 225/204 terms [0.0s]
+    slice i = 7: det 225/204 terms [0.0s]
+    slice i = 12: det 225/204 terms [0.0s]
+  D_c exponents [4, 1, 1, 2, 2, 2, 1, 4]; every slice gives a polynomial D_c det [0.2s]
+  interpolation over z = 0..11: the coefficient of z^11 vanishes for all 225 monomials
+  N~(z, nu, s): 1648 terms, degrees (8, 20, 20) [0.2s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 2394 terms, 0 negative coefficients, a positive one free of z, w: True [0.2s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [0.3s]
+MT sym [q0=1, t=0, i>=2, tp>=2] PD on complement (determinant route) (0.3s)
+MT sym [q0=1, t=1, i>=2, tp>=2]
+  form: 13 vectors, largest entry 112 terms [0.1s]
+  preliminaries: symmetric, 18 sanity points, 37 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.3s]
+  structure: every entry of the gauge-fixed form (12 x 12) is p/d with d free of i and deg_i p <= 2 [0.3s]
+  13 irreducible factors of the entry denominators, exponents of D* [2, 4, 4, 2, 4, 4, 4, 2, 4, 4, 7, 10, 7]; deg_i T <= B = 14 [0.4s]
+    slice i = 2: det 1367/1275 terms [0.6s]
+    slice i = 7: det 1367/1275 terms [0.6s]
+    slice i = 12: det 1367/1275 terms [0.6s]
+    slice i = 17: det 1367/1275 terms [0.6s]
+  D_c exponents [2, 2, 4, 2, 2, 2, 2, 2, 4, 4, 4, 7, 4]; every slice gives a polynomial D_c det [9.9s]
+  interpolation over z = 0..15: the coefficient of z^15 vanishes for all 1367 monomials
+  N~(z, nu, s): 15316 terms, degrees (12, 51, 49) [10.0s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 29968 terms, 0 negative coefficients, a positive one free of z, w: True [10.0s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [10.0s]
+MT sym [q0=1, t=1, i>=2, tp>=2] PD on complement (determinant route) (10.0s)
+MT sym [q0=1, t=2, i>=2, tp>=2]
+  form: 13 vectors, largest entry 112 terms [0.2s]
+  preliminaries: symmetric, 18 sanity points, 49 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.4s]
+  structure: every entry of the gauge-fixed form (12 x 12) is p/d with d free of i and deg_i p <= 2 [0.4s]
+  16 irreducible factors of the entry denominators, exponents of D* [7, 4, 4, 1, 4, 2, 2, 4, 4, 4, 4, 2, 4, 10, 4, 4]; deg_i T <= B = 14 [0.5s]
+    slice i = 2: det 1881/1770 terms [0.9s]
+    slice i = 7: det 1881/1770 terms [0.8s]
+    slice i = 12: det 1881/1770 terms [0.8s]
+    slice i = 17: det 1881/1770 terms [0.9s]
+  D_c exponents [6, 3, 1, 1, 3, 2, 2, 2, 2, 4, 2, 2, 2, 9, 4, 1]; every slice gives a polynomial D_c det [14.3s]
+  interpolation over z = 0..15: the coefficient of z^15 vanishes for all 1881 monomials
+  N~(z, nu, s): 21521 terms, degrees (12, 60, 58) [14.4s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 46873 terms, 0 negative coefficients, a positive one free of z, w: True [14.5s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [14.5s]
+MT sym [q0=1, t=2, i>=2, tp>=2] PD on complement (determinant route) (14.5s)
+MT sym [q0=1, t=3, i>=2, tp>=2]
+  form: 13 vectors, largest entry 168 terms [0.2s]
+  preliminaries: symmetric, 18 sanity points, 55 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.4s]
+  structure: every entry of the gauge-fixed form (12 x 12) is p/d with d free of i and deg_i p <= 2 [0.4s]
+  19 irreducible factors of the entry denominators, exponents of D* [4, 2, 4, 4, 4, 4, 4, 2, 4, 4, 4, 2, 7, 4, 6, 7, 4, 7, 4]; deg_i T <= B = 14 [0.5s]
+    slice i = 2: det 1880/1770 terms [1.5s]
+    slice i = 7: det 1881/1770 terms [1.4s]
+    slice i = 12: det 1881/1770 terms [1.6s]
+    slice i = 17: det 1881/1770 terms [1.5s]
+  D_c exponents [4, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 1, 4, 1, 3, 5, 4, 4, 2]; every slice gives a polynomial D_c det [23.9s]
+  interpolation over z = 0..15: the coefficient of z^15 vanishes for all 1881 monomials
+  N~(z, nu, s): 21520 terms, degrees (12, 60, 58) [24.0s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 46873 terms, 0 negative coefficients, a positive one free of z, w: True [24.2s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [24.2s]
+MT sym [q0=1, t=3, i>=2, tp>=2] PD on complement (determinant route) (24.2s)
+MT sym [q0=2, t=-1, i>=2, tp>=2]
+  form: 1 vectors, largest entry 20 terms [0.0s]
+  preliminaries: symmetric, 18 sanity points, 3 intermediate denominators and the entry denominators one-signed, 0 kernel vectors annihilated, gauge [] [0.0s]
+  structure: every entry of the gauge-fixed form (1 x 1) is p/d with d free of i and deg_i p <= 2 [0.0s]
+  2 irreducible factors of the entry denominators, exponents of D* [1, 1]; deg_i T <= B = 2 [0.0s]
+    slice i = 2: det 5/6 terms [0.0s]
+  D_c exponents [1, 1]; every slice gives a polynomial D_c det [0.0s]
+  interpolation over z = 0..3: the coefficient of z^3 vanishes for all 6 monomials
+  N~(z, nu, s): 12 terms, degrees (2, 2, 2) [0.0s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 16 terms, 0 negative coefficients, a positive one free of z, w: True [0.0s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [0.0s]
+MT sym [q0=2, t=-1, i>=2, tp>=2] PD on complement (determinant route) (0.0s)
+MT sym [q0=2, t=0, i>=2, tp>=2]
+  form: 8 vectors, largest entry 40 terms [0.0s]
+  preliminaries: symmetric, 18 sanity points, 23 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.1s]
+  structure: every entry of the gauge-fixed form (7 x 7) is p/d with d free of i and deg_i p <= 2 [0.1s]
+  8 irreducible factors of the entry denominators, exponents of D* [2, 2, 2, 2, 1, 5, 5, 3]; deg_i T <= B = 10 [0.1s]
+    slice i = 2: det 248/225 terms [0.0s]
+    slice i = 7: det 248/225 terms [0.0s]
+    slice i = 12: det 248/225 terms [0.0s]
+  D_c exponents [2, 2, 2, 2, 1, 4, 4, 1]; every slice gives a polynomial D_c det [0.2s]
+  interpolation over z = 0..11: the coefficient of z^11 vanishes for all 248 monomials
+  N~(z, nu, s): 1834 terms, degrees (8, 21, 21) [0.2s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 2710 terms, 0 negative coefficients, a positive one free of z, w: True [0.2s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [0.2s]
+MT sym [q0=2, t=0, i>=2, tp>=2] PD on complement (determinant route) (0.2s)
+MT sym [q0=2, t=1, i>=2, tp>=2]
+  form: 13 vectors, largest entry 112 terms [0.2s]
+  preliminaries: symmetric, 18 sanity points, 39 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.3s]
+  structure: every entry of the gauge-fixed form (12 x 12) is p/d with d free of i and deg_i p <= 2 [0.3s]
+  13 irreducible factors of the entry denominators, exponents of D* [7, 4, 7, 2, 4, 4, 2, 4, 4, 2, 4, 10, 4]; deg_i T <= B = 14 [0.4s]
+    slice i = 2: det 1420/1326 terms [0.6s]
+    slice i = 7: det 1420/1326 terms [0.7s]
+    slice i = 12: det 1420/1326 terms [0.6s]
+    slice i = 17: det 1420/1326 terms [0.7s]
+  D_c exponents [4, 4, 5, 2, 2, 2, 2, 4, 2, 2, 4, 7, 2]; every slice gives a polynomial D_c det [10.9s]
+  interpolation over z = 0..15: the coefficient of z^15 vanishes for all 1420 monomials
+  N~(z, nu, s): 15952 terms, degrees (12, 52, 50) [11.0s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 31605 terms, 0 negative coefficients, a positive one free of z, w: True [11.1s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [11.1s]
+MT sym [q0=2, t=1, i>=2, tp>=2] PD on complement (determinant route) (11.1s)
+MT sym [q0=2, t=2, i>=2, tp>=2]
+  form: 13 vectors, largest entry 133 terms [0.2s]
+  preliminaries: symmetric, 18 sanity points, 52 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.4s]
+  structure: every entry of the gauge-fixed form (12 x 12) is p/d with d free of i and deg_i p <= 2 [0.4s]
+  17 irreducible factors of the entry denominators, exponents of D* [4, 2, 4, 2, 2, 4, 4, 4, 4, 4, 4, 1, 4, 6, 10, 7, 4]; deg_i T <= B = 14 [0.5s]
+    slice i = 2: det 2006/1891 terms [1.0s]
+    slice i = 7: det 2006/1891 terms [1.1s]
+    slice i = 12: det 2006/1891 terms [1.0s]
+    slice i = 17: det 2006/1891 terms [1.0s]
+  D_c exponents [4, 2, 2, 2, 2, 2, 2, 4, 2, 1, 1, 1, 3, 2, 9, 6, 3]; every slice gives a polynomial D_c det [17.2s]
+  interpolation over z = 0..15: the coefficient of z^15 vanishes for all 2006 monomials
+  N~(z, nu, s): 23040 terms, degrees (12, 62, 60) [17.4s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 51330 terms, 0 negative coefficients, a positive one free of z, w: True [17.6s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [17.6s]
+MT sym [q0=2, t=2, i>=2, tp>=2] PD on complement (determinant route) (17.6s)
+MT sym [q0=2, t=3, i>=2, tp>=2]
+  form: 13 vectors, largest entry 168 terms [0.2s]
+  preliminaries: symmetric, 18 sanity points, 58 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.4s]
+  structure: every entry of the gauge-fixed form (12 x 12) is p/d with d free of i and deg_i p <= 2 [0.4s]
+  19 irreducible factors of the entry denominators, exponents of D* [7, 4, 7, 4, 4, 4, 4, 2, 4, 4, 4, 7, 4, 2, 4, 4, 9, 4, 2]; deg_i T <= B = 14 [0.5s]
+    slice i = 2: det 1943/1830 terms [1.6s]
+    slice i = 7: det 1943/1830 terms [1.8s]
+    slice i = 12: det 1943/1830 terms [1.8s]
+    slice i = 17: det 1943/1830 terms [1.8s]
+  D_c exponents [5, 4, 4, 4, 2, 2, 2, 2, 2, 2, 2, 4, 2, 1, 2, 1, 4, 4, 2]; every slice gives a polynomial D_c det [28.2s]
+  interpolation over z = 0..15: the coefficient of z^15 vanishes for all 1943 monomials
+  N~(z, nu, s): 22274 terms, degrees (12, 61, 59) [28.4s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 49068 terms, 0 negative coefficients, a positive one free of z, w: True [28.6s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [28.6s]
+MT sym [q0=2, t=3, i>=2, tp>=2] PD on complement (determinant route) (28.6s)
+MT sym [q0=3, t=-1, i>=2, tp>=2]
+  form: 1 vectors, largest entry 19 terms [0.0s]
+  preliminaries: symmetric, 18 sanity points, 3 intermediate denominators and the entry denominators one-signed, 0 kernel vectors annihilated, gauge [] [0.0s]
+  structure: every entry of the gauge-fixed form (1 x 1) is p/d with d free of i and deg_i p <= 2 [0.0s]
+  2 irreducible factors of the entry denominators, exponents of D* [1, 1]; deg_i T <= B = 2 [0.0s]
+    slice i = 2: det 6/5 terms [0.0s]
+  D_c exponents [1, 1]; every slice gives a polynomial D_c det [0.0s]
+  interpolation over z = 0..3: the coefficient of z^3 vanishes for all 6 monomials
+  N~(z, nu, s): 13 terms, degrees (2, 2, 2) [0.0s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 16 terms, 0 negative coefficients, a positive one free of z, w: True [0.0s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [0.0s]
+MT sym [q0=3, t=-1, i>=2, tp>=2] PD on complement (determinant route) (0.0s)
+MT sym [q0=3, t=0, i>=2, tp>=2]
+  form: 8 vectors, largest entry 40 terms [0.0s]
+  preliminaries: symmetric, 18 sanity points, 24 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.1s]
+  structure: every entry of the gauge-fixed form (7 x 7) is p/d with d free of i and deg_i p <= 2 [0.1s]
+  8 irreducible factors of the entry denominators, exponents of D* [1, 3, 5, 2, 2, 2, 2, 5]; deg_i T <= B = 10 [0.1s]
+    slice i = 2: det 250/231 terms [0.0s]
+    slice i = 7: det 250/231 terms [0.0s]
+    slice i = 12: det 250/231 terms [0.0s]
+  D_c exponents [1, 1, 4, 2, 2, 2, 2, 4]; every slice gives a polynomial D_c det [0.2s]
+  interpolation over z = 0..11: the coefficient of z^11 vanishes for all 250 monomials
+  N~(z, nu, s): 1852 terms, degrees (8, 21, 21) [0.2s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 2710 terms, 0 negative coefficients, a positive one free of z, w: True [0.2s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [0.2s]
+MT sym [q0=3, t=0, i>=2, tp>=2] PD on complement (determinant route) (0.2s)
+MT sym [q0=3, t=1, i>=2, tp>=2]
+  form: 13 vectors, largest entry 112 terms [0.1s]
+  preliminaries: symmetric, 18 sanity points, 39 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.3s]
+  structure: every entry of the gauge-fixed form (12 x 12) is p/d with d free of i and deg_i p <= 2 [0.3s]
+  13 irreducible factors of the entry denominators, exponents of D* [4, 2, 4, 2, 4, 4, 2, 4, 4, 4, 7, 10, 7]; deg_i T <= B = 14 [0.4s]
+    slice i = 2: det 1420/1326 terms [0.6s]
+    slice i = 7: det 1420/1326 terms [0.6s]
+    slice i = 12: det 1420/1326 terms [0.7s]
+    slice i = 17: det 1420/1326 terms [0.7s]
+  D_c exponents [2, 2, 4, 2, 2, 2, 2, 4, 2, 4, 5, 7, 4]; every slice gives a polynomial D_c det [11.2s]
+  interpolation over z = 0..15: the coefficient of z^15 vanishes for all 1420 monomials
+  N~(z, nu, s): 15952 terms, degrees (12, 52, 50) [11.2s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 31605 terms, 0 negative coefficients, a positive one free of z, w: True [11.3s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [11.3s]
+MT sym [q0=3, t=1, i>=2, tp>=2] PD on complement (determinant route) (11.3s)
+MT sym [q0=3, t=2, i>=2, tp>=2]
+  form: 13 vectors, largest entry 133 terms [0.2s]
+  preliminaries: symmetric, 18 sanity points, 55 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.4s]
+  structure: every entry of the gauge-fixed form (12 x 12) is p/d with d free of i and deg_i p <= 2 [0.4s]
+  17 irreducible factors of the entry denominators, exponents of D* [7, 4, 4, 1, 4, 6, 2, 2, 4, 4, 4, 4, 4, 2, 4, 10, 4]; deg_i T <= B = 14 [0.5s]
+    slice i = 2: det 2006/1891 terms [1.1s]
+    slice i = 7: det 2006/1891 terms [1.3s]
+    slice i = 12: det 2006/1891 terms [1.2s]
+    slice i = 17: det 2006/1891 terms [1.2s]
+  D_c exponents [6, 3, 1, 1, 3, 2, 2, 2, 2, 2, 4, 2, 1, 2, 2, 9, 4]; every slice gives a polynomial D_c det [19.3s]
+  interpolation over z = 0..15: the coefficient of z^15 vanishes for all 2006 monomials
+  N~(z, nu, s): 23040 terms, degrees (12, 62, 60) [19.4s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 51330 terms, 0 negative coefficients, a positive one free of z, w: True [19.6s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [19.6s]
+MT sym [q0=3, t=2, i>=2, tp>=2] PD on complement (determinant route) (19.6s)
+MT sym [q0=3, t=3, i>=2, tp>=2]
+  form: 13 vectors, largest entry 168 terms [0.2s]
+  preliminaries: symmetric, 18 sanity points, 59 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.4s]
+  structure: every entry of the gauge-fixed form (12 x 12) is p/d with d free of i and deg_i p <= 2 [0.5s]
+  19 irreducible factors of the entry denominators, exponents of D* [4, 2, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 7, 4, 2, 7, 4, 9, 7]; deg_i T <= B = 14 [0.5s]
+    slice i = 2: det 1943/1830 terms [1.8s]
+    slice i = 7: det 1943/1830 terms [1.8s]
+    slice i = 12: det 1943/1830 terms [1.7s]
+    slice i = 17: det 1943/1830 terms [1.9s]
+  D_c exponents [4, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 4, 4, 2, 1, 4, 1, 4, 5]; every slice gives a polynomial D_c det [28.2s]
+  interpolation over z = 0..15: the coefficient of z^15 vanishes for all 1943 monomials
+  N~(z, nu, s): 22274 terms, degrees (12, 61, 59) [28.3s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 49068 terms, 0 negative coefficients, a positive one free of z, w: True [28.5s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [28.5s]
+MT sym [q0=3, t=3, i>=2, tp>=2] PD on complement (determinant route) (28.5s)
+22 families proved of 22; 181s
+PASS

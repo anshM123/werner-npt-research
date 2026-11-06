@@ -1,0 +1,12 @@
+  form computed (0.0s), 10 vectors, largest entry 48 terms, 15 intermediate denominators
+    pivot DM1: num 1 terms, den 1 terms (0.1s)
+    pivot DM0: num 1 terms, den 2 terms (0.1s)
+    pivot G: num 5 terms, den 9 terms (0.1s)
+    pivot A1: num 88 terms, den 90 terms (0.1s)
+    pivot A0: num 117 terms, den 117 terms (0.1s)
+    pivot B10: num 401 terms, den 403 terms (0.1s)
+    pivot B01: num 402 terms, den 430 terms (0.2s)
+    pivot B11: num 554 terms, den 557 terms (0.3s)
+    pivot B00: num 588 terms, den 621 terms (0.3s)
+MT sym [q0>=4, t=1, i=1, tp=0]: status PD on complement (pivots 9, kernel 1); 9 pivots taken of 9 in 0.3s; form 0.0s, largest entry 48 terms
+PASS

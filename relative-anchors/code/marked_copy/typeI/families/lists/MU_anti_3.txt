@@ -1,0 +1,12 @@
+MU/anti/n,n,0,n
+MU/anti/n,n,1,n
+MU/anti/-1,n,n,n
+MU/anti/0,n,n,n
+MU/anti/1,n,n,n
+MU/anti/2,n,n,n
+MU/anti/3,n,n,n
+MU/anti/n,-1,n,n
+MU/anti/n,0,n,n
+MU/anti/n,1,n,n
+MU/anti/n,2,n,n
+MU/anti/n,3,n,n

@@ -1,0 +1,11 @@
+MT/anti/n,n,0,n
+MT/anti/n,n,1,n
+MT/anti/-1,n,n,n
+MT/anti/0,n,n,n
+MT/anti/1,n,n,n
+MT/anti/2,n,n,n
+MT/anti/3,n,n,n
+MT/anti/n,0,n,n
+MT/anti/n,1,n,n
+MT/anti/n,2,n,n
+MT/anti/n,3,n,n

@@ -1,0 +1,5 @@
+MT anti [q0>=4, t>=4, i>=2, tp>=2] PIVOT-SIGN-UNPROVED (smallest Da1: num 789 terms, den 789)  (0.1s)  [3 vectors, gauge [], largest entry 111 terms, largest pivot 624 terms]  [kernel vectors annihilated with B scaled: True; <kappa, Q kappa> at the minimal member, sigma = 1: []]
+MU anti [q0>=4, t>=4, i>=2, tp>=2] PIVOT-SIGN-UNPROVED (smallest Da10: num 8650 terms, den 8650)  (67.8s)  [6 vectors, gauge [], largest entry 742 terms, largest pivot 9619 terms]  [kernel vectors annihilated with B scaled: True; <kappa, Q kappa> at the minimal member, sigma = 1: []]
+0 families proved, 0 empty, 0 stopped by the time limit (open), of 2; 68s
+negative control bscale = 1001/1000: the certificate fails for 2 of the 2 families
+FAIL (expected: some certificate fails)

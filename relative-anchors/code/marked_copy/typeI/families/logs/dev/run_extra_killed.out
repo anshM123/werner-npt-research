@@ -1,0 +1,10 @@
+run_extra.sh started Fri Nov  6 10:31:27 EST 2026
+PASS  structure_anti  (python structure.py --dens @lists/MT_anti_all.txt @lists/MU_anti_all.txt; expect PASS; 4 s)
+PASS  det_MT  (python tdet.py prove res/det_MT.pkl MT -1,1 -1,2 -1,3 0,0 0,1 0,2 0,3 1,-1 1,0 1,1 1,2 1,3 2,-1 2,0 2,1 2,2 2,3 3,-1 3,0 3,1 3,2 3,3; expect PASS; 143 s)
+PASS  measure_MT  (python tdet.py measure MT n n; expect PASS; 6 s)
+PASS  measure_MT_q  (python tdet.py measure MT 1 n; expect PASS; 5 s)
+PASS  measure_MT_t  (python tdet.py measure MT n 1; expect PASS; 3 s)
+PASS  measure_MU  (python tdet.py measure MU n n; expect PASS; 192 s)
+PASS  measure_p1  (python tdet.py measure_plain MT/sym/n,n,1,0; expect PASS; 1 s)
+PASS  measure_p2  (python tdet.py measure_plain MT/sym/1,n,n,0; expect PASS; 1 s)
+PASS  measure_p3  (python tdet.py measure_plain MU/sym/n,n,0,1; expect PASS; 7 s)

@@ -1,0 +1,13 @@
+run_all.sh started Fri Nov  6 10:57:35 EST 2026
+PASS  lists  (python mklists.py; expect PASS; 2 s)
+PASS  structure  (python structure.py MT/anti/n,n,n,n MU/anti/n,n,n,n MT/anti/0,1,n,n MU/anti/1,-1,n,n MT/sym/0,1,n,n MU/sym/1,-1,n,n MT/sym/2,n,n,n MU/sym/n,2,n,n MT/sym/n,n,n,n MU/sym/n,n,n,n; expect PASS; 20 s)
+PASS  famcheck  (python tfamcheck.py 70 MT/anti/n,n,n,n MU/anti/n,n,n,n MT/anti/n,n,1,n MT/anti/1,n,0,n MU/anti/n,-2,n,n MU/anti/2,n,1,n MT/sym/n,1,1,0 MT/sym/2,n,0,1 MT/sym/1,2,n,0 MT/sym/2,3,1,n MT/sym/0,1,n,n MT/sym/n,n,1,0 MT/sym/2,n,n,1 MT/sym/n,2,1,n MU/sym/n,1,0,1 MU/sym/2,n,1,1 MU/sym/-1,2,n,1 MU/sym/1,-1,1,n MU/sym/1,0,n,n MU/sym/n,n,1,1 MU/sym/0,n,n,1 MU/sym/n,-2,n,1 MT/sym/n,n,n,n MU/sym/n,n,n,n; expect PASS; 55 s)
+PASS  anti_MT  (python tprove.py res/anti_MT.pkl @lists/MT_anti_all.txt; expect PASS; 3 s)
+PASS  anti_MU  (python tprove.py res/anti_MU.pkl @lists/MU_anti_all.txt; expect PASS; 80 s)
+PASS  sym1_MT  (python tprove.py res/sym1_MT.pkl @lists/MT_sym_1.txt; expect PASS; 54 s)
+PASS  sym1_MU  (python tprove.py res/sym1_MU.pkl @lists/MU_sym_1.txt; expect PASS; 3184 s)
+PASS  coverage  (python coverage_st3.py 120 29 30 res/anti_MT.pkl res/anti_MU.pkl res/sym1_MT.pkl res/sym1_MU.pkl; expect PASS; 46 s)
+PASS  neg_sym1_MT  (python tprove.py - @lists/MT_sym_1.txt --bscale=1001/1000; expect FAIL; 96 s)
+PASS  neg_anti  (python tprove.py - @lists/MT_anti_4.txt @lists/MU_anti_4.txt --bscale=1001/1000; expect FAIL; 69 s)
+total 3609 s
+ALL PASS

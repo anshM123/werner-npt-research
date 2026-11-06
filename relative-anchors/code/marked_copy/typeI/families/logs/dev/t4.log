@@ -1,0 +1,4 @@
+  form computed (1.4s), 6 vectors, largest entry 1606 terms, 42 intermediate denominators
+    pivot Ca0: num 1 terms, den 1 terms (2.2s)
+    pivot Ca1: num 1 terms, den 2 terms (2.3s)
+    pivot Da10: num 20109 terms, den 20110 terms (2.7s)

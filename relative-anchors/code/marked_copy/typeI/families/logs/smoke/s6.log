@@ -1,0 +1,4 @@
+res/anti_MT.pkl: 68 families: PD 68; sanity (member, sigma) points 828; largest form 3 vectors; largest entry 111 terms; largest pivot 923 terms
+logs/smoke/det.pkl: 1 families: PD 1; sanity (member, sigma) points 0; largest form 13 vectors; largest entry 0 terms; largest pivot 0 terms; determinant route: B in [14] (B + 1 slices each), N~ up to 29968 terms, 9s in all
+all files: PD 69
+PASS

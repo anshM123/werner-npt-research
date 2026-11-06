@@ -1,0 +1,25 @@
+MT sym [q0>=4, t>=4, i=1, tp=0]
+  form: 10 vectors, largest entry 274 terms [0.1s]
+  preliminaries: symmetric, 18 sanity points, 31 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.2s]
+  14 irreducible factors, exponents of D* [3, 6, 6, 2, 6, 2, 4, 2, 1, 4, 4, 2, 4, 1]; bounds {'q0': 55, 't': 60}; slices in q0: 0..55 [0.2s]
+    slice q0 = 4: det 952/1044 terms [0.2s]
+    slice q0 = 24: det 952/1044 terms [0.4s]
+    slice q0 = 44: det 952/1044 terms [0.4s]
+  D_c = D*; D* det is a polynomial on every slice [21.3s]
+  N~: 73072 terms after the shifts, degrees (54, 60, 57), 0 negative coefficients, a positive one free of the sizes: True; no term in y^56 through the extra node [21.8s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [21.8s]
+MT sym [q0>=4, t>=4, i=1, tp=0] PD on complement (determinant route, one size sliced) (21.8s)
+MT sym [q0=1, t>=4, i>=2, tp=0]
+  form: 10 vectors, largest entry 161 terms [0.1s]
+  preliminaries: symmetric, 18 sanity points, 38 intermediate denominators and the entry denominators one-signed, 1 kernel vectors annihilated, gauge ['CM'] [0.2s]
+  13 irreducible factors, exponents of D* [4, 6, 4, 2, 6, 2, 6, 2, 4, 4, 2, 1, 1]; bounds {'t': 60, 'i': 62}; slices in t: 0..60 [0.3s]
+    slice t = 4: det 945/990 terms [0.2s]
+    slice t = 24: det 945/990 terms [0.3s]
+    slice t = 44: det 945/990 terms [0.3s]
+    slice t = 64: det 945/990 terms [0.3s]
+  D_c = D*; D* det is a polynomial on every slice [19.7s]
+  N~: 46620 terms after the shifts, degrees (60, 60, 57), 0 negative coefficients, a positive one free of the sizes: True; no term in y^61 through the extra node [20.1s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [20.1s]
+MT sym [q0=1, t>=4, i>=2, tp=0] PD on complement (determinant route, one size sliced) (20.1s)
+2 families proved of 2; 42s
+PASS
