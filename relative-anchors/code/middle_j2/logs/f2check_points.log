@@ -1,0 +1,5 @@
+(q, x0, x1) = (2/7, 0, 300): det S' * D_c = 10^219 (approx.), N~ = 10^219 (approx.), equal: True [16s]
+(q, x0, x1) = (5, 40, 1000): det S' * D_c = 10^394 (approx.), N~ = 10^394 (approx.), equal: True [16s]
+(q, x0, x1) = (1/1000, 3, 517/2): det S' * D_c = 10^97 (approx.), N~ = 10^97 (approx.), equal: True [18s]
+(q, x0, x1) = (1000, 250, 10000): det S' * D_c = 10^709 (approx.), N~ = 10^709 (approx.), equal: True [18s]
+PASS

@@ -40,12 +40,11 @@ This folder collects what we can prove about the group conditions for every k.
     weights of the other copies take at most two distinct values (Theorems EQ and 2L), and with Theorem 2V for the
     letter-1 block, all of (R∞)_1 holds for every k whenever the weights take at most two distinct values. In
     (R∞)_2 the type I blocks with one or two letters 1 hold for every k when the weights outside T are equal
-    (Theorems F1a and F2a, arbitrary weights on T), and at two weight values for every k ≤ 82 (Theorems F1b and
-    F2b; those with one letter 1 for every k, those with two for larger k outside one configuration). The letter-1 block of (R∞)_2 holds at two weight values for
+    (Theorems F1a and F2a, arbitrary weights on T), and at two weight values for every k (Theorems F1b and
+    F2b). The letter-1 block of (R∞)_2 holds at two weight values for
     5 ≤ k ≤ 10 (Theorem L, exact certificates for each pair of level sizes), and for every k (Theorems L₁₃, L₄₀ and
     L∞, certificates with one or both level sizes symbolic). So all of (R∞)_2 holds at two weight values for
-    5 ≤ k ≤ 82, and for every k except possibly the type I blocks with T = {t} when both levels outside t have more
-    than 40 copies (Corollary L∞).
+    every k ≥ 5 (Corollary L∞).
   - In every (R∞)_j, every block in which one copy carries the letter 2 in row and column is positive definite, with
     an explicit lower bound (Proposition T2′).
 - **Four copies, every positive weight vector** (Section 3f, exact computer-assisted certificates). (R∞)_1 and
@@ -95,9 +94,8 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
   for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, and at k = 5, 6, 7
   everything is proved when the weights take at most two values, Section 3f; the blocks
   without a letter 1 are Theorem DJ for every k). The rest of (R∞)_1 is reduced to Conjectures L and L1, and all of it
-  is proved when the weights take at most two values (Section 3h). In (R∞)_2, at two weight values, only the type I
-  blocks with two letters 1 are open, and only when both levels outside their copy t have more than 40 copies
-  (Theorem F2b, k ≥ 83). When all weights but one are equal, all of (R∞) holds for k ≤ 29 and all of (R∞)_2 for
+  is proved when the weights take at most two values (Section 3h). At two weight values all of (R∞)_2 holds for every
+  k (Corollary L∞). When all weights but one are equal, all of (R∞) holds for k ≤ 29 and all of (R∞)_2 for
   every k, and the
   letter-1 blocks of the other middle conditions are open only for k ≥ 56, on the two-row parts with irrep index
   i ≥ 7, j − i ≥ 4 and k − 1 − j − i ≥ 4 (Section 4b).
@@ -1111,9 +1109,7 @@ arbitrary), the type I block of (R∞)_2 labelled by T = {t} is ⪰ 0 with kerne
 span{p ⊗ |2@t 1@c⟩ : c ≠ t}.
 
 **Theorems F1b and F2b (two weight values).** Let k ≥ 5 and let the weights take at most two distinct values. Then
-the two blocks above are ⪰ 0 with these kernels; for T = {t, τ} always (F1b), for T = {t} except possibly when
-there are more than 40 copies of each weight outside t (F2b; this needs k ≥ 83). In particular both hold at two
-weight values for every k ≤ 82.
+the two blocks above are ⪰ 0 with these kernels (F1b for T = {t, τ}, F2b for T = {t}).
 
 *Proof (computer-assisted in the last step).*
 1. *Closed forms* of all entries of both blocks, for all weights (Lemma B with j = 2, Woodbury and Sherman–Morrison;
@@ -1129,16 +1125,20 @@ weight values for every k ≤ 82.
    with τ). The largest minor has a numerator with 63 948 terms. ∎
 
 For T = {t, τ} the largest regime (t and τ of different weights, both U-levels symbolic) passes with all 8 leading
-minors of its invariant form one-signed, the last with 108 720 terms (`run_open.sh`). For T = {t} the regime with
-both U-levels symbolic passed 7 of its 9 leading minors before the memory limit; with a fixed number m ≤ 40 of
-copies on one level it passes (m ≤ 12 in `run_all.sh`, 13 ≤ m ≤ 40 in `run_fext.sh`). The reduced forms agree exactly with projections of the block built from the
+minors of its invariant form one-signed, the last with 108 720 terms (`run_open.sh`). For T = {t} the invariant part in the regime
+with both U-levels symbolic is certified by determinant and inertia (`run_open2.sh`): after the vacuum states are
+eliminated (R_QQ = 2G_Q R_W⁻¹ G_Q needs no inverse of R_W), the determinant of the 11 × 11 Schur complement is
+computed exactly over Q(q, x₀) on the 230 slices x₁ = 0, …, 229, where 229 bounds the degree in x₁ of its product
+with a multiple of its denominator; exact interpolation in x₁ shows that it equals Ñ/D_c with D_c > 0 and Ñ a
+polynomial with nonnegative coefficients, so it never vanishes on the connected regime, and the complement is
+positive definite at one point. (Its leading minors passed 7 of 9 before the memory limit; with a fixed number
+m ≤ 40 of copies on one level they pass, m ≤ 12 in `run_all.sh`, 13 ≤ m ≤ 40 in `run_fext.sh`.) The reduced forms agree exactly with projections of the block built from the
 definitions, and, for T = {t, τ}, with a Schur complement taken directly from that block; for T = {t} the spectra of
 the parts, with the irrep dimensions as multiplicities, add up to the spectrum of the block at k = 7, 8. Both blocks
 are ⪰ 0 with exactly these kernels at 24 weight vectors with k ≤ 8, and with B replaced by (1 + 1/1000)B the
 gauge-fixed blocks fail at explicit two-value points.
 
-So at two weight values every torus block of (R∞)_2 except the letter-1 block holds for 5 ≤ k ≤ 82 (and for larger k
-outside the configuration above).
+So at two weight values every torus block of (R∞)_2 except the letter-1 block holds for every k ≥ 5.
 
 **The letter-1 block of (R∞)_2** (`code/middle_j2_l1/`, notes with the proofs there). Its states are
 P_{r,X} = (1@r, 1@X) with X a pair of copies and Q_T = (vac, 1@T) with T a triple.
@@ -1211,9 +1211,7 @@ std₁, have 9 pivots each (largest numerator 47 775 terms; 1.8 and 2.2 hours), 
 (every configuration in a certified regime, all dimension counts right) is checked for every k ≤ 120
 (`code/middle_j2_l1_sym/`, Section 6c of the notes there).
 
-**Corollary L∞.** At two weight values, (R∞)_2 is ⪰ 0 with kernel exactly p ⊗ H_2 for every k ≥ 5, except possibly
-on the type I blocks with T = {t} when both levels outside t have more than 40 copies (Theorem F2b; this needs
-k ≥ 83). In particular for 5 ≤ k ≤ 82, and for every k whenever the smaller level has at most 40 copies (with
+**Corollary L∞.** At two weight values, (R∞)_2 is ⪰ 0 with kernel exactly p ⊗ H_2 for every k ≥ 5 (with
 Theorems F1b, F2b, D₂ and Proposition T2′).
 
 ## 4. Equal weights, every k
@@ -1390,8 +1388,8 @@ replaced by (1 + 1/1000)B the certificates fail.
 kernel exactly p ⊗ H_2. (At k = 4, all of (R∞)_2 is Theorem B4, for every weight vector.)
 
 *Proof.* The letter-1 block is Theorem MK or MB (j = 2). A type I block with a
-letter 1 is Theorem F1a or F2a when the copy of the other weight lies in T, and Theorem F1b or F2b otherwise; the
-configuration excluded from F2b needs more than 40 copies of each weight. The blocks without a letter 1 are Theorem D₂,
+letter 1 is Theorem F1a or F2a when the copy of the other weight lies in T, and Theorem F1b or F2b otherwise. The
+blocks without a letter 1 are Theorem D₂,
 and the type II blocks are Proposition T2′. ∎
 
 **Theorem I1.** For 4 ≤ k ≤ 29, every σ > 0, every j with 3 ≤ j ≤ k − 1 and every T with 1 ≤ |T| ≤ j, the type I
@@ -1467,7 +1465,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `middle_j1/` (`run_all.sh`, notes in `middle_j1/NOTES.md`) | Section 3h: the closed forms of the blocks without a letter 1 of (R∞)_1 and (R∞)_2 against the Lemma B blocks (k ≤ 8) and the builder (k ≤ 6), the moment bounds and vertex reductions at rational configurations, the Bernstein certificates of Theorems D₁ (8 functions) and D₂ (8 + 64), the certified formulas against the true blocks; the closed forms and inverse-free reductions of the |T| = 1 and letter-1 blocks (k ≤ 8 and k ≤ 7), Conjecture L proved at k = 3, 4 (symbolic pivots and Laplacian signs, and a leading-minor certificate at k = 4) and checked exactly for k ≤ 10, Conjecture L1 checked exactly for k ≤ 7; negative controls |
 | `middle_j1_t1/` (`run_all.sh`, notes in `middle_j1_t1/NOTES.md`) | Section 3h, Theorems EQ and 2L: the P-first reduction (Lemma P) and the closed form of Φ against the Lemma B blocks (k ≤ 8), the level reductions against exact projections (32 weight vectors, B scaled by 1 and by 1 + 1/1000), the leading-minor certificates for one and two levels, a second certificate at equal U-weights without Lemma P and a separate implementation of that case, negative controls; k = 3, 4 for all weights through Φ′; the stopped k = 5 and three-level attempts |
 | `middle_j1_l1/` (`run_all.sh`, notes in `middle_j1_l1/NOTES.md`) | Section 3h, Theorem 2V: the closed forms of the letter-1 block of (R∞)_1 entry by entry against the Lemma B builder, the S_{u₁} × S_{u₂} test vectors and pattern sums, the reduced forms against exact projections (14 size pairs and k = 9) and against the builder from the definitions identically in the weight ratio, the 22 regime certificates and their coverage, the whole block at 54 weight vectors, negative controls |
-| `middle_j2/` (`run_all.sh`, `run_crosscheck.sh`, notes in `middle_j2/NOTES.md`) | Section 3h, (R∞)_2: the closed forms of the type I blocks with one and two letters 1 entry by entry against the Lemma B builder, Lemma P2, the reduced forms against exact projections of the Lemma B block and of the block from the definitions, the leading-minor certificates of Theorems F1a, F1b, F2a and F2b and their coverage, the dimension counts, kernels and gauge-fixed positivity of all three families at k = 5, 6, 7, negative controls; a second check (a Schur complement taken directly from the builder, the spectra of the parts against the spectrum of the block, and end-to-end kernels and positivity at k = 7, 8); the two unfinished regimes in `attempts.sh`; `run_fext.sh`: the fixed-size regimes for 13 ≤ m ≤ 40 and the coverage for k ≤ 100; `run_open.sh`: the regime of family 1 with both U-levels symbolic, so Theorem F1b for every k |
+| `middle_j2/` (`run_all.sh`, `run_crosscheck.sh`, notes in `middle_j2/NOTES.md`) | Section 3h, (R∞)_2: the closed forms of the type I blocks with one and two letters 1 entry by entry against the Lemma B builder, Lemma P2, the reduced forms against exact projections of the Lemma B block and of the block from the definitions, the leading-minor certificates of Theorems F1a, F1b, F2a and F2b and their coverage, the dimension counts, kernels and gauge-fixed positivity of all three families at k = 5, 6, 7, negative controls; a second check (a Schur complement taken directly from the builder, the spectra of the parts against the spectrum of the block, and end-to-end kernels and positivity at k = 7, 8); the two unfinished regimes in `attempts.sh`; `run_fext.sh`: the fixed-size regimes for 13 ≤ m ≤ 40 and the coverage for k ≤ 100; `run_open.sh`: the regime of family 1 with both U-levels symbolic, so Theorem F1b for every k; `run_open2.sh` (`f2det.py`): the inv part of family 2 at (3+, 3+) by determinant and inertia (230 exact slices, interpolation in x₁, the signs, the base point) and the coverage of both families for k ≤ 120 with no configuration outside |
 | `middle_j2_l1/` (`run_all.sh`, `run_crosscheck.sh`, notes in `middle_j2_l1/NOTES.md`) | Section 3h, Theorem L: the closed forms of the letter-1 block of (R∞)_2 and its vacuum block (Lemmas A and V) entry by entry against the Lemma B builder and the builder from the definitions, the reduction by Young symmetrizers of S_{u₀} × S_{u₁} at fixed level sizes with its dimension counts, the leading-minor certificates for all 27 size pairs with 5 ≤ k ≤ 10 and their coverage, the certified forms against exact projections of the Schur complement of both builders, negative controls; a second check (end-to-end kernels and exact positive-definiteness certificates at a fresh point for each size pair, the builder from the definitions at non-square weight ratios, the saved forms at 31 values of q) |
 | `middle_j2_l1_sym/` (`run_all.sh`, notes in `middle_j2_l1_sym/NOTES.md`) | Section 3h, Theorem L₁₃: the closed forms (Woodbury through the singles, the inverse-free P–Q block, the congruence by I ⊗ Â₂) and the reduction to the parts of S_{u₀} × S_{u₁} against the Lemma B block at 17 points, the certificates in (q, x) for the 12 regimes and 16 parts, the certified forms against the rational reduction, negative controls, coverage for k ≤ 80; the second check `r2check.py` (whole blocks from Lemma B, 11 ≤ k ≤ 14); Theorem L₄₀: `run_ext30.sh`, `run_ext40.sh` (regimes (b+, b), 14 ≤ b ≤ 40) and `run_ext_checks.sh` (forms, coverage for k ≤ 81, negative controls); Theorem L∞: `run_both.sh` (the regime (14+, 14+), both sizes symbolic) and `run_both_checks.sh` (forms, coverage for k ≤ 120) |
 | `marked_copy/` (`run_all.sh`, `run_check.sh`, notes in `marked_copy/NOTES.md`) | Section 4b, Theorems MK, MB and MI: the reduced forms of the letter-1 blocks with one copy of a different weight against exact projections of the Lemma B block (k ≤ 9) and the dimension counts (k ≤ 6), the fixed-k certificates in σ (k ≤ 32, 3 909 forms) and their coverage, the families symbolic in one size (two for i = 0) with the bookkeeping of both bands, negative controls; the second check: a separate builder against Lemma B, the blocks end to end (k ≤ 9) and the family forms at members far from the sample points; `run_check_mi.sh` (`mfcheck.py`): 240 members of the families of Theorem MP with 56 ≤ k ≤ 100 |

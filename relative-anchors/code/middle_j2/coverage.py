@@ -2,8 +2,8 @@
 5 <= k <= 60.  The regimes are uniform in the sizes they leave symbolic, so the same bookkeeping holds for every k.
 
 python coverage.py M2 [M1=n] [KMAX=n]  (KMAX: largest k checked, default 60)
-  F1OPEN=1 / F2OPEN=1: include the regimes certified by run_open.sh (family 1: tw = (0, 1) at (2+, 2+); family 2:
-  the inv part at (3+, 3+)); then the corresponding configurations are no longer outside the statement
+  F1OPEN=1 / F2OPEN=1: include the regimes certified by run_open.sh (family 1: tw = (0, 1) at (2+, 2+)) and by
+  run_open2.sh (family 2: the inv part at (3+, 3+)); then the corresponding configurations are no longer outside the statement
 
 Two symmetries reduce the regimes:
   (S1) exchanging the names of the two levels: divide every squared weight by q (the rescaled blocks are homogeneous of
@@ -16,7 +16,9 @@ different weights and both U-levels larger than M1, is in the orbit under (S1), 
 (0, 0) at (1, 2+), (2+, 1), (2+, 2+); (0, 1) at (1, 2+) and (m, 2+), 2 <= m <= M1.  (U in one level: Theorem F1a.)
 Family 2 (Theorem F2b): every two-value configuration with U in one level, or with min(u0, u1) <= M2, is, for every
 part, in the orbit under (S1) of a certified regime (part on level 0; t-weight equal to that of level lt; inv and mix
-for lt = 0 only; the inv part at (3+, 3+) is not certified and is replaced by (m, 3+), (3+, m), 3 <= m <= M2)."""
+for lt = 0 only; without F2OPEN=1 the inv part at (3+, 3+) is replaced by (m, 3+), (3+, m), 3 <= m <= M2, and the
+cases with both U-levels > M2 that are not covered are counted as outside the statement; with F2OPEN=1 every case,
+whatever the level sizes, must be covered)."""
 import sys
 
 M = int(sys.argv[1])
@@ -92,13 +94,13 @@ def f2_cert(part, lt, v0, v1):
 
 
 n2 = 0
+nskip2 = 0
 ok2 = True
 for k in range(5, KMAX + 1):
     u = k - 1
     for u0 in range(0, u + 1):
         u1 = u - u0
-        if u0 > 0 and u1 > 0 and min(u0, u1) > M:
-            continue                     # outside the statement of Theorem F2b
+        big = u0 > 0 and u1 > 0 and min(u0, u1) > M
         for lt in (0, 1):
             confs = [('inv', None), ('mix', None)] + [(p, pl) for p in ('std', 'two', 'anti') for pl in (0, 1)]
             for part, pl in confs:
@@ -111,10 +113,14 @@ for k in range(5, KMAX + 1):
                     if q_pl in (None, 0):
                         cands.append((part, q_lt, w0, w1))
                 cov = any(f2_cert(*c) for c in cands)
+                if not cov and big:
+                    n2 -= 1
+                    nskip2 += 1          # outside the statement of Theorem F2b
+                    continue
                 ok2 &= cov
                 if not cov:
                     print('  family 2 not covered:', k, (u0, u1), lt, part, pl)
-print(f'family 2: {n2} (k, sizes, t-weight, part) cases with 5 <= k <= {KMAX} and U in one level or min(u0, u1) <= {M}, '
-      f'all covered: {ok2}')
+print(f'family 2: {n2} (k, sizes, t-weight, part) cases with 5 <= k <= {KMAX} covered: {ok2} ({nskip2} cases with '
+      f'both U-levels > {M} are outside the statement)')
 ok &= ok2
 print('PASS' if ok else 'FAIL')

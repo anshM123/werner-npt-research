@@ -16,8 +16,8 @@
 | 7 | Closed forms of all six sub-blocks of family 2 (Lemma F2), all weights | **proved** (by hand from Lemma B and Woodbury, Section 3); **exact check** entry by entry against `j1lib.py` at 6 two-level weight vectors (k = 4, 5, 6), B-part scaled by 1 and 1001/1000 (`check_f2.py`) |
 | 8 | Symmetry reduction of family 2 (Lemma F2.2): parts, test vectors, pattern sums | **proved**; **exact checks**: reduced blocks against explicit projections of the `j1lib.py` block at 13 size pairs (both scalings, irreps on either level), kernels, and dimension counts for every size pair with 5 ≤ k ≤ 60 (`check_f2.py`, `dims.py`) |
 | 9 | **Theorem F2a.** Family 2 for every k ≥ 4 when the U-weights are all equal, with **arbitrary** weight on t: ⪰ 0 with kernel exactly span{p ⊗ \|2@t 1@c⟩ : c ∈ U} | **proved**, computer-assisted, exact (Section 3.3) |
-| 10 | **Theorem F2b.** Family 2 for every k ≥ 5 whenever all k weights take at most two values **and** U lies in one level or one of the two U-levels has at most M_2 = 40 copies (M_2 = 12 in `run_all.sh`, extended to 40 by `run_fext.sh`, Section 5b). In particular every two-value weight vector with 5 ≤ k ≤ 82 | **proved**, computer-assisted, exact (Section 3.3: the two-level regimes, certificates, coverage) |
-| 10b | The remaining two-value configurations of family 2: both U-levels with more than M_2 = 40 copies (possible only for k ≥ 83). Only the invariant part is missing there: its certificate in the regime (3+, 3+) passed 7 of its 9 leading minors (the last one with 109 975 terms) and was stopped by the 2.5 GB limit during minor 8 (`logs/attempts/stopped_regimes.txt`). The fixed-size regimes (m, 3+) and (3+, m) of `run_all.sh` and `run_fext.sh` give M_2 | **open** beyond M_2 (Section 3.5) |
+| 10 | **Theorem F2b.** Family 2 for every k ≥ 5 whenever all k weights take at most two values: with U in one level or one of the two U-levels of at most M_2 = 40 copies (M_2 = 12 in `run_all.sh`, extended to 40 by `run_fext.sh`, Section 5b), and with both U-levels larger by Section 5d (row 10b) | **proved**, computer-assisted, exact (Section 3.3: the two-level regimes, certificates, coverage) |
+| 10b | The remaining two-value configurations of family 2: both U-levels with more than M_2 = 40 copies (possible only for k ≥ 83). Only the invariant part was missing there: in the regime (3+, 3+) its leading minors stopped at the 2.5 GB limit (7 of 9 passed, `logs/attempts/stopped_regimes.txt`); it is now certified by determinant and inertia (Section 5d, `run_open2.sh`), so **Theorem F2b holds for every k** | **proved**, computer-assisted, exact (Section 5d) |
 | 11 | Family 2 with arbitrary weight on t and U-weights on two levels (the full target for this family) | **open**. Attempted (four variables): the R-block and the vacuum block of the invariant part are certified, the run was stopped while eliminating the vacuum states (Section 3.5) |
 | 12 | Family 3 (the letter-1 block of (R∞)₂) at two weight values | **open**; only the exact checks of row 1 (k = 5, 6, 7). Not attempted symbolically |
 | 13 | Negative controls: with B → (1 + 1/1000)B the gauge-fixed block is not positive definite at explicit rational points (families 1 and 2, including points where all weights take two values), and the certificates of the one-level cases fail | **exact** (`neg_t2.py`, `neg_f2.py`, `run_all.sh` steps `*_neg_*`) |
@@ -299,6 +299,9 @@ the orbit of a certified regime, for every part. Every numerator and denominator
 largest certificates are the regimes (3+, 3+) of std: for tw = 1 the last minor (5 P-vectors and 2 Q-vectors) has
 numerator degree 140 with 63 948 terms over a denominator of degree 132 with 52 384 terms (about ten minutes). ∎
 
+With the regime of Section 5d (the inv part with both U-levels symbolic) the restriction on the level sizes is
+removed: Theorem F2b holds for every two-value weight vector and every k ≥ 5.
+
 ### 3.4 Controls
 
 - `neg_f2.py`: with B → (1 + 1/1000)B the reduced forms of the gauge-fixed block fail at 64 of 90 candidate points
@@ -314,9 +317,9 @@ gauge-fixed invariant form has 6 P-vectors and 3 Q-vectors after the elimination
 leading minors pass (minor 7 has numerator degree 166 with 109 975 terms over a denominator of degree 152 with 79 079
 terms, after about 19 minutes); during minor 8 the process passed 2.5 GB and was stopped by `guard.sh`
 (`attempts.sh`; the lines it displayed are in `logs/attempts/stopped_regimes.txt`). The other order (vacuum states first) was slower in
-a development run. So the inv part is certified only with one level of fixed size at most M_2; the configurations
-with both U-levels larger than M_2 remain open. A smaller certificate (for example the congruence that removes the
-inverse of Â₂ from the R–Q block, or evaluation and interpolation of the last two minors) is the obvious next step.
+a development run. With leading minors the inv part is certified only with one level of fixed size at most M_2; the
+configurations with both U-levels larger than M_2 are certified in Section 5d by determinant and inertia, with
+the vacuum states eliminated first and the determinant obtained by exact evaluation and interpolation.
 
 *Arbitrary t-weight with two U-levels.* With a free (variables a, q, x₀, x₁) the inv part at (3+, 3+) passed the Gram,
 kernel, R-block and vacuum-block checks (vacuum minors up to 16 868 terms) and was stopped while eliminating the
@@ -338,8 +341,8 @@ For a weight vector with at most two distinct weights and k ≥ 5: the type I bl
 Theorem F1b) and with |T| = 1 (within the range of Theorem F2b) are ⪰ 0 with kernel exactly the part of p ⊗ H₂ they
 contain; the type I blocks with |T| = 3 are positive definite (Theorem DJ of the README, all weights); the type II
 blocks are positive definite (Proposition T2′, all weights). So at two weight values every torus block of (R∞)₂ except
-the letter-1 block holds for 5 ≤ k ≤ 82 (k ≤ 26 with `run_all.sh` alone); for larger k every block except the
-letter-1 block, the |T| = 2 blocks of row 5b and the |T| = 1 blocks of row 10b. The letter-1 block is not treated
+the letter-1 block holds for every k ≥ 5 (k ≤ 26 with `run_all.sh` alone, k ≤ 82 with `run_fext.sh`, every k with
+`run_open.sh` and `run_open2.sh`). The letter-1 block is not treated
 here (see `code/middle_j2_l1/` and `code/middle_j2_l1_sym/`). Beyond two values, Theorems
 F1a and F2a allow arbitrary weights on the copies of T when the remaining weights are equal.
 
@@ -360,7 +363,58 @@ invariant form (8 × 8) passes with all 8 leading minors one-signed (minor 8: nu
 denominator degree 158, 88 560 terms; under an hour, under 2.5 GB). With this regime, `coverage.py 40 M1=40
 KMAX=120 F1OPEN=1` finds every configuration of family 1 with 5 ≤ k ≤ 120 in a certified regime and none outside
 the statement, so Theorem F1b holds for every k (the regimes are uniform in the symbolic sizes). Family 2 at
-(3+, 3+) (row 10b) is still open.
+(3+, 3+) (row 10b) is Section 5d.
+
+## 5d. The open regime of family 2 (`run_open2.sh`, `f2det.py`)
+
+The regime of row 10b is the invariant part of family 2 with both U-levels symbolic, (3+, 3+) (u₀ = 3 + x₀,
+u₁ = 3 + x₁), t-weight 0, variables (q, x₀, x₁). By (S1) it is the only one left. `f2det.py` certifies it by
+determinant and inertia instead of leading minors.
+
+*The form.* With B unscaled the vacuum block of the part is R_QQ = 2 G_Q R_W⁻¹ G_Q, R_W being the reduced form of the
+positive definite operator Ŵ on independent vectors (identity checked exactly), so R_QQ⁻¹ = ½ G_Q⁻¹ R_W G_Q⁻¹ needs no
+inverse of R_W. The part is ⪰ 0 with the given kernel if and only if R_W ≻ 0 and the Schur complement
+S′ = F_XX − ½ F_XQ G_Q⁻¹ R_W G_Q⁻¹ F_QX (X: the five R-vectors and the six gauge-fixed P-vectors) is positive definite.
+The Gram determinants, the kernel identities, the identity for R_QQ and R_W ≻ 0 (three leading minors) are checked as
+in `cert_f2.py`.
+
+*The argument.* Let 𝓡 = {q > 0, x₀ ≥ 0, x₁ ≥ 0} (real).
+1. Every entry denominator of S′ is a product of irreducible factors, each one-signed in coefficients with a monomial
+   free of x₀, x₁, so S′ is continuous on 𝓡.
+2. For each irreducible factor f of an entry denominator let e_f = max over permutations p of
+   Σ_a mult_f(den S′_{a,p(a)}) and D* = Π f^{e_f}. Then T = D* det S′ is a polynomial and
+   deg_{x₁} T ≤ B := deg_{x₁} D* + max_p Σ_a (deg_{x₁} num − deg_{x₁} den) (exact maxima by dynamic programming over
+   subsets). Here B = 229.
+3. D_c = Π f^{d_f}, with the exponents d_f ≤ e_f seen on slices; R = D*/D_c has degree 136 in x₁.
+4. For x₁ = 0, 1, …, 229: det S′ over Q(q, x₀), exactly (symmetric elimination with reduced fractions), times D_c,
+   checked to be a polynomial.
+5. Interpolation in x₁ over these 230 values (inverse Vandermonde over Q), coefficient by coefficient of q^a x₀^b:
+   the coefficients of x₁^l with l > 93 vanish. So the interpolant Ñ has degree ≤ 93 in x₁, T and Ñ R both have degree
+   ≤ 229 in x₁ and agree at 230 values of x₁ (as polynomials in q, x₀), hence T = Ñ R and det S′ = Ñ/D_c.
+6. Every coefficient of Ñ is nonnegative and one free of x₀, x₁ is positive, so det S′ > 0 on 𝓡.
+7. S′ is positive definite at (q, x₀, x₁) = (1, 0, 0) (exact elimination). 𝓡 is connected and S′ is continuous and
+   never singular on 𝓡, so S′ ≻ 0 on all of 𝓡. ∎
+
+*The numbers* (`logs/f2det_*.log`, `logs/run_f2det.out`). The entry denominators of S′ have 17 irreducible
+factors; the exponents of D* are 11, 11, 11, 11, 6, 12, 2, 2, 2, 8, 8, 10, 10, 2, 2, 2, 2, and those seen on the
+slices x₁ = 0, 3, 7 and x₀ = 0, 5 (the same on all five) are 1, 1, 1, 1, 6, 4, 2, 2, 2, 6, 2, 4, 2, 2, 2, 2, 2. The
+degree bounds of T are 230, 229, 229 in q, x₀, x₁, and R has degree 136 in each, so the grid is x₁ = 0, …, 229 and
+the low degree is 93. On every slice det S′ · D_c is a polynomial with 4 410 (x₁ = 0) or 4 420 terms, all positive
+(70 to 190 seconds per slice, three slices in parallel, about 3.2 hours). The interpolation (13 seconds) gives Ñ with
+178 660 coefficients, all positive, of degree 93 in x₁, with no coefficient above x₁^93, and a positive coefficient
+free of x₀ and x₁. S′ is positive definite at (1, 0, 0).
+
+*Checks* (`f2check.py`, not needed by the proof). At (q, x₀, x₁) = (2/7, 0, 300), (5, 40, 1000), (1/1000, 3, 517/2)
+and (1000, 250, 10 000), all outside the grid, det S′ · D_c computed directly from the 11 × 11 matrix equals Ñ exactly
+(`logs/f2check_points.log`). With B replaced by (1 + 1/1000)B the kernel vectors are no longer annihilated, and on
+the slice x₁ = 0 the determinant of the Schur complement has 4 204 negative numerator coefficients out of 4 611, so
+the sign step fails (`logs/f2check_neg.log`, which ends with FAIL as it should). An elimination of the same 11 × 11
+form by pivots (vacuum states first, under a 5.2 GB cap), run before this route, passed 8 of its 11 pivots in
+76 minutes (pivot 8: numerator degree 162, 95 201 terms) and was stopped after four hours on pivot 9, as superseded.
+
+With this regime, `coverage.py 40 M1=40 KMAX=120 F1OPEN=1 F2OPEN=1` finds every configuration of families 1 and 2
+with 5 ≤ k ≤ 120 in a certified regime and none outside the statements, so Theorems F1b and F2b hold for every k
+(the regimes are uniform in the symbolic sizes).
 
 ## 6. Files and the final run
 
@@ -377,7 +431,8 @@ the statement, so Theorem F1b holds for every k (the regimes are uniform in the 
 | `check_f2.py` | family 2: closed forms entry by entry, reduced forms against projections, kernels, dimensions |
 | `cert_f2.py` | family 2 certificates (Theorems F2a, F2b) |
 | `neg_f2.py` | family 2 negative controls at points |
-| `coverage.py` | coverage of the statements of Theorems F1b (with M_1) and F2b (with M_2) by the certified regimes of `run_all.sh`, 5 ≤ k ≤ 60 |
+| `coverage.py` | coverage of the statements of Theorems F1b (with M_1) and F2b (with M_2) by the certified regimes of `run_all.sh`, 5 ≤ k ≤ 60 (options: KMAX; F1OPEN=1 and F2OPEN=1 add the regimes of `run_open.sh` and `run_open2.sh`, and then every configuration must be covered) |
+| `f2det.py`, `run_open2.sh` | Section 5d: the inv part of family 2 at (3+, 3+) by determinant and inertia (bounds, 230 slices with three workers, interpolation, base point), then the coverage of both families for k ≤ 120 |
 | `dims.py` | family 2: the test vectors times the irrep dimensions add up to the numbers of states, 5 ≤ k ≤ 60 |
 | `check_ylib_reduced.py` | the reduced forms of families 1 and 2 against projections of the block built by `ylib.py` directly (two-level points, k = 5, 6) |
 | `j1lib.py`, `ylib.py`, `flintfield.py`, `l1sym.py`, `cert.py`, `guard.sh` | copied unchanged from `relative-anchors/code/` (`middle_j1/`, the code folder, `middle_j1_l1/`, `no_letter1/guard.sh`); `l1sym.py` supplies small helpers, `cert.py` the sign test |

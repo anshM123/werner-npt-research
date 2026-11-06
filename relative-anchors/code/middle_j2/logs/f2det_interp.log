@@ -1,0 +1,2 @@
+N~(q, x0, x1): 4420 monomials q^a x0^b, interpolated over x1 = 0..229; nonzero coefficients above x1^93: 0; 178660 positive, 0 negative coefficients; degree in x1 93; a positive coefficient free of x0, x1: True [13s]
+PASS

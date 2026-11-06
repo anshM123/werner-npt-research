@@ -1,0 +1,10 @@
+  S' built (11 x 11), checks of qfirst_f2.py: True [0.8s]
+  every entry denominator of S' one-signed positive on the region: True
+  slice x1 = 0: observed exponents 1 1 1 1 6 4 2 2 2 6 2 4 2 2 2 2 2 [67s]
+  slice x1 = 3: observed exponents 1 1 1 1 6 4 2 2 2 6 2 4 2 2 2 2 2 [140s]
+  slice x1 = 7: observed exponents 1 1 1 1 6 4 2 2 2 6 2 4 2 2 2 2 2 [222s]
+  slice x0 = 0: observed exponents 1 1 1 1 6 4 2 2 2 6 2 4 2 2 2 2 2 [302s]
+  slice x0 = 5: observed exponents 1 1 1 1 6 4 2 2 2 6 2 4 2 2 2 2 2 [392s]
+  D* exponents [11, 11, 11, 11, 6, 12, 2, 2, 2, 8, 8, 10, 10, 2, 2, 2, 2]; observed [1, 1, 1, 1, 6, 4, 2, 2, 2, 6, 2, 4, 2, 2, 2, 2, 2]
+  degree bounds of T and degrees of R (q, x0, x1): {'q': (230, 136), 'x0': (229, 136), 'x1': (229, 136)}
+PASS
