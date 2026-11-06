@@ -1,0 +1,9 @@
+run_all.sh started Thu Nov  5 18:45:52 EST 2026, KMAX = 32
+PASS  builder  (python check_builder.py 6 6 16; expect PASS; 48 s)
+PASS  spectrum  (python check_spectrum.py 6; expect PASS; 7 s)
+PASS  cert_fixed  (python cert_fixed.py 2 32 1 logs/cert_fixed.pkl; expect PASS; 281 s)
+PASS  coverage  (python coverage.py logs/cert_fixed.pkl 2 32 6; expect PASS; 9 s)
+PASS  neg_cert  (python cert_fixed.py 2 16 1001/1000; expect FAIL; 1 s)
+PASS  neg_points  (python neg_points.py 6; expect PASS; 8 s)
+total 354 s
+ALL PASS

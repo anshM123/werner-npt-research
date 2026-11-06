@@ -1,0 +1,12 @@
+    pivot B001: num 1 terms, den 1 terms (0.6s)
+    pivot B000: num 1 terms, den 2 terms (0.6s)
+    pivot B110: num 10 terms, den 20 terms (0.7s)
+    pivot B111: num 2 terms, den 6 terms (0.7s)
+    pivot B100: num 890 terms, den 906 terms (0.9s)
+    pivot B010: num 1055 terms, den 1069 terms (2.3s)
+    pivot B101: num 1205 terms, den 1456 terms (18.8s)
+    pivot B011: num 1101 terms, den 1205 terms (33.0s)
+    pivot G1: num 7766 terms, den 7843 terms (49.4s)
+    pivot G0: num 10873 terms, den 11819 terms (106.5s)
+    pivot A10: num 38529 terms, den 38973 terms (334.9s)
+guard: time limit 720 s exceeded, killed PID 53728

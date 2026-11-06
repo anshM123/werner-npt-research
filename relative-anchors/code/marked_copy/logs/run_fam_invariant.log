@@ -1,0 +1,9 @@
+    pivot G1: num 9 terms, den 12 terms (0.1s)
+    pivot G0: num 5 terms, den 15 terms (0.1s)
+    pivot A10: num 1236 terms, den 1298 terms (0.1s)
+    pivot A00: num 2207 terms, den 2457 terms (0.5s)
+    pivot A01: num 2963 terms, den 2935 terms (1.0s)
+    pivot A11: num 2362 terms, den 3192 terms (1.3s)
+(None, None, 0): PD on complement (pivots 6, kernel 2)  (1.3s)  largest pivot 3192 terms
+1s
+PASS

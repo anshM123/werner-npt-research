@@ -1,0 +1,16 @@
+run_all.sh started Thu Nov  5 20:01:37 EST 2026, KMAX = 32, W = 8
+PASS  builder  (python check_builder.py 6 6 16; expect PASS; 63 s)
+PASS  spectrum  (python check_spectrum.py 6; expect PASS; 8 s)
+PASS  cert_fixed  (python cert_fixed.py 2 32 1 logs/cert_fixed.pkl; expect PASS; 403 s)
+PASS  coverage  (python coverage.py logs/cert_fixed.pkl 2 32 6; expect PASS; 9 s)
+PASS  neg_cert  (python cert_fixed.py 2 16 1001/1000; expect FAIL; 1 s)
+PASS  neg_points  (python neg_points.py 6; expect PASS; 9 s)
+PASS  fam1  (python prove_fam.py 1 1; expect PASS; 166 s)
+PASS  band_bottom  (python prove_band.py bottom 8; expect PASS; 504 s)
+PASS  band_top  (python prove_band.py top 8; expect PASS; 267 s)
+PASS  coverage_fam  (python coverage_fam.py 60 32 band:8:8 logs/fam_1_1.pkl logs/band_bottom_8.pkl logs/band_top_8.pkl; expect PASS; 1 s)
+PASS  neg_fam  (python prove_fam.py 1 1 1001/1000; expect FAIL; 193 s)
+PASS  fam_invariant  (python prove_lowirr.py 0; expect PASS; 3 s)
+PASS  coverage_inv  (python coverage_irr.py 60 32 0 logs/fam_lowirr_0.pkl logs/fam_1_1.pkl logs/band_bottom_8.pkl logs/band_top_8.pkl; expect PASS; 1 s)
+total 1628 s
+ALL PASS

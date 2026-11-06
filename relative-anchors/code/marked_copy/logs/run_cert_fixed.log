@@ -1,0 +1,33 @@
+k=2: 4 reduced forms, largest pivot degree 6, 0.0s
+k=3: 9 reduced forms, largest pivot degree 10, 0.0s
+k=4: 11 reduced forms, largest pivot degree 19, 0.0s
+k=5: 17 reduced forms, largest pivot degree 29, 0.1s
+k=6: 20 reduced forms, largest pivot degree 34, 0.1s
+k=7: 27 reduced forms, largest pivot degree 36, 0.3s
+k=8: 31 reduced forms, largest pivot degree 38, 0.5s
+k=9: 39 reduced forms, largest pivot degree 41, 0.8s
+k=10: 44 reduced forms, largest pivot degree 42, 1.1s
+k=11: 53 reduced forms, largest pivot degree 45, 2.1s
+k=12: 59 reduced forms, largest pivot degree 46, 2.8s
+k=13: 69 reduced forms, largest pivot degree 46, 3.7s
+k=14: 76 reduced forms, largest pivot degree 46, 4.5s
+k=15: 87 reduced forms, largest pivot degree 46, 5.5s
+k=16: 95 reduced forms, largest pivot degree 46, 6.7s
+k=17: 107 reduced forms, largest pivot degree 46, 7.9s
+k=18: 116 reduced forms, largest pivot degree 46, 9.3s
+k=19: 129 reduced forms, largest pivot degree 46, 10.9s
+k=20: 139 reduced forms, largest pivot degree 46, 12.6s
+k=21: 153 reduced forms, largest pivot degree 46, 14.4s
+k=22: 164 reduced forms, largest pivot degree 46, 15.9s
+k=23: 179 reduced forms, largest pivot degree 46, 17.6s
+k=24: 191 reduced forms, largest pivot degree 46, 20.2s
+k=25: 207 reduced forms, largest pivot degree 46, 22.6s
+k=26: 220 reduced forms, largest pivot degree 46, 24.9s
+k=27: 237 reduced forms, largest pivot degree 46, 27.9s
+k=28: 251 reduced forms, largest pivot degree 46, 29.9s
+k=29: 269 reduced forms, largest pivot degree 46, 34.1s
+k=30: 284 reduced forms, largest pivot degree 46, 36.9s
+k=31: 303 reduced forms, largest pivot degree 46, 40.2s
+k=32: 319 reduced forms, largest pivot degree 46, 44.0s
+3909 forms; every pivot with nonnegative coefficients: True
+PASS 400s

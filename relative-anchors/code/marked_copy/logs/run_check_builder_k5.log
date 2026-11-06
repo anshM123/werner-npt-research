@@ -1,0 +1,16 @@
+V k=5 a=2/5 j=-1: 1 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=5 a=2/5 j=0: 10 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=5 a=2/5 j=1: 35 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=5 a=2/5 j=2: 60 states, fast builder = J1.matrix entry by entry: True [0.1s]
+V k=5 a=2/5 j=3: 55 states, fast builder = J1.matrix entry by entry: True [0.1s]
+V k=5 a=2/5 j=4: 26 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=5 a=2/5 j=5: 5 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=5 a=3 j=-1: 1 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=5 a=3 j=0: 10 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=5 a=3 j=1: 35 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=5 a=3 j=2: 60 states, fast builder = J1.matrix entry by entry: True [0.1s]
+V k=5 a=3 j=3: 55 states, fast builder = J1.matrix entry by entry: True [0.1s]
+V k=5 a=3 j=4: 26 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=5 a=3 j=5: 5 states, fast builder = J1.matrix entry by entry: True [0.0s]
+total 1s
+PASS

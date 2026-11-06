@@ -1,0 +1,14 @@
+V k=4 a=1/3 j=-1: 1 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=4 a=1/3 j=0: 8 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=4 a=1/3 j=1: 22 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=4 a=1/3 j=2: 28 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=4 a=1/3 j=3: 17 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=4 a=1/3 j=4: 4 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=4 a=2 j=-1: 1 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=4 a=2 j=0: 8 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=4 a=2 j=1: 22 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=4 a=2 j=2: 28 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=4 a=2 j=3: 17 states, fast builder = J1.matrix entry by entry: True [0.0s]
+V k=4 a=2 j=4: 4 states, fast builder = J1.matrix entry by entry: True [0.0s]
+total 0s
+PASS

@@ -1,0 +1,6 @@
+k=3: done (0s)
+k=4: done (0s)
+k=5: done (1s)
+k=6: done (6s)
+26 points: the true restricted block is positive definite and the scaled one is not
+PASS 6s

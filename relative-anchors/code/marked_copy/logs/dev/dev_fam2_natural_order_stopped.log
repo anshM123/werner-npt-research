@@ -1,0 +1,18 @@
+    pivot B000: num 28 terms, den 19 terms (0.0s)
+    pivot G0: num 215 terms, den 270 terms (0.0s)
+[q0=-1, t>=4, i>=2] PD on complement (pivots 2, kernel 0)  (0.0s)  largest pivot 270 terms
+    pivot A00: num 2 terms, den 3 terms (0.1s)
+    pivot B000: num 199 terms, den 154 terms (0.1s)
+    pivot B001: num 404 terms, den 339 terms (0.2s)
+    pivot B010: num 753 terms, den 751 terms (0.4s)
+    pivot B100: num 630 terms, den 751 terms (0.7s)
+    pivot G0: num 2558 terms, den 2836 terms (0.9s)
+    pivot G1: num 3614 terms, den 3989 terms (1.1s)
+[q0=0, t>=4, i>=2] PD on complement (pivots 7, kernel 1)  (1.1s)  largest pivot 3989 terms
+    pivot A00: num 19 terms, den 19 terms (0.4s)
+    pivot A01: num 47 terms, den 55 terms (0.5s)
+    pivot A10: num 57 terms, den 71 terms (0.8s)
+    pivot B000: num 1234 terms, den 1062 terms (1.4s)
+    pivot B001: num 2433 terms, den 2184 terms (3.9s)
+    pivot B010: num 4286 terms, den 4286 terms (21.3s)
+    pivot B011: num 5233 terms, den 5719 terms (77.4s)

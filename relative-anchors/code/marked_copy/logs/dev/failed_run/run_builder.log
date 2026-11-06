@@ -1,0 +1,14 @@
+(a) k=2: done (0s)
+(a) k=3: done (0s)
+(a) k=4: done (1s)
+(a) k=5: done (4s)
+(a) k=6: done (18s)
+(a) 23628 entries compared with the Lemma B builder
+(b) k=2: done (18s)
+(b) k=3: done (18s)
+(b) k=4: done (18s)
+(b) k=5: done (19s)
+(b) k=6: done (34s)
+(b) 90 blocks: known vectors annihilated, PSD, nullity = number of known vectors
+(c) 140428 symbolic entries evaluated = numeric; (d) 140428 window = all nodes
+PASS 49s

@@ -1,0 +1,54 @@
+[q0=-1, t=-2, i>=2] empty  (0.0s)
+[q0=-1, t=-1, i>=2] empty  (0.0s)
+[q0=-1, t=0, i>=2] empty  (0.0s)
+[q0=-1, t=1, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G0: num 2 terms, den 2)  (0.0s)
+[q0=-1, t=2, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G0: num 6 terms, den 6)  (0.0s)
+[q0=-1, t=3, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G0: num 6 terms, den 6)  (0.0s)
+[q0=0, t=-2, i>=2] empty  (0.0s)
+[q0=0, t=-1, i>=2] empty  (0.0s)
+[q0=0, t=0, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B100: num 130 terms, den 130)  (0.0s)  largest pivot 88 terms
+[q0=0, t=1, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B100: num 190 terms, den 190)  (0.1s)  largest pivot 171 terms
+[q0=0, t=2, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B100: num 190 terms, den 190)  (0.1s)  largest pivot 153 terms
+[q0=0, t=3, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B100: num 171 terms, den 171)  (0.1s)  largest pivot 171 terms
+[q0=1, t=-2, i>=2] empty  (0.0s)
+[q0=1, t=-1, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B101: num 44 terms, den 44)  (0.0s)  largest pivot 21 terms
+[q0=1, t=0, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B101: num 300 terms, den 300)  (0.2s)  largest pivot 210 terms
+[q0=1, t=1, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest A10: num 528 terms, den 528)  (1.7s)  largest pivot 465 terms
+[q0=1, t=2, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B000: num 560 terms, den 528)  (1.2s)  largest pivot 527 terms
+[q0=1, t=3, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G0: num 780 terms, den 780)  (1.7s)  largest pivot 740 terms
+[q0=2, t=-2, i>=2] PD on complement (pivots 1, kernel 0)  (0.0s)  largest pivot 10 terms
+[q0=2, t=-1, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B101: num 120 terms, den 120)  (0.0s)  largest pivot 78 terms
+[q0=2, t=0, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest A10: num 663 terms, den 663)  (1.5s)  largest pivot 592 terms
+[q0=2, t=1, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest A10: num 990 terms, den 990)  (10.7s)  largest pivot 990 terms
+[q0=2, t=2, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B101: num 1128 terms, den 1128)  (11.8s)  largest pivot 1128 terms
+[q0=2, t=3, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest A10: num 1485 terms, den 1485)  (19.3s)  largest pivot 1485 terms
+[q0=3, t=-2, i>=2] PD on complement (pivots 1, kernel 0)  (0.0s)  largest pivot 10 terms
+[q0=3, t=-1, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B101: num 110 terms, den 110)  (0.0s)  largest pivot 72 terms
+[q0=3, t=0, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest A10: num 703 terms, den 703)  (1.6s)  largest pivot 630 terms
+[q0=3, t=1, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest A10: num 1081 terms, den 1081)  (13.2s)  largest pivot 1081 terms
+[q0=3, t=2, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B101: num 1225 terms, den 1225)  (15.2s)  largest pivot 1225 terms
+[q0=3, t=3, i>=2] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest A10: num 1596 terms, den 1596)  (24.1s)  largest pivot 1596 terms
+[q0=-1, t>=4, i=0] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G0: num 6 terms, den 6)  (0.0s)
+[q0=-1, t>=4, i=1] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G0: num 27 terms, den 27)  (0.0s)  largest pivot 1 terms
+[q0=0, t>=4, i=0] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G0: num 6 terms, den 6)  (0.0s)  largest pivot 6 terms
+[q0=0, t>=4, i=1] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B100: num 165 terms, den 165)  (0.0s)  largest pivot 147 terms
+[q0=1, t>=4, i=0] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G0: num 6 terms, den 6)  (0.0s)  largest pivot 6 terms
+[q0=1, t>=4, i=1] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B100: num 429 terms, den 429)  (0.6s)  largest pivot 429 terms
+[q0=2, t>=4, i=0] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G0: num 114 terms, den 114)  (0.0s)  largest pivot 129 terms
+[q0=2, t>=4, i=1] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B100: num 940 terms, den 940)  (3.9s)  largest pivot 940 terms
+[q0=3, t>=4, i=0] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G0: num 147 terms, den 147)  (0.0s)  largest pivot 164 terms
+[q0=3, t>=4, i=1] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B100: num 1122 terms, den 1122)  (5.3s)  largest pivot 1169 terms
+[q0>=4, t=-2, i=0] empty  (0.0s)
+[q0>=4, t=-2, i=1] PD on complement (pivots 1, kernel 0)  (0.0s)  largest pivot 1 terms
+[q0>=4, t=-1, i=0] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest A11: num 5 terms, den 3)  (0.0s)
+[q0>=4, t=-1, i=1] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B110: num 36 terms, den 36)  (0.0s)  largest pivot 10 terms
+[q0>=4, t=0, i=0] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest A11: num 47 terms, den 38)  (0.0s)  largest pivot 17 terms
+[q0>=4, t=0, i=1] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest A10: num 435 terms, den 435)  (0.8s)  largest pivot 351 terms
+[q0>=4, t=1, i=0] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G0: num 3 terms, den 5)  (0.0s)
+[q0>=4, t=1, i=1] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B100: num 120 terms, den 120)  (0.3s)  largest pivot 91 terms
+[q0>=4, t=2, i=0] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G1: num 6 terms, den 6)  (0.0s)
+[q0>=4, t=2, i=1] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B100: num 136 terms, den 136)  (0.5s)  largest pivot 105 terms
+[q0>=4, t=3, i=0] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest G1: num 6 terms, den 6)  (0.0s)
+[q0>=4, t=3, i=1] PIVOT-SIGN-UNPROVED (no remaining diagonal entry passes; smallest B100: num 153 terms, den 153)  (0.5s)  largest pivot 120 terms
+3 families proved, 7 empty, of 52; 115s
+FAIL

@@ -1,0 +1,8 @@
+(1) k = 2..32: 3909 certified reduced forms, 2480 empty twisted spaces, nothing missing
+(2) k=2: done (0s)
+(2) k=3: done (0s)
+(2) k=4: done (0s)
+(2) k=5: done (1s)
+(2) k=6: done (6s)
+(2) 3192 entries of saved gauge-fixed forms equal the Lemma B projections
+PASS 6s

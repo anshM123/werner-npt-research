@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "prove_band.py", line 10, in <module>
+    import prove_fam
+  File "prove_fam.py", line 19, in <module>
+    mins = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+           ~~~^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'top'
