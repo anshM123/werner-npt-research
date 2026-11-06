@@ -1,0 +1,18 @@
+run_extra.sh started Fri Nov  6 03:25:24 EST 2026
+PASS  cert_04_07  (python cert_t.py 4 7 1 logs/cert_04_07.pkl; expect PASS; 5 s)
+PASS  coverage_4_7  (python coverage_t.py 4 7 logs/cert_04_07.pkl; expect PASS; 1 s)
+PASS  symnum_far  (python check_symnum.py 18 24 20; expect PASS; 39 s)
+PASS  e2e_10  (python e2e_t.py 10 1/2 3,8,9; expect PASS; 50 s)
+PASS  e2e_12  (python e2e_t.py 12 2 3,10,11; expect PASS; 182 s)
+PASS  cert_21  (python cert_t.py 21 21 1 logs/cert_21.pkl; expect PASS; 192 s)
+PASS  cert_22  (python cert_t.py 22 22 1 logs/cert_22.pkl; expect PASS; 233 s)
+PASS  cert_23  (python cert_t.py 23 23 1 logs/cert_23.pkl; expect PASS; 286 s)
+PASS  cert_24  (python cert_t.py 24 24 1 logs/cert_24.pkl; expect PASS; 336 s)
+PASS  cert_25  (python cert_t.py 25 25 1 logs/cert_25.pkl; expect PASS; 396 s)
+PASS  cert_26  (python cert_t.py 26 26 1 logs/cert_26.pkl; expect PASS; 444 s)
+PASS  cert_27  (python cert_t.py 27 27 1 logs/cert_27.pkl; expect PASS; 528 s)
+PASS  cert_28  (python cert_t.py 28 28 1 logs/cert_28.pkl; expect PASS; 626 s)
+PASS  coverage_8_28  (python coverage_t.py 8 28 logs/cert_08_12.pkl logs/cert_13_15.pkl logs/cert_16_17.pkl logs/cert_18.pkl logs/cert_19.pkl logs/cert_20.pkl logs/cert_21.pkl logs/cert_22.pkl logs/cert_23.pkl logs/cert_24.pkl logs/cert_25.pkl logs/cert_26.pkl logs/cert_27.pkl logs/cert_28.pkl; expect PASS; 11 s)
+PASS  blocks_8_28  (python blocks_t.py 8 8 28 logs/cert_08_12.pkl logs/cert_13_15.pkl logs/cert_16_17.pkl logs/cert_18.pkl logs/cert_19.pkl logs/cert_20.pkl logs/cert_21.pkl logs/cert_22.pkl logs/cert_23.pkl logs/cert_24.pkl logs/cert_25.pkl logs/cert_26.pkl logs/cert_27.pkl logs/cert_28.pkl; expect PASS; 11 s)
+total 3340 s
+ALL PASS

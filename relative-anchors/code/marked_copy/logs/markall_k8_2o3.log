@@ -1,0 +1,7 @@
+k=8, amplitude of copy 0 = 2/3, (R_inf)_3: 8288 states in 395 torus groups (letter-1: 1/1; type I with a letter 1: 92/92; type I without a letter 1: 70/70; type II: 232/232 passed); kernel dimension 448 (expected 448): True [17.7s]
+k=8, amplitude of copy 0 = 2/3, (R_inf)_4: 19712 states in 731 torus groups (letter-1: 1/1; type I with a letter 1: 162/162; type I without a letter 1: 56/56; type II: 512/512 passed); kernel dimension 1120 (expected 1120): True [54.7s]
+k=8, amplitude of copy 0 = 2/3, (R_inf)_5: 30464 states in 1039 torus groups (letter-1: 1/1; type I with a letter 1: 218/218; type I without a letter 1: 28/28; type II: 792/792 passed); kernel dimension 1792 (expected 1792): True [72.6s]
+k=8, amplitude of copy 0 = 2/3, (R_inf)_6: 29696 states in 1215 torus groups (letter-1: 1/1; type I with a letter 1: 246/246; type I without a letter 1: 8/8; type II: 960/960 passed); kernel dimension 1793 (expected 1793): True [40.7s]
+k=8, amplitude of copy 0 = 2/3, (R_inf)_7: 16640 states in 1272 torus groups (letter-1: 1/1; type I with a letter 1: 254/254; type I without a letter 1: 1/1; type II: 1016/1016 passed); kernel dimension 1031 (expected 1031): True [6.8s]
+total 192s
+PASS

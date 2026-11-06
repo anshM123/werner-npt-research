@@ -1,0 +1,5 @@
+k=10 j=3 done [22.4s]
+k=10 j=8 done [43.6s]
+k=10 j=9 done [46.1s]
+40 blocks, 221 reduced forms, 21388 entries compared
+PASS 46s

@@ -1,0 +1,7 @@
+k=8: 216 reduced forms, largest pivot degree 80, 2.6s
+k=9: 315 reduced forms, largest pivot degree 86, 4.6s
+k=10: 435 reduced forms, largest pivot degree 90, 7.7s
+k=11: 581 reduced forms, largest pivot degree 96, 12.2s
+k=12: 752 reduced forms, largest pivot degree 97, 18.5s
+2299 forms; every pivot with nonnegative coefficients: True
+PASS 46s

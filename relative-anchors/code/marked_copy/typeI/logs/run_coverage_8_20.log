@@ -1,0 +1,15 @@
+k=8: 50 type I blocks with a letter 1 (j = 3..7, both cases), 216 reduced forms (MT sym 73, MT anti 34, MU sym 65, MU anti 44), all certified: True
+k=9: 66 type I blocks with a letter 1 (j = 3..8, both cases), 315 reduced forms (MT sym 104, MT anti 52, MU sym 93, MU anti 66), all certified: True
+k=10: 84 type I blocks with a letter 1 (j = 3..9, both cases), 435 reduced forms (MT sym 140, MT anti 74, MU sym 129, MU anti 92), all certified: True
+k=11: 104 type I blocks with a letter 1 (j = 3..10, both cases), 581 reduced forms (MT sym 184, MT anti 102, MU sym 170, MU anti 125), all certified: True
+k=12: 126 type I blocks with a letter 1 (j = 3..11, both cases), 752 reduced forms (MT sym 234, MT anti 135, MU sym 220, MU anti 163), all certified: True
+k=13: 150 type I blocks with a letter 1 (j = 3..12, both cases), 953 reduced forms (MT sym 293, MT anti 175, MU sym 276, MU anti 209), all certified: True
+k=14: 176 type I blocks with a letter 1 (j = 3..13, both cases), 1183 reduced forms (MT sym 359, MT anti 221, MU sym 342, MU anti 261), all certified: True
+k=15: 204 type I blocks with a letter 1 (j = 3..14, both cases), 1447 reduced forms (MT sym 435, MT anti 275, MU sym 415, MU anti 322), all certified: True
+k=16: 234 type I blocks with a letter 1 (j = 3..15, both cases), 1744 reduced forms (MT sym 519, MT anti 336, MU sym 499, MU anti 390), all certified: True
+k=17: 266 type I blocks with a letter 1 (j = 3..16, both cases), 2079 reduced forms (MT sym 614, MT anti 406, MU sym 591, MU anti 468), all certified: True
+k=18: 300 type I blocks with a letter 1 (j = 3..17, both cases), 2451 reduced forms (MT sym 718, MT anti 484, MU sym 695, MU anti 554), all certified: True
+k=19: 336 type I blocks with a letter 1 (j = 3..18, both cases), 2865 reduced forms (MT sym 834, MT anti 572, MU sym 808, MU anti 651), all certified: True
+k=20: 374 type I blocks with a letter 1 (j = 3..19, both cases), 3320 reduced forms (MT sym 960, MT anti 669, MU sym 934, MU anti 757), all certified: True
+18341 forms in all
+PASS

@@ -1,0 +1,12 @@
+  k=8: 161 of 216 forms fail; first: [(3, 1, 'MT', 'sym', 0, '1/1000000'), (3, 1, 'MT', 'sym', 1, '1/1000000'), (3, 1, 'MT', 'sym', 2, '1/1000000')]
+k=8: 216 reduced forms, largest pivot degree 8, 1.2s
+  k=9: 231 of 315 forms fail; first: [(3, 1, 'MT', 'sym', 0, '1/1000000'), (3, 1, 'MT', 'sym', 1, '1/1000000'), (3, 1, 'MT', 'sym', 2, '1/1000000')]
+k=9: 315 reduced forms, largest pivot degree 8, 1.9s
+  k=10: 317 of 435 forms fail; first: [(3, 1, 'MT', 'sym', 0, '1/1000000'), (3, 1, 'MT', 'sym', 1, '1/1000000'), (3, 1, 'MT', 'sym', 2, '1/1000000')]
+k=10: 435 reduced forms, largest pivot degree 8, 2.8s
+  k=11: 420 of 581 forms fail; first: [(3, 1, 'MT', 'sym', 0, '1/1000000'), (3, 1, 'MT', 'sym', 1, '1/1000000'), (3, 1, 'MT', 'sym', 2, '1/1000000')]
+k=11: 581 reduced forms, largest pivot degree 8, 4.3s
+  k=12: 542 of 752 forms fail; first: [(3, 1, 'MT', 'sym', 0, '1/1000000'), (3, 1, 'MT', 'sym', 1, '1/1000000'), (3, 1, 'MT', 'sym', 2, '1/1000000')]
+k=12: 752 reduced forms, largest pivot degree 8, 6.1s
+negative control bscale = 1001/1000: some form fails for 5 of the 5 values of k
+FAIL (expected: the scaled block is not positive semidefinite) 16s

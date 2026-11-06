@@ -1,0 +1,10 @@
+k=9 j=1 done [0.1s]
+k=9 j=2 done [1.4s]
+k=9 j=3 done [11.2s]
+k=9 j=4 done [44.2s]
+k=9 j=5 done [93.9s]
+k=9 j=6 done [125.9s]
+k=9 j=7 done [135.7s]
+k=9 j=8 done [137.2s]
+72 blocks, 380 reduced forms, 51208 entries compared
+PASS 137s

@@ -1,0 +1,4 @@
+k=16: 1744 reduced forms, largest pivot degree 99, 64.9s
+k=17: 2079 reduced forms, largest pivot degree 99, 84.8s
+3823 forms; every pivot with nonnegative coefficients: True
+PASS 151s

@@ -1,0 +1,9 @@
+k=18 done [3.1s]
+k=19 done [6.9s]
+k=20 done [11.8s]
+k=21 done [16.4s]
+k=22 done [22.9s]
+k=23 done [29.1s]
+k=24 done [37.4s]
+1379 forms, 311520 entries compared, 6615 sector denominators checked
+PASS 37s

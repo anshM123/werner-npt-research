@@ -1,0 +1,5 @@
+run_check2.sh started Fri Nov  6 04:21:04 EST 2026
+PASS  explicit_9  (python check_explicit.py 9 9 1 3/2; expect PASS; 138 s)
+PASS  explicit_10  (python check_explicit.py 10 10 3 1/2 3,8,9; expect PASS; 48 s)
+total 186 s
+ALL PASS

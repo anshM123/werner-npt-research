@@ -1,0 +1,6 @@
+run_extra2.sh started Fri Nov  6 04:24:10 EST 2026
+PASS  cert_29  (python cert_t.py 29 29 1 logs/cert_29.pkl; expect PASS; 649 s)
+PASS  coverage_8_29  (python coverage_t.py 8 29 logs/cert_08_12.pkl logs/cert_13_15.pkl logs/cert_16_17.pkl logs/cert_18.pkl logs/cert_19.pkl logs/cert_20.pkl logs/cert_21.pkl logs/cert_22.pkl logs/cert_23.pkl logs/cert_24.pkl logs/cert_25.pkl logs/cert_26.pkl logs/cert_27.pkl logs/cert_28.pkl logs/cert_29.pkl; expect PASS; 12 s)
+PASS  blocks_8_29  (python blocks_t.py 8 8 29 logs/cert_08_12.pkl logs/cert_13_15.pkl logs/cert_16_17.pkl logs/cert_18.pkl logs/cert_19.pkl logs/cert_20.pkl logs/cert_21.pkl logs/cert_22.pkl logs/cert_23.pkl logs/cert_24.pkl logs/cert_25.pkl logs/cert_26.pkl logs/cert_27.pkl logs/cert_28.pkl logs/cert_29.pkl; expect PASS; 12 s)
+total 673 s
+ALL PASS

@@ -1,0 +1,6 @@
+k=4: 6 type I blocks with a letter 1 (j = 3..3, both cases), 12 reduced forms (MT sym 5, MT anti 1, MU sym 4, MU anti 2), all certified: True
+k=5: 14 type I blocks with a letter 1 (j = 3..4, both cases), 38 reduced forms (MT sym 15, MT anti 5, MU sym 11, MU anti 7), all certified: True
+k=6: 24 type I blocks with a letter 1 (j = 3..5, both cases), 79 reduced forms (MT sym 29, MT anti 11, MU sym 24, MU anti 15), all certified: True
+k=7: 36 type I blocks with a letter 1 (j = 3..6, both cases), 139 reduced forms (MT sym 49, MT anti 21, MU sym 41, MU anti 28), all certified: True
+268 forms in all
+PASS

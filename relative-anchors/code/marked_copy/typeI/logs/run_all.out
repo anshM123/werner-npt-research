@@ -1,0 +1,15 @@
+run_all.sh started Fri Nov  6 03:08:39 EST 2026
+PASS  explicit_3_8  (python check_explicit.py 3 8 1 2,1/3; expect PASS; 77 s)
+PASS  symnum_3_10  (python check_symnum.py 3 10; expect PASS; 19 s)
+PASS  cert_08_12  (python cert_t.py 8 12 1 logs/cert_08_12.pkl; expect PASS; 47 s)
+PASS  cert_13_15  (python cert_t.py 13 15 1 logs/cert_13_15.pkl; expect PASS; 114 s)
+PASS  cert_16_17  (python cert_t.py 16 17 1 logs/cert_16_17.pkl; expect PASS; 153 s)
+PASS  cert_18  (python cert_t.py 18 18 1 logs/cert_18.pkl; expect PASS; 105 s)
+PASS  cert_19  (python cert_t.py 19 19 1 logs/cert_19.pkl; expect PASS; 132 s)
+PASS  cert_20  (python cert_t.py 20 20 1 logs/cert_20.pkl; expect PASS; 157 s)
+PASS  coverage_8_20  (python coverage_t.py 8 20 logs/cert_08_12.pkl logs/cert_13_15.pkl logs/cert_16_17.pkl logs/cert_18.pkl logs/cert_19.pkl logs/cert_20.pkl; expect PASS; 2 s)
+PASS  neg_cert_8_12  (python cert_t.py 8 12 1001/1000 -; expect FAIL; 16 s)
+PASS  e2e_8  (python e2e_t.py 8 2,1/3; expect PASS; 46 s)
+PASS  e2e_9  (python e2e_t.py 9 3/2; expect PASS; 136 s)
+total 1005 s
+ALL PASS

@@ -1,0 +1,8 @@
+k=9, amplitude of copy 0 = 5/2, (R_inf)_3: 14112 states in 589 torus groups (letter-1: 1/1; type I with a letter 1: 129/129; type I without a letter 1: 126/126; type II: 333/333 passed); kernel dimension 672 (expected 672): True [55.8s]
+k=9, amplitude of copy 0 = 5/2, (R_inf)_4: 40320 states in 1219 torus groups (letter-1: 1/1; type I with a letter 1: 255/255; type I without a letter 1: 126/126; type II: 837/837 passed); kernel dimension 2016 (expected 2016): True [238.3s]
+k=9, amplitude of copy 0 = 5/2, (R_inf)_5: 77952 states in 1933 torus groups (letter-1: 1/1; type I with a letter 1: 381/381; type I without a letter 1: 84/84; type II: 1467/1467 passed); kernel dimension 4032 (expected 4032): True [458.9s]
+k=9, amplitude of copy 0 = 5/2, (R_inf)_6: 101376 states in 2473 torus groups (letter-1: 1/1; type I with a letter 1: 465/465; type I without a letter 1: 36/36; type II: 1971/1971 passed); kernel dimension 5376 (expected 5376): True [410.7s]
+k=9, amplitude of copy 0 = 5/2, (R_inf)_7: 85248 states in 2734 torus groups (letter-1: 1/1; type I with a letter 1: 501/501; type I without a letter 1: 9/9; type II: 2223/2223 passed); kernel dimension 4609 (expected 4609): True [180.7s]
+k=9, amplitude of copy 0 = 5/2, (R_inf)_8: 41984 states in 2807 torus groups (letter-1: 1/1; type I with a letter 1: 510/510; type I without a letter 1: 1/1; type II: 2295/2295 passed); kernel dimension 2312 (expected 2312): True [23.4s]
+total 1368s
+PASS
