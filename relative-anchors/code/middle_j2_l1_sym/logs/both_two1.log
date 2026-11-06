@@ -1,0 +1,12 @@
+    R_PP, R_A (573 joint classes) [0.3s]
+    products done [0.3s]
+two1, u0 = 14+, u1 = 14+: |K| = 1, |W| = 4, |Q| = 2 [0.3s]
+  det GP: sign 1 ([one-signed 4/9] [one-signed 0/1])
+  det GQ: sign 1 ([one-signed 2/4] [one-signed 0/1])
+  reduced S' symmetric: True; K-rows vanish identically: True [0.3s]
+  pivot 1/4 (('W', ('out', (0, 1), ((1, 1), (1, 1))))): sign 1; numerator deg 16 (200 terms), denominator deg 17 (165 terms); [one-signed 16/200] [one-signed 17/165] [0.3s]
+  pivot 2/4 (('W', ('out', (1, 1), ((0, 1), (1, 1))))): sign 1; numerator deg 40 (1980 terms), denominator deg 39 (1750 terms); [one-signed 40/1980] [one-signed 39/1750] [0.5s]
+  pivot 3/4 (('W', ('out', (1, 1), ((1, 1), (1, 1))))): sign 1; numerator deg 54 (4410 terms), denominator deg 54 (4032 terms); [one-signed 54/4410] [one-signed 54/4032] [2.0s]
+  pivot 4/4 (('W', ('out', (1, 1), ((1, 1), (1, 2))))): sign 1; numerator deg 61 (5952 terms), denominator deg 62 (5952 terms); [one-signed 61/5952] [one-signed 62/5952] [5.5s]
+time 5.5s
+PASS

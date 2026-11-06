@@ -1,0 +1,17 @@
+    R_PP, R_A (1745 joint classes) [1.3s]
+    products done [1.8s]
+std1, u0 = 14+, u1 = 14+: |K| = 2, |W| = 9, |Q| = 3 [1.8s]
+  det GP: sign 1 ([one-signed 18/100] [one-signed 0/1])
+  det GQ: sign 1 ([one-signed 6/16] [one-signed 0/1])
+  reduced S' symmetric: True; K-rows vanish identically: True [1.8s]
+  pivot 1/9 (('W', ('out', (0, 1), ((0, 1), (1, 1))))): sign 1; numerator deg 22 (417 terms), denominator deg 21 (286 terms); [one-signed 22/417] [one-signed 21/286] [1.8s]
+  pivot 2/9 (('W', ('out', (0, 1), ((1, 1), (1, 1))))): sign 1; numerator deg 37 (1686 terms), denominator deg 37 (1329 terms); [one-signed 37/1686] [one-signed 37/1329] [5.0s]
+  pivot 3/9 (('W', ('out', (1, 1), ((0, 1), (0, 1))))): sign 1; numerator deg 70 (8991 terms), denominator deg 67 (7733 terms); [one-signed 70/8991] [one-signed 67/7733] [62.5s]
+  pivot 4/9 (('W', ('out', (1, 1), ((0, 1), (1, 1))))): sign 1; numerator deg 89 (18235 terms), denominator deg 87 (16168 terms); [one-signed 89/18235] [one-signed 87/16168] [455.2s]
+  pivot 5/9 (('W', ('out', (1, 1), ((0, 1), (1, 2))))): sign 1; numerator deg 100 (25972 terms), denominator deg 99 (23373 terms); [one-signed 100/25972] [one-signed 99/23373] [1783.5s]
+  pivot 6/9 (('W', ('out', (1, 1), ((1, 1), (1, 1))))): sign 1; numerator deg 116 (39292 terms), denominator deg 115 (35872 terms); [one-signed 116/39292] [one-signed 115/35872] [4077.4s]
+  pivot 7/9 (('W', ('out', (1, 1), ((1, 1), (1, 2))))): sign 1; numerator deg 123 (45506 terms), denominator deg 123 (43554 terms); [one-signed 123/45506] [one-signed 123/43554] [6353.3s]
+  pivot 8/9 (('W', ('in', (0, 1), (1, 1)), '-')): sign 1; numerator deg 121 (41602 terms), denominator deg 121 (41602 terms); [one-signed 121/41602] [one-signed 121/41602] [7491.3s]
+  pivot 9/9 (('W', ('in', (1, 1), (1, 2)), '-')): sign 1; numerator deg 125 (45696 terms), denominator deg 125 (43680 terms); [one-signed 125/45696] [one-signed 125/43680] [7819.0s]
+time 7819.1s
+PASS
