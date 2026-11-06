@@ -1,0 +1,7 @@
+run_extra3.sh started Thu Nov  5 22:40:27 EST 2026
+PASS  mid_i3  (python prove_mid.py logs/mid_i3.pkl n,n,3; expect PASS; 1342 s)
+PASS  coverage_i3  (python coverage_mid.py 80 32 band:4 logs/members_33_40.pkl logs/mid_i3.pkl logs/mid_i2.pkl logs/mid_i1.pkl logs/fam_1_1.pkl logs/fam_lowirr_0.pkl logs/frozen/band_bottom_8.pkl logs/frozen/band_top_8.pkl; expect PASS; 0 s)
+PASS  neg_i3  (python prove_mid.py logs/unused.pkl n,n,3 --bscale=1001/1000; expect FAIL; 4 s)
+PASS  neg_points_i3  (python neg_mid.py 40 n,n,3; expect PASS; 4 s)
+total 1351 s
+ALL PASS

@@ -1,0 +1,23 @@
+NREST=1 978
+N2ROW=**Theorems N2, N3, N4 and Corollary P4 (the parts i ≤ 4, every k).** For b = 2, 3, 4, every member of [q0 ≥ 4, t ≥ 4, i = b] and every σ > 0: Q_b ⪰ 0 with kernel exactly span(κ_0, κ_1). Hence for every k ≥ 2, every j = −1, …, k and every σ > 0, on the isotypic parts of all S_{k−1}-irreps (k − 1 − i, i) and (k − 2 − i, i, 1) with i ≤ 4, the letter-1 block of (R∞)_j is ⪰ 0 with kernel exactly the part of K_j there
+N2STATUS=**proved**, computer-assisted, exact (`run_extra.sh`, `run_extra3.sh`, `run_extra4.sh`, each ending ALL PASS): 4 + 10 pivots per family with positive coefficients after the shifts (largest about 4.1·10⁴ terms; 17, 15 and 20 minutes), with the band families of Theorem B and Theorem M for the edges (Section 6); bookkeeping checked for k ≤ 80
+NEG2=, [q0 ≥ 4, t ≥ 4, i = 2], [q0 ≥ 4, t ≥ 4, i = 3] and [q0 ≥ 4, t ≥ 4, i = 4]
+NEG2B=, [q0 ≥ 4, t ≥ 4, i = 2], [q0 ≥ 4, t ≥ 4, i = 3] and [q0 ≥ 4, t ≥ 4, i = 4] (also at S_{10})
+NEG2C= (and likewise the 28, 25 and 23 sampled members of the families with i = 2, 3, 4)
+OPENI=i ≥ 5, except the members with both q0 ≤ 3 and t ≤ 3 (Theorem F)
+OPENIMIN=5
+N2SHORT=; the families [q0 ≥ 4, t ≥ 4, i = b] for b = 2, 3, 4, and hence every part i ≤ 4 for every k (Section 6)
+RESTSHORT=; and, by fixed-k certificates, every j and every i for 33 ≤ k ≤ 40 (Section 5)
+COSTI2=With the same gauge, the families with i = 2, 3, 4 took 17, 15 and 20 minutes (largest pivots about 4·10⁴ terms).
+EXTRAFILE=the extensions, run after `run_all.sh` and in this order: the families [q0 ≥ 4, t ≥ 4, i = b], b = 2, 3, 4, with their coverage (`band:3`, `band:4`, `band:5`) and negative controls: `bash run_extra.sh > logs/run_extra.out`, `bash run_extra3.sh > logs/run_extra3.out`, `bash run_extra4.sh > logs/run_extra4.out`, each ending with ALL PASS
+B3SCRIPT=, `run_extra3.sh`, `run_extra4.sh`
+B3BAND=, `band:4`, `band:5`
+B3LIST=, 3, 4
+B3SET=, 3, 4
+B3PIVOTS=- b = 3 (`logs/run_mid_i3.log`, 916 s): S_{10} 359/280, S_{00} 976/797, S_{01} 976/797, S_{11} 976/886; G_1 9/12,\n- b = 4 (`logs/run_mid_i4.log`, 1 210 s): S_{10} 359/280, S_{00} 976/797, S_{01} 976/797, S_{11} 976/886; G_1 9/12,
+  G_0 5/15, O_0 182/189, O_1 147/215, W_{10} 8 293/7 965, W_{11} 12 673/13 277, W_{01} 19 136/18 474,
+  W_{00} 19 099/18 576, U_{00} 38 513/40 772, U_{01} 39 873/40 986.
+BMAX=4
+AIMAX=7
+KSMALL=15
+BNEXT=5

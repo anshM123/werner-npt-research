@@ -3,7 +3,7 @@ of mlib.py at members far from the sample points used by the certificates (which
 symbolic size).  Every family used by Theorems B, F and I is recomputed and evaluated at the sizes below and at two
 values of sigma; N0 times the family form must equal the numeric form entry by entry.
 
-  python famcheck.py bottom W | top W | fam1 | inv
+  python famcheck.py bottom W | top W | fam1 | inv | mid
 """
 import sys, os, time, itertools
 from fractions import Fraction as Fr
@@ -66,6 +66,8 @@ def main():
                 for i in (0, 1, None):
                     if sum(v is None for v in (q0, t, i)) == 1:
                         fams.append((q0, t, i))
+    elif mode == 'mid':
+        fams = [(None, None, b) for b in (1, 2, 3, 4)]
     else:
         fams.append((None, None, 0))
     T0 = time.time()

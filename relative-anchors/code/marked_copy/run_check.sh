@@ -39,6 +39,10 @@ step families_inv    1200 famcheck.py inv
 step families_one    3600 famcheck.py fam1
 step band_bottom     3600 famcheck.py bottom 8
 step band_top        3600 famcheck.py top 8
+# the two-size families of the middle band (marked_copy/middle) against mlib.py at far members, and their
+# conclusion at members with 41 <= k <= 60 (exact rank and positive definiteness of a complement)
+step families_mid    3600 famcheck.py mid
+step members_41_60   1800 mbcheck.py 40 4141
 t_end=$(date +%s)
 echo "total $((t_end - t_start)) s"
 if [ "$all" = 1 ]; then echo "ALL PASS"; else echo "SOME STEP FAILED"; fi

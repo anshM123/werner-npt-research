@@ -1,0 +1,10 @@
+  form computed (0.0s), 8 vectors
+  congruence done (0.1s); split blocks []; parts 8 + 0
+    part2 pivot G1: num 9 terms, den 12 terms (0.1s)
+    part2 pivot G0: num 5 terms, den 15 terms (0.1s)
+    part2 pivot O0: num 168 terms, den 178 terms (0.1s)
+    part2 pivot O1: num 117 terms, den 200 terms (0.2s)
+    part2 pivot A00: num 1872 terms, den 2153 terms (0.2s)
+    part2 pivot A01: num 2362 terms, den 2529 terms (0.4s)
+[None, None, 0] PD on complement (pivots 6 + 0, kernel 2) (0.4s)
+PASS

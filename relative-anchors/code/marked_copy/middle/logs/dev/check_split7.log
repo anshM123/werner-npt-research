@@ -1,0 +1,8 @@
+k=2: done (0s)
+k=3: done (0s)
+k=4: done (0s)
+k=5: done (1s)
+k=6: done (13s)
+k=7: done (111s)
+100 split forms, 6664 entries against the Lemma B block; class sums and kernel vectors checked
+PASS 111s

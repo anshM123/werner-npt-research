@@ -1,0 +1,10 @@
+k=33: 185 reduced forms outside the proved families certified (34.7s)
+k=34: 202 reduced forms outside the proved families certified (38.1s)
+k=35: 219 reduced forms outside the proved families certified (36.1s)
+k=36: 237 reduced forms outside the proved families certified (45.0s)
+k=37: 255 reduced forms outside the proved families certified (49.0s)
+k=38: 274 reduced forms outside the proved families certified (51.4s)
+k=39: 293 reduced forms outside the proved families certified (56.6s)
+k=40: 313 reduced forms outside the proved families certified (58.1s)
+1978 forms with 33 <= k <= 40; 369s
+PASS

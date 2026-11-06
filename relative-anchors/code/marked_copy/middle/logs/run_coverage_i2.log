@@ -1,0 +1,30 @@
+k = 2..80, every j and i: 3909 nonempty forms with k <= 32, 11340 in proved families, 1978 certified one by one (k > 32), 32710 not covered, all in the region band:3 (smallest k of an uncovered form: 41)
+middle region (k > 32, 9 <= j <= k - 9), forms per family:
+  [q0=-1, t=1, i>=2]: 24
+  [q0=-1, t=2, i>=2]: 24
+  [q0=-1, t=3, i>=2]: 24
+  [q0=0, t=0, i>=2]: 24
+  [q0=0, t=1, i>=2]: 24
+  [q0=0, t=2, i>=2]: 24
+  [q0=0, t=3, i>=2]: 24
+  [q0=1, t=-1, i>=2]: 24
+  [q0=1, t=0, i>=2]: 24
+  [q0=1, t=1, i>=2]: 24
+  [q0=1, t=2, i>=2]: 24
+  [q0=1, t=3, i>=2]: 24
+  [q0=2, t=-1, i>=2]: 24
+  [q0=2, t=-2, i>=2]: 24
+  [q0=2, t=0, i>=2]: 24
+  [q0=2, t=1, i>=2]: 24
+  [q0=2, t=2, i>=2]: 24
+  [q0=2, t=3, i>=2]: 24
+  [q0=3, t=-1, i>=2]: 24
+  [q0=3, t=-2, i>=2]: 24
+  [q0=3, t=0, i>=2]: 24
+  [q0=3, t=1, i>=2]: 24
+  [q0=3, t=2, i>=2]: 24
+  [q0=3, t=3, i>=2]: 24
+  [q0>=4, t>=4, i=0]: 1896
+  [q0>=4, t>=4, i=1]: 1896
+  [q0>=4, t>=4, i=2]: 1740
+PASS

@@ -1,0 +1,6 @@
+(None, None, 1): agrees at 8 points (0.4s)
+(None, None, 2): agrees at 8 points (1.5s)
+(None, None, 3): agrees at 8 points (1.7s)
+(None, None, 4): agrees at 8 points (2.1s)
+4 families, 32 (member, sigma) points; 6s
+PASS

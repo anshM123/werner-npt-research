@@ -1,0 +1,223 @@
+[q0=-1, t=-2, i>=2] empty  (0.0s)
+[q0=-1, t=-1, i>=2] empty  (0.0s)
+[q0=-1, t=0, i>=2] empty  (0.0s)
+  form computed (0.0s), 2 vectors
+  congruence done (0.0s); split blocks []; parts 2 + 0
+[q0=-1, t=1, i>=2] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 2 terms, den 2)  (0.0s)
+  form computed (0.0s), 2 vectors
+  congruence done (0.0s); split blocks []; parts 2 + 0
+[q0=-1, t=2, i>=2] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 6 terms, den 6)  (0.0s)
+  form computed (0.0s), 2 vectors
+  congruence done (0.0s); split blocks []; parts 2 + 0
+[q0=-1, t=3, i>=2] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 6 terms, den 6)  (0.0s)
+  form computed (0.0s), 1 vectors
+  congruence done (0.0s); split blocks []; parts 1 + 0
+[q0=-1, t>=4, i=0] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 6 terms, den 6)  (0.0s)
+  form computed (0.0s), 2 vectors
+  congruence done (0.0s); split blocks []; parts 2 + 0
+    part2 pivot B000: num 1 terms, den 1 terms (0.0s)
+[q0=-1, t>=4, i=1] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 27 terms, den 27)  (0.0s)
+[q0=0, t=-2, i>=2] empty  (0.0s)
+[q0=0, t=-1, i>=2] empty  (0.0s)
+  form computed (0.0s), 5 vectors
+  congruence done (0.0s); split blocks []; parts 5 + 0
+    part2 pivot G1: num 1 terms, den 1 terms (0.0s)
+    part2 pivot B001: num 27 terms, den 26 terms (0.0s)
+    part2 pivot B010: num 88 terms, den 85 terms (0.0s)
+[q0=0, t=0, i>=2] PIVOT-SIGN-UNPROVED in part2 (smallest B100: num 130 terms, den 130)  (0.0s)
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks [(0, 0)]; parts 7 + 1
+    part3 pivot S00: num 9 terms, den 6 terms (0.0s)
+    part2 pivot G1: num 3 terms, den 3 terms (0.0s)
+    part2 pivot B001: num 55 terms, den 55 terms (0.0s)
+[q0=0, t=1, i>=2] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 55 terms, den 55)  (0.0s)
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks [(0, 0)]; parts 7 + 1
+    part3 pivot S00: num 14 terms, den 10 terms (0.0s)
+    part2 pivot G1: num 6 terms, den 6 terms (0.0s)
+    part2 pivot B001: num 28 terms, den 28 terms (0.0s)
+[q0=0, t=2, i>=2] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 45 terms, den 45)  (0.0s)
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks [(0, 0)]; parts 7 + 1
+    part3 pivot S00: num 14 terms, den 10 terms (0.0s)
+    part2 pivot G1: num 6 terms, den 6 terms (0.0s)
+    part2 pivot B001: num 45 terms, den 45 terms (0.0s)
+[q0=0, t=3, i>=2] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 45 terms, den 45)  (0.1s)
+  form computed (0.0s), 4 vectors
+  congruence done (0.0s); split blocks []; parts 4 + 0
+    part2 pivot G1: num 6 terms, den 6 terms (0.0s)
+[q0=0, t>=4, i=0] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 6 terms, den 6)  (0.0s)
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks [(0, 0)]; parts 7 + 1
+    part3 pivot S00: num 14 terms, den 10 terms (0.0s)
+    part2 pivot B001: num 1 terms, den 1 terms (0.0s)
+    part2 pivot U00: num 21 terms, den 21 terms (0.0s)
+    part2 pivot G1: num 130 terms, den 130 terms (0.0s)
+[q0=0, t>=4, i=1] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 135 terms, den 130)  (0.0s)
+[q0=1, t=-2, i>=2] empty  (0.0s)
+  form computed (0.0s), 4 vectors
+  congruence done (0.0s); split blocks []; parts 4 + 0
+    part2 pivot B011: num 21 terms, den 20 terms (0.0s)
+[q0=1, t=-1, i>=2] PIVOT-SIGN-UNPROVED in part2 (smallest B101: num 44 terms, den 44)  (0.0s)
+  form computed (0.0s), 11 vectors
+  congruence done (0.1s); split blocks [(0, 1), (1, 0)]; parts 9 + 2
+    part3 pivot S01: num 20 terms, den 15 terms (0.1s)
+[q0=1, t=0, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 20 terms, den 15)  (0.1s)
+  form computed (0.1s), 14 vectors
+  congruence done (0.1s); split blocks [(0, 0), (0, 1), (1, 0)]; parts 11 + 3
+    part3 pivot S01: num 9 terms, den 6 terms (0.1s)
+    part3 pivot S00: num 35 terms, den 28 terms (0.1s)
+[q0=1, t=1, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 35 terms, den 28)  (0.1s)
+  form computed (0.1s), 14 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0)]; parts 11 + 3
+    part3 pivot S00: num 20 terms, den 15 terms (0.2s)
+    part3 pivot S01: num 27 terms, den 21 terms (0.2s)
+[q0=1, t=2, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 44 terms, den 36)  (0.2s)
+  form computed (0.1s), 14 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0)]; parts 11 + 3
+    part3 pivot S01: num 20 terms, den 15 terms (0.2s)
+    part3 pivot S00: num 44 terms, den 36 terms (0.2s)
+[q0=1, t=3, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 54 terms, den 45)  (0.2s)
+  form computed (0.0s), 7 vectors
+  congruence done (0.0s); split blocks []; parts 7 + 0
+    part2 pivot G1: num 6 terms, den 6 terms (0.0s)
+[q0=1, t>=4, i=0] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 6 terms, den 6)  (0.0s)
+  form computed (0.1s), 14 vectors
+  congruence done (0.1s); split blocks [(0, 0), (0, 1), (1, 0)]; parts 11 + 3
+    part3 pivot S01: num 20 terms, den 15 terms (0.1s)
+    part3 pivot S00: num 44 terms, den 36 terms (0.1s)
+[q0=1, t>=4, i=1] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 54 terms, den 45)  (0.1s)
+  form computed (0.0s), 1 vectors
+  congruence done (0.0s); split blocks []; parts 1 + 0
+    part2 pivot B111: num 10 terms, den 10 terms (0.0s)
+[q0=2, t=-2, i>=2] PD on complement (pivots 1 + 0, kernel 0)  (0.0s)  largest pivot 10 terms
+  form computed (0.0s), 6 vectors
+  congruence done (0.0s); split blocks [(1, 1)]; parts 5 + 1
+    part3 pivot S11: num 14 terms, den 10 terms (0.0s)
+    part2 pivot W11: num 21 terms, den 21 terms (0.0s)
+    part2 pivot B011: num 45 terms, den 45 terms (0.0s)
+[q0=2, t=-1, i>=2] PIVOT-SIGN-UNPROVED in part2 (smallest B110: num 66 terms, den 66)  (0.0s)
+  form computed (0.1s), 13 vectors
+  congruence done (0.1s); split blocks [(0, 1), (1, 0), (1, 1)]; parts 10 + 3
+    part3 pivot S01: num 27 terms, den 21 terms (0.1s)
+    part3 pivot S11: num 44 terms, den 36 terms (0.1s)
+[q0=2, t=0, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 44 terms, den 36)  (0.1s)
+  form computed (0.2s), 16 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 9 terms, den 6 terms (0.2s)
+    part3 pivot S11: num 54 terms, den 45 terms (0.2s)
+    part3 pivot S00: num 65 terms, den 55 terms (0.2s)
+[q0=2, t=1, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 65 terms, den 55)  (0.2s)
+  form computed (0.2s), 16 vectors
+  congruence done (0.3s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 35 terms, den 28 terms (0.3s)
+    part3 pivot S11: num 54 terms, den 45 terms (0.3s)
+    part3 pivot S00: num 77 terms, den 66 terms (0.3s)
+[q0=2, t=2, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 77 terms, den 66)  (0.3s)
+  form computed (0.2s), 16 vectors
+  congruence done (0.3s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 35 terms, den 28 terms (0.3s)
+    part3 pivot S00: num 77 terms, den 66 terms (0.3s)
+    part3 pivot S11: num 90 terms, den 78 terms (0.3s)
+[q0=2, t=3, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 90 terms, den 78)  (0.3s)
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks []; parts 8 + 0
+    part2 pivot G1: num 6 terms, den 6 terms (0.0s)
+[q0=2, t>=4, i=0] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 6 terms, den 6)  (0.0s)
+  form computed (0.1s), 16 vectors
+  congruence done (0.1s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 35 terms, den 28 terms (0.1s)
+    part3 pivot S11: num 77 terms, den 77 terms (0.1s)
+    part3 pivot S00: num 90 terms, den 78 terms (0.2s)
+[q0=2, t>=4, i=1] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 90 terms, den 78)  (0.2s)
+  form computed (0.0s), 1 vectors
+  congruence done (0.0s); split blocks []; parts 1 + 0
+    part2 pivot B111: num 10 terms, den 9 terms (0.0s)
+[q0=3, t=-2, i>=2] PD on complement (pivots 1 + 0, kernel 0)  (0.0s)  largest pivot 10 terms
+  form computed (0.0s), 6 vectors
+  congruence done (0.0s); split blocks [(1, 1)]; parts 5 + 1
+    part3 pivot S11: num 13 terms, den 9 terms (0.0s)
+    part2 pivot W11: num 20 terms, den 20 terms (0.0s)
+    part2 pivot B011: num 42 terms, den 42 terms (0.0s)
+[q0=3, t=-1, i>=2] PIVOT-SIGN-UNPROVED in part2 (smallest B110: num 63 terms, den 60)  (0.0s)
+  form computed (0.1s), 13 vectors
+  congruence done (0.1s); split blocks [(0, 1), (1, 0), (1, 1)]; parts 10 + 3
+    part3 pivot S01: num 27 terms, den 21 terms (0.1s)
+    part3 pivot S11: num 54 terms, den 45 terms (0.1s)
+[q0=3, t=0, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 54 terms, den 45)  (0.1s)
+  form computed (0.2s), 16 vectors
+  congruence done (0.3s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 27 terms, den 21 terms (0.3s)
+    part3 pivot S11: num 65 terms, den 55 terms (0.3s)
+    part3 pivot S00: num 77 terms, den 66 terms (0.3s)
+[q0=3, t=1, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 77 terms, den 66)  (0.3s)
+  form computed (0.2s), 16 vectors
+  congruence done (0.3s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S00: num 54 terms, den 45 terms (0.3s)
+    part3 pivot S01: num 90 terms, den 78 terms (0.3s)
+    part3 pivot S11: num 90 terms, den 78 terms (0.3s)
+[q0=3, t=2, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 90 terms, den 78)  (0.3s)
+  form computed (0.3s), 16 vectors
+  congruence done (0.4s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S00: num 54 terms, den 45 terms (0.4s)
+    part3 pivot S01: num 90 terms, den 78 terms (0.4s)
+    part3 pivot S11: num 104 terms, den 91 terms (0.4s)
+[q0=3, t=3, i>=2] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 104 terms, den 91)  (0.4s)
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks []; parts 8 + 0
+    part2 pivot G1: num 6 terms, den 6 terms (0.0s)
+[q0=3, t>=4, i=0] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 6 terms, den 6)  (0.0s)
+  form computed (0.2s), 16 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S00: num 54 terms, den 45 terms (0.2s)
+    part3 pivot S01: num 104 terms, den 91 terms (0.2s)
+    part3 pivot S11: num 104 terms, den 104 terms (0.2s)
+[q0=3, t>=4, i=1] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 104 terms, den 91)  (0.2s)
+[q0>=4, t=-2, i=0] empty  (0.0s)
+  form computed (0.0s), 1 vectors
+  congruence done (0.0s); split blocks []; parts 1 + 0
+    part2 pivot B111: num 1 terms, den 1 terms (0.0s)
+[q0>=4, t=-2, i=1] PD on complement (pivots 1 + 0, kernel 0)  (0.0s)  largest pivot 1 terms
+  form computed (0.0s), 2 vectors
+  congruence done (0.0s); split blocks []; parts 2 + 0
+[q0>=4, t=-1, i=0] PIVOT-SIGN-UNPROVED in part2 (smallest O1: num 3 terms, den 3)  (0.0s)
+  form computed (0.0s), 6 vectors
+  congruence done (0.0s); split blocks [(1, 1)]; parts 5 + 1
+    part3 pivot S11: num 17 terms, den 10 terms (0.0s)
+    part2 pivot B011: num 10 terms, den 10 terms (0.0s)
+[q0>=4, t=-1, i=1] PIVOT-SIGN-UNPROVED in part2 (smallest B110: num 28 terms, den 28)  (0.0s)
+  form computed (0.0s), 6 vectors
+  congruence done (0.0s); split blocks []; parts 6 + 0
+    part2 pivot G1: num 1 terms, den 1 terms (0.0s)
+    part2 pivot A01: num 17 terms, den 15 terms (0.0s)
+[q0>=4, t=0, i=0] PIVOT-SIGN-UNPROVED in part2 (smallest A11: num 47 terms, den 38)  (0.0s)
+  form computed (0.1s), 13 vectors
+  congruence done (0.1s); split blocks [(0, 1), (1, 0), (1, 1)]; parts 10 + 3
+    part3 pivot S01: num 27 terms, den 21 terms (0.1s)
+[q0>=4, t=0, i=1] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 54 terms, den 45)  (0.1s)
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks []; parts 8 + 0
+[q0>=4, t=1, i=0] PIVOT-SIGN-UNPROVED in part2 (smallest G0: num 3 terms, den 5)  (0.0s)
+  form computed (0.1s), 16 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 27 terms, den 21 terms (0.2s)
+    part3 pivot S00: num 77 terms, den 66 terms (0.2s)
+[q0>=4, t=1, i=1] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 77 terms, den 66)  (0.2s)
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks []; parts 8 + 0
+[q0>=4, t=2, i=0] PIVOT-SIGN-UNPROVED in part2 (smallest O0: num 6 terms, den 6)  (0.0s)
+  form computed (0.2s), 16 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S00: num 54 terms, den 45 terms (0.2s)
+    part3 pivot S01: num 90 terms, den 78 terms (0.2s)
+[q0>=4, t=2, i=1] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 90 terms, den 78)  (0.2s)
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks []; parts 8 + 0
+[q0>=4, t=3, i=0] PIVOT-SIGN-UNPROVED in part2 (smallest O0: num 6 terms, den 6)  (0.0s)
+  form computed (0.2s), 16 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S00: num 54 terms, den 45 terms (0.2s)
+    part3 pivot S01: num 90 terms, den 78 terms (0.2s)
+[q0>=4, t=3, i=1] PIVOT-SIGN-UNPROVED in part3 (smallest S10: num 104 terms, den 91)  (0.2s)
+3 families proved, 7 empty, of 52; 5s
+FAIL

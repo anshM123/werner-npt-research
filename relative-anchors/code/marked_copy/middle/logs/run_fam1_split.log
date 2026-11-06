@@ -1,0 +1,490 @@
+[q0=-1, t=-2, i>=2] empty  (0.0s)
+[q0=-1, t=-1, i>=2] empty  (0.0s)
+[q0=-1, t=0, i>=2] empty  (0.0s)
+  form computed (0.0s), 2 vectors
+  congruence done (0.0s); split blocks []; parts 2 + 0
+    part2 pivot G0: num 1 terms, den 2 terms (0.0s)
+    part2 pivot B000: num 36 terms, den 36 terms (0.0s)
+[q0=-1, t=1, i>=2] PD on complement (pivots 2 + 0, kernel 0)  (0.0s)  largest pivot 36 terms
+  form computed (0.0s), 2 vectors
+  congruence done (0.0s); split blocks []; parts 2 + 0
+    part2 pivot G0: num 4 terms, den 6 terms (0.0s)
+    part2 pivot B000: num 34 terms, den 34 terms (0.0s)
+[q0=-1, t=2, i>=2] PD on complement (pivots 2 + 0, kernel 0)  (0.0s)  largest pivot 34 terms
+  form computed (0.0s), 2 vectors
+  congruence done (0.0s); split blocks []; parts 2 + 0
+    part2 pivot G0: num 5 terms, den 6 terms (0.0s)
+    part2 pivot B000: num 54 terms, den 54 terms (0.0s)
+[q0=-1, t=3, i>=2] PD on complement (pivots 2 + 0, kernel 0)  (0.0s)  largest pivot 54 terms
+  form computed (0.0s), 1 vectors
+  congruence done (0.0s); split blocks []; parts 1 + 0
+    part2 pivot G0: num 5 terms, den 6 terms (0.0s)
+[q0=-1, t>=4, i=0] PD on complement (pivots 1 + 0, kernel 0)  (0.0s)  largest pivot 6 terms
+  form computed (0.0s), 2 vectors
+  congruence done (0.0s); split blocks []; parts 2 + 0
+    part2 pivot B000: num 1 terms, den 1 terms (0.0s)
+    part2 pivot G0: num 25 terms, den 27 terms (0.0s)
+[q0=-1, t>=4, i=1] PD on complement (pivots 2 + 0, kernel 0)  (0.0s)  largest pivot 27 terms
+[q0=0, t=-2, i>=2] empty  (0.0s)
+[q0=0, t=-1, i>=2] empty  (0.0s)
+  form computed (0.0s), 5 vectors
+  congruence done (0.0s); split blocks []; parts 5 + 0
+    part2 pivot G1: num 1 terms, den 1 terms (0.0s)
+    part2 pivot B001: num 27 terms, den 26 terms (0.0s)
+    part2 pivot B100: num 86 terms, den 85 terms (0.0s)
+    part2 pivot B010: num 115 terms, den 128 terms (0.0s)
+[q0=0, t=0, i>=2] PD on complement (pivots 4 + 0, kernel 1)  (0.0s)  largest pivot 128 terms
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks [(0, 0)]; parts 7 + 1
+    part3 pivot S00: num 9 terms, den 6 terms (0.0s)
+    part2 pivot G0: num 2 terms, den 3 terms (0.0s)
+    part2 pivot G1: num 1 terms, den 2 terms (0.0s)
+    part2 pivot B001: num 45 terms, den 45 terms (0.0s)
+    part2 pivot W00: num 105 terms, den 105 terms (0.0s)
+    part2 pivot B100: num 152 terms, den 153 terms (0.0s)
+    part2 pivot U00: num 273 terms, den 275 terms (0.0s)
+[q0=0, t=1, i>=2] PD on complement (pivots 6 + 1, kernel 1)  (0.0s)  largest pivot 275 terms
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks [(0, 0)]; parts 7 + 1
+    part3 pivot S00: num 14 terms, den 10 terms (0.0s)
+    part2 pivot G0: num 4 terms, den 6 terms (0.0s)
+    part2 pivot G1: num 2 terms, den 2 terms (0.0s)
+    part2 pivot B001: num 43 terms, den 43 terms (0.0s)
+    part2 pivot B100: num 132 terms, den 134 terms (0.0s)
+    part2 pivot W00: num 186 terms, den 186 terms (0.1s)
+    part2 pivot U00: num 344 terms, den 347 terms (0.1s)
+[q0=0, t=2, i>=2] PD on complement (pivots 6 + 1, kernel 1)  (0.1s)  largest pivot 347 terms
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks [(0, 0)]; parts 7 + 1
+    part3 pivot S00: num 14 terms, den 10 terms (0.0s)
+    part2 pivot G0: num 5 terms, den 6 terms (0.0s)
+    part2 pivot G1: num 2 terms, den 2 terms (0.0s)
+    part2 pivot B001: num 44 terms, den 44 terms (0.0s)
+    part2 pivot B100: num 117 terms, den 119 terms (0.0s)
+    part2 pivot W00: num 168 terms, den 168 terms (0.1s)
+    part2 pivot U00: num 270 terms, den 273 terms (0.1s)
+[q0=0, t=3, i>=2] PD on complement (pivots 6 + 1, kernel 1)  (0.1s)  largest pivot 273 terms
+  form computed (0.0s), 4 vectors
+  congruence done (0.0s); split blocks []; parts 4 + 0
+    part2 pivot A00: num 1 terms, den 2 terms (0.0s)
+    part2 pivot G0: num 24 terms, den 25 terms (0.0s)
+    part2 pivot G1: num 24 terms, den 24 terms (0.0s)
+[q0=0, t>=4, i=0] PD on complement (pivots 3 + 0, kernel 1)  (0.0s)  largest pivot 25 terms
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks [(0, 0)]; parts 7 + 1
+    part3 pivot S00: num 14 terms, den 10 terms (0.0s)
+    part2 pivot B001: num 1 terms, den 1 terms (0.0s)
+    part2 pivot B100: num 19 terms, den 21 terms (0.0s)
+    part2 pivot W00: num 22 terms, den 19 terms (0.0s)
+    part2 pivot U00: num 41 terms, den 49 terms (0.0s)
+    part2 pivot G0: num 164 terms, den 160 terms (0.0s)
+    part2 pivot G1: num 262 terms, den 262 terms (0.0s)
+[q0=0, t>=4, i=1] PD on complement (pivots 6 + 1, kernel 1)  (0.0s)  largest pivot 262 terms
+[q0=1, t=-2, i>=2] empty  (0.0s)
+  form computed (0.0s), 4 vectors
+  congruence done (0.0s); split blocks []; parts 4 + 0
+    part2 pivot B110: num 17 terms, den 20 terms (0.0s)
+    part2 pivot B011: num 43 terms, den 38 terms (0.0s)
+    part2 pivot B101: num 54 terms, den 64 terms (0.0s)
+[q0=1, t=-1, i>=2] PD on complement (pivots 3 + 0, kernel 1)  (0.0s)  largest pivot 64 terms
+  form computed (0.0s), 11 vectors
+  congruence done (0.1s); split blocks [(0, 1), (1, 0)]; parts 9 + 2
+    part3 pivot S10: num 17 terms, den 15 terms (0.1s)
+    part3 pivot S01: num 16 terms, den 13 terms (0.1s)
+    part2 pivot G1: num 1 terms, den 1 terms (0.1s)
+    part2 pivot O0: num 13 terms, den 15 terms (0.1s)
+    part2 pivot W01: num 118 terms, den 118 terms (0.1s)
+    part2 pivot B101: num 188 terms, den 188 terms (0.1s)
+    part2 pivot U01: num 209 terms, den 229 terms (0.1s)
+    part2 pivot W10: num 298 terms, den 300 terms (0.1s)
+    part2 pivot B010: num 296 terms, den 298 terms (0.1s)
+[q0=1, t=0, i>=2] PD on complement (pivots 7 + 2, kernel 2)  (0.1s)  largest pivot 300 terms
+  form computed (0.1s), 14 vectors
+  congruence done (0.1s); split blocks [(0, 0), (0, 1), (1, 0)]; parts 11 + 3
+    part3 pivot S01: num 9 terms, den 6 terms (0.1s)
+    part3 pivot S10: num 25 terms, den 21 terms (0.1s)
+    part3 pivot S00: num 33 terms, den 27 terms (0.1s)
+    part2 pivot G0: num 2 terms, den 3 terms (0.1s)
+    part2 pivot G1: num 1 terms, den 2 terms (0.1s)
+    part2 pivot O0: num 27 terms, den 28 terms (0.1s)
+    part2 pivot W01: num 252 terms, den 252 terms (0.2s)
+    part2 pivot B101: num 299 terms, den 299 terms (0.2s)
+    part2 pivot U01: num 348 terms, den 350 terms (0.3s)
+    part2 pivot W10: num 432 terms, den 434 terms (0.4s)
+    part2 pivot W00: num 462 terms, den 462 terms (0.4s)
+    part2 pivot U00: num 660 terms, den 629 terms (0.4s)
+[q0=1, t=1, i>=2] PD on complement (pivots 9 + 3, kernel 2)  (0.4s)  largest pivot 660 terms
+  form computed (0.1s), 14 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0)]; parts 11 + 3
+    part3 pivot S00: num 20 terms, den 15 terms (0.2s)
+    part3 pivot S01: num 27 terms, den 21 terms (0.2s)
+    part3 pivot S10: num 42 terms, den 36 terms (0.2s)
+    part2 pivot G0: num 4 terms, den 6 terms (0.2s)
+    part2 pivot G1: num 2 terms, den 2 terms (0.2s)
+    part2 pivot O0: num 34 terms, den 35 terms (0.2s)
+    part2 pivot W01: num 272 terms, den 272 terms (0.2s)
+    part2 pivot W00: num 374 terms, den 374 terms (0.3s)
+    part2 pivot W10: num 489 terms, den 492 terms (0.4s)
+    part2 pivot B101: num 461 terms, den 461 terms (0.6s)
+    part2 pivot U01: num 489 terms, den 492 terms (0.7s)
+    part2 pivot U00: num 730 terms, den 699 terms (0.7s)
+[q0=1, t=2, i>=2] PD on complement (pivots 9 + 3, kernel 2)  (0.7s)  largest pivot 730 terms
+  form computed (0.1s), 14 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0)]; parts 11 + 3
+    part3 pivot S01: num 20 terms, den 15 terms (0.2s)
+    part3 pivot S10: num 42 terms, den 36 terms (0.2s)
+    part3 pivot S00: num 52 terms, den 44 terms (0.2s)
+    part2 pivot O0: num 5 terms, den 6 terms (0.2s)
+    part2 pivot G0: num 42 terms, den 44 terms (0.2s)
+    part2 pivot G1: num 42 terms, den 42 terms (0.2s)
+    part2 pivot W01: num 273 terms, den 273 terms (0.2s)
+    part2 pivot B101: num 375 terms, den 375 terms (0.3s)
+    part2 pivot U01: num 429 terms, den 432 terms (0.5s)
+    part2 pivot W10: num 555 terms, den 558 terms (0.6s)
+    part2 pivot W00: num 555 terms, den 555 terms (0.8s)
+    part2 pivot U00: num 851 terms, den 817 terms (0.8s)
+[q0=1, t=3, i>=2] PD on complement (pivots 9 + 3, kernel 2)  (0.8s)  largest pivot 851 terms
+  form computed (0.0s), 7 vectors
+  congruence done (0.0s); split blocks []; parts 7 + 0
+    part2 pivot A01: num 2 terms, den 6 terms (0.0s)
+    part2 pivot O0: num 1 terms, den 2 terms (0.0s)
+    part2 pivot A00: num 6 terms, den 9 terms (0.0s)
+    part2 pivot G0: num 98 terms, den 99 terms (0.0s)
+    part2 pivot G1: num 98 terms, den 98 terms (0.0s)
+[q0=1, t>=4, i=0] PD on complement (pivots 5 + 0, kernel 2)  (0.0s)  largest pivot 99 terms
+  form computed (0.0s), 14 vectors
+  congruence done (0.1s); split blocks [(0, 0), (0, 1), (1, 0)]; parts 11 + 3
+    part3 pivot S01: num 20 terms, den 15 terms (0.1s)
+    part3 pivot S10: num 42 terms, den 36 terms (0.1s)
+    part3 pivot S00: num 52 terms, den 44 terms (0.1s)
+    part2 pivot G0: num 3 terms, den 5 terms (0.1s)
+    part2 pivot G1: num 1 terms, den 1 terms (0.1s)
+    part2 pivot O0: num 32 terms, den 33 terms (0.1s)
+    part2 pivot B101: num 221 terms, den 242 terms (0.1s)
+    part2 pivot U01: num 340 terms, den 340 terms (0.2s)
+    part2 pivot W01: num 393 terms, den 422 terms (0.3s)
+    part2 pivot W10: num 456 terms, den 454 terms (0.4s)
+    part2 pivot W00: num 479 terms, den 456 terms (0.5s)
+    part2 pivot U00: num 718 terms, den 727 terms (0.5s)
+[q0=1, t>=4, i=1] PD on complement (pivots 9 + 3, kernel 2)  (0.5s)  largest pivot 727 terms
+  form computed (0.0s), 1 vectors
+  congruence done (0.0s); split blocks []; parts 1 + 0
+    part2 pivot B111: num 10 terms, den 10 terms (0.0s)
+[q0=2, t=-2, i>=2] PD on complement (pivots 1 + 0, kernel 0)  (0.0s)  largest pivot 10 terms
+  form computed (0.0s), 6 vectors
+  congruence done (0.0s); split blocks [(1, 1)]; parts 5 + 1
+    part3 pivot S11: num 13 terms, den 10 terms (0.0s)
+    part2 pivot O1: num 2 terms, den 3 terms (0.0s)
+    part2 pivot B110: num 42 terms, den 44 terms (0.0s)
+    part2 pivot W11: num 75 terms, den 75 terms (0.0s)
+    part2 pivot B011: num 102 terms, den 102 terms (0.0s)
+[q0=2, t=-1, i>=2] PD on complement (pivots 4 + 1, kernel 1)  (0.0s)  largest pivot 102 terms
+  form computed (0.1s), 13 vectors
+  congruence done (0.2s); split blocks [(0, 1), (1, 0), (1, 1)]; parts 10 + 3
+    part3 pivot S10: num 25 terms, den 21 terms (0.2s)
+    part3 pivot S01: num 42 terms, den 35 terms (0.2s)
+    part3 pivot S11: num 41 terms, den 35 terms (0.2s)
+    part2 pivot G1: num 1 terms, den 1 terms (0.2s)
+    part2 pivot O0: num 13 terms, den 15 terms (0.2s)
+    part2 pivot O1: num 9 terms, den 13 terms (0.2s)
+    part2 pivot W01: num 149 terms, den 149 terms (0.2s)
+    part2 pivot W11: num 227 terms, den 227 terms (0.2s)
+    part2 pivot U01: num 321 terms, den 297 terms (0.2s)
+    part2 pivot W10: num 430 terms, den 432 terms (0.3s)
+    part2 pivot B010: num 428 terms, den 430 terms (0.3s)
+[q0=2, t=0, i>=2] PD on complement (pivots 8 + 3, kernel 2)  (0.3s)  largest pivot 432 terms
+  form computed (0.2s), 16 vectors
+  congruence done (0.3s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 9 terms, den 6 terms (0.3s)
+    part3 pivot S11: num 54 terms, den 45 terms (0.3s)
+    part3 pivot S10: num 63 terms, den 55 terms (0.3s)
+    part3 pivot S00: num 63 terms, den 54 terms (0.3s)
+    part2 pivot G0: num 2 terms, den 3 terms (0.3s)
+    part2 pivot G1: num 1 terms, den 2 terms (0.3s)
+    part2 pivot O0: num 27 terms, den 28 terms (0.3s)
+    part2 pivot O1: num 25 terms, den 27 terms (0.3s)
+    part2 pivot W10: num 345 terms, den 348 terms (0.4s)
+    part2 pivot W00: num 429 terms, den 429 terms (0.6s)
+    part2 pivot W01: num 493 terms, den 493 terms (1.0s)
+    part2 pivot W11: num 493 terms, den 493 terms (1.3s)
+    part2 pivot U00: num 774 terms, den 740 terms (1.5s)
+    part2 pivot U01: num 855 terms, den 817 terms (1.6s)
+[q0=2, t=1, i>=2] PD on complement (pivots 10 + 4, kernel 2)  (1.6s)  largest pivot 855 terms
+  form computed (0.2s), 16 vectors
+  congruence done (0.4s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 35 terms, den 28 terms (0.4s)
+    part3 pivot S11: num 54 terms, den 45 terms (0.4s)
+    part3 pivot S10: num 75 terms, den 66 terms (0.4s)
+    part3 pivot S00: num 75 terms, den 65 terms (0.4s)
+    part2 pivot G0: num 4 terms, den 6 terms (0.4s)
+    part2 pivot G1: num 2 terms, den 2 terms (0.4s)
+    part2 pivot O0: num 34 terms, den 35 terms (0.4s)
+    part2 pivot O1: num 32 terms, den 34 terms (0.4s)
+    part2 pivot W10: num 340 terms, den 344 terms (0.5s)
+    part2 pivot W00: num 454 terms, den 454 terms (0.8s)
+    part2 pivot W01: num 521 terms, den 521 terms (1.2s)
+    part2 pivot W11: num 521 terms, den 521 terms (1.6s)
+    part2 pivot U01: num 813 terms, den 776 terms (1.9s)
+    part2 pivot U00: num 979 terms, den 942 terms (2.0s)
+[q0=2, t=2, i>=2] PD on complement (pivots 10 + 4, kernel 2)  (2.0s)  largest pivot 979 terms
+  form computed (0.2s), 16 vectors
+  congruence done (0.4s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 35 terms, den 28 terms (0.4s)
+    part3 pivot S00: num 77 terms, den 66 terms (0.4s)
+    part3 pivot S10: num 88 terms, den 78 terms (0.4s)
+    part3 pivot S11: num 88 terms, den 77 terms (0.4s)
+    part2 pivot O0: num 5 terms, den 6 terms (0.4s)
+    part2 pivot O1: num 3 terms, den 5 terms (0.4s)
+    part2 pivot G0: num 33 terms, den 35 terms (0.4s)
+    part2 pivot G1: num 33 terms, den 33 terms (0.4s)
+    part2 pivot W10: num 368 terms, den 372 terms (0.5s)
+    part2 pivot W00: num 486 terms, den 486 terms (0.9s)
+    part2 pivot W01: num 589 terms, den 589 terms (1.4s)
+    part2 pivot W11: num 589 terms, den 589 terms (1.9s)
+    part2 pivot U01: num 984 terms, den 943 terms (2.2s)
+    part2 pivot U00: num 1071 terms, den 1032 terms (2.3s)
+[q0=2, t=3, i>=2] PD on complement (pivots 10 + 4, kernel 2)  (2.3s)  largest pivot 1071 terms
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks []; parts 8 + 0
+    part2 pivot O0: num 4 terms, den 6 terms (0.0s)
+    part2 pivot O1: num 2 terms, den 6 terms (0.0s)
+    part2 pivot A01: num 25 terms, den 32 terms (0.0s)
+    part2 pivot A00: num 42 terms, den 45 terms (0.0s)
+    part2 pivot G0: num 179 terms, den 180 terms (0.0s)
+    part2 pivot G1: num 179 terms, den 179 terms (0.0s)
+[q0=2, t>=4, i=0] PD on complement (pivots 6 + 0, kernel 2)  (0.0s)  largest pivot 180 terms
+  form computed (0.1s), 16 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 35 terms, den 28 terms (0.2s)
+    part3 pivot S11: num 77 terms, den 77 terms (0.2s)
+    part3 pivot S10: num 88 terms, den 78 terms (0.2s)
+    part3 pivot S00: num 87 terms, den 77 terms (0.2s)
+    part2 pivot G0: num 3 terms, den 5 terms (0.2s)
+    part2 pivot G1: num 1 terms, den 1 terms (0.2s)
+    part2 pivot O0: num 32 terms, den 33 terms (0.2s)
+    part2 pivot O1: num 24 terms, den 32 terms (0.2s)
+    part2 pivot W01: num 338 terms, den 338 terms (0.3s)
+    part2 pivot W10: num 480 terms, den 480 terms (0.6s)
+    part2 pivot W11: num 545 terms, den 574 terms (1.2s)
+    part2 pivot W00: num 569 terms, den 545 terms (1.6s)
+    part2 pivot U01: num 886 terms, den 925 terms (1.8s)
+    part2 pivot U00: num 967 terms, den 976 terms (2.0s)
+[q0=2, t>=4, i=1] PD on complement (pivots 10 + 4, kernel 2)  (2.0s)  largest pivot 976 terms
+  form computed (0.0s), 1 vectors
+  congruence done (0.0s); split blocks []; parts 1 + 0
+    part2 pivot B111: num 10 terms, den 9 terms (0.0s)
+[q0=3, t=-2, i>=2] PD on complement (pivots 1 + 0, kernel 0)  (0.0s)  largest pivot 10 terms
+  form computed (0.0s), 6 vectors
+  congruence done (0.0s); split blocks [(1, 1)]; parts 5 + 1
+    part3 pivot S11: num 13 terms, den 9 terms (0.0s)
+    part2 pivot O1: num 2 terms, den 3 terms (0.0s)
+    part2 pivot W11: num 41 terms, den 41 terms (0.0s)
+    part2 pivot B011: num 71 terms, den 71 terms (0.0s)
+    part2 pivot B110: num 84 terms, den 81 terms (0.0s)
+[q0=3, t=-1, i>=2] PD on complement (pivots 4 + 1, kernel 1)  (0.0s)  largest pivot 84 terms
+  form computed (0.1s), 13 vectors
+  congruence done (0.2s); split blocks [(0, 1), (1, 0), (1, 1)]; parts 10 + 3
+    part3 pivot S10: num 25 terms, den 21 terms (0.2s)
+    part3 pivot S01: num 52 terms, den 44 terms (0.2s)
+    part3 pivot S11: num 51 terms, den 44 terms (0.2s)
+    part2 pivot G1: num 1 terms, den 1 terms (0.2s)
+    part2 pivot O0: num 13 terms, den 15 terms (0.2s)
+    part2 pivot O1: num 9 terms, den 13 terms (0.2s)
+    part2 pivot W01: num 152 terms, den 152 terms (0.2s)
+    part2 pivot W11: num 230 terms, den 230 terms (0.2s)
+    part2 pivot U01: num 324 terms, den 300 terms (0.3s)
+    part2 pivot W10: num 433 terms, den 435 terms (0.3s)
+    part2 pivot B010: num 431 terms, den 433 terms (0.3s)
+[q0=3, t=0, i>=2] PD on complement (pivots 8 + 3, kernel 2)  (0.3s)  largest pivot 435 terms
+  form computed (0.3s), 16 vectors
+  congruence done (0.4s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 27 terms, den 21 terms (0.4s)
+    part3 pivot S11: num 65 terms, den 55 terms (0.4s)
+    part3 pivot S10: num 75 terms, den 66 terms (0.4s)
+    part3 pivot S00: num 75 terms, den 65 terms (0.4s)
+    part2 pivot G0: num 2 terms, den 3 terms (0.4s)
+    part2 pivot G1: num 1 terms, den 2 terms (0.4s)
+    part2 pivot O0: num 27 terms, den 28 terms (0.4s)
+    part2 pivot O1: num 25 terms, den 27 terms (0.4s)
+    part2 pivot W10: num 345 terms, den 348 terms (0.5s)
+    part2 pivot W00: num 429 terms, den 429 terms (0.7s)
+    part2 pivot W01: num 493 terms, den 493 terms (1.0s)
+    part2 pivot W11: num 493 terms, den 493 terms (1.4s)
+    part2 pivot U00: num 814 terms, den 779 terms (1.6s)
+    part2 pivot U01: num 897 terms, den 858 terms (1.7s)
+[q0=3, t=1, i>=2] PD on complement (pivots 10 + 4, kernel 2)  (1.7s)  largest pivot 897 terms
+  form computed (0.3s), 16 vectors
+  congruence done (0.4s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S10: num 52 terms, den 45 terms (0.4s)
+    part3 pivot S00: num 88 terms, den 77 terms (0.4s)
+    part3 pivot S01: num 88 terms, den 77 terms (0.5s)
+    part3 pivot S11: num 88 terms, den 77 terms (0.5s)
+    part2 pivot G0: num 4 terms, den 6 terms (0.5s)
+    part2 pivot G1: num 2 terms, den 2 terms (0.5s)
+    part2 pivot O0: num 34 terms, den 35 terms (0.5s)
+    part2 pivot O1: num 32 terms, den 34 terms (0.5s)
+    part2 pivot W10: num 340 terms, den 344 terms (0.6s)
+    part2 pivot W00: num 454 terms, den 454 terms (0.9s)
+    part2 pivot W01: num 521 terms, den 521 terms (1.3s)
+    part2 pivot W11: num 521 terms, den 521 terms (1.6s)
+    part2 pivot U01: num 896 terms, den 857 terms (1.9s)
+    part2 pivot U00: num 1024 terms, den 986 terms (2.1s)
+[q0=3, t=2, i>=2] PD on complement (pivots 10 + 4, kernel 2)  (2.1s)  largest pivot 1024 terms
+  form computed (0.3s), 16 vectors
+  congruence done (0.5s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S10: num 52 terms, den 45 terms (0.5s)
+    part3 pivot S00: num 102 terms, den 90 terms (0.5s)
+    part3 pivot S01: num 102 terms, den 90 terms (0.5s)
+    part3 pivot S11: num 102 terms, den 90 terms (0.5s)
+    part2 pivot O0: num 5 terms, den 6 terms (0.5s)
+    part2 pivot O1: num 3 terms, den 5 terms (0.5s)
+    part2 pivot G0: num 33 terms, den 35 terms (0.5s)
+    part2 pivot G1: num 33 terms, den 33 terms (0.5s)
+    part2 pivot W10: num 368 terms, den 372 terms (0.6s)
+    part2 pivot W00: num 486 terms, den 486 terms (1.1s)
+    part2 pivot W01: num 589 terms, den 589 terms (1.7s)
+    part2 pivot W11: num 589 terms, den 589 terms (2.3s)
+    part2 pivot U00: num 1071 terms, den 1032 terms (2.8s)
+    part2 pivot U01: num 1118 terms, den 1075 terms (3.0s)
+[q0=3, t=3, i>=2] PD on complement (pivots 10 + 4, kernel 2)  (3.0s)  largest pivot 1118 terms
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks []; parts 8 + 0
+    part2 pivot O0: num 4 terms, den 6 terms (0.0s)
+    part2 pivot O1: num 2 terms, den 6 terms (0.0s)
+    part2 pivot G0: num 33 terms, den 35 terms (0.1s)
+    part2 pivot G1: num 33 terms, den 33 terms (0.1s)
+    part2 pivot A01: num 161 terms, den 179 terms (0.1s)
+    part2 pivot A00: num 180 terms, den 195 terms (0.1s)
+[q0=3, t>=4, i=0] PD on complement (pivots 6 + 0, kernel 2)  (0.1s)  largest pivot 195 terms
+  form computed (0.2s), 16 vectors
+  congruence done (0.3s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S10: num 52 terms, den 45 terms (0.3s)
+    part3 pivot S00: num 102 terms, den 90 terms (0.3s)
+    part3 pivot S01: num 102 terms, den 90 terms (0.3s)
+    part3 pivot S11: num 102 terms, den 102 terms (0.3s)
+    part2 pivot G0: num 3 terms, den 5 terms (0.3s)
+    part2 pivot G1: num 1 terms, den 1 terms (0.3s)
+    part2 pivot O0: num 32 terms, den 33 terms (0.3s)
+    part2 pivot O1: num 24 terms, den 32 terms (0.3s)
+    part2 pivot W01: num 338 terms, den 338 terms (0.4s)
+    part2 pivot W10: num 480 terms, den 480 terms (0.7s)
+    part2 pivot W11: num 545 terms, den 574 terms (1.1s)
+    part2 pivot W00: num 569 terms, den 545 terms (1.5s)
+    part2 pivot U01: num 973 terms, den 1014 terms (1.8s)
+    part2 pivot U00: num 1012 terms, den 1021 terms (2.0s)
+[q0=3, t>=4, i=1] PD on complement (pivots 10 + 4, kernel 2)  (2.0s)  largest pivot 1021 terms
+[q0>=4, t=-2, i=0] empty  (0.0s)
+  form computed (0.0s), 1 vectors
+  congruence done (0.0s); split blocks []; parts 1 + 0
+    part2 pivot B111: num 1 terms, den 1 terms (0.0s)
+[q0>=4, t=-2, i=1] PD on complement (pivots 1 + 0, kernel 0)  (0.0s)  largest pivot 1 terms
+  form computed (0.0s), 2 vectors
+  congruence done (0.0s); split blocks []; parts 2 + 0
+    part2 pivot O1: num 2 terms, den 3 terms (0.0s)
+[q0>=4, t=-1, i=0] PD on complement (pivots 1 + 0, kernel 1)  (0.0s)  largest pivot 3 terms
+  form computed (0.0s), 6 vectors
+  congruence done (0.0s); split blocks [(1, 1)]; parts 5 + 1
+    part3 pivot S11: num 17 terms, den 10 terms (0.0s)
+    part2 pivot B110: num 2 terms, den 3 terms (0.0s)
+    part2 pivot B011: num 26 terms, den 27 terms (0.0s)
+    part2 pivot U11: num 51 terms, den 53 terms (0.0s)
+[q0>=4, t=-1, i=1] PD on complement (pivots 3 + 1, kernel 2)  (0.0s)  largest pivot 53 terms
+  form computed (0.0s), 6 vectors
+  congruence done (0.0s); split blocks []; parts 6 + 0
+    part2 pivot G1: num 1 terms, den 1 terms (0.0s)
+    part2 pivot A01: num 16 terms, den 15 terms (0.0s)
+    part2 pivot A11: num 32 terms, den 38 terms (0.0s)
+[q0>=4, t=0, i=0] PD on complement (pivots 3 + 0, kernel 3)  (0.0s)  largest pivot 38 terms
+  form computed (0.1s), 13 vectors
+  congruence done (0.1s); split blocks [(0, 1), (1, 0), (1, 1)]; parts 10 + 3
+    part3 pivot S10: num 25 terms, den 21 terms (0.1s)
+    part3 pivot S01: num 52 terms, den 44 terms (0.1s)
+    part3 pivot S11: num 52 terms, den 44 terms (0.1s)
+    part2 pivot G1: num 1 terms, den 1 terms (0.1s)
+    part2 pivot O0: num 13 terms, den 15 terms (0.1s)
+    part2 pivot O1: num 9 terms, den 13 terms (0.1s)
+    part2 pivot B010: num 149 terms, den 152 terms (0.1s)
+    part2 pivot W10: num 204 terms, den 227 terms (0.1s)
+    part2 pivot W11: num 228 terms, den 228 terms (0.2s)
+    part2 pivot W01: num 247 terms, den 228 terms (0.2s)
+    part2 pivot U01: num 322 terms, den 322 terms (0.2s)
+[q0>=4, t=0, i=1] PD on complement (pivots 8 + 3, kernel 2)  (0.2s)  largest pivot 322 terms
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks []; parts 8 + 0
+    part2 pivot G0: num 1 terms, den 3 terms (0.0s)
+    part2 pivot A10: num 76 terms, den 78 terms (0.0s)
+    part2 pivot A00: num 119 terms, den 134 terms (0.0s)
+    part2 pivot A01: num 152 terms, den 152 terms (0.0s)
+    part2 pivot A11: num 135 terms, den 152 terms (0.0s)
+[q0>=4, t=1, i=0] PD on complement (pivots 5 + 0, kernel 3)  (0.0s)  largest pivot 152 terms
+  form computed (0.1s), 16 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S01: num 27 terms, den 21 terms (0.2s)
+    part3 pivot S11: num 73 terms, den 55 terms (0.2s)
+    part3 pivot S10: num 64 terms, den 64 terms (0.2s)
+    part3 pivot S00: num 64 terms, den 54 terms (0.2s)
+    part2 pivot G1: num 2 terms, den 3 terms (0.2s)
+    part2 pivot G0: num 1 terms, den 4 terms (0.2s)
+    part2 pivot O0: num 26 terms, den 28 terms (0.2s)
+    part2 pivot O1: num 20 terms, den 26 terms (0.2s)
+    part2 pivot W10: num 269 terms, den 252 terms (0.3s)
+    part2 pivot W11: num 344 terms, den 344 terms (0.4s)
+    part2 pivot W01: num 424 terms, den 399 terms (0.5s)
+    part2 pivot W00: num 424 terms, den 424 terms (0.7s)
+    part2 pivot U00: num 659 terms, den 696 terms (0.7s)
+    part2 pivot U01: num 699 terms, den 699 terms (0.8s)
+[q0>=4, t=1, i=1] PD on complement (pivots 10 + 4, kernel 2)  (0.8s)  largest pivot 699 terms
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks []; parts 8 + 0
+    part2 pivot O0: num 4 terms, den 6 terms (0.0s)
+    part2 pivot O1: num 2 terms, den 4 terms (0.0s)
+    part2 pivot G0: num 25 terms, den 42 terms (0.0s)
+    part2 pivot G1: num 20 terms, den 25 terms (0.0s)
+    part2 pivot A01: num 135 terms, den 135 terms (0.0s)
+    part2 pivot A00: num 153 terms, den 171 terms (0.0s)
+[q0>=4, t=2, i=0] PD on complement (pivots 6 + 0, kernel 2)  (0.0s)  largest pivot 171 terms
+  form computed (0.2s), 16 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S10: num 51 terms, den 45 terms (0.2s)
+    part3 pivot S00: num 87 terms, den 76 terms (0.2s)
+    part3 pivot S01: num 87 terms, den 76 terms (0.3s)
+    part3 pivot S11: num 87 terms, den 76 terms (0.3s)
+    part2 pivot O0: num 4 terms, den 6 terms (0.3s)
+    part2 pivot O1: num 2 terms, den 4 terms (0.3s)
+    part2 pivot G1: num 33 terms, den 35 terms (0.3s)
+    part2 pivot G0: num 26 terms, den 40 terms (0.3s)
+    part2 pivot W10: num 267 terms, den 251 terms (0.3s)
+    part2 pivot W11: num 369 terms, den 369 terms (0.5s)
+    part2 pivot W01: num 422 terms, den 397 terms (0.8s)
+    part2 pivot W00: num 422 terms, den 422 terms (1.1s)
+    part2 pivot U01: num 732 terms, den 732 terms (1.2s)
+    part2 pivot U00: num 737 terms, den 776 terms (1.2s)
+[q0>=4, t=2, i=1] PD on complement (pivots 10 + 4, kernel 2)  (1.2s)  largest pivot 776 terms
+  form computed (0.0s), 8 vectors
+  congruence done (0.0s); split blocks []; parts 8 + 0
+    part2 pivot O0: num 4 terms, den 6 terms (0.0s)
+    part2 pivot O1: num 2 terms, den 4 terms (0.0s)
+    part2 pivot G1: num 33 terms, den 35 terms (0.0s)
+    part2 pivot G0: num 26 terms, den 40 terms (0.0s)
+    part2 pivot A00: num 169 terms, den 188 terms (0.0s)
+    part2 pivot A01: num 188 terms, den 188 terms (0.0s)
+[q0>=4, t=3, i=0] PD on complement (pivots 6 + 0, kernel 2)  (0.0s)  largest pivot 188 terms
+  form computed (0.2s), 16 vectors
+  congruence done (0.2s); split blocks [(0, 0), (0, 1), (1, 0), (1, 1)]; parts 12 + 4
+    part3 pivot S10: num 51 terms, den 45 terms (0.2s)
+    part3 pivot S00: num 101 terms, den 89 terms (0.2s)
+    part3 pivot S01: num 101 terms, den 89 terms (0.2s)
+    part3 pivot S11: num 101 terms, den 89 terms (0.2s)
+    part2 pivot O0: num 4 terms, den 6 terms (0.2s)
+    part2 pivot O1: num 2 terms, den 4 terms (0.2s)
+    part2 pivot G1: num 33 terms, den 35 terms (0.3s)
+    part2 pivot G0: num 26 terms, den 40 terms (0.3s)
+    part2 pivot W10: num 291 terms, den 274 terms (0.3s)
+    part2 pivot W11: num 397 terms, den 397 terms (0.6s)
+    part2 pivot W01: num 483 terms, den 456 terms (1.0s)
+    part2 pivot W00: num 483 terms, den 483 terms (1.3s)
+    part2 pivot U00: num 852 terms, den 894 terms (1.5s)
+    part2 pivot U01: num 855 terms, den 855 terms (1.6s)
+[q0>=4, t=3, i=1] PD on complement (pivots 10 + 4, kernel 2)  (1.6s)  largest pivot 894 terms
+45 families proved, 7 empty, of 52; 24s
+PASS

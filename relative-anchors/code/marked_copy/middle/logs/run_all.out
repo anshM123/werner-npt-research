@@ -1,0 +1,14 @@
+run_all.sh started Thu Nov  5 22:02:44 EST 2026
+PASS  builder  (python check_builder.py 6 6 16; expect PASS; 63 s)
+PASS  split  (python check_split.py 7; expect PASS; 110 s)
+PASS  fam1  (python prove_fam.py 1 1; expect PASS; 158 s)
+PASS  fam_invariant  (python prove_lowirr.py 0; expect PASS; 3 s)
+PASS  fam1_split  (python prove_mid.py logs/fam1_split.pkl -1,-2,n -1,-1,n -1,0,n -1,1,n -1,2,n -1,3,n -1,n,0 -1,n,1 0,-2,n 0,-1,n 0,0,n 0,1,n 0,2,n 0,3,n 0,n,0 0,n,1 1,-2,n 1,-1,n 1,0,n 1,1,n 1,2,n 1,3,n 1,n,0 1,n,1 2,-2,n 2,-1,n 2,0,n 2,1,n 2,2,n 2,3,n 2,n,0 2,n,1 3,-2,n 3,-1,n 3,0,n 3,1,n 3,2,n 3,3,n 3,n,0 3,n,1 n,-2,0 n,-2,1 n,-1,0 n,-1,1 n,0,0 n,0,1 n,1,0 n,1,1 n,2,0 n,2,1 n,3,0 n,3,1; expect PASS; 24 s)
+PASS  mid_i1  (python prove_mid.py logs/mid_i1.pkl n,n,1; expect PASS; 545 s)
+PASS  cert_rest  (python cert_rest.py 33 40 logs/members_33_40.pkl logs/mid_i1.pkl logs/fam_1_1.pkl logs/fam_lowirr_0.pkl logs/frozen/band_bottom_8.pkl logs/frozen/band_top_8.pkl; expect PASS; 370 s)
+PASS  coverage  (python coverage_mid.py 80 32 band:2 logs/members_33_40.pkl logs/mid_i1.pkl logs/fam_1_1.pkl logs/fam_lowirr_0.pkl logs/frozen/band_bottom_8.pkl logs/frozen/band_top_8.pkl; expect PASS; 1 s)
+PASS  neg_split  (python prove_mid.py logs/unused.pkl -1,-2,n -1,-1,n -1,0,n -1,1,n -1,2,n -1,3,n -1,n,0 -1,n,1 0,-2,n 0,-1,n 0,0,n 0,1,n 0,2,n 0,3,n 0,n,0 0,n,1 1,-2,n 1,-1,n 1,0,n 1,1,n 1,2,n 1,3,n 1,n,0 1,n,1 2,-2,n 2,-1,n 2,0,n 2,1,n 2,2,n 2,3,n 2,n,0 2,n,1 3,-2,n 3,-1,n 3,0,n 3,1,n 3,2,n 3,3,n 3,n,0 3,n,1 n,-2,0 n,-2,1 n,-1,0 n,-1,1 n,0,0 n,0,1 n,1,0 n,1,1 n,2,0 n,2,1 n,3,0 n,3,1 --bscale=1001/1000; expect FAIL; 5 s)
+PASS  neg_i1  (python prove_mid.py logs/unused.pkl n,n,1 --bscale=1001/1000; expect FAIL; 3 s)
+PASS  neg_points  (python neg_mid.py 40 n,n,1; expect PASS; 2 s)
+total 1285 s
+ALL PASS

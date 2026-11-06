@@ -1,0 +1,16 @@
+  form computed (0.3s), 16 vectors
+  congruence done (0.6s)
+    part3 pivot S10: num 359 terms, den 280 terms (0.6s)
+    part3 pivot S00: num 975 terms, den 797 terms (0.6s)
+    part3 pivot S01: num 975 terms, den 796 terms (0.7s)
+    part3 pivot S11: num 975 terms, den 885 terms (0.8s)
+    part2 pivot G1: num 7 terms, den 10 terms (0.8s)
+    part2 pivot G0: num 3 terms, den 12 terms (0.8s)
+    part2 pivot W10: num 1686 terms, den 1561 terms (1.2s)
+    part2 pivot W00: num 3591 terms, den 3419 terms (5.5s)
+    part2 pivot W11: num 4906 terms, den 5260 terms (51.6s)
+    part2 pivot W01: num 5128 terms, den 4906 terms (129.7s)
+    part2 pivot U10: num 22429 terms, den 22741 terms (197.9s)
+    part2 pivot U00: num 27109 terms, den 28003 terms (491.9s)
+    part2 pivot U01: num 33372 terms, den 33322 terms (721.3s)
+guard: time limit 720 s exceeded, killed PID 71984

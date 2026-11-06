@@ -1,0 +1,10 @@
+k=33: 2 members so far (0s)
+k=34: 5 members so far (1s)
+k=35: 8 members so far (1s)
+k=36: 11 members so far (1s)
+k=37: 14 members so far (1s)
+k=38: 17 members so far (2s)
+k=39: 20 members so far (2s)
+k=40: 23 members so far (2s)
+23 members with 33 <= k <= 40: true forms PD at the three values of sigma; every scaled form fails at sigma = 10^-6 or 10^6
+PASS 2s

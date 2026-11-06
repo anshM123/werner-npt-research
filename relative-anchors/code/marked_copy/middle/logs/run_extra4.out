@@ -1,0 +1,7 @@
+run_extra4.sh started Thu Nov  5 23:02:58 EST 2026
+PASS  mid_i4  (python prove_mid.py logs/mid_i4.pkl n,n,4; expect PASS; 1476 s)
+PASS  coverage_i4  (python coverage_mid.py 80 32 band:5 logs/members_33_40.pkl logs/mid_i4.pkl logs/mid_i3.pkl logs/mid_i2.pkl logs/mid_i1.pkl logs/fam_1_1.pkl logs/fam_lowirr_0.pkl logs/frozen/band_bottom_8.pkl logs/frozen/band_top_8.pkl; expect PASS; 1 s)
+PASS  neg_i4  (python prove_mid.py logs/unused.pkl n,n,4 --bscale=1001/1000; expect FAIL; 4 s)
+PASS  neg_points_i4  (python neg_mid.py 40 n,n,4; expect PASS; 4 s)
+total 1485 s
+ALL PASS

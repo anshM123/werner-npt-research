@@ -1,0 +1,54 @@
+[q0=-1, t=-2, i>=2] empty  (0.0s)
+[q0=-1, t=-1, i>=2] empty  (0.0s)
+[q0=-1, t=0, i>=2] empty  (0.0s)
+[q0=-1, t=1, i>=2] PD on complement (pivots 2, kernel 0)  (0.0s)  largest pivot 36 terms
+[q0=-1, t=2, i>=2] PD on complement (pivots 2, kernel 0)  (0.0s)  largest pivot 34 terms
+[q0=-1, t=3, i>=2] PD on complement (pivots 2, kernel 0)  (0.0s)  largest pivot 54 terms
+[q0=0, t=-2, i>=2] empty  (0.0s)
+[q0=0, t=-1, i>=2] empty  (0.0s)
+[q0=0, t=0, i>=2] PD on complement (pivots 4, kernel 1)  (0.0s)  largest pivot 128 terms
+[q0=0, t=1, i>=2] PD on complement (pivots 7, kernel 1)  (0.1s)  largest pivot 299 terms
+[q0=0, t=2, i>=2] PD on complement (pivots 7, kernel 1)  (0.1s)  largest pivot 402 terms
+[q0=0, t=3, i>=2] PD on complement (pivots 7, kernel 1)  (0.1s)  largest pivot 322 terms
+[q0=1, t=-2, i>=2] empty  (0.0s)
+[q0=1, t=-1, i>=2] PD on complement (pivots 3, kernel 1)  (0.0s)  largest pivot 64 terms
+[q0=1, t=0, i>=2] PD on complement (pivots 9, kernel 2)  (0.2s)  largest pivot 405 terms
+[q0=1, t=1, i>=2] PD on complement (pivots 12, kernel 2)  (2.2s)  largest pivot 858 terms
+[q0=1, t=2, i>=2] PD on complement (pivots 12, kernel 2)  (4.2s)  largest pivot 1029 terms
+[q0=1, t=3, i>=2] PD on complement (pivots 12, kernel 2)  (5.9s)  largest pivot 1170 terms
+[q0=2, t=-2, i>=2] PD on complement (pivots 1, kernel 0)  (0.0s)  largest pivot 10 terms
+[q0=2, t=-1, i>=2] PD on complement (pivots 5, kernel 1)  (0.0s)  largest pivot 135 terms
+[q0=2, t=0, i>=2] PD on complement (pivots 11, kernel 2)  (1.3s)  largest pivot 660 terms
+[q0=2, t=1, i>=2] PD on complement (pivots 14, kernel 2)  (12.2s)  largest pivot 1268 terms
+[q0=2, t=2, i>=2] PD on complement (pivots 14, kernel 2)  (17.1s)  largest pivot 1528 terms
+[q0=2, t=3, i>=2] PD on complement (pivots 14, kernel 2)  (20.6s)  largest pivot 1702 terms
+[q0=3, t=-2, i>=2] PD on complement (pivots 1, kernel 0)  (0.0s)  largest pivot 10 terms
+[q0=3, t=-1, i>=2] PD on complement (pivots 5, kernel 1)  (0.0s)  largest pivot 95 terms
+[q0=3, t=0, i>=2] PD on complement (pivots 11, kernel 2)  (1.5s)  largest pivot 702 terms
+[q0=3, t=1, i>=2] PD on complement (pivots 14, kernel 2)  (16.2s)  largest pivot 1371 terms
+[q0=3, t=2, i>=2] PD on complement (pivots 14, kernel 2)  (22.2s)  largest pivot 1583 terms
+[q0=3, t=3, i>=2] PD on complement (pivots 14, kernel 2)  (29.5s)  largest pivot 1759 terms
+[q0=-1, t>=4, i=0] PD on complement (pivots 1, kernel 0)  (0.0s)  largest pivot 6 terms
+[q0=-1, t>=4, i=1] PD on complement (pivots 2, kernel 0)  (0.0s)  largest pivot 27 terms
+[q0=0, t>=4, i=0] PD on complement (pivots 3, kernel 1)  (0.0s)  largest pivot 25 terms
+[q0=0, t>=4, i=1] PD on complement (pivots 7, kernel 1)  (0.0s)  largest pivot 262 terms
+[q0=1, t>=4, i=0] PD on complement (pivots 5, kernel 2)  (0.0s)  largest pivot 99 terms
+[q0=1, t>=4, i=1] PD on complement (pivots 12, kernel 2)  (0.6s)  largest pivot 683 terms
+[q0=2, t>=4, i=0] PD on complement (pivots 6, kernel 2)  (0.1s)  largest pivot 182 terms
+[q0=2, t>=4, i=1] PD on complement (pivots 14, kernel 2)  (3.2s)  largest pivot 926 terms
+[q0=3, t>=4, i=0] PD on complement (pivots 6, kernel 2)  (0.1s)  largest pivot 239 terms
+[q0=3, t>=4, i=1] PD on complement (pivots 14, kernel 2)  (5.8s)  largest pivot 1683 terms
+[q0>=4, t=-2, i=0] empty  (0.0s)
+[q0>=4, t=-2, i=1] PD on complement (pivots 1, kernel 0)  (0.0s)  largest pivot 1 terms
+[q0>=4, t=-1, i=0] PD on complement (pivots 1, kernel 1)  (0.0s)  largest pivot 3 terms
+[q0>=4, t=-1, i=1] PD on complement (pivots 4, kernel 2)  (0.0s)  largest pivot 78 terms
+[q0>=4, t=0, i=0] PD on complement (pivots 3, kernel 3)  (0.0s)  largest pivot 38 terms
+[q0>=4, t=0, i=1] PD on complement (pivots 11, kernel 2)  (1.0s)  largest pivot 559 terms
+[q0>=4, t=1, i=0] PD on complement (pivots 5, kernel 3)  (0.0s)  largest pivot 152 terms
+[q0>=4, t=1, i=1] PD on complement (pivots 14, kernel 2)  (1.5s)  largest pivot 701 terms
+[q0>=4, t=2, i=0] PD on complement (pivots 6, kernel 2)  (0.1s)  largest pivot 189 terms
+[q0>=4, t=2, i=1] PD on complement (pivots 14, kernel 2)  (6.5s)  largest pivot 1264 terms
+[q0>=4, t=3, i=0] PD on complement (pivots 6, kernel 2)  (0.1s)  largest pivot 208 terms
+[q0>=4, t=3, i=1] PD on complement (pivots 14, kernel 2)  (4.3s)  largest pivot 1420 terms
+45 families proved, 7 empty, of 52; 157s
+PASS
