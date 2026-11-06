@@ -1,0 +1,42 @@
+built in 212.6 s; 30 functionals, 10 moment symbols
+  F_ah_0 ah 1
+  F_ah_1 ah 2/(S + 2*s + 2*sigma)
+  F_ch_2 ch 1
+  F_ch_3 ch 2/(S + 2*s + 2*sigma)
+  F_ch_4 ch s
+  F_zh_5 zh s
+  F_zh_6 zh 1
+  F_zh_7 zh 2/(S + 2*s + sigma)
+  F_ah_8 ah s
+  F_ah_9 ah 2/(S + 2*s + sigma)
+  F_ch_10 ch 2/(S + 2*s + sigma)
+  F_ah_11 ah 4/(S**2 + 4*S*s + 4*S*sigma + 4*s**2 + 8*s*sigma + 4*sigma**2)
+  F_ch_12 ch 4/(S**2 + 4*S*s + 4*S*sigma + 4*s**2 + 8*s*sigma + 4*sigma**2)
+  F_zh_13 zh 4/(S**2 + 4*S*s + 2*S*sigma + 4*s**2 + 4*s*sigma + sigma**2)
+  F_zh_14 zh 2/(S + 2*s + 2*sigma)
+  F_ah_15 ah 8/(S**3 + 6*S**2*s + 6*S**2*sigma + 12*S*s**2 + 24*S*s*sigma + 12*S*sigma**2 + 8*s**3 + 24*s**2*sigma + 24*s*sigma**2 + 8*sigma**3)
+  F_ch_16 ch 8/(S**3 + 6*S**2*s + 6*S**2*sigma + 12*S*s**2 + 24*S*s*sigma + 12*S*sigma**2 + 8*s**3 + 24*s**2*sigma + 24*s*sigma**2 + 8*sigma**3)
+  F_zh_17 zh 4/(S**2 + 4*S*s + 4*S*sigma + 4*s**2 + 8*s*sigma + 4*sigma**2)
+  F_ah_18 ah 4/(S**2 + 4*S*s + 2*S*sigma + 4*s**2 + 4*s*sigma + sigma**2)
+  F_ch_19 ch 4/(S**2 + 4*S*s + 2*S*sigma + 4*s**2 + 4*s*sigma + sigma**2)
+  F_zh_20 zh 8/(S**3 + 6*S**2*s + 3*S**2*sigma + 12*S*s**2 + 12*S*s*sigma + 3*S*sigma**2 + 8*s**3 + 12*s**2*sigma + 6*s*sigma**2 + sigma**3)
+  F_ah_21 ah s**2
+  F_ah_22 ah 2/(3*S + 2*s + 6*sigma)
+  F_ah_23 ah 16/(S**4 + 8*S**3*s + 8*S**3*sigma + 24*S**2*s**2 + 48*S**2*s*sigma + 24*S**2*sigma**2 + 32*S*s**3 + 96*S*s**2*sigma + 96*S*s*sigma**2 + 32*S*sigma**3 + 16*s**4 + 64*s**3*sigma + 96*s**2*sigma**2 + 64*s*sigma**3 + 16*sigma**4)
+  F_ch_24 ch s**2
+  F_ch_25 ch 2/(3*S + 2*s + 6*sigma)
+  F_ch_26 ch 16/(S**4 + 8*S**3*s + 8*S**3*sigma + 24*S**2*s**2 + 48*S**2*s*sigma + 24*S**2*sigma**2 + 32*S*s**3 + 96*S*s**2*sigma + 96*S*s*sigma**2 + 32*S*sigma**3 + 16*s**4 + 64*s**3*sigma + 96*s**2*sigma**2 + 64*s*sigma**3 + 16*sigma**4)
+  F_zh_27 zh s**2
+  F_zh_28 zh 2/(3*S + 2*s + 6*sigma)
+  F_zh_29 zh 16/(S**4 + 8*S**3*s + 4*S**3*sigma + 24*S**2*s**2 + 24*S**2*s*sigma + 6*S**2*sigma**2 + 32*S*s**3 + 48*S*s**2*sigma + 24*S*s*sigma**2 + 4*S*sigma**3 + 16*s**4 + 32*s**3*sigma + 24*s**2*sigma**2 + 8*s*sigma**3 + sigma**4)
+  M_0 2/(S + 2*s + sigma)
+  M_1 2/(S + 2*s + 2*sigma)
+  M_2 4/(S**2 + 4*S*s + 2*S*sigma + 4*s**2 + 4*s*sigma + sigma**2)
+  M_3 4/(S**2 + 4*S*s + 4*S*sigma + 4*s**2 + 8*s*sigma + 4*sigma**2)
+  M_4 8/(S**3 + 6*S**2*s + 6*S**2*sigma + 12*S*s**2 + 24*S*s*sigma + 12*S*sigma**2 + 8*s**3 + 24*s**2*sigma + 24*s*sigma**2 + 8*sigma**3)
+  M_5 8/(S**3 + 6*S**2*s + 3*S**2*sigma + 12*S*s**2 + 12*S*s*sigma + 3*S*sigma**2 + 8*s**3 + 12*s**2*sigma + 6*s*sigma**2 + sigma**3)
+  M_6 s**2
+  M_7 2/(3*S + 2*s + 6*sigma)
+  M_8 16/(S**4 + 8*S**3*s + 4*S**3*sigma + 24*S**2*s**2 + 24*S**2*s*sigma + 6*S**2*sigma**2 + 32*S*s**3 + 48*S*s**2*sigma + 24*S*s*sigma**2 + 4*S*sigma**3 + 16*s**4 + 32*s**3*sigma + 24*s**2*sigma**2 + 8*s*sigma**3 + sigma**4)
+  M_9 16/(S**4 + 8*S**3*s + 8*S**3*sigma + 24*S**2*s**2 + 48*S**2*s*sigma + 24*S**2*sigma**2 + 32*S*s**3 + 96*S*s**2*sigma + 96*S*s*sigma**2 + 32*S*sigma**3 + 16*s**4 + 64*s**3*sigma + 96*s**2*sigma**2 + 64*s*sigma**3 + 16*sigma**4)
+saved reduced_compact.pkl: 4952 C-terms, 73 D-terms (235.7 s)

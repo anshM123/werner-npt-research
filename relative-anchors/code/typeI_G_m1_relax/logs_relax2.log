@@ -1,0 +1,11 @@
+tight 3 min eig exact 0.3822409851314019  relaxed 0.3822342464982149  validity -1.9081939707638891e-16  relaxed soft block min eig 0.0002558637819671352
+tight 4 min eig exact 0.3830191827475404  relaxed 0.38299340472024296  validity -3.55301438911583e-16  relaxed soft block min eig 0.00032490530951774955
+tight 6 min eig exact 0.3823329723699401  relaxed 0.38233109368878304  validity -8.83509762293232e-16  relaxed soft block min eig 0.0006327711217959115
+tight 8 min eig exact 0.3846032693647021  relaxed 0.3845631060146763  validity -2.496407499012252e-15  relaxed soft block min eig 0.0003029916255826847
+lemmaH 3 min eig exact 0.38208031731094316  relaxed 0.3820802894078554  validity 4.3936390135465614e-07  relaxed soft block min eig 0.0004892286216061586
+lemmaH 4 min eig exact 0.3822756265764079  relaxed 0.38227434866849147  validity 7.709442954390352e-08  relaxed soft block min eig 0.0005058405299540148
+lemmaH 6 min eig exact 0.3820853399564832  relaxed 0.3820843831979208  validity 2.8948369673308707e-08  relaxed soft block min eig 0.0003879746373740026
+lemmaH 8 min eig exact 0.3822145530139441  relaxed 0.38220840184527305  validity 3.343220246953249e-08  relaxed soft block min eig 0.0003472189533157491
+3 {'exact': np.float64(0.38224), 'V1': np.float64(0.38216), 'V2': np.float64(0.38223), 'V3': np.float64(0.38213), 'V4': np.float64(-0.85916)}
+5 {'exact': np.float64(0.38801), 'V1': np.float64(0.36136), 'V2': np.float64(0.38779), 'V3': np.float64(0.386), 'V4': np.float64(-2.04026)}
+8 {'exact': np.float64(0.46935), 'V1': np.float64(0.33238), 'V2': np.float64(0.46935), 'V3': np.float64(0.43719), 'V4': np.float64(-2.24132)}

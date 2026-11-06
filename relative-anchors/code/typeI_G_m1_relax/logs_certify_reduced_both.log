@@ -1,0 +1,5 @@
+reduced system loaded (24.7 s)
+u = 10: (i) D_h > 0 for all h: 8/8; B_F > 0: 7/8; (ii) N > 0: 7/8, agreement with the direct certificate 7/8; 186.3 s
+u = 11: (i) D_h > 0 for all h: 4/4; B_F > 0: 4/4; (ii) N > 0: 4/4, agreement with the direct certificate 4/4; 150.0 s
+u = 12: (i) D_h > 0 for all h: 4/4; B_F > 0: 4/4; (ii) N > 0: 4/4, agreement with the direct certificate 4/4; 202.6 s
+FAIL

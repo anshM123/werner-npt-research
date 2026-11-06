@@ -91,7 +91,7 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
   (|U| ≥ 3, |T| ≥ 1; the case k = 4 is Theorem U3₁, for |T| = 1 the U-weights with at most two distinct values are
   Theorems EU and TL, equal U-weights are Theorem EM for every |T|, and two-valued weights are Theorem TV),
   reduced to the condition G ≻ 0 of
-  Theorem C; and the letter-1 and type I blocks of (R∞)_j
+  Theorem C (for |T| = 1 further to Conjecture R by Lemma R1); and the letter-1 and type I blocks of (R∞)_j
   for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, and at k = 5, 6, 7
   everything is proved when the weights take at most two values, Section 3f; the blocks
   without a letter 1 are Theorem DJ for every k). The rest of (R∞)_1 is reduced to Conjectures L and L1, and all of it
@@ -470,6 +470,25 @@ Further results in the notes:
 - For general U-weights, G_z is not a function of finitely many moment sums: the crossed term of the (C_u) form
   creates pair functions of (s_r, s_h) (notes, Section 4). The two-level reduction works because these pair functions
   then take only finitely many values.
+
+**A relaxation without pair functions (Lemma R1, `code/typeI_G_m1_relax/`, notes there).** Let |T| = 1 and u ≥ 2,
+with any positive weights. Eliminate the state Q exactly first. Then relax the hard part X′ of the splitting of
+Theorem C entrywise, with the weights of Lemma H of `code/typeI_u2/`. This gives G ⪰ G_rel, where G_rel is the
+minimum over (a, c), a ⊥ w, of an explicit quadratic form Ψ(a, c, ρ, ζ). Ψ contains no inverse of the (C_u)
+block and no pair function, so G ≻ 0 wherever Ψ ≻ 0 (Corollary R1).
+- In suitable coordinates Ψ = Σ_h v_hᵀD(s_h)v_h + yᵀCy, with 3 × 3 blocks D(s_h) and a fixed 31 × 31 matrix C whose
+  entries are polynomials in ten moment sums Σ_h f(s_h) (checked exactly against Ψ).
+- Lemma F: when every D(s_h) ≻ 0 and Σ_h U_hᵀD(s_h)⁻¹U_h ≻ 0 (U_h the coefficients of the moment directions),
+  Ψ ≻ 0 is equivalent to a fixed 30 × 30 condition.
+- **Conjecture R.** Ψ ≻ 0 for every u ≥ 3 and all positive weights. It would give every type I block of
+  (R∞)_{k−1} with |T| = 1, for every k and every weight vector.
+- Evidence:
+  - It holds at equal U-weights for every u (Theorem R_EU, symbolic in u).
+  - It holds exactly at 284 rational weight vectors with u ≤ 20 (all leading minors of Ψ positive), so G ≻ 0
+    there.
+  - In floating point, over samples with u ≤ 8, the smallest eigenvalue of G_rel in a normalised frame is within
+    3·10⁻⁴ of that of G.
+- Negative controls fail as they should: couplings scaled by 1.001, or the projection dropped.
 
 **Theorem EM (equal weights on the copies without a letter 2, every number of letter-2 copies).** Let u = |U| ≥ 3
 and m = |T| ≥ 2, let every copy of U have the same weight s > 0, and let the weights of T be arbitrary. Then G ≻ 0.
@@ -1540,6 +1559,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `typeI_u1/` (`run_all.sh`) | Proposition U1: the closed forms against the reduced form (exactly at rational points, and as identities of rational functions for m ≤ 4), the polynomials of (A) and (B), their Bernstein certificates, end-to-end checks, negative controls |
 | `typeI_u2/` (`run_all.sh`, notes in `typeI_u2/NOTES.md`) | Theorem C and the reduction before it: the closed form of every type I block (exactly against the builder, k = 3, 4, 5), the structure facts, the splitting formulas, the hard-part lemma, Φ1, every per-coordinate bound at 200 rational configurations, the chain at 32 points, exact pivots at 33 configurations, the Bernstein certificates of (I), (II), (III), negative controls |
 | `typeI_G_m1/` (`run_all.sh`, notes in `typeI_G_m1/NOTES.md`) | Theorems EU and TL: the gauge x_t = 0 and G = diag(2, I) − BᵀC⁻¹B; the symbolic reductions at one and two weight levels, their validation against direct elimination, the sign certificates, a second implementation of the two-level invariant part; the limit u → ∞ at equal U-weights; exact checks at rational points for u ≤ 10 and at three levels; negative controls; floating-point observations on the pair structure |
+| `typeI_G_m1_relax/` (notes in `typeI_G_m1_relax/NOTES.md`) | Lemma R1, Lemma F, Theorem R_EU, Conjecture R: the identities of Lemma R1 exactly against the closed form of the block, the reduced system D + U C Uᵀ against Ψ, pointwise certificates of Ψ (u ≤ 20), the symbolic certificate at equal U-weights, negative controls; the exact checks were rerun with other seeds |
 | `typeI_G_u3/` (`run_all.sh`, notes in `typeI_G_u3/NOTES.md`) | Theorem U3₁: the exact Schur complement for u = 3, m = 1 over Q(s_0, …, s_3) and its agreement with direct elimination, the leading minors with factor stripping and expansion checks, the coefficient-sign certificate, the Z-matrix certificate, negative controls; the same minor certificate for (u, m) = (1, 1), (2, 1), (1, 2), (2, 2), (1, 3); numerical sweeps behind Conjectures P and M |
 | `typeI_G_em/` (`run_all.sh`, notes in `typeI_G_em/NOTES.md`) | Theorem EM: the closed forms of the invariant and standard parts at equal U-weights symbolic in u, against direct elimination (44 configurations) and the Lemma B builder (21), the five coefficient-sign certificates (H = 1/2, 2/5, 29/100, 7/10), negative controls, the exact witness that G is not a function of the first two power sums of the U-weights, numerical constants for general U-weights; the second check `emcheck.py` (every torus group of (R∞)_{k−1} from Lemma B, k = 5, …, 8) |
 | `typeI_G_tv/` (`run_all.sh`, notes in `typeI_G_tv/NOTES.md`) | Theorems M1 and TV: the splitting at two U-levels, the closed forms with the level sizes symbolic against exact elimination of whole blocks, Theorem M1 (exact splitting under the permutations of T, Sylvester), Theorem TV (weighted block Gershgorin, 129 certificates, and Proposition B3 by determinant and interpolation in u₁), end-to-end checks with the Lemma B builder, negative controls; `marked_copy/run_markall2.sh` (`markall2.py`): every torus group of (R∞)_{k−1} at two-valued weights, k = 10, …, 13 |

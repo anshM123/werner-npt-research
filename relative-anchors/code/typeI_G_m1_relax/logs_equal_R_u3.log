@@ -1,0 +1,11 @@
+constants built (0.0 s)
+D(s) built (0.1 s)
+Psi_inv built from 2908 C-terms (1.0 s)
+D: leading minor 1: numerator 15 terms, degree 10, sign 1; denominator factors 3 (signs [1, 1, 1]); positive certificate: True
+D: leading minor 2: numerator 30 terms, degree 17, sign 1; denominator factors 4 (signs [1, 1, 1, 1]); positive certificate: True
+D: leading minor 3: numerator 99 terms, degree 31, sign 1; denominator factors 6 (signs [1, 1, 1, 1, 1, 1]); positive certificate: True
+Psi_inv: leading minor 1: numerator 39 terms, degree 16, sign 1; denominator factors 5 (signs [1, 1, 1, 1, 1]); positive certificate: True
+Psi_inv: leading minor 2: numerator 130 terms, degree 33, sign 1; denominator factors 7 (signs [1, 1, 1, 1, 1, 1, 1]); positive certificate: True
+Psi_inv: leading minor 3: numerator 126 terms, degree 33, sign 1; denominator factors 7 (signs [1, 1, 1, 1, 1, 1, 1]); positive certificate: True
+total 1.0 s
+PASS

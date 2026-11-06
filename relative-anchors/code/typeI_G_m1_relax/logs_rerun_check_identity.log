@@ -1,0 +1,20 @@
+    G - G_rel singular: pivots [5.5177435263850763e-05, 0.0] all principal minors >= 0: True
+u = 2, trial 0: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+    G - G_rel singular: pivots [5.124014997101524e-07, 0.0] all principal minors >= 0: True
+u = 2, trial 1: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+    G - G_rel singular: pivots [1.192273077900957e-09, 0.0] all principal minors >= 0: True
+u = 2, trial 2: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+u = 3, trial 0: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+u = 3, trial 1: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+    G - G_rel singular: pivots [0.004377001312219664, 1.6919761350334208e-14, 2.648740306580666e-08, 0.0] all principal minors >= 0: True
+u = 3, trial 2: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+u = 4, trial 0: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+u = 4, trial 1: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+u = 4, trial 2: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+u = 5, trial 0: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+u = 5, trial 1: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+u = 5, trial 2: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+u = 6, trial 0: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+u = 6, trial 1: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+u = 6, trial 2: I1 True I2 True I3 True I4 True I5 True I6 True; G_rel pivots > 0: True
+PASS

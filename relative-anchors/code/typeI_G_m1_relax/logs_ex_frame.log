@@ -1,0 +1,5 @@
+3 min eig in frame (rho*sqrt(1+sig/S), merged*sqrt(1+S/sig), perp): 0.3838874291422309 (872.8915568127773, np.float64(5.573374995576154), array([-6.6, -2.1,  1.7])) 0.0s
+4 min eig in frame (rho*sqrt(1+sig/S), merged*sqrt(1+S/sig), perp): 0.3821068034410048 (2229.8222390963947, np.float64(1.0560915869722376), array([ 0. , -2.9, -5.9, -8.8])) 0.1s
+6 min eig in frame (rho*sqrt(1+sig/S), merged*sqrt(1+S/sig), perp): 0.3846228942221582 (986.8317032078984, np.float64(8.58477254072922), array([ 0.6, -0.3, -2. , -2.1, -1.7,  1.7])) 0.2s
+8 min eig in frame (rho*sqrt(1+sig/S), merged*sqrt(1+S/sig), perp): 0.38333268268239395 (535.8875072696364, np.float64(2.3924921031836526), array([ 0. , -0.5, -1.1, -1.6, -2.1, -2.7, -3.2, -3.7])) 0.4s
+12 min eig in frame (rho*sqrt(1+sig/S), merged*sqrt(1+S/sig), perp): 0.44658462093146745 (1843.768703862972, np.float64(385.03723065887266), array([0. , 0.4, 0.9, 1.3, 1.8, 2.2, 2.7, 3.1, 3.6, 4. , 4.5, 4.9])) 1.8s

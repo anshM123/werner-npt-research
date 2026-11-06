@@ -1,0 +1,8 @@
+reduced system loaded (0.0 s)
+  control: condition (ii) fails with B -> 1.001 B at family 0: w_t = 1913/1000, w_U = [1421/10000, 1061/5000, 3257/5000, 1043/500, 2357/10000, 1061/5000, 3421/10000, 1401/500, 61/250, 2619/1000]
+  B_F singular at family 0 (route not applicable there)
+  control: condition (ii) fails with B -> 1.001 B at family 3: w_t = 1, w_U = [3623, 14830, 19360, 12540, 5276, 16770, 14670, 5023, 12280, 5285]
+  control: condition (ii) fails with B -> 1.001 B at family 4: w_t = 1, w_U = [4099/100, 1801/2500, 359/500, 13/16, 1341/1000, 1959/1000, 629/250, 2593/1000, 2683/1000, 357/200]
+  control: condition (ii) fails with B -> 1.001 B at family 7: w_t = 433/2500000, w_U = [3573/500, 119/400, 4173/5000, 3327/1000, 1603/2000, 397/125, 32/25, 217/1000, 201/1000, 6903/1000]
+u = 10: (i) D_h > 0 for all h: 8/8; B_F > 0: 7/8; (ii) N > 0: 4/8; 178.8 s
+control finished (failures expected)

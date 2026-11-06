@@ -1,0 +1,2 @@
+small exit 0
+large exit 0

@@ -1,0 +1,7 @@
+u = 3: 12/12 weight vectors with all pivots of Psi positive; log2 of the smallest letter-2 pivot ratio -19.8; 0.0 s
+u = 4: 12/12 weight vectors with all pivots of Psi positive; log2 of the smallest letter-2 pivot ratio -29.9; 0.1 s
+u = 5: 12/12 weight vectors with all pivots of Psi positive; log2 of the smallest letter-2 pivot ratio -25.9; 0.1 s
+u = 6: 12/12 weight vectors with all pivots of Psi positive; log2 of the smallest letter-2 pivot ratio -18.5; 0.4 s
+u = 7: 12/12 weight vectors with all pivots of Psi positive; log2 of the smallest letter-2 pivot ratio -23.5; 0.8 s
+u = 8: 12/12 weight vectors with all pivots of Psi positive; log2 of the smallest letter-2 pivot ratio -21.7; 1.8 s
+PASS

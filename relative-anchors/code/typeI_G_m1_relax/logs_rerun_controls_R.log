@@ -1,0 +1,9 @@
+u = 4, w_t = 1, w_U = ['3/200', '1/75', '1/80', '3/250']: (C0) Psi > 0: True; (C1) couplings x 1.001: True; (C2) no projection: True; (C3) diagonal weight 5/12: True; (C4) m x 1.001: False
+u = 4, w_t = 1, w_U = ['3/2000', '1/750', '1/800', '3/2500']: (C0) Psi > 0: True; (C1) couplings x 1.001: True; (C2) no projection: True; (C3) diagonal weight 5/12: True; (C4) m x 1.001: False
+u = 4, w_t = 1/100, w_U = ['2', '3/2', '4/3', '5/4']: (C0) Psi > 0: True; (C1) couplings x 1.001: False; (C2) no projection: False; (C3) diagonal weight 5/12: True; (C4) m x 1.001: True
+u = 4, w_t = 1, w_U = ['2', '3/2', '4/3', '5/4']: (C0) Psi > 0: True; (C1) couplings x 1.001: True; (C2) no projection: False; (C3) diagonal weight 5/12: True; (C4) m x 1.001: True
+u = 6, w_t = 1, w_U = ['3/200', '1/75', '1/80', '3/250', '7/600', '2/175']: (C0) Psi > 0: True; (C1) couplings x 1.001: True; (C2) no projection: True; (C3) diagonal weight 5/12: True; (C4) m x 1.001: False
+u = 6, w_t = 1, w_U = ['3/2000', '1/750', '1/800', '3/2500', '7/6000', '1/875']: (C0) Psi > 0: True; (C1) couplings x 1.001: True; (C2) no projection: True; (C3) diagonal weight 5/12: True; (C4) m x 1.001: False
+u = 6, w_t = 1/100, w_U = ['2', '3/2', '4/3', '5/4', '6/5', '7/6']: (C0) Psi > 0: True; (C1) couplings x 1.001: False; (C2) no projection: False; (C3) diagonal weight 5/12: True; (C4) m x 1.001: True
+u = 6, w_t = 1, w_U = ['2', '3/2', '4/3', '5/4', '6/5', '7/6']: (C0) Psi > 0: True; (C1) couplings x 1.001: True; (C2) no projection: False; (C3) diagonal weight 5/12: True; (C4) m x 1.001: True
+C0 PASS

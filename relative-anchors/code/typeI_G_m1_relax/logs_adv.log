@@ -1,0 +1,3 @@
+u = 3: smallest lambda_min(G_rel) in the frame found: 0.50006 at log s_U = [9. 9. 9.] (sigma = 1)
+u = 4: smallest lambda_min(G_rel) in the frame found: 0.38211 at log s_U = [-9. -9. -9. -9.] (sigma = 1)
+u = 5: smallest lambda_min(G_rel) in the frame found: 0.47393 at log s_U = [9. 9. 9. 9. 9.] (sigma = 1)

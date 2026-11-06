@@ -1,0 +1,4 @@
+u = 12: 8/8 weight vectors with all pivots of Psi positive; log2 of the smallest letter-2 pivot ratio -27.0; 11.3 s
+u = 16: 8/8 weight vectors with all pivots of Psi positive; log2 of the smallest letter-2 pivot ratio -25.8; 59.8 s
+u = 20: 4/4 weight vectors with all pivots of Psi positive; log2 of the smallest letter-2 pivot ratio -24.8; 100.9 s
+stopped by hand during u = 24 (time budget); u = 24 and u = 32 not completed
