@@ -1,2 +1,2 @@
 821 off-diagonal blocks: max ||Ghat_ij||_op / (sqrt(s_i s_j)/sigma) = 0.257794 at (m, u, s_i/sigma, s_j/sigma) = (3, 3, np.float64(0.7378), np.float64(0.2507))
-the route with constant 2/3 would need this to stay below 2/3 = 0.666667
+the route with constant 3/4 would need this to stay below 3/4

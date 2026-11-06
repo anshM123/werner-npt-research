@@ -92,7 +92,7 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
   are Theorem EM for every |T|, and two-valued weights are Theorem TV),
   reduced to the condition G ≻ 0 of
   Theorem C, whose diagonal blocks are bounded below at every weight vector (Theorem DG), so that only the
-  off-diagonal bound ‖Ĝ_ij‖_op ≤ (2/3)√(θ_iθ_j) is missing; and the letter-1 and type I blocks of (R∞)_j
+  off-diagonal bound ‖Ĝ_ij‖_op ≤ (3/4)√(θ_iθ_j) is missing; and the letter-1 and type I blocks of (R∞)_j
   for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, and at k = 5, 6, 7
   everything is proved when the weights take at most two values, Section 3f; the blocks
   without a letter 1 are Theorem DJ for every k). The rest of (R∞)_1 is reduced to Conjectures L and L1, and all of it
@@ -534,18 +534,18 @@ structure (Z), (D) of Conjecture M is not needed for it and stays open.
 **Theorem DG (the diagonal blocks of G, every weight vector; `code/typeI_G_diag/`, notes there).** For every k, every
 positive weight vector and every type I block of (R∞)_{k−1}, write σ = Σ_{t∈T} s_t and θ_t = s_t/σ. In the frame of
 `code/typeI_G_u3/numG.py` (ρ_t; the w_U-component of ζ_t rescaled by √(1 + S_U/σ); the rest of ζ_t), every diagonal
-block of G satisfies Ĝ_tt − (2/3)(1 − θ_t)I ≻ 0. For |T| = 1 this is Theorem W.
+block of G satisfies Ĝ_tt − (3/4)(1 − θ_t)I ≻ 0. For |T| = 1 this is Theorem W. Numerically 3/4 is the best constant.
 
 *Proof (computer-assisted in one step).* The energy theorem of Theorem W is extended to one active letter-2 copy among
-spectators, with a frame budget (2/3)(1 − θ_t) subtracted. The same coherent square, rank and collective bounds give a
+spectators, with a frame budget (3/4)(1 − θ_t) subtracted. The same coherent square, rank and collective bounds give a
 pointwise 6 × 6 lower matrix, jointly matrix-concave in the four resolvent statistics; the triangle enclosures reduce
-it to nine vertex families, and their 54 leading minors have only positive coefficients (551 849 of them). The source
+it to nine vertex families, and their 54 leading minors have only positive coefficients (533 525 of them; with 4/5 in
+place of 3/4 negative coefficients appear). The source
 bound of Theorem W turns this into the stated bound for physical weights. ∎
 
 With Theorem DG, G ≻ 0 (and so the whole type I block, by Theorem C) would follow from the off-diagonal bound
-‖Ĝ_ij‖_op ≤ (2/3)√(θ_iθ_j) for i ≠ j, by a weighted Gershgorin argument (Lemma GG in the notes). That bound is open.
-Numerically the ratio ‖Ĝ_ij‖_op/√(θ_iθ_j) stays below 0.26 at random weight vectors, and the diagonal ratio
-λ_min(Ĝ_tt)/(1 − θ_t) stays above 0.75, so the route has room.
+‖Ĝ_ij‖_op ≤ (3/4)√(θ_iθ_j) for i ≠ j, by a weighted Gershgorin argument (Lemma GG in the notes). That bound is open.
+Numerically the ratio ‖Ĝ_ij‖_op/√(θ_iθ_j) stays below 0.26 at random weight vectors, so the route has a lot of room.
 
 **Theorem EM (equal weights on the copies without a letter 2, every number of letter-2 copies).** Let u = |U| ≥ 3
 and m = |T| ≥ 2, let every copy of U have the same weight s > 0, and let the weights of T be arbitrary. Then G ≻ 0.

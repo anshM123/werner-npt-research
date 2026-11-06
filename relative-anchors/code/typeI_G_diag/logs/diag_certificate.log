@@ -31,54 +31,54 @@
     },
     {
      "n": 3,
-     "terms": 4361,
-     "positive": 4361,
+     "terms": 4137,
+     "positive": 4137,
      "negative": 0,
      "degree": [
+      35,
       36,
-      37,
       6
      ],
      "strictEdge": true
     },
     {
      "n": 4,
-     "terms": 8472,
-     "positive": 8472,
+     "terms": 8103,
+     "positive": 8103,
      "negative": 0,
      "degree": [
-      45,
-      46,
+      44,
+      44,
       8
      ],
      "strictEdge": true
     },
     {
      "n": 5,
-     "terms": 13829,
-     "positive": 13829,
+     "terms": 13304,
+     "positive": 13304,
      "negative": 0,
      "degree": [
-      51,
-      52,
+      50,
+      50,
       10
      ],
      "strictEdge": true
     },
     {
      "n": 6,
-     "terms": 25135,
-     "positive": 25135,
+     "terms": 24371,
+     "positive": 24371,
      "negative": 0,
      "degree": [
-      64,
-      65,
+      63,
+      63,
       12
      ],
      "strictEdge": true
     }
    ],
-   "ms": 10073
+   "ms": 9233
   },
   {
    "ax": 0,
@@ -110,35 +110,114 @@
     },
     {
      "n": 3,
-     "terms": 5411,
-     "positive": 5411,
+     "terms": 5159,
+     "positive": 5159,
      "negative": 0,
      "degree": [
+      39,
       40,
-      41,
       6
      ],
      "strictEdge": true
     },
     {
      "n": 4,
-     "terms": 10983,
-     "positive": 10983,
+     "terms": 10560,
+     "positive": 10560,
      "negative": 0,
      "degree": [
-      51,
-      52,
+      50,
+      50,
       8
      ],
      "strictEdge": true
     },
     {
      "n": 5,
-     "terms": 16127,
-     "positive": 16127,
+     "terms": 15558,
+     "positive": 15558,
      "negative": 0,
      "degree": [
-      55,
+      54,
+      54,
+      10
+     ],
+     "strictEdge": true
+    },
+    {
+     "n": 6,
+     "terms": 27661,
+     "positive": 27661,
+     "negative": 0,
+     "degree": [
+      67,
+      67,
+      12
+     ],
+     "strictEdge": true
+    }
+   ],
+   "ms": 11558
+  },
+  {
+   "ax": 0,
+   "gi": 2,
+   "minors": [
+    {
+     "n": 1,
+     "terms": 442,
+     "positive": 442,
+     "negative": 0,
+     "degree": [
+      16,
+      17,
+      2
+     ],
+     "strictEdge": true
+    },
+    {
+     "n": 2,
+     "terms": 1130,
+     "positive": 1130,
+     "negative": 0,
+     "degree": [
+      21,
+      22,
+      4
+     ],
+     "strictEdge": true
+    },
+    {
+     "n": 3,
+     "terms": 5712,
+     "positive": 5712,
+     "negative": 0,
+     "degree": [
+      41,
+      42,
+      6
+     ],
+     "strictEdge": true
+    },
+    {
+     "n": 4,
+     "terms": 10560,
+     "positive": 10560,
+     "negative": 0,
+     "degree": [
+      50,
+      50,
+      8
+     ],
+     "strictEdge": true
+    },
+    {
+     "n": 5,
+     "terms": 16751,
+     "positive": 16751,
+     "negative": 0,
+     "degree": [
+      56,
       56,
       10
      ],
@@ -146,97 +225,18 @@
     },
     {
      "n": 6,
-     "terms": 28477,
-     "positive": 28477,
+     "terms": 29384,
+     "positive": 29384,
      "negative": 0,
      "degree": [
-      68,
+      69,
       69,
       12
      ],
      "strictEdge": true
     }
    ],
-   "ms": 12543
-  },
-  {
-   "ax": 0,
-   "gi": 2,
-   "minors": [
-    {
-     "n": 1,
-     "terms": 442,
-     "positive": 442,
-     "negative": 0,
-     "degree": [
-      16,
-      17,
-      2
-     ],
-     "strictEdge": true
-    },
-    {
-     "n": 2,
-     "terms": 1130,
-     "positive": 1130,
-     "negative": 0,
-     "degree": [
-      21,
-      22,
-      4
-     ],
-     "strictEdge": true
-    },
-    {
-     "n": 3,
-     "terms": 5978,
-     "positive": 5978,
-     "negative": 0,
-     "degree": [
-      42,
-      43,
-      6
-     ],
-     "strictEdge": true
-    },
-    {
-     "n": 4,
-     "terms": 10983,
-     "positive": 10983,
-     "negative": 0,
-     "degree": [
-      51,
-      52,
-      8
-     ],
-     "strictEdge": true
-    },
-    {
-     "n": 5,
-     "terms": 17342,
-     "positive": 17342,
-     "negative": 0,
-     "degree": [
-      57,
-      58,
-      10
-     ],
-     "strictEdge": true
-    },
-    {
-     "n": 6,
-     "terms": 30226,
-     "positive": 30226,
-     "negative": 0,
-     "degree": [
-      70,
-      71,
-      12
-     ],
-     "strictEdge": true
-    }
-   ],
-   "ms": 15061
+   "ms": 13735
   },
   {
    "ax": 1,
@@ -268,54 +268,54 @@
     },
     {
      "n": 3,
-     "terms": 4361,
-     "positive": 4361,
+     "terms": 4137,
+     "positive": 4137,
      "negative": 0,
      "degree": [
+      35,
       36,
-      37,
       6
      ],
      "strictEdge": true
     },
     {
      "n": 4,
-     "terms": 8472,
-     "positive": 8472,
+     "terms": 8103,
+     "positive": 8103,
      "negative": 0,
      "degree": [
-      45,
-      46,
+      44,
+      44,
       8
      ],
      "strictEdge": true
     },
     {
      "n": 5,
-     "terms": 14956,
-     "positive": 14956,
+     "terms": 14409,
+     "positive": 14409,
      "negative": 0,
      "degree": [
-      53,
-      54,
+      52,
+      52,
       10
      ],
      "strictEdge": true
     },
     {
      "n": 6,
-     "terms": 22765,
-     "positive": 22765,
+     "terms": 22040,
+     "positive": 22040,
      "negative": 0,
      "degree": [
-      61,
-      62,
+      60,
+      60,
       12
      ],
      "strictEdge": true
     }
    ],
-   "ms": 8838
+   "ms": 8195
   },
   {
    "ax": 1,
@@ -347,35 +347,114 @@
     },
     {
      "n": 3,
-     "terms": 5411,
-     "positive": 5411,
+     "terms": 5159,
+     "positive": 5159,
      "negative": 0,
      "degree": [
+      39,
       40,
-      41,
       6
      ],
      "strictEdge": true
     },
     {
      "n": 4,
-     "terms": 10983,
-     "positive": 10983,
+     "terms": 10560,
+     "positive": 10560,
      "negative": 0,
      "degree": [
-      51,
-      52,
+      50,
+      50,
       8
      ],
      "strictEdge": true
     },
     {
      "n": 5,
-     "terms": 17342,
-     "positive": 17342,
+     "terms": 16751,
+     "positive": 16751,
      "negative": 0,
      "degree": [
-      57,
+      56,
+      56,
+      10
+     ],
+     "strictEdge": true
+    },
+    {
+     "n": 6,
+     "terms": 25174,
+     "positive": 25174,
+     "negative": 0,
+     "degree": [
+      64,
+      64,
+      12
+     ],
+     "strictEdge": true
+    }
+   ],
+   "ms": 10278
+  },
+  {
+   "ax": 1,
+   "gi": 2,
+   "minors": [
+    {
+     "n": 1,
+     "terms": 442,
+     "positive": 442,
+     "negative": 0,
+     "degree": [
+      16,
+      17,
+      2
+     ],
+     "strictEdge": true
+    },
+    {
+     "n": 2,
+     "terms": 1130,
+     "positive": 1130,
+     "negative": 0,
+     "degree": [
+      21,
+      22,
+      4
+     ],
+     "strictEdge": true
+    },
+    {
+     "n": 3,
+     "terms": 5712,
+     "positive": 5712,
+     "negative": 0,
+     "degree": [
+      41,
+      42,
+      6
+     ],
+     "strictEdge": true
+    },
+    {
+     "n": 4,
+     "terms": 10560,
+     "positive": 10560,
+     "negative": 0,
+     "degree": [
+      50,
+      50,
+      8
+     ],
+     "strictEdge": true
+    },
+    {
+     "n": 5,
+     "terms": 17988,
+     "positive": 17988,
+     "negative": 0,
+     "degree": [
+      58,
       58,
       10
      ],
@@ -383,97 +462,18 @@
     },
     {
      "n": 6,
-     "terms": 25951,
-     "positive": 25951,
+     "terms": 26819,
+     "positive": 26819,
      "negative": 0,
      "degree": [
-      65,
+      66,
       66,
       12
      ],
      "strictEdge": true
     }
    ],
-   "ms": 11737
-  },
-  {
-   "ax": 1,
-   "gi": 2,
-   "minors": [
-    {
-     "n": 1,
-     "terms": 442,
-     "positive": 442,
-     "negative": 0,
-     "degree": [
-      16,
-      17,
-      2
-     ],
-     "strictEdge": true
-    },
-    {
-     "n": 2,
-     "terms": 1130,
-     "positive": 1130,
-     "negative": 0,
-     "degree": [
-      21,
-      22,
-      4
-     ],
-     "strictEdge": true
-    },
-    {
-     "n": 3,
-     "terms": 5978,
-     "positive": 5978,
-     "negative": 0,
-     "degree": [
-      42,
-      43,
-      6
-     ],
-     "strictEdge": true
-    },
-    {
-     "n": 4,
-     "terms": 10983,
-     "positive": 10983,
-     "negative": 0,
-     "degree": [
-      51,
-      52,
-      8
-     ],
-     "strictEdge": true
-    },
-    {
-     "n": 5,
-     "terms": 18601,
-     "positive": 18601,
-     "negative": 0,
-     "degree": [
-      59,
-      60,
-      10
-     ],
-     "strictEdge": true
-    },
-    {
-     "n": 6,
-     "terms": 27622,
-     "positive": 27622,
-     "negative": 0,
-     "degree": [
-      67,
-      68,
-      12
-     ],
-     "strictEdge": true
-    }
-   ],
-   "ms": 13772
+   "ms": 12327
   },
   {
    "ax": 2,
@@ -505,54 +505,54 @@
     },
     {
      "n": 3,
-     "terms": 4361,
-     "positive": 4361,
+     "terms": 4137,
+     "positive": 4137,
      "negative": 0,
      "degree": [
+      35,
       36,
-      37,
       6
      ],
      "strictEdge": true
     },
     {
      "n": 4,
-     "terms": 8472,
-     "positive": 8472,
+     "terms": 8103,
+     "positive": 8103,
      "negative": 0,
      "degree": [
-      45,
-      46,
+      44,
+      44,
       8
      ],
      "strictEdge": true
     },
     {
      "n": 5,
-     "terms": 14956,
-     "positive": 14956,
+     "terms": 14409,
+     "positive": 14409,
      "negative": 0,
      "degree": [
-      53,
-      54,
+      52,
+      52,
       10
      ],
      "strictEdge": true
     },
     {
      "n": 6,
-     "terms": 27622,
-     "positive": 27622,
+     "terms": 26819,
+     "positive": 26819,
      "negative": 0,
      "degree": [
-      67,
-      68,
+      66,
+      66,
       12
      ],
      "strictEdge": true
     }
    ],
-   "ms": 10665
+   "ms": 9423
   },
   {
    "ax": 2,
@@ -584,54 +584,54 @@
     },
     {
      "n": 3,
-     "terms": 5411,
-     "positive": 5411,
+     "terms": 5159,
+     "positive": 5159,
      "negative": 0,
      "degree": [
+      39,
       40,
-      41,
       6
      ],
      "strictEdge": true
     },
     {
      "n": 4,
-     "terms": 10983,
-     "positive": 10983,
+     "terms": 10560,
+     "positive": 10560,
      "negative": 0,
      "degree": [
-      51,
-      52,
+      50,
+      50,
       8
      ],
      "strictEdge": true
     },
     {
      "n": 5,
-     "terms": 17342,
-     "positive": 17342,
+     "terms": 16751,
+     "positive": 16751,
      "negative": 0,
      "degree": [
-      57,
-      58,
+      56,
+      56,
       10
      ],
      "strictEdge": true
     },
     {
      "n": 6,
-     "terms": 31120,
-     "positive": 31120,
+     "terms": 30265,
+     "positive": 30265,
      "negative": 0,
      "degree": [
-      71,
-      72,
+      70,
+      70,
       12
      ],
      "strictEdge": true
     }
    ],
-   "ms": 11868
+   "ms": 11750
   },
   {
    "ax": 2,
@@ -663,58 +663,58 @@
     },
     {
      "n": 3,
-     "terms": 5978,
-     "positive": 5978,
+     "terms": 5712,
+     "positive": 5712,
      "negative": 0,
      "degree": [
+      41,
       42,
-      43,
       6
      ],
      "strictEdge": true
     },
     {
      "n": 4,
-     "terms": 10983,
-     "positive": 10983,
+     "terms": 10560,
+     "positive": 10560,
      "negative": 0,
      "degree": [
-      51,
-      52,
+      50,
+      50,
       8
      ],
      "strictEdge": true
     },
     {
      "n": 5,
-     "terms": 18601,
-     "positive": 18601,
+     "terms": 17988,
+     "positive": 17988,
      "negative": 0,
      "degree": [
-      59,
-      60,
+      58,
+      58,
       10
      ],
      "strictEdge": true
     },
     {
      "n": 6,
-     "terms": 32947,
-     "positive": 32947,
+     "terms": 32066,
+     "positive": 32066,
      "negative": 0,
      "degree": [
-      73,
-      74,
+      72,
+      72,
       12
      ],
      "strictEdge": true
     }
    ],
-   "ms": 14335
+   "ms": 13989
   }
  ],
  "leadingMinors": 54,
- "positiveCoefficients": 551849,
+ "positiveCoefficients": 533525,
  "entryGuards": 1296,
  "determinantGuards": 216,
  "auxiliary": {

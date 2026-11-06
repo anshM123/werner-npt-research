@@ -1,7 +1,7 @@
 """Floating-point look at the open half of the weighted Gershgorin route, on our own block (../typeI_G_u3/numG.py): with
-the diagonal theorem, G > 0 would follow from ||Ghat_ij||_op <= (2/3) sqrt(s_i s_j)/sigma for i != j.  This prints the
+the diagonal theorem, G > 0 would follow from ||Ghat_ij||_op <= (3/4) sqrt(s_i s_j)/sigma for i != j.  This prints the
 largest ratio ||Ghat_ij||_op / (sqrt(s_i s_j)/sigma) at random weight vectors.  It proves nothing; it shows whether the
-route can close with the constant 2/3."""
+route can close with the constant 3/4."""
 import os, sys
 import numpy as np
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'typeI_G_u3'))
@@ -27,4 +27,4 @@ for it in range(240):
             if r > worst:
                 worst, wc = r, (m, u, round(sT[i] / sig, 4), round(sT[j] / sig, 4))
 print(f'{n} off-diagonal blocks: max ||Ghat_ij||_op / (sqrt(s_i s_j)/sigma) = {worst:.6f} at (m, u, s_i/sigma, s_j/sigma) = {wc}')
-print('the route with constant 2/3 would need this to stay below 2/3 = 0.666667')
+print('the route with constant 3/4 would need this to stay below 3/4')

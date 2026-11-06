@@ -43,7 +43,7 @@ function mpTriangle(k,c){const lo=sfq(1).div(k.add(1)),hi=sfq(1).div(k),D=c.mul(
 function mpSerialize(p){return[...p].map(([k,v])=>[k,v.toString()]);}
 function mpDeserialize(p){return new Map(p.map(([k,v])=>[k,BigInt(v)]));}
 
-function sfQP6(t,a,s,F,alpha,B,gamma,H=sfq(2,3),centerMultiplier=sfq(1)){
+function sfQP6(t,a,s,F,alpha,B,gamma,H=sfq(3,4),centerMultiplier=sfq(1)){
  const K=t.add(sfq(1,2)),k=K.sub(a.div(2)),delta=k.add(a),theta=a.div(t),env=t.sub(a),u=t.mul(2).sub(a),v=k.sub(sfq(1,2)),D0=sfq(2).add(a.div(delta)),C0=sfq(2).add(a.add(1).div(delta)),d=K.add(s),e=k.add(s),f=sfq(1).div(d),g=sfq(1).div(e),om=s.add(sfq(1,4)),VF=sfq(1).div(K.sq().mul(K.add(1).sq()).mul(4)),VG=sfq(1).div(k.sq().mul(k.add(1).sq()).mul(4)),sqrtVF=sfq(1).div(K.mul(K.add(1)).mul(2)),sqrtVG=sfq(1).div(k.mul(k.add(1)).mul(2));
  const P=Array.from({length:6},()=>Array.from({length:6},()=>sfq(0))),add=(i,j,z)=>{P[i][j]=P[i][j].add(z);if(i!==j)P[j][i]=P[j][i].add(z);},outer=(co,x)=>{for(let i=0;i<6;i++)for(let j=0;j<6;j++)P[i][j]=P[i][j].add(co.mul(x[i]).mul(x[j]));};
  P[0][0]=s.add(sfq(1,2)).add(alpha.mul(s).mul(2)).mul(2).div(d).sub(t.mul(om).mul(4).div(d.sq()));
@@ -87,7 +87,7 @@ function mpStats(p){let positive=0,negative=0,strictEdge=false;for(const[k,v]of 
 function mpRFSerialize(x){return{n:mpSerialize(x.n),d:x.d.toString(),f:[...x.f]};}
 
 function mpP6Build(ax,gi,wrongCenter=false){
- const {a,env,s,t,K,k,delta}=mpInitWeights(),A=mpTriangle(K,sfq(2)),G=mpTriangle(k,sfq(2).add(a.div(delta))),P=sfQP6(t,a,s,A[ax][0],A[ax][1],G[gi][0],G[gi][1],sfq(2,3),sfq(wrongCenter?2:1)).P,S=[K.add(s),K.add(s),k.add(s),K.add(s),k.add(s),k.add(s)],Q=P.map((row,i)=>row.map((v,j)=>v.mul(S[i]).mul(S[j]))),ord=[5,1,2,4,0,3],minors=[];
+ const {a,env,s,t,K,k,delta}=mpInitWeights(),A=mpTriangle(K,sfq(2)),G=mpTriangle(k,sfq(2).add(a.div(delta))),P=sfQP6(t,a,s,A[ax][0],A[ax][1],G[gi][0],G[gi][1],sfq(3,4),sfq(wrongCenter?2:1)).P,S=[K.add(s),K.add(s),k.add(s),K.add(s),k.add(s),k.add(s)],Q=P.map((row,i)=>row.map((v,j)=>v.mul(S[i]).mul(S[j]))),ord=[5,1,2,4,0,3],minors=[];
  if(Q.some(row=>row.some(x=>[...x.f].some(([id])=>!mpAtoms[id].positive||mpAtoms[id].degree[2]))))throw Error("nonpositive or point-dependent denominator atom");
  for(let n=1;n<=6;n++){const D=mpDet(ord.slice(0,n).map(i=>ord.slice(0,n).map(j=>Q[i][j]))),stats=mpStats(D.n);minors.push({n,stats,fraction:mpRFSerialize(D)});if(!wrongCenter&&(stats.negative||!stats.strictEdge))throw Error("P6 coefficient positivity failure "+ax+","+gi+","+n);}
  return{ax,gi,wrongCenter,ms:Date.now()-mpStart,ops:mpOps,maxTerms:mpMaxTerms,entryStats:Q.map(row=>row.map(x=>({terms:x.n.size,degree:mpDegree(x.n)}))),data:Q.map(row=>row.map(mpRFSerialize)),atomData:mpAtoms.map(x=>({p:mpSerialize(x.p),label:x.label,positive:x.positive})),minors};
@@ -193,7 +193,7 @@ function sfQTriangleRemainderMatrix(wt,x,mu){
 }
 
 
-function sfQP6(t,a,s,F,alpha,B,gamma,H=sfq(2,3),centerMultiplier=sfq(1)){
+function sfQP6(t,a,s,F,alpha,B,gamma,H=sfq(3,4),centerMultiplier=sfq(1)){
  const K=t.add(sfq(1,2)),k=K.sub(a.div(2)),delta=k.add(a),theta=a.div(t),env=t.sub(a),u=t.mul(2).sub(a),v=k.sub(sfq(1,2)),D0=sfq(2).add(a.div(delta)),C0=sfq(2).add(a.add(1).div(delta)),d=K.add(s),e=k.add(s),f=sfq(1).div(d),g=sfq(1).div(e),om=s.add(sfq(1,4)),VF=sfq(1).div(K.sq().mul(K.add(1).sq()).mul(4)),VG=sfq(1).div(k.sq().mul(k.add(1).sq()).mul(4)),sqrtVF=sfq(1).div(K.mul(K.add(1)).mul(2)),sqrtVG=sfq(1).div(k.mul(k.add(1)).mul(2));
  const P=Array.from({length:6},()=>Array.from({length:6},()=>sfq(0))),add=(i,j,z)=>{P[i][j]=P[i][j].add(z);if(i!==j)P[j][i]=P[j][i].add(z);},outer=(co,x)=>{for(let i=0;i<6;i++)for(let j=0;j<6;j++)P[i][j]=P[i][j].add(co.mul(x[i]).mul(x[j]));};
  P[0][0]=s.add(sfq(1,2)).add(alpha.mul(s).mul(2)).mul(2).div(d).sub(t.mul(om).mul(4).div(d.sq()));
@@ -238,7 +238,7 @@ const sfQAdd=(A,B)=>A.map((row,i)=>row.map((x,j)=>x.add(B[i][j])));
 const sfQScale=(A,c)=>A.map(row=>row.map(x=>x.mul(c)));
 const sfQCong=(G,A)=>sfQM(sfQT(G),sfQM(A,G));
 function sfQP6FormMatrix(n,fn){const b=Array.from({length:n},(_,i)=>Array.from({length:n},(_,j)=>sfq(i===j?1:0))),v=b.map(fn),M=sfQDiag(v);for(let i=0;i<n;i++)for(let j=i+1;j<n;j++)M[i][j]=M[j][i]=fn(b[i].map((z,k)=>z.add(b[j][k]))).sub(v[i]).sub(v[j]).div(2);return M;}
-function sfQP6IntegratedGuard(weights,eps,x,mu,H=sfq(2,3)){
+function sfQP6IntegratedGuard(weights,eps,x,mu,H=sfq(3,4)){
  const t=sfdot(weights,weights),a=weights[0].sq(),w=weights[0],K=t.add(sfq(1,2)),k=K.sub(a.div(2)),delta=k.add(a);
  if(!eps.sq().eq(t))throw Error("choose rational square total for original-energy guard");
  const F=sfdot(mu,x.map(s=>sfq(1).div(K.add(s)))),B=sfdot(mu,x.map(s=>sfq(1).div(k.add(s)))),alpha=sfq(1).div(sfq(2).add(F)),gamma=sfq(1).div(sfq(2).add(a.div(delta)).add(B)),P=x.map(s=>sfQP6(t,a,s,F,alpha,B,gamma,H).P),u=x.length;
