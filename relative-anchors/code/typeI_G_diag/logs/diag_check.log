@@ -1,0 +1,2 @@
+729 diagonal blocks at 240 weight vectors: min lambda_min(Ghat_tt)/(1 - s_t/sigma) = 0.750012 at (m, u, s_t/sigma) = (3, 3, np.float64(0.0))
+PASS
