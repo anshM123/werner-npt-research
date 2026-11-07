@@ -1,0 +1,7 @@
+random point 0: lhs +2.235491145421e+05  rhs +2.235491145421e+05
+random point 1: lhs +2.498581300717e+05  rhs +2.498581300717e+05
+random point 2: lhs +2.462461102257e+05  rhs +2.462461102257e+05
+random point 3: lhs +2.304853570112e+03  rhs +2.304853570112e+03
+largest relative difference 3.4e-15
+PASS
+exit 0

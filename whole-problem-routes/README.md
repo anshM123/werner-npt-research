@@ -27,7 +27,9 @@ inequality (Proposition 7.23). So a failure at a = 3/4 would have to be a strict
 (Corollary 7.24). Such points exist away from the minimum (a balanced pair of spin singlets at four copies,
 Observation 7.26), so squeezes alone cannot finish the argument. In every search, inputs with full support at every
 copy sit far above the product value (Observation 7.27), which suggests a multiplicative bonus for thickness
-(Conjecture TC).
+(Conjecture TC). The bonus holds at two copies (Proposition 7.28) and, by an exact computer-assisted
+certificate with a variable for the least eigenvector of each marginal, at three copies (Theorem 7.29). It is open for
+every larger n, and Theorem 7.29 does not extend to more copies by itself.
 
 ## 1. The cross ratio, and fusion of planes
 
@@ -255,7 +257,8 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.26 | a balanced critical pair at n = 4 (spin singlets, value (151 − √6805)/1536) rises along every one-copy and every joint squeeze, yet is a saddle | identities **exact**, Hessians numerical |
 | 7.27 | inputs thick at every copy sit far above the product value; the per-copy factor under a thickness floor hardly depends on n; singlet minima are 7.7 to 109 times 4^{−n} for n ≤ 7 | numerical |
 | 7.28 | at two copies, λ_min(𝒫_{3/4}^{⊗2}(yyᵀ)) ≥ (¼ + ½τ)² for every input y of thickness τ | **proved** |
-| TC | λ_min(𝒫_{3/4}^{⊗n}(yyᵀ)) ≥ ∏_s(¼ + ½τ_s(y)), τ_s(y) the least eigenvalue of y's one-copy marginal; it contains QT at 3/4 | **open** (n = 2 proved, 7.28; n = 3, 4 adversarial searches) |
+| 7.29 | at three copies, λ_min(𝒫_{3/4}^{⊗3}(yyᵀ)) ≥ (1/64)(1 + (98/27)Σ_sτ_s) ≥ ∏_s(¼ + ½τ_s): Conjecture TC at n = 3 | **proved** (computer-assisted, exact rational certificate, two verifiers) |
+| TC | λ_min(𝒫_{3/4}^{⊗n}(yyᵀ)) ≥ ∏_s(¼ + ½τ_s(y)), τ_s(y) the least eigenvalue of y's one-copy marginal; it contains QT at 3/4 | **open** (n = 2, 3 proved: 7.28, 7.29; n = 4 adversarial searches) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -1034,6 +1037,59 @@ searches at n = 3, 4 (`code/thickness_bonus.py`), and for the weaker two-sided f
 The data of Observation 7.27 are consistent with it. With coefficient 0.7 instead of ½ it fails at the singlet pair of
 Observation 7.26.
 
+**Theorem 7.29 (the bonus at three copies; computer-assisted).** For every real unit vector y on three copies,
+
+    λ_min(𝒫_{3/4}^{⊗3}(yyᵀ)) ≥ (1/64)(1 + (98/27)(τ₁ + τ₂ + τ₃)) ≥ ∏_s (¼ + ½τ_s),
+
+with τ_s = τ_s(y) as in Conjecture TC. So Conjecture TC holds at n = 3.
+
+The second inequality is elementary. ∏_s(1 + 2τ_s) − 1 − (98/27)Σ_sτ_s is affine in each τ_s, so its maximum on
+[0, ⅓]³ is at a vertex. With k coordinates equal to ⅓ it is (5/3)^k − 1 − 98k/81, which is negative for k = 1, 2 and
+zero for k = 3.
+
+*Proof (computer-assisted).* Write t = 1/64 and κ = 98/27. For real x, y on three copies and real w₀, w₁, w₂ ∈ R³ let
+W = |w₀|²|w₁|²|w₂|², let ρ^y_s = Tr_{≠s} yyᵀ, and let
+
+    P(x, y, w) = f(x, y)|y|²W − t|x|²|y|⁴W − tκ|x|²|y|² Σ_s ⟨w_s|ρ^y_s|w_s⟩ W/|w_s|²,    f(x, y) = ⟨y|𝒫_{3/4}^{⊗3}(xxᵀ)|y⟩.
+
+The certificate is an exact polynomial identity
+
+    P = Avg_σ [ ⟨Ψ|Z₀ ⊗ I_w + Z₁|Ψ⟩ + Tr(Λ(x, y) G(y, w₀)) |w₁|²|w₂|² ] ∘ σ,
+
+where σ runs over the permutations of the copies, Ψ = x ⊗ y ⊗ y ⊗ w with the strands x, y, y′, w at each copy,
+G(y, w₀) = |w₀|²ρ^y_0 − ⟨w₀|ρ^y_0|w₀⟩I and Λ(x, y)_{ij} = ⟨e_i ⊗ x ⊗ y|L|e_j ⊗ x ⊗ y⟩. Here Z₀ acts on x, y, y′ at every
+copy, Z₁ on x, y, y′, w at copy 0 and on x, y, y′ at copies 1 and 2, and L on (e_i, x, y) at copy 0 and on (x, y) at
+copies 1 and 2. All three are positive semidefinite. If each w_s is a least eigenvector of ρ^y_s, then G ⪰ 0, so the
+right side is nonnegative. At unit x, y, w_s this is f(x, y) ≥ t(1 + κΣ_sτ_s), the first inequality.
+
+Z₀, Z₁ and L are rational combinations of Brauer diagrams, so they commute with O(3) at each copy. Positivity
+therefore reduces to exact Gram blocks on the m = 0 vectors of each spin sector. Real product vectors x = y force
+zeros: Sym³(R³) at a copy with strands x, y, y′; span{e ⊗ e ⊗ e ⊗ w : w ⊥ e} (spins 1 to 4) at the copy of Z₁ that
+carries w; and e ⊗ e at the two-strand copies of L. The certificate has exactly these kernels and is positive definite
+on the rest; the least LDLᵀ pivot of the reduced blocks is 0.0069. The identity is checked on orbit sums. On real
+vectors, the quadratic form of a product of diagrams depends only on its orbit under exchanging the two x legs,
+permuting the four y legs, exchanging the two legs of w_s at a copy, and (because of the average) permuting the copies.
+At d = 3 the 105 diagrams on four strands span only 91 dimensions, and the identity uses 19 of the operator relations
+among them. All 190 orbit equations hold exactly. There are two verifiers, written separately. The second rebuilds the
+diagrams, the target, the group, the spin bases and the forced kernels from scratch, and takes only the operators from
+the certificate. Both sides also agree at random real points, computed from the definition of 𝒫_{3/4}, to 3.4·10⁻¹⁵
+relative (`code/tc3/`). ∎
+
+The variable w is what makes this work. Simple stand-ins for τ_s in terms of x and y fail. For example
+½(1 − Tr ρ^x_s ρ^y_s), which is at least τ_s(y) for unit vectors, gives an operator that is not block positive: take a
+maximally entangled y on a plane and the singlet x in the same plane. With w but without the second output copy y′,
+the same scheme reaches only κ ≈ 0.33 at two copies. With y′ it reaches the exact best constant 5 at two copies,
+attained at the maximally entangled vector. At three copies it reaches κ ≈ 4.125, while the best constant is 5 to
+search accuracy, attained at e ⊗ Ω̂ (`code/tc3/kappa_scan.py`, `code/tc3/tc3_numerics.py`).
+
+Theorem 7.29 says nothing about more copies, and positivity at three copies was already known (Theorem 7.13). What is
+new is the quantitative bonus for thick inputs. The bonus does not pass through conditioning on a copy. The vector
+y = ½[e₁ ⊗ (e₁e₁ + e₂e₃) + e₂ ⊗ (e₁e₂ + e₃e₃)] is thin at the first copy and has τ = ¼ at the other two, yet every
+conditional vector (fᵀ ⊗ I)y with f in the plane of the first copy has Schmidt coefficients (1/√2, 1/√2, 0). So peeling
+as in Proposition 7.8, with Proposition 7.28 applied to the conditional vectors, gives only 1/32, below the TC value
+9/256; the true value is 0.0774 (`code/tc3/tc3_numerics.py`). We have not tried four copies. There Z₁ would have about
+3·10⁵ block coordinates.
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
@@ -1124,7 +1180,9 @@ gives the biased search for thick critical points there (`logs/thick_critical_po
 checks Observation 7.26 (exact identities and Hessians), the singlet minima and the tests of Conjecture TC
 (`logs/thick_sector.log`); `code/thickness_floor.py` gives the table of Observation 7.27(a)
 (`logs/thickness_floor.log`); `code/thickness_bonus.py` checks Proposition 7.28 on a grid of Schmidt
-coefficients and searches for violations of Conjecture TC at three and four copies (`logs/thickness_bonus.log`). `code/planar_minimum.py n starts seed` gives the numerics of Conjecture PM
+coefficients and searches for violations of Conjecture TC at three and four copies (`logs/thickness_bonus.log`). `code/tc3/` proves Theorem 7.29: the certificate is
+`code/tc3/cert/tc3_certificate.json.xz`, `verify_tc3.py` is the separately written exact verifier, `check_float.py` the check
+at random points, and `run_checks.sh` reruns everything (`code/tc3/README.md`, logs in `code/tc3/logs/`). `code/planar_minimum.py n starts seed` gives the numerics of Conjecture PM
 (`logs/planar_minimum_n3.log`, `logs/planar_minimum_n4.log`).
 
 Python with NumPy, SciPy (HiGHS) and SymPy; `code/dps/` and `code/symmetric_sector/` also use python-flint, and CVXPY

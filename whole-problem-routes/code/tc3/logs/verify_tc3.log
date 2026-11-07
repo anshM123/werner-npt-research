@@ -1,0 +1,11 @@
+decoded: Z0 3375 Z1 20475 L 135 coefficients [0.5s]
+(A) relations are zero operators: True [0.5s]
+collected 21206 diagram tuples [0.6s]
+(B) orbits touched 190 ; non-zero orbit sums 0 [17.1s]
+spin multiplicities {2: {0: 1, 1: 1, 2: 1}, 3: {0: 1, 1: 3, 2: 2, 3: 1}, 4: {0: 3, 1: 6, 2: 6, 3: 3, 4: 1}} [17.2s]
+forced kernels {3: {0: 0, 1: 1, 2: 0, 3: 1}, 4: {0: 0, 1: 1, 2: 1, 3: 1, 4: 1}, 2: {0: 1, 1: 0, 2: 1}} [17.2s]
+(C) Z0 positive semidefinite: True [23.3s]
+(C) L positive semidefinite: True [23.4s]
+(C) Z1 positive semidefinite: True [103.9s]
+PASS
+exit 0

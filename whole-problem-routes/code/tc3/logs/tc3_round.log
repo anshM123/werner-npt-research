@@ -1,0 +1,13 @@
+rounded 174 blocks [0.1s]
+residual after rounding: max 5.184917959845914e-08 [1.0s]
+candidate diagonal entries 1305 [1.0s]
+float rank of correction columns 189 cond of chosen 1152092.5155168965 [60.4s]
+exact correction columns built [61.9s]
+exact rank of chosen columns 189 [61.9s]
+left null space dimension 1 [61.9s]
+  u . target = 0   u . residual = 0 [61.9s]
+correction max 5.286950526721045e-05 [61.9s]
+orbit equations violated after correction: 0 [64.2s]
+all reduced blocks positive definite; least LDL pivot 0.006938523441117861 [71.9s]
+certificate written; PASS [71.9s]
+EXIT 0

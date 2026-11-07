@@ -31,7 +31,10 @@ statements, and the plane witnesses are local minima in the full qutrit space). 
 copies at which both the input and the output have full support, and it would have to be a strict minimum along every
 one-copy squeeze toward a plane (from a critical point such a squeeze moves the value monotonically, by an exact formula).
 That alone does not settle it: a balanced pair of spin singlets at four copies is such a minimum but a saddle overall.
-In every search, inputs with full support sit far above the product value. The general case is open.
+In every search, inputs with full support sit far above the product value. We conjecture a multiplicative bonus,
+λ_min ≥ ∏_s(¼ + ½τ_s) with τ_s the least eigenvalue of the input's one-copy marginal (Conjecture TC). It is proved for
+two copies and, with an exact computer-assisted certificate that uses a variable for the least eigenvector, for three
+copies (Theorem 7.29). It does not extend to more copies by itself. The general case is open.
 
 ## Contents
 

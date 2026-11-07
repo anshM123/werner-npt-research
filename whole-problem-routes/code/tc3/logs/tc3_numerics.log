@@ -1,0 +1,5 @@
+1. two copies: least linear constant on the grid 5.001066; at the maximally entangled vector 5.000000000000 (lambda_min = 0.270833333333 = 13/48)
+2. three copies: smallest linear constant found 5.00332
+3. pencil input: tau = [0.   0.25 0.25], lambda_min = 0.077393, TC value 0.035156, conditional Schmidt coefficients (1/sqrt2, 1/sqrt2, 0) to 1.1e-16
+PASS
+exit 0
