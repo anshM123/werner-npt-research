@@ -649,7 +649,10 @@ k₃ = 0, because u ≥ 1. So Υ_t^{⊗n} is decomposable at u = 2^{1/n}. For sm
 power gives terms Υ_{t_n}^{⊗k} ⊗ (entanglement breaking), k ≤ n, and Υ_{t_n}^{⊗k} is decomposable by induction on n
 (as t_n ≤ t_k). Decomposability survives tensoring with entanglement-breaking maps and composing with Ad_Y. ∎
 
-For n = 2 and 3 this is [FM, Example 3] (n = 3 numerically there). The theorem also proves the decomposability
+For n = 2 and 3 this is [FM, Example 3] (n = 3 numerically there). At n = 2 the equivalence of (i) and (ii) is also a
+case of Müller-Hermes's theorem that every positive tensor square of a qubit map is decomposable [A. Müller-Hermes,
+arXiv:2006.14543 (2020)]. For n ≥ 3 we know of no general result of that kind; Theorem 7.18 gives it for this family.
+The theorem also proves the decomposability
 thresholds of 𝒬_a computed after Proposition 7.3 for every n. The certificate was found by computing the
 minimum-norm solution of that linear program in the form P + P^Γ for n = 2, 3, 4 and reading off its pattern.
 `code/plane_threshold_check.py` (`logs/plane_threshold_check.log`) checks the matrix γ from explicit partial transposes,
