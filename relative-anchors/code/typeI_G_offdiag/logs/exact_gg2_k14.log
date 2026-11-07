@@ -1,0 +1,13 @@
+point 0 (m=3, u=6, mode 0): cumulative failures {'O': 0, 'D': 0, 'G': 0}
+point 1 (m=3, u=4, mode 1): cumulative failures {'O': 2, 'D': 0, 'G': 0}
+point 2 (m=4, u=6, mode 2): cumulative failures {'O': 2, 'D': 0, 'G': 0}
+point 3 (m=2, u=6, mode 3): cumulative failures {'O': 2, 'D': 0, 'G': 0}
+point 4 (m=2, u=4, mode 0): cumulative failures {'O': 2, 'D': 0, 'G': 0}
+point 5 (m=3, u=5, mode 1): cumulative failures {'O': 2, 'D': 0, 'G': 0}
+point 6 (m=3, u=2, mode 2): cumulative failures {'O': 2, 'D': 0, 'G': 0}
+point 7 (m=2, u=5, mode 3): cumulative failures {'O': 2, 'D': 0, 'G': 0}
+point 8 (m=4, u=6, mode 0): cumulative failures {'O': 2, 'D': 0, 'G': 0}
+point 9 (m=4, u=4, mode 1): cumulative failures {'O': 4, 'D': 0, 'G': 0}
+point 10 (m=3, u=4, mode 2): cumulative failures {'O': 4, 'D': 0, 'G': 0}
+point 11 (m=2, u=6, mode 3): cumulative failures {'O': 4, 'D': 0, 'G': 0}
+kappa = 1/4: 74 off-diagonal blocks, 35 diagonal blocks at 12 rational points; exact failures {'O': 4, 'D': 0, 'G': 0}

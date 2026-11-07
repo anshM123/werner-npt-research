@@ -1,0 +1,4 @@
+(i) identity: True
+(ii) identity: True ; value at q=1/2: 2/9
+     derivative numerator: -q*(q**2 + 2*q - 4) (positive on (0, 1/2]: q(... ) with (1-q)>0 factors)
+(iii) partial fractions: True

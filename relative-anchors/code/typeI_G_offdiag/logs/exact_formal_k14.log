@@ -1,0 +1,21 @@
+point 0: formal n=3 sigma=51425/50176 wa=11/16 wb=33/56 x=['11/20', '1', '4/5'] m=['1/43', '27/43', '15/43']: pass
+point 1: physical n=1 sigma=65 wa=4 wb=7 x=['1'] m=['1']: FAIL
+point 2: formal n=2 sigma=29/512 wa=7/32 wb=3/32 x=['0', '3/10'] m=['14/23', '9/23']: pass
+point 3: physical n=2 sigma=18 wa=3 wb=3 x=['1/2', '1/2'] m=['1/2', '1/2']: FAIL
+point 4: formal n=1 sigma=27/256 wa=3/16 wb=3/16 x=['3/10'] m=['1']: pass
+point 5: physical n=3 sigma=3825/50176 wa=3/16 wb=9/56 x=['7/54', '1/3', '29/54'] m=['7/54', '1/3', '29/54']: pass
+point 6: formal n=4 sigma=61/4096 wa=3/32 wb=5/64 x=['9/20', '0', '11/20', '13/20'] m=['3/25', '3/5', '1/10', '9/50']: pass
+point 7: physical n=3 sigma=39/8 wa=1 wb=3/2 x=['3/25', '2/5', '12/25'] m=['3/25', '2/5', '12/25']: pass
+point 8: formal n=2 sigma=39/16384 wa=5/128 wb=1/128 x=['3/4', '3/4'] m=['23/29', '6/29']: pass
+point 9: physical n=4 sigma=149/16 wa=7/4 wb=5/2 x=['1/59', '18/59', '26/59', '14/59'] m=['1/59', '18/59', '26/59', '14/59']: pass
+point 10: formal n=4 sigma=4590/49 wa=6 wb=36/7 x=['1/20', '1/4', '19/20', '3/10'] m=['4/67', '25/67', '8/67', '30/67']: pass
+point 11: physical n=3 sigma=4320 wa=48 wb=24 x=['25/44', '15/44', '1/11'] m=['25/44', '15/44', '1/11']: pass
+point 12: formal n=1 sigma=351/512 wa=3/8 wb=9/16 x=['13/20'] m=['1']: pass
+point 13: physical n=2 sigma=174 wa=4 wb=10 x=['11/20', '9/20'] m=['11/20', '9/20']: pass
+point 14: formal n=3 sigma=73/64 wa=1 wb=3/8 x=['1/4', '1/10', '1'] m=['5/52', '6/13', '23/52']: pass
+point 15: physical n=1 sigma=425 wa=14 wb=12 x=['1'] m=['1']: pass
+point 16: formal n=3 sigma=125/16384 wa=1/16 wb=3/64 x=['2/5', '7/10', '1'] m=['2/3', '5/21', '2/21']: pass
+point 17: physical n=2 sigma=85/512 wa=11/32 wb=7/32 x=['24/43', '19/43'] m=['24/43', '19/43']: pass
+point 18: formal n=2 sigma=119/8 wa=5/2 wb=3/2 x=['13/20', '11/20'] m=['5/7', '2/7']: pass
+point 19: physical n=2 sigma=432 wa=12 wb=12 x=['17/32', '15/32'] m=['17/32', '15/32']: pass
+kappa = 1/4: 20 points, exact failures: 2

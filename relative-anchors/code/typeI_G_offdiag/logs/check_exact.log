@@ -1,0 +1,9 @@
+point 0: m=2 u=5 wT=['248/25', '248/25'] wU=['506943249008/1279678625257', '1060442510680/1279678625257', '351620411436/1279678625257', '300682433408/1279678625257', '204940889695/1279678625257']: all off-diagonal blocks equal
+point 1: m=3 u=1 wT=['112/39', '4/29', '24/5'] wU=['1']: all off-diagonal blocks equal
+point 2: m=4 u=1 wT=['2', '4/35', '2/25', '1'] wU=['1']: all off-diagonal blocks equal
+point 3: m=4 u=1 wT=['240/29', '240/29', '240/23', '16'] wU=['1']: all off-diagonal blocks equal
+point 4: m=3 u=3 wT=['28/3', '38', '32/3'] wU=['4320/4393', '768/4393', '215/4393']: all off-diagonal blocks equal
+point 5: m=3 u=5 wT=['132/13', '304/3', '31/2'] wU=['161492122645686/384110603814835', '272352778759908/384110603814835', '21727587173796/76822120762967', '116255078498874/384110603814835', '148215281943167/384110603814835']: all off-diagonal blocks equal
+point 6: m=4 u=4 wT=['12/29', '12/29', '11/17', '13/6'] wU=['69619662/198194789', '40335201/198194789', '75106926/198194789', '164822020/198194789']: all off-diagonal blocks equal
+point 7: m=3 u=1 wT=['6/5', '160/19', '152/13'] wU=['1']: all off-diagonal blocks equal
+62 off-diagonal blocks at 8 rational points: closed form = R_raw exactly: PASS
