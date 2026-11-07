@@ -1,0 +1,2 @@
+MT/sym/n,n,n,0
+MT/sym/n,n,0,n

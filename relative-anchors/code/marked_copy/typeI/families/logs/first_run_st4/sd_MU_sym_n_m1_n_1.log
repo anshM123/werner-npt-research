@@ -1,0 +1,14 @@
+MU sym [q0>=4, t=-1, i>=2, tp=1]
+  form: 8 vectors, largest entry 131 terms [0.1s]
+  split: 1 split blocks, parts 7 + 1, block-diagonal identically [0.2s]
+  preliminaries: symmetric, 18 sanity points, 15 intermediate denominators and the entry denominators one-signed, 1 kernel vectors in the first part annihilated, gauge ['O1']; Q2g 6 x 6 (largest entry 137 terms), Q3 1 x 1 (largest entry 63 terms) [0.2s]
+  Q3 (1 x 1) positive definite: pivots [('S11', 43, 20, 0.0)] (one-signed after the shifts) [0.0s]
+  5 irreducible factors, exponents of D* [4, 2, 5, 5, 2]; bounds {'q0': 29, 'i': 33}; slices in q0: 0..29 [0.2s]
+    slice q0 = 4: det 250/253 terms [0.0s]
+    slice q0 = 24: det 250/253 terms [0.0s]
+  D_c = D*; D* det is a polynomial on every slice [0.9s]
+  N~: 6776 terms after the shifts, degrees (29, 32, 33), 0 negative coefficients, a positive one free of the sizes: True; no term in y^30 through the extra node [0.9s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [0.9s]
+MU sym [q0>=4, t=-1, i>=2, tp=1] PD on complement (determinant route with the split, one size sliced) (0.9s)
+1 families proved of 1; 1s
+PASS

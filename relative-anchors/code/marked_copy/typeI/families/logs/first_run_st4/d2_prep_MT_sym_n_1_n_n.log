@@ -1,0 +1,10 @@
+MT/sym/n,1,n,n
+  form: 13 vectors, largest entry 308 terms [0.2s]
+  split: 2 split blocks, parts 11 + 2, block-diagonal identically [0.7s]
+  preliminaries: symmetric, 54 sanity points, 41 intermediate denominators and the entry denominators one-signed, 1 kernel vectors in the first part annihilated, gauge ['CM']; Q2g 10 x 10 (largest entry 384 terms), Q3 2 x 2 (largest entry 100 terms) [0.7s]
+  Q3: 2 pivots one-signed: [('S1', 64, 35, 0.0), ('S0', 201, 125, 0.0)] [0.8s]
+  Q2g 10 x 10; 14 irreducible factors, exponents of D* [5, 4, 4, 5, 2, 4, 4, 5, 2, 4, 4, 8, 2, 4]; deg_i T <= B_i = 14, deg_q0 T <= B_v = 66 [0.8s]
+  observed multiplicities on the probes [(22, 7), (33, 13), (44, 4), (66, 14)]: [3, 2, 2, 0, 2, 4, 4, 3, 2, 2, 2, 5, 2, 4]
+  D_c exponents [3, 2, 2, 5, 2, 4, 4, 3, 2, 2, 2, 5, 2, 4] (constant on slices: [3]); deg_q0 R = 17, L_v = 49 [3.1s]
+  Q2g positive definite at the minimal member, sigma = 1; factors of D_c positive after the shifts; grid 67 x 15 = 1005 slices [3.1s]
+PASS

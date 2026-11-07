@@ -1,0 +1,12 @@
+MT sym [q0>=4, t>=4, i>=2, tp>=2]
+  form: 13 vectors, largest entry 1558 terms [1.1s]
+  split: 2 split blocks, parts 11 + 2, block-diagonal identically [3.3s]
+  preliminaries: symmetric, 162 sanity points, 70 intermediate denominators and the entry denominators one-signed, 1 kernel vectors in the first part annihilated, gauge ['CM']; Q2g 10 x 10 (largest entry 1923 terms), Q3 2 x 2 (largest entry 524 terms) [3.4s]
+    pivot S1: num 336 terms, den 170 terms (0.0s)
+    pivot S0: num 1189 terms, den 652 terms (0.0s)
+  Q3 elimination: OK; pivots [('S1', 336, 170, 0.0), ('S0', 1189, 652, 0.0)] [3.4s]
+  Q2g: structure holds (denominators free of i, degree 2 in i at fixed nu) [0.0s]
+  Q2g: 10 x 10, numerators up to 711 terms, denominators up to 402; 23 irreducible factors, exponents of D* [5, 5, 4, 4, 5, 4, 4, 2, 5, 4, 4, 2, 4, 4, 2, 1, 4, 4, 4, 2, 4, 4, 1]; degree bounds of T = D* det: {'q0': 99, 't': 104, 'i': 14, 'nu': 101, 's': 99} [0.1s]
+  Q2g: one slice ({'q0': 4, 't': 4, 'i': 2} fixed, det over Q(nu, s)): 2475/2346 terms, 9.3s
+  total 12.8s
+PASS

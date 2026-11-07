@@ -1,0 +1,3 @@
+MU/sym/n,1,0,n: 1 families proved of 1; 1063s / PASS
+MU/sym/n,3,0,n:     slice q0 = 84: det 2272/2415 terms [11.7s] /     slice q0 = 104: det 2272/2415 terms [11.4s]
+run_sd.sh lists/MU_sym_2e_cheap.txt done Fri Nov  6 13:48:09 EST 2026

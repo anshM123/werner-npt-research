@@ -1,0 +1,11 @@
+run_verify_st4.sh started Fri Nov  6 14:00:15 EST 2026
+worker 0: PASS
+worker 1: PASS
+sd 2d: 24 PASS of 24
+d2: 10 PASS of 10
+d3: 2 PASS of 2
+sd 2e: 10 PASS of 11
+q3cert: PASS
+negdet: FAIL (expected: the scaled forms are caught) (expected FAIL)
+coverage: PASS
+run_verify_st4.sh done Fri Nov  6 20:39:02 EST 2026

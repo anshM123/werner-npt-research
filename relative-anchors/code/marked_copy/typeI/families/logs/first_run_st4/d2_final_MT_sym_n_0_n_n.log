@@ -1,0 +1,10 @@
+  form: 8 vectors, largest entry 67 terms [0.0s]
+  split: 1 split blocks, parts 7 + 1, block-diagonal identically [0.2s]
+  preliminaries: symmetric, 54 sanity points, 24 intermediate denominators and the entry denominators one-signed, 1 kernel vectors in the first part annihilated, gauge ['CM']; Q2g 6 x 6 (largest entry 86 terms), Q3 1 x 1 (largest entry 45 terms) [0.2s]
+  all 253 slices and 23 columns present [0s]
+  1507 monomials z^l nu^a s^b over the columns [0s]
+    chunk 1/1 (1507 monomials) interpolated in y; so far nonzero above y^18: 0, after the substitution 15426 positive, 0 negative [0s]
+  N~(y, z, nu, s): 12288 terms; coefficients of y^k with k > L_v = 18: 0 nonzero [0s]
+  N~ with nu = tau1 + 2i, i = 2 + z, tau1 = 2 + w: 15426 positive and 0 negative coefficients, degrees (y, z, w, s) <= (18, 20, 19, 19), a positive one free of y, z, w: True [0s]
+MT sym [q0>=4, t=0, i>=2, tp>=2] PD on complement (determinant route with the split, two sizes sliced)
+PASS

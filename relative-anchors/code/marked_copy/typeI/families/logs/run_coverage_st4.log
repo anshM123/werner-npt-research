@@ -1,0 +1,18 @@
+closed form of the presence of twisted vectors equals tlib.norm_of on all 141120 forms with k <= 30
+k=8: Theorem I1 165, j=k-1 (Corollary M1) 51
+k=29: Theorem I1 9404, j=k-1 (Corollary M1) 261
+k=30: family 7352, j=k-1 (Corollary M1) 271, open 3032
+k=40: family 15977, j=k-1 (Corollary M1) 371, open 8092
+k=60: family 48477, j=k-1 (Corollary M1) 571, open 30312
+k=80: family 107977, j=k-1 (Corollary M1) 771, open 75332
+k=100: family 202477, j=k-1 (Corollary M1) 971, open 151152
+k=120: family 339977, j=k-1 (Corollary M1) 1171, open 265772
+k = 4..120: Theorem I1 73467, family 10792247, j=k-1 (Corollary M1) 69148, open 7857122
+MT sym: 30 <= k <= 120: 1688971 forms in proved families; not covered: 3152496 (by symbolic sizes of the canonical family: {3: 320832, 4: 2831664}); smallest k not covered: 30
+MT anti: 30 <= k <= 120: 4418101 forms in proved families; not covered: 0 (by symbolic sizes of the canonical family: {}); smallest k not covered: none
+MU sym: 30 <= k <= 120: 127082 forms in proved families; not covered: 4704626 (by symbolic sizes of the canonical family: {2: 92251, 3: 1780711, 4: 2831664}); smallest k not covered: 30
+MU anti: 30 <= k <= 120: 4558093 forms in proved families; not covered: 0 (by symbolic sizes of the canonical family: {}); smallest k not covered: none
+MT sym: of the 3152496 forms not covered, 3152496 lie in a family whose three-row part Q3 is certified (or has no split block)
+MU sym: of the 4704626 forms not covered, 4704626 lie in a family whose three-row part Q3 is certified (or has no split block)
+families read: 412 proved, 0 empty, 83 with the three-row part certified
+PASS

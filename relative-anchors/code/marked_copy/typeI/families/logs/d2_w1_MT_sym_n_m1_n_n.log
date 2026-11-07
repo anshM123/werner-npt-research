@@ -1,0 +1,11 @@
+MT/sym/n,-1,n,n y=0 z=0: 6 terms [0.0s, total 0s]
+MT/sym/n,-1,n,n y=0 z=2: 6 terms [0.0s, total 0s]
+  column y=0: 6 monomials in (nu, s), 13 coefficients after interpolation in z [0.0s]
+MT/sym/n,-1,n,n y=1 z=0: 6 terms [0.0s, total 0s]
+MT/sym/n,-1,n,n y=1 z=2: 6 terms [0.0s, total 0s]
+  column y=1: 6 monomials in (nu, s), 13 coefficients after interpolation in z [0.0s]
+MT/sym/n,-1,n,n y=2 z=0: 6 terms [0.0s, total 0s]
+MT/sym/n,-1,n,n y=2 z=2: 6 terms [0.0s, total 0s]
+  column y=2: 6 monomials in (nu, s), 13 coefficients after interpolation in z [0.0s]
+MT/sym/n,-1,n,n worker 1/0: 9 slices, 0s
+PASS

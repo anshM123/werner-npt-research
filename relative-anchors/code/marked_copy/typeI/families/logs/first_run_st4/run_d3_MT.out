@@ -1,0 +1,8 @@
+prep MT/sym/n,n,0,n: PASS
+prep MT/sym/n,n,n,1: PASS
+prep MT/sym/n,n,1,n: PASS
+final MT/sym/n,n,n,0: PASS
+final MT/sym/n,n,0,n: PASS
+final MT/sym/n,n,n,1: AssertionError: 9306 slices missing, e.g. [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4)]
+final MT/sym/n,n,1,n: AssertionError: 9408 slices missing, e.g. [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4)]
+run_d3.sh lists/MT_sym_3e.txt done Fri Nov  6 12:13:14 EST 2026

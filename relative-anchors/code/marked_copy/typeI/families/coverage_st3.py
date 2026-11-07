@@ -8,6 +8,8 @@ outside the scope here (Corollary M1) and only counted.  A form with 3 <= j <= k
   - by Theorem I1 if k <= KFIX (29: the fixed-k certificates of ../typeI);
   - by a family if some family certified 'PD' in the pickles contains it (each size equal to the fixed value, or at
     least the minimum of a symbolic size).
+Pickles of q3cert.py (key 'results3') certify only the three-row part Q3 of a family: they cover no form, and for the
+forms left open the script counts those whose canonical family has Q3 certified (or no split block).
 Checked: every nonempty form has q0 >= -1, t >= -1 (MT) or t >= -2 (MU), i >= 0 and tau' >= 0 (MT) or >= 1 (MU), so
 it lies in exactly one family of famlist.py (its canonical family) and that family is listed there when k >= 30; no
 family reported empty contains a nonempty form.  Printed: per (case, mode) the forms with 30 <= k <= KCHK covered by
@@ -116,8 +118,15 @@ def main():
     kchk, kfix, kcmp = (int(x) for x in sys.argv[1:4])
     fams = {}
     empty = []
+    q3 = {}
     for p in sys.argv[4:]:
         d = pickle.load(open(p, 'rb'))
+        if 'results3' in d:
+            # certificates of the three-row parts only (q3cert.py): not counted as covering a form
+            for key, r in d['results3'].items():
+                if r.startswith('Q3 positive') or r.startswith('no split'):
+                    q3[key[:2] + tuple(None if isinstance(x, tuple) else x for x in key[2:])] = r
+            continue
         for key, r in d['results'].items():
             if r == 'empty':
                 empty.append(key)
@@ -162,6 +171,7 @@ def main():
     pcache, fcache = {}, {}
     cnt = Counter()
     unc = Counter()
+    q3cov = Counter()
     kmin_unc = {}
     per_k = {}
     for k in range(4, kchk + 1):
@@ -204,6 +214,8 @@ def main():
             row['open'] += 1
             ns = sum(v is None for v in canon)
             unc[(case, mode, ns)] += 1
+            if mode == 'anti' or (case, mode) + canon in q3:
+                q3cov[(case, mode)] += 1
             kmin_unc[(case, mode)] = min(kmin_unc.get((case, mode), 10 ** 9), k)
         per_k[k] = row
     for k in (8, 29, 30, 40, 60, 80, 100, 120):
@@ -219,7 +231,12 @@ def main():
             print(f'{c} {mo}: 30 <= k <= {kchk}: {cnt[(c, mo, "family")]} forms in proved families; not covered: '
                   f'{sum(u.values())} (by symbolic sizes of the canonical family: {u}); smallest k not covered: '
                   f'{kmin_unc.get((c, mo), "none")}')
-    print(f'families read: {len(fams)} proved, {len(empty)} empty')
+    if q3:
+        for c in ('MT', 'MU'):
+            nu_ = sum(unc[(c, 'sym', ns)] for ns in range(1, 5))
+            print(f'{c} sym: of the {nu_} forms not covered, {q3cov[(c, "sym")]} lie in a family whose three-row part '
+                  f'Q3 is certified (or has no split block)')
+    print(f'families read: {len(fams)} proved, {len(empty)} empty, {len(q3)} with the three-row part certified')
     print('PASS' if ok else 'FAIL')
 
 

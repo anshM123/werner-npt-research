@@ -1,0 +1,21 @@
+prep MT/sym/-1,n,n,n: PASS
+prep MT/sym/0,n,n,n: PASS
+prep MT/sym/1,n,n,n: PASS
+prep MT/sym/2,n,n,n: PASS
+prep MT/sym/3,n,n,n: PASS
+prep MT/sym/n,-1,n,n: PASS
+prep MT/sym/n,0,n,n: PASS
+prep MT/sym/n,1,n,n: PASS
+prep MT/sym/n,2,n,n: PASS
+prep MT/sym/n,3,n,n: PASS
+final MT/sym/-1,n,n,n: PASS
+final MT/sym/0,n,n,n: PASS
+final MT/sym/1,n,n,n: PASS
+final MT/sym/2,n,n,n: PASS
+final MT/sym/3,n,n,n: PASS
+final MT/sym/n,-1,n,n: PASS
+final MT/sym/n,0,n,n: PASS
+final MT/sym/n,1,n,n: PASS
+final MT/sym/n,2,n,n: PASS
+final MT/sym/n,3,n,n: PASS
+run_d2.sh lists/MT_sym_3d.txt done Fri Nov  6 18:53:41 EST 2026

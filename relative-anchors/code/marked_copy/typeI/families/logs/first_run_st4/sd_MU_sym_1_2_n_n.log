@@ -1,0 +1,22 @@
+MU sym [q0=1, t=2, i>=2, tp>=2]
+  form: 20 vectors, largest entry 240 terms [0.7s]
+  split: 3 split blocks, parts 17 + 3, block-diagonal identically [1.2s]
+  preliminaries: symmetric, 18 sanity points, 42 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 15 x 15 (largest entry 311 terms), Q3 3 x 3 (largest entry 131 terms) [1.2s]
+  Q3 (3 x 3) positive definite: pivots [('S00', 50, 35, 0.0), ('S01', 77, 56, 0.0), ('S10', 154, 120, 0.0)] (one-signed after the shifts) [0.0s]
+  structure: every entry of the gauge-fixed form (15 x 15) is p/d with d free of i and deg_i p <= 2 [1.3s]
+  17 irreducible factors of the entry denominators, exponents of D* [9, 8, 6, 2, 4, 8, 8, 8, 4, 9, 8, 7, 4, 5, 9, 8, 4]; deg_i T <= B = 26 [2.0s]
+    slice i = 2: det 3861/3570 terms [24.7s]
+    slice i = 7: det 3861/3570 terms [27.4s]
+    slice i = 12: det 3861/3570 terms [28.3s]
+    slice i = 17: det 3861/3570 terms [28.7s]
+    slice i = 22: det 3861/3570 terms [28.8s]
+    slice i = 27: det 3861/3570 terms [29.6s]
+  D_c exponents [7, 6, 3, 1, 2, 3, 6, 6, 2, 5, 2, 1, 2, 3, 3, 2, 1]; every slice gives a polynomial D_c det [795.8s]
+  interpolation over z = 0..27: the coefficient of z^27 vanishes for all 3861 monomials
+  N~(z, nu, s): 75797 terms, degrees (22, 87, 86) [796.2s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 142649 terms, 0 negative coefficients, a positive one free of z, w: True [796.9s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [796.9s]
+MU sym [q0=1, t=2, i>=2, tp>=2] PD on complement (determinant route with the split) (796.9s)
+1 families proved of 1; 797s
+PASS

@@ -1,0 +1,222 @@
+MU sym [q0>=4, t>=4, i=0, tp=1]
+  form: 14 vectors, largest entry 315 terms [0.1s]
+  split: 0 split blocks, parts 14 + 0, block-diagonal identically [0.3s]
+  preliminaries: symmetric, 18 sanity points, 26 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 12 x 12 (largest entry 315 terms), Q3 0 x 0 (largest entry 0 terms) [0.3s]
+  Q3 empty (no split block)
+  13 irreducible factors, exponents of D* [2, 6, 8, 4, 6, 8, 4, 2, 4, 8, 4, 4, 3]; bounds {'q0': 118, 't': 117}; slices in t: 0..117 [0.4s]
+    slice t = 4: det 2012/2412 terms [7.4s]
+    slice t = 24: det 2012/2412 terms [10.3s]
+    slice t = 44: det 2012/2412 terms [12.1s]
+    slice t = 64: det 2012/2412 terms [11.9s]
+    slice t = 84: det 2012/2412 terms [13.3s]
+    slice t = 104: det 2012/2412 terms [13.3s]
+  D_c = D*; D* det is a polynomial on every slice [1454.1s]
+  N~: 554215 terms after the shifts, degrees (117, 115, 119), 0 negative coefficients, a positive one free of the sizes: True; no term in y^118 through the extra node [1464.9s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [1464.9s]
+MU sym [q0>=4, t>=4, i=0, tp=1] PD on complement (determinant route with the split, one size sliced) (1464.9s)
+1 families proved of 1; 1465s
+PASS
+MU sym [q0=2, t>=4, i=0, tp>=2]
+  form: 14 vectors, largest entry 187 terms [0.1s]
+  split: 0 split blocks, parts 14 + 0, block-diagonal identically [0.3s]
+  preliminaries: symmetric, 18 sanity points, 28 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 12 x 12 (largest entry 187 terms), Q3 0 x 0 (largest entry 0 terms) [0.3s]
+  Q3 empty (no split block)
+  13 irreducible factors, exponents of D* [6, 8, 6, 8, 8, 2, 8, 4, 8, 4, 4, 2, 3]; bounds {'t': 135, 'tp': 140}; slices in t: 0..135 [0.4s]
+    slice t = 4: det 2622/2775 terms [10.5s]
+    slice t = 24: det 2622/2775 terms [13.6s]
+    slice t = 44: det 2622/2775 terms [14.4s]
+    slice t = 64: det 2622/2775 terms [15.6s]
+    slice t = 84: det 2622/2775 terms [16.1s]
+    slice t = 104: det 2622/2775 terms [16.4s]
+    slice t = 124: det 2622/2775 terms [17.4s]
+  D_c = D*; D* det is a polynomial on every slice [2139.6s]
+  N~: 483470 terms after the shifts, degrees (135, 138, 137), 0 negative coefficients, a positive one free of the sizes: True; no term in y^136 through the extra node [2152.9s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [2152.9s]
+MU sym [q0=2, t>=4, i=0, tp>=2] PD on complement (determinant route with the split, one size sliced) (2152.9s)
+1 families proved of 1; 2153s
+PASS
+MU sym [q0=3, t>=4, i=0, tp>=2]
+  form: 14 vectors, largest entry 194 terms [0.1s]
+  split: 0 split blocks, parts 14 + 0, block-diagonal identically [0.3s]
+  preliminaries: symmetric, 18 sanity points, 29 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 12 x 12 (largest entry 194 terms), Q3 0 x 0 (largest entry 0 terms) [0.3s]
+  Q3 empty (no split block)
+  13 irreducible factors, exponents of D* [4, 6, 8, 6, 8, 8, 8, 8, 4, 4, 4, 2, 3]; bounds {'t': 141, 'tp': 146}; slices in t: 0..141 [0.4s]
+    slice t = 4: det 2695/2850 terms [11.9s]
+    slice t = 24: det 2695/2850 terms [15.6s]
+    slice t = 44: det 2695/2850 terms [16.5s]
+    slice t = 64: det 2695/2850 terms [17.6s]
+    slice t = 84: det 2695/2850 terms [17.8s]
+    slice t = 104: det 2695/2850 terms [18.8s]
+    slice t = 124: det 2695/2850 terms [19.2s]
+    slice t = 144: det 2695/2850 terms [18.8s]
+  D_c = D*; D* det is a polynomial on every slice [2530.9s]
+guard: memory 1404616 KB above 1.2 GB, killed PID 54128
+MU sym [q0>=4, t=1, i=0, tp>=2]
+  form: 14 vectors, largest entry 153 terms [0.1s]
+  split: 0 split blocks, parts 14 + 0, block-diagonal identically [0.2s]
+  preliminaries: symmetric, 18 sanity points, 23 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 12 x 12 (largest entry 153 terms), Q3 0 x 0 (largest entry 0 terms) [0.2s]
+  Q3 empty (no split block)
+  13 irreducible factors, exponents of D* [6, 8, 4, 2, 2, 4, 8, 8, 4, 2, 8, 8, 6]; bounds {'q0': 115, 'tp': 116}; slices in q0: 0..115 [0.3s]
+    slice q0 = 4: det 2013/2211 terms [6.1s]
+    slice q0 = 24: det 2013/2211 terms [8.1s]
+    slice q0 = 44: det 2013/2211 terms [8.8s]
+    slice q0 = 64: det 2013/2211 terms [9.2s]
+    slice q0 = 84: det 2013/2211 terms [9.4s]
+    slice q0 = 104: det 2013/2211 terms [9.7s]
+  D_c = D*; D* det is a polynomial on every slice [1057.7s]
+  N~: 294935 terms after the shifts, degrees (110, 114, 113), 0 negative coefficients, a positive one free of the sizes: True; no term in y^116 through the extra node [1063.4s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [1063.4s]
+MU sym [q0>=4, t=1, i=0, tp>=2] PD on complement (determinant route with the split, one size sliced) (1063.4s)
+1 families proved of 1; 1063s
+PASS
+MU sym [q0>=4, t=2, i=0, tp>=2]
+  form: 14 vectors, largest entry 222 terms [0.1s]
+  split: 0 split blocks, parts 14 + 0, block-diagonal identically [0.2s]
+  preliminaries: symmetric, 18 sanity points, 26 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 12 x 12 (largest entry 222 terms), Q3 0 x 0 (largest entry 0 terms) [0.3s]
+  Q3 empty (no split block)
+  16 irreducible factors, exponents of D* [6, 8, 4, 4, 6, 8, 6, 8, 8, 4, 2, 2, 4, 8, 8, 4]; bounds {'q0': 142, 'tp': 146}; slices in q0: 0..142 [0.4s]
+    slice q0 = 4: det 2271/2415 terms [6.8s]
+    slice q0 = 24: det 2271/2415 terms [9.0s]
+    slice q0 = 44: det 2271/2415 terms [10.2s]
+    slice q0 = 64: det 2271/2415 terms [9.6s]
+    slice q0 = 84: det 2271/2415 terms [10.3s]
+    slice q0 = 104: det 2271/2415 terms [10.5s]
+    slice q0 = 124: det 2271/2415 terms [10.3s]
+    slice q0 = 144: det 2271/2415 terms [9.5s]
+  D_c = D*; D* det is a polynomial on every slice [1451.2s]
+guard: memory 1250080 KB above 1.2 GB, killed PID 10352
+MU sym [q0>=4, t=3, i=0, tp>=2]
+  form: 14 vectors, largest entry 222 terms [0.1s]
+  split: 0 split blocks, parts 14 + 0, block-diagonal identically [0.2s]
+  preliminaries: symmetric, 18 sanity points, 28 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 12 x 12 (largest entry 222 terms), Q3 0 x 0 (largest entry 0 terms) [0.2s]
+  Q3 empty (no split block)
+  17 irreducible factors, exponents of D* [6, 8, 4, 6, 8, 8, 4, 8, 8, 4, 6, 4, 8, 8, 4, 2, 2]; bounds {'q0': 142, 'tp': 146}; slices in q0: 0..142 [0.4s]
+    slice q0 = 4: det 2272/2415 terms [8.5s]
+    slice q0 = 24: det 2272/2415 terms [10.6s]
+    slice q0 = 44: det 2272/2415 terms [11.4s]
+    slice q0 = 64: det 2272/2415 terms [12.0s]
+    slice q0 = 84: det 2272/2415 terms [11.7s]
+    slice q0 = 104: det 2272/2415 terms [11.4s]
+stopped by hand at 13:48: same bounds as [n,2,0,n], whose interpolation exceeded the 1.2 GB cap
+MU sym [q0=1, t>=4, i=0, tp>=2]
+  form: 13 vectors, largest entry 194 terms [0.1s]
+  split: 0 split blocks, parts 13 + 0, block-diagonal identically [0.2s]
+  preliminaries: symmetric, 18 sanity points, 27 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 11 x 11 (largest entry 194 terms), Q3 0 x 0 (largest entry 0 terms) [0.2s]
+  Q3 empty (no split block)
+  12 irreducible factors, exponents of D* [5, 8, 8, 8, 4, 8, 3, 4, 4, 4, 2, 2]; bounds {'t': 110, 'tp': 115}; slices in t: 0..110 [0.3s]
+    slice t = 4: det 1534/1653 terms [3.9s]
+    slice t = 24: det 2010/2145 terms [5.5s]
+    slice t = 44: det 2010/2145 terms [6.1s]
+    slice t = 64: det 2010/2145 terms [6.2s]
+    slice t = 84: det 2010/2145 terms [6.6s]
+    slice t = 104: det 2010/2145 terms [6.4s]
+  D_c = D*; D* det is a polynomial on every slice [693.0s]
+  N~: 270620 terms after the shifts, degrees (110, 113, 111), 0 negative coefficients, a positive one free of the sizes: True; no term in y^111 through the extra node [697.7s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [697.8s]
+MU sym [q0=1, t>=4, i=0, tp>=2] PD on complement (determinant route with the split, one size sliced) (697.8s)
+1 families proved of 1; 698s
+PASS
+MU sym [q0=0, t>=4, i=1, tp>=2]
+  form: 12 vectors, largest entry 128 terms [0.1s]
+  split: 1 split blocks, parts 11 + 1, block-diagonal identically [0.2s]
+  preliminaries: symmetric, 18 sanity points, 36 intermediate denominators and the entry denominators one-signed, 1 kernel vectors in the first part annihilated, gauge ['O0']; Q2g 10 x 10 (largest entry 128 terms), Q3 1 x 1 (largest entry 50 terms) [0.2s]
+  Q3 (1 x 1) positive definite: pivots [('S00', 30, 20, 0.0)] (one-signed after the shifts) [0.0s]
+  11 irreducible factors, exponents of D* [7, 6, 5, 4, 7, 4, 6, 2, 2, 4, 4]; bounds {'t': 96, 'tp': 97}; slices in t: 0..96 [0.3s]
+    slice t = 4: det 1590/1653 terms [1.6s]
+    slice t = 24: det 1947/2016 terms [2.6s]
+    slice t = 44: det 1947/2016 terms [2.9s]
+    slice t = 64: det 1947/2016 terms [3.1s]
+    slice t = 84: det 1947/2016 terms [3.5s]
+  D_c = D*; D* det is a polynomial on every slice [289.9s]
+  N~: 169634 terms after the shifts, degrees (95, 95, 92), 0 negative coefficients, a positive one free of the sizes: True; no term in y^97 through the extra node [292.7s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [292.7s]
+MU sym [q0=0, t>=4, i=1, tp>=2] PD on complement (determinant route with the split, one size sliced) (292.7s)
+1 families proved of 1; 293s
+PASS
+MU sym [q0=0, t>=4, i>=2, tp=1]
+  form: 12 vectors, largest entry 132 terms [0.1s]
+  split: 1 split blocks, parts 11 + 1, block-diagonal identically [0.3s]
+  preliminaries: symmetric, 18 sanity points, 45 intermediate denominators and the entry denominators one-signed, 1 kernel vectors in the first part annihilated, gauge ['O0']; Q2g 10 x 10 (largest entry 153 terms), Q3 1 x 1 (largest entry 54 terms) [0.3s]
+  Q3 (1 x 1) positive definite: pivots [('S00', 34, 20, 0.0)] (one-signed after the shifts) [0.0s]
+  11 irreducible factors, exponents of D* [5, 4, 4, 6, 4, 2, 4, 4, 6, 4, 4]; bounds {'t': 90, 'i': 93}; slices in t: 0..90 [0.4s]
+    slice t = 4: det 1368/1378 terms [1.6s]
+    slice t = 24: det 1701/1711 terms [2.7s]
+    slice t = 44: det 1701/1711 terms [2.7s]
+    slice t = 64: det 1701/1711 terms [2.7s]
+    slice t = 84: det 1701/1711 terms [2.9s]
+  D_c = D*; D* det is a polynomial on every slice [247.6s]
+  N~: 137199 terms after the shifts, degrees (89, 89, 86), 0 negative coefficients, a positive one free of the sizes: True; no term in y^91 through the extra node [249.7s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [249.7s]
+MU sym [q0=0, t>=4, i>=2, tp=1] PD on complement (determinant route with the split, one size sliced) (249.7s)
+1 families proved of 1; 250s
+PASS
+MU sym [q0=0, t>=4, i=0, tp>=2]
+  form: 8 vectors, largest entry 130 terms [0.0s]
+  split: 0 split blocks, parts 8 + 0, block-diagonal identically [0.1s]
+  preliminaries: symmetric, 18 sanity points, 24 intermediate denominators and the entry denominators one-signed, 1 kernel vectors in the first part annihilated, gauge ['O0']; Q2g 7 x 7 (largest entry 130 terms), Q3 0 x 0 (largest entry 0 terms) [0.1s]
+  Q3 empty (no split block)
+  9 irreducible factors, exponents of D* [4, 4, 7, 3, 4, 2, 2, 4, 2]; bounds {'t': 58, 'tp': 61}; slices in t: 0..58 [0.1s]
+    slice t = 4: det 663/703 terms [0.1s]
+    slice t = 24: det 738/780 terms [0.2s]
+    slice t = 44: det 738/780 terms [0.2s]
+  D_c = D*; D* det is a polynomial on every slice [14.9s]
+  N~: 42651 terms after the shifts, degrees (58, 59, 56), 0 negative coefficients, a positive one free of the sizes: True; no term in y^59 through the extra node [15.3s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [15.3s]
+MU sym [q0=0, t>=4, i=0, tp>=2] PD on complement (determinant route with the split, one size sliced) (15.3s)
+1 families proved of 1; 15s
+PASS
+MU sym [q0>=4, t=-1, i>=2, tp=1]
+  form: 8 vectors, largest entry 131 terms [0.1s]
+  split: 1 split blocks, parts 7 + 1, block-diagonal identically [0.2s]
+  preliminaries: symmetric, 18 sanity points, 15 intermediate denominators and the entry denominators one-signed, 1 kernel vectors in the first part annihilated, gauge ['O1']; Q2g 6 x 6 (largest entry 137 terms), Q3 1 x 1 (largest entry 63 terms) [0.2s]
+  Q3 (1 x 1) positive definite: pivots [('S11', 43, 20, 0.0)] (one-signed after the shifts) [0.0s]
+  5 irreducible factors, exponents of D* [4, 2, 5, 5, 2]; bounds {'q0': 29, 'i': 33}; slices in q0: 0..29 [0.2s]
+    slice q0 = 4: det 250/253 terms [0.0s]
+    slice q0 = 24: det 250/253 terms [0.0s]
+  D_c = D*; D* det is a polynomial on every slice [0.9s]
+  N~: 6776 terms after the shifts, degrees (29, 32, 33), 0 negative coefficients, a positive one free of the sizes: True; no term in y^30 through the extra node [0.9s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [0.9s]
+MU sym [q0>=4, t=-1, i>=2, tp=1] PD on complement (determinant route with the split, one size sliced) (0.9s)
+1 families proved of 1; 1s
+PASS
+MU sym [q0=-1, t>=4, i=1, tp>=2]
+  form: 3 vectors, largest entry 47 terms [0.0s]
+  split: 0 split blocks, parts 3 + 0, block-diagonal identically [0.1s]
+  preliminaries: symmetric, 18 sanity points, 21 intermediate denominators and the entry denominators one-signed, 0 kernel vectors in the first part annihilated, gauge []; Q2g 3 x 3 (largest entry 47 terms), Q3 0 x 0 (largest entry 0 terms) [0.1s]
+  Q3 empty (no split block)
+  6 irreducible factors, exponents of D* [3, 2, 2, 1, 1, 2]; bounds {'t': 19, 'tp': 21}; slices in t: 0..19 [0.1s]
+    slice t = 4: det 209/210 terms [0.0s]
+    slice t = 24: det 209/210 terms [0.0s]
+  D_c = D*; D* det is a polynomial on every slice [0.1s]
+  N~: 1748 terms after the shifts, degrees (19, 20, 18), 0 negative coefficients, a positive one free of the sizes: True; no term in y^20 through the extra node [0.1s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [0.1s]
+MU sym [q0=-1, t>=4, i=1, tp>=2] PD on complement (determinant route with the split, one size sliced) (0.1s)
+1 families proved of 1; 0s
+PASS
+MU sym [q0=-1, t>=4, i>=2, tp=1]
+  form: 3 vectors, largest entry 49 terms [0.0s]
+  split: 0 split blocks, parts 3 + 0, block-diagonal identically [0.1s]
+  preliminaries: symmetric, 18 sanity points, 29 intermediate denominators and the entry denominators one-signed, 0 kernel vectors in the first part annihilated, gauge []; Q2g 3 x 3 (largest entry 49 terms), Q3 0 x 0 (largest entry 0 terms) [0.1s]
+  Q3 empty (no split block)
+  7 irreducible factors, exponents of D* [1, 2, 1, 1, 2, 2, 2]; bounds {'t': 19, 'i': 21}; slices in t: 0..19 [0.1s]
+    slice t = 4: det 209/210 terms [0.0s]
+    slice t = 24: det 209/210 terms [0.0s]
+  D_c = D*; D* det is a polynomial on every slice [0.1s]
+  N~: 1748 terms after the shifts, degrees (19, 20, 18), 0 negative coefficients, a positive one free of the sizes: True; no term in y^20 through the extra node [0.1s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [0.1s]
+MU sym [q0=-1, t>=4, i>=2, tp=1] PD on complement (determinant route with the split, one size sliced) (0.1s)
+1 families proved of 1; 0s
+PASS
+MU sym [q0>=4, t=-2, i>=2, tp=1]
+  form: 1 vectors, largest entry 37 terms [0.0s]
+  split: 0 split blocks, parts 1 + 0, block-diagonal identically [0.0s]
+  preliminaries: symmetric, 18 sanity points, 3 intermediate denominators and the entry denominators one-signed, 0 kernel vectors in the first part annihilated, gauge []; Q2g 1 x 1 (largest entry 37 terms), Q3 0 x 0 (largest entry 0 terms) [0.0s]
+  Q3 empty (no split block)
+  2 irreducible factors, exponents of D* [1, 1]; bounds {'q0': 3, 'i': 4}; slices in q0: 0..3 [0.0s]
+    slice q0 = 4: det 9/9 terms [0.0s]
+  D_c = D*; D* det is a polynomial on every slice [0.0s]
+  N~: 30 terms after the shifts, degrees (3, 4, 4), 0 negative coefficients, a positive one free of the sizes: True; no term in y^4 through the extra node [0.0s]
+  factors of D_c positive after the shifts: True; Qg positive definite at the minimal member, sigma = 1: True [0.0s]
+MU sym [q0>=4, t=-2, i>=2, tp=1] PD on complement (determinant route with the split, one size sliced) (0.0s)
+1 families proved of 1; 0s
+PASS

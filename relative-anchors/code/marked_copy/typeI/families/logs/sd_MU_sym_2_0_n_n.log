@@ -1,0 +1,22 @@
+MU sym [q0=2, t=0, i>=2, tp>=2]
+  form: 18 vectors, largest entry 168 terms [0.4s]
+  split: 3 split blocks, parts 15 + 3, block-diagonal identically [0.6s]
+  preliminaries: symmetric, 18 sanity points, 29 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 13 x 13 (largest entry 193 terms), Q3 3 x 3 (largest entry 133 terms) [0.6s]
+  Q3 (3 x 3) positive definite: pivots [('S10', 75, 56, 0.0), ('S01', 154, 119, 0.0), ('S11', 153, 119, 0.0)] (one-signed after the shifts) [0.0s]
+  structure: every entry of the gauge-fixed form (13 x 13) is p/d with d free of i and deg_i p <= 2 [0.7s]
+  10 irreducible factors of the entry denominators, exponents of D* [2, 3, 5, 6, 9, 9, 6, 3, 6, 9]; deg_i T <= B = 24 [0.7s]
+    slice i = 2: det 2037/1885 terms [4.6s]
+    slice i = 7: det 2037/1885 terms [5.3s]
+    slice i = 12: det 2037/1885 terms [5.5s]
+    slice i = 17: det 2037/1885 terms [5.6s]
+    slice i = 22: det 2037/1885 terms [5.8s]
+    slice i = 27: det 2037/1885 terms [5.8s]
+  D_c exponents [2, 1, 4, 4, 3, 5, 2, 3, 6, 7]; every slice gives a polynomial D_c det [143.4s]
+  interpolation over z = 0..25: the coefficient of z^25 vanishes for all 2037 monomials
+  N~(z, nu, s): 35802 terms, degrees (20, 63, 65) [143.5s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 59108 terms, 0 negative coefficients, a positive one free of z, w: True [143.7s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [143.7s]
+MU sym [q0=2, t=0, i>=2, tp>=2] PD on complement (determinant route with the split) (143.7s)
+1 families proved of 1; 144s
+PASS

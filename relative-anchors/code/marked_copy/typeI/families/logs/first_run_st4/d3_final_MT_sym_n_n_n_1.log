@@ -1,0 +1,10 @@
+  form: 13 vectors, largest entry 724 terms [0.8s]
+  split: 2 split blocks, parts 11 + 2, block-diagonal identically [1.5s]
+  preliminaries: symmetric, 54 sanity points, 65 intermediate denominators and the entry denominators one-signed, 1 kernel vectors in the first part annihilated, gauge ['CM']; Q2g 10 x 10 (largest entry 884 terms), Q3 2 x 2 (largest entry 292 terms) [1.5s]
+Traceback (most recent call last):
+  File "tdet3.py", line 343, in <module>
+    ok = final(sys.argv[2], sys.argv[3], logf)
+  File "tdet3.py", line 230, in final
+    assert not missing, f'{len(missing)} slices missing, e.g. {missing[:5]}'
+           ^^^^^^^^^^^
+AssertionError: 9306 slices missing, e.g. [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4)]

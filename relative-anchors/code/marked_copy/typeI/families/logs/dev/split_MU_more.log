@@ -1,0 +1,37 @@
+MU sym [q0=1, t=1, i>=2, tp>=2]
+  form: 20 vectors, largest entry 275 terms [0.6s]
+  split: 3 split blocks, parts 17 + 3, block-diagonal identically [1.1s]
+  preliminaries: symmetric, 18 sanity points, 35 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 15 x 15 (largest entry 311 terms), Q3 3 x 3 (largest entry 85 terms) [1.1s]
+    pivot S01: num 16 terms, den 10 terms (0.0s)
+    pivot S10: num 75 terms, den 56 terms (0.0s)
+    pivot S00: num 110 terms, den 83 terms (0.0s)
+  Q3 elimination: OK; pivots [('S01', 16, 10, 0.0), ('S10', 75, 56, 0.0), ('S00', 110, 83, 0.0)] [1.1s]
+  Q2g: structure holds (denominators free of i, degree 2 in i at fixed nu) [0.0s]
+  Q2g: 15 x 15, numerators up to 107 terms, denominators up to 36; 14 irreducible factors, exponents of D* [8, 4, 2, 4, 8, 9, 8, 8, 7, 2, 8, 8, 5, 7]; degree bounds of T = D* det: {'i': 26, 'nu': 144, 's': 142} [0.8s]
+  Q2g: one slice ({'i': 2} fixed, det over Q(nu, s)): 3514/3240 terms, 17.8s
+  total 19.7s
+MU sym [q0>=4, t>=4, i=1, tp=1]
+  form: 22 vectors, largest entry 588 terms [0.8s]
+  split: 4 split blocks, parts 18 + 4, block-diagonal identically [1.5s]
+  preliminaries: symmetric, 18 sanity points, 38 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 16 x 16 (largest entry 677 terms), Q3 4 x 4 (largest entry 729 terms) [1.5s]
+    pivot S10: num 359 terms, den 280 terms (0.0s)
+    pivot S00: num 976 terms, den 797 terms (0.1s)
+    pivot S01: num 976 terms, den 797 terms (0.2s)
+    pivot S11: num 976 terms, den 886 terms (0.3s)
+  Q3 elimination: OK; pivots [('S10', 359, 280, 0.0), ('S00', 976, 797, 0.1), ('S01', 976, 797, 0.2), ('S11', 976, 886, 0.3)] [1.8s]
+  Q2g: 16 x 16, numerators up to 355 terms, denominators up to 325; 17 irreducible factors, exponents of D* [4, 4, 10, 8, 8, 10, 4, 10, 8, 4, 2, 4, 8, 4, 4, 6, 1]; degree bounds of T = D* det: {'q0': 182, 't': 183, 's': 181} [2.2s]
+  Q2g: one slice ({'t': 4} fixed, det over Q(q0, s)): 4444/4845 terms, 74.8s
+  total 78.9s
+MU sym [q0=1, t>=4, i>=2, tp>=2]
+  form: 20 vectors, largest entry 778 terms [1.4s]
+  split: 3 split blocks, parts 17 + 3, block-diagonal identically [3.1s]
+  preliminaries: symmetric, 54 sanity points, 53 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 15 x 15 (largest entry 897 terms), Q3 3 x 3 (largest entry 328 terms) [3.1s]
+    pivot S01: num 120 terms, den 70 terms (0.0s)
+    pivot S10: num 478 terms, den 329 terms (0.0s)
+    pivot S00: num 697 terms, den 482 terms (0.0s)
+  Q3 elimination: OK; pivots [('S01', 120, 70, 0.0), ('S10', 478, 329, 0.0), ('S00', 697, 482, 0.0)] [3.2s]
+  Q2g: structure holds (denominators free of i, degree 2 in i at fixed nu) [0.0s]
+  Q2g: 15 x 15, numerators up to 381 terms, denominators up to 155; 15 irreducible factors, exponents of D* [9, 8, 8, 8, 9, 4, 8, 5, 4, 8, 8, 7, 4, 2, 5]; degree bounds of T = D* det: {'t': 181, 'i': 26, 'nu': 181, 's': 179} [1.0s]
+  Q2g: one slice ({'t': 4, 'i': 2} fixed, det over Q(nu, s)): 3686/3403 terms, 38.1s
+  total 42.3s
+PASS

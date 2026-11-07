@@ -1,0 +1,22 @@
+MU sym [q0=2, t=3, i>=2, tp>=2]
+  form: 22 vectors, largest entry 494 terms [1.4s]
+  split: 4 split blocks, parts 18 + 4, block-diagonal identically [2.2s]
+  preliminaries: symmetric, 18 sanity points, 49 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 16 x 16 (largest entry 549 terms), Q3 4 x 4 (largest entry 276 terms) [2.2s]
+  Q3 (4 x 4) positive definite: pivots [('S01', 112, 84, 0.0), ('S00', 352, 286, 0.0), ('S10', 440, 364, 0.0), ('S11', 440, 363, 0.0)] (one-signed after the shifts) [0.0s]
+  structure: every entry of the gauge-fixed form (16 x 16) is p/d with d free of i and deg_i p <= 2 [2.3s]
+  19 irreducible factors of the entry denominators, exponents of D* [10, 8, 8, 4, 8, 8, 4, 2, 10, 8, 8, 10, 8, 8, 8, 4, 2, 10, 8]; deg_i T <= B = 28 [4.0s]
+    slice i = 2: det 5198/4851 terms [75.9s]
+    slice i = 7: det 5198/4851 terms [87.3s]
+    slice i = 12: det 5198/4851 terms [90.2s]
+    slice i = 17: det 5198/4851 terms [92.4s]
+    slice i = 22: det 5198/4851 terms [92.7s]
+    slice i = 27: det 5198/4851 terms [94.7s]
+  D_c exponents [5, 6, 6, 2, 2, 3, 2, 1, 7, 6, 3, 5, 2, 1, 4, 2, 1, 3, 4]; every slice gives a polynomial D_c det [2916.6s]
+  interpolation over z = 0..29: the coefficient of z^29 vanishes for all 5198 monomials
+  N~(z, nu, s): 112290 terms, degrees (24, 101, 101) [2917.3s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 221536 terms, 0 negative coefficients, a positive one free of z, w: True [2918.6s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [2918.6s]
+MU sym [q0=2, t=3, i>=2, tp>=2] PD on complement (determinant route with the split) (2918.6s)
+1 families proved of 1; 2919s
+PASS

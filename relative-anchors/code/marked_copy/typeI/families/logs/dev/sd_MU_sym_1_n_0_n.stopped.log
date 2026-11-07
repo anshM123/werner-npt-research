@@ -1,0 +1,7 @@
+MU sym [q0=1, t>=4, i=0, tp>=2]
+  form: 13 vectors, largest entry 194 terms [0.1s]
+  split: 0 split blocks, parts 13 + 0, block-diagonal identically [0.2s]
+  preliminaries: symmetric, 18 sanity points, 27 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 11 x 11 (largest entry 194 terms), Q3 0 x 0 (largest entry 0 terms) [0.2s]
+  Q3 empty (no split block)
+  12 irreducible factors, exponents of D* [5, 8, 8, 8, 4, 8, 3, 4, 4, 4, 2, 2]; bounds {'t': 110, 'tp': 115}; slices in t: 0..110 [0.3s]
+    slice t = 4: det 1534/1653 terms [3.7s]

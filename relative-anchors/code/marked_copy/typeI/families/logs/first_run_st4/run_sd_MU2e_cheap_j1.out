@@ -1,0 +1,7 @@
+MU/sym/3,n,0,n:   D_c = D*; D* det is a polynomial on every slice [2530.9s] / guard: memory 1404616 KB above 1.2 GB, killed PID 54128
+MU/sym/0,n,0,n: 1 families proved of 1; 15s / PASS
+MU/sym/n,-1,n,1: 1 families proved of 1; 1s / PASS
+MU/sym/-1,n,1,n: 1 families proved of 1; 0s / PASS
+MU/sym/-1,n,n,1: 1 families proved of 1; 0s / PASS
+MU/sym/n,-2,n,1: 1 families proved of 1; 0s / PASS
+run_sd.sh lists/MU_sym_2e_cheap.txt done Fri Nov  6 13:42:02 EST 2026

@@ -1,0 +1,6 @@
+MU/sym/2,-2,n,n: 1 families proved of 1; 0s / PASS
+MU/sym/2,-1,n,n: 1 families proved of 1; 0s / PASS
+MU/sym/2,0,n,n: 1 families proved of 1; 174s / PASS
+MU/sym/2,3,n,n: 1 families proved of 1; 2919s / PASS
+MU/sym/3,3,n,n: 1 families proved of 1; 2849s / PASS
+run_sd.sh lists/MU_sym_2d_fams.txt done Fri Nov  6 13:51:59 EST 2026

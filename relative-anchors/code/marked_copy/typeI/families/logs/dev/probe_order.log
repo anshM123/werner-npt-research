@@ -1,0 +1,8 @@
+python dev/probe_order.py MT/sym/1,n,n,n "t=44;i=9" "U0,U1,W0,W1" "" "G,U0,U1,W0,W1" "C,D0,D1,U0,U1,W0,W1" "W0,W1,U0,U1"   (11:36, 6 Nov)
+U0,U1,W0,W1: keep ['U0', 'U1', 'W0', 'W1', 'C', 'D0', 'D1', 'DM0', 'DM1', 'G']: det 2405/2278 terms, 2.15s
+(default): keep ['C', 'D0', 'D1', 'DM0', 'DM1', 'G', 'U0', 'W0', 'U1', 'W1']: det 2405/2278 terms, 12.84s
+G,U0,U1,W0,W1: keep ['G', 'U0', 'U1', 'W0', 'W1', 'C', 'D0', 'D1', 'DM0', 'DM1']: det 2405/2278 terms, 3.21s
+C,D0,D1,U0,U1,W0,W1: keep ['C', 'D0', 'D1', 'U0', 'U1', 'W0', 'W1', 'DM0', 'DM1', 'G']: det 2405/2278 terms, 5.37s
+W0,W1,U0,U1: keep ['W0', 'W1', 'U0', 'U1', 'C', 'D0', 'D1', 'DM0', 'DM1', 'G']: det 2405/2278 terms, 2.39s
+DYN=1 python dev/probe_order.py MT/sym/1,n,n,n "t=44;i=9"
+dynamic smallest pivot: det 2405/2278 terms, 5.34s

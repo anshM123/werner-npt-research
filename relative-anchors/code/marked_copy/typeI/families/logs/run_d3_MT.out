@@ -1,0 +1,5 @@
+prep MT/sym/n,n,n,0: PASS
+prep MT/sym/n,n,0,n: PASS
+final MT/sym/n,n,n,0: PASS
+final MT/sym/n,n,0,n: PASS
+run_d3.sh lists/MT_sym_3e_proved.txt done Fri Nov  6 19:40:13 EST 2026

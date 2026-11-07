@@ -1,0 +1,4 @@
+MT sym [q0=1, t=1, i>=2, tp>=2] B scaled by 1001/1000: split block-diagonal True; <kappa, Q kappa> at the minimal member, sigma = 1: [-0.01]; det of the gauge-fixed first part (10 x 10, gauge ['CM']) at the minimal member as a polynomial in sigma: (159, 2) (positive, negative) coefficients, signs at sigma = 1e-6, 1, 1e6: {'1/1000000': -1, '1': 1, '1000000': -1}; caught: True [0s]
+MT sym [q0=-1, t>=4, i>=2, tp>=2] B scaled by 1001/1000: split block-diagonal True; <kappa, Q kappa> at the minimal member, sigma = 1: []; det of the gauge-fixed first part (4 x 4, gauge []) at the minimal member as a polynomial in sigma: (52, 1) (positive, negative) coefficients, signs at sigma = 1e-6, 1, 1e6: {'1/1000000': 1, '1': 1, '1000000': -1}; caught: True [0s]
+negative control: 2 of 2 scaled families caught (not >= 0, or a negative determinant of the gauge-fixed part)
+FAIL (expected: the scaled forms are caught)

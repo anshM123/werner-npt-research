@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # guard.sh LOG SECONDS args...   runs one Python process (python args...), writes its output to LOG, and kills it by
-# its own Windows PID if its memory exceeds 2.0 GB or if it runs longer than SECONDS (a line "guard: ..." is then
+# its own Windows PID if its memory exceeds 1.2 GB or if it runs longer than SECONDS (a line "guard: ..." is then
 # appended to LOG and the exit status is 3).  The Windows PID and the arguments are written to LOG.pid.
 log="$1"; shift
 lim="$1"; shift
@@ -14,8 +14,8 @@ killed=0
 while kill -0 "$pid" 2>/dev/null; do
   if [ -n "$wpid" ]; then
     kb=$(tasklist //FI "PID eq $wpid" //FO CSV //NH 2>/dev/null | awk -F'","' '{gsub(/[^0-9]/,"",$5); print $5}')
-    if [ -n "$kb" ] && [ "$kb" -gt 2000000 ] 2>/dev/null; then
-      echo "guard: memory ${kb} KB above 2.0 GB, killed PID $wpid" >> "$log"
+    if [ -n "$kb" ] && [ "$kb" -gt 1200000 ] 2>/dev/null; then
+      echo "guard: memory ${kb} KB above 1.2 GB, killed PID $wpid" >> "$log"
       taskkill //PID "$wpid" //F > /dev/null 2>&1
       killed=1
       break

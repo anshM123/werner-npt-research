@@ -1,0 +1,19 @@
+MU sym [q0=1, t=-1, i>=2, tp>=2]
+  form: 6 vectors, largest entry 109 terms [0.0s]
+  split: 0 split blocks, parts 6 + 0, block-diagonal identically [0.1s]
+  preliminaries: symmetric, 18 sanity points, 16 intermediate denominators and the entry denominators one-signed, 1 kernel vectors in the first part annihilated, gauge ['O1']; Q2g 5 x 5 (largest entry 109 terms), Q3 0 x 0 (largest entry 0 terms) [0.1s]
+  Q3 empty (no split block)
+  structure: every entry of the gauge-fixed form (5 x 5) is p/d with d free of i and deg_i p <= 2 [0.1s]
+  6 irreducible factors of the entry denominators, exponents of D* [4, 2, 1, 4, 3, 2]; deg_i T <= B = 10 [0.1s]
+    slice i = 2: det 223/207 terms [0.0s]
+    slice i = 7: det 225/207 terms [0.0s]
+    slice i = 12: det 225/207 terms [0.0s]
+  D_c exponents [2, 2, 1, 4, 1, 2]; every slice gives a polynomial D_c det [0.2s]
+  interpolation over z = 0..11: the coefficient of z^11 vanishes for all 225 monomials
+  N~(z, nu, s): 1657 terms, degrees (8, 20, 22) [0.2s]
+  N~ with nu = tau' + 2i, i = 2 + z, tau' = 2 + w: 2382 terms, 0 negative coefficients, a positive one free of z, w: True [0.2s]
+  every factor of D_c positive on the region: True
+  gauge-fixed form positive definite at (i, tau', sigma) = (2, 2, 1): True [0.2s]
+MU sym [q0=1, t=-1, i>=2, tp>=2] PD on complement (determinant route with the split) (0.2s)
+1 families proved of 1; 0s
+PASS

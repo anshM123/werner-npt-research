@@ -1,0 +1,16 @@
+MU sym [q0>=4, t=2, i=0, tp>=2]
+  form: 14 vectors, largest entry 222 terms [0.1s]
+  split: 0 split blocks, parts 14 + 0, block-diagonal identically [0.2s]
+  preliminaries: symmetric, 18 sanity points, 26 intermediate denominators and the entry denominators one-signed, 2 kernel vectors in the first part annihilated, gauge ['O0', 'O1']; Q2g 12 x 12 (largest entry 222 terms), Q3 0 x 0 (largest entry 0 terms) [0.3s]
+  Q3 empty (no split block)
+  16 irreducible factors, exponents of D* [6, 8, 4, 4, 6, 8, 6, 8, 8, 4, 2, 2, 4, 8, 8, 4]; bounds {'q0': 142, 'tp': 146}; slices in q0: 0..142 [0.4s]
+    slice q0 = 4: det 2271/2415 terms [6.8s]
+    slice q0 = 24: det 2271/2415 terms [9.0s]
+    slice q0 = 44: det 2271/2415 terms [10.2s]
+    slice q0 = 64: det 2271/2415 terms [9.6s]
+    slice q0 = 84: det 2271/2415 terms [10.3s]
+    slice q0 = 104: det 2271/2415 terms [10.5s]
+    slice q0 = 124: det 2271/2415 terms [10.3s]
+    slice q0 = 144: det 2271/2415 terms [9.5s]
+  D_c = D*; D* det is a polynomial on every slice [1451.2s]
+guard: memory 1250080 KB above 1.2 GB, killed PID 10352
