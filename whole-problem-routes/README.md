@@ -261,6 +261,13 @@ is negative for 0 ≤ a < a_n. ∎
 This makes the bound a* ≥ 3/4 of Proposition M explicit. The witnesses live on one plane per copy, where 𝒫_a is a
 qubit map that is completely positive exactly when a ≥ 3/4.
 
+On a real plane, 𝒬_a/(2a − ½) is the unital Pauli map with eigenvalues λ₁ = λ₃ = −1/(4a − 1) and λ₂ = 0 (on X, Z and
+Y). Filippov and Magadov studied n-tensor-stable positivity of Pauli maps [FM, J. Phys. A 50, 055301 (2017),
+arXiv:1604.01716]. Their necessary condition from n-qubit GHZ states (Proposition 7 there) gives, for this family,
+|λ₁| ≤ 2^{−1+1/n}, which is exactly a ≥ a_n (their Example 3 treats this family). So the witnesses of Theorem 7.1 are
+their GHZ obstruction, carried from the plane to the qutrit map. They show that the condition is also sufficient for
+this family at n = 2, and give numerical evidence at n = 3.
+
 **Theorem 7.2 (two copies).** 𝒫_a^{⊗2} is positive if and only if a ≥ (1 + √2)/4. For
 (1 + √2)/4 ≤ a < (7 + 2√15)/22 ≈ 0.6703 it is positive but not decomposable.
 
@@ -316,7 +323,7 @@ or more copies, where the tensor powers stop being decomposable.
 On a plane the picture is different. The same program for 𝒬_a, with G₂ = [[½, 1, −½], [½, 0, ½], [−½, 1, ½]] and
 c_C = (a − ¾, a − ¼, a + ¼)^{⊗n}, gives decomposability thresholds equal to a_n to eight digits for every n ≤ 12.
 Together with Theorem 7.1 this says that, for n ≤ 12, 𝒬_a^{⊗n} is positive exactly when a ≥ a_n (computer-assisted,
-floating point; exact certificates are not written out here).
+floating point; exact certificates are not written out here). For n = 2 and 3 this agrees with [FM, Example 3].
 
 **Observation 7.4 (numerical).** For n = 2, …, 6 the positivity threshold of 𝒫_a^{⊗n} found by search is a_n. At
 a_n − 0.001 the search finds negative values, and at a_n + 0.001 it finds none. The searches use alternating minimisation
