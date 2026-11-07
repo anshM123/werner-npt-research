@@ -143,6 +143,22 @@ support. The following do not reach every n (added 7 November 2026).
   points found by random search at three and four copies are all saddles along a one-copy squeeze (Observation 7.25),
   but that is evidence about saddles, not about minima.
 
+- **The thickness bonus by induction (added 7 November 2026).** Conjecture TC (λ_min ≥ ∏_s(¼ + ½τ_s)) is proved at two
+  and three copies (Proposition 7.28, Theorem 7.29), but it does not pass from n − 1 to n copies in any obvious way.
+  Conditioning on a copy can lose all the thickness: the three-copy input ½[e₁(e₁e₁ + e₂e₃) + e₂(e₁e₂ + e₃e₃)] has
+  τ = ¼ at copies 2 and 3, while every conditional vector is planar (rank-two marginals). Peeling the thin first copy as
+  in Proposition 7.8 then gives only 1/32, below the TC value 9/256 (true value 0.0774). Nor is there a form that
+  survives an ancilla. If the input is (1/√3)Σ_i |i⟩ ⊗ e_i^{⊗n} and the ancilla is measured in the basis |i⟩, every
+  one-copy marginal is I/3, but the output is block diagonal with least eigenvalue 4^{−n}/3, exactly what the product
+  inputs e_i^{⊗n} give, so no bonus survives. A proof of
+  TC therefore has to treat all copies at once, as the certificate of Theorem 7.29 does.
+- **Linear bonuses.** The best constant k in λ_min ≥ 4^{−n}(1 + kΣ_sτ_s) is 5 at two copies (exact, attained at the
+  maximally entangled vector) and 5 to search accuracy at three and four copies (attained at e^{⊗(n−2)} ⊗ Ω̂). A linear
+  bound implies TC only if k ≥ (3/n)((5/3)^n − 1), which is 98/27 at n = 3 but 5.04 > 5 at n = 4. So certificates for a
+  linear bonus, like that of Theorem 7.29, cannot give TC from four copies on; there the product form has to be
+  certified directly. Without a variable for the least eigenvector, simple linear stand-ins for τ_s fail already at two
+  copies.
+
 What a proof of this route needs is a global inequality: some way to compare the value at a thick minimiser with the
 values of its contractions or compressions that does not hold trivially at every critical point. None of the tools
 above provides one.
