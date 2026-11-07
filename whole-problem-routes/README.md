@@ -667,8 +667,8 @@ for this family, for every number of copies; it does not settle the general ques
 The certificate is one case of a general identity. If C^Γ = C, then for every one-copy operator C̃ the operator
 Q = ½[C^{⊗n} + C̃^{⊗n} − (Γ C̃)^{⊗n}] satisfies Q + Q^Γ = C^{⊗n}, because the partial transpose acts copy by copy.
 Theorem 7.18 takes C̃ = |C|, for which ½(C^{⊗n} + |C|^{⊗n}) ⪰ 0 always, and the content is that the subtracted term
-is dominated exactly when uⁿ ≤ 2. For the qutrit map every such Q is diagonal in the product eigenbasis of the
-copies, so this family stays inside the decomposable cone, which Proposition 7.3 excludes from three copies on.
+is dominated exactly when uⁿ ≤ 2. A positive semidefinite Q of this kind is a decomposition of C^{⊗n}, so for the
+qutrit map the identity cannot help from three copies on (Proposition 7.3).
 The theorem also proves the decomposability
 thresholds of 𝒬_a computed after Proposition 7.3 for every n. The certificate was found by computing the
 minimum-norm solution of that linear program in the form P + P^Γ for n = 2, 3, 4 and reading off its pattern.
