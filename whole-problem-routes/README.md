@@ -247,7 +247,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.21 | the complex (half-plane, Lee–Yang) version of QT_m is false from n = 5 (with every Re a_s > 3/4, from n = 7) | **proved** (explicit zeros) |
 | 7.22 | at every point of the facet ∏(2a_s − ½) = ½, the plane witness is a second-order local minimum in the full qutrit space, every n | **proved** |
 | 7.23 | from a joint critical point of the value, squeezing one copy toward a plane moves the normalised value monotonically all the way to the compression; one contraction inequality gives the sign; the trace of the one-copy squeeze Hessian has a closed form (every n, every a) | **proved** |
-| 7.24 | a smallest failure at a ≥ 3/4 would be a strict minimum along every one-copy squeeze, so it is enough that no thick critical point is | reduction **proved** |
+| 7.24 | a smallest failure at a ≥ 3/4 would be a strict minimum along every one-copy squeeze (thick critical points of that kind above the product value are not excluded, so this is not yet a reduction) | **proved** |
 | 7.25 | the thick critical points found at n = 3, 4 are saddles along a one-copy squeeze, and the squeeze Hessian trace is negative there; a one-copy compression never raised the least output eigenvalue (n = 2, 3, 4) | numerical (critical points found by search; a failure would need n ≥ 6) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
@@ -914,9 +914,11 @@ follows by induction on n, starting from μ₁ = a − ½. ∎
 This is the map's version of the squeeze-orbit picture of `orbit-notes/`, where rank-one squeezes through critical points
 of the endpoint form are monotone in the same way (item 2 there). For the endpoint form, the statements that look at
 one copy at a time are false at n = 3 (thick operators that are minima over every single-copy orbit; see "One copy at a
-time is not enough" there), while the joint statement survives. For the map we have found no such point (Observation
-7.25), but whether thick critical points that are strict minima along every one-copy squeeze exist, and in particular
-whether any lie below (a − ½)^n, is open.
+time is not enough" there), while the joint statement survives. Our searches for the map found no such point
+(Observation 7.25), but they only see what random starts reach, and structured points (for example balanced ones,
+with every one-copy marginal I/3) can behave differently. We do not expect the last sentence of the corollary to hold
+as stated. What a proof needs is only the version for thick critical points below (a − ½)^n, and that version is
+equivalent to the problem itself.
 
 **Observation 7.25 (numerical).** At n = 3 and a = ¾, minimising the residual of the critical equations from random
 starts gives thick joint critical points: five of them, with values 0.178 to 0.210 (far above 1/64) and least one-copy
