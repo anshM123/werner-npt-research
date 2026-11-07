@@ -1,4 +1,5 @@
 (a) n = 7, a_s = 0.760000+0.250995j for every s (Re a_s = 0.76), p = 0.003811: <y| (x) P_a (x x^T) |y> = -8.89e-18-6.94e-18j; formula p prod a + (1-p) prod (a - 1/2) = -9.11e-18-7.16e-18j
+(a') n = 5, a_1 = 0.530000+0.099450j, a_2..a_5 = 0.7600+0.4445j, p = 0.022046: <y| (x) P_a (x x^T) |y> = -1.73e-17-9.54e-18j; real parts satisfy the rule of QT_m (least subset product 0.560 >= 1/2)
 (b) n = 3, start 0: largest Re a_1 of a zero with Re a_2, Re a_3 > 3/4: 0.500000
 (b) n = 3, start 1: largest Re a_1 of a zero with Re a_2, Re a_3 > 3/4: 0.500000
 (b) n = 3, start 2: largest Re a_1 of a zero with Re a_2, Re a_3 > 3/4: 0.500000

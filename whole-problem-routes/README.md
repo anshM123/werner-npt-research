@@ -236,7 +236,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.19 | on real planes with different parameters: 𝒬_{a₁} ⊗ ⋯ ⊗ 𝒬_{a_n} is positive iff decomposable iff ∏_{s∈S}(2a_s − ½) ≥ ½ for every S, every n | **proved** (explicit decomposition) |
 | QT_m | the same condition decides positivity of 𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n} | **open** for n ≥ 3 (necessity and n = 2 proved; n = 3, 4 numerical) |
 | 7.20 | the vertices of QT_m are 2-positivity: 𝒫_{1/2} ⊗ Φ is positive iff Φ is 2-positive on real inputs | **proved** |
-| 7.21 | the complex (half-plane, Lee–Yang) version of QT_m is false from n = 7 | **proved** (explicit zero) |
+| 7.21 | the complex (half-plane, Lee–Yang) version of QT_m is false from n = 5 (with every Re a_s > 3/4, from n = 7) | **proved** (explicit zeros) |
 | 7.22 | at every point of the facet ∏(2a_s − ½) = ½, the plane witness is a second-order local minimum in the full qutrit space, every n | **proved** |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
@@ -699,7 +699,10 @@ correction works at n = 2 but not at n = 3 (floating point; `code/pauli_maps/`).
 
 Only the copies with a_s < 3/4 matter in (iii): it says that a_s ≥ ½ for every s and ∏_{s: a_s<3/4} (2a_s − ½) ≥ ½. In
 the language of [FM], with τ_s = 2|t_s|: a product Υ_{t₁} ⊗ ⋯ ⊗ Υ_{t_n} of maps from the family (1, t, 0, t) is positive
-iff ∏_{s∈S} τ_s ≤ 2 for every S, and then it is decomposable. Theorem 7.18 is the case of equal parameters.
+iff ∏_{s∈S} τ_s ≤ 2 for every S, and then it is decomposable. Theorem 7.18 is the case of equal parameters. Products
+with maps outside the family can behave differently: Müller-Hermes [J. Math. Phys. 62, 092204 (2021), Theorem 8.4]
+shows that the product of the map (1, t, t, t) with a map (1, b, 0, b) of this family can be positive without being
+decomposable.
 
 *Proof.* If (iii) fails for S, take the vectors of Theorem 7.1 on the copies in S (for |S| = 1, x_s = y_s = e₁) and real
 unit vectors x_s ⊥ y_s at the other copies. The value is 2^{−|S|}[∏_{s∈S}(2a_s − ½) − ½] ∏_{s∉S} a_s < 0. For
@@ -719,7 +722,7 @@ witness values, and the sign of the least value at 40 random parameter vectors (
 
 The same condition seems to govern the qutrit map.
 
-**Conjecture QT_m.** For a₁, …, a_n ≥ 0, 𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n} is positive iff condition (iii) of Theorem 7.19 holds.
+**Conjecture QT_m.** For a₁, …, a_n > 0, 𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n} is positive iff condition (iii) of Theorem 7.19 holds.
 
 Conjecture QT is the case of equal parameters. The witnesses of Theorem 7.19 live on planes, so (iii) is necessary. It
 is also sufficient for n = 2. The reduction of Theorem 7.2 to x = Σ s_i e_i ⊗ e_i works with different parameters. The
@@ -727,7 +730,8 @@ first block satisfies zᵀM_Az − (a₁ − ½)(a₂ − ½)|z|² = Σ_{k<l}[c(
 c = ½(a₁ + a₂) − ¼ ≥ ⅛. On span{|ij⟩, |ji⟩} it is enough to take s_i² + s_j² = 1 (scaling s_i, s_j up lowers the diagonal
 and raises the off-diagonal entry). With s_i² = ½ + δ the block is [[K − δΔ, ⅛s_is_j], [⅛s_is_j, K + δΔ]], where
 K = a₁a₂ − ¼(a₁ + a₂) and Δ = ½(a₂ − a₁), and its determinant is K² − 1/256 − δ²(Δ² − 1/64). At δ² = ¼ this is
-a₁a₂(a₁ − ½)(a₂ − ½) ≥ 0, and at δ = 0 it is ≥ 0 exactly when K ≥ 1/16, which is (iii). If Δ² > 1/64 the determinant
+a₁a₂(a₁ − ½)(a₂ − ½) ≥ 0, and at δ = 0 it is ≥ 0 exactly when K ≥ 1/16, which is the case S = {1, 2} of (iii) (the
+cases |S| = 1 say a_s ≥ ½). If Δ² > 1/64 the determinant
 decreases in δ², so it is ≥ 0 throughout; otherwise its minimum is at δ = 0. For n = 3 and n = 4, alternating
 minimisation at 21 and 17 parameter vectors, some within 10⁻³ of the boundary on either side, always finds a least value
 of the predicted sign (`code/multiparam_numerics.py`, `logs/multiparam_real_n3.log` and `logs/multiparam_real_n4.log`;
@@ -755,13 +759,16 @@ in these coordinates, real 2-positivity of 𝒫_{3/4}^{⊗(n−1)} gives Conject
 We do not know whether it is convex.
 
 **Remark 7.21 (there is no complex version).** The value f(a₁, …, a_n) = ⟨y|𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n}(xxᵀ)|y⟩ is multi-affine in
-the parameters. At n = 3 an adversarial search over x, y and complex parameters finds no zero with Re a₁ > ½ and
-Re a_s > 3/4 for s ≥ 2: the largest Re a₁ of such zeros is ½, attained by products and approached by the plane witness. A
-zero-free region of this kind would give the real statements by continuity, but it fails from n = 7. For
-x = √p e₂^{⊗7} + √(1 − p) e₁^{⊗7} and y = e₁^{⊗7} the cross terms vanish and f = p∏a_s + (1 − p)∏(a_s − ½). With every
-a_s = 0.76 + 0.2510i and p ≈ 0.0038 this is zero: arg a_s − arg(a_s − ½) can be close to −30° when Re a_s > 3/4, and seven
-copies reach −180° (`multiparam_numerics.py complex`). So there is no half-plane (Lee–Yang) version of Conjecture QT_m;
-it is a statement about real parameters.
+the parameters. At n = 3 (and in shorter runs at n = 4), searches over x, y and complex parameters find no zero with Re a₁ > ½ and Re a_s > 3/4 for
+s ≥ 2: the largest Re a₁ of such zeros is ½, attained by products and approached by the plane witness. A zero-free region
+of this kind would give the real statements by continuity, but it fails from n = 5. For
+x = √p e₂^{⊗n} + √(1 − p) e₁^{⊗n} and y = e₁^{⊗n} the cross terms vanish and f = p∏a_s + (1 − p)∏(a_s − ½). At n = 5
+this is zero for a₁ = 0.5300 + 0.0995i, a₂ = ⋯ = a₅ = 0.7600 + 0.4445i and p ≈ 0.0220, whose real parts satisfy (iii).
+The reason is that arg a_s − arg(a_s − ½) can be close to −90° when Re a_s is close to ½ and close to −30° when
+Re a_s > 3/4, and the copies reach −180° together. With every Re a_s > 3/4 the same family needs seven copies:
+a_s = 0.76 + 0.2510i for every s and p ≈ 0.0038 give a zero at n = 7
+(`multiparam_numerics.py complex`). So there is no half-plane (Lee–Yang) version of Conjecture QT_m; it is a statement
+about real parameters.
 
 Given Conjecture QT_m for fewer copies, the value is nondecreasing in every a_s on the conjectured region, so at n copies
 it is enough to look at the facet ∏_s(2a_s − ½) = ½ with every a_s ∈ [½, ¾] (in the coordinates t_s this is a simplex,

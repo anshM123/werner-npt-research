@@ -10,6 +10,7 @@ python multiparam_numerics.py two
     up to rotations), against the same rule.
 python multiparam_numerics.py complex
     (a) the explicit zero at n = 7 with every Re a_s = 0.76 (direct evaluation with 3^7-dimensional vectors);
+    (a') the explicit zero at n = 5 with Re a_1 = 0.53 and Re a_2..a_5 = 0.76 (inside the region of Conjecture QT_m);
     (b) adversarial search at n = 3: the largest Re a_1 of a zero with Re a_2, Re a_3 > 3/4 (expected 1/2).
 Floating point throughout; prints MISMATCH lines if the rule and the sign disagree."""
 import itertools, sys
@@ -113,6 +114,20 @@ elif mode == 'complex':
     val = v @ apply_map([a] * n, np.outer(x, x)) @ v
     print(f"(a) n = 7, a_s = {a:.6f} for every s (Re a_s = {a.real:.2f}), p = {p:.6f}: "
           f"<y| (x) P_a (x x^T) |y> = {val:.2e}; formula p prod a + (1-p) prod (a - 1/2) = {p * a**n + (1 - p) * (a - 0.5)**n:.2e}")
+    from scipy.optimize import fsolve
+    n5 = 5; aa = 0.76 + 0.4445j
+    def G(w):
+        a1_ = 0.53 + 1j * w[0]; f = w[1] * a1_ * aa**4 + (1 - w[1]) * (a1_ - 0.5) * (aa - 0.5)**4
+        return [f.real, f.imag]
+    w = fsolve(G, [0.0995, 0.022]); a1 = 0.53 + 1j * w[0]; p5 = w[1]
+    u5 = np.ones(1); v5 = np.ones(1)
+    for _ in range(n5): u5 = np.kron(u5, e2); v5 = np.kron(v5, e1)
+    x5 = np.sqrt(p5) * u5 + np.sqrt(1 - p5) * v5
+    val5 = v5 @ apply_map([a1] + [aa] * 4, np.outer(x5, x5)) @ v5
+    rule5 = min(np.prod([2 * z.real - 0.5 for z, keep in zip([a1] + [aa] * 4, S) if keep])
+                for S in itertools.product([0, 1], repeat=5) if any(S))
+    print(f"(a') n = 5, a_1 = {a1:.6f}, a_2..a_5 = {aa:.4f}, p = {p5:.6f}: <y| (x) P_a (x x^T) |y> = {val5:.2e}; "
+          f"real parts satisfy the rule of QT_m (least subset product {rule5:.3f} >= 1/2)")
     # (b) adversarial, n = 3
     n = 3; rng = np.random.default_rng(2)
     subsets = [U for r in range(n + 1) for U in itertools.combinations(range(n), r)]
