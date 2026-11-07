@@ -24,8 +24,10 @@ follow if the qutrit map 𝒫_a(X) = a Tr(X) I − (X + Xᵀ)/4 had all tensor p
 this is proved for up to five copies (computer-assisted, exact), on permutation-symmetric inputs and outputs for up to
 21 copies, and for every number of copies on inputs of bond dimension two (for example the AKLT chain). The n-copy
 threshold is at least (1 + 2^{1−1/n})/4 → 3/4 for every n, and on a real plane it is exactly that, for every n
-(with an explicit decomposition). A failure at a = 3/4 would need six or more copies at which both the input and the
-output have full support. The general case is open.
+(with an explicit decomposition). On real planes this extends to tensor products with different parameters: positivity
+holds exactly when ∏_{s∈S}(2a_s − ½) ≥ ½ for every set S of copies, and we conjecture the same rule for the qutrit map
+(proved for two copies; its extreme points are 2-positivity statements). A failure at a = 3/4 would need six or more
+copies at which both the input and the output have full support. The general case is open.
 
 ## Contents
 

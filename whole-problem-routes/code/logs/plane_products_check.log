@@ -1,0 +1,21 @@
+1. tau = ['2']: p + gamma p = F exactly: True; min p = 0 (0.0000)
+1. tau = ['4/3', '3/2']: p + gamma p = F exactly: True; min p = 0 (0.0000)
+1. tau = ['5/4', '8/5']: p + gamma p = F exactly: True; min p = 0 (0.0000)
+1. tau = ['1', '2']: p + gamma p = F exactly: True; min p = 0 (0.0000)
+1. tau = ['6/5', '5/4', '4/3']: p + gamma p = F exactly: True; min p = 0 (0.0000)
+1. tau = ['1', '8/7', '7/4']: p + gamma p = F exactly: True; min p = 0 (0.0000)
+1. tau = ['8/7', '7/6', '6/5', '5/4']: p + gamma p = F exactly: True; min p = 0 (0.0000)
+1. tau = ['10/9', '9/8', '4/3', '6/5']: p + gamma p = F exactly: True; min p = 0 (0.0000)
+2. tau = [2.]: min eigenvalue of 4^n P = 0.00e+00; max |P + P^Gamma - C| = 1.1e-16
+2. tau = [1.3333 1.5   ]: min eigenvalue of 4^n P = 0.00e+00; max |P + P^Gamma - C| = 1.1e-16
+2. tau = [1.25 1.6 ]: min eigenvalue of 4^n P = 0.00e+00; max |P + P^Gamma - C| = 8.3e-17
+2. tau = [1.2    1.25   1.3333]: min eigenvalue of 4^n P = 0.00e+00; max |P + P^Gamma - C| = 4.2e-17
+2. tau = [1.     1.1429 1.75  ]: min eigenvalue of 4^n P = 0.00e+00; max |P + P^Gamma - C| = 4.2e-17
+3. control, prod tau = 21/10: identity fails (max residual 0.2381): True
+4. a = [0.6, 0.6, 0.9], S = [0, 1]: value -0.002250, formula -0.002250: True
+4. a = [0.6, 0.64, 0.66], S = [0, 1, 2]: value -0.006535, formula -0.006535: True
+4. a = [0.55, 0.66, 0.8, 1.0], S = [0, 1]: value -0.001600, formula -0.001600: True
+4. a = [0.64, 0.65, 0.66, 0.67], S = [0, 1, 2, 3]: value -0.004387, formula -0.004387: True
+4. a = [0.45, 0.9, 0.9], S = [0]: value -0.040500, formula -0.040500: True
+5. random parameter vectors (n = 3): sign of the least value agrees with the condition in 40/40
+PASS

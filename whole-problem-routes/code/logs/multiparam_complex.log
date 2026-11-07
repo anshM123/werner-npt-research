@@ -1,0 +1,8 @@
+(a) n = 7, a_s = 0.760000+0.250995j for every s (Re a_s = 0.76), p = 0.003811: <y| (x) P_a (x x^T) |y> = -8.89e-18-6.94e-18j; formula p prod a + (1-p) prod (a - 1/2) = -9.11e-18-7.16e-18j
+(b) n = 3, start 0: largest Re a_1 of a zero with Re a_2, Re a_3 > 3/4: 0.500000
+(b) n = 3, start 1: largest Re a_1 of a zero with Re a_2, Re a_3 > 3/4: 0.500000
+(b) n = 3, start 2: largest Re a_1 of a zero with Re a_2, Re a_3 > 3/4: 0.500000
+(b) n = 3, start 3: largest Re a_1 of a zero with Re a_2, Re a_3 > 3/4: 0.500000
+(b) n = 3, start 4: largest Re a_1 of a zero with Re a_2, Re a_3 > 3/4: 0.500000
+(b) n = 3, start 5: largest Re a_1 of a zero with Re a_2, Re a_3 > 3/4: 0.500000
+(b) n = 3: largest Re a_1 found = 0.500000

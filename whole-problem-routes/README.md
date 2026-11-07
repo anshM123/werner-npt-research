@@ -233,6 +233,10 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.16 | on permutation-symmetric inputs and outputs: positivity fails below a_n for every n; at a = 3/4 the least value is exactly 4^{−n} for n ≤ 21, attained only at real products | **proved** (the first part every n; the second computer-assisted: n ≤ 9 by two separate exact checks, 10 ≤ n ≤ 21 by one); the threshold a_n on this sector numerical (n ≤ 7) |
 | 7.17 | for a ≥ 3/4 and every n, inputs that become thin one copy at a time (for example every open matrix product state of bond dimension two, such as the AKLT chain) have least output eigenvalue at least the product value (a − ½)^n | **proved** (by hand; with Theorem 7.13, up to five copies may stay thick) |
 | 7.18 | on a real plane (the Pauli family (1, t, 0, t) of Filippov and Magadov) the n-copy threshold is exactly a_n, every n, and positivity equals decomposability there | **proved** (explicit decomposition) |
+| 7.19 | on real planes with different parameters: 𝒬_{a₁} ⊗ ⋯ ⊗ 𝒬_{a_n} is positive iff decomposable iff ∏_{s∈S}(2a_s − ½) ≥ ½ for every S, every n | **proved** (explicit decomposition) |
+| QT_m | the same condition decides positivity of 𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n} | **open** for n ≥ 3 (necessity and n = 2 proved; n = 3, 4 numerical) |
+| 7.20 | the vertices of QT_m are 2-positivity: 𝒫_{1/2} ⊗ Φ is positive iff Φ is 2-positive on real inputs | **proved** |
+| 7.21 | the complex (half-plane, Lee–Yang) version of QT_m is false from n = 7 | **proved** (explicit zero) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -687,6 +691,77 @@ evidence for a positive answer to Müller-Hermes's question above. For n = 2 the
 certificate of that theorem is not enough in general: for eigenvalues (1, t, 0, s) with t ≠ s, a single tensor-power
 correction works at n = 2 but not at n = 3 (floating point; `code/pauli_maps/`).
 
+**Theorem 7.19 (different parameters on planes, every n).** For a₁, …, a_n > 0 the following are equivalent:
+(i) 𝒬_{a₁} ⊗ ⋯ ⊗ 𝒬_{a_n} is positive; (ii) it is decomposable; (iii) for every nonempty S ⊆ {1, …, n},
+
+    ∏_{s∈S} (2a_s − ½) ≥ ½.
+
+Only the copies with a_s < 3/4 matter in (iii): it says that a_s ≥ ½ for every s and ∏_{s: a_s<3/4} (2a_s − ½) ≥ ½. In
+the language of [FM], with τ_s = 2|t_s|: a product Υ_{t₁} ⊗ ⋯ ⊗ Υ_{t_n} of maps from the family (1, t, 0, t) is positive
+iff ∏_{s∈S} τ_s ≤ 2 for every S, and then it is decomposable. Theorem 7.18 is the case of equal parameters.
+
+*Proof.* If (iii) fails for S, take the vectors of Theorem 7.1 on the copies in S (for |S| = 1, x_s = y_s = e₁) and real
+unit vectors x_s ⊥ y_s at the other copies. The value is 2^{−|S|}[∏_{s∈S}(2a_s − ½) − ½] ∏_{s∉S} a_s < 0. For
+(iii) ⇒ (ii) put τ_s = 1/(2a_s − ½) ∈ (0, 2], so that 𝒬_{a_s} = (2a_s − ½) Ad_Y ∘ Υ_{τ_s/2}, and let L = {s : τ_s > 1};
+(iii) says ∏_{s∈L} τ_s ≤ 2. For s ∉ L, Υ_{τ_s/2} is completely positive and equal to its composition with the transpose,
+so it is entanglement breaking, and tensoring with it keeps decomposability. The one-pair identities in the proof of
+Theorem 7.18 hold at each copy with its own u = τ_s. So if ∏_{s∈L} τ_s = 2, the operator P built over the copies in L from
+F = ⊗(1 + τ_s, 1, 1, 1 − τ_s), F̃ = ⊗(1 + τ_s, 1, 1, τ_s − 1) and R = ⊗(2/τ_s, 1, 1, 0) satisfies
+P + P^Γ = F + (½∏τ_s − 1)R + (½ − 1/∏τ_s)F̃ = F, and p ≥ 0 as before because every τ_s ≥ 1. If ∏_{s∈L} τ_s < 2, raise
+τ_{s₀} for one s₀ ∈ L to 2/∏_{s∈L∖s₀} τ_s ≤ 2. Then Υ_{τ_{s₀}/2} is a convex combination of Υ at the raised value and the
+depolarizing map Υ₀. The second term is an entanglement-breaking map tensored with a product over L ∖ s₀, which is
+decomposable by induction on |L|. ∎
+
+`code/plane_products_check.py` (`logs/plane_products_check.log`, PASS) checks the identity and p ≥ 0 exactly at eight
+rational parameter vectors with product 2 (n ≤ 4), with explicit matrices for n ≤ 3, a control with product 21/10, the
+witness values, and the sign of the least value at 40 random parameter vectors (n = 3).
+
+The same condition seems to govern the qutrit map.
+
+**Conjecture QT_m.** For a₁, …, a_n ≥ 0, 𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n} is positive iff condition (iii) of Theorem 7.19 holds.
+
+Conjecture QT is the case of equal parameters. The witnesses of Theorem 7.19 live on planes, so (iii) is necessary. It
+is also sufficient for n = 2. The reduction of Theorem 7.2 to x = Σ s_i e_i ⊗ e_i works with different parameters. The
+first block satisfies zᵀM_Az − (a₁ − ½)(a₂ − ½)|z|² = Σ_{k<l}[c(s_l²z_k² + s_k²z_l²) + ¼ s_ks_lz_kz_l] with
+c = ½(a₁ + a₂) − ¼ ≥ ⅛. On span{|ij⟩, |ji⟩} it is enough to take s_i² + s_j² = 1 (scaling s_i, s_j up lowers the diagonal
+and raises the off-diagonal entry). With s_i² = ½ + δ the block is [[K − δΔ, ⅛s_is_j], [⅛s_is_j, K + δΔ]], where
+K = a₁a₂ − ¼(a₁ + a₂) and Δ = ½(a₂ − a₁), and its determinant is K² − 1/256 − δ²(Δ² − 1/64). At δ² = ¼ this is
+a₁a₂(a₁ − ½)(a₂ − ½) ≥ 0, and at δ = 0 it is ≥ 0 exactly when K ≥ 1/16, which is (iii). If Δ² > 1/64 the determinant
+decreases in δ², so it is ≥ 0 throughout; otherwise its minimum is at δ = 0. For n = 3 and n = 4, alternating
+minimisation at 21 and 17 parameter vectors, some within 10⁻³ of the boundary on either side, always finds a least value
+of the predicted sign (`code/multiparam_numerics.py`, `logs/multiparam_real_n3.log` and `logs/multiparam_real_n4.log`;
+3000 random pairs for n = 2 in `logs/multiparam_two.log`).
+
+**Proposition 7.20 (the vertices are 2-positivity).** Let Φ = 𝒫_{a₂} ⊗ ⋯ ⊗ 𝒫_{a_n} with real a_s. Then 𝒫_{1/2} ⊗ Φ is
+positive iff id₂ ⊗ Φ is positive on real inputs. In particular the point (½, ¾, …, ¾) satisfies Conjecture QT_m iff
+𝒫_{3/4}^{⊗(n−1)} is 2-positive on real inputs, and these statements hold for every n iff 𝒫_{3/4} is tensor-stable
+positive.
+
+*Proof.* For 2 × 2 matrices Tr(Y)I₂ − Y = σ_yYᵀσ_y and Tr(Y)I₂ − Yᵀ = σ_yYσ_y, so 𝒬_{1/2}(Y) = ¼σ_y(Y + Yᵀ)σ_y. The
+output of Φ is invariant under the transpose, and Φ maps real symmetric matrices to real symmetric ones. So for real
+X ⪰ 0, (𝒬_{1/2} ⊗ Φ)(X) = ½(σ_y ⊗ I)Z(σ_y ⊗ I) with Z = (id₂ ⊗ Φ)(X), and positivity of 𝒫_{1/2} ⊗ Φ, compressed to a real
+plane at the first copy, gives Z ⪰ 0. Conversely 𝒫_{1/2} = R + T ∘ R, where R(X) = ¼(Tr(X)I − Xᵀ) is completely positive
+with real Kraus operators of rank two (Proposition M, item 4). If id₂ ⊗ Φ is positive on real inputs, then so is R ⊗ Φ,
+and (T ∘ R) ⊗ Φ = T ∘ (R ⊗ Φ). Real inputs suffice for 𝒫_{1/2} ⊗ Φ, as for 𝒫_a^{⊗n}. For the last sentence:
+tensor-stable positivity gives 2-positivity of every power (Proposition M, item 3), and real 2-positivity of
+𝒫_{3/4}^{⊗(n−1)} gives positivity of 𝒫_{3/4}^{⊗n} as in item 4. ∎
+
+So Conjecture QT_m says that copies with a_s ≥ 3/4 cost nothing and that the others share a budget of log 2:
+Σ_s max(0, −log(2a_s − ½)) ≤ log 2. In the coordinates t_s = log(2a_s − ½) the conjectured region is a polyhedron, its
+vertices are the n points of Proposition 7.20 (one t_s = −log 2, the others 0), and the point of Conjecture QT,
+t_s = −(log 2)/n, is their barycentre. So if the set of parameters at which 𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n} is positive is convex
+in these coordinates, real 2-positivity of 𝒫_{3/4}^{⊗(n−1)} gives Conjecture QT at n copies with its sharp threshold a_n.
+We do not know whether it is convex.
+
+**Remark 7.21 (there is no complex version).** The value f(a₁, …, a_n) = ⟨y|𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n}(xxᵀ)|y⟩ is multi-affine in
+the parameters. At n = 3 an adversarial search over x, y and complex parameters finds no zero with Re a₁ > ½ and
+Re a_s > 3/4 for s ≥ 2: the largest Re a₁ of such zeros is ½, attained by products and approached by the plane witness. A
+zero-free region of this kind would give the real statements by continuity, but it fails from n = 7. For
+x = √p e₂^{⊗7} + √(1 − p) e₁^{⊗7} and y = e₁^{⊗7} the cross terms vanish and f = p∏a_s + (1 − p)∏(a_s − ½). With every
+a_s = 0.76 + 0.2510i and p ≈ 0.0038 this is zero: arg a_s − arg(a_s − ½) can be close to −30° when Re a_s > 3/4, and seven
+copies reach −180° (`multiparam_numerics.py complex`). So there is no half-plane (Lee–Yang) version of Conjecture QT_m;
+it is a statement about real parameters.
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
@@ -765,6 +840,11 @@ control above the threshold; `logs/plane_threshold_check.log`).
 
 `code/bond_two_check.py n samples seed` illustrates Proposition 7.17 in floating point (the AKLT chain and random open
 matrix product states of bond dimension two and, for comparison, three; `logs/bond_two_check.log`, n = 4, …, 8).
+
+`code/plane_products_check.py` checks Theorem 7.19 (exact identities and p ≥ 0 for rational parameters with product 2,
+n ≤ 4; explicit matrices for n ≤ 3; a control; the witness values; signs at random parameters;
+`logs/plane_products_check.log`). `code/multiparam_numerics.py` gives the numerics of Conjecture QT_m (modes `two`,
+`real 3 5`, `real 4 11`) and Remark 7.21 (mode `complex`), logs `logs/multiparam_*.log`.
 
 Python with NumPy, SciPy (HiGHS) and SymPy; `code/dps/` and `code/symmetric_sector/` also use python-flint, and CVXPY
 with Clarabel and SCS for the semidefinite programs.
