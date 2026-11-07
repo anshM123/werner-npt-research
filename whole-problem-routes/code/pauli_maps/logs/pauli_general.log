@@ -1,0 +1,8 @@
+FM ok but canonical fails: [ 0.8973 -0.3763 -0.1533]  LP decomposable: True
+FM ok but canonical fails: [0.5534 0.226  0.8346]  LP decomposable: True
+FM ok but canonical fails: [0.6537 0.771  0.3207]  LP decomposable: True
+n = 2: counts (FM necessary, canonical certificate, LP decomposable): {(False, False, False): 121, (True, False, True): 63}
+FM ok but canonical fails: [ 3.793e-01  7.000e-04 -8.458e-01]  LP decomposable: True
+FM ok but canonical fails: [ 0.5375  0.0513 -0.7019]  LP decomposable: True
+FM ok but canonical fails: [-0.3821 -0.2089  0.8819]  LP decomposable: True
+n = 3: counts (FM necessary, canonical certificate, LP decomposable): {(False, False, False): 152, (True, False, True): 32}

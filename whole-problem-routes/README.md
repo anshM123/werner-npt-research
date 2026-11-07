@@ -660,6 +660,16 @@ the three identities exactly, the identity P + P^Γ = C^{⊗n} exactly in Q(2^{1
 4ⁿ × 4ⁿ matrices for n ≤ 5, and that it fails 1% above the threshold. On a plane the threshold question is thus one about
 decomposable maps. For qutrits it is not, from three copies on (Proposition 7.3), and Conjecture QT remains open there.
 
+The same seems to hold for every Pauli map, which would settle the question that [FM] leave open (they give necessary
+and, separately, sufficient conditions for every n). For random Pauli maps (eigenvalues 1, λ₁, λ₂, λ₃, neither
+completely positive nor completely copositive), the exact decomposability of Υ^{⊗n} (a linear program over Bell
+strings) agrees with their GHZ condition (eq. (7) of [FM]) in every sample for n = 2, 3, 4 (184, 184 and 140 maps). Along
+65 random rays from the identity map, n = 3 and 4, the decomposability boundary and the GHZ boundary agree to 0.1%.
+So, numerically, Υ^{⊗n} is positive exactly when it is decomposable, and exactly when the GHZ condition holds. For
+n = 2 the first equivalence is Müller-Hermes's theorem. Beyond the family of Theorem 7.18 we have no proof. The
+certificate of that theorem is not enough in general: for eigenvalues (1, t, 0, s) with t ≠ s, a single tensor-power
+correction works at n = 2 but not at n = 3 (floating point; `code/pauli_maps/`).
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
