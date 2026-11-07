@@ -1,0 +1,13 @@
+1. partial transpose maps Bell projectors to Bell-diagonal operators: True; gamma as stated: True
+2. gamma f1 = f1, gamma f~1 = u r, gamma r = f~1/u (exact): True
+3. n = 1: p + gamma^n p = f^n exactly in Q(2^(1/n)): True; min p = 0.000000
+3. n = 2: p + gamma^n p = f^n exactly in Q(2^(1/n)): True; min p = 0.000000
+3. n = 3: p + gamma^n p = f^n exactly in Q(2^(1/n)): True; min p = 0.000000
+3. n = 4: p + gamma^n p = f^n exactly in Q(2^(1/n)): True; min p = 0.000000
+4. n = 1: Bell eigenvalues x4 [ 3.  1.  1. -1.]; min eigenvalue of 4^n P = 0.00e+00; max |P + P^Gamma - C^n| = 1.1e-16
+4. n = 2: Bell eigenvalues x4 [ 2.414214  1.        1.       -0.414214]; min eigenvalue of 4^n P = 0.00e+00; max |P + P^Gamma - C^n| = 5.6e-17
+4. n = 3: Bell eigenvalues x4 [ 2.259921  1.        1.       -0.259921]; min eigenvalue of 4^n P = 0.00e+00; max |P + P^Gamma - C^n| = 1.4e-17
+4. n = 4: Bell eigenvalues x4 [ 2.189207  1.        1.       -0.189207]; min eigenvalue of 4^n P = 0.00e+00; max |P + P^Gamma - C^n| = 4.2e-17
+4. n = 5: Bell eigenvalues x4 [ 2.148698  1.        1.       -0.148698]; min eigenvalue of 4^n P = 0.00e+00; max |P + P^Gamma - C^n| = 8.7e-18
+5. control at u = 1.01 * 2^(1/3): the identity fails (max residual 0.290): True
+PASS

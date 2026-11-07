@@ -14,9 +14,10 @@ one inequality, stated below, that would settle it.
 Section 7 adds what we can prove about the fifth route. It gives explicit witnesses that bound the n-copy positivity
 threshold of the map from below at every n, and the exact threshold at two copies. It also states Conjecture QT: the
 threshold at n copies is (1 + 2^{1−1/n})/4. That conjecture would settle the route, and so the existence of NPT bound
-entanglement. It is open from three copies on. At the parameter that matters, a = 3/4, inputs supported on a plane at a
-copy are entanglement broken there, so every copy where the input is thin can be removed (Proposition 7.8). Only inputs
-with full support at every copy, on at least three copies, remain.
+entanglement. It is open from three copies on, and proved for every n on a real plane, where the threshold is exactly
+(1 + 2^{1−1/n})/4 (Theorem 7.18). At the parameter that matters, a = 3/4, inputs supported on a plane at a copy are
+entanglement broken there, so every copy where the input is thin can be removed (Proposition 7.8). Only inputs with full
+support at every copy, on at least six copies, remain (Corollary 7.14).
 
 ## 1. The cross ratio, and fusion of planes
 
@@ -222,7 +223,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.2 | n = 2: positive iff a ≥ (1 + √2)/4; not decomposable below (7 + 2√15)/22 | **proved** |
 | 7.3 | decomposability of 𝒫_a^{⊗n} is a linear program; its thresholds tend to 1 | reduction **proved**; thresholds numerical (LP) |
 | 7.4 | the threshold is a_n for n ≤ 6 (searches) and n = 9, 15, 21 (matrix product states); general matrix product states for n ≤ 12 find nothing below the product value at a_n + 0.002 and at 3/4 | numerical |
-| QT | 𝒫_a^{⊗n} is positive iff a ≥ a_n, every n (would give NPT bound entanglement) | **open** from n = 3 (at a = 3/4 proved for n ≤ 5, see 7.13) |
+| QT | 𝒫_a^{⊗n} is positive iff a ≥ a_n, every n (would give NPT bound entanglement) | **open** from n = 3 (at a = 3/4 proved for n ≤ 5, see 7.13; on real planes proved for every n, see 7.18) |
 | 7.7–7.10 | at a ≥ 3/4 copies where the input or the output vector is thin are free; only inputs thick at every copy, n ≥ 3, remain | **proved** |
 | 7.11 | 𝒫_a^{⊗n} is 2-positive for a ≥ 0.8602 (n = 2) and a ≥ 0.91, 0.93, 0.95 (n = 3, 4, 5) | **proved** (n = 2 by hand; n = 3–5 exact certificates) |
 | 7.12 | the two-copy Werner endpoint and the two-copy case of the map at 3/4 are the ends of one family | reduction **proved**; the range [1, 2] numerical |
@@ -231,6 +232,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n; its threshold ℓ_n increases with n and is ≈ 0.720 at n = 5, so it probably reaches 3/4 near n = 6 | numerical (ℓ_{n+1} ≥ ℓ_n **proved**) |
 | 7.16 | on permutation-symmetric inputs and outputs: positivity fails below a_n for every n; at a = 3/4 the least value is exactly 4^{−n} for n ≤ 21, attained only at real products | **proved** (the first part every n; the second computer-assisted: n ≤ 9 by two separate exact checks, 10 ≤ n ≤ 21 by one); the threshold a_n on this sector numerical (n ≤ 7) |
 | 7.17 | for a ≥ 3/4 and every n, inputs that become thin one copy at a time (for example every open matrix product state of bond dimension two, such as the AKLT chain) have least output eigenvalue at least the product value (a − ½)^n | **proved** (by hand; with Theorem 7.13, up to five copies may stay thick) |
+| 7.18 | on a real plane (the Pauli family (1, t, 0, t) of Filippov and Magadov) the n-copy threshold is exactly a_n, every n, and positivity equals decomposability there | **proved** (explicit decomposition) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -266,7 +268,7 @@ Y). Filippov and Magadov studied n-tensor-stable positivity of Pauli maps [FM, J
 arXiv:1604.01716]. Their necessary condition from n-qubit GHZ states (Proposition 7 there) gives, for this family,
 |λ₁| ≤ 2^{−1+1/n}, which is exactly a ≥ a_n (their Example 3 treats this family). So the witnesses of Theorem 7.1 are
 their GHZ obstruction, carried from the plane to the qutrit map. They show that the condition is also sufficient for
-this family at n = 2, and give numerical evidence at n = 3.
+this family at n = 2, and give numerical evidence at n = 3. Theorem 7.18 below proves sufficiency for every n.
 
 **Theorem 7.2 (two copies).** 𝒫_a^{⊗2} is positive if and only if a ≥ (1 + √2)/4. For
 (1 + √2)/4 ≤ a < (7 + 2√15)/22 ≈ 0.6703 it is positive but not decomposable.
@@ -323,7 +325,7 @@ or more copies, where the tensor powers stop being decomposable.
 On a plane the picture is different. The same program for 𝒬_a, with G₂ = [[½, 1, −½], [½, 0, ½], [−½, 1, ½]] and
 c_C = (a − ¾, a − ¼, a + ¼)^{⊗n}, gives decomposability thresholds equal to a_n to eight digits for every n ≤ 12.
 Together with Theorem 7.1 this says that, for n ≤ 12, 𝒬_a^{⊗n} is positive exactly when a ≥ a_n (computer-assisted,
-floating point; exact certificates are not written out here). For n = 2 and 3 this agrees with [FM, Example 3].
+floating point). Theorem 7.18 proves it for every n, with an explicit decomposition.
 
 **Observation 7.4 (numerical).** For n = 2, …, 6 the positivity threshold of 𝒫_a^{⊗n} found by search is a_n. At
 a_n − 0.001 the search finds negative values, and at a_n + 0.001 it finds none. The searches use alternating minimisation
@@ -622,6 +624,39 @@ some cut {1, …, k} | {k + 1, …, n} with k ≤ n − 5. `code/bond_two_check.
 illustrates the bound for the open AKLT chain and random open matrix product states of bond dimension two, n = 4, …, 7.
 For the AKLT chain the least output eigenvalue is 20 to 320 times the product value.
 
+**Theorem 7.18 (the threshold on a real plane, every n).** Let 𝒬_a(Y) = a Tr(Y) I₂ − ¼(Y + Yᵀ) be the compression of 𝒫_a
+to a real plane. For every n ≥ 1 the following are equivalent: (i) 𝒬_a^{⊗n} is positive; (ii) 𝒬_a^{⊗n} is
+decomposable; (iii) a ≥ a_n. In the language of [FM]: the tensor power Υ_t^{⊗n} of the Pauli map with eigenvalues
+1, t, 0, t on I, X, Y, Z is positive if and only if |t| ≤ 2^{−1+1/n}, and then it is decomposable. So Conjecture QT
+holds for inputs and outputs that lie in a real plane at every copy.
+
+*Proof.* On the plane 𝒬_a has the Pauli eigenvalues 2a − ½, −½, 0, −½, so 𝒬_a = (2a − ½) Ad_Y ∘ Υ_t with t = 1/(4a − 1),
+and a ≥ a_n means u := 2t ≤ 2^{1/n}. If a < a_n, Theorem 7.1 applies, and (ii) implies (i). For (iii) ⇒ (ii), first
+let u = 2^{1/n}. The Choi matrix of Υ_t is Bell-diagonal with eigenvalues (1 + u, 1, 1, 1 − u)/4 on Φ⁺, Φ⁻, Ψ⁺, Ψ⁻.
+The partial transpose maps a Bell-diagonal operator to a Bell-diagonal one, and acts on its eigenvalues by
+γ = ½[[1, 1, 1, −1], [1, 1, −1, 1], [1, −1, 1, 1], [−1, 1, 1, 1]]. For a string J of Bell labels let F(J), F̃(J) and
+R(J) be the products over the copies of the entries of (1 + u, 1, 1, 1 − u), (1 + u, 1, 1, u − 1) and (2/u, 1, 1, 0).
+Directly, γ fixes (1 + u, 1, 1, 1 − u), maps (1 + u, 1, 1, u − 1) to u·(2/u, 1, 1, 0), and maps (2/u, 1, 1, 0) to
+(1 + u, 1, 1, u − 1)/u. Let P be the Bell-diagonal operator with eigenvalues 4^{−n}p, where p = ½(F + F̃) − R. The
+partial transpose acts copy by copy, so P^Γ has eigenvalues 4^{−n}[½(F + uⁿR) − u^{−n}F̃], and
+
+    P + P^Γ has eigenvalues 4^{−n}[F + (½uⁿ − 1)R + (½ − u^{−n})F̃] = 4^{−n}F,
+
+which are those of the Choi matrix of Υ_t^{⊗n}. Moreover p ≥ 0. With k₀ and k₃ the numbers of Φ⁺ and Ψ⁻ in J,
+p = (1 + u)^{k₀}(1 − u)^{k₃} when k₃ ≥ 2 is even, p = 0 when k₃ is odd, and p = (1 + u)^{k₀} − (2/u)^{k₀} ≥ 0 when
+k₃ = 0, because u ≥ 1. So Υ_t^{⊗n} is decomposable at u = 2^{1/n}. For smaller t ≥ 0, Υ_t is a convex combination of
+Υ_{t_n} (t_n = 2^{−1+1/n}) and the completely depolarizing map Υ₀, which is entanglement breaking. Expanding the tensor
+power gives terms Υ_{t_n}^{⊗k} ⊗ (entanglement breaking), k ≤ n, and Υ_{t_n}^{⊗k} is decomposable by induction on n
+(as t_n ≤ t_k). Decomposability survives tensoring with entanglement-breaking maps and composing with Ad_Y. ∎
+
+For n = 2 and 3 this is [FM, Example 3] (n = 3 numerically there). The theorem also proves the decomposability
+thresholds of 𝒬_a computed after Proposition 7.3 for every n. The certificate was found by computing the
+minimum-norm solution of that linear program in the form P + P^Γ for n = 2, 3, 4 and reading off its pattern.
+`code/plane_threshold_check.py` (`logs/plane_threshold_check.log`) checks the matrix γ from explicit partial transposes,
+the three identities exactly, the identity P + P^Γ = C^{⊗n} exactly in Q(2^{1/n}) for n ≤ 4 and with explicit
+4ⁿ × 4ⁿ matrices for n ≤ 5, and that it fails 1% above the threshold. On a plane the threshold question is thus one about
+decomposable maps. For qutrits it is not, from three copies on (Proposition 7.3), and Conjecture QT remains open there.
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
@@ -694,6 +729,9 @@ n = 2, …, 8 and not positive semidefinite at n = 9. `many_n/run_many_n.sh` ver
 n = 9, …, 21 exactly in a coupled angular-momentum basis (`many_n/verify_exact.py`, logs `many_n/logs/`), and
 `many_n/verify_bosonic_cert.py` checks the n = 9 certificate a second way. The numerics of the proposition are
 `num_min.py`, `t3num.py`, `sdp_o3b.py` and `sosthr.py`.
+
+`code/plane_threshold_check.py` checks Theorem 7.18 (exact in Q(2^{1/n}) for n ≤ 4, explicit matrices for n ≤ 5, a
+control above the threshold; `logs/plane_threshold_check.log`).
 
 `code/bond_two_check.py n samples seed` illustrates Proposition 7.17 in floating point (the AKLT chain and random open
 matrix product states of bond dimension two and, for comparison, three; `logs/bond_two_check.log`, n = 4, …, 7).
