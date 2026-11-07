@@ -24,7 +24,10 @@ planes (Conjecture PM). The extreme points of this rule are exactly 2-positivity
 plane witnesses are local minima in the full qutrit space (Proposition 7.22). Finally, from any critical point of the
 value, squeezing one copy toward a plane moves the value monotonically, with the sign set by one contraction
 inequality (Proposition 7.23). So a failure at a = 3/4 would have to be a strict minimum along every one-copy squeeze
-(Corollary 7.24); the thick critical points we found at three copies are not (Observation 7.25).
+(Corollary 7.24). Such points exist away from the minimum (a balanced pair of spin singlets at four copies,
+Observation 7.26), so squeezes alone cannot finish the argument. In every search, inputs with full support at every
+copy sit far above the product value (Observation 7.27), which suggests a multiplicative bonus for thickness
+(Conjecture TC).
 
 ## 1. The cross ratio, and fusion of planes
 
@@ -247,8 +250,11 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.21 | the complex (half-plane, Lee–Yang) version of QT_m is false from n = 5 (with every Re a_s > 3/4, from n = 7) | **proved** (explicit zeros) |
 | 7.22 | at every point of the facet ∏(2a_s − ½) = ½, the plane witness is a second-order local minimum in the full qutrit space, every n | **proved** |
 | 7.23 | from a joint critical point of the value, squeezing one copy toward a plane moves the normalised value monotonically all the way to the compression; one contraction inequality gives the sign; the trace of the one-copy squeeze Hessian has a closed form (every n, every a) | **proved** |
-| 7.24 | a smallest failure at a ≥ 3/4 would be a strict minimum along every one-copy squeeze (thick critical points of that kind above the product value are not excluded, so this is not yet a reduction) | **proved** |
+| 7.24 | a smallest failure at a ≥ 3/4 would be a strict minimum along every one-copy squeeze (thick critical points of that kind exist, Observation 7.26, so this is not a reduction) | **proved** |
 | 7.25 | the thick critical points found at n = 3, 4 are saddles along a one-copy squeeze, and the squeeze Hessian trace is negative there; a one-copy compression never raised the least output eigenvalue (n = 2, 3, 4) | numerical (critical points found by search; a failure would need n ≥ 6) |
+| 7.26 | a balanced critical pair at n = 4 (spin singlets, value (151 − √6805)/1536) rises along every one-copy and every joint squeeze, yet is a saddle | identities **exact**, Hessians numerical |
+| 7.27 | inputs thick at every copy sit far above the product value; the per-copy factor under a thickness floor hardly depends on n; singlet minima are 7.7 to 109 times 4^{−n} for n ≤ 7 | numerical |
+| TC | ⟨y|𝒫_{3/4}^{⊗n}(xxᵀ)|y⟩ ≥ ∏_s(¼ + ½τ_s), τ_s the thickness of the pair at copy s; it contains QT at 3/4 | **open** (numerical n ≤ 3 adversarial, consistent with n ≤ 7 data) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -914,11 +920,10 @@ follows by induction on n, starting from μ₁ = a − ½. ∎
 This is the map's version of the squeeze-orbit picture of `orbit-notes/`, where rank-one squeezes through critical points
 of the endpoint form are monotone in the same way (item 2 there). For the endpoint form, the statements that look at
 one copy at a time are false at n = 3 (thick operators that are minima over every single-copy orbit; see "One copy at a
-time is not enough" there), while the joint statement survives. Our searches for the map found no such point
-(Observation 7.25), but they only see what random starts reach, and structured points (for example balanced ones,
-with every one-copy marginal I/3) can behave differently. We do not expect the last sentence of the corollary to hold
-as stated. What a proof needs is only the version for thick critical points below (a − ½)^n, and that version is
-equivalent to the problem itself.
+time is not enough" there), while the joint statement survives. For the map, such points exist even for joint
+squeezes: Observation 7.26 gives a balanced critical pair at four copies that rises along every one-copy squeeze and
+along every joint squeeze of all four copies. So the last sentence of the corollary cannot be used. What a proof needs
+is only the version for thick critical points below (a − ½)^n, and that version is equivalent to the problem itself.
 
 **Observation 7.25 (numerical).** At n = 3 and a = ¾, minimising the residual of the critical equations from random
 starts gives thick joint critical points: five of them, with values 0.178 to 0.210 (far above 1/64) and least one-copy
@@ -956,6 +961,57 @@ saddles for a = ¾ and 0.7 (agreement to 10⁻⁸, limited by the residual of th
 gaps at n = 2, 3, 4. `code/squeeze_trace.py` (`logs/squeeze_trace.log`, PASS) checks the trace of 7.23(ii) against
 the closed form of the Hessian and against finite differences, at products, plane GHZ pairs and thick saddles
 (a = ¾ and 0.7), and computes the ratios r_s.
+
+**Observation 7.26 (a balanced critical pair that defeats squeezes).** At n = 4 let p₁ = Ω₀₁Ω₂₃, p₂ = Ω₀₂Ω₁₃ and
+p₃ = Ω₀₃Ω₁₂, where Ω_{st} = Σ_i e_i ⊗ e_i on copies s, t (unnormalised). Let x ∝ p₃ − p₁ and y ∝ p₂ − c(p₁ + p₃), with
+c = (√6805 − 71)/36 ≈ 0.3192, both normalised. Then, exactly,
+
+    𝒫_{3/4}^{⊗4}(yyᵀ) x = λx,   𝒫_{3/4}^{⊗4}(xxᵀ) y = λy,   λ = (151 − √6805)/1536 ≈ 0.04460,
+
+and every one-copy reduced state of x and of y is I/3. The rest is numerical. λ is the least eigenvalue of
+𝒫_{3/4}^{⊗4}(yyᵀ). Every one-copy squeeze raises the normalised value: the margin λ − ¼ f₃(ξ̂, η̂) is at most −0.0168 at
+every copy. So does every joint squeeze: the squeeze Hessian over all traceless directions at all four copies is
+positive definite, with least eigenvalue 0.0118. The full Hessian on the product of spheres has five negative eigenvalues
+(−0.0028), so the pair is a saddle of f, but only through directions that are not local filters. Both vectors are spin
+singlets (invariant under O(3) acting on all copies at once), and λ is the least value of f over pairs of singlets at
+n = 4. It is 11.4 times the product value 1/256. Consequently, for the map, no squeeze-orbit argument (one copy, or all
+copies jointly) can rule out thick minimisers. For the endpoint form the joint version survives at the one-copy
+counterexamples of `orbit-notes/`; here it does not. `code/thick_sector.py` (`logs/thick_sector.log`, PASS) checks the
+identities in exact arithmetic (modulo 36c² + 142c − 49) and the rest in floating point.
+
+**Observation 7.27 (thick inputs sit far above the product value).** All of this is floating point.
+(a) *A thickness floor.* Minimise f_n over pairs whose one-copy marginals all have least eigenvalue at least τ (a penalty
+method from a few starts, so the values are upper bounds for the constrained minima). The per-copy factor
+(least value)^{1/n} hardly depends on n:
+
+| τ | n = 2 | n = 3 | n = 4 | n = 5 |
+|---|---|---|---|---|
+| 0.02 | 0.315 | 0.299 | 0.298 | 0.300 |
+| 0.05 | 0.364 | 0.349 | 0.344 | 0.347 |
+| 0.1 | 0.441 | 0.398 | 0.393 | 0.397 |
+| 0.2 | 0.510 | 0.454 | 0.434 | 0.463 |
+| 0.3 | 0.545 | 0.497 | 0.459 | 0.488 |
+
+The product value corresponds to the factor ¼ (`code/thickness_floor.py`, `logs/thickness_floor.log`).
+(b) *Singlets.* The least value of f over pairs of spin singlets is 23/48, 7/32, 0.04460, 0.02962, 0.01179 and 0.006630
+for n = 2, …, 7. That is 7.7, 14, 11.4, 30, 48 and 109 times 4^{−n}. The per-copy factor is at least 0.4596, the value
+of Observation 7.26, which tensor powers of that pair attain at every multiple of four (`logs/thick_sector.log`). Every
+balanced pair we found (all one-copy marginals I/3) has a per-copy factor of at least 0.4596.
+(c) *A multiplicative bonus.* The bound of the next conjecture held in adversarial searches from random, near-thin and
+structured starts. With a larger coefficient it fails: ¼ + 0.7τ_s at the pair of Observation 7.26, and ¼ + τ_s at the
+least balanced pair at n = 2 (value 11/36). Near thin pairs the gain is linear in τ: a bonus √τ_s/3 fails there.
+
+**Conjecture TC (a bonus for thickness).** For every n and all real unit x, y on n copies,
+
+    ⟨y|𝒫_{3/4}^{⊗n}(xxᵀ)|y⟩ ≥ ∏_s (¼ + ½ τ_s),
+
+where τ_s is the smaller of the least eigenvalues of the one-copy reduced states of x and y at copy s.
+
+It contains Conjecture QT at a = ¾, with the least value 4^{−n} (take τ_s ≥ 0), and it is tight at products. It says
+that a copy where both vectors have full support pays strictly more than the factor ¼ of a thin copy. Unlike
+thinness, the bonus does not pass through the peeling of Proposition 7.8: the conditional states there can be thinner
+than their average. So it is not inductive in an obvious way. Evidence: `code/thick_sector.py` (adversarial searches at
+n = 2, 3, and the two violations of larger coefficients), and the data of Observation 7.27.
 
 ## Checks
 
@@ -1043,7 +1099,10 @@ n ≤ 4; explicit matrices for n ≤ 3; a control; the witness values; signs at 
 `code/plane_witness_hessian.py` checks Proposition 7.22 (full Hessians for n ≤ 6 against the closed form;
 `logs/plane_witness_hessian.log`). `code/squeeze_paths.py` checks Proposition 7.23 at minima and at thick saddles for
 n = 3, and the compression numerics of Observation 7.25 (`logs/squeeze_paths.log`); `code/thick_critical_points.py`
-gives the biased search for thick critical points there (`logs/thick_critical_points.log`). `code/planar_minimum.py n starts seed` gives the numerics of Conjecture PM
+gives the biased search for thick critical points there (`logs/thick_critical_points.log`). `code/thick_sector.py`
+checks Observation 7.26 (exact identities and Hessians), the singlet minima and the tests of Conjecture TC
+(`logs/thick_sector.log`); `code/thickness_floor.py` gives the table of Observation 7.27(a)
+(`logs/thickness_floor.log`). `code/planar_minimum.py n starts seed` gives the numerics of Conjecture PM
 (`logs/planar_minimum_n3.log`, `logs/planar_minimum_n4.log`).
 
 Python with NumPy, SciPy (HiGHS) and SymPy; `code/dps/` and `code/symmetric_sector/` also use python-flint, and CVXPY

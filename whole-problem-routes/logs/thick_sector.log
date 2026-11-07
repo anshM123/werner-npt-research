@@ -1,0 +1,11 @@
+Part 1 (exact): value (151 - sqrt 6805)/1536: True; P(yy^T)x = lam x: True; P(xx^T)y = lam y: True; all one-copy marginals I/3: True
+Part 2: least eigenvalue of P(yy^T) 0.044601286527 (lam 0.044601286527); best one-copy squeeze margins [-0.016799 -0.016799 -0.016799 -0.016799]; joint squeeze Hessian least eigenvalue +0.011819; full Hessian: 5 negative eigenvalues, least -0.002845
+Part 3: least value over pairs of spin singlets
+  n = 2: singlet dimension 1, least value 0.4791666667, ratio to 4^-n 7.667, per-copy factor 0.6922
+  n = 3: singlet dimension 1, least value 0.2187500000, ratio to 4^-n 14.000, per-copy factor 0.6025
+  n = 4: singlet dimension 3, least value 0.0446012865, ratio to 4^-n 11.418, per-copy factor 0.4596
+  n = 5: singlet dimension 6, least value 0.0296223958, ratio to 4^-n 30.333, per-copy factor 0.4947
+  n = 6: singlet dimension 15, least value 0.0117867883, ratio to 4^-n 48.279, per-copy factor 0.4771
+  n = 7: singlet dimension 36, least value 0.0066304167, ratio to 4^-n 108.633, per-copy factor 0.4884
+Part 4: kappa = 1/2: least slack found +2.25e-11 (n = 2), +3.71e-10 (n = 3); singlet pair against kappa = 0.7: -0.00997; least balanced pair at n = 2 (value 0.305555) against kappa = 1: -0.03472
+PASS
