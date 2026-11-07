@@ -1,0 +1,17 @@
+(1) multiplicative margin
+  a = 0.8, n = 1: min found 0.05000000, product value 0.05000000, ratio 1.000000
+  a = 0.8, n = 2: min found 0.01500000, product value 0.01500000, ratio 1.000000
+  a = 0.8, n = 3: min found 0.00450000, product value 0.00450000, ratio 1.000000
+  a = 0.8, n = 4: min found 0.00135000, product value 0.00135000, ratio 1.000000
+  a = 0.9, n = 1: min found 0.15000000, product value 0.15000000, ratio 1.000000
+  a = 0.9, n = 2: min found 0.06000000, product value 0.06000000, ratio 1.000000
+  a = 0.9, n = 3: min found 0.02400000, product value 0.02400000, ratio 1.000000
+  a = 0.9, n = 4: min found 0.00960000, product value 0.00960000, ratio 1.000000
+(2) the threshold
+  a = 0.75, n = 2: min over Schmidt-rank-2 = 3.489e-15
+  a = 0.75, n = 3: min over Schmidt-rank-2 = 2.932e-15
+  a = 0.75, n = 4: min over Schmidt-rank-2 = 7.002e-15
+  a = 0.74, n = 1: min over Schmidt-rank-2 = -1.000e-02
+  a = 0.74, n = 2: min over Schmidt-rank-2 = -9.900e-03
+(3) calibration on P_{9/10} (x) S
+  min over Schmidt-rank-2 = -1.615e-03 (negative: the search finds this known failure)

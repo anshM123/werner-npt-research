@@ -1,0 +1,4 @@
+(4) five copies
+  a = 0.8, n = 5: min found 0.00040500, product value 0.00040500, ratio 1.000000
+  a = 0.9, n = 5: min found 0.00384000, product value 0.00384000, ratio 1.000000
+  a = 0.75, n = 5: min over Schmidt-rank-2 = 1.018e-15
