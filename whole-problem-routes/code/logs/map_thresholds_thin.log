@@ -3,4 +3,5 @@ Proposition 7.8, n = 3, a = 3/4: inputs thin at all but two copies (60 random on
 Proposition 7.8, n = 3, a = 3/4: descent inside the class from 8 random starts: least value +1.562500e-02 (4^-n = 1.562500e-02)
 Proposition 7.8, n = 4, a = 3/4: inputs thin at all but two copies (60 random ones): least output eigenvalue +4.163e-02 >= 4^-n = 3.906e-03: True
 Proposition 7.8, n = 4, a = 3/4: descent inside the class from 8 random starts: least value +3.906250e-03 (4^-n = 3.906250e-03)
+thin output: n = 3, a = 3/4, x thin at copy 1 only and y thin at copy 2 only: least value found +1.562500e-02 (nonnegative; 4^-3 = 1.562500e-02)
 PASS

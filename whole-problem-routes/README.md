@@ -356,6 +356,13 @@ failure, if there is one, needs n ≥ 3 copies and an input that is thick (rank 
 *Proof.* Induction on n. An input with a thin copy is covered by Proposition 7.8 and the case of fewer copies; n ≤ 2 is
 Theorem 7.2. ∎
 
+The output vector can be thinned as well. 𝒫_a is self-adjoint for the Hilbert–Schmidt inner product, so
+⟨y|𝒫_a^{⊗n}(xx*)|y⟩ = ⟨x|𝒫_a^{⊗n}(yy*)|x⟩. Let x be thin outside K_x and y thin outside K_y, with a ≥ 3/4. Then
+⟨y|𝒫_a^{⊗n}(xx*)|y⟩ ≥ 0 as soon as 𝒫_a^{⊗|K_x ∩ K_y|} is positive. To see this, decompose as in the proof of Proposition 7.8
+on the copies outside K_x: the value becomes Σ_i Tr[τ_i 𝒫_a^{⊗|K_x|}(ρ_i)] = Σ_i Tr[𝒫_a^{⊗|K_x|}(τ_i) ρ_i], where
+τ_i = Tr_{∉K_x}[(σ_i ⊗ I) yy*] ⪰ 0. Each τ_i is thin wherever y is, so Proposition 7.8 makes 𝒫_a^{⊗|K_x|}(τ_i) ⪰ 0. So a
+smallest failure needs both the input and the output vector thick at every copy.
+
 **Corollary 7.10 (a statement about minimisers).** Let f_n(x) = λ_min(𝒫_{3/4}^{⊗n}(xxᵀ)) on real unit vectors x. Then
 𝒫_{3/4} is tensor-stable positive if and only if, for every n ≥ 3, f_n attains its minimum at some input that is thin
 (one-copy marginal of rank at most 2) at one copy or more.
@@ -406,7 +413,8 @@ Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are no
   (`map_thresholds_planes.log`);
 - `thin`: Lemma 7.7 at 5 000 random complex planes (the formula for C_V, C_V^Γ = C_V, positivity at a = 3/4, and the
   negative control at a = 0.74 on a real plane), and Proposition 7.8 at n = 3, 4 on random inputs thin at all but two
-  copies and by descent inside that class, which reaches 4^{−n} and not below (`map_thresholds_thin.log`); the numbers after Corollary 7.10 come from `thick_inputs.py 3` (`thick_inputs_n3.log`);
+  copies and by descent inside that class, which reaches 4^{−n} and not below, and the thinning of the output vector
+  (x thin only at copy 1, y thin only at copy 2, n = 3: the least value found is 4^{−3}) (`map_thresholds_thin.log`); the numbers after Corollary 7.10 come from `thick_inputs.py 3` (`thick_inputs_n3.log`);
 - `collision`: Remark 7.6 at n = 1, 2 with random entangled states (`map_thresholds_collision.log`).
 
 Python with NumPy, SciPy (HiGHS) and SymPy.

@@ -449,6 +449,23 @@ elif mode == 'thin':
         good &= dmin >= 0.25 ** n - 1e-10
         print(f'Proposition 7.8, n = {n}, a = 3/4: descent inside the class from 8 random starts: least value {dmin:+.6e} '
               f'(4^-n = {0.25 ** n:.6e})')
+    # the output vector can be thinned too: x thin at copy 1 only, y thin at copy 2 only (n = 3), adversarial descent
+    Phi = phi_float(0.75, 3, 3); bxy = np.inf
+    for _ in range(20):
+        Q1, _r = np.linalg.qr(rng.normal(size=(3, 3))); Q2, _r = np.linalg.qr(rng.normal(size=(3, 3)))
+        Wx = np.kron(np.kron(Q1[:, :2], np.eye(3)), np.eye(3)); Wy = np.kron(np.kron(np.eye(3), Q2[:, :2]), np.eye(3))
+        zx = rng.normal(size=Wx.shape[1]); val = np.inf
+        for it in range(400):
+            x = Wx @ zx; x /= np.linalg.norm(x)
+            w_, Z_ = np.linalg.eigh(Wy.T @ Phi(np.outer(x, x)) @ Wy); y = Wy @ Z_[:, 0]
+            w2_, Z2_ = np.linalg.eigh(Wx.T @ Phi(np.outer(y, y)) @ Wx); zx = Z2_[:, 0]
+            if abs(w2_[0] - val) < 1e-14:
+                val = w2_[0]; break
+            val = w2_[0]
+        bxy = min(bxy, val)
+    good &= bxy >= -1e-12
+    print(f'thin output: n = 3, a = 3/4, x thin at copy 1 only and y thin at copy 2 only: least value found {bxy:+.6e} '
+          f'(nonnegative; 4^-3 = {0.25 ** 3:.6e})')
     ok &= good
 
 elif mode == 'collision':
