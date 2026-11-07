@@ -1,0 +1,4 @@
+# python mps_search.py 9 2 8 0.70994 0.71594 0.75
+n = 9, D = 2, a = 0.70994 (a_n = 0.71294): least value found -5.5454e-05; plane witness value -5.5454e-05; product value (a - 1/2)^n = 7.9224e-07
+n = 9, D = 2, a = 0.71594 (a_n = 0.71294): least value found +1.0209e-06; plane witness value +5.8508e-05; product value (a - 1/2)^n = 1.0209e-06
+n = 9, D = 2, a = 0.75000 (a_n = 0.71294): least value found +3.8147e-06; plane witness value +9.7656e-04; product value (a - 1/2)^n = 3.8147e-06

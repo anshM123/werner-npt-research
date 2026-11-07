@@ -1,0 +1,4 @@
+# python mps_search.py 21 3 6 0.73080 0.73680 0.75
+n = 21, D = 3, a = 0.73080 (a_n = 0.73377): least value found -2.8885e-08; plane witness value -2.8885e-08; product value (a - 1/2)^n = 4.2457e-14
+n = 21, D = 3, a = 0.73680 (a_n = 0.73377): least value found +3.0890e-11; plane witness value +3.3452e-08; product value (a - 1/2)^n = 7.2781e-14
+n = 21, D = 3, a = 0.75000 (a_n = 0.73377): least value found +2.2654e-11; plane witness value +2.3842e-07; product value (a - 1/2)^n = 2.2737e-13

@@ -290,7 +290,10 @@ per copy. Bisections without these seeds agree to five digits for n = 2, 3. We a
 every copy: the qutrit GHZ state, ε_{ijk}, the AME(4,3) state, the GHZ state in the Fourier basis with its real and
 imaginary parts, and tensor products of these with each other and with the witness of Theorem 7.1. For n = 3, …, 6 their
 least output eigenvalues stay well above zero at a_n + 0.001 and at 3/4. Descents started from them (n ≤ 5) end at the
-product value or on the plane branch.
+product value or on the plane branch. For larger n we searched over translation-invariant real matrix product
+states x and y of bond dimension 2 and 3 (n = 9, 15, 21). At a_n − 0.003 the least value found is exactly that of
+the witness of Theorem 7.1. At a_n + 0.003 and at 3/4 nothing negative appears (the least values are the product value
+at n = 9, 15, and positive values of order 10⁻¹¹ at n = 21, where the optimiser stops short of it).
 
 **Conjecture QT.** For every n, 𝒫_a^{⊗n} is positive if and only if a ≥ a_n.
 
@@ -456,6 +459,7 @@ Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are no
 - `search`: Observation 7.4 for n = 2, …, 5 (`map_thresholds_search.log`, about half an hour); n = 6 (dimension 729)
   was run once with `qutrit_search.py 6 4`, the same procedure (`qutrit_search_n6.log`, about an hour); the inputs with
   full support are in `qutrit_structured.py` (`qutrit_structured.log`);
+  the matrix product state searches are `mps_search.py` (`mps_<n>_<D>.log`, arguments in their first lines);
 - `planes`: the identity of Remark 7.5 at n = 1, 2 and the least eigenvalue of the Choi matrix of 𝒬′_a
   (`map_thresholds_planes.log`);
 - `thin`: Lemma 7.7 at 5 000 random complex planes (the formula for C_V, C_V^Γ = C_V, positivity at a = 3/4, and the
