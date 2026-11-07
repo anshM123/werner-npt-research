@@ -664,6 +664,11 @@ of Müller-Hermes's theorem that every positive tensor square of a qubit map is 
 J. Math. Phys. 62, 092204 (2021), arXiv:2006.14543]. He leaves open (his Section 9) whether a positive qubit map can
 have a positive but non-decomposable tensor cube, and reduces that question to Pauli maps. Theorem 7.18 answers it
 for this family, for every number of copies; it does not settle the general question.
+The certificate is one case of a general identity. If C^Γ = C, then for every one-copy operator C̃ the operator
+Q = ½[C^{⊗n} + C̃^{⊗n} − (Γ C̃)^{⊗n}] satisfies Q + Q^Γ = C^{⊗n}, because the partial transpose acts copy by copy.
+Theorem 7.18 takes C̃ = |C|, for which ½(C^{⊗n} + |C|^{⊗n}) ⪰ 0 always, and the content is that the subtracted term
+is dominated exactly when uⁿ ≤ 2. For the qutrit map every such Q is diagonal in the product eigenbasis of the
+copies, so this family stays inside the decomposable cone, which Proposition 7.3 excludes from three copies on.
 The theorem also proves the decomposability
 thresholds of 𝒬_a computed after Proposition 7.3 for every n. The certificate was found by computing the
 minimum-norm solution of that linear program in the form P + P^Γ for n = 2, 3, 4 and reading off its pattern.
