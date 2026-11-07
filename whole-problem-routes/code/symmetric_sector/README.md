@@ -43,6 +43,37 @@ Results (both checks agree):
 So the bound holds with the stated equality cases for n ≤ 8. At n = 9 the greedy split fails, and so does the
 first-letter split at n = 7 and 9.
 
+## Up to 21 copies (`many_n/`)
+
+From n = 9 on the greedy split fails, in a single spin block (L = 0 for odd n, L = 1 for even n). It is repaired by
+changing the split only on the words with at most one identity letter (two at n = 21). The certificate is still in the
+span of the compressed words with Q + Γ(Q) = K_n − 4^{−n}Π ⊗ Π, and every word not listed keeps its greedy weight. The
+non-greedy split values are listed in `many_n/certificates.txt` (rationals with denominators at most 200). They were found
+by a preconditioned semidefinite program (`cert_lean.py`, `restricted_sdp.py`) and are not canonical: the program has
+many solutions, and at n = 21 the values range up to about ±50.
+
+`many_n/verify_exact.py n CERT 200` decides positivity exactly in a coupled angular-momentum basis. Each spin L gives one
+block, indexed by the harmonic degrees of the input and the output. The entries of a·b and b†·a are signed square roots of
+rationals (Wigner–Eckart, oscillator reduced matrix elements, 6j symbols). After an exact rescaling of the basis the
+blocks are rational, and exact LDLᵀ decides each one. The script also checks the identity Q + Γ(Q) = K′ − I as a
+polynomial identity in the three contractions. `bash many_n/run_many_n.sh` reruns everything for n = 9, …, 21 (logs
+`many_n/logs/`). For every n ≤ 21 the certificate is positive semidefinite with kernel exactly Sym^{2n}.
+
+How far this is checked:
+- n ≤ 9: two separate exact checks. The coupled-basis verifier reproduces the earlier exact results for the greedy split
+  (positive semidefinite for n ≤ 8, not at n = 9). The n = 9 certificate also passes `verify_bosonic.py`, adapted to read
+  a certificate (`many_n/verify_bosonic_cert.py`, `many_n/logs/verify_bosonic_cert_n9.log`).
+- n = 10, …, 21: one exact check, by the coupled-basis verifier. Its formulas are uniform in n. `check_cpl.py` and
+  `check_words.py` compare them with the monomial-basis code of this folder for n ≤ 5 and every word, and with the known
+  spectra of the ladder operators.
+
+Margins (floating point): the least eigenvalue of 4^n Q on the complement of Sym^{2n} is 1.09 at n = 9 and decreases
+slowly to 0.97 at n = 21. No certificate of this kind can have it above 2. Indeed, for v a unit vector and c ⊥ v, the
+vector ψ = Sym(v^{n−1}c) ⊗ vⁿ − vⁿ ⊗ Sym(v^{n−1}c) satisfies ⟨ψ|4^nQ|ψ⟩ = 2|ψ|² for every certificate. This follows from
+expanding the product value to second order at real products, since Q kills Sym^{2n}. The best constant of these
+decompositions equals the least value of Tr(K_n ρ) over states ρ on Sym^n ⊗ Sym^n with positive partial transpose.
+Above n = 21 the certificate search ran out of memory; no rule valid for every n is known.
+
 ## Numerics (floating point)
 
 - `num_min.py` (`logs/num_min.log`): alternating minimisation over symmetric x, y, n = 2…7, at a_n ± 0.002 and 3/4. The

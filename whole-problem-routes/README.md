@@ -223,7 +223,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.13 | 𝒫_{3/4}^{⊗n} is positive for n = 3, 4, 5, with least output eigenvalue exactly 4^{−n}; 𝒫_a^{⊗3} is positive for a ≥ 81/125 = 0.648 | **proved** (computer-assisted: exact rational certificates, two separate exact verifiers) |
 | 7.14 | a failure of tensor-stable positivity of 𝒫_{3/4} needs n ≥ 6 copies, with the input and the output vector thick at six or more common copies | **proved** |
 | 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n; its threshold ℓ_n increases with n and is ≈ 0.720 at n = 5, so it probably reaches 3/4 near n = 6 | numerical (ℓ_{n+1} ≥ ℓ_n **proved**) |
-| 7.16 | on permutation-symmetric inputs and outputs: positivity fails below a_n for every n; at a = 3/4 the least value is exactly 4^{−n} for n ≤ 8, attained only at real products | **proved** (the first part every n; the second computer-assisted, two separate exact checks); the threshold a_n on this sector numerical (n ≤ 7) |
+| 7.16 | on permutation-symmetric inputs and outputs: positivity fails below a_n for every n; at a = 3/4 the least value is exactly 4^{−n} for n ≤ 21, attained only at real products | **proved** (the first part every n; the second computer-assisted: n ≤ 9 by two separate exact checks, 10 ≤ n ≤ 21 by one); the threshold a_n on this sector numerical (n ≤ 7) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -523,12 +523,12 @@ point (`code/dps/logs/sdp/threshold*.log`).
 
 **Proposition 7.16 (permutation-symmetric inputs and outputs).** Let Sym^n ⊂ (C³)^{⊗n} be the symmetric subspace.
 (i) For every n and every a < a_n there are x, y ∈ Sym^n with ⟨y|𝒫_a^{⊗n}(xx*)|y⟩ < 0.
-(ii) For n ≤ 8 and all x, y ∈ Sym^n,
+(ii) For n ≤ 21 and all x, y ∈ Sym^n,
 
     ⟨y| 𝒫_{3/4}^{⊗n}(xx*) |y⟩ ≥ 4^{−n} |x|² |y|²   (computer-assisted).
 
 For real x, y, equality holds only when x and y are both multiples of v^{⊗n} for one real unit vector v. Hence, for
-n ≤ 8, the least value on Sym^n is (a − ½)^n for every a ≥ 3/4.
+n ≤ 21, the least value on Sym^n is (a − ½)^n for every a ≥ 3/4.
 
 *Proof.* (i) The vectors of Theorem 7.1 are symmetric. Since Yp = ip and Yp̄ = −ip̄, (Y ⊗ I)x = i(p^{⊗n} − p̄^{⊗n})/√2.
 (ii) Real vectors suffice, as before. Write C_{3/4} = I/4 + A/2 + B/2 on one pair, with A = (I − F)/2 and
@@ -537,15 +537,23 @@ its letter counts (k, s, t), and the partial transpose Γ on the outputs exchang
 the words with s > t, plus half of those with s = t ≥ 1, with their weights. Then
 Q_n + Γ(Q_n) = (Π ⊗ Π)C_{3/4}^{⊗n}(Π ⊗ Π) − 4^{−n}Π ⊗ Π, so for real symmetric x, y the difference
 ⟨y|𝒫_{3/4}^{⊗n}(xxᵀ)|y⟩ − 4^{−n}|x|²|y|² equals 2⟨x ⊗ y|Q_n|x ⊗ y⟩. For n ≤ 8, Q_n is positive semidefinite with kernel
-exactly Sym^{2n}(R³). This was decided in exact arithmetic on the rotation-invariant slice, by two separately written
-checks (`code/symmetric_sector/`). If x ⊗ y lies in Sym^{2n}, then x and y are multiples of one v^{⊗n}. For a > 3/4,
+exactly Sym^{2n}(R³). For 9 ≤ n ≤ 21 the same holds after the split is changed on the words with at most two letters I
+(explicit rational values in `code/symmetric_sector/many_n/certificates.txt`); any split with weights y and 1 − y on
+the classes (k, s, t) and (k, t, s) keeps the identity. Positivity and the kernel were decided in exact arithmetic,
+block by block: for n ≤ 9 by two separately written checks, and for 10 ≤ n ≤ 21 by one check in a coupled
+angular-momentum basis (`code/symmetric_sector/`). If x ⊗ y lies in Sym^{2n}, then x and y are multiples of one v^{⊗n}. For a > 3/4,
 expand 𝒫_a = 𝒫_{3/4} + (a − 3/4)D as in Theorem 7.13; the partial traces of symmetric vectors are supported on symmetric
 subspaces. ∎
 
-The inequality in (ii) is new on this sector for n = 6, 7 and 8 (for n ≤ 5 it follows from Theorem 7.13). On the full space
-no decomposition of this kind exists from n = 3 on (Proposition 7.3); on Sym^n it does for n ≤ 8. At n = 9 this split
-fails, as does the split by the first letter at n = 7 and 9. A floating-point search over the ways of splitting each
-pair of words (s, t), (t, s) still finds a working split at n = 9; no rule valid for every n is known.
+The inequality in (ii) is new on this sector for 6 ≤ n ≤ 21 (for n ≤ 5 it follows from Theorem 7.13). On the full
+space no decomposition of this kind exists from n = 3 on (Proposition 7.3); on Sym^n one exists for every n ≤ 21. The
+greedy split fails from n = 9 on, in a single spin block. The repaired splits are not canonical, and no rule valid for
+every n is known. The least eigenvalue of 4^nQ_n off Sym^{2n} found for them drifts down slowly, from 1.09 at n = 9
+to 0.97 at n = 21 (floating point). No certificate of this kind can push it above 2: for a unit vector v and c ⊥ v, the
+vector ψ = Sym(v^{n−1}c) ⊗ vⁿ − vⁿ ⊗ Sym(v^{n−1}c) has ⟨ψ|4^nQ_n|ψ⟩ = 2|ψ|² for every certificate. This follows by
+expanding the product value to second order at real products. The best constant of these decompositions equals the
+least value of Tr(K_nρ), K_n = (Π ⊗ Π)C_{3/4}^{⊗n}(Π ⊗ Π), over states ρ on Sym^n ⊗ Sym^n with positive partial
+transpose.
 
 Numerically, on Sym^n the least value is min{witness value, product value} for n ≤ 7 at a_n ± 0.002 and at 3/4. The same
 holds with x symmetric and y arbitrary for n ≤ 6. So Conjecture QT appears to hold on this sector. Decompositions of
@@ -621,8 +629,10 @@ Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are no
 `code/symmetric_sector/` checks Proposition 7.16 (details in its README): `verify_bosonic.py n` (exact, through
 coherent-state symbols and an exact null space for the rotation-invariant slice) and `exact_greedy.py` (exact, through an
 integer recursion over the copies) both find the greedy operator positive semidefinite with kernel Sym^{2n} for
-n = 2, …, 8 and not positive semidefinite at n = 9; the numerics of the proposition are `num_min.py`, `t3num.py`,
-`sdp_o3b.py` and `sosthr.py`.
+n = 2, …, 8 and not positive semidefinite at n = 9. `many_n/run_many_n.sh` verifies the certificates for
+n = 9, …, 21 exactly in a coupled angular-momentum basis (`many_n/verify_exact.py`, logs `many_n/logs/`), and
+`many_n/verify_bosonic_cert.py` checks the n = 9 certificate a second way. The numerics of the proposition are
+`num_min.py`, `t3num.py`, `sdp_o3b.py` and `sosthr.py`.
 
 Python with NumPy, SciPy (HiGHS) and SymPy; `code/dps/` and `code/symmetric_sector/` also use python-flint, and CVXPY
 with Clarabel and SCS for the semidefinite programs.

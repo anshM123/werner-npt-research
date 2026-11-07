@@ -1,0 +1,13 @@
+m=1: gl(2) and su(1,1) Casimir spectra OK; block sizes [1, 1, 1]; worst dev 1.33e-15
+m=2: gl(2) and su(1,1) Casimir spectra OK; block sizes [2, 1, 3, 1, 1]; worst dev 1.33e-15
+m=3: gl(2) and su(1,1) Casimir spectra OK; block sizes [2, 2, 4, 3, 3, 1, 1]; worst dev 7.11e-15
+m=4: gl(2) and su(1,1) Casimir spectra OK; block sizes [3, 2, 6, 4, 6, 3, 3, 1, 1]; worst dev 1.42e-14
+m=5: gl(2) and su(1,1) Casimir spectra OK; block sizes [3, 3, 7, 6, 8, 6, 6, 3, 3, 1, 1]; worst dev 2.13e-14
+m=6: gl(2) and su(1,1) Casimir spectra OK; block sizes [4, 3, 9, 7, 11, 8, 10, 6, 6, 3, 3, 1, 1]; worst dev 2.84e-14
+m=7: gl(2) and su(1,1) Casimir spectra OK; block sizes [4, 4, 10, 9, 13, 11, 13, 10, 10, 6, 6, 3, 3, 1, 1]; worst dev 4.26e-14
+m=8: gl(2) and su(1,1) Casimir spectra OK; block sizes [5, 4, 12, 10, 16, 13, 17, 13, 15, 10, 10, 6, 6, 3, 3, 1, 1]; worst dev 6.39e-14
+m=9: gl(2) and su(1,1) Casimir spectra OK; block sizes [5, 5, 13, 12, 18, 16, 20, 17, 19, 15, 15, 10, 10, 6, 6, 3, 3, 1, 1]; worst dev 7.11e-14
+m=10: gl(2) and su(1,1) Casimir spectra OK; block sizes [6, 5, 15, 13, 21, 18, 24, 20, 24, 19, 21, 15, 15, 10, 10, 6, 6, 3, 3, 1, 1]; worst dev 8.53e-14
+m=11: gl(2) and su(1,1) Casimir spectra OK; block sizes [6, 6, 16, 15, 23, 21, 27, 24, 28, 24, 26, 21, 21, 15, 15, 10, 10, 6, 6, 3, 3, 1, 1]; worst dev 1.42e-13
+m=12: gl(2) and su(1,1) Casimir spectra OK; block sizes [7, 6, 18, 16, 26, 23, 31, 27, 33, 28, 32, 26, 28, 21, 21, 15, 15, 10, 10, 6, 6, 3, 3, 1, 1]; worst dev 1.42e-13
+PASS

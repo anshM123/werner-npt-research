@@ -1,0 +1,3 @@
+n=20: certificate non-greedy pairs {(18, 1): '163/185', (19, 1): '15/16', (17, 2): '109/167', (18, 2): '81/134', (16, 3): '186/193', (17, 3): '220/171', (15, 4): '7/8', (16, 4): '-41/89', (14, 5): '232/123', (15, 5): '501/151', (13, 6): '-103/56', (14, 6): '199/130', (12, 7): '274/55', (13, 7): '-687/151', (11, 8): '3/43', (12, 8): '118/35', (10, 9): '98/99', (11, 9): '9'}
+   identity Q + Gamma(Q) = K' - I holds exactly
+   RESULT n=20: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 21 (n + 1 = 21); 96.1s

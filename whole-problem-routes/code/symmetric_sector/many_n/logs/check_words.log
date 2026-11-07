@@ -1,0 +1,5 @@
+n=1: words, Gamma and K_n blocks agree with brute force; worst deviation so far 2.22e-15
+n=2: words, Gamma and K_n blocks agree with brute force; worst deviation so far 5.33e-15
+n=3: words, Gamma and K_n blocks agree with brute force; worst deviation so far 5.33e-15
+n=4: words, Gamma and K_n blocks agree with brute force; worst deviation so far 2.31e-14
+PASS

@@ -1,0 +1,15 @@
+check_cpl: PASS
+check_words: PASS
+n = 9: RESULT n=9: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 10 (n + 1 = 10); 0.1s
+n = 10: RESULT n=10: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 11 (n + 1 = 11); 0.2s
+n = 11: RESULT n=11: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 12 (n + 1 = 12); 0.4s
+n = 12: RESULT n=12: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 13 (n + 1 = 13); 0.8s
+n = 13: RESULT n=13: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 14 (n + 1 = 14); 1.4s
+n = 14: RESULT n=14: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 15 (n + 1 = 15); 2.4s
+n = 15: RESULT n=15: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 16 (n + 1 = 16); 6.2s
+n = 16: RESULT n=16: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 17 (n + 1 = 17); 12.6s
+n = 17: RESULT n=17: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 18 (n + 1 = 18); 18.2s
+n = 18: RESULT n=18: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 19 (n + 1 = 19); 34.8s
+n = 19: RESULT n=19: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 20 (n + 1 = 20); 64.4s
+n = 20: RESULT n=20: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 21 (n + 1 = 21); 96.1s
+n = 21: RESULT n=21: Q positive semidefinite (exact) = True; kernel dimension (sum over L of zero pivots, meaningful only if PSD) = 22 (n + 1 = 22); 213.0s
