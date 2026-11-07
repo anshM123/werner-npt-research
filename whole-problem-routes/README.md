@@ -305,6 +305,14 @@ Proposition M(4), which gives positivity of 𝒫_a^{⊗n} from 2-positivity of �
 ancilla shows that 𝒫_a^{⊗k} ⊗ id₂ is decomposable only at a = 1, for every k ≤ 6. So that 2-positivity is never
 decomposable either.
 
+The same thresholds rule out a natural induction. Suppose 𝒫_a^{⊗(k+1)} were a sum of maps Φ ∘ (𝒫_a^{⊗j} ⊗ ℰ) ∘ Ψ with
+j ≤ k, Φ and Ψ completely positive and ℰ entanglement breaking. Then every tensor power would be such a sum (by
+induction on the number of copies), and so 𝒫_a would be tensor-stable positive. For k ≤ 2 this cannot happen at any
+a < 1. The building blocks 𝒫_a^{⊗j}, j ≤ 2, are decomposable for a ≥ 0.6703, these operations keep decomposability,
+and so every tensor power would be decomposable, against the table. (For a < 0.6703 the map is not even
+tensor-stable positive, by Theorem 7.1.) A certificate of this inductive kind would need a building block with three
+or more copies, where the tensor powers stop being decomposable.
+
 On a plane the picture is different. The same program for 𝒬_a, with G₂ = [[½, 1, −½], [½, 0, ½], [−½, 1, ½]] and
 c_C = (a − ¾, a − ¼, a + ¼)^{⊗n}, gives decomposability thresholds equal to a_n to eight digits for every n ≤ 12.
 Together with Theorem 7.1 this says that, for n ≤ 12, 𝒬_a^{⊗n} is positive exactly when a ≥ a_n (computer-assisted,
