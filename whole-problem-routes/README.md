@@ -215,7 +215,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.1 | 𝒫_a^{⊗n} is not positive for a < a_n = (1 + 2^{1−1/n})/4, every n (explicit witness) | **proved** |
 | 7.2 | n = 2: positive iff a ≥ (1 + √2)/4; not decomposable below (7 + 2√15)/22 | **proved** |
 | 7.3 | decomposability of 𝒫_a^{⊗n} is a linear program; its thresholds tend to 1 | reduction **proved**; thresholds numerical (LP) |
-| 7.4 | the threshold is a_n for n ≤ 6 (searches) and n = 9, 15, 21 (matrix product states) | numerical |
+| 7.4 | the threshold is a_n for n ≤ 6 (searches) and n = 9, 15, 21 (matrix product states); general matrix product states for n ≤ 12 find nothing below the product value at a_n + 0.002 and at 3/4 | numerical |
 | QT | 𝒫_a^{⊗n} is positive iff a ≥ a_n, every n (would give NPT bound entanglement) | **open** from n = 3 (at a = 3/4 proved for n ≤ 5, see 7.13) |
 | 7.7–7.10 | at a ≥ 3/4 copies where the input or the output vector is thin are free; only inputs thick at every copy, n ≥ 3, remain | **proved** |
 | 7.11 | 𝒫_a^{⊗n} is 2-positive for a ≥ 0.8602 (n = 2) and a ≥ 0.91, 0.93, 0.95 (n = 3, 4, 5) | **proved** (n = 2 by hand; n = 3–5 exact certificates) |
@@ -314,7 +314,12 @@ least output eigenvalues stay well above zero at a_n + 0.001 and at 3/4. Descent
 product value or on the plane branch. For larger n we searched over translation-invariant real matrix product
 states x and y of bond dimension 2 and 3 (n = 9, 15, 21). At a_n − 0.003 the least value found is exactly that of
 the witness of Theorem 7.1. At a_n + 0.003 and at 3/4 nothing negative appears (the least values are the product value
-at n = 9, 15, and positive values of order 10⁻¹¹ at n = 21, where the optimiser stops short of it).
+at n = 9, 15, and positive values of order 10⁻¹¹ at n = 21, where the optimiser stops short of it). We also searched over
+general (not translation-invariant) open-boundary real matrix product states x and y of bond dimension 4 and 6, by
+alternating one-site sweeps: for fixed y, 𝒫_a^{⊗n}(yyᵀ) is a matrix product operator, x is updated site by site as
+its lowest eigenvector, and then the roles of x and y are exchanged. For n = 6, 8, 10, 12, at a_n + 0.002 and at
+3/4, with 19 starts each (random, random with full-support marginals, and the witness), the least value found in
+every run is the product value (a − ½)^n.
 
 **Conjecture QT.** For every n, 𝒫_a^{⊗n} is positive if and only if a ≥ a_n.
 
@@ -577,6 +582,7 @@ Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are no
   was run once with `qutrit_search.py 6 4`, the same procedure (`qutrit_search_n6.log`, about an hour); the inputs with
   full support are in `qutrit_structured.py` (`qutrit_structured.log`);
   the matrix product state searches are `mps_search.py` (`mps_<n>_<D>.log`, arguments in their first lines);
+  the general matrix product state searches are `dmrg_search.py n D 12 30 a…` (`dmrg_n<n>_D<D>.log`);
 - `planes`: the identity of Remark 7.5 at n = 1, 2 and the least eigenvalue of the Choi matrix of 𝒬′_a
   (`map_thresholds_planes.log`);
 - `thin`: Lemma 7.7 at 5 000 random complex planes (the formula for C_V, C_V^Γ = C_V, positivity at a = 3/4, and the

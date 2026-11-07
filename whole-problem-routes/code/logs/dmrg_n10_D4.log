@@ -1,0 +1,2 @@
+n = 10, D = 4, a = 0.71852 (a_n = 0.71652): least value +2.4822e-07; product 2.4822e-07; witness +2.1342e-05  [44s]
+n = 10, D = 4, a = 0.75000 (a_n = 0.71652): least value +9.5367e-07; product 9.5367e-07; witness +4.8828e-04  [79s]
