@@ -21,7 +21,10 @@ support at every copy, on at least six copies, remain (Corollary 7.14). With a d
 plane threshold becomes the rule ∏_{s∈S}(2a_s − ½) ≥ ½ for every set S of copies (Theorem 7.19). We conjecture the same
 rule for the qutrit map (Conjecture QT_m, proved for two copies), and more: that the least value is always attained on
 planes (Conjecture PM). The extreme points of this rule are exactly 2-positivity statements (Proposition 7.20), and the
-plane witnesses are local minima in the full qutrit space (Proposition 7.22).
+plane witnesses are local minima in the full qutrit space (Proposition 7.22). Finally, from any critical point of the
+value, squeezing one copy toward a plane moves the value monotonically, with the sign set by one contraction
+inequality (Proposition 7.23). So a failure at a = 3/4 would have to be a strict minimum along every one-copy squeeze
+(Corollary 7.24); the thick critical points we found at three copies are not (Observation 7.25).
 
 ## 1. The cross ratio, and fusion of planes
 
@@ -243,6 +246,9 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.20 | the vertices of QT_m are 2-positivity: 𝒫_{1/2} ⊗ Φ is positive iff Φ is 2-positive on real inputs | **proved** |
 | 7.21 | the complex (half-plane, Lee–Yang) version of QT_m is false from n = 5 (with every Re a_s > 3/4, from n = 7) | **proved** (explicit zeros) |
 | 7.22 | at every point of the facet ∏(2a_s − ½) = ½, the plane witness is a second-order local minimum in the full qutrit space, every n | **proved** |
+| 7.23 | from a joint critical point of the value, squeezing one copy toward a plane moves the normalised value monotonically all the way to the compression; one contraction inequality gives the sign (every n, every a) | **proved** |
+| 7.24 | a smallest failure at a ≥ 3/4 would be a strict minimum along every one-copy squeeze, so it is enough that no thick critical point is | reduction **proved** |
+| 7.25 | thick critical points at n = 3 are saddles along a squeeze; a one-copy compression never raised the least output eigenvalue (n = 2, 3, 4) | numerical |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -845,6 +851,80 @@ the least positive eigenvalue off the plane with the closed form A_T − 4^{−|
 with every a_s < ¾ (the centre and the random points) the kernel has dimension 2n + 3 (rotations and the two scalings);
 at the edge points and vertices, where some a_s = ¾, it is larger.
 
+Corollary 7.10 asks whether a thick input can be a minimiser. The next proposition says what a single copy can do about
+it. At a critical point, squeezing one copy toward a plane moves the value monotonically, all the way to the
+compression.
+
+**Proposition 7.23 (squeeze paths through critical points, every n).** Let a be real and let x, y be real unit vectors
+on n copies with 𝒫_a^{⊗n}(yyᵀ)x = λx and 𝒫_a^{⊗n}(xxᵀ)y = λy, where λ = ⟨y|𝒫_a^{⊗n}(xxᵀ)|y⟩. (Every local minimum
+of f(x, y) = ⟨y|𝒫_a^{⊗n}(xxᵀ)|y⟩ on the product of the unit spheres is such a joint critical point.) Fix a copy s and a
+unit w ∈ R³, let ξ = ⟨w|_s x and η = ⟨w|_s y be the contractions at copy s, α = |ξ|², β = |η|², and for 0 ≤ v ≤ 1 let
+G_v = I − (1 − √(1 − v))wwᵀ act at copy s (G_1 projects copy s onto w^⊥). Then
+
+    f(G_v x, G_v y) / (|G_v x|² |G_v y|²) = λ + v² [ (a − ½) f_{n−1}(ξ, η) − λαβ ] / [ (1 − vα)(1 − vβ) ],
+
+with f_{n−1}(ξ, η) = ⟨η|𝒫_a^{⊗(n−1)}(ξξᵀ)|η⟩. So the normalised value is monotone along the whole squeeze, and the sign
+of the single number (a − ½) f_{n−1}(ξ, η) − λαβ decides whether it goes up or down.
+
+*Proof.* Write x = x′ + w ⊗ ξ and y = y′ + w ⊗ η, with x′ and y′ supported on w^⊥ at copy s, and put
+x_u = x′ + u w ⊗ ξ, y_u = y′ + u w ⊗ η, so that G_v x = x_u and G_v y = y_u for u = √(1 − v). The value f(x_u, y_u)
+is a polynomial of degree four in u. It is even, because the reflection R = I − 2wwᵀ at copy s maps (x_u, y_u) to
+(x_{−u}, y_{−u}) and 𝒫_a(RXRᵀ) = R𝒫_a(X)Rᵀ. So f(x_u, y_u) = A + Bu² + Cu⁴. The coefficient of u⁴ comes from w ⊗ ξ and
+w ⊗ η alone, so C = ⟨ww|C_a|ww⟩ f_{n−1}(ξ, η) = (a − ½) f_{n−1}(ξ, η). At u = 1, A + B + C = λ. The derivative at u = 1
+is 2⟨w ⊗ ξ|𝒫_a^{⊗n}(yyᵀ)|x⟩ + 2⟨w ⊗ η|𝒫_a^{⊗n}(xxᵀ)|y⟩ = 2λ(α + β), by the critical equations and ⟨w ⊗ ξ|x⟩ = α.
+So 2B + 4C = 2λ(α + β), and with t = 1 − u² = v,
+
+    f(x_u, y_u) = λ [1 − (α + β)t] + C t²,   |x_u|² |y_u|² = (1 − αt)(1 − βt) = 1 − (α + β)t + αβ t².
+
+Subtracting λ times the second line from the first gives the formula. ∎
+
+**Corollary 7.24.** Let a ≥ ¾, and suppose μ_m(a) = (a − ½)^m for every m < n (μ_m as in Proposition 7.8; at a = ¾
+Theorem 7.13 gives this for m ≤ 5). If μ_n(a) < (a − ½)^n, then every pair of unit vectors at which f attains μ_n is a
+joint critical point, both vectors are thick at every copy, and for every copy s and every unit w
+
+    (a − ½) f_{n−1}(⟨w|_s x, ⟨w|_s y) > μ_n |⟨w|_s x|² |⟨w|_s y|²,
+
+so that every one-copy squeeze strictly raises the normalised value along its whole path. Hence 𝒫_a is tensor-stable
+positive (and μ_n(a) = (a − ½)^n for every n) if, for every n, every joint critical point of f_n with value below
+(a − ½)^n at which both vectors are thick at every copy has a copy s and a direction w with
+(a − ½) f_{n−1}(⟨w|_s x, ⟨w|_s y) ≤ f(x, y) |⟨w|_s x|² |⟨w|_s y|².
+
+*Proof.* A minimiser is a joint critical point (Lagrange conditions on each sphere). It is thick at every copy on both
+sides: if x has a thin copy, Proposition 7.8 gives λ_min(𝒫_a^{⊗n}(xxᵀ)) ≥ (a − ½)μ_{n−1} = (a − ½)^n, and if y has one,
+the same applies to ⟨y|𝒫_a^{⊗n}(xxᵀ)|y⟩ = ⟨x|𝒫_a^{⊗n}(yyᵀ)|x⟩. Thickness also gives α, β < 1. The compression G_1x,
+G_1y is thin at copy s, so the left side of the formula at v = 1 is at least (a − ½)^n > μ_n = λ. The last sentence
+follows by induction on n, starting from μ₁ = a − ½. ∎
+
+This is the map's version of the squeeze-orbit picture of `orbit-notes/`, where rank-one squeezes through critical points
+of the endpoint form are monotone in the same way (item 2 there). For the endpoint form, the statements that look at
+one copy at a time are false at n = 3 (thick operators that are minima over every single-copy orbit; see "One copy at a
+time is not enough" there), while the joint statement survives. For the map we have found no such point (Observation
+7.25), but whether thick critical points that are strict minima along every one-copy squeeze exist, and in particular
+whether any lie below (a − ½)^n, is open.
+
+**Observation 7.25 (numerical).** At n = 3 and a = ¾, minimising the residual of the critical equations from random
+starts gives thick joint critical points: five of them, with values 0.178 to 0.210 (far above 1/64) and least one-copy
+marginal eigenvalues at least 0.08. A second search first pulls the value toward a target (0.05, 0.1 or 0.15) with a
+floor on the thickness and then solves the critical equations alone. It finds thick critical points only with values
+0.122 to 0.174, none lower (one run aimed at 0.05 ended at a thin point; `code/thick_critical_points.py`,
+`logs/thick_critical_points.log`). At every thick critical point found, some copy and direction have
+λ − (a − ½) f₂(ξ̂, η̂) > 0 (λ the critical value, ξ̂, η̂ the normalised contractions), with margins 0.076 to 0.12 in the second search. So each
+is a saddle along a one-copy squeeze, which then lowers the value all the way to a thin pair. Descents from twelve
+random starts all end at thin points (eleven at 1/64). A stronger statement also held in
+every test. Let g(y) = λ_min(𝒫_{3/4}^{⊗n}(yyᵀ))/|y|². Then some one-copy compression G_1 has g(G_1y) ≤ g(y). We
+checked this for all Schmidt vectors at n = 2, where y can be taken as Σ s_i e_i ⊗ e_i (the largest gap
+min g(G_1y) − g(y) on a 25 × 25 grid of s is −9·10⁻⁵, approached only near products). We also checked random y at n = 3
+and 4, and adversarial hill climbing, which gives largest gaps −1.3·10⁻² at n = 3 and −1.6·10⁻² at n = 4. At n = 2 the
+best direction was the middle Schmidt direction in every test. If this compression statement held at every n, then with
+Proposition 7.8 (g(y) ≥ (a − ½)μ_{n−1} when y has a thin copy) it would give μ_n = 4^{−n} for every n by induction.
+Keeping the optimal input and compressing it together with y also worked, but adversarial searches drive that margin to
+zero as y becomes thin. The direction cannot be found by averaging over an orthonormal basis {w_k} (this fails already
+at n = 2), although for every x, y and basis Σ_k f(G^{(k)}x, G^{(k)}y) = f(x, y) + (a − ½) Σ_k f_{n−1}(⟨w_k|_s x, ⟨w_k|_s y),
+with G^{(k)} the compression of copy s onto w_k^⊥ (this is Remark 7.5).
+`code/squeeze_paths.py` (`logs/squeeze_paths.log`, PASS) checks the formula of Proposition 7.23 at minima and at thick
+saddles for a = ¾ and 0.7 (agreement to 10⁻⁸, limited by the residual of the critical points), and the compression
+gaps at n = 2, 3, 4.
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
@@ -929,7 +1009,9 @@ n ≤ 4; explicit matrices for n ≤ 3; a control; the witness values; signs at 
 `logs/plane_products_check.log`). `code/multiparam_numerics.py` gives the numerics of Conjecture QT_m (modes `two`,
 `real 3 5`, `real 4 11`) and Remark 7.21 (mode `complex`), logs `logs/multiparam_*.log`.
 `code/plane_witness_hessian.py` checks Proposition 7.22 (full Hessians for n ≤ 6 against the closed form;
-`logs/plane_witness_hessian.log`). `code/planar_minimum.py n starts seed` gives the numerics of Conjecture PM
+`logs/plane_witness_hessian.log`). `code/squeeze_paths.py` checks Proposition 7.23 at minima and at thick saddles for
+n = 3, and the compression numerics of Observation 7.25 (`logs/squeeze_paths.log`); `code/thick_critical_points.py`
+gives the biased search for thick critical points there (`logs/thick_critical_points.log`). `code/planar_minimum.py n starts seed` gives the numerics of Conjecture PM
 (`logs/planar_minimum_n3.log`, `logs/planar_minimum_n4.log`).
 
 Python with NumPy, SciPy (HiGHS) and SymPy; `code/dps/` and `code/symmetric_sector/` also use python-flint, and CVXPY

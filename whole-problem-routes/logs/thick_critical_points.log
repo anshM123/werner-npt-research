@@ -1,0 +1,10 @@
+target 0.05 run 0: thick critical point f = +0.122103 (residual 2.1e-13, least marginal eigenvalue 0.015); best one-copy squeeze margin +7.658e-02
+target 0.05 run 1: discarded (residual 3.9e-12, least marginal eigenvalue 1.5e-02, f +0.1221)
+target 0.05 run 2: discarded (residual 1.3e-17, least marginal eigenvalue 5.5e-15, f +0.1110)
+target 0.1 run 0: thick critical point f = +0.147695 (residual 6.6e-18, least marginal eigenvalue 0.046); best one-copy squeeze margin +1.095e-01
+target 0.1 run 1: thick critical point f = +0.137752 (residual 5.9e-13, least marginal eigenvalue 0.052); best one-copy squeeze margin +9.079e-02
+target 0.1 run 2: thick critical point f = +0.133359 (residual 9.7e-13, least marginal eigenvalue 0.062); best one-copy squeeze margin +7.612e-02
+target 0.15 run 0: discarded (residual 6.6e-07, least marginal eigenvalue 1.2e-01, f +0.1824)
+target 0.15 run 1: thick critical point f = +0.174346 (residual 4.1e-18, least marginal eigenvalue 0.029); best one-copy squeeze margin +1.235e-01
+target 0.15 run 2: discarded (residual 5.5e-07, least marginal eigenvalue 1.3e-01, f +0.1852)
+5 thick critical points, values 0.122 to 0.174; margins +0.076 to +0.124; uphill along every one-copy squeeze at 0 of them
