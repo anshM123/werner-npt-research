@@ -19,6 +19,14 @@ repository) the minimum of q_n over rank-two C at α = 1/2 was always 0, and nev
 d = 3, 7 at d = 4, 6 at d = 5 and 5 at d = 6. The scripted searches here cover the bosonic sector for n ≤ 7 and
 local runs at three copies. What follows are partial results, each with its status.
 
+**A second route (`whole-problem-routes/`, Sections 5–7), updated 7 November 2026.** NPT bound entanglement would also
+follow if the qutrit map 𝒫_a(X) = a Tr(X) I − (X + Xᵀ)/4 had all tensor powers positive for some a < 1. At a = 3/4
+this is proved for up to five copies (computer-assisted, exact), on permutation-symmetric inputs and outputs for up to
+21 copies, and for every number of copies on inputs of bond dimension two (for example the AKLT chain). The n-copy
+threshold is at least (1 + 2^{1−1/n})/4 → 3/4 for every n, and on a real plane it is exactly that, for every n
+(with an explicit decomposition). A failure at a = 3/4 would need six or more copies at which both the input and the
+output have full support. The general case is open.
+
 ## Contents
 
 | Folder | Result | Status |
