@@ -1,0 +1,16 @@
+certificate: n = 4, a = 3/4, t = 1/256, L = 149899247311197518746098374997315130190098218419283916744211833389788565816359979806571033410861474831615241314782098872367641991220765027226882465071104
+15 diagram operators built, linearly independent
+partial transposes on A and on B, and left/right multiplication by SWAP(B,B') act as permutations of diagrams
+C_a (x) I_B' in diagram coordinates: {0: '3/4', 3: '-1/4', 10: '-1/4'}
+spin m=0 bases: multiplicities {0: 1, 1: 3, 2: 2, 3: 1}
+every diagram commutes with the total so(3) generators (exact)
+per-copy compression map is a bijection (rank 15, exact)
+float sanity check: spectrum of random symmetric algebra elements = union of block spectra (x(2j+1))
+Z computed exactly 1.2 s
+certificate invariant under permutations of the copies (exact check): True
+blocks to check per operator: 35
+Q_B: PSD on all blocks = True; total rank of compressions 418; smallest pivot 2.797e-02  (125.6 s)
+Q_A: PSD on all blocks = True; total rank of compressions 0; smallest pivot nan  (128.7 s)
+Z: PSD on all blocks = True; total rank of compressions 208; smallest pivot 2.388e-02  (148.3 s)
+(total rank counts only the blocks checked; all blocks together have dimension sum_beta b = 2401 )
+PASS: for all x, y in C^81: <x(x)y| C_3/4^(x)4 |x(x)y> >= 1/256 |x|^2 |y|^2

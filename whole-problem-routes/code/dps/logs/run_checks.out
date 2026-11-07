@@ -1,0 +1,16 @@
+cert_n3_a3_4_t1_64_exact: PASS: for all x, y in C^27: <x(x)y| C_3/4^(x)3 |x(x)y> >= 1/64 |x|^2 |y|^2
+cert_n3_a3_4_t1_64_exactB: PASS: for all x, y in C^27: <x(x)y| C_3/4^(x)3 |x(x)y> >= 1/64 |x|^2 |y|^2
+cert_n3_a3_4_t1953_125000: PASS: for all x, y in C^27: <x(x)y| C_3/4^(x)3 |x(x)y> >= 1953/125000 |x|^2 |y|^2
+cert_n3_a3_4_t1_128: PASS: for all x, y in C^27: <x(x)y| C_3/4^(x)3 |x(x)y> >= 1/128 |x|^2 |y|^2
+cert_n3_a81_125_t0: PASS: for all x, y in C^27: <x(x)y| C_81/125^(x)3 |x(x)y> >= 0 |x|^2 |y|^2
+cert_n4_a3_4_t1_256_exact: PASS: for all x, y in C^81: <x(x)y| C_3/4^(x)4 |x(x)y> >= 1/256 |x|^2 |y|^2
+cert_n4_a3_4_t1_512: PASS: for all x, y in C^81: <x(x)y| C_3/4^(x)4 |x(x)y> >= 1/512 |x|^2 |y|^2
+cert_n5_a3_4_t1_1024_exact: PASS: for all x, y in C^243: <x(x)y| C_3/4^(x)5 |x(x)y> >= 1/1024 |x|^2 |y|^2
+cert_n5_a3_4_t1_2048: PASS: for all x, y in C^243: <x(x)y| C_3/4^(x)5 |x(x)y> >= 1/2048 |x|^2 |y|^2
+cert_n3_a3_4_t1_64_exact: largest relative discrepancy 1.8e-16
+cert_n3_a3_4_t1_64_exactB: largest relative discrepancy 4.5e-16
+exact_verify n3: PASS: for all x, y in C^27: <x(x)y| C_3/4^(x)3 |x(x)y> >= 1/64 |x|^2 |y|^2
+exact_verify_mod n5: PASS: for all x, y in C^243: <x(x)y| C_3/4^(x)5 |x(x)y> >= 1/1024 |x|^2 |y|^2
+negative control cert_n3_a3_4_t1_64_exact with t=1/63: FAIL
+negative control cert_n4_a3_4_t1_256_exact with t=1/255: FAIL
+negative control cert_n5_a3_4_t1_1024_exact with t=1/1023: FAIL

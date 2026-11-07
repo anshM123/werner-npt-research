@@ -1,0 +1,17 @@
+certificate certs/cert_n4_a3_4_t1_256_exact.txt.xz: n = 4, a = 3/4, t = 1/256, common denominator L (506 bits), format full
+15 diagram matrices built from the matchings; exactly linearly independent
+partial transposes on A and on B, multiplication by SWAP(B,B') on the left and on the right, and the full transpose map diagrams to diagrams bijectively (checked on explicit matrices)
+C_a (x) I_B' from the definition of P_a, in diagram coordinates: {0: '3/4', 3: '-1/4', 10: '-1/4'}
+every diagram commutes exactly with the three so(3) generators of the copy
+m = 0 spin bases (adapted to SWAP(B,B')): multiplicities {0: 1, 1: 3, 2: 2, 3: 1} signs {0: [-1], 1: [1, 1, -1], 2: [1, -1], 3: [1]}
+compression of the copy algebra to the four spin blocks is a bijection (exact rank 15)
+forced (Sym^3) vectors in the spin blocks: {0: None, 1: [1, 3, 0], 2: None, 3: [1]}
+QA, QB read (0.2 s)
+QA' = P QA P and Z = P[W(x)I - tI - Gamma_A(QA') - Gamma_B(QB)]P computed exactly (0.3 s)
+QB, QA', Z are exactly symmetric (transpose-invariant coefficient tensors); copy-permutation invariant: True
+blocks checked per operator: 35 (sorted spin labels; the others are permutation conjugates)
+QB: PSD: 35/35 blocks certified (dimension 423, exact kernel dimension 5); congruence test passed on 35, exact elimination run on 32 blocks of size <= 27, none refuted (1.1 s)
+QA': identically zero (PSD)
+Z: PSD: 35/35 blocks certified (dimension 213, exact kernel dimension 5); congruence test passed on 35, exact elimination run on 34 blocks of size <= 27, none refuted (0.7 s)
+PASS: for all x, y in C^81: <x(x)y| C_3/4^(x)4 |x(x)y> >= 1/256 |x|^2 |y|^2
+total time 2.1 s

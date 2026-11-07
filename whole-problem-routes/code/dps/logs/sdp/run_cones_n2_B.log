@@ -1,0 +1,85 @@
+[warning from _environment.py:286] UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+n=2 a=0.75: 225 coordinates, 76 orbits; Sym x Sym coordinates 63 [0.0s]
+dense maps built (28, 28) (28, 76) [0.0s]
+blocks 10 max b 9 sum b^2 162 [0.0s]
+problem built; variables 104 [0.0s]
+(CVXPY) Nov 07 12:11:08 AM: Your problem has 105 variables, 284 constraints, and 0 parameters.
+(CVXPY) Nov 07 12:11:08 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 07 12:11:08 AM: DCP verification time: 0.0014 seconds.
+(CVXPY) Nov 07 12:11:08 AM: Expression tree has 9 nodes.
+(CVXPY) Nov 07 12:11:08 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Nov 07 12:11:08 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+(CVXPY) Nov 07 12:11:08 AM: Your problem is compiled with the CPP canonicalization backend.
+(CVXPY) Nov 07 12:11:08 AM: Compiling problem (target solver=CLARABEL).
+(CVXPY) Nov 07 12:11:08 AM: Reduction chain: FlipObjective -> Dcp2Cone -> CvxAttr2Constr -> ExactCone2Cone -> EliminateZeroSized -> ConeMatrixStuffing -> CLARABEL
+(CVXPY) Nov 07 12:11:08 AM: Applying reduction FlipObjective
+(CVXPY) Nov 07 12:11:08 AM: Applying reduction Dcp2Cone
+(CVXPY) Nov 07 12:11:08 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 07 12:11:08 AM: Applying reduction ExactCone2Cone
+(CVXPY) Nov 07 12:11:09 AM: Applying reduction EliminateZeroSized
+(CVXPY) Nov 07 12:11:09 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 07 12:11:09 AM: Applying reduction CLARABEL
+(CVXPY) Nov 07 12:11:09 AM: Finished problem compilation (took 3.553e-02 seconds).
+(CVXPY) Nov 07 12:11:09 AM: Invoking solver CLARABEL  to obtain a solution.
+===============================================================================
+                                     CVXPY                                     
+                                     v1.9.3                                    
+===============================================================================
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+-------------------------------------------------------------
+           Clarabel.rs v0.11.1  -  Clever Acronym                
+
+                   (c) Paul Goulart                          
+                University of Oxford, 2022                   
+-------------------------------------------------------------
+
+problem:
+  variables     = 105
+  constraints   = 189
+  nnz(P)        = 0
+  nnz(A)        = 3511
+  cones (total) = 20
+    :        Zero = 1,  numel = 28
+    : Nonnegative = 4,  numel = (3,2,3,5)
+    : PSDTriangle = 15,  numel = (6,3,45,15,...,3)
+
+settings:
+  linear algebra: direct / qdldl, precision: 64 bit (1 thread)
+  max iter = 400, time limit = Inf,  max step = 0.990
+  tol_feas = 1.0e-10, tol_gap_abs = 1.0e-10, tol_gap_rel = 1.0e-10,
+
+
+  iter refine: on, reltol = 1.0e-13, abstol = 1.0e-12,
+               max iter = 10, stop ratio = 5.0
+  equilibrate: on, min_scale = 1.0e-4, max_scale = 1.0e4
+               max iter = 10
+
+
+---------------------------------------------------------------------------------------------
+(CVXPY) Nov 07 12:11:09 AM: Problem status: optimal
+(CVXPY) Nov 07 12:11:09 AM: Optimal value: 6.250e-02
+(CVXPY) Nov 07 12:11:09 AM: Compilation took 3.553e-02 seconds
+(CVXPY) Nov 07 12:11:09 AM: Solver (including time spent in interface) took 3.496e-03 seconds
+  0  -3.3815e-01  -6.7891e+00  6.45e+00  8.64e-01  2.07e+00  1.00e+00  1.32e+00   ------   
+  1  +1.5362e-01  -1.0478e+00  1.20e+00  2.68e-01  6.52e-01  4.13e-03  5.19e-01  7.47e-01  
+  2  -7.5388e-02  -2.4311e-01  1.68e-01  6.05e-02  1.40e-01  8.51e-03  1.57e-01  8.34e-01  
+  3  -6.9744e-02  -1.1459e-01  4.48e-02  1.59e-02  3.57e-02  2.49e-03  4.51e-02  7.92e-01  
+  4  -6.2459e-02  -6.4196e-02  1.74e-03  6.14e-04  1.32e-03  9.38e-05  1.77e-03  9.78e-01  
+  5  -6.2499e-02  -6.2519e-02  1.93e-05  6.82e-06  1.46e-05  1.04e-06  1.97e-05  9.89e-01  
+  6  -6.2500e-02  -6.2500e-02  2.02e-07  7.13e-08  1.53e-07  1.09e-08  2.06e-07  9.90e-01  
+  7  -6.2500e-02  -6.2500e-02  2.25e-09  7.96e-10  1.71e-09  1.21e-10  2.30e-09  9.89e-01  
+  8  -6.2500e-02  -6.2500e-02  4.83e-11  1.70e-11  3.68e-11  2.63e-12  4.96e-11  9.79e-01  
+---------------------------------------------------------------------------------------------
+Terminated with status = Solved
+solve time = 2.9218ms
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+status optimal value 0.06249999999638995 [0.1s]
+saved sol_sym_n2_3_4_maxt.npz t = 0.06249999999638995 s = None [0.1s]
+  static reg : on, ϵ1 = 1.0e-8, ϵ2 = 4.9e-32  dynamic reg: on, ϵ = 1.0e-13, δ = 2.0e-7iter    pcost        dcost       gap       pres      dres      k/t        μ       step      

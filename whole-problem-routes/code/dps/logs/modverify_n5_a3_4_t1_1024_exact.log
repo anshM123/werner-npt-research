@@ -1,0 +1,24 @@
+certificate: n = 5, a = 3/4, t = 1/1024, L = 4730513887482211597998028125046049902696444394583850634438765519079177976676323935917276950792781621081855918061886018777027790849648340823998185988318113714154702480075407905931337384068866867087072185250912343129807305445187013665084488399980407998237169285235592034578213742392347032969112289779928765010047030968387190690659171051021200062429034794137086063163969894371879467628405708926476267781721731336577843210485760
+15 diagram operators built, linearly independent
+partial transposes on A and on B, and left/right multiplication by SWAP(B,B') act as permutations of diagrams
+orbit-compressed certificate: 6248 orbit values per operator
+C_a (x) I_B' in diagram coordinates: {0: '3/4', 3: '-1/4', 10: '-1/4'}
+spin m=0 bases: multiplicities {0: 1, 1: 3, 2: 2, 3: 1}
+every diagram commutes with the total so(3) generators (exact)
+per-copy compression map is a bijection (rank 15, exact)
+float sanity check: spectrum of random symmetric algebra elements = union of block spectra (x(2j+1))
+S-adapted spin bases: signs {0: [-1], 1: [1, 1, -1], 2: [1, -1], 3: [1]}
+per-copy compression map in the S-adapted bases is a bijection (rank 15)
+CRT with 50 primes below 2^29 (entry bound 1440 bits)
+blocks to check per operator (sorted spin labels; the certificate is copy-permutation invariant by construction for orbit input, and is checked below otherwise): 56
+copy-permutation invariance: by construction (orbit format) or checked exactly on the integer tensors
+  10 primes done (4.9 s)
+  20 primes done (9.7 s)
+  30 primes done (14.7 s)
+  40 primes done (19.4 s)
+  50 primes done (23.8 s)
+forced vectors (S-adapted coordinates): {1: [2, 6, 0], 3: [6]}
+Q_B: positive semidefinite on all checked blocks (S=+1 part for Q_A, Z) = True; dimension checked 1389, exact kernel dimension 6  (27.4 s)
+Q_A: positive semidefinite on all checked blocks (S=+1 part for Q_A, Z) = True; dimension checked 696, exact kernel dimension 6  (28.8 s)
+Z: positive semidefinite on all checked blocks (S=+1 part for Q_A, Z) = True; dimension checked 696, exact kernel dimension 6  (30.1 s)
+PASS: for all x, y in C^243: <x(x)y| C_3/4^(x)5 |x(x)y> >= 1/1024 |x|^2 |y|^2

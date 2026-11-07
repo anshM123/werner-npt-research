@@ -1,0 +1,3 @@
+orbits 6248 max deviation from orbit mean (float solution): 3.0357660829594124e-18 9.540979117872439e-18
+max |xA| 0.03205415661068401 max |xB| 0.0866308267734202
+wrote certs/cert_n5_a3_4_t1_2048.txt

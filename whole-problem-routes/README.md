@@ -160,6 +160,7 @@ b_n(x, y) = yᵀΦ_n(xxᵀ)y, κ_n(x, y) = xᵀΦ_n(xyᵀ)y. Dividing by 2a^k an
 positivity on real rank-one inputs, which extends to all positive inputs because Φ_n commutes with the transpose. ∎
 
 The open step of this route is a lower bound μ_n(a) ≥ m^n for every n at one a < 1 (at a = 9/10: μ_n ≥ (2/5)^n).
+At a = 3/4 it is proved for n ≤ 5 (Theorem 7.13).
 It does not need the Werner endpoint itself.
 
 ## 6. Numerical observations on the map route
@@ -210,10 +211,13 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.2 | n = 2: positive iff a ≥ (1 + √2)/4; not decomposable below (7 + 2√15)/22 | **proved** |
 | 7.3 | decomposability of 𝒫_a^{⊗n} is a linear program; its thresholds tend to 1 | reduction **proved**; thresholds numerical (LP) |
 | 7.4 | the threshold is a_n for n ≤ 6 (searches) and n = 9, 15, 21 (matrix product states) | numerical |
-| QT | 𝒫_a^{⊗n} is positive iff a ≥ a_n, every n (would give NPT bound entanglement) | **open** from n = 3 |
+| QT | 𝒫_a^{⊗n} is positive iff a ≥ a_n, every n (would give NPT bound entanglement) | **open** from n = 3 (at a = 3/4 proved for n ≤ 5, see 7.13) |
 | 7.7–7.10 | at a ≥ 3/4 copies where the input or the output vector is thin are free; only inputs thick at every copy, n ≥ 3, remain | **proved** |
 | 7.11 | 𝒫_a^{⊗n} is 2-positive for a ≥ 0.8602 (n = 2) and a ≥ 0.91, 0.93, 0.95 (n = 3, 4, 5) | **proved** (n = 2 by hand; n = 3–5 exact certificates) |
 | 7.12 | the two-copy Werner endpoint and the two-copy case of the map at 3/4 are the ends of one family | reduction **proved**; the range [1, 2] numerical |
+| 7.13 | 𝒫_{3/4}^{⊗n} is positive for n = 3, 4, 5, with least output eigenvalue exactly 4^{−n}; 𝒫_a^{⊗3} is positive for a ≥ 81/125 = 0.648 | **proved** (computer-assisted: exact rational certificates, two separate exact verifiers) |
+| 7.14 | a failure of tensor-stable positivity of 𝒫_{3/4} needs n ≥ 6 copies, with the input and the output vector thick at six or more common copies | **proved** |
+| 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n | numerical |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -310,9 +314,11 @@ at n = 9, 15, and positive values of order 10⁻¹¹ at n = 21, where the optimi
 
 Since a_n < 3/4 for every n, Conjecture QT makes 𝒫_{3/4} tensor-stable positive. By Proposition M(3), the Werner state
 proportional to 11I − 5F would then be NPT and undistillable from every number of copies. In words, the conjecture says
-that the only obstruction is the one on planes, where 𝒫_{3/4} is completely positive. Its case n = 2 is Theorem 7.2. It
-is open for every n ≥ 3, where, by Proposition 7.3, the positivity it asserts at a = 3/4 is not decomposable. At
-a = 3/4, Corollary 7.9 below reduces it to inputs that have full support at every copy.
+that the only obstruction is the one on planes, where 𝒫_{3/4} is completely positive. Its case n = 2 is Theorem 7.2.
+The threshold is open for every n ≥ 3 (at n = 3 it lies in [a₃, 0.648], Theorem 7.13). At a = 3/4, where by
+Proposition 7.3 the positivity it asserts is not decomposable from n = 3 on, Theorem 7.13 proves it for n ≤ 5, and
+Corollaries 7.9 and 7.14 reduce the rest to six or more copies at which both the input and the output vector have full
+support.
 
 **Remark 7.5 (an exact sum over planes, and why it is not enough).** As maps on M₃(C),
 
@@ -368,7 +374,8 @@ entanglement breaking maps [MRW, Thm. 9]. ∎
 
 **Corollary 7.9.** 𝒫_{3/4} is tensor-stable positive, and then NPT bound entanglement exists, if and only if for every n
 the operator 𝒫_{3/4}^{⊗n}(ρ) is positive for every state ρ whose one-copy reduced states all have rank 3. A smallest
-failure, if there is one, needs n ≥ 3 copies and an input that is thick (rank 3) at every copy.
+failure, if there is one, needs n ≥ 3 copies and an input that is thick (rank 3) at every copy (n ≥ 6 by
+Corollary 7.14).
 
 *Proof.* Induction on n. An input with a thin copy is covered by Proposition 7.8 and the case of fewer copies; n ≤ 2 is
 Theorem 7.2. ∎
@@ -437,6 +444,57 @@ output side follows from FX_wF = X_w, which makes the restriction to C³ ⊗ (pl
 (plane) ⊗ C³. One then contracts χ with the product vectors of the separable decomposition and uses one-copy
 positivity of X_{w₂} on Schmidt-rank-two vectors.
 
+**Theorem 7.13 (three, four and five copies at a = 3/4; computer-assisted).** For n = 3, 4, 5,
+
+    𝒫_{3/4}^{⊗n}(ρ) ⪰ 4^{−n} Tr(ρ) I   for every positive ρ on (C³)^{⊗n},
+
+and the least eigenvalue equals 4^{−n} at ρ = (e₁e₁ᵀ)^{⊗n}. So 𝒫_{3/4}^{⊗n} is positive and μ_n(3/4) = 4^{−n} for every
+n ≤ 5. Moreover, 𝒫_a^{⊗3} is positive for every a ≥ 81/125 = 0.648, so with Theorem 7.1 the three-copy threshold
+lies in [a₃, 0.648] = [0.6468503…, 0.648].
+
+*Proof.* Let B′ be a second copy of the outputs B = B₁…B_n, S the swap of B and B′, P = (I + S)/2, and Γ_A, Γ_B the
+partial transposes on all inputs and on all outputs. For each case, `code/dps/certs/` contains rational operators
+Q_A, Q_B ⪰ 0 with PQ_AP = Q_A such that
+
+    Z = P [ C_a^{⊗n} ⊗ I_{B′} − t I − Γ_A(Q_A) − Γ_B(Q_B) ] P ⪰ 0,
+
+with t = 4^{−n} at a = 3/4 and t = 0 at a = 81/125, n = 3. For ψ = x ⊗ y ⊗ y we have Pψ = ψ, so
+
+    ⟨xy|C_a^{⊗n}|xy⟩ |y|² − t |x|² |y|⁴ = ⟨ψ|Z|ψ⟩ + ⟨x̄yy|Q_A|x̄yy⟩ + ⟨xȳy|Q_B|xȳy⟩ ≥ 0,
+
+and ⟨xy|C_a^{⊗n}|xy⟩ = ⟨y|𝒫_a^{⊗n}(|x̄⟩⟨x̄|)|y⟩. This is the second level of the Doherty–Parrilo–Spedalieri hierarchy,
+with the extension on the output side. The operators are rational combinations of products of the fifteen Brauer
+diagrams of one copy (on its three strands A_s, B_s, B′_s), so they commute with SO(3) acting on each copy, and
+positivity reduces to exact rational matrices of size at most 3^n, one for each assignment of spins j_s ∈ {0, 1, 2, 3}.
+At t = 4^{−n} the real product vectors force one kernel vector in each block with all j_s ∈ {1, 3}, and the certificates
+have no other kernel. Positivity of every block was decided in exact arithmetic by two separately written verifiers
+(`code/dps/README.md`).
+For a > 81/125 write 𝒫_a = 𝒫_{81/125} + (a − 81/125)D with D(X) = Tr(X)I and expand 𝒫_a^{⊗3}. Up to the order of the
+copies, each term is 𝒫_{81/125}^{⊗k} ⊗ D^{⊗(3−k)}. It is positive because 𝒫_{81/125}^{⊗k} is positive for k = 3 (the
+certificate), k = 2 (Theorem 7.2, as 81/125 > (1 + √2)/4) and k = 1, and (Φ ⊗ D)(X) = Φ(Tr₂X) ⊗ I. ∎
+
+**Corollary 7.14.** For every n, 𝒫_{3/4}^{⊗n}(ρ) ⪰ 4^{−n} Tr(ρ) I for every state ρ whose one-copy reduced states have
+rank 3 at five copies or fewer. Also ⟨y|𝒫_{3/4}^{⊗n}(xx*)|y⟩ ≥ 0 whenever x and y are thick (one-copy marginal of
+rank 3) at five or fewer common copies. A smallest failure of tensor-stable positivity of 𝒫_{3/4}, if there is one,
+needs n ≥ 6 copies and an input and an output vector that are both thick at six or more common copies.
+
+*Proof.* Proposition 7.8 with μ_k(3/4) = 4^{−k} for k ≤ 5 (Theorem 7.2 for k ≤ 2, Theorem 7.13 for k = 3, 4, 5), and the
+thinning of the output vector after Corollary 7.9. ∎
+
+**Remark 7.15 (what the certificates suggest).** At a = 3/4 the second level of the hierarchy is exact for n ≤ 5: its
+optimal t is the true minimum 4^{−n}. The first level (decomposability, the linear program of Proposition 7.3 with the
+constant t added) is exact at n = 1, 2 (t = 1/4, 1/16) but reaches only t ≈ −0.0036 at n = 3. At one copy the second
+level has a closed form: with Y = ¼(I − F_{AB}) ⊗ I_{B′} one has
+C_{3/4} ⊗ I − ¼I = Y + Γ_A(Y) and PYP = ⅜(P − Π), where Π projects onto Sym³(C³) ⊂ A ⊗ B ⊗ B′. We have no closed form
+for n ≥ 2, and an argument for every n would need one. Two things block a direct induction. The cone
+PSD + Γ_A(PSD) + Γ_B(PSD) is not closed under tensor products: a product such as Z ⊗ Γ_A(Q′) is in none of the three
+parts. And the symmetric subspace of (B₁B₂) ⊗ (B′₁B′₂) is not the product of the two one-copy symmetric subspaces: it
+also contains antisymmetric ⊗ antisymmetric. At n = 2 the second level is exact for every a ≥ a₂ (its value equals
+μ₂(a) = min{(a − ½)², (a − ¼)² − ⅛} at every a tested). At n = 3 it is not exact near the threshold: it certifies
+positivity only from a ≈ 0.64798 on, above a₃ ≈ 0.646850, and it is exact again from a ≈ 0.66 on. At n = 4 it needs the partial transpose on the outputs: with
+Γ_A alone the best t is 0.0029257 < 1/256. At n = 3 either partial transpose alone suffices, and with neither (the
+symmetric extension alone) the best t is −0.175. These numbers are floating point.
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
@@ -491,4 +549,15 @@ Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are no
   verifies the n = 2 and n = 3 certificates as explicit 81 × 81 and 729 × 729 matrices;
 - `numerics.py` (with `common.py`): the floating-point observations of Remark 7.12.
 
-Python with NumPy, SciPy (HiGHS) and SymPy.
+`code/dps/` contains the certificates of Theorem 7.13 and their verifiers (details in `code/dps/README.md`):
+- `verify_independent.py CERT`: exact verification from the definition of 𝒫_a and the matchings in the file, by
+  exact elimination and by an exact congruence test, sector by sector (`logs/independent_*.log`, all PASS);
+- `crosscheck3.py CERT`: at three copies, the identity behind the certificate on random entangled complex vectors,
+  with the left side computed from the definition of 𝒫_a (agreement to 2·10⁻¹⁶);
+- `exact_verify.py`, `exact_verify_fast.py`, `exact_verify_mod.py`: the verifiers that came with the generating
+  scripts (exact rational elimination; modular arithmetic with Sylvester's criterion; a memory-light modular version);
+- `run_checks.sh` runs all of these, plus negative controls (t raised above 4^{−n}, which must fail), in about ten
+  minutes (`logs/run_checks.out`).
+
+Python with NumPy, SciPy (HiGHS) and SymPy; `code/dps/` also uses python-flint, and CVXPY with Clarabel and SCS to
+find the certificates.

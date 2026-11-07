@@ -1,0 +1,65 @@
+[warning from _environment.py:286] UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+n 3 a 0.75 blocks 64 sum b^2 3375 sum bp^2 864 max b 27
+built 0.05646681785583496
+(CVXPY) Nov 06 11:43:28 PM: Your problem has 32104 variables, 32621 constraints, and 0 parameters.
+(CVXPY) Nov 06 11:43:28 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 06 11:43:28 PM: DCP verification time: 0.0152 seconds.
+(CVXPY) Nov 06 11:43:28 PM: Expression tree has 12 nodes.
+(CVXPY) Nov 06 11:43:28 PM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Nov 06 11:43:28 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+(CVXPY) Nov 06 11:43:28 PM: Your problem is compiled with the CPP canonicalization backend.
+(CVXPY) Nov 06 11:43:28 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 06 11:43:28 PM: Reduction chain: FlipObjective -> Dcp2Cone -> CvxAttr2Constr -> ExactCone2Cone -> EliminateZeroSized -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 06 11:43:28 PM: Applying reduction FlipObjective
+(CVXPY) Nov 06 11:43:28 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 06 11:43:28 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 06 11:43:28 PM: Applying reduction ExactCone2Cone
+(CVXPY) Nov 06 11:43:29 PM: Applying reduction EliminateZeroSized
+(CVXPY) Nov 06 11:43:29 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 06 11:43:30 PM: Applying reduction SCS
+(CVXPY) Nov 06 11:43:30 PM: Finished problem compilation (took 2.080e+00 seconds).
+(CVXPY) Nov 06 11:43:30 PM: Invoking solver SCS  to obtain a solution.
+(CVXPY) Nov 06 11:44:45 PM: Problem status: optimal
+(CVXPY) Nov 06 11:44:45 PM: Optimal value: 2.604e-03
+(CVXPY) Nov 06 11:44:45 PM: Compilation took 2.080e+00 seconds
+(CVXPY) Nov 06 11:44:45 PM: Solver (including time spent in interface) took 7.412e+01 seconds
+===============================================================================
+                                     CVXPY                                     
+                                     v1.9.3                                    
+===============================================================================
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+------------------------------------------------------------------
+	       SCS v3.3.1 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+------------------------------------------------------------------
+problem:  variables n: 29896, constraints m: 30413
+cones: 	  z: primal zero / dual free vars: 27518
+	  s: psd vars: 2895, ssize: 184
+settings: eps_abs: 1.0e-07, eps_rel: 1.0e-07, eps_infeas: 1.0e-07
+	  alpha: 1.50, scale: 1.00e-01, adaptive_scale: 1
+	  max_iters: 20000, normalize: 1, rho_x: 1.00e-06
+	  acceleration_lookback: 10, acceleration_interval: 5
+lin-sys:  sparse-direct-amd-qdldl
+	  nnz(A): 633293, nnz(P): 0
+------------------------------------------------------------------
+ iter | pri res | dua res |   gap   |   obj   |  scale  | time (s)
+------------------------------------------------------------------
+     0| 8.67e-01  2.88e+00  4.84e-01  5.99e-02  1.00e-01  3.03e+01 
+   175| 9.31e-11  1.70e-08  1.75e-11 -2.60e-03  1.00e-01  7.41e+01 
+------------------------------------------------------------------
+status:  solved
+timings: total: 7.41e+01s = setup: 3.02e+01s + solve: 4.39e+01s
+	 lin-sys: 6.94e+00s, cones: 2.54e-01s, accel: 4.57e-02s
+------------------------------------------------------------------
+objective = -0.002604
+------------------------------------------------------------------
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+status optimal value 0.002604166675131746 time 76.29989194869995
+min eigenvalue over all blocks of Q_A, Q_B, Z: 0.0026041666750080887

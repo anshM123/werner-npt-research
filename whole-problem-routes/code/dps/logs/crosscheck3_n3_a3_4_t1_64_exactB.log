@@ -1,0 +1,16 @@
+15 diagram matrices built from the matchings; exactly linearly independent
+partial transposes on A and on B, multiplication by SWAP(B,B') on the left and on the right, and the full transpose map diagrams to diagrams bijectively (checked on explicit matrices)
+C_a (x) I_B' from the definition of P_a, in diagram coordinates: {0: '3/4', 3: '-1/4', 10: '-1/4'}
+every diagram commutes exactly with the three so(3) generators of the copy
+m = 0 spin bases (adapted to SWAP(B,B')): multiplicities {0: 1, 1: 3, 2: 2, 3: 1} signs {0: [-1], 1: [1, 1, -1], 2: [1, -1], 3: [1]}
+compression of the copy algebra to the four spin blocks is a bijection (exact rank 15)
+forced (Sym^3) vectors in the spin blocks: {0: None, 1: [1, 3, 0], 2: None, 3: [1]}
+LHS +1.438315e+04  RHS +1.438315e+04  (Z +2.420e+03, QA' +0.000e+00, QB +1.196e+04)  map vs Choi +0.0e+00  rel.diff 7.0e-17
+LHS +1.833196e+04  RHS +1.833196e+04  (Z +3.177e+03, QA' +0.000e+00, QB +1.516e+04)  map vs Choi +5.7e-14  rel.diff 0.0e+00
+LHS +1.768416e+04  RHS +1.768416e+04  (Z +2.686e+03, QA' +0.000e+00, QB +1.500e+04)  map vs Choi +1.1e-13  rel.diff 2.4e-16
+LHS +2.397950e+04  RHS +2.397950e+04  (Z +3.771e+03, QA' +0.000e+00, QB +2.021e+04)  map vs Choi +0.0e+00  rel.diff 1.2e-16
+LHS +2.263583e+04  RHS +2.263583e+04  (Z +3.863e+03, QA' +0.000e+00, QB +1.877e+04)  map vs Choi +1.1e-13  rel.diff 1.4e-16
+LHS +1.845706e+04  RHS +1.845706e+04  (Z +3.156e+03, QA' +0.000e+00, QB +1.530e+04)  map vs Choi +0.0e+00  rel.diff 3.7e-17
+LHS +0.000000e+00  RHS +1.977585e-16  (Z -3.816e-17, QA' +0.000e+00, QB +2.359e-16)  map vs Choi +0.0e+00  rel.diff 2.0e-16
+LHS -8.673617e-18  RHS -4.579670e-16  (Z -6.939e-17, QA' +0.000e+00, QB -3.886e-16)  map vs Choi -1.6e-17  rel.diff 4.5e-16
+largest relative discrepancy 4.5e-16

@@ -1,0 +1,79 @@
+[warning from _environment.py:286] UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+n 3 a 0.75 blocks 64 sum b^2 3375 sum bp^2 864 max b 27
+built 0.04848313331604004
+(CVXPY) Nov 06 11:32:49 PM: Your problem has 32104 variables, 32621 constraints, and 0 parameters.
+(CVXPY) Nov 06 11:32:49 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 06 11:32:49 PM: DCP verification time: 0.0111 seconds.
+(CVXPY) Nov 06 11:32:49 PM: Expression tree has 12 nodes.
+(CVXPY) Nov 06 11:32:49 PM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Nov 06 11:32:49 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+(CVXPY) Nov 06 11:32:49 PM: Your problem is compiled with the CPP canonicalization backend.
+(CVXPY) Nov 06 11:32:49 PM: Compiling problem (target solver=CLARABEL).
+(CVXPY) Nov 06 11:32:49 PM: Reduction chain: FlipObjective -> Dcp2Cone -> CvxAttr2Constr -> ExactCone2Cone -> EliminateZeroSized -> ConeMatrixStuffing -> CLARABEL
+(CVXPY) Nov 06 11:32:49 PM: Applying reduction FlipObjective
+(CVXPY) Nov 06 11:32:49 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 06 11:32:49 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 06 11:32:49 PM: Applying reduction ExactCone2Cone
+(CVXPY) Nov 06 11:32:49 PM: Applying reduction EliminateZeroSized
+(CVXPY) Nov 06 11:32:49 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 06 11:32:51 PM: Applying reduction CLARABEL
+(CVXPY) Nov 06 11:32:51 PM: Finished problem compilation (took 2.432e+00 seconds).
+(CVXPY) Nov 06 11:32:51 PM: Invoking solver CLARABEL  to obtain a solution.
+===============================================================================
+                                     CVXPY                                     
+                                     v1.9.3                                    
+===============================================================================
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+-------------------------------------------------------------
+           Clarabel.rs v0.11.1  -  Clever Acronym                
+
+                   (c) Paul Goulart                          
+                University of Oxford, 2022                   
+-------------------------------------------------------------
+
+problem:
+  variables     = 29896
+  constraints   = 30413
+  nnz(P)        = 0
+  nnz(A)        = 633033
+  cones (total) = 156
+    :        Zero = 1,  numel = 27518
+    : Nonnegative = 23,  numel = (1,2,3,2,...,3)
+    : PSDTriangle = 132,  numel = (3,3,6,3,...,3)
+
+settings:
+  linear algebra: direct / qdldl, precision: 64 bit (1 thread)
+  max iter = 500, time limit = Inf,  max step = 0.990
+  tol_feas = 1.0e-9, tol_gap_abs = 1.0e-9, tol_gap_rel = 1.0e-9,
+
+
+  iter refine: on, reltol = 1.0e-13, abstol = 1.0e-12,
+               max iter = 10, stop ratio = 5.0
+  equilibrate: on, min_scale = 1.0e-4, max_scale = 1.0e4
+               max iter = 10
+
+
+---------------------------------------------------------------------------------------------
+  0  +0.0000e+00  -0.0000e+00  0.00e+00  9.81e-01  9.60e-01  1.00e+00  1.00e+00   ------   
+  1  +0.0000e+00  -0.0000e+00  0.00e+00  9.81e-01  9.60e-01  1.00e+00  1.00e+00  0.00e+00  
+---------------------------------------------------------------------------------------------
+Terminated with status = NumericalError
+solve time = 118.3365165s
+Traceback (most recent call last):
+[local path removed]
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               tol_feas=1e-9, direct_solve_method='qdldl')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[local path removed]
+[local path removed]
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[local path removed]
+    ...<2 lines>...
+            "information.")
+cvxpy.error.SolverError: Solver 'CLARABEL' failed. Try another solver, or solve with verbose=True for more information.
+  static reg : on, ϵ1 = 1.0e-8, ϵ2 = 4.9e-32  dynamic reg: on, ϵ = 1.0e-13, δ = 2.0e-7iter    pcost        dcost       gap       pres      dres      k/t        μ       step      

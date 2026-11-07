@@ -1,0 +1,21 @@
+[warning from _environment.py:286] UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+n 3 a 0.65 blocks 64 sum b^2 3375 sum bp^2 864 max b 27
+built 0.04728078842163086
+(CVXPY) Nov 06 11:46:36 PM: Your problem has 32104 variables, 32621 constraints, and 0 parameters.
+(CVXPY) Nov 06 11:46:36 PM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 06 11:46:36 PM: DCP verification time: 0.0106 seconds.
+(CVXPY) Nov 06 11:46:36 PM: Expression tree has 12 nodes.
+(CVXPY) Nov 06 11:46:36 PM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Nov 06 11:46:36 PM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+(CVXPY) Nov 06 11:46:36 PM: Your problem is compiled with the CPP canonicalization backend.
+(CVXPY) Nov 06 11:46:36 PM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 06 11:46:36 PM: Reduction chain: FlipObjective -> Dcp2Cone -> CvxAttr2Constr -> ExactCone2Cone -> EliminateZeroSized -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 06 11:46:36 PM: Applying reduction FlipObjective
+(CVXPY) Nov 06 11:46:36 PM: Applying reduction Dcp2Cone
+(CVXPY) Nov 06 11:46:36 PM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 06 11:46:36 PM: Applying reduction ExactCone2Cone
+(CVXPY) Nov 06 11:46:36 PM: Applying reduction EliminateZeroSized
+(CVXPY) Nov 06 11:46:36 PM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 06 11:46:38 PM: Applying reduction SCS
+(CVXPY) Nov 06 11:46:38 PM: Finished problem compilation (took 2.406e+00 seconds).
+(CVXPY) Nov 06 11:46:38 PM: Invoking solver SCS  to obtain a solution.

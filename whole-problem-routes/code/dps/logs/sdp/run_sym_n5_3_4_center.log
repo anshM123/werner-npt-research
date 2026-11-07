@@ -1,0 +1,68 @@
+[warning from _environment.py:286] UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+n=5 a=0.75: 759375 coordinates, 6248 orbits; Sym x Sym coordinates 190026 [0.3s]
+dense maps built (1726, 1726) (1726, 6248) [14.6s]
+blocks 56 max b 243 sum b^2 133065 [14.7s]
+problem built; variables 9700 [14.7s]
+(CVXPY) Nov 07 12:08:25 AM: Your problem has 9701 variables, 201607 constraints, and 0 parameters.
+(CVXPY) Nov 07 12:08:25 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Nov 07 12:08:25 AM: DCP verification time: 0.0100 seconds.
+(CVXPY) Nov 07 12:08:25 AM: Expression tree has 9 nodes.
+(CVXPY) Nov 07 12:08:25 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Nov 07 12:08:25 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+(CVXPY) Nov 07 12:08:25 AM: Your problem is compiled with the CPP canonicalization backend.
+(CVXPY) Nov 07 12:08:25 AM: Compiling problem (target solver=SCS).
+(CVXPY) Nov 07 12:08:25 AM: Reduction chain: FlipObjective -> Dcp2Cone -> CvxAttr2Constr -> ExactCone2Cone -> EliminateZeroSized -> ConeMatrixStuffing -> SCS
+(CVXPY) Nov 07 12:08:25 AM: Applying reduction FlipObjective
+(CVXPY) Nov 07 12:08:25 AM: Applying reduction Dcp2Cone
+(CVXPY) Nov 07 12:08:25 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Nov 07 12:08:25 AM: Applying reduction ExactCone2Cone
+(CVXPY) Nov 07 12:08:25 AM: Applying reduction EliminateZeroSized
+(CVXPY) Nov 07 12:08:25 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Nov 07 12:08:51 AM: Applying reduction SCS
+(CVXPY) Nov 07 12:08:54 AM: Finished problem compilation (took 2.899e+01 seconds).
+(CVXPY) Nov 07 12:08:54 AM: Invoking solver SCS  to obtain a solution.
+(CVXPY) Nov 07 12:11:28 AM: Problem status: optimal
+(CVXPY) Nov 07 12:11:28 AM: Optimal value: 1.628e-04
+(CVXPY) Nov 07 12:11:28 AM: Compilation took 2.899e+01 seconds
+(CVXPY) Nov 07 12:11:28 AM: Solver (including time spent in interface) took 1.548e+02 seconds
+===============================================================================
+                                     CVXPY                                     
+                                     v1.9.3                                    
+===============================================================================
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+------------------------------------------------------------------
+	       SCS v3.3.1 - Splitting Conic Solver
+	(c) Brendan O'Donoghue, Stanford University, 2012
+------------------------------------------------------------------
+problem:  variables n: 9701, constraints m: 103057
+cones: 	  z: primal zero / dual free vars: 1726
+	  s: psd vars: 101331, ssize: 162
+settings: eps_abs: 1.0e-07, eps_rel: 1.0e-07, eps_infeas: 1.0e-07
+	  alpha: 1.50, scale: 1.00e-01, adaptive_scale: 1
+	  max_iters: 100000, normalize: 1, rho_x: 1.00e-06
+	  acceleration_lookback: 10, acceleration_interval: 5
+lin-sys:  sparse-direct-amd-qdldl
+	  nnz(A): 13868787, nnz(P): 0
+------------------------------------------------------------------
+ iter | pri res | dua res |   gap   |   obj   |  scale  | time (s)
+------------------------------------------------------------------
+     0| 8.74e-01  4.67e+00  4.39e-01  1.39e-01  1.00e-01  2.06e+01 
+   250| 2.62e-03  1.24e-03  6.60e-05 -2.76e-04  1.00e-01  9.11e+01 
+   475| 3.09e-08  4.40e-09  3.85e-11 -1.63e-04  1.00e-01  1.55e+02 
+------------------------------------------------------------------
+status:  solved
+timings: total: 1.55e+02s = setup: 2.04e+01s + solve: 1.34e+02s
+	 lin-sys: 1.92e+01s, cones: 4.00e+01s, accel: 1.80e-01s
+------------------------------------------------------------------
+objective = -0.000163
+------------------------------------------------------------------
+-------------------------------------------------------------------------------
+                                    Summary                                    
+-------------------------------------------------------------------------------
+status optimal value 0.00016276045685982625 [198.5s]
+saved sol_sym_n5_3_4_center.npz t = 0.00048828125 s = 0.00016276045685982625 [198.6s]
