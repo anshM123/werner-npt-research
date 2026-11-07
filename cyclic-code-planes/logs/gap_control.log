@@ -1,0 +1,11 @@
+n = 4: least Z over all 81 words: direct 144, split 144, eigenvalue 144/432
+n = 5: least Z over all 243 words: direct 639, split 639, eigenvalue 639/2592
+n = 6: least Z over all 729 words: direct 3888, split 3888, eigenvalue 3888/15552
+n = 7: least Z over all 2187 words: direct 15903, split 15903, eigenvalue 15903/93312
+n = 8: least Z over all 6561 words: direct 108864, split 108864, eigenvalue 108864/559872
+n = 9: least Z over all 19683 words: direct 483327, split 483327, eigenvalue 483327/3359232
+n = 10: least Z over all 59049 words by the split method 2717712; transfer_certificates.js: 2717712
+n = 11: least Z over all 177147 words by the split method 13049343; transfer_certificates.js: 13049343
+n = 12: least Z over all 531441 words by the split method 68934240; transfer_certificates.js: 68934240
+n = 13: least Z over all 1594323 words by the split method 332300799; transfer_certificates.js: 332300799
+PASS

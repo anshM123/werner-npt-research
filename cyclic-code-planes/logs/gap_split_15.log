@@ -1,0 +1,2 @@
+n = 15 (split 8 + 7): 14348907 words x 3 coefficients; least Z = 8381487231; nonpositive: 0; largest sum of |terms| 1.292e+10 < 2^53, so every value is exact
+PASS

@@ -3,8 +3,8 @@
 Ansh Mishra and Aryan Senthilkumar, 6 November 2026. Nothing here is refereed.
 
 For every number of copies n ≥ 4 there is an explicit three-dimensional subspace Q_n of (C³)^{⊗n} on which the endpoint
-form is positive definite. It holds for operators supported on Q_n on both sides at every n ≥ 4, and for arbitrary
-co-range at n = 4, …, 13, n = 18, …, 26 and every n ≥ 30. Every vector of Q_n has maximally mixed one-copy marginals, so
+form is positive definite. It holds for operators supported on Q_n on both sides, and for arbitrary co-range, at
+every n ≥ 4. Every vector of Q_n has maximally mixed one-copy marginals, so
 these spaces are thick at every copy. The positivity is uniform with an explicit margin, so it extends to an explicit
 neighbourhood of every plane inside Q_n in the whole Grassmannian. The statements hold for every rank, not only rank
 two. They do not settle the endpoint for general planes.
@@ -49,8 +49,8 @@ b = 0, 1, 2 and m = 8, …, 15 (least coefficient 432). Every n ≥ 8 is 8q + r 
 positive; n = 4, …, 7 are checked directly. ∎ The least eigenvalues at n = 4, …, 7 are 144/432, 639/2592, 3888/15552 and
 15903/93312.
 
-**Theorem B (range in Q_n, arbitrary co-range).** For every nonzero C with P_n C = C, q_n(C) > 0, at n = 4, …, 13,
-n = 18, …, 26 and every n ≥ 30. Equivalently, the compression of the partially transposed Werner operator to
+**Theorem B (range in Q_n, arbitrary co-range).** For every n ≥ 4 and every nonzero C with P_n C = C, q_n(C) > 0.
+Equivalently, the compression of the partially transposed Werner operator to
 Q_n ⊗ (C³)^{⊗n} is positive definite.
 
 *Proof.* For all 3¹² words of length 12 and all 3¹³ of length 13, every coefficient of T_{d₁}⋯T_{d_ℓ} is positive (least
@@ -61,10 +61,20 @@ where S^±_j are the sums of the positive and of the absolute negative coefficie
 over all Q of each length r = 6, …, 11 shows this bound is strictly positive. Every n ≥ 30 is a sum of lengths from
 {12, 13, 18, …, 23}; for example 30 = 18 + 12, then add 12s. The trace is cyclic, so every coset trace is positive. The
 sizes n = 4, …, 13 are checked by exhaustive enumeration of all cosets, and 18, …, 26 are lengths or sums of the positive
-blocks. ∎ The sizes 14, …, 17 and 27, …, 29 are not covered by these certificates.
+blocks. The remaining sizes are settled directly.
+- n = 14, …, 17: split each word into a prefix of length ⌈n/2⌉ and the rest; [t^a]Tr(PQ) is a bilinear pairing of
+  the two products, evaluated for all 3^n words at once with floating-point matrix products in which every integer
+  involved stays below 2^53, so every value is exact. The least values of Z are 1 715 902 704, 8 381 487 231,
+  42 407 784 576 and 208 290 223 359.
+- n = 27, 28, 29: write a word as PQ with P of length 13 and Q of length 14, 15 or 16. Every coefficient in row i of
+  every product of length 13 is at least m_i ≥ 2 773 116, and every product of length 14, 15 or 16 has only
+  nonnegative coefficients (exhaustive, exact). Hence every coefficient of Tr(PQ) is at least Σ_i m_i C_i(Q) > 0,
+  where C_i(Q) is the sum of all coefficients in column i of Q. ∎
 
 **Explicit margins.** For a decomposition n = ℓ₁ + ⋯ + ℓ_m into the block lengths, with g_ℓ the certified least
 coefficient of length ℓ, q_n(C) ≥ μ_n ‖C‖_F² with μ_n = 9 · 27^{m−1} Π g_{ℓ_i} / (3^{n−1} 2ⁿ).
+At n = 4, …, 17 the least eigenvalue itself is known (the least Z above, and the logs, divided by 3^{n−1}2ⁿ), and at
+n = 27, 28, 29 it is at least the least value of Σ_i m_i C_i(Q) divided by 3^{n−1}2ⁿ: 1.51·10⁻³, 1.24·10⁻³ and 1.02·10⁻³.
 
 **Corollary (a neighbourhood of every code plane).** Let L₀ ⊂ Q_n be a plane at a size covered by Theorem B, with
 orthonormal frame W₀. If W is the orthonormal frame of a plane L with ‖W − W₀‖ ≤ μ_n/4, then q_n(C) ≥ (μ_n/2)‖C‖_F² for
@@ -82,6 +92,10 @@ every C with range in L and any co-range. *Proof.* Write C = WX, C₀ = W₀X; s
     cosets on four and five copies.
 - `code/tail_certificates.js` (`logs/tail_certificates.log`) checks the row ratio of the length-12 products, the six
   column-sum bounds for r = 6, …, 11, and the length decompositions of n = 30, …, 41.
+- `code/gap_certificates.py` (`logs/gap_*.log`), written separately from the JavaScript certificates, settles
+  n = 14, …, 17 and 27, 28, 29 as described in the proof of Theorem B. As a control it reproduces the least coset
+  values of `transfer_certificates.js` for n = 4, …, 13 (direct products for n ≤ 9, the split method for all), and
+  its row bounds for length 12 reproduce the global minimum 365 472 and maximum 18 258 048 of `tail_certificates.js`.
 - `code/cyclic_check.py` (`logs/cyclic_check.log`), written separately from the transfer formula, builds the code
   vectors and the operator M^{⊗n} from their definitions and computes the least eigenvalue of the compressed form. At
   n = 4 and n = 5, one-sided and two-sided, it gives 1/3 = 144/432 and 639/2592, the values of the transfer formula
