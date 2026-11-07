@@ -1,0 +1,3 @@
+trace 1: True ; rho >= 0: True ; rho^Gamma >= 0: True
+Tr[C_{3/4}^{(x)3} rho] = -3/832
+PASS

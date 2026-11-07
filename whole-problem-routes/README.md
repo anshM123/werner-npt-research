@@ -494,8 +494,13 @@ thinning of the output vector after Corollary 7.9. ∎
 
 **Remark 7.15 (what the certificates suggest).** At a = 3/4 the second level of the hierarchy is exact for n ≤ 5: its
 optimal t is the true minimum 4^{−n}. The first level (decomposability, the linear program of Proposition 7.3 with the
-constant t added) is exact at n = 1, 2 (t = 1/4, 1/16) but reaches only t ≈ −0.0036 at n = 3. At one copy the second
-level has a closed form: with Y = ¼(I − F_{AB}) ⊗ I_{B′} one has
+constant t added) is exact at n = 1, 2 (t = 1/4, 1/16) but reaches only t ≈ −0.0036 at n = 3. The optimal dual point
+of that linear program is an explicit state. Let ρ = Σ_J p_J P_J / Tr P_J, where J runs over the assignments of P_Ω, P_s0,
+P_an to the three pairs (input, output) of copies. The weights are 1/27, 10/117, 4/13 and 200/351 on the letter
+multisets {Ω, Ω, Ω}, {Ω, Ω, s0}, {Ω, an, an} and {s0, s0, s0}, spread evenly over arrangements. Then ρ has positive
+partial transpose, and Tr[C_{3/4}^{⊗3}ρ] = −3/832 (exact, `code/ppt_state_n3.py`). By Theorem 7.13, ρ is therefore an
+explicit PPT entangled state on (C³)^{⊗3} ⊗ (C³)^{⊗3} that C_{3/4}^{⊗3} detects. At one copy the second level has a
+closed form: with Y = ¼(I − F_{AB}) ⊗ I_{B′} one has
 C_{3/4} ⊗ I − ¼I = Y + Γ_A(Y) and PYP = ⅜(P − Π), where Π projects onto Sym³(C³) ⊂ A ⊗ B ⊗ B′. We have no closed form
 for n ≥ 2, and an argument for every n would need one. Two things block a direct induction. The cone
 PSD + Γ_A(PSD) + Γ_B(PSD) is not closed under tensor products: a product such as Z ⊗ Γ_A(Q′) is in none of the three
