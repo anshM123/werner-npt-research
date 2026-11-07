@@ -113,3 +113,36 @@ includes:
 - tensor-network searches to 64 copies;
 - factored searches at 10 and 12 copies;
 - adversarial searches over single-excitation planes, where anchors fail.
+
+## The map route (Section 7 of `whole-problem-routes/`)
+
+The second route asks for positivity of every tensor power of 𝒫_{3/4}(X) = ¾ Tr(X) I − ¼(X + Xᵀ) on qutrits. It is proved
+for five copies, on real planes for every n, on permutation-symmetric inputs up to 21 copies and on inputs of bond
+dimension two for every n. A failure would need six or more copies at which both the input and the output have full
+support. The following do not reach every n (added 7 November 2026).
+
+- **Decomposability, and every certificate that unrolls into it.** 𝒫_a^{⊗n} is not decomposable from n = 3 for any
+  a < 0.7562 (Proposition 7.3). Suppose a certificate writes C^{⊗n} as local compressions of C^{⊗m} ⊗ (separable),
+  with m < n, plus decomposable terms. Substituting the certificates of the smaller powers repeatedly ends at
+  C^{⊗2}, which is decomposable, so C^{⊗n} would be decomposable. This rules out "thin reductions": a compression onto
+  a plane at one copy is a separable factor times C^{⊗(n−1)} (Lemma 7.7).
+- **Two-replica linear programs.** The shadow inequalities Tr(Z Φ(Z)) ≥ 0 for products Φ of completely positive maps,
+  together with the pure-state identities Tr(Z Z^{T_S}) = Tr Z_S² and a classical ancilla bit (so that the problem
+  is a diagonal one), give exactly the decomposability bound: −3/832 at n = 3, the PPT state of Remark 7.15.
+- **Fixed-level symmetric extensions.** The second level is exact at a = ¾ for n ≤ 5, but its threshold ℓ_n increases
+  (0.6036, 0.648, 0.686, 0.720 for n = 2, …, 5, with increments shrinking only like n^{−1/2}), so it probably fails at
+  a = ¾ from about n = 6. No fixed level is expected to work for every n.
+- **Word expansions.** 2C_{3/4} = M + P_an, with M = I − ½|Ω⟩⟨Ω| the Werner endpoint operator. But M ⊗ P_an is not
+  positive on Schmidt-rank-two vectors (least value −1/6), and M ⊗ P_an ⊗ P_an is not block positive (−1/24). So
+  neither 2-positivity of 𝒫_{3/4}^{⊗2} nor positivity of the powers splits into endpoint statements term by term.
+- **Second-order (local) arguments.** From a critical point, one-copy squeezes move the value monotonically, with an
+  exact formula and a closed form for the trace of the squeeze Hessian (Proposition 7.23). But at the minimiser of a
+  hypothetical failure every second-order condition holds automatically, because there λ < (a − ½)^n while every
+  one-copy contraction has normalised value at least (a − ½)^{n−1}. One-copy statements that would exclude thick local
+  minima at every value are not expected to hold, as for the endpoint form (see `orbit-notes/`). The thick critical
+  points found by random search at three and four copies are all saddles along a one-copy squeeze (Observation 7.25),
+  but that is evidence about saddles, not about minima.
+
+What a proof of this route needs is a global inequality: some way to compare the value at a thick minimiser with the
+values of its contractions or compressions that does not hold trivially at every critical point. None of the tools
+above provides one.
