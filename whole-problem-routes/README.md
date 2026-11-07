@@ -758,6 +758,12 @@ t_s = −(log 2)/n, is their barycentre. So if the set of parameters at which �
 in these coordinates, real 2-positivity of 𝒫_{3/4}^{⊗(n−1)} gives Conjecture QT at n copies with its sharp threshold a_n.
 We do not know whether it is convex.
 
+Numerically the vertices hold for n ≤ 6: the searches of Section 6 (Observation 1) find no Schmidt-rank-two vector with a
+negative value of C_{3/4}^{⊗m} for m ≤ 5. They are harder for the method of Theorem 7.13, though. At the three-copy
+vertex (½, ¾, ¾) the second level of the hierarchy reaches only t ≈ −4.7·10⁻³ (floating point,
+`code/dps/level2_multi.py`, `code/dps/logs/sdp/vertex_n3_scs.log`; at the two-copy vertex it reaches t = 0), while at
+a = ¾ it certifies five copies. So 2-positivity of 𝒫_{3/4} ⊗ 𝒫_{3/4} is not proved here.
+
 **Remark 7.21 (there is no complex version).** The value f(a₁, …, a_n) = ⟨y|𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n}(xxᵀ)|y⟩ is multi-affine in
 the parameters. At n = 3 (and in shorter runs at n = 4), searches over x, y and complex parameters find no zero with Re a₁ > ½ and Re a_s > 3/4 for
 s ≥ 2: the largest Re a₁ of such zeros is ½, attained by products and approached by the plane witness. A zero-free region
