@@ -329,13 +329,25 @@ isometry, C_V ⪰ (a − ¾)I. So for a ≥ 3/4 the matrix C_V is positive with 
 (it lives on C² ⊗ C³), and Φ_V is entanglement breaking. For a < 3/4 and a real plane, C_V has the eigenvalue a − ¾. ∎
 
 **Proposition 7.8 (thin copies are free).** Let a ≥ 3/4, let ρ be a state on (C³)^{⊗n}, and let K be the set of copies
-at which the one-copy reduced state of ρ has rank 3. If 𝒫_a^{⊗|K|} is positive, then 𝒫_a^{⊗n}(ρ) ⪰ 0. By Theorem 7.2 this
-holds for every n whenever |K| ≤ 2.
+at which the one-copy reduced state of ρ has rank 3. Write μ_k(a) for the least eigenvalue of 𝒫_a^{⊗k}(σ) over states σ
+on k copies (μ₀ = 1). If μ_{|K|}(a) ≥ 0, then
+
+    λ_min(𝒫_a^{⊗n}(ρ)) ≥ (a − ½)^{n−|K|} μ_{|K|}(a) ≥ 0.
+
+By Theorem 7.2 (whose proof gives μ₂(a) = min{(a − ½)², (a − ¼)² − ⅛} for a ≥ (1 + √2)/4) this holds for every n
+whenever |K| ≤ 2. At a = 3/4 it gives λ_min ≥ 4^{−n} for every input thin at all but two copies, which is the value of
+real product inputs: on this class the least output eigenvalue is exactly multiplicative.
 
 *Proof.* For s ∉ K let V_s be an isometry onto a plane that contains the support of ρ_s. Then ρ = Wρ′W* with
-W = ⊗_{s∉K} V_s ⊗ I_K and ρ′ ⪰ 0, so 𝒫_a^{⊗n}(ρ) = (⊗_{s∉K} Φ_{V_s} ⊗ 𝒫_a^{⊗|K|})(ρ′). A tensor product of entanglement
-breaking maps is entanglement breaking, so it has the form X ↦ Σ_k Tr(F_kX) R_k with F_k, R_k ⪰ 0, and then
-(Σ_k Tr(F_k ·) R_k ⊗ Ψ)(ρ′) = Σ_k R_k ⊗ Ψ(Tr₁[(F_k ⊗ I)ρ′]) ⪰ 0 for every positive map Ψ. ∎
+W = ⊗_{s∉K} V_s ⊗ I_K and ρ′ ⪰ 0, so 𝒫_a^{⊗n}(ρ) = (T ⊗ 𝒫_a^{⊗|K|})(ρ′) with T = ⊗_{s∉K} Φ_{V_s}. T is entanglement breaking
+(Lemma 7.7), so (T ⊗ id)(ρ′) = Σ_i σ_i ⊗ ρ_i with σ_i, ρ_i ⪰ 0, and with Ψ = 𝒫_a^{⊗|K|},
+
+    (T ⊗ Ψ)(ρ′) = Σ_i σ_i ⊗ Ψ(ρ_i) ⪰ μ_{|K|}(a) Σ_i Tr(ρ_i) σ_i ⊗ I = μ_{|K|}(a) T(Tr_K ρ′) ⊗ I ⪰ μ_{|K|}(a) λ_min[T] I.
+
+This is the argument of [MRW, Thm. 9], which only needs Ψ(σ) ⪰ μ Tr(σ) I with μ ≥ 0. Finally
+λ_min[T] = (a − ½)^{n−|K|}: each Φ_{V_s} has least output eigenvalue a − ½ over states (¼(VYV* + (VYV*)ᵀ) has norm at most
+½ for a state Y, with equality on real ones), and the least output eigenvalue over states is multiplicative for
+entanglement breaking maps [MRW, Thm. 9]. ∎
 
 **Corollary 7.9.** 𝒫_{3/4} is tensor-stable positive, and then NPT bound entanglement exists, if and only if for every n
 the operator 𝒫_{3/4}^{⊗n}(ρ) is positive for every state ρ whose one-copy reduced states all have rank 3. A smallest
@@ -393,8 +405,8 @@ Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are no
 - `planes`: the identity of Remark 7.5 at n = 1, 2 and the least eigenvalue of the Choi matrix of 𝒬′_a
   (`map_thresholds_planes.log`);
 - `thin`: Lemma 7.7 at 5 000 random complex planes (the formula for C_V, C_V^Γ = C_V, positivity at a = 3/4, and the
-  negative control at a = 0.74 on a real plane), and Proposition 7.8 on random inputs thin at all but two copies, n = 3, 4
-  (`map_thresholds_thin.log`); the numbers after Corollary 7.10 come from `thick_inputs.py 3` (`thick_inputs_n3.log`);
+  negative control at a = 0.74 on a real plane), and Proposition 7.8 at n = 3, 4 on random inputs thin at all but two
+  copies and by descent inside that class, which reaches 4^{−n} and not below (`map_thresholds_thin.log`); the numbers after Corollary 7.10 come from `thick_inputs.py 3` (`thick_inputs_n3.log`);
 - `collision`: Remark 7.6 at n = 1, 2 with random entangled states (`map_thresholds_collision.log`).
 
 Python with NumPy, SciPy (HiGHS) and SymPy.

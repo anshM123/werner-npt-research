@@ -421,9 +421,34 @@ elif mode == 'thin':
             out = Phi(np.real(X)) + 1j * Phi(np.imag(X))
             out = (out + out.conj().T) / 2
             lmin = min(lmin, np.linalg.eigvalsh(out).min())
-        good &= lmin > -1e-12
+        good &= lmin >= 0.25 ** n - 1e-12
         print(f'Proposition 7.8, n = {n}, a = 3/4: inputs thin at all but two copies (60 random ones): least output eigenvalue '
-              f'{lmin:+.3e}')
+              f'{lmin:+.3e} >= 4^-n = {0.25 ** n:.3e}: {lmin >= 0.25 ** n - 1e-12}')
+        # adversarial: alternating descent inside the class (real planes at the thin copies), from random starts
+        dmin = np.inf
+        for _ in range(8):
+            thick = rng.choice(n, size=2, replace=False)
+            W = np.ones((1, 1))
+            for s_ in range(n):
+                if s_ in thick:
+                    W = np.kron(W, np.eye(3))
+                else:
+                    Q, _r = np.linalg.qr(rng.normal(size=(3, 3)))
+                    W = np.kron(W, Q[:, :2])
+            z = rng.normal(size=W.shape[1]); val = np.inf
+            for it in range(300):
+                x = W @ z; x /= np.linalg.norm(x)
+                w_, V_ = np.linalg.eigh(Phi(np.outer(x, x))); y = V_[:, 0]
+                Ly = W.T @ Phi(np.outer(y, y)) @ W     # P is self-adjoint on real symmetric matrices; W is an isometry
+                ev, Z = np.linalg.eigh(Ly)
+                z = Z[:, 0]; nv = ev[0]
+                if abs(nv - val) < 1e-14:
+                    val = nv; break
+                val = nv
+            dmin = min(dmin, val)
+        good &= dmin >= 0.25 ** n - 1e-10
+        print(f'Proposition 7.8, n = {n}, a = 3/4: descent inside the class from 8 random starts: least value {dmin:+.6e} '
+              f'(4^-n = {0.25 ** n:.6e})')
     ok &= good
 
 elif mode == 'collision':
