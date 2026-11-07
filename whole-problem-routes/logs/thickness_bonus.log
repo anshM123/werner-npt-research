@@ -1,0 +1,5 @@
+Part 1: block formula vs 9x9 eigenvalues: max deviation 5.1e-16; least of lambda_min - min(...) -1.11e-16; least of min(...) - (1/4 + tau/2)^2 +0.00e+00
+Part 2: largest kappa with lambda_min >= (1/4 + kappa tau)^2 at two copies: 0.8115 (maximally entangled y: 0.8112, lambda_min = 0.270833 = 13/48)
+Part 3: n = 3: least lambda_min(P(yy^T)) - prod(1/4 + tau_s/2) found +1.97e-10
+Part 3: n = 4: least lambda_min(P(yy^T)) - prod(1/4 + tau_s/2) found +8.51e-09
+PASS

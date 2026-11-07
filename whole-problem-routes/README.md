@@ -254,7 +254,8 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.25 | the thick critical points found at n = 3, 4 are saddles along a one-copy squeeze, and the squeeze Hessian trace is negative there; a one-copy compression never raised the least output eigenvalue (n = 2, 3, 4) | numerical (critical points found by search; a failure would need n ≥ 6) |
 | 7.26 | a balanced critical pair at n = 4 (spin singlets, value (151 − √6805)/1536) rises along every one-copy and every joint squeeze, yet is a saddle | identities **exact**, Hessians numerical |
 | 7.27 | inputs thick at every copy sit far above the product value; the per-copy factor under a thickness floor hardly depends on n; singlet minima are 7.7 to 109 times 4^{−n} for n ≤ 7 | numerical |
-| TC | ⟨y|𝒫_{3/4}^{⊗n}(xxᵀ)|y⟩ ≥ ∏_s(¼ + ½τ_s), τ_s the thickness of the pair at copy s; it contains QT at 3/4 | **open** (numerical n ≤ 3 adversarial, consistent with n ≤ 7 data) |
+| 7.28 | at two copies, λ_min(𝒫_{3/4}^{⊗2}(yyᵀ)) ≥ (¼ + ½τ)² for every input y of thickness τ | **proved** |
+| TC | λ_min(𝒫_{3/4}^{⊗n}(yyᵀ)) ≥ ∏_s(¼ + ½τ_s(y)), τ_s(y) the least eigenvalue of y's one-copy marginal; it contains QT at 3/4 | **open** (n = 2 proved, 7.28; n = 3, 4 adversarial searches) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -997,21 +998,41 @@ The product value corresponds to the factor ¼ (`code/thickness_floor.py`, `logs
 for n = 2, …, 7. That is 7.7, 14, 11.4, 30, 48 and 109 times 4^{−n}. The per-copy factor is at least 0.4596, the value
 of Observation 7.26, which tensor powers of that pair attain at every multiple of four (`logs/thick_sector.log`). Every
 balanced pair we found (all one-copy marginals I/3) has a per-copy factor of at least 0.4596.
-(c) *A multiplicative bonus.* The bound of the next conjecture held in adversarial searches from random, near-thin and
-structured starts. With a larger coefficient it fails: ¼ + 0.7τ_s at the pair of Observation 7.26, and ¼ + τ_s at the
-least balanced pair at n = 2 (value 11/36). Near thin pairs the gain is linear in τ: a bonus √τ_s/3 fails there.
+(c) *A multiplicative bonus.* With τ_s the smaller of the two thicknesses at copy s, the two-sided bound
+⟨y|𝒫_{3/4}^{⊗n}(xxᵀ)|y⟩ ≥ ∏_s(¼ + ½τ_s) held in adversarial searches from random, near-thin and structured starts. With
+a larger coefficient it fails: ¼ + 0.7τ_s at the pair of Observation 7.26, and ¼ + τ_s at the least balanced pair at
+n = 2 (value 11/36). Near thin pairs the gain is linear in τ: a bonus √τ_s/3 fails there.
 
-**Conjecture TC (a bonus for thickness).** For every n and all real unit x, y on n copies,
+**Proposition 7.28 (the bonus at two copies).** Let y be a real unit vector on two copies and τ the least eigenvalue of
+its one-copy reduced state. Then
 
-    ⟨y|𝒫_{3/4}^{⊗n}(xxᵀ)|y⟩ ≥ ∏_s (¼ + ½ τ_s),
+    λ_min(𝒫_{3/4}^{⊗2}(yyᵀ)) ≥ min{1/16 + ¾τ, 1/8 + 7τ/16} ≥ (¼ + ½τ)².
 
-where τ_s is the smaller of the least eigenvalues of the one-copy reduced states of x and y at copy s.
+*Proof.* By local rotations y = Σ_i s_i e_i ⊗ e_i, and τ = min_i s_i². By the proof of Theorem 7.2, 𝒫_{3/4}^{⊗2}(yyᵀ) is
+block diagonal. On the first block, zᵀ(M_A − 1/16)z = Σ_{k<l}[½(s_l²z_k² + s_k²z_l²) + ¼s_ks_lz_kz_l]. Since
+¼|s_ks_lz_kz_l| ≤ ⅛(s_l²z_k² + s_k²z_l²), each term is at least (3/8)(s_l²z_k² + s_k²z_l²) ≥ (3/8)τ(z_k² + z_l²), and the
+sum is at least ¾τ|z|². On the block for i < j, with k the third index, the least eigenvalue is
+9/16 − (3/8)(s_i² + s_j²) − ⅛s_is_j ≥ 9/16 − (7/16)(1 − s_k²) ≥ 1/8 + 7τ/16, using s_is_j ≤ ½(s_i² + s_j²). Finally
+1/16 + ¾τ − (¼ + ½τ)² = τ(2 − τ)/4 ≥ 0, and 1/8 + 7τ/16 − (¼ + ½τ)² = 1/16 + 3τ/16 − τ²/4 > 0 for τ ≤ ⅓. ∎
+
+So at two copies a thick input raises the least output eigenvalue above the product value 1/16, whatever the output
+vector. Numerically the coefficient ½ can be raised to 3(√(13/48) − ¼) ≈ 0.811 at two copies, with the maximally
+entangled y as the worst case (`code/thickness_bonus.py`, `logs/thickness_bonus.log`).
+
+**Conjecture TC (a bonus for thickness).** For every n and every real unit y on n copies,
+
+    λ_min(𝒫_{3/4}^{⊗n}(yyᵀ)) ≥ ∏_s (¼ + ½ τ_s(y)),
+
+where τ_s(y) is the least eigenvalue of the one-copy reduced state of y at copy s. Equivalently,
+⟨y|𝒫_{3/4}^{⊗n}(xxᵀ)|y⟩ ≥ ∏_s (¼ + ½ τ_s(y)) for all unit x; by symmetry the same holds with the thickness of x.
 
 It contains Conjecture QT at a = ¾, with the least value 4^{−n} (take τ_s ≥ 0), and it is tight at products. It says
-that a copy where both vectors have full support pays strictly more than the factor ¼ of a thin copy. Unlike
-thinness, the bonus does not pass through the peeling of Proposition 7.8: the conditional states there can be thinner
-than their average. So it is not inductive in an obvious way. Evidence: `code/thick_sector.py` (adversarial searches at
-n = 2, 3, and the two violations of larger coefficients), and the data of Observation 7.27.
+that a copy where the input has full support pays strictly more than the factor ¼ of a thin copy. Proposition 7.28 is
+its case n = 2. Unlike thinness, the bonus does not pass through the peeling of Proposition 7.8, because the conditional
+states there can be thinner than their average. So it is not inductive in an obvious way. Evidence: adversarial
+searches at n = 3, 4 (`code/thickness_bonus.py`), and for the weaker two-sided form at n = 2, 3 (`code/thick_sector.py`).
+The data of Observation 7.27 are consistent with it. With coefficient 0.7 instead of ½ it fails at the singlet pair of
+Observation 7.26.
 
 ## Checks
 
@@ -1102,7 +1123,8 @@ n = 3, and the compression numerics of Observation 7.25 (`logs/squeeze_paths.log
 gives the biased search for thick critical points there (`logs/thick_critical_points.log`). `code/thick_sector.py`
 checks Observation 7.26 (exact identities and Hessians), the singlet minima and the tests of Conjecture TC
 (`logs/thick_sector.log`); `code/thickness_floor.py` gives the table of Observation 7.27(a)
-(`logs/thickness_floor.log`). `code/planar_minimum.py n starts seed` gives the numerics of Conjecture PM
+(`logs/thickness_floor.log`); `code/thickness_bonus.py` checks Proposition 7.28 on a grid of Schmidt
+coefficients and searches for violations of Conjecture TC at three and four copies (`logs/thickness_bonus.log`). `code/planar_minimum.py n starts seed` gives the numerics of Conjecture PM
 (`logs/planar_minimum_n3.log`, `logs/planar_minimum_n4.log`).
 
 Python with NumPy, SciPy (HiGHS) and SymPy; `code/dps/` and `code/symmetric_sector/` also use python-flint, and CVXPY
