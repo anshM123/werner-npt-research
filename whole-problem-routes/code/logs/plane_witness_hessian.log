@@ -1,0 +1,27 @@
+n = 2 centre  : f0 -2e-17, first order 2e-17; least eig H -1.2e-16; thick part: least -7.2e-17, least positive 3.642767e-01 (closed form 3.642767e-01); kernel dim 7
+n = 2 vertex  : f0 -2e-17, first order 2e-17; least eig H -1.4e-16; thick part: least -2.8e-17, least positive 3.750000e-01 (closed form 3.750000e-01); kernel dim 9
+n = 2 edge    : f0 -2e-17, first order 2e-17; least eig H -1.2e-16; thick part: least -7.2e-17, least positive 3.642767e-01 (closed form 3.642767e-01); kernel dim 7
+n = 2 random0 : f0 -5e-17, first order 5e-17; least eig H -1.4e-16; thick part: least -2.8e-17, least positive 3.643087e-01 (closed form 3.643087e-01); kernel dim 7
+n = 2 random1 : f0 -2e-17, first order 2e-17; least eig H -8.2e-17; thick part: least +0.0e+00, least positive 3.708328e-01 (closed form 3.708328e-01); kernel dim 7
+n = 3 centre  : f0 -1e-17, first order 1e-17; least eig H -6.7e-17; thick part: least -1.1e-16, least positive 2.659967e-03 (closed form 2.659967e-03); kernel dim 9
+n = 3 vertex  : f0 +0e+00, first order 0e+00; least eig H -1.0e-16; thick part: least +0.0e+00, least positive 1.250000e-01 (closed form 1.250000e-01); kernel dim 21
+n = 3 edge    : f0 -2e-17, first order 2e-17; least eig H -9.2e-17; thick part: least -1.6e-16, least positive 5.361652e-03 (closed form 5.361652e-03); kernel dim 15
+n = 3 random0 : f0 +1e-17, first order 1e-17; least eig H -6.3e-17; thick part: least -1.8e-17, least positive 4.123514e-04 (closed form 4.123514e-04); kernel dim 9
+n = 3 random1 : f0 +1e-17, first order 1e-17; least eig H -6.8e-17; thick part: least -7.1e-17, least positive 7.918624e-05 (closed form 7.918624e-05); kernel dim 9
+n = 4 centre  : f0 -3e-17, first order 3e-17; least eig H -7.2e-17; thick part: least -1.2e-16, least positive 1.456261e-03 (closed form 1.456261e-03); kernel dim 11
+n = 4 vertex  : f0 -3e-18, first order 2e-18; least eig H -7.6e-17; thick part: least -5.5e-17, least positive 6.250000e-02 (closed form 6.250000e-02); kernel dim 49
+n = 4 edge    : f0 -3e-18, first order 2e-18; least eig H -7.5e-17; thick part: least -7.6e-17, least positive 2.680826e-03 (closed form 2.680826e-03); kernel dim 33
+n = 4 random0 : f0 +1e-17, first order 1e-17; least eig H -7.1e-17; thick part: least -6.8e-17, least positive 9.130970e-04 (closed form 9.130970e-04); kernel dim 11
+n = 4 random1 : f0 -3e-18, first order 2e-18; least eig H -6.3e-17; thick part: least -4.3e-17, least positive 6.047406e-05 (closed form 6.047406e-05); kernel dim 11
+n = 5 centre  : f0 -3e-18, first order 3e-18; least eig H -4.1e-17; thick part: least -2.8e-17, least positive 6.881978e-04 (closed form 6.881978e-04); kernel dim 13
+n = 5 vertex  : f0 +0e+00, first order 0e+00; least eig H -4.4e-17; thick part: least +0.0e+00, least positive 3.125000e-02 (closed form 3.125000e-02); kernel dim 113
+n = 5 edge    : f0 -7e-18, first order 7e-18; least eig H -7.7e-17; thick part: least -5.1e-17, least positive 1.340413e-03 (closed form 1.340413e-03); kernel dim 73
+n = 5 random0 : f0 -9e-18, first order 9e-18; least eig H -6.8e-17; thick part: least -3.4e-17, least positive 2.941933e-05 (closed form 2.941933e-05); kernel dim 13
+n = 5 random1 : f0 -3e-18, first order 3e-18; least eig H -5.3e-17; thick part: least -2.7e-17, least positive 2.857078e-04 (closed form 2.857078e-04); kernel dim 13
+n = 6 centre  : f0 -5e-18, first order 5e-18; least eig H -4.1e-17; thick part: least -4.9e-17, least positive 3.154045e-04 (closed form 3.154045e-04); kernel dim 15
+n = 6 vertex  : f0 +1e-18, first order 3e-18; least eig H -3.8e-17; thick part: least -4.0e-17, least positive 1.562500e-02 (closed form 1.562500e-02); kernel dim 257
+n = 6 edge    : f0 -4e-18, first order 4e-18; least eig H -3.1e-17; thick part: least -5.8e-17, least positive 6.702065e-04 (closed form 6.702065e-04); kernel dim 161
+n = 6 random0 : f0 +6e-20, first order 2e-18; least eig H -3.6e-17; thick part: least -1.6e-17, least positive 7.942612e-05 (closed form 7.942612e-05); kernel dim 15
+n = 6 random1 : f0 -1e-18, first order 2e-18; least eig H -3.1e-17; thick part: least -1.8e-17, least positive 2.677475e-05 (closed form 2.677475e-05); kernel dim 15
+5. prod_T 4a_s - 1 - 2 prod_T (2a_s - 1/2) over 2000 random facet points (n <= 8): |T| = 1 identity (max deviation 0.0e+00); |T| >= 2 least value 3.8284 (>= 1): True
+PASS
