@@ -1,0 +1,13 @@
+run 0: residual 6.0e-07, thickness 1.7e-01 -> skipped (value +0.18819)
+run 1: thick critical point lam = +0.238511, thickness 0.064, best one-copy squeeze margin +1.9164e-01
+run 2: residual 3.2e-07, thickness 1.9e-01 -> skipped (value +0.22377)
+run 3: thick critical point lam = +0.198050, thickness 0.065, best one-copy squeeze margin +1.3845e-01
+run 4: thick critical point lam = +0.229324, thickness 0.049, best one-copy squeeze margin +1.8449e-01
+run 5: thick critical point lam = +0.212895, thickness 0.106, best one-copy squeeze margin +1.7971e-01
+run 6: thick critical point lam = +0.187174, thickness 0.129, best one-copy squeeze margin +1.2195e-01
+run 7: thick critical point lam = +0.191018, thickness 0.113, best one-copy squeeze margin +1.3086e-01
+run 8: thick critical point lam = +0.218206, thickness 0.092, best one-copy squeeze margin +1.6312e-01
+run 9: thick critical point lam = +0.190338, thickness 0.155, best one-copy squeeze margin +1.4530e-01
+run 10: thick critical point lam = +0.150936, thickness 0.022, best one-copy squeeze margin +1.1053e-01
+run 11: thick critical point lam = +0.183665, thickness 0.131, best one-copy squeeze margin +1.2366e-01
+n = 3: 10 thick critical points, values 0.1509-0.2385, smallest margin +0.1105; product value 0.01562

@@ -1,0 +1,24 @@
+Part 1: trace identity
+  a = 0.75, aligned product: lam +0.015625; trace from the Hessian formula -0.00000000, finite differences +0.000000, identity -0.00000000
+  a = 0.75, plane GHZ: lam +0.062500; trace from the Hessian formula +0.25000000, finite differences +0.250000, identity +0.25000000
+  a = 0.75, thick saddle: lam +0.212881; trace from the Hessian formula -0.89720965, finite differences -0.897210, identity -0.89720965
+  a = 0.7, aligned product: lam +0.008000; trace from the Hessian formula +0.00000000, finite differences -0.000000, identity +0.00000000
+  a = 0.7, plane GHZ: lam +0.028625; trace from the Hessian formula +0.29500000, finite differences +0.295000, identity +0.29500000
+  a = 0.7, thick saddle: lam +0.133917; trace from the Hessian formula -0.53595650, finite differences -0.535957, identity -0.53595650
+Part 2: ratios at thick critical points, a = 3/4
+  n = 3: thick critical point lam = +0.193118, thickness 0.200; ratios per copy [0.639 0.627 0.664]
+  n = 3: thick critical point lam = +0.204249, thickness 0.185; ratios per copy [0.627 0.639 0.604]
+  n = 3: thick critical point lam = +0.234903, thickness 0.075; ratios per copy [0.589 0.606 0.596]
+  n = 3: thick critical point lam = +0.197218, thickness 0.138; ratios per copy [0.644 0.621 0.657]
+  n = 3: thick critical point lam = +0.212104, thickness 0.164; ratios per copy [0.615 0.633 0.634]
+  n = 3: thick critical point lam = +0.187404, thickness 0.153; ratios per copy [0.658 0.637 0.673]
+  n = 3: thick critical point lam = +0.180670, thickness 0.181; ratios per copy [0.652 0.699 0.679]
+  n = 3: thick critical point lam = +0.196529, thickness 0.147; ratios per copy [0.683 0.61  0.602]
+  n = 3: thick critical point lam = +0.224058, thickness 0.168; ratios per copy [0.609 0.628 0.603]
+  n = 3: thick critical point lam = +0.212525, thickness 0.194; ratios per copy [0.632 0.59  0.612]
+  n = 3: thick critical point lam = +0.211828, thickness 0.122; ratios per copy [0.635 0.587 0.612]
+  n = 3: 11 thick critical points, largest ratio over all copies 0.6992
+  n = 4: thick critical point lam = +0.112589, thickness 0.266; ratios per copy [0.652 0.646 0.646 0.653]
+  n = 4: thick critical point lam = +0.114181, thickness 0.251; ratios per copy [0.648 0.642 0.657 0.656]
+  n = 4: 2 thick critical points, largest ratio over all copies 0.6572
+PASS

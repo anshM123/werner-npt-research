@@ -246,9 +246,9 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.20 | the vertices of QT_m are 2-positivity: 𝒫_{1/2} ⊗ Φ is positive iff Φ is 2-positive on real inputs | **proved** |
 | 7.21 | the complex (half-plane, Lee–Yang) version of QT_m is false from n = 5 (with every Re a_s > 3/4, from n = 7) | **proved** (explicit zeros) |
 | 7.22 | at every point of the facet ∏(2a_s − ½) = ½, the plane witness is a second-order local minimum in the full qutrit space, every n | **proved** |
-| 7.23 | from a joint critical point of the value, squeezing one copy toward a plane moves the normalised value monotonically all the way to the compression; one contraction inequality gives the sign (every n, every a) | **proved** |
+| 7.23 | from a joint critical point of the value, squeezing one copy toward a plane moves the normalised value monotonically all the way to the compression; one contraction inequality gives the sign; the trace of the one-copy squeeze Hessian has a closed form (every n, every a) | **proved** |
 | 7.24 | a smallest failure at a ≥ 3/4 would be a strict minimum along every one-copy squeeze, so it is enough that no thick critical point is | reduction **proved** |
-| 7.25 | thick critical points at n = 3 are saddles along a squeeze; a one-copy compression never raised the least output eigenvalue (n = 2, 3, 4) | numerical |
+| 7.25 | the thick critical points found at n = 3, 4 are saddles along a one-copy squeeze, and the squeeze Hessian trace is negative there; a one-copy compression never raised the least output eigenvalue (n = 2, 3, 4) | numerical (critical points found by search; a failure would need n ≥ 6) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -866,6 +866,14 @@ G_v = I − (1 − √(1 − v))wwᵀ act at copy s (G_1 projects copy s onto w^
 with f_{n−1}(ξ, η) = ⟨η|𝒫_a^{⊗(n−1)}(ξξᵀ)|η⟩. So the normalised value is monotone along the whole squeeze, and the sign
 of the single number (a − ½) f_{n−1}(ξ, η) − λαβ decides whether it goes up or down.
 
+(ii) Let Q_s be the second derivative at t = 0 of f(e^{tH}x, e^{tH}y)/(|e^{tH}x|²|e^{tH}y|²), a quadratic form in the
+real symmetric 3 × 3 matrix H acting at copy s. Its trace over an orthonormal basis of the traceless H is
+
+    −4 [ λ (4a − 1 + 2 Tr ρ^x_s ρ^y_s) − (a − ½)(1 + 4a) τ_s ],   τ_s = ⟨ρ^x_{−s}, 𝒫_a^{⊗(n−1)}(ρ^y_{−s})⟩,
+
+where ρ^x_s, ρ^y_s are the one-copy reduced states at copy s and ρ^x_{−s}, ρ^y_{−s} those of the other n − 1 copies. In
+particular, if λ (4a − 1 + 2 Tr ρ^x_s ρ^y_s) > (a − ½)(1 + 4a) τ_s at some copy, then (x, y) is not a local minimum.
+
 *Proof.* Write x = x′ + w ⊗ ξ and y = y′ + w ⊗ η, with x′ and y′ supported on w^⊥ at copy s, and put
 x_u = x′ + u w ⊗ ξ, y_u = y′ + u w ⊗ η, so that G_v x = x_u and G_v y = y_u for u = √(1 − v). The value f(x_u, y_u)
 is a polynomial of degree four in u. It is even, because the reflection R = I − 2wwᵀ at copy s maps (x_u, y_u) to
@@ -876,7 +884,13 @@ So 2B + 4C = 2λ(α + β), and with t = 1 − u² = v,
 
     f(x_u, y_u) = λ [1 − (α + β)t] + C t²,   |x_u|² |y_u|² = (1 − αt)(1 − βt) = 1 − (α + β)t + αβ t².
 
-Subtracting λ times the second line from the first gives the formula. ∎
+Subtracting λ times the second line from the first gives the formula.
+(ii) Scaling H ↦ H + cI does not change the normalised value, so Q_s(H) = Q_s(H − (Tr H/3)I) and the trace over the
+traceless H is (15/2) E_w[Q_s(wwᵀ)] for a uniformly random unit w (E[(wwᵀ − I/3) ⊗ (wwᵀ − I/3)] is 2/15 times the
+projection onto traceless symmetric matrices). Expanding (i) to second order along e^{−t wwᵀ} (u = e^{−t}, v ≈ 2t) gives
+Q_s(wwᵀ) = −8 [λαβ − (a − ½) f_{n−1}(ξ, η)]. Finally E[αβ] = (1 + 2 Tr ρ^x_s ρ^y_s)/15, and with Z_{(ik),(jl)} =
+⟨x_i ⊗ y_k|C_a^{⊗(n−1)}|x_j ⊗ y_l⟩ (x_i = ⟨e_i|_s x and so on), E[f_{n−1}(ξ, η)] = (Tr Z + Tr FZ + ⟨Ω|Z|Ω⟩)/15, where
+Tr Z = τ_s and λ = a Tr Z − ¼(Tr FZ + ⟨Ω|Z|Ω⟩). Putting these together gives the trace. ∎
 
 **Corollary 7.24.** Let a ≥ ¾, and suppose μ_m(a) = (a − ½)^m for every m < n (μ_m as in Proposition 7.8; at a = ¾
 Theorem 7.13 gives this for m ≤ 5). If μ_n(a) < (a − ½)^n, then every pair of unit vectors at which f attains μ_n is a
@@ -911,8 +925,20 @@ floor on the thickness and then solves the critical equations alone. It finds th
 0.122 to 0.174, none lower (one run aimed at 0.05 ended at a thin point; `code/thick_critical_points.py`,
 `logs/thick_critical_points.log`). At every thick critical point found, some copy and direction have
 λ − (a − ½) f₂(ξ̂, η̂) > 0 (λ the critical value, ξ̂, η̂ the normalised contractions), with margins 0.076 to 0.12 in the second search. So each
-is a saddle along a one-copy squeeze, which then lowers the value all the way to a thin pair. Descents from twelve
-random starts all end at thin points (eleven at 1/64). A stronger statement also held in
+is a saddle along a one-copy squeeze, which then lowers the value all the way to a thin pair. A plain census from
+random starts (`code/critical_census.py`) finds the same picture at n = 3 (ten thick critical points, values 0.151 to
+0.239, margins at least 0.11; `logs/critical_census_n3.log`) and at n = 4 (six thick critical points, values 0.113 to
+0.118, against the product value 1/256, margins at least 0.07; `logs/critical_census_n4.log`). The trace of
+Proposition 7.23(ii) gives the same conclusion without choosing a direction. Write r_s for the ratio
+(a − ½)(1 + 4a)τ_s / [λ(4a − 1 + 2 Tr ρ^x_s ρ^y_s)]; the trace is negative exactly when r_s < 1. At every copy of every
+thick critical point in `logs/squeeze_trace.log`, r_s ≤ 0.70 (eleven points at n = 3) and r_s ≤ 0.66 (two points at
+n = 4). At aligned products r_s = 1, and at the plane GHZ pairs of Theorem 7.1, which are thin, r_s = 4/3 at a = ¾ for
+every n (there the trace is positive, and these pairs descend in other directions). None of this shows that thick
+local minima cannot exist. The inequality r_s < 1 is checked only at the critical points that the searches happened
+to find, at n ≤ 4, while a failure would need n ≥ 6. It is not a general property of critical points, since it fails
+at the plane GHZ pairs. And at the minimiser of a failure it would fail automatically, since there λ < (a − ½)^n while
+τ_s ≥ (a − ½)^{n−1}. Proving r_s < 1 at every thick critical point, for every n, is as hard as the problem itself.
+Descents from twelve random starts all end at thin points (eleven at 1/64). A stronger statement also held in
 every test. Let g(y) = λ_min(𝒫_{3/4}^{⊗n}(yyᵀ))/|y|². Then some one-copy compression G_1 has g(G_1y) ≤ g(y). We
 checked this for all Schmidt vectors at n = 2, where y can be taken as Σ s_i e_i ⊗ e_i (the largest gap
 min g(G_1y) − g(y) on a 25 × 25 grid of s is −9·10⁻⁵, approached only near products). We also checked random y at n = 3
@@ -925,7 +951,9 @@ at n = 2), although for every x, y and basis Σ_k f(G^{(k)}x, G^{(k)}y) = f(x, y
 with G^{(k)} the compression of copy s onto w_k^⊥ (this is Remark 7.5).
 `code/squeeze_paths.py` (`logs/squeeze_paths.log`, PASS) checks the formula of Proposition 7.23 at minima and at thick
 saddles for a = ¾ and 0.7 (agreement to 10⁻⁸, limited by the residual of the critical points), and the compression
-gaps at n = 2, 3, 4.
+gaps at n = 2, 3, 4. `code/squeeze_trace.py` (`logs/squeeze_trace.log`, PASS) checks the trace of 7.23(ii) against
+the closed form of the Hessian and against finite differences, at products, plane GHZ pairs and thick saddles
+(a = ¾ and 0.7), and computes the ratios r_s.
 
 ## Checks
 
