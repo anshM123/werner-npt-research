@@ -11,6 +11,11 @@ exact reformulations of that whole statement. Four restate the Werner endpoint. 
 NPT bound entanglement that goes through a different state. **None of them is proved here.** Each reduces the problem to
 one inequality, stated below, that would settle it.
 
+Section 7 adds what we can prove about the fifth route. It gives explicit witnesses that bound the n-copy positivity
+threshold of the map from below at every n, and the exact threshold at two copies. It also states Conjecture QT: the
+threshold at n copies is (1 + 2^{1−1/n})/4. That conjecture would settle the route, and so the existence of NPT bound
+entanglement. It is open from three copies on.
+
 ## 1. The cross ratio, and fusion of planes
 
 For a real orthonormal pair (u, v) on n copies put z = (u + iv)/√2 (so zᵀz = 0), C_z = zz*, P = uuᵀ + vvᵀ = C_z + C_z̄ and
@@ -192,6 +197,121 @@ can carry; any proof of Conjecture MM must use more of the structure of 𝒫_a.
 `code/map_numerics.py` (`logs/map_numerics.log`; `python map_numerics.py big` gives `logs/map_numerics_big.log`)
 reproduces these numbers: alternating minimisation over the two Schmidt pairs, random complex starts.
 
+## 7. The positivity threshold of the map at each number of copies
+
+Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
+
+    a_n = (1 + 2^{1 − 1/n})/4,   so a_1 = 1/2, a_2 = (1 + √2)/4 ≈ 0.6036, a_3 ≈ 0.6468, a_4 ≈ 0.6704, …,
+
+an increasing sequence with limit 3/4 (and 3/4 − a_n ≈ (ln 2)/(2n)). Real vectors suffice throughout: 𝒫_a^{⊗n}(xx*)
+depends only on Re(xx*) and is real symmetric.
+
+**Theorem 7.1 (witnesses at every n).** For every n ≥ 1 and every a with 0 ≤ a < a_n, 𝒫_a^{⊗n} is not positive.
+Explicitly, let
+p = (e₁ + ie₂)/√2, let x = (p^{⊗n} + p̄^{⊗n})/√2 (a real unit vector, the GHZ state in the eigenbasis of
+Y = e₁e₂ᵀ − e₂e₁ᵀ), and let y = x for odd n and y = (Y ⊗ I^{⊗(n−1)})x for even n. Then
+
+    ⟨y| 𝒫_a^{⊗n}(xxᵀ) |y⟩ = 2^{−n} [ (2a − 1/2)^n − 1/2 ].
+
+*Proof.* Everything lies in span{e₁, e₂} at every copy, where 𝒫_a compresses to 𝒬_a(X) = a Tr(X) I₂ − ¼(X + Xᵀ). In the
+real basis I, Z, X, Y of M₂(R), 𝒬_a is diagonal with eigenvalues 2a − ½, −½, −½, 0. Expanding xxᵀ = 2^{−n} Σ_P c_P P over
+real Pauli strings (c_P = ⟨x|P|x⟩, and likewise d_P = ⟨y|P|y⟩) gives
+
+    ⟨y|𝒬_a^{⊗n}(xxᵀ)|y⟩ = 2^{−n} Σ_{P ∈ {I,Z,X}^n} (2a − 1/2)^{n − |P|} (−1/2)^{|P|} c_P d_P.
+
+Since p*p̄ = ⟨p|Z|p⟩ = ⟨p|X|p⟩ = 0, ⟨p|Z|p̄⟩ = 1 and ⟨p|X|p̄⟩ = −i, one gets c_I = 1, c_P = cos(π #X(P)/2) for
+P ∈ {Z, X}^n, and c_P = 0 for every other non-identity string in {I, Z, X}^n. So exactly 2^{n−1} strings, all of full
+weight, have c_P = ±1. For odd n, d = c. For even n, conjugation by Y on the first copy flips the sign of Z and X there,
+so d_P = −c_P on all full-weight strings. In both cases the sum is (2a − ½)^n − 2^{n−1}·2^{−n} = (2a − ½)^n − ½, which
+is negative for 0 ≤ a < a_n. ∎
+
+This makes the bound a* ≥ 3/4 of Proposition M explicit. The witnesses live on one plane per copy, where 𝒫_a is a
+qubit map that is completely positive exactly when a ≥ 3/4.
+
+**Theorem 7.2 (two copies).** 𝒫_a^{⊗2} is positive if and only if a ≥ (1 + √2)/4. For
+(1 + √2)/4 ≤ a < (7 + 2√15)/22 ≈ 0.6703 it is positive but not decomposable.
+
+*Proof.* By the covariance 𝒫_a(OXOᵀ) = O𝒫_a(X)Oᵀ (O real orthogonal) and the singular value decomposition, it is enough
+to take x = Σ_i s_i e_i ⊗ e_i with Σ s_i² = 1. With E_ij = e_ie_jᵀ and S_ij = E_ij + E_ji,
+
+    𝒫_a^{⊗2}(xxᵀ) = Σ_i s_i² (aI − ½E_ii)^{⊗2} + ⅛ Σ_{i<j} s_i s_j S_ij ⊗ S_ij,
+
+which is block diagonal: one block on span{|kk⟩} and one on each span{|ij⟩, |ji⟩}, i < j.
+- The first block is M_A = diag(a² − (a − ⅛)s_k²) + ⅛ssᵀ, and with b = a − ¼,
+  zᵀ(M_A − (a − ½)²)z = Σ_{k<l} [ b(s_l²z_k² + s_k²z_l²) + ¼ s_ks_l z_kz_l ] ≥ (2a − ¾) Σ_{k<l} |s_ks_lz_kz_l| ≥ 0.
+- The block on {|ij⟩, |ji⟩} has eigenvalues a² − (a/2)(s_i² + s_j²) ± ⅛ s_is_j ≥ a² − a/2 − 1/16 = (a − ¼)² − ⅛, which
+  is ≥ 0 exactly when a ≥ (1 + √2)/4. At s = (e₁ + e₂)/√2 this value is attained, which is the case n = 2 of Theorem 7.1.
+
+For non-decomposability, let P_Ω, P_s0, P_an be the projectors onto Ω, the traceless symmetric and the antisymmetric part
+of C³ ⊗ C³. The operator ρ = (5 P_Ω⊗P_Ω + 10 P_Ω⊗P_an + 4 P_s0⊗P_s0 + 10 P_an⊗P_Ω)/29 is positive with positive partial
+transpose, and Tr(C_a^{⊗2} ρ) = 15(44a² − 28a − 1)/116, which is negative for a < (7 + 2√15)/22. ∎
+
+**Proposition 7.3 (decomposability is a linear program).** 𝒫_a^{⊗n} is decomposable (its Choi matrix is C₁ + C₂^Γ with
+C₁, C₂ ⪰ 0) if and only if there is c₂ ≥ 0 in R^{3^n} with c_C − G^{⊗n} c₂ ≥ 0, where
+c_C = (a − 1, a − ¼, a + ¼)^{⊗n} and
+
+    G = [[1/3, 5/3, −1], [1/3, 1/6, 1/2], [−1/3, 5/6, 1/2]]
+
+is the partial transpose written in the basis P_Ω, P_s0, P_an (G² = I). By symmetry c₂ may be taken to depend only on how
+many copies carry each projector, which leaves about n²/2 variables.
+
+*Proof.* Twirling over O(3)^n commutes with the partial transpose and fixes C_a^{⊗n}, so C₁ and C₂ may be taken
+invariant. The commutant of O ⊗ O on C³ ⊗ C³ is spanned by the three projectors, so invariant operators are diagonal in
+their products, and positivity means nonnegative coefficients. ∎
+
+Solving this program (floating point, HiGHS) gives the decomposability threshold of 𝒫_a^{⊗n}:
+
+| n | 1 | 2 | 3 | 4 | 5 | 6 | 8 | 10 | 12 |
+|---|---|---|---|---|---|---|---|---|---|
+| decomposable from a = | 0.5 | 0.6703 | 0.7562 | 0.8069 | 0.8401 | 0.8637 | 0.8947 | 0.9142 | 0.9276 |
+| a_n | 0.5 | 0.6036 | 0.6468 | 0.6704 | 0.6853 | 0.6954 | 0.7085 | 0.7165 | 0.7219 |
+
+The thresholds increase toward 1. So from n = 3 on, 𝒫_{3/4}^{⊗n} is not decomposable, and a proof of tensor-stable
+positivity at any a < 1 cannot go through decomposability of the tensor powers. Nor can it go through the step of
+Proposition M(4), which gives positivity of 𝒫_a^{⊗n} from 2-positivity of 𝒫_a^{⊗(n−1)}. The program with a qubit
+ancilla shows that 𝒫_a^{⊗k} ⊗ id₂ is decomposable only at a = 1, for every k ≤ 6. So that 2-positivity is never
+decomposable either.
+
+On a plane the picture is different. The same program for 𝒬_a, with G₂ = [[½, 1, −½], [½, 0, ½], [−½, 1, ½]] and
+c_C = (a − ¾, a − ¼, a + ¼)^{⊗n}, gives decomposability thresholds equal to a_n to eight digits for every n ≤ 12.
+Together with Theorem 7.1 this says that, for n ≤ 12, 𝒬_a^{⊗n} is positive exactly when a ≥ a_n (computer-assisted,
+floating point; exact certificates are not written out here).
+
+**Observation 7.4 (numerical).** For n = 2, …, 6 the positivity threshold of 𝒫_a^{⊗n} found by search is a_n. At
+a_n − 0.001 the search finds negative values, and at a_n + 0.001 it finds none. The searches use alternating minimisation
+seeded at the vector of Theorem 7.1, at random rotations and perturbations of it in all three directions of every copy,
+at random starts, and by continuation in a. Every negative minimiser found has one-copy rank 2, so it lives on one plane
+per copy. Bisections without these seeds agree to five digits for n = 2, 3.
+
+**Conjecture QT.** For every n, 𝒫_a^{⊗n} is positive if and only if a ≥ a_n.
+
+Since a_n < 3/4 for every n, Conjecture QT makes 𝒫_{3/4} tensor-stable positive. By Proposition M(3), the Werner state
+proportional to 11I − 5F would then be NPT and undistillable from every number of copies. In words, the conjecture says
+that the only obstruction is the one on planes, where 𝒫_{3/4} is completely positive. Its case n = 2 is Theorem 7.2. It
+is open for every n ≥ 3, where, by Proposition 7.3, the positivity it asserts at a = 3/4 is not decomposable.
+
+**Remark 7.5 (an exact sum over planes, and why it is not enough).** As maps on M₃(C),
+
+    𝒫_a = Σ_π ι_π ∘ 𝒬′_a ∘ c_π,   𝒬′_a(X) = a Tr(X) I₂ − ¼(X + Xᵀ) − ½(a − ½) diag(X₁₁, X₂₂),
+
+where π runs over the three coordinate planes, c_π compresses to π and ι_π embeds back. (Both sides vanish on
+antisymmetric matrices; on real rank-one inputs and outputs the identity reads
+a|x|²|y|² − ½(x·y)² = Σ_π [a|x_π|²|y_π|² − ½(x_π·y_π)²] − (a − ½)Σ_k x_k²y_k².) The identity holds copy by copy, so 𝒫_a^{⊗n} is the sum, over the 3^n assignments of a
+plane to each copy, of compressions of 𝒬′_a^{⊗n}. It cannot prove Conjecture QT term by term. If 𝒬′_a were completely
+positive, so would be 𝒫_a; indeed the Choi matrix of 𝒬′_a has least eigenvalue −(1 − a)/2. So for a < 1 the qubit map
+𝒬′_a is neither completely positive nor completely copositive, and its tensor powers are eventually not positive
+[MRW, Thm. 2]. A proof has to use cancellation between different plane assignments.
+
+**Remark 7.6 (a form in terms of collisions).** The six lines through opposite vertices of an icosahedron form a
+projective 4-design, with Σ_j v_jv_jᵀ = 2I. Hence 𝒫_a(X) = Σ_{j=1}^6 Tr(E_jX) Q_j with E_j = v_jv_jᵀ/2 and
+Q_j = (a + ¼)I − (5/4)v_jv_jᵀ, and for any states ρ, σ on n copies
+
+    ⟨σ, 𝒫_a^{⊗n}(ρ)⟩ = (a + ¼)^n E[(−r)^N],   r = (9/4 − a)/(a + ¼),
+
+where N is the number of copies at which two independent outcome strings agree, one from measuring ρ and one from
+measuring σ with the product measurement {E_j}^{⊗n}. Positivity of 𝒫_a^{⊗n} says that this generating function of the
+collision count is nonnegative at −r. The value a = 1 is r = 1, a = 3/4 is r = 3/2, and a = 1/2 is r = 7/3.
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
@@ -214,3 +334,18 @@ exact):
   failing parameter.
 
 Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are not part of it (about 30 minutes).
+
+`code/map_thresholds.py` checks Section 7, one mode at a time, each ending with PASS (logs in `code/logs/`):
+- `witness`: Theorem 7.1 in exact integer arithmetic on the planes for n = 1, …, 8 at six rational values of a, after
+  checking that the compression of 𝒫_a^{⊗n} to the planes is 𝒬_a^{⊗n} (n ≤ 4); and, in floating point, that y is a
+  bottom eigenvector of the qutrit output for n ≤ 6 (`map_thresholds_witness.log`);
+- `two`: Theorem 7.2 exactly (SymPy): the block decomposition, the identity for the first block, the bound for the
+  others and its root, the matrix G, and the PPT operator ρ with Tr(C_a^{⊗2}ρ) and its roots (`map_thresholds_two.log`);
+- `lp`: the table of Proposition 7.3 for both maps, n ≤ 12 (`map_thresholds_lp.log`);
+- `search`: Observation 7.4 for n = 2, …, 5 (`map_thresholds_search.log`, about half an hour); n = 6 (dimension 729)
+  was run once with `qutrit_search.py 6 4`, the same procedure (`qutrit_search_n6.log`, about an hour);
+- `planes`: the identity of Remark 7.5 at n = 1, 2 and the least eigenvalue of the Choi matrix of 𝒬′_a
+  (`map_thresholds_planes.log`);
+- `collision`: Remark 7.6 at n = 1, 2 with random entangled states (`map_thresholds_collision.log`).
+
+Python with NumPy, SciPy (HiGHS) and SymPy.

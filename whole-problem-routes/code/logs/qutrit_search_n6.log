@@ -1,0 +1,4 @@
+n = 6, a = 0.691449 (qubit threshold 0.695449): least value found -4.1159e-04 (m^n = 4.924e-05); one-copy ranks of x [2, 2, 2, 2, 2, 2]
+n = 6, a = 0.694449 (qubit threshold 0.695449): least value found -1.0464e-04 (m^n = 5.406e-05); one-copy ranks of x [2, 2, 2, 2, 2, 2]
+n = 6, a = 0.696449 (qubit threshold 0.695449): least value found +5.7478e-05 (m^n = 5.748e-05); one-copy ranks of x [1, 1, 1, 1, 1, 1]
+n = 6, a = 0.699449 (qubit threshold 0.695449): least value found +6.2950e-05 (m^n = 6.295e-05); one-copy ranks of x [1, 1, 1, 1, 1, 1]

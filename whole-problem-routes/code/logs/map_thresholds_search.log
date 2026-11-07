@@ -1,0 +1,21 @@
+n = 2, a = a_n -0.004: least value found -2.8124e-03; one-copy ranks of the best x [2, 2]
+n = 2, a = a_n -0.001: least value found -7.0611e-04; one-copy ranks of the best x [2, 2]
+n = 2, a = a_n +0.001: least value found +7.0811e-04; one-copy ranks of the best x [2, 2]
+n = 2, a = a_n +0.004: least value found +2.8444e-03; one-copy ranks of the best x [2, 2]
+n = 2: negative just below a_n, none found just above: True
+n = 3, a = a_n -0.004: least value found -1.8709e-03; one-copy ranks of the best x [2, 2, 2]
+n = 3, a = a_n -0.001: least value found -4.7128e-04; one-copy ranks of the best x [2, 2, 2]
+n = 3, a = a_n +0.001: least value found +4.7366e-04; one-copy ranks of the best x [2, 2, 2]
+n = 3, a = a_n +0.004: least value found +1.9090e-03; one-copy ranks of the best x [2, 2, 2]
+n = 3: negative just below a_n, none found just above: True
+n = 4, a = a_n -0.004: least value found -1.1723e-03; one-copy ranks of the best x [2, 2, 2, 2]
+n = 4, a = a_n -0.001: least value found -2.9624e-04; one-copy ranks of the best x [2, 2, 2, 2]
+n = 4, a = a_n +0.001: least value found +2.9836e-04; one-copy ranks of the best x [2, 2, 2, 2]
+n = 4, a = a_n +0.004: least value found +9.2612e-04; one-copy ranks of the best x [1, 1, 1, 1]
+n = 4: negative just below a_n, none found just above: True
+n = 5, a = a_n -0.004: least value found -7.0486e-04; one-copy ranks of the best x [2, 2, 2, 2, 2]
+n = 5, a = a_n -0.001: least value found -1.7866e-04; one-copy ranks of the best x [2, 2, 2, 2, 2]
+n = 5, a = a_n +0.001: least value found +1.8031e-04; one-copy ranks of the best x [2, 2, 2, 2, 2]
+n = 5, a = a_n +0.004: least value found +2.4292e-04; one-copy ranks of the best x [1, 1, 1, 1, 1]
+n = 5: negative just below a_n, none found just above: True
+PASS

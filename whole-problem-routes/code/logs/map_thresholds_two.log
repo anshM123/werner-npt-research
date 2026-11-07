@@ -1,0 +1,8 @@
+block decomposition of P_a^2(xx^T) at x = sum s_i e_i e_i (sum s_i^2 = 1): block A as claimed True ; blocks B as claimed True ; no entries outside the blocks True
+A-block identity (with sum s_i^2 = 1): True
+B-block: a^2 - a/2 - 1/16 = (a - 1/4)^2 - 1/8: True ; larger root 1/4 + sqrt(2)/4 = True
+Bell point, block B_12 eigenvalues: {a**2 - a/2 - 1/16: 1, a**2 - a/2 + 1/16: 1}
+G is the partial transpose in the basis (P_Om, P_s0, P_an): True
+PPT witness: rho >= 0 True; rho^Gamma >= 0 True ; Tr(C_a^2 rho) = 15*(44*a**2 - 28*a - 1)/116 ; roots [7/22 - sqrt(15)/11, 7/22 + sqrt(15)/11]
+so P_a^2 is positive but not decomposable for (1 + sqrt2)/4 <= a < (7 + 2 sqrt15)/22 = 0.6702712132915833
+PASS

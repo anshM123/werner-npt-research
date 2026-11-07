@@ -1,0 +1,6 @@
+a = 0.6: plane identity at n = 1, 2 holds; least eigenvalue of the Choi matrix of Q'_a = -0.2000 (= -(1 - a)/2)
+a = 0.7: plane identity at n = 1, 2 holds; least eigenvalue of the Choi matrix of Q'_a = -0.1500 (= -(1 - a)/2)
+a = 0.75: plane identity at n = 1, 2 holds; least eigenvalue of the Choi matrix of Q'_a = -0.1250 (= -(1 - a)/2)
+a = 0.9: plane identity at n = 1, 2 holds; least eigenvalue of the Choi matrix of Q'_a = -0.0500 (= -(1 - a)/2)
+plane decomposition identity and the Choi eigenvalue: True
+PASS

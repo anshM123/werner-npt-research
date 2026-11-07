@@ -1,0 +1,33 @@
+P_a^1 (x) id_2: LP slack at a = 0.75, 0.9, 0.99, 1: -1.79e-02, -6.21e-03, -5.76e-04, -0.00e+00
+P_a^2 (x) id_2: LP slack at a = 0.75, 0.9, 0.99, 1: -2.18e-02, -7.69e-03, -7.24e-04, -0.00e+00
+P_a^3 (x) id_2: LP slack at a = 0.75, 0.9, 0.99, 1: -1.90e-02, -6.90e-03, -6.65e-04, -0.00e+00
+P_a^4 (x) id_2: LP slack at a = 0.75, 0.9, 0.99, 1: -1.48e-02, -5.67e-03, -5.57e-04, -0.00e+00
+P_a^5 (x) id_2: LP slack at a = 0.75, 0.9, 0.99, 1: -1.13e-02, -4.48e-03, -4.52e-04, -0.00e+00
+P_a^6 (x) id_2: LP slack at a = 0.75, 0.9, 0.99, 1: -8.75e-03, -3.61e-03, -3.69e-04, -0.00e+00
+P_a^k (x) id_2 is decomposable only at a = 1 (k <= 6): True
+d = 3, n =  1: decomposability threshold 0.50000000; a_n = 0.50000000; LP slack at a = 3/4: +1.250e-01
+d = 3, n =  2: decomposability threshold 0.67027121; a_n = 0.60355339; LP slack at a = 3/4: +3.125e-02
+d = 3, n =  3: decomposability threshold 0.75621007; a_n = 0.64685026; LP slack at a = 3/4: -1.803e-03
+d = 3, n =  4: decomposability threshold 0.80685393; a_n = 0.67044821; LP slack at a = 3/4: -1.116e-02
+d = 3, n =  5: decomposability threshold 0.84013786; a_n = 0.68527528; LP slack at a = 3/4: -1.136e-02
+d = 3, n =  6: decomposability threshold 0.86365863; a_n = 0.69544936; LP slack at a = 3/4: -9.331e-03
+d = 3, n =  7: decomposability threshold 0.88115521; a_n = 0.70286183; LP slack at a = 3/4: -7.350e-03
+d = 3, n =  8: decomposability threshold 0.89467644; a_n = 0.70850202; LP slack at a = 3/4: -5.583e-03
+d = 3, n =  9: decomposability threshold 0.90543770; a_n = 0.71293736; LP slack at a = 3/4: -4.367e-03
+d = 3, n = 10: decomposability threshold 0.91420519; a_n = 0.71651650; LP slack at a = 3/4: -3.377e-03
+d = 3, n = 11: decomposability threshold 0.92148568; a_n = 0.71946546; LP slack at a = 3/4: -2.609e-03
+d = 3, n = 12: decomposability threshold 0.92762773; a_n = 0.72193716; LP slack at a = 3/4: -1.985e-03
+d = 2, n =  1: decomposability threshold 0.50000000; a_n = 0.50000000; LP slack at a = 3/4: +1.250e-01
+d = 2, n =  2: decomposability threshold 0.60355339; a_n = 0.60355339; LP slack at a = 3/4: +3.125e-02
+d = 2, n =  3: decomposability threshold 0.64685026; a_n = 0.64685026; LP slack at a = 3/4: +7.812e-03
+d = 2, n =  4: decomposability threshold 0.67044821; a_n = 0.67044821; LP slack at a = 3/4: +1.953e-03
+d = 2, n =  5: decomposability threshold 0.68527528; a_n = 0.68527528; LP slack at a = 3/4: +4.883e-04
+d = 2, n =  6: decomposability threshold 0.69544936; a_n = 0.69544936; LP slack at a = 3/4: +1.221e-04
+d = 2, n =  7: decomposability threshold 0.70286183; a_n = 0.70286183; LP slack at a = 3/4: +3.052e-05
+d = 2, n =  8: decomposability threshold 0.70850202; a_n = 0.70850202; LP slack at a = 3/4: +7.629e-06
+d = 2, n =  9: decomposability threshold 0.71293736; a_n = 0.71293736; LP slack at a = 3/4: +1.907e-06
+d = 2, n = 10: decomposability threshold 0.71651650; a_n = 0.71651650; LP slack at a = 3/4: +4.768e-07
+d = 2, n = 11: decomposability threshold 0.71946546; a_n = 0.71946546; LP slack at a = 3/4: +1.192e-07
+d = 2, n = 12: decomposability threshold 0.72193716; a_n = 0.72193716; LP slack at a = 3/4: +2.980e-08
+qubit thresholds equal a_n for n <= 12: True ; qutrit n = 2 threshold equals (7 + 2 sqrt15)/22: True ; qutrit thresholds increasing, and not decomposable at a = 3/4 for n = 3: True
+PASS

@@ -1,0 +1,15 @@
+compression of P_a^n to span{e1, e2}^n equals Q_a^n (n <= 4): True
+n = 1: exact value 2^-n((2a - 1/2)^n - 1/2) at a = 1/2, 3/5, 13/20, 7/10, 3/4, 9/10: True; a_n = (1 + 2^(1-1/n))/4 = 0.50000000
+n = 2: exact value 2^-n((2a - 1/2)^n - 1/2) at a = 1/2, 3/5, 13/20, 7/10, 3/4, 9/10: True; a_n = (1 + 2^(1-1/n))/4 = 0.60355339
+n = 3: exact value 2^-n((2a - 1/2)^n - 1/2) at a = 1/2, 3/5, 13/20, 7/10, 3/4, 9/10: True; a_n = (1 + 2^(1-1/n))/4 = 0.64685026
+n = 4: exact value 2^-n((2a - 1/2)^n - 1/2) at a = 1/2, 3/5, 13/20, 7/10, 3/4, 9/10: True; a_n = (1 + 2^(1-1/n))/4 = 0.67044821
+n = 5: exact value 2^-n((2a - 1/2)^n - 1/2) at a = 1/2, 3/5, 13/20, 7/10, 3/4, 9/10: True; a_n = (1 + 2^(1-1/n))/4 = 0.68527528
+n = 6: exact value 2^-n((2a - 1/2)^n - 1/2) at a = 1/2, 3/5, 13/20, 7/10, 3/4, 9/10: True; a_n = (1 + 2^(1-1/n))/4 = 0.69544936
+n = 7: exact value 2^-n((2a - 1/2)^n - 1/2) at a = 1/2, 3/5, 13/20, 7/10, 3/4, 9/10: True; a_n = (1 + 2^(1-1/n))/4 = 0.70286183
+n = 8: exact value 2^-n((2a - 1/2)^n - 1/2) at a = 1/2, 3/5, 13/20, 7/10, 3/4, 9/10: True; a_n = (1 + 2^(1-1/n))/4 = 0.70850202
+n = 2: least eigenvalue of the qutrit output P_a^n(xx^T) equals the formula at a = 0.6, 0.65, 0.7: True
+n = 3: least eigenvalue of the qutrit output P_a^n(xx^T) equals the formula at a = 0.6, 0.65, 0.7: True
+n = 4: least eigenvalue of the qutrit output P_a^n(xx^T) equals the formula at a = 0.6, 0.65, 0.7: True
+n = 5: least eigenvalue of the qutrit output P_a^n(xx^T) equals the formula at a = 0.6, 0.65, 0.7: True
+n = 6: least eigenvalue of the qutrit output P_a^n(xx^T) equals the formula at a = 0.6, 0.65, 0.7: True
+PASS
