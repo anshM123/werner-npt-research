@@ -1,5 +1,5 @@
 """General Pauli maps (eigenvalues 1, l1, l2, l3 on I, X, Y, Z).  Compare, for n copies:
- (a) FM's GHZ necessary condition (their eq. (7));
+ (a) FM's GHZ necessary condition (their Proposition 7, eq. (38) of arXiv v3);
  (b) the canonical certificate: P = E_n(C) - (Gamma|Gamma C|)^n / 2,  Q = E_n(Gamma C) - (Gamma|C|)^n / 2,
      E_n(M) = (M^n + |M|^n)/2, which satisfies P + Gamma Q = C^n identically; decomposable if P, Q >= 0 (pointwise on
      Bell strings, everything being Bell-diagonal);

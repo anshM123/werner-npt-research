@@ -18,3 +18,8 @@ open AKLT chain, random boundary vectors: min ratio 321.8378; one-copy ranks [2,
 random open MPS, bond dimension 2: min ratio 12.8289 over 6
 random open MPS, bond dimension 3: min ratio 27.3167 over 6
 ratios >= 1 expected for the AKLT chain and bond dimension two (Proposition 7.17)
+n = 8, a = 3/4, product value (a - 1/2)^n = 1.52588e-05
+open AKLT chain, random boundary vectors: min ratio 794.2457; one-copy ranks [2, 3, 3, 3, 3, 3, 3, 2]
+random open MPS, bond dimension 2: min ratio 70.6225 over 1
+random open MPS, bond dimension 3: min ratio 101.0524 over 1
+ratios >= 1 expected for the AKLT chain and bond dimension two (Proposition 7.17)

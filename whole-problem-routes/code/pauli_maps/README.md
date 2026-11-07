@@ -3,7 +3,7 @@
 Numerics behind the remark after Theorem 7.18 of [`whole-problem-routes/README.md`](../../README.md). A Pauli map Υ has
 eigenvalues 1, λ₁, λ₂, λ₃ on I, X, Y, Z; its Choi matrix is Bell-diagonal, and decomposability of Υ^{⊗n} is a linear
 program over the 4ⁿ strings of Bell labels (the partial transpose acts on Bell-diagonal operators by a fixed 4 × 4
-matrix on each copy). The GHZ condition is eq. (7) of Filippov and Magadov, J. Phys. A 50, 055301 (2017), a necessary
+matrix on each copy). The GHZ condition is Proposition 7 (eq. (38) of arXiv v3) of Filippov and Magadov, J. Phys. A 50, 055301 (2017), a necessary
 condition for positivity of Υ^{⊗n}.
 
 - `pauli_general.py n seed trials`: random maps that are neither completely positive nor completely copositive;

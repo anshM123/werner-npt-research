@@ -223,7 +223,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.2 | n = 2: positive iff a ≥ (1 + √2)/4; not decomposable below (7 + 2√15)/22 | **proved** |
 | 7.3 | decomposability of 𝒫_a^{⊗n} is a linear program; its thresholds tend to 1 | reduction **proved**; thresholds numerical (LP) |
 | 7.4 | the threshold is a_n for n ≤ 6 (searches) and n = 9, 15, 21 (matrix product states); general matrix product states for n ≤ 12 find nothing below the product value at a_n + 0.002 and at 3/4 | numerical |
-| QT | 𝒫_a^{⊗n} is positive iff a ≥ a_n, every n (would give NPT bound entanglement) | **open** from n = 3 (at a = 3/4 proved for n ≤ 5, see 7.13; on real planes proved for every n, see 7.18) |
+| QT | for a ≥ 0, 𝒫_a^{⊗n} is positive iff a ≥ a_n, every n (would give NPT bound entanglement) | **open** from n = 3 (at a = 3/4 proved for n ≤ 5, see 7.13; on real planes proved for every n, see 7.18) |
 | 7.7–7.10 | at a ≥ 3/4 copies where the input or the output vector is thin are free; only inputs thick at every copy, n ≥ 3, remain | **proved** |
 | 7.11 | 𝒫_a^{⊗n} is 2-positive for a ≥ 0.8602 (n = 2) and a ≥ 0.91, 0.93, 0.95 (n = 3, 4, 5) | **proved** (n = 2 by hand; n = 3–5 exact certificates) |
 | 7.12 | the two-copy Werner endpoint and the two-copy case of the map at 3/4 are the ends of one family | reduction **proved**; the range [1, 2] numerical |
@@ -268,7 +268,8 @@ Y). Filippov and Magadov studied n-tensor-stable positivity of Pauli maps [FM, J
 arXiv:1604.01716]. Their necessary condition from n-qubit GHZ states (Proposition 7 there) gives, for this family,
 |λ₁| ≤ 2^{−1+1/n}, which is exactly a ≥ a_n (their Example 3 treats this family). So the witnesses of Theorem 7.1 are
 their GHZ obstruction, carried from the plane to the qutrit map. They show that the condition is also sufficient for
-this family at n = 2, and give numerical evidence at n = 3. Theorem 7.18 below proves sufficiency for every n.
+this family at n = 2 (with an explicit decomposition, their Example 1), and give numerical evidence at n = 3.
+Theorem 7.18 below proves sufficiency for every n.
 
 **Theorem 7.2 (two copies).** 𝒫_a^{⊗2} is positive if and only if a ≥ (1 + √2)/4. For
 (1 + √2)/4 ≤ a < (7 + 2√15)/22 ≈ 0.6703 it is positive but not decomposable.
@@ -345,7 +346,8 @@ its lowest eigenvector, and then the roles of x and y are exchanged. For n = 6, 
 3/4, with 19 starts each (random, random with full-support marginals, and the witness), the least value found in
 every run is the product value (a − ½)^n.
 
-**Conjecture QT.** For every n, 𝒫_a^{⊗n} is positive if and only if a ≥ a_n.
+**Conjecture QT.** For every n and every a ≥ 0, 𝒫_a^{⊗n} is positive if and only if a ≥ a_n. (For negative a the
+restriction matters: when a ≤ −1/4, −𝒫_a is completely positive, so 𝒫_a^{⊗n} is positive for every even n.)
 
 Since a_n < 3/4 for every n, Conjecture QT makes 𝒫_{3/4} tensor-stable positive. By Proposition M(3), the Werner state
 proportional to 11I − 5F would then be NPT and undistillable from every number of copies. In words, the conjecture says
@@ -598,8 +600,8 @@ pair,
 With m ≤ 2 the proof uses only Theorem 7.2, and with m ≤ 5 it uses Theorem 7.13. In particular, if for some ordering of
 the copies x has Schmidt rank at most 2 across each cut {1, …, k} | {k + 1, …, n} with k ≤ n − m, then
 𝒫_a^{⊗n}(xx*) ⪰ (a − ½)^n |x|² I. This holds for every open matrix product state of bond dimension two, at every n. An
-example is the open AKLT chain. Its one-copy reduced states have full rank at every copy except the two ends, so
-Corollary 7.14 does not reach it.
+example is the open AKLT chain. Its one-copy reduced states have full rank at every copy except the two ends, so for
+n ≥ 8 copies (more than five thick copies) Corollary 7.14 does not reach it.
 
 *Proof.* Induction on n. Let x be thin at copy s, let V be an isometry from C² onto a plane that contains the support of
 its reduced state there, and write x = (V ⊗ I)x′. By Lemma 7.7, Φ_V(Y) = 𝒫_a(VYV*) is entanglement breaking. So its
@@ -621,14 +623,15 @@ each step pure, so that thinness only has to hold after the earlier copies have 
 A failure of tensor-stable positivity at a = 3/4 needs a pair that is not
 reducible. In particular, in every ordering of the copies, both x and y must have Schmidt rank at least three across
 some cut {1, …, k} | {k + 1, …, n} with k ≤ n − 5. `code/bond_two_check.py` (floating point, `logs/bond_two_check.log`)
-illustrates the bound for the open AKLT chain and random open matrix product states of bond dimension two, n = 4, …, 7.
-For the AKLT chain the least output eigenvalue is 20 to 320 times the product value.
+illustrates the bound for the open AKLT chain and random open matrix product states of bond dimension two, n = 4, …, 8.
+For the AKLT chain the least output eigenvalue is 20 to 800 times the product value.
 
 **Theorem 7.18 (the threshold on a real plane, every n).** Let 𝒬_a(Y) = a Tr(Y) I₂ − ¼(Y + Yᵀ) be the compression of 𝒫_a
-to a real plane. For every n ≥ 1 the following are equivalent: (i) 𝒬_a^{⊗n} is positive; (ii) 𝒬_a^{⊗n} is
-decomposable; (iii) a ≥ a_n. In the language of [FM]: the tensor power Υ_t^{⊗n} of the Pauli map with eigenvalues
-1, t, 0, t on I, X, Y, Z is positive if and only if |t| ≤ 2^{−1+1/n}, and then it is decomposable. So Conjecture QT
-holds for inputs and outputs that lie in a real plane at every copy.
+to a real plane. For every n ≥ 1 and every a ≥ 0 the following are equivalent: (i) 𝒬_a^{⊗n} is positive;
+(ii) 𝒬_a^{⊗n} is decomposable; (iii) a ≥ a_n. In the language of [FM]: for every real t, the tensor power Υ_t^{⊗n} of
+the Pauli map with eigenvalues 1, t, 0, t on I, X, Y, Z is positive if and only if |t| ≤ 2^{−1+1/n}, and then it is
+decomposable. So Conjecture QT holds for inputs and outputs that lie in real planes at every copy (the planes of the
+input and of the output may differ; see after the proof).
 
 *Proof.* On the plane 𝒬_a has the Pauli eigenvalues 2a − ½, −½, 0, −½, so 𝒬_a = (2a − ½) Ad_Y ∘ Υ_t with t = 1/(4a − 1),
 and a ≥ a_n means u := 2t ≤ 2^{1/n}. If a < a_n, Theorem 7.1 applies, and (ii) implies (i). For (iii) ⇒ (ii), first
@@ -647,11 +650,20 @@ p = (1 + u)^{k₀}(1 − u)^{k₃} when k₃ ≥ 2 is even, p = 0 when k₃ is o
 k₃ = 0, because u ≥ 1. So Υ_t^{⊗n} is decomposable at u = 2^{1/n}. For smaller t ≥ 0, Υ_t is a convex combination of
 Υ_{t_n} (t_n = 2^{−1+1/n}) and the completely depolarizing map Υ₀, which is entanglement breaking. Expanding the tensor
 power gives terms Υ_{t_n}^{⊗k} ⊗ (entanglement breaking), k ≤ n, and Υ_{t_n}^{⊗k} is decomposable by induction on n
-(as t_n ≤ t_k). Decomposability survives tensoring with entanglement-breaking maps and composing with Ad_Y. ∎
+(as t_n ≤ t_k). Decomposability survives tensoring with entanglement-breaking maps and composing with Ad_Y. (The
+restriction a ≥ 0 is needed: for even n and a ≤ (1 − 2^{1−1/n})/4 < 0 the tensor power is positive although a < a_n.)
+If the input lies in a real plane V_x and the output in a real plane V_y at some copy, the compressed map there is
+Y ↦ V_yᵀ𝒫_a(V_xYV_xᵀ)V_y = K𝒬_a(Y)Kᵀ + a Tr(Y)(I − KKᵀ) with K = V_yᵀV_x, a contraction. Expanding the tensor power,
+every term is a completely positive map applied after 𝒬_a^{⊗k} (k ≤ n), tensored with entanglement-breaking maps,
+so it is positive for a ≥ a_n as well. ∎
 
-For n = 2 and 3 this is [FM, Example 3] (n = 3 numerically there). At n = 2 the equivalence of (i) and (ii) is also a
-case of Müller-Hermes's theorem that every positive tensor square of a qubit map is decomposable [A. Müller-Hermes,
-arXiv:2006.14543 (2020)]. For n ≥ 3 we know of no general result of that kind; Theorem 7.18 gives it for this family.
+For n = 2 the threshold is [FM, Example 3, via their Proposition 4], and the decomposition of Υ ⊗ Υ at
+t = 1/√2 is already [FM, Example 1, eq. (18)]. At n = 3 [FM] check sufficiency only numerically (their Section VIII),
+although their abstract calls that case fully characterized. At n = 2 the equivalence of (i) and (ii) is also a case
+of Müller-Hermes's theorem that every positive tensor square of a qubit map is decomposable [A. Müller-Hermes,
+J. Math. Phys. 62, 092204 (2021), arXiv:2006.14543]. He leaves open (his Section 9) whether a positive qubit map can
+have a positive but non-decomposable tensor cube, and reduces that question to Pauli maps. Theorem 7.18 answers it
+for this family, for every number of copies; it does not settle the general question.
 The theorem also proves the decomposability
 thresholds of 𝒬_a computed after Proposition 7.3 for every n. The certificate was found by computing the
 minimum-norm solution of that linear program in the form P + P^Γ for n = 2, 3, 4 and reading off its pattern.
@@ -663,10 +675,10 @@ decomposable maps. For qutrits it is not, from three copies on (Proposition 7.3)
 The same seems to hold for every Pauli map, which would settle the question that [FM] leave open (they give necessary
 and, separately, sufficient conditions for every n). For random Pauli maps (eigenvalues 1, λ₁, λ₂, λ₃, neither
 completely positive nor completely copositive), the exact decomposability of Υ^{⊗n} (a linear program over Bell
-strings) agrees with their GHZ condition (eq. (7) of [FM]) in every sample for n = 2, 3, 4 (184, 184 and 140 maps). Along
+strings) agrees with their GHZ condition ([FM, Proposition 7, eq. (38) of arXiv v3]) in every sample for n = 2, 3, 4 (184, 184 and 140 maps). Along
 65 random rays from the identity map, n = 3 and 4, the decomposability boundary and the GHZ boundary agree to 0.1%.
-So, numerically, Υ^{⊗n} is positive exactly when it is decomposable, and exactly when the GHZ condition holds. For
-n = 2 the first equivalence is Müller-Hermes's theorem. Beyond the family of Theorem 7.18 we have no proof. The
+So, numerically, Υ^{⊗n} is positive exactly when it is decomposable, and exactly when the GHZ condition holds; this is
+evidence for a positive answer to Müller-Hermes's question above. For n = 2 the first equivalence is his theorem. Beyond the family of Theorem 7.18 we have no proof. The
 certificate of that theorem is not enough in general: for eigenvalues (1, t, 0, s) with t ≠ s, a single tensor-power
 correction works at n = 2 but not at n = 3 (floating point; `code/pauli_maps/`).
 
@@ -747,7 +759,7 @@ n = 9, …, 21 exactly in a coupled angular-momentum basis (`many_n/verify_exact
 control above the threshold; `logs/plane_threshold_check.log`).
 
 `code/bond_two_check.py n samples seed` illustrates Proposition 7.17 in floating point (the AKLT chain and random open
-matrix product states of bond dimension two and, for comparison, three; `logs/bond_two_check.log`, n = 4, …, 7).
+matrix product states of bond dimension two and, for comparison, three; `logs/bond_two_check.log`, n = 4, …, 8).
 
 Python with NumPy, SciPy (HiGHS) and SymPy; `code/dps/` and `code/symmetric_sector/` also use python-flint, and CVXPY
 with Clarabel and SCS for the semidefinite programs.
