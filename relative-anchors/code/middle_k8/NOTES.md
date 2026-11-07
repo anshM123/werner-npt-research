@@ -122,14 +122,13 @@ All exact, one Python process at a time under `guard.sh`.
   about 18 hours at k = 8), the gauge-fixed block with the B-part multiplied by 1001/1000 is not positive definite at
   q = 10⁻⁶ while the true block is positive definite there (exact symmetric elimination): 26 of 26 caught.
 - End to end (`logs/run_end2end_first_k8_h1.log`, `logs/run_end2end_first_k8_h2.log`, `logs/run_end2end_first_k8_h1rest.log`): on the first two-level representative configuration of a family, at five (configuration, q) points, the known kernel
-vectors are annihilated exactly and the gauge-fixed block is positive definite in two gauges. So far seventeen of the
-twenty-six families have been checked this way, and all pass: the second half (thirteen families,
-`logs/run_end2end_first_k8_h2.log`) and the first four families of the first half (`logs/run_end2end_first_k8_h1.log`,
-j3m0–j3m3, after which that run was stopped by the 2.5 GB limit of `guard.sh` at j4m0). The other nine families
-(j4m0–j5m3, the largest blocks) are being rerun under `guard_big.sh` by `finish_k8_v2.sh`; at about four hours per family
-at this size, that run had not finished when this note was written. This check is a second look at points; the
-certificates themselves are checked by the steps above. The run over all 240 configurations would take about thirty
-hours at k = 8.
+vectors are annihilated exactly and the gauge-fixed block is positive definite in two gauges. All twenty-six families
+pass. The second half (thirteen families) is in `logs/run_end2end_first_k8_h2.log`. The first four families of the
+first half (j3m0–j3m3) are in `logs/run_end2end_first_k8_h1.log`; that run was then stopped by the 2.5 GB limit of
+`guard.sh` at j4m0. The other nine families (j4m0–j5m3, the largest blocks) were rerun under `guard_big.sh` by
+`finish_k8_v2.sh` (`logs/run_end2end_first_k8_h1rest.log`, PASS, 19 061 s in all; the summary of that script is
+`logs/run_k8_v2.out`). This check is a second look at points; the certificates themselves are checked by the steps
+above. The run over all 240 configurations would take about thirty hours at k = 8.
 
 ## 4. A second check
 

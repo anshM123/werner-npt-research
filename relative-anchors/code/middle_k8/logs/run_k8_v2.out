@@ -1,2 +1,3 @@
 PASS  crosscheck_neg  (python crosscheck.py N, under guard_big.sh; expect PASS; 3 s)
 PASS  crosscheck_saved  (python crosscheck.py C logs 31, under guard_big.sh; expect PASS; 5499 s)
+PASS  end2end_first_k8_h1rest  (python check_end2end.py j4m0,j4m1,j4m2,j4m3,j4m4,j5m0,j5m1,j5m2,j5m3 k=8 reps=1 first=1, under guard_big.sh; expect PASS; 19061 s)
