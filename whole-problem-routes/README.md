@@ -548,8 +548,10 @@ subspaces. ∎
 The inequality in (ii) is new on this sector for 6 ≤ n ≤ 21 (for n ≤ 5 it follows from Theorem 7.13). On the full
 space no decomposition of this kind exists from n = 3 on (Proposition 7.3); on Sym^n one exists for every n ≤ 21. The
 greedy split fails from n = 9 on, in a single spin block. The repaired splits are not canonical, and no rule valid for
-every n is known. The least eigenvalue of 4^nQ_n off Sym^{2n} found for them drifts down slowly, from 1.09 at n = 9
-to 0.97 at n = 21 (floating point). No certificate of this kind can push it above 2: for a unit vector v and c ⊥ v, the
+every n is known. The least eigenvalue of 4^nQ_n off Sym^{2n} is about 1 for these repairs. If every split is left
+free and this margin is maximised, it increases with n (floating point): 1.55 at n = 4, 1.805 at n = 12, 1.825 at
+n = 20, with shrinking increments, apparently toward a limit near 1.83–1.85. No certificate of this kind can push it
+above 2: for a unit vector v and c ⊥ v, the
 vector ψ = Sym(v^{n−1}c) ⊗ vⁿ − vⁿ ⊗ Sym(v^{n−1}c) has ⟨ψ|4^nQ_n|ψ⟩ = 2|ψ|² for every certificate. This follows by
 expanding the product value to second order at real products. The best constant of these decompositions equals the
 least value of Tr(K_nρ), K_n = (Π ⊗ Π)C_{3/4}^{⊗n}(Π ⊗ Π), over states ρ on Sym^n ⊗ Sym^n with positive partial

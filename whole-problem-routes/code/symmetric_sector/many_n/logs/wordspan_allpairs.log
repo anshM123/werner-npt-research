@@ -1,0 +1,11 @@
+[warning from _environment.py:286] UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+n=3 K0=99: least eigenvalue off Sym^(2n) = 0.83333 (L=0); greedy start 7.6513e-01; history [0.7651, 0.8333, 0.8333]; 1 free pairs; last status Solved; setup 0.0s total 0.0s
+n=4 K0=99: least eigenvalue off Sym^(2n) = 1.54950 (L=1); greedy start 2.2741e-01; history [0.2274, 1.5495, 1.5495]; 2 free pairs; last status Solved; setup 0.0s total 0.0s
+n=5 K0=99: least eigenvalue off Sym^(2n) = 1.64915 (L=2); greedy start 4.0740e-01; history [0.4074, 1.6491, 1.6491]; 4 free pairs; last status Solved; setup 0.0s total 0.0s
+n=6 K0=99: least eigenvalue off Sym^(2n) = 1.71147 (L=3); greedy start 4.4114e-01; history [0.4411, 1.7115, 1.7115]; 6 free pairs; last status Solved; setup 0.0s total 0.0s
+n=7 K0=99: least eigenvalue off Sym^(2n) = 1.71711 (L=4); greedy start 2.5190e-01; history [0.2519, 1.7171, 1.7171]; 9 free pairs; last status Solved; setup 0.0s total 0.0s
+n=8 K0=99: least eigenvalue off Sym^(2n) = 1.74644 (L=4); greedy start 7.5787e-01; history [0.7579, 1.7464, 1.7464]; 12 free pairs; last status Solved; setup 0.0s total 0.0s
+n=9 K0=99: least eigenvalue off Sym^(2n) = 1.77047 (L=1); greedy start -1.3564e+01; history [-13.5643, 1.7705, 1.7705]; 16 free pairs; last status Solved; setup 0.0s total 0.1s
+n=10 K0=99: least eigenvalue off Sym^(2n) = 1.78875 (L=4); greedy start -4.5442e+00; history [-4.5442, 1.7887, 1.7887]; 20 free pairs; last status Solved; setup 0.0s total 0.1s
+n=11 K0=99: least eigenvalue off Sym^(2n) = 1.79760 (L=2); greedy start -1.1577e+02; history [-115.7726, 1.7976, 1.7976]; 25 free pairs; last status Solved; setup 0.0s total 0.3s
+n=12 K0=99: least eigenvalue off Sym^(2n) = 1.80497 (L=4); greedy start -1.1724e+02; history [-117.2427, 1.805, 1.805]; 30 free pairs; last status Solved; setup 0.1s total 0.5s

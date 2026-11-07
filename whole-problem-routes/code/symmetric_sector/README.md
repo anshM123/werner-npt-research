@@ -67,8 +67,14 @@ How far this is checked:
   `check_words.py` compare them with the monomial-basis code of this folder for n ≤ 5 and every word, and with the known
   spectra of the ladder operators.
 
-Margins (floating point): the least eigenvalue of 4^n Q on the complement of Sym^{2n} is 1.09 at n = 9 and decreases
-slowly to 0.97 at n = 21. No certificate of this kind can have it above 2. Indeed, for v a unit vector and c ⊥ v, the
+Margins (floating point): for the repaired splits listed in `certificates.txt` the least eigenvalue of 4^n Q on the
+complement of Sym^{2n} is about 1 (1.09 at n = 9, 0.97 at n = 21). That small drift comes from restricting which
+words are re-split. With every split free, the largest achievable margin increases with n: 0.833, 1.550, 1.649, 1.711,
+1.717, 1.746, 1.770, 1.789, 1.798, 1.805 for n = 3, …, 12, then 1.809, 1.814, 1.816, 1.819, 1.820, 1.822, 1.8235,
+1.8249 for n = 13, …, 20. The increments shrink, consistent with a limit near 1.83–1.85. The max-margin certificates
+at n = 12 and 18 also pass the exact check (logs `many_n/logs/wordspan_allpairs*.log` and
+`many_n/logs/verify_exact_maxmargin.log`; certificates `many_n/certs/maxmargin_n12.pkl`, `maxmargin_n18.pkl`). No
+certificate of this kind can have margin above 2. Indeed, for v a unit vector and c ⊥ v, the
 vector ψ = Sym(v^{n−1}c) ⊗ vⁿ − vⁿ ⊗ Sym(v^{n−1}c) satisfies ⟨ψ|4^nQ|ψ⟩ = 2|ψ|² for every certificate. This follows from
 expanding the product value to second order at real products, since Q kills Sym^{2n}. The best constant of these
 decompositions equals the least value of Tr(K_n ρ) over states ρ on Sym^n ⊗ Sym^n with positive partial transpose.
