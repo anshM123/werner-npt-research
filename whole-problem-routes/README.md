@@ -884,9 +884,11 @@ joint critical point, both vectors are thick at every copy, and for every copy s
 
     (a − ½) f_{n−1}(⟨w|_s x, ⟨w|_s y) > μ_n |⟨w|_s x|² |⟨w|_s y|²,
 
-so that every one-copy squeeze strictly raises the normalised value along its whole path. Hence 𝒫_a is tensor-stable
-positive (and μ_n(a) = (a − ½)^n for every n) if, for every n, every joint critical point of f_n with value below
-(a − ½)^n at which both vectors are thick at every copy has a copy s and a direction w with
+so that every one-copy squeeze strictly raises the normalised value along its whole path. (Given μ_{n−1}, the display
+holds automatically at any critical point with value below (a − ½)^n, so this part only says where a minimiser would
+have to sit.) Hence 𝒫_a is tensor-stable positive (and μ_n(a) = (a − ½)^n for every n) if, for every n, no joint
+critical point of f_n at which both vectors are thick at every copy, at any value, is a strict minimum along every
+one-copy squeeze; that is, if each such point has a copy s and a direction w with
 (a − ½) f_{n−1}(⟨w|_s x, ⟨w|_s y) ≤ f(x, y) |⟨w|_s x|² |⟨w|_s y|².
 
 *Proof.* A minimiser is a joint critical point (Lagrange conditions on each sphere). It is thick at every copy on both
