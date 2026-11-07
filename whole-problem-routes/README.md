@@ -281,7 +281,11 @@ floating point; exact certificates are not written out here).
 a_n − 0.001 the search finds negative values, and at a_n + 0.001 it finds none. The searches use alternating minimisation
 seeded at the vector of Theorem 7.1, at random rotations and perturbations of it in all three directions of every copy,
 at random starts, and by continuation in a. Every negative minimiser found has one-copy rank 2, so it lives on one plane
-per copy. Bisections without these seeds agree to five digits for n = 2, 3.
+per copy. Bisections without these seeds agree to five digits for n = 2, 3. We also tried inputs with full support at
+every copy: the qutrit GHZ state, ε_{ijk}, the AME(4,3) state, the GHZ state in the Fourier basis with its real and
+imaginary parts, and tensor products of these with each other and with the witness of Theorem 7.1. For n = 3, …, 6 their
+least output eigenvalues stay well above zero at a_n + 0.001 and at 3/4. Descents started from them (n ≤ 5) end at the
+product value or on the plane branch.
 
 **Conjecture QT.** For every n, 𝒫_a^{⊗n} is positive if and only if a ≥ a_n.
 
@@ -343,7 +347,8 @@ Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are no
   others and its root, the matrix G, and the PPT operator ρ with Tr(C_a^{⊗2}ρ) and its roots (`map_thresholds_two.log`);
 - `lp`: the table of Proposition 7.3 for both maps, n ≤ 12 (`map_thresholds_lp.log`);
 - `search`: Observation 7.4 for n = 2, …, 5 (`map_thresholds_search.log`, about half an hour); n = 6 (dimension 729)
-  was run once with `qutrit_search.py 6 4`, the same procedure (`qutrit_search_n6.log`, about an hour);
+  was run once with `qutrit_search.py 6 4`, the same procedure (`qutrit_search_n6.log`, about an hour); the inputs with
+  full support are in `qutrit_structured.py` (`qutrit_structured.log`);
 - `planes`: the identity of Remark 7.5 at n = 1, 2 and the least eigenvalue of the Choi matrix of 𝒬′_a
   (`map_thresholds_planes.log`);
 - `collision`: Remark 7.6 at n = 1, 2 with random entangled states (`map_thresholds_collision.log`).
