@@ -239,7 +239,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.18 | on a real plane (the Pauli family (1, t, 0, t) of Filippov and Magadov) the n-copy threshold is exactly a_n, every n, and positivity equals decomposability there | **proved** (explicit decomposition) |
 | 7.19 | on real planes with different parameters: 𝒬_{a₁} ⊗ ⋯ ⊗ 𝒬_{a_n} is positive iff decomposable iff ∏_{s∈S}(2a_s − ½) ≥ ½ for every S, every n | **proved** (explicit decomposition) |
 | QT_m | the same condition decides positivity of 𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n} | **open** for n ≥ 3 (necessity and n = 2 proved; n = 3, 4 numerical) |
-| PM | the least value of 𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n} (a_s ≥ ½) is attained on planes, with an explicit formula m(a); implies QT_m | **open** (n = 3, 4 numerical; at a = ¾ proved for n ≤ 5) |
+| PM | the least value of 𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n} (a_s ≥ ½) is attained on planes, with an explicit formula m(a); implies QT_m | **open** for n ≥ 3 (n = 2 proved; n = 3, 4 numerical; at a = ¾ proved for n ≤ 5) |
 | 7.20 | the vertices of QT_m are 2-positivity: 𝒫_{1/2} ⊗ Φ is positive iff Φ is 2-positive on real inputs | **proved** |
 | 7.21 | the complex (half-plane, Lee–Yang) version of QT_m is false from n = 5 (with every Re a_s > 3/4, from n = 7) | **proved** (explicit zeros) |
 | 7.22 | at every point of the facet ∏(2a_s − ½) = ½, the plane witness is a second-order local minimum in the full qutrit space, every n | **proved** |
@@ -354,7 +354,13 @@ general (not translation-invariant) open-boundary real matrix product states x a
 alternating one-site sweeps: for fixed y, 𝒫_a^{⊗n}(yyᵀ) is a matrix product operator, x is updated site by site as
 its lowest eigenvector, and then the roles of x and y are exchanged. For n = 6, 8, 10, 12, at a_n + 0.002 and at
 3/4, with 19 starts each (random, random with full-support marginals, and the witness), the least value found in
-every run is the product value (a − ½)^n.
+every run is the product value (a − ½)^n. We also tested n → ∞ for translation-invariant inputs. For periodic matrix
+product states x and y the value is Tr(𝔼ⁿ) for a fixed transfer operator 𝔼. If 𝒫_a^{⊗n} is positive for every n, the
+series Σ_n Tr(𝔼ⁿ)zⁿ has nonnegative coefficients, so by Pringsheim's theorem the spectral radius of 𝔼 is an eigenvalue.
+Maximising, over bond dimensions 2, 3 and 4 at a = ¾, the ratio of the largest modulus among the other eigenvalues to
+the largest positive eigenvalue gives at most 1 (reached by the plane witness and by states of period two), never more.
+At a = 0.74 the plane witness gives 1/(2a − ½) ≈ 1.020, and the search finds it (`code/ti_transfer_search.py`,
+`logs/ti_transfer_*.log`).
 
 **Conjecture QT.** For every n and every a ≥ 0, 𝒫_a^{⊗n} is positive if and only if a ≥ a_n. (For negative a the
 restriction matters: when a ≤ −1/4, −𝒫_a is completely positive, so 𝒫_a^{⊗n} is positive for every even n.)
@@ -753,7 +759,10 @@ the value of aligned real products, or of the vectors of Theorem 7.1 on the copi
 the others. In particular it is attained by vectors that lie on one real plane at every copy.
 
 Conjecture PM implies Conjecture QT_m, because m(a) ≥ 0 exactly when (iii) holds. At a_s = ¾ it says that the least
-value is 4^{−n}, which Theorem 7.13 proves for n ≤ 5. Alternating minimisation from random and thick starts (no planar
+value is 4^{−n}, which Theorem 7.13 proves for n ≤ 5. For n = 2 it follows from the computation above: the first block
+has least eigenvalue (a₁ − ½)(a₂ − ½), and the least eigenvalue K − √(1/256 + δ²(Δ² − 1/64)) of a 2 × 2 block is
+monotone in δ², so it is attained at δ = 0, where it is ¼[(2a₁ − ½)(2a₂ − ½) − ½], or at δ² = ¼, where it is
+min{a₂(a₁ − ½), a₁(a₂ − ½)} ≥ (a₁ − ½)(a₂ − ½). Alternating minimisation from random and thick starts (no planar
 seeds) never goes below m(a): at 11 parameter vectors for n = 3 and 8 for n = 4, from a_s = ½ (deep inside the
 non-positive region) to a_s = ¾, the least value found equals m(a) to 3·10⁻⁸. The minimisers found are thin at every
 copy, except at the vertex (½, ¾, ¾), where the least value 0 is attained on a large set (`code/planar_minimum.py`,

@@ -1,0 +1,6 @@
+plane GHZ (D=4) at a=0.75: ratio 1.000000
+start 0: ratio 0.999866  (best 0.999866)
+start 1: ratio 0.999896  (best 0.999896)
+start 2: ratio 0.999875  (best 0.999896)
+start 3: ratio 0.999909  (best 0.999909)
+a = 0.75, D = 4: largest ratio found 0.999909
