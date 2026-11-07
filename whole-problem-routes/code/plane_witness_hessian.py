@@ -12,8 +12,9 @@ facet points:
 3. the part of H on vectors with a component along e3 at some copy (the 'thick' part) has least eigenvalue 0 and least
    positive eigenvalue equal to the closed form min over T != {} and sigma of A_T - 4^-|T| |w_sigma| (where that is
    positive), with A_T = prod_{s in T} a_s prod_{s not in T} (a_s - 1/4) and w_sigma as in the proof;
-4. away from the vertices, the kernel of H has dimension 2n + 3 (rotations at single copies, 2n + 1 of them, and the
-   two scalings), at the centre and the random points.
+4. at the points with every a_s < 3/4 (the centre and the random points) the kernel of H has dimension 2n + 3 (rotations
+   at single copies, 2n + 1 independent ones, and the two scalings); copies with a_s = 3/4 (edge points, vertices) add
+   further zero directions, so the kernel is not checked there.
 Also: 5. the inequality prod_{s in T} 4 a_s >= 1 + 2 prod_{s in T} (2 a_s - 1/2) at 2000 random facet points and all T.
 Ends with PASS or FAIL."""
 import itertools

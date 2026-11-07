@@ -784,9 +784,8 @@ The next proposition shows that they cannot be pushed below 0 by leaving the pla
 **Proposition 7.22 (the plane witness is locally stable, every n).** Let a_s ∈ [½, ¾] with ∏_s(2a_s − ½) = ½, let x₀, y₀
 be the vectors of Theorem 7.1 on the plane spanned by e₁, e₂, and f(x, y) = ⟨y|𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n}(xxᵀ)|y⟩. Then
 f(x₀, y₀) = 0, the first derivatives of f vanish there, and the Hessian of f at (x₀, y₀) is positive semidefinite on all
-of (R³)^{⊗n} × (R³)^{⊗n}. On perturbations that leave the plane at some copy it is positive, except along the 2n
-directions that rotate the plane at a single copy and, at the vertices of the facet, along further directions at the
-copy with a_s = ½.
+of (R³)^{⊗n} × (R³)^{⊗n}. If every a_s < ¾, it is positive on perturbations that leave the plane at some copy, except
+along the 2n directions that rotate the plane at a single copy (copies with a_s = ¾ add further zero directions).
 
 *Proof.* With M_x = ⊗_s𝒫_{a_s}(x₀x₀ᵀ) and M_y = ⊗_s𝒫_{a_s}(y₀y₀ᵀ), the second-order part of
 f(x₀ + δx, y₀ + δy) is Q = ⟨δx|M_y|δx⟩ + ⟨δy|M_x|δy⟩ + 2⟨δy|⊗_s𝒫_{a_s}(x₀δxᵀ + δx x₀ᵀ)|y₀⟩. Split every vector by
@@ -797,20 +796,22 @@ plane problem at a zero, positive semidefinite by Theorem 7.19; the same theorem
 and M_y x₀ = 0. For T ≠ ∅, the reduced states of x₀ and y₀ on the other copies are ½(P^{⊗} + P̄^{⊗}) with P = pp*, and
 𝒬_a(pp*) = (a − ¼)I₂, so the diagonal part of the block is A_T(|δx_T|² + |δy_T|²) with
 A_T = ∏_{s∈T}a_s∏_{s∉T}(a_s − ¼). Expand δx_T = Σ_σ α_σ σ over σ ∈ {p, p̄}^{T^c} (α_σ̄ = ᾱ_σ), and δy_T likewise with
-β_σ. The cross term becomes 2(−¼)^{|T|} Σ_σ w_σ β_σ ᾱ_σ with w_σ = ∏_s c_s(σ_s) ± ∏_s c̄_s(σ_s) (+ for odd n),
-c_s(p) = c̄_s(p̄) = a_s − ¼ and c_s(p̄) = c̄_s(p) = −½. So the block splits into 2 × 2 forms with least eigenvalue
+β_σ. The cross term becomes 2(−¼)^{|T|} Σ_σ w_σ β_σ ᾱ_σ, where w_σ = ∏_s c_s(σ_s) + ∏_s c̄_s(σ_s) for odd n and
+w_σ = −i(∏_s c_s(σ_s) − ∏_s c̄_s(σ_s)) for even n, with c_s(p) = c̄_s(p̄) = a_s − ¼ and c_s(p̄) = c̄_s(p) = −½. So the
+block splits into 2 × 2 forms with least eigenvalue
 A_T − 4^{−|T|}|w_σ|. Put r_s = 1/(2a_s − ½) ≥ 1 and R = ∏_{s∉T} r_s, which equals 2∏_{s∈T}(2a_s − ½) on the facet.
 Then |w_σ| ≤ (x + R/x)∏_{s∉T}(a_s − ¼) for some x ∈ [1, R], and x + R/x ≤ 1 + R. So it suffices that
-∏_{s∈T}4a_s ≥ 1 + 2∏_{s∈T}(2a_s − ½). For |T| = 1 this is an identity, with equality only for σ = p^{⊗} and σ = p̄^{⊗},
-the two rotations at that copy (unless R = 1, which happens only at a vertex). For |T| = t ≥ 2 the left side is at least
-2^t ≥ 4 and the right side at most 3. ∎
+∏_{s∈T}4a_s ≥ 1 + 2∏_{s∈T}(2a_s − ½). For |T| = 1 this is an identity, and a 2 × 2 form is singular only when
+x ∈ {1, R}. If every a_s < ¾ (all r_s > 1), that means σ = p^{⊗} or σ = p̄^{⊗}, the two rotations at that copy; copies with
+a_s = ¾ (r_s = 1) let further σ qualify. For |T| = t ≥ 2 the left side is at least 2^t ≥ 4 and the right side at most 3. ∎
 
-So no direction out of the plane lowers the value near the witnesses, at any point of the facet and for every n; in
-particular at a_s = a_n, the threshold of Conjecture QT. This matches Observation 7.4, where every negative minimiser
-found below a_n lives on one plane per copy. `code/plane_witness_hessian.py` (`logs/plane_witness_hessian.log`, PASS)
-computes the full Hessian for n = 2, …, 6 at five facet points each and compares the least positive eigenvalue off the
-plane with the closed form A_T − 4^{−|T|}|w_σ| (agreement to 10⁻⁹); away from the vertices the kernel has dimension
-2n + 3 (rotations and the two scalings).
+So, to second order, no direction out of the plane lowers the value near the witnesses, at any point of the facet and
+for every n; in particular at a_s = a_n, the threshold of Conjecture QT. This matches Observation 7.4, where every
+negative minimiser found below a_n lives on one plane per copy. `code/plane_witness_hessian.py`
+(`logs/plane_witness_hessian.log`, PASS) computes the full Hessian for n = 2, …, 6 at five facet points each and compares
+the least positive eigenvalue off the plane with the closed form A_T − 4^{−|T|}|w_σ| (agreement to 10⁻⁹). At the points
+with every a_s < ¾ (the centre and the random points) the kernel has dimension 2n + 3 (rotations and the two scalings);
+at the edge points and vertices, where some a_s = ¾, it is larger.
 
 ## Checks
 
