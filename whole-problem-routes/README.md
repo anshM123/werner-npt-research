@@ -14,7 +14,9 @@ one inequality, stated below, that would settle it.
 Section 7 adds what we can prove about the fifth route. It gives explicit witnesses that bound the n-copy positivity
 threshold of the map from below at every n, and the exact threshold at two copies. It also states Conjecture QT: the
 threshold at n copies is (1 + 2^{1−1/n})/4. That conjecture would settle the route, and so the existence of NPT bound
-entanglement. It is open from three copies on.
+entanglement. It is open from three copies on. At the parameter that matters, a = 3/4, inputs supported on a plane at a
+copy are entanglement broken there, so every copy where the input is thin can be removed (Proposition 7.8). Only inputs
+with full support at every copy, on at least three copies, remain.
 
 ## 1. The cross ratio, and fusion of planes
 
@@ -292,7 +294,8 @@ product value or on the plane branch.
 Since a_n < 3/4 for every n, Conjecture QT makes 𝒫_{3/4} tensor-stable positive. By Proposition M(3), the Werner state
 proportional to 11I − 5F would then be NPT and undistillable from every number of copies. In words, the conjecture says
 that the only obstruction is the one on planes, where 𝒫_{3/4} is completely positive. Its case n = 2 is Theorem 7.2. It
-is open for every n ≥ 3, where, by Proposition 7.3, the positivity it asserts at a = 3/4 is not decomposable.
+is open for every n ≥ 3, where, by Proposition 7.3, the positivity it asserts at a = 3/4 is not decomposable. At
+a = 3/4, Corollary 7.9 below reduces it to inputs that have full support at every copy.
 
 **Remark 7.5 (an exact sum over planes, and why it is not enough).** As maps on M₃(C),
 
@@ -315,6 +318,31 @@ Q_j = (a + ¼)I − (5/4)v_jv_jᵀ, and for any states ρ, σ on n copies
 where N is the number of copies at which two independent outcome strings agree, one from measuring ρ and one from
 measuring σ with the product measurement {E_j}^{⊗n}. Positivity of 𝒫_a^{⊗n} says that this generating function of the
 collision count is nonnegative at −r. The value a = 1 is r = 1, a = 3/4 is r = 3/2, and a = 1/2 is r = 7/3.
+
+**Lemma 7.7 (inputs on a plane are entanglement breaking for a ≥ 3/4).** Let V: C² → C³ be an isometry onto any
+two-dimensional subspace, real or not, and Φ_V(Y) = 𝒫_a(VYV*). Its Choi matrix is
+
+    C_V = aI − ¼(|ω_V⟩⟨ω_V| + S_V),   ω_V = Σ_i e_i ⊗ Ve_i,   S_V = Σ_{ij} |e_i⟩⟨e_j| ⊗ |V̄e_j⟩⟨V̄e_i|.
+
+The partial transpose of the output exchanges the two terms, so C_V^Γ = C_V. Since ‖ω_V‖² = 2 and S_V is a partial
+isometry, C_V ⪰ (a − ¾)I. So for a ≥ 3/4 the matrix C_V is positive with positive partial transpose, hence separable
+(it lives on C² ⊗ C³), and Φ_V is entanglement breaking. For a < 3/4 and a real plane, C_V has the eigenvalue a − ¾. ∎
+
+**Proposition 7.8 (thin copies are free).** Let a ≥ 3/4, let ρ be a state on (C³)^{⊗n}, and let K be the set of copies
+at which the one-copy reduced state of ρ has rank 3. If 𝒫_a^{⊗|K|} is positive, then 𝒫_a^{⊗n}(ρ) ⪰ 0. By Theorem 7.2 this
+holds for every n whenever |K| ≤ 2.
+
+*Proof.* For s ∉ K let V_s be an isometry onto a plane that contains the support of ρ_s. Then ρ = Wρ′W* with
+W = ⊗_{s∉K} V_s ⊗ I_K and ρ′ ⪰ 0, so 𝒫_a^{⊗n}(ρ) = (⊗_{s∉K} Φ_{V_s} ⊗ 𝒫_a^{⊗|K|})(ρ′). A tensor product of entanglement
+breaking maps is entanglement breaking, so it has the form X ↦ Σ_k Tr(F_kX) R_k with F_k, R_k ⪰ 0, and then
+(Σ_k Tr(F_k ·) R_k ⊗ Ψ)(ρ′) = Σ_k R_k ⊗ Ψ(Tr₁[(F_k ⊗ I)ρ′]) ⪰ 0 for every positive map Ψ. ∎
+
+**Corollary 7.9.** 𝒫_{3/4} is tensor-stable positive, and then NPT bound entanglement exists, if and only if for every n
+the operator 𝒫_{3/4}^{⊗n}(ρ) is positive for every state ρ whose one-copy reduced states all have rank 3. A smallest
+failure, if there is one, needs n ≥ 3 copies and an input that is thick (rank 3) at every copy.
+
+*Proof.* Induction on n. An input with a thin copy is covered by Proposition 7.8 and the case of fewer copies; n ≤ 2 is
+Theorem 7.2. ∎
 
 ## Checks
 
@@ -351,6 +379,9 @@ Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are no
   full support are in `qutrit_structured.py` (`qutrit_structured.log`);
 - `planes`: the identity of Remark 7.5 at n = 1, 2 and the least eigenvalue of the Choi matrix of 𝒬′_a
   (`map_thresholds_planes.log`);
+- `thin`: Lemma 7.7 at 5 000 random complex planes (the formula for C_V, C_V^Γ = C_V, positivity at a = 3/4, and the
+  negative control at a = 0.74 on a real plane), and Proposition 7.8 on random inputs thin at all but two copies, n = 3, 4
+  (`map_thresholds_thin.log`);
 - `collision`: Remark 7.6 at n = 1, 2 with random entangled states (`map_thresholds_collision.log`).
 
 Python with NumPy, SciPy (HiGHS) and SymPy.

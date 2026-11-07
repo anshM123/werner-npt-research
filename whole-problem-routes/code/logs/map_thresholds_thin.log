@@ -1,0 +1,4 @@
+Lemma 7.7 at a = 3/4 over 5000 random complex planes: Choi formula, invariance under the partial transpose: True; least eigenvalue +1.070e-05; control a = 0.74, real plane: -1.000e-02 (negative)
+Proposition 7.8, n = 3, a = 3/4: inputs thin at all but two copies (60 random ones): least output eigenvalue +6.663e-02
+Proposition 7.8, n = 4, a = 3/4: inputs thin at all but two copies (60 random ones): least output eigenvalue +4.113e-02
+PASS

@@ -7,6 +7,7 @@ usage: python map_thresholds.py witness   exact: Theorem 7.1 (the Y-basis GHZ wi
        python map_thresholds.py lp        floating point: decomposability thresholds by the LP of Proposition 7.3
        python map_thresholds.py search    floating point: Observation 7.4 (searches around a_n for n = 2..5)
        python map_thresholds.py planes    floating point: the plane identity of Remark 7.5 (n = 1, 2)
+       python map_thresholds.py thin      floating point: Lemma 7.7 and Proposition 7.8 (thin copies)
        python map_thresholds.py collision floating point: the icosahedral form of Remark 7.6 (n = 1, 2)
 Each mode ends with PASS or FAIL."""
 import sys
@@ -365,6 +366,64 @@ elif mode == 'planes':
         print(f"a = {a}: plane identity at n = 1, 2 holds; least eigenvalue of the Choi matrix of Q'_a = {lmin:+.4f} "
               f"(= -(1 - a)/2)")
     print('plane decomposition identity and the Choi eigenvalue:', good)
+    ok &= good
+
+elif mode == 'thin':
+    # Lemma 7.7: for every isometry V: C^2 -> C^3 the Choi matrix of Y -> P_a(V Y V^*) equals
+    # a I - (|omega_V><omega_V| + S_V)/4, is invariant under the partial transpose of the output, and is PSD for a >= 3/4.
+    rng = np.random.default_rng(77)
+    def P(a, X):
+        return a * np.trace(X) * np.eye(3) - (X + X.T) / 4
+    def choi(a, V):
+        C = np.zeros((6, 6), dtype=complex)
+        for i in range(2):
+            for j in range(2):
+                E = np.zeros((2, 2)); E[i, j] = 1
+                C[3 * i:3 * i + 3, 3 * j:3 * j + 3] = P(a, V @ E @ V.conj().T)
+        return C
+    def ptr(C):
+        return C.reshape(2, 3, 2, 3).transpose(0, 3, 2, 1).reshape(6, 6)
+    good = True; worst = np.inf
+    for _ in range(5000):
+        V, _r = np.linalg.qr(rng.normal(size=(3, 2)) + 1j * rng.normal(size=(3, 2)))
+        C = choi(0.75, V)
+        om = sum(np.kron(np.eye(2)[i], V[:, i]) for i in range(2))
+        # S_V = sum_ij |e_i><e_j| (x) |conj(V e_j)><conj(V e_i)|
+        S = sum(np.kron(np.outer(np.eye(2)[i], np.eye(2)[j]), np.outer(V[:, j].conj(), V[:, i])) for i in range(2) for j in range(2))
+        good &= np.allclose(C, 0.75 * np.eye(6) - (np.outer(om, om.conj()) + S) / 4)
+        good &= np.allclose(ptr(C), C)
+        worst = min(worst, np.linalg.eigvalsh(C).min())
+    good &= worst > -1e-12
+    Vr = np.eye(3)[:, :2]
+    ctrl = np.linalg.eigvalsh(choi(0.74, Vr)).min()
+    good &= ctrl < 0
+    print(f'Lemma 7.7 at a = 3/4 over 5000 random complex planes: Choi formula, invariance under the partial transpose: '
+          f'True; least eigenvalue {worst:+.3e}; control a = 0.74, real plane: {ctrl:+.3e} (negative)')
+    # Proposition 7.8 at n = 3, 4: inputs thin (one-copy support of dimension 2) at all but two copies
+    for n in (3, 4):
+        Phi = phi_float(0.75, n, 3)
+        lmin = np.inf
+        for _ in range(60):
+            thick = rng.choice(n, size=2, replace=False)
+            factors = []
+            for s in range(n):
+                if s in thick:
+                    factors.append(np.eye(3))
+                else:
+                    V, _r = np.linalg.qr(rng.normal(size=(3, 2)) + 1j * rng.normal(size=(3, 2)))
+                    factors.append(V)
+            W = np.ones((1, 1))
+            for F in factors:
+                W = np.kron(W, F)
+            z = rng.normal(size=W.shape[1]) + 1j * rng.normal(size=W.shape[1])
+            x = W @ z; x /= np.linalg.norm(x)
+            X = np.outer(x, x.conj())
+            out = Phi(np.real(X)) + 1j * Phi(np.imag(X))
+            out = (out + out.conj().T) / 2
+            lmin = min(lmin, np.linalg.eigvalsh(out).min())
+        good &= lmin > -1e-12
+        print(f'Proposition 7.8, n = {n}, a = 3/4: inputs thin at all but two copies (60 random ones): least output eigenvalue '
+              f'{lmin:+.3e}')
     ok &= good
 
 elif mode == 'collision':
