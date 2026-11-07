@@ -344,6 +344,19 @@ failure, if there is one, needs n ≥ 3 copies and an input that is thick (rank 
 *Proof.* Induction on n. An input with a thin copy is covered by Proposition 7.8 and the case of fewer copies; n ≤ 2 is
 Theorem 7.2. ∎
 
+**Corollary 7.10 (a statement about minimisers).** Let f_n(x) = λ_min(𝒫_{3/4}^{⊗n}(xxᵀ)) on real unit vectors x. Then
+𝒫_{3/4} is tensor-stable positive if and only if, for every n ≥ 3, f_n attains its minimum at some input that is thin
+(one-copy marginal of rank at most 2) at one copy or more.
+
+*Proof.* If the minimum is attained at an input thin at some copy, Proposition 7.8 and positivity of fewer copies (by
+induction) make that minimum nonnegative. Conversely, tensor-stable positivity gives min f_n = (1/4)^n (Proposition M(4)),
+which the product vector e₁^{⊗n} attains. ∎
+
+So it would be enough to show that no input with full support at every copy is a global minimiser. Numerically this is
+what happens. At n = 3, inputs whose one-copy marginals all have least eigenvalue at least τ give values no lower than
+0.116, 0.087, 0.058 and 0.045 for τ = 0.25, 0.15, 0.08 and 0.04 (projected gradient search; the product value is
+1/64 ≈ 0.016), and the constraint is active at every optimum found.
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
@@ -381,7 +394,7 @@ Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are no
   (`map_thresholds_planes.log`);
 - `thin`: Lemma 7.7 at 5 000 random complex planes (the formula for C_V, C_V^Γ = C_V, positivity at a = 3/4, and the
   negative control at a = 0.74 on a real plane), and Proposition 7.8 on random inputs thin at all but two copies, n = 3, 4
-  (`map_thresholds_thin.log`);
+  (`map_thresholds_thin.log`); the numbers after Corollary 7.10 come from `thick_inputs.py 3` (`thick_inputs_n3.log`);
 - `collision`: Remark 7.6 at n = 1, 2 with random entangled states (`map_thresholds_collision.log`).
 
 Python with NumPy, SciPy (HiGHS) and SymPy.

@@ -1,0 +1,5 @@
+n = 3, a = 3/4, marginals >= 0.25: least value found +1.1587e-01 (min marginal eigenvalue 0.250); product value (1/4)^n = 1.5625e-02
+n = 3, a = 3/4, marginals >= 0.15: least value found +8.6773e-02 (min marginal eigenvalue 0.150); product value (1/4)^n = 1.5625e-02
+n = 3, a = 3/4, marginals >= 0.08: least value found +5.8495e-02 (min marginal eigenvalue 0.080); product value (1/4)^n = 1.5625e-02
+n = 3, a = 3/4, marginals >= 0.04: least value found +4.5395e-02 (min marginal eigenvalue 0.040); product value (1/4)^n = 1.5625e-02
+n = 3, a = 3/4, marginals >= 0.02: least value found +5.2936e-02 (min marginal eigenvalue 0.020); product value (1/4)^n = 1.5625e-02
