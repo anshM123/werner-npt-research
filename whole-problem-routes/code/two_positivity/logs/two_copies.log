@@ -1,0 +1,9 @@
+(1) projector algebra, M = -P_Om/2 + P_s0 + P_an, C_a = (a-1)P_Om + (a-1/4)P_s0 + (a+1/4)P_an: True
+(2) <e1e2|P_j|e1e2> = ['0', '1/2', '1/2'] ; twirl = P_s0/10 + P_an/6: True
+(3) 81x81 identity C_a(x)C_a = lam (M(x)S + S(x)M) + sum w_jk P_j(x)P_k, all powers of a: True
+(4) closed forms of w_jk; a* = (23+6 sqrt35)/68 = 0.8602423338029073 is the larger root of 272a^2-184a-43; w_jk >= 0 and lam >= 0 on [a*, 1]: True
+   w row Om ['(a - 1)**2', '2*(a - 1)**2/5', '0']
+   w row s0 ['2*(a - 1)**2/5', '(272*a**2 - 184*a - 43)/80', '3*(4*a + 1)*(28*a - 23)/80']
+   w row an ['0', '3*(4*a + 1)*(28*a - 23)/80', '5*(4*a - 3)*(4*a + 1)/16']
+lam(a) = -3*(a - 1)*(4*a + 1)
+PASS

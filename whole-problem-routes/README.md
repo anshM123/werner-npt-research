@@ -181,6 +181,9 @@ real product vectors. Entangled vectors never did better.
 
 **Conjecture MM.** For every a ≥ 3/4 and every n, m₂(n) = (a − ¾)(a − ½)^{n−1}.
 
+(Proposition 7.11 below proves m₂(2) ≥ 0, that is 2-positivity of 𝒫_a^{⊗2}, for a ≥ (23 + 6√35)/68 ≈ 0.8602, and
+m₂(n) ≥ 0 for n = 3, 4, 5 when a ≥ 0.91, 0.93, 0.95.)
+
 Conjecture MM at one a < 1, or even only m₂(n) ≥ 0 for every n at one a < 1, makes every tensor power of 𝒫_a
 2-positive, hence 𝒫_a tensor-stable positive (Proposition M, item 4), and so gives NPT bound entanglement (item 3), with
 the Werner state proportional to (a − 1/16)I − (5/16)F.
@@ -376,6 +379,50 @@ what happens. At n = 3, inputs whose one-copy marginals all have least eigenvalu
 0.116, 0.087, 0.058 and 0.045 for τ = 0.25, 0.15, 0.08 and 0.04 (projected gradient search; the product value is
 1/64 ≈ 0.016), and the constraint is active at every optimum found.
 
+**Proposition 7.11 (2-positivity of tensor powers above 3/4).**
+(i) For every a ≥ a* = (23 + 6√35)/68 ≈ 0.8602 (the larger root of 272a² − 184a − 43), 𝒫_a ⊗ 𝒫_a is 2-positive. For
+a ∈ [a*, 1] there is the identity
+
+    C_a ⊗ C_a = λ(a) [M ⊗ S + S ⊗ M] + Σ_{j,k} w_jk(a) P_j ⊗ P_k,    λ(a) = 3(1 − a)(4a + 1),
+
+with S = P_s0/10 + P_an/6, the O(3) twirl of |e₁e₂⟩⟨e₁e₂| and so a separable operator, and
+
+    w_ΩΩ = (1 − a)²,  w_Ωs = w_sΩ = (2/5)(1 − a)²,  w_Ωa = w_aΩ = 0,  w_ss = (272a² − 184a − 43)/80,
+    w_sa = w_as = 3(4a + 1)(28a − 23)/80,  w_aa = 5(4a + 1)(4a − 3)/16,
+
+all nonnegative on [a*, 1].
+(ii) 𝒫_a^{⊗n} is 2-positive for a ≥ 91/100 (n = 3), 93/100 (n = 4) and 19/20 (n = 5). At those values, C_a^{⊗n} minus
+a nonnegative rational combination of operators M ⊗ S₁ ⊗ … ⊗ S_{n−1} (M at one copy, twirls of product states at the
+others) is a nonnegative combination of the products P_J (exact certificates with 10, 28 and 94 terms).
+
+*Proof.* M is positive on Schmidt-rank-two vectors (the endpoint at one copy: |Tr Z|² ≤ 2‖Z‖² for rank Z ≤ 2). So is
+M ⊗ σ for separable σ = Σ|α⟩⟨α| ⊗ |β⟩⟨β|, because
+contracting a Schmidt-rank-two vector with the product vector α ⊗ β leaves Schmidt rank at most two. The remainders
+are positive semidefinite. Above the stated values write C_a = C_{a₀} + (a − a₀)I and expand: each term is
+C_{a₀}^{⊗K} ⊗ I, which is covered by the certificates for |K| copies (their thresholds increase with the number of
+copies) and the separability of I. ∎
+
+As far as we know these are the first proofs of 2-positivity of tensor powers of 𝒫_a for some a < 1. By
+Proposition 7.3, 𝒫_a^{⊗k} ⊗ id₂ is not decomposable for any a < 1, so decomposability cannot give them. They do not reach
+a = 3/4. The best thresholds of this kind of certificate are 0.8602, 0.9031, 0.9259 and 0.9400 for n = 2, …, 5
+(floating-point linear programming), and they increase with n. Through Proposition M(4) they give positivity of
+𝒫_a^{⊗(n+1)}, but less than decomposability already gives there.
+
+**Remark 7.12 (the two-copy endpoint and the map are two ends of one family).** Put X_w = M + (w − 1)P_an, so that
+X₁ = M and X₂ = 2C_{3/4}. For a fixed vector, ⟨χ|X_{w₁} ⊗ X_{w₂}|χ⟩ is affine in w₁ and in w₂. So positivity on
+Schmidt-rank-two vectors for all (w₁, w₂) ∈ [1, 2]² reduces to the corners (1, 1), (1, 2) and (2, 2). The corner (1, 1)
+is the two-copy Werner endpoint, settled in July 2026 (references in `copy-amplification/README.md`). The corner (2, 2)
+is 2-positivity of 𝒫_{3/4}^{⊗2}, which would give positivity of 𝒫_{3/4}^{⊗3} by Proposition M(4). Numerically, X_w ⊗ X_w
+is positive on Schmidt-rank-two vectors exactly for w ∈ [1, 2]: the minimum is −1.2·10⁻² at w = 0.95, zero to rounding
+at w = 1, 1.5 and 2, and −1.3·10⁻³ at w = 2.01. At w = 2 the zeros found form two families, and every vector in them has
+a thin copy. Thin copies are covered by a proved statement. If one of the four one-copy marginals (A₁, B₁, A₂ or B₂) of
+a Schmidt-rank-two χ has rank at most 2, then ⟨χ|X_{w₁} ⊗ X_{w₂}|χ⟩ ≥ 0 for all w₁, w₂ ∈ [1, 2]. Indeed, the
+restriction of X_w to a plane on the input side is positive with positive partial transpose, by Lemma 7.7 for X₂ and
+directly for X₁, and these properties pass to convex combinations. So the restriction is separable on C² ⊗ C³. The
+output side follows from FX_wF = X_w, which makes the restriction to C³ ⊗ (plane) the swap of the restriction to
+(plane) ⊗ C³. One then contracts χ with the product vectors of the separable decomposition and uses one-copy
+positivity of X_{w₂} on Schmidt-rank-two vectors.
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
@@ -416,5 +463,17 @@ Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are no
   copies and by descent inside that class, which reaches 4^{−n} and not below, and the thinning of the output vector
   (x thin only at copy 1, y thin only at copy 2, n = 3: the least value found is 4^{−3}) (`map_thresholds_thin.log`); the numbers after Corollary 7.10 come from `thick_inputs.py 3` (`thick_inputs_n3.log`);
 - `collision`: Remark 7.6 at n = 1, 2 with random entangled states (`map_thresholds_collision.log`).
+
+`code/two_positivity/` checks Proposition 7.11 and Remark 7.12 (logs in `code/two_positivity/logs/`, all PASS):
+- `two_copies.py`: the identity of Proposition 7.11(i) exactly (SymPy, coefficient by coefficient in a, and as an 81 × 81
+  rational matrix identity), the closed forms of w_jk and their signs on [a*, 1];
+- `twirls.py`: exactly, the twirls of the product states |e₁e₁⟩, |ww⟩, |ww̄⟩, |e₁e₂⟩ (w = (e₁ + ie₂)/√2) in the basis
+  P_Ω, P_s0, P_an;
+- `certificates.py n p q`: the certificates of Proposition 7.11(ii) at a = p/q, found by a linear program, rounded to
+  rationals and checked exactly (files in `certs/`; runs for (2, 87, 100), (3, 91, 100), (4, 93, 100), (5, 19, 20));
+- `matrix_check.py`: a second check, which rebuilds the four separable factors as averages over the 60 rotations of the
+  icosahedral group (whose twirl equals the O(3) twirl here, and which gives explicit separable decompositions) and
+  verifies the n = 2 and n = 3 certificates as explicit 81 × 81 and 729 × 729 matrices;
+- `numerics.py` (with `common.py`): the floating-point observations of Remark 7.12.
 
 Python with NumPy, SciPy (HiGHS) and SymPy.

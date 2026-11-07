@@ -1,0 +1,11 @@
+# n = 3, a = 91/100; lines: copy carrying M (1-based), separable factors on the other copies, lam
+1 e1e2 e1e2 5634/625
+1 ww e1e1 6057/235000
+1 wwbar e1e1 1098/29375
+2 e1e1 e1e1 6021/235000
+2 e1e2 e1e2 5634/625
+2 ww e1e1 531/235000
+2 ww e1e2 12186/29375
+3 e1e1 e1e1 477/20000
+3 e1e2 e1e2 53838/5875
+3 ww e1e1 6093/117500

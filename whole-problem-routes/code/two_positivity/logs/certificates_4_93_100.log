@@ -1,0 +1,17 @@
+n = 4, a = 93/100 = 0.930000: floating-point max slack eps = 1.050e-03
+blocks used: 28 of 256; min remainder coefficient = 1.050e-03
+   M on copy 1, others ('e1e1', 'e1e1', 'e1e1'): lam = 131207/9778901
+   M on copy 1, others ('e1e1', 'e1e1', 'e1e2'): lam = 432448/9193419
+   M on copy 1, others ('e1e1', 'e1e1', 'wwbar'): lam = 149056/8210635
+   M on copy 1, others ('e1e1', 'e1e2', 'ww'): lam = 507723/8954257
+   M on copy 1, others ('e1e2', 'e1e1', 'e1e1'): lam = 793909/7159644
+   M on copy 1, others ('e1e2', 'e1e2', 'e1e2'): lam = 1566837/31250
+   M on copy 1, others ('ww', 'wwbar', 'wwbar'): lam = 99016/3766815
+   M on copy 2, others ('e1e1', 'e1e1', 'e1e1'): lam = 49508/3766815
+   M on copy 2, others ('e1e1', 'e1e1', 'e1e2'): lam = 417345/3255392
+   M on copy 2, others ('e1e1', 'e1e2', 'e1e1'): lam = 719451/9930727
+   M on copy 2, others ('e1e2', 'e1e1', 'e1e1'): lam = 673313/9081487
+   M on copy 2, others ('e1e2', 'e1e2', 'e1e2'): lam = 253222037/4978074
+   ...
+exact check: all lam >= 0 and all remainder coefficients r_J >= 0: True
+PASS

@@ -1,0 +1,14 @@
+n = 3, a = 91/100 = 0.910000: floating-point max slack eps = 4.096e-03
+blocks used: 10 of 48; min remainder coefficient = 4.096e-03
+   M on copy 1, others ('e1e2', 'e1e2'): lam = 5634/625
+   M on copy 1, others ('ww', 'e1e1'): lam = 6057/235000
+   M on copy 1, others ('wwbar', 'e1e1'): lam = 1098/29375
+   M on copy 2, others ('e1e1', 'e1e1'): lam = 6021/235000
+   M on copy 2, others ('e1e2', 'e1e2'): lam = 5634/625
+   M on copy 2, others ('ww', 'e1e1'): lam = 531/235000
+   M on copy 2, others ('ww', 'e1e2'): lam = 12186/29375
+   M on copy 3, others ('e1e1', 'e1e1'): lam = 477/20000
+   M on copy 3, others ('e1e2', 'e1e2'): lam = 53838/5875
+   M on copy 3, others ('ww', 'e1e1'): lam = 6093/117500
+exact check: all lam >= 0 and all remainder coefficients r_J >= 0: True
+PASS

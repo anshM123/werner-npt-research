@@ -1,0 +1,3 @@
+# n = 2, a = 87/100; lines: copy carrying M (1-based), separable factors on the other copies, lam
+1 e1e2 159/85
+2 e1e2 159/85

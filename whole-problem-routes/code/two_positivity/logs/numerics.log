@@ -1,0 +1,13 @@
+(N1) a=3/4: min over SR2 of <C(x)C>: complex starts -1.628e-16, real starts -2.545e-16
+(N2) w=0.95: min SR2 of X_w(x)X_w = -1.245e-02
+(N2) w=0.99: min SR2 of X_w(x)X_w = -2.498e-03
+(N2) w=1.0: min SR2 of X_w(x)X_w = -5.241e-16
+(N2) w=1.5: min SR2 of X_w(x)X_w = -8.221e-16
+(N2) w=2.0: min SR2 of X_w(x)X_w = -3.496e-16
+(N2) w=2.01: min SR2 of X_w(x)X_w = -1.252e-03
+(N2) w=2.05: min SR2 of X_w(x)X_w = -6.288e-03
+(N3) w=2.001 min -7.686e-05; value of 4C(x)C there 2.417e-08; sectors SS,SA,AS,AA = [np.float64(0.5), np.float64(0.4231), np.float64(0.0769), np.float64(0.0)]
+     A1 marginal eigenvalues [0.0949 0.4052 0.4999], A2 marginal eigenvalues [-0.     0.133  0.867]
+     B1 marginal eigenvalues [0.1897 0.8103 1.    ], B2 marginal eigenvalues [-0.      0.2658  1.7342]
+(N4) <C(x)C> at Q(x)xx^T (normalised): 0.000e+00; rank of Z0: 2
+(N5) min eigenvalue of X_w|plane and of its partial transpose over 200 random complex planes, w in {1,1.5,2}: -6.245e-16

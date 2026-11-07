@@ -1,0 +1,7 @@
+group order 60
+separable factor e1e1: icosahedral twirl equals the claimed (P_Om, P_s0, P_an) coefficients (0.3333333333333333, 0.13333333333333333, 0): True
+separable factor ww: icosahedral twirl equals the claimed (P_Om, P_s0, P_an) coefficients (0, 0.2, 0): True
+separable factor wwbar: icosahedral twirl equals the claimed (P_Om, P_s0, P_an) coefficients (0.3333333333333333, 0.03333333333333333, 0.16666666666666666): True
+separable factor e1e2: icosahedral twirl equals the claimed (P_Om, P_s0, P_an) coefficients (0, 0.1, 0.16666666666666666): True
+certs/cert_n2_87_100.txt: n = 2, a = 0.87: least eigenvalue of C^n - sum lam_i blocks = +1.028e-02 (>= 0 up to rounding: True)
+certs/cert_n3_91_100.txt: n = 3, a = 0.91: least eigenvalue of C^n - sum lam_i blocks = +4.096e-03 (>= 0 up to rounding: True)

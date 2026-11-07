@@ -1,0 +1,6 @@
+n = 2, a = 87/100 = 0.870000: floating-point max slack eps = 1.028e-02
+blocks used: 2 of 8; min remainder coefficient = 1.028e-02
+   M on copy 1, others ('e1e2',): lam = 159/85
+   M on copy 2, others ('e1e2',): lam = 159/85
+exact check: all lam >= 0 and all remainder coefficients r_J >= 0: True
+PASS
