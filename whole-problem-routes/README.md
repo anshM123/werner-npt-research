@@ -17,7 +17,11 @@ threshold at n copies is (1 + 2^{1−1/n})/4. That conjecture would settle the r
 entanglement. It is open from three copies on, and proved for every n on a real plane, where the threshold is exactly
 (1 + 2^{1−1/n})/4 (Theorem 7.18). At the parameter that matters, a = 3/4, inputs supported on a plane at a copy are
 entanglement broken there, so every copy where the input is thin can be removed (Proposition 7.8). Only inputs with full
-support at every copy, on at least six copies, remain (Corollary 7.14).
+support at every copy, on at least six copies, remain (Corollary 7.14). With a different parameter at each copy, the
+plane threshold becomes the rule ∏_{s∈S}(2a_s − ½) ≥ ½ for every set S of copies (Theorem 7.19). We conjecture the same
+rule for the qutrit map (Conjecture QT_m, proved for two copies), and more: that the least value is always attained on
+planes (Conjecture PM). The extreme points of this rule are exactly 2-positivity statements (Proposition 7.20), and the
+plane witnesses are local minima in the full qutrit space (Proposition 7.22).
 
 ## 1. The cross ratio, and fusion of planes
 
