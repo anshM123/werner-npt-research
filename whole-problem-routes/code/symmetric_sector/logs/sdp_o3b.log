@@ -1,0 +1,11 @@
+[warning from _environment.py:286] UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+n=4: N=15, dim_inv=121, m_L=[3, 2, 6, 4, 6, 3, 3, 1, 1], setup 0.1s
+  a=0.670448 [CLARABEL]: max t = None (fail Solver 'CLARABEL' failed. Try another solver, or solve with ); 4^-n = 3.90625000e-03
+  a=0.670448 [SCS]: max t = -0.004844763179624463 (optimal); 4^-n = 3.90625000e-03
+  a=0.750000 [CLARABEL]: max t = None (fail Solver 'CLARABEL' failed. Try another solver, or solve with ); 4^-n = 3.90625000e-03
+  a=0.750000 [SCS]: max t = 0.003906978673965268 (optimal); 4^-n = 3.90625000e-03
+n=5: N=21, dim_inv=259, m_L=[3, 3, 7, 6, 8, 6, 6, 3, 3, 1, 1], setup 5.5s
+  a=0.685275 [CLARABEL]: max t = None (fail Solver 'CLARABEL' failed. Try another solver, or solve with ); 4^-n = 9.76562500e-04
+  a=0.685275 [SCS]: max t = -0.0019207241560102119 (optimal); 4^-n = 9.76562500e-04
+  a=0.750000 [CLARABEL]: max t = None (fail Solver 'CLARABEL' failed. Try another solver, or solve with ); 4^-n = 9.76562500e-04
+  a=0.750000 [SCS]: max t = 0.0009851320864934295 (optimal); 4^-n = 9.76562500e-04

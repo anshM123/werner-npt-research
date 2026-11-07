@@ -1,0 +1,6 @@
+n = 9: symbol T = 2 4^n Q_n expanded, 759634 terms (1.5s)
+identity (X + alpha + beta)^n - X^n = (T + T(w <-> w'))/2 holds exactly (1.9s)
+matrix of 2 4^n Q_n on Sym^n (x) Sym^n built: dimension 3025, symmetric (3.4s)
+ker J_z has dimension 195 (10.2s)
+restriction to ker J_z: 195 x 195 (11.5s)
+n = 9: greedy Q_n restricted to ker J_z is NOT positive semidefinite  [25.2s]

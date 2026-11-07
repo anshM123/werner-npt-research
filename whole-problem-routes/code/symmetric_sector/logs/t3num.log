@@ -1,0 +1,15 @@
+n=2 a=0.601553: min over x sym, y arbitrary = -1.4102135624e-03; min(witness, product) = -1.4102135624e-03; t=0.0s
+n=2 a=0.605553: min over x sym, y arbitrary = 1.4182135624e-03; min(witness, product) = 1.4182135624e-03; t=0.0s
+n=2 a=0.750000: min over x sym, y arbitrary = 6.2500000000e-02; min(witness, product) = 6.2500000000e-02; t=0.0s
+n=3 a=0.644850: min over x sym, y arbitrary = -9.4018658427e-04; min(witness, product) = -9.4018658427e-04; t=0.3s
+n=3 a=0.648850: min over x sym, y arbitrary = 9.4971099058e-04; min(witness, product) = 9.4971099058e-04; t=0.3s
+n=3 a=0.750000: min over x sym, y arbitrary = 1.5625000000e-02; min(witness, product) = 1.5625000000e-02; t=0.1s
+n=4 a=0.668448: min over x sym, y arbitrary = -5.9037435516e-04; min(witness, product) = -5.9037435516e-04; t=1.0s
+n=4 a=0.672448: min over x sym, y arbitrary = 5.9885966853e-04; min(witness, product) = 5.9885966853e-04; t=1.5s
+n=4 a=0.750000: min over x sym, y arbitrary = 3.9062500000e-03; min(witness, product) = 3.9062500000e-03; t=0.2s
+n=5 a=0.683275: min over x sym, y arbitrary = -3.5568458854e-04; min(witness, product) = -3.5568458854e-04; t=14.0s
+n=5 a=0.687275: min over x sym, y arbitrary = 2.3035746703e-04; min(witness, product) = 2.3035746703e-04; t=1.7s
+n=5 a=0.750000: min over x sym, y arbitrary = 9.7656250000e-04; min(witness, product) = 9.7656250000e-04; t=1.4s
+n=6 a=0.693449: min over x sym, y arbitrary = -2.0811337669e-04; min(witness, product) = -2.0811337669e-04; t=13.2s
+n=6 a=0.697449: min over x sym, y arbitrary = 5.9256278119e-05; min(witness, product) = 5.9256278119e-05; t=12.2s
+n=6 a=0.750000: min over x sym, y arbitrary = 2.4414062500e-04; min(witness, product) = 2.4414062500e-04; t=10.7s

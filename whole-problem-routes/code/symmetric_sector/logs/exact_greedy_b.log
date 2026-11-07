@@ -1,0 +1,14 @@
+n=8: level 7 built in 4.8s; max|Y| = 3.773e+07
+   accumulated I part, 6.2s
+   accumulated A part, 7.0s
+   accumulated B part, 8.2s
+   block (0, 0): size 85, PSD True, rank 76
+   block (1, 0): size 60, PSD True, rank 60
+   RESULT n=8 (greedy): symmetric True, off-block nonzeros 0, Q_n PSD (exact) = True, kernel on ker J_z = 9 (expected n+1 = 9); 8.5s
+n=9: level 8 built in 11.9s; max|Y| = 6.842e+08
+   accumulated I part, 15.9s
+   accumulated A part, 18.4s
+   accumulated B part, 22.1s
+   block (0, 0): size 110, PSD False, rank 98
+   block (1, 0): size 85, PSD True, rank 85
+   RESULT n=9 (greedy): symmetric True, off-block nonzeros 0, Q_n PSD (exact) = False, kernel on ker J_z = 12 (expected n+1 = 10); 23.1s

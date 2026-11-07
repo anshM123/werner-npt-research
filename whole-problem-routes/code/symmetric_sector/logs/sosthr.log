@@ -1,0 +1,4 @@
+[warning from _environment.py:286] UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+n=2: a_n=0.603553, crossover a_c=0.625000, SOS threshold ~ 0.62323
+n=3: a_n=0.646850, crossover a_c=0.654508, SOS threshold ~ 0.67754
+n=4: a_n=0.670448, crossover a_c=0.673461, SOS threshold ~ 0.68823

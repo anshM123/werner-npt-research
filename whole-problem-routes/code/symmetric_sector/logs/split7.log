@@ -1,0 +1,9 @@
+[warning from _environment.py:286] UserWarning: CUDA path could not be detected. Set CUDA_PATH environment variable if CuPy fails to load.
+level 5 classes built (21), 0.9s
+level 7 classes projected (36), 5.0s
+greedy min eig (column-normalised slice): [-1.32104507e-10 -1.26467032e-11 -3.55417673e-12]
+forced common kernel dim 8 (expected n+1 = 8)
+clarabel failed, SCS Solver 'CLARABEL' failed. Try another solver, or solve with verbose=True for more information.
+[warning from split9.py:85] UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+n=7: best min eigenvalue over splits (on complement of forced kernel) = 1.3479e+02 (optimal_inaccurate); greedy value = 3.7529e-01
+{(2, 1): 0.9498, (3, 1): 1.0255, (4, 1): 1.0382, (5, 1): 1.115, (6, 1): 1.1192, (3, 2): 1.1074, (4, 2): 1.2028, (5, 2): 1.0015, (4, 3): 1.4775}

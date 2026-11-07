@@ -1,0 +1,21 @@
+   max|U| = 1.399e+07, max|T| = 2.803e+07 (int64 bound check passed at every level)
+n=7: N=36, built U,T in 1.2s; identity U + Gamma U = T - E exact: True; float cross-check max diff 0.0e+00 (max |U| 1.40e+07, int64 safe: True)
+   invariant basis size 104
+   nonzero off-parity-block entries: 0
+   block (0, 0): size 60, PSD False, rank 51, kernel 9
+   block (1, 0): size 44, PSD True, rank 44, kernel 0
+   RESULT n=7: Q_n PSD (exact) = False; kernel dim on ker J_z = 9 (expected n+1 = 8); total 2.5s
+   max|U| = 2.577e+08, max|T| = 5.158e+08 (int64 bound check passed at every level)
+n=8: N=45, built U,T in 2.5s; identity U + Gamma U = T - E exact: True; float cross-check max diff 0.0e+00 (max |U| 2.58e+08, int64 safe: True)
+   invariant basis size 145
+   nonzero off-parity-block entries: 0
+   block (0, 0): size 85, PSD True, rank 76, kernel 9
+   block (1, 0): size 60, PSD True, rank 60, kernel 0
+   RESULT n=8: Q_n PSD (exact) = True; kernel dim on ker J_z = 9 (expected n+1 = 9); total 5.7s
+   max|U| = 6.031e+09, max|T| = 1.207e+10 (int64 bound check passed at every level)
+n=9: N=55, built U,T in 5.9s; identity U + Gamma U = T - E exact: True; float cross-check max diff nan (max |U| 6.03e+09, int64 safe: True)
+   invariant basis size 195
+   nonzero off-parity-block entries: 0
+   block (0, 0): size 110, PSD False, rank 94, kernel 16
+   block (1, 0): size 85, PSD True, rank 85, kernel 0
+   RESULT n=9: Q_n PSD (exact) = False; kernel dim on ker J_z = 16 (expected n+1 = 10); total 9.4s
