@@ -1,0 +1,19 @@
+family j4m4: (R_inf)_4, k = 8, T = (0, 1, 2, 3), configuration (2, 2): squared weights ['1', '1', 'q', 'q', '1', '1', 'q', 'q'], bscale 1
+  block over Q(q): 32 states [157.6s]
+  32 distinct entry denominators, all > 0 on (0, inf): True; lcm of degree 40
+  1 known kernel vectors annihilated identically in q: True
+  W: dimension 31 = 32 - 1: True
+  G = product of the symmetric groups of [[0, 1], [2, 3], [4, 5], [6, 7]]: states G-stable and block G-invariant: True
+  9 parts; sum dim(lam) dim(e_lam W) = 31 = dim W: True [157.7s]
+  part ((2,), (2,), (2,), (2,)) (dim 1): size 11, symmetric True, every leading minor > 0 on (0, inf): True [157.9s]
+  part ((2,), (2,), (2,), (1, 1)) (dim 1): size 4, symmetric True, every leading minor > 0 on (0, inf): True [157.9s]
+  part ((2,), (2,), (1, 1), (2,)) (dim 1): size 4, symmetric True, every leading minor > 0 on (0, inf): True [157.9s]
+  part ((2,), (1, 1), (2,), (2,)) (dim 1): size 4, symmetric True, every leading minor > 0 on (0, inf): True [157.9s]
+  part ((2,), (1, 1), (2,), (1, 1)) (dim 1): size 1, symmetric True, every leading minor > 0 on (0, inf): True [157.9s]
+  part ((2,), (1, 1), (1, 1), (2,)) (dim 1): size 1, symmetric True, every leading minor > 0 on (0, inf): True [157.9s]
+  part ((1, 1), (2,), (2,), (2,)) (dim 1): size 4, symmetric True, every leading minor > 0 on (0, inf): True [157.9s]
+  part ((1, 1), (2,), (2,), (1, 1)) (dim 1): size 1, symmetric True, every leading minor > 0 on (0, inf): True [157.9s]
+  part ((1, 1), (2,), (1, 1), (2,)) (dim 1): size 1, symmetric True, every leading minor > 0 on (0, inf): True [157.9s]
+  every leading minor of every part > 0 on (0, inf): True; all with only nonnegative coefficients: True; largest degrees: numerator 445, denominator 0
+time 157.9s
+PASS

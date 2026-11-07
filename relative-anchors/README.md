@@ -51,10 +51,10 @@ This folder collects what we can prove about the group conditions for every k.
   (R∞)_2 hold (Theorems A4 and B4); this includes the letter-1 block of Section 3e. With the results above, all of
   (R∞) holds at four copies (Theorem 4). Hence Conjecture 12 of `single-excitation-range/` holds for every single
   excitation supported on at most four copies, with arbitrary weights (Corollary 4).
-- **Five, six and seven copies, two weight values** (Section 3f, exact computer-assisted certificates in the weight
-  ratio). For k = 5, 6 and 7 and every weight vector whose weights take at most two distinct values, all of (R∞)
-  holds (Theorems 5₂, 6₂ and 7₂). Hence Conjecture 12 holds for every single excitation supported on at most seven
-  copies whose nonzero weights take at most two distinct values (Corollaries 5₂, 6₂ and 7₂).
+- **Five to eight copies, two weight values** (Section 3f, exact computer-assisted certificates in the weight
+  ratio). For 5 ≤ k ≤ 8 and every weight vector whose weights take at most two distinct values, all of (R∞) holds
+  (Theorems 5₂, 6₂, 7₂ and 8₂). Hence Conjecture 12 holds for every single excitation supported on at most eight
+  copies whose nonzero weights take at most two distinct values (Corollaries 5₂, 6₂, 7₂ and 8₂).
 - **One copy with a different weight** (Section 4b, exact computer-assisted certificates symbolic in the odd weight).
   When all weights but one are equal, the letter-1 block of every (R∞)_j holds for every k (Theorem MF: Theorems MK,
   MB, MS and MP, and Theorem G2 for the last family, whose determinant is certified by exact interpolation).
@@ -94,7 +94,7 @@ of the vacuum and letter-1 rows it is proved for every k (Proposition R).
   reduced to the condition G ≻ 0 of
   Theorem C, whose diagonal blocks are bounded below at every weight vector (Theorem DG), so that only the
   off-diagonal bound ‖Ĝ_ij‖_op ≤ (3/4)√(θ_iθ_j) is missing; and the letter-1 and type I blocks of (R∞)_j
-  for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, and at k = 5, 6, 7
+  for 1 ≤ j ≤ k − 2 that contain a letter 1 (for k ≥ 5; at k = 4 everything is proved, and at k = 5, …, 8
   everything is proved when the weights take at most two values, Section 3f; the blocks
   without a letter 1 are Theorem DJ for every k). The rest of (R∞)_1 is reduced to Conjectures L and L1, and all of it
   is proved when the weights take at most two values (Section 3h). At two weight values all of (R∞)_2 holds for every
@@ -968,7 +968,25 @@ excitation is of this kind satisfies the endpoint, with any co-range.
 The checks of the five- and six-copy case were rerun at k = 7: the parts and minors against the Lemma B block, the
 saved blocks against both builders, the coverage of every block and level pattern, end to end at points, and
 negative controls. The second check finds every torus block of every (R∞)_j ⪰ 0 with exactly its known kernel at
-24 random two-value points. Three or more weight values need certificates in more variables.
+24 random two-value points.
+
+**Eight copies at two weight values** (`code/middle_k8/`, notes there). The same method at k = 8 covers the
+twenty-six remaining families: the blocks with a letter 1 of (R∞)_3, …, (R∞)_6, and the type I blocks of (R∞)_7 with
+|T| = 2, …, 5 (these are also Corollary TV, proved later). All 266 configurations (up to exchanging the levels) are
+certified, and again every leading minor of every part is a ratio of polynomials in q with only nonnegative
+coefficients (11 307 minors).
+
+**Theorem 8₂.** For k = 8 and every weight vector whose weights take at most two distinct values, all of (R∞) holds.
+The kernels of (R∞)_3, (R∞)_4 and (R∞)_5 are exactly p ⊗ H_j, and that of (R∞)_6 is exactly
+p ⊗ H_6 ⊕ span(vac ⊗ J⁻|11111111⟩).
+
+**Corollary 8₂.** Conjecture 12 of `single-excitation-range/` holds for every p ∈ H_1 supported on at most eight
+copies whose nonzero weights take at most two distinct values. Hence, for every n, every tangent plane whose single
+excitation is of this kind satisfies the endpoint, with any co-range.
+
+The checks of k = 7 were rerun at k = 8 (`code/middle_k8/NOTES.md`, Sections 3 and 4). For k ≥ 9 at two weight values
+the open conditions are the middle ones, 3 ≤ j ≤ k − 2 (the others hold for every k: Sections 3 and 3h). Three or
+more weight values need certificates in more variables.
 
 ## 3g. A positivity pattern
 
@@ -1664,6 +1682,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `middle_k4/` (`run_all.sh`, notes in `middle_k4/NOTES.md`) | Section 3f: the torus blocks of (R∞)_1 and (R∞)_2 at k = 4 over Q(s_1, s_2, s_3), the known kernels and the gauge, the Bareiss leading-minor certificates, minors against direct determinants at rational points, symbolic blocks against the point builder and the dense construction, negative controls |
 | `middle_k56/` (`run_all.sh`, `run_crosscheck.sh`, notes in `middle_k56/NOTES.md`) | Section 3f, Theorems 5₂ and 6₂: the remaining blocks at k = 5 and 6 over Q(q) built from the definitions, the known kernels and the gauge, the leading-minor certificates (direct, or after a reduction by Young symmetrizers for the largest families at k = 6) and their coverage of every two-value weight vector, the blocks against the Lemma B builder, the minors against direct determinants, end-to-end kernels and positivity, negative controls; a second check (every torus block of every (R∞)_j at random two-value points, from the Lemma B builder, with exact positive-definiteness certificates; the certified blocks at 31 values of q) |
 | `middle_k7/` (`run_k7.sh`, `run_k7_builders.sh`, `run_crosscheck_k7.sh`, notes in `middle_k7/NOTES.md`) | Section 3f, Theorem 7₂: the 148 certificates of the remaining blocks at k = 7 (Young-symmetrizer parts on an invariant complement of the kernel, leading minors over Q[q]), coverage of every block and level pattern, the parts and minors against the Lemma B block, the saved blocks against both builders, negative controls, end to end at points, the second check |
+| `middle_k8/` (`run_k8.sh`, `fix_big.sh`, `fix_k8.sh`, notes in `middle_k8/NOTES.md`) | Section 3f, Theorem 8₂: the 266 certificates of the remaining blocks at k = 8 (Young-symmetrizer parts on an invariant complement of the kernel, leading minors over Q[q]), coverage of every block and level pattern, the parts and minors against the Lemma B block, the saved blocks against both builders, negative controls, end to end at points, the second check |
 | `no_letter1/` (`run_all.sh`, notes in `no_letter1/NOTES.md`) | Section 3h, Theorem DJ: the closed form of the blocks without a letter 1 for every j against the builder (51 blocks, k ≤ 8, j ≤ 7, also the A-part and the scaled block), the vacuum elimination and the two kernel identities at rational configurations with the certified objects, the two kernel certificates (7 092 terms with one square repair, and 357 055 terms all nonnegative), the conclusions at 161 weight vectors, negative controls, floating-point margins |
 | `middle_j1/` (`run_all.sh`, notes in `middle_j1/NOTES.md`) | Section 3h: the closed forms of the blocks without a letter 1 of (R∞)_1 and (R∞)_2 against the Lemma B blocks (k ≤ 8) and the builder (k ≤ 6), the moment bounds and vertex reductions at rational configurations, the Bernstein certificates of Theorems D₁ (8 functions) and D₂ (8 + 64), the certified formulas against the true blocks; the closed forms and inverse-free reductions of the |T| = 1 and letter-1 blocks (k ≤ 8 and k ≤ 7), Conjecture L proved at k = 3, 4 (symbolic pivots and Laplacian signs, and a leading-minor certificate at k = 4) and checked exactly for k ≤ 10, Conjecture L1 checked exactly for k ≤ 7; negative controls |
 | `middle_j1_t1/` (`run_all.sh`, notes in `middle_j1_t1/NOTES.md`) | Section 3h, Theorems EQ and 2L: the P-first reduction (Lemma P) and the closed form of Φ against the Lemma B blocks (k ≤ 8), the level reductions against exact projections (32 weight vectors, B scaled by 1 and by 1 + 1/1000), the leading-minor certificates for one and two levels, a second certificate at equal U-weights without Lemma P and a separate implementation of that case, negative controls; k = 3, 4 for all weights through Φ′; the stopped k = 5 and three-level attempts |

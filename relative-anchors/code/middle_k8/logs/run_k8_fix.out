@@ -1,0 +1,5 @@
+fix_k8.sh started Fri Nov  6 11:00:31 EST 2026
+cert_k8_j4m0_0_0: PASS (rerun with 5.2 GB, logs/fix_big.out)
+PASS  coverage_k8  (python coverage.py j3m0,j3m1,j3m2,j3m3,j4m0,j4m1,j4m2,j4m3,j4m4,j5m0,j5m1,j5m2,j5m3,j5m4,j5m5,j6m0,j6m1,j6m2,j6m3,j6m4,j6m5,j6m6,j7m2,j7m3,j7m4,j7m5 k=8 sample=200; expect PASS; 584 s)
+PASS  builders_k8  (python check_builders.py j3m0,j3m1,j3m2,j3m3,j4m0,j4m1,j4m2,j4m3,j4m4,j5m0,j5m1,j5m2,j5m3,j5m4,j5m5,j6m0,j6m1,j6m2,j6m3,j6m4,j6m5,j6m6,j7m2,j7m3,j7m4,j7m5 k=8 reps=1; expect PASS; 11202 s)
+ALL PASS

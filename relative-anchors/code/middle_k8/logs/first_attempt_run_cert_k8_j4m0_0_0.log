@@ -1,0 +1,7 @@
+family j4m0: (R_inf)_4, k = 8, T = (), configuration (0, 0): squared weights ['q', 'q', 'q', 'q', 'q', 'q', 'q', 'q'], bscale 1
+  block over Q(q): 616 states [55.6s]
+  1 distinct entry denominators, all > 0 on (0, inf): True; lcm of degree 0
+  70 known kernel vectors annihilated identically in q: True
+  W: dimension 546 = 616 - 70: True
+  G = product of the symmetric groups of [[0, 1, 2, 3, 4, 5, 6, 7]]: states G-stable and block G-invariant: True
+guard: memory 3521760 KB above 2.5 GB, killed PID 22628

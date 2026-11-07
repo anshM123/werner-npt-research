@@ -1,0 +1,5 @@
+j3m0: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [2635.5s]
+j3m1: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [2797.2s]
+j3m2: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [2801.7s]
+j3m3: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [2802.0s]
+guard: memory 2533744 KB above 2.5 GB, killed PID 67464

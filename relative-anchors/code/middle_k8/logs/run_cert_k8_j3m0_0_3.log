@@ -1,0 +1,23 @@
+family j3m0: (R_inf)_3, k = 8, T = (), configuration (0, 3): squared weights ['1', '1', '1', 'q', 'q', 'q', 'q', 'q'], bscale 1
+  block over Q(q): 518 states [108.8s]
+  13 distinct entry denominators, all > 0 on (0, inf): True; lcm of degree 41
+  56 known kernel vectors annihilated identically in q: True
+  W: dimension 462 = 518 - 56: True
+  G = product of the symmetric groups of [[0, 1, 2], [3, 4, 5, 6, 7]]: states G-stable and block G-invariant: True
+  13 parts; sum dim(lam) dim(e_lam W) = 462 = dim W: True [140.8s]
+  part ((3,), (5,)) (dim 1): size 13, symmetric True, every leading minor > 0 on (0, inf): True [141.2s]
+  part ((3,), (4, 1)) (dim 4): size 18, symmetric True, every leading minor > 0 on (0, inf): True [142.6s]
+  part ((3,), (3, 2)) (dim 5): size 10, symmetric True, every leading minor > 0 on (0, inf): True [142.7s]
+  part ((3,), (3, 1, 1)) (dim 6): size 5, symmetric True, every leading minor > 0 on (0, inf): True [142.7s]
+  part ((3,), (2, 2, 1)) (dim 5): size 2, symmetric True, every leading minor > 0 on (0, inf): True [142.7s]
+  part ((2, 1), (5,)) (dim 2): size 12, symmetric True, every leading minor > 0 on (0, inf): True [142.9s]
+  part ((2, 1), (4, 1)) (dim 8): size 14, symmetric True, every leading minor > 0 on (0, inf): True [143.4s]
+  part ((2, 1), (3, 2)) (dim 10): size 9, symmetric True, every leading minor > 0 on (0, inf): True [143.5s]
+  part ((2, 1), (3, 1, 1)) (dim 12): size 3, symmetric True, every leading minor > 0 on (0, inf): True [143.5s]
+  part ((2, 1), (2, 2, 1)) (dim 10): size 1, symmetric True, every leading minor > 0 on (0, inf): True [143.5s]
+  part ((1, 1, 1), (5,)) (dim 1): size 2, symmetric True, every leading minor > 0 on (0, inf): True [143.5s]
+  part ((1, 1, 1), (4, 1)) (dim 4): size 2, symmetric True, every leading minor > 0 on (0, inf): True [143.5s]
+  part ((1, 1, 1), (3, 2)) (dim 5): size 1, symmetric True, every leading minor > 0 on (0, inf): True [143.5s]
+  every leading minor of every part > 0 on (0, inf): True; all with only nonnegative coefficients: True; largest degrees: numerator 783, denominator 0
+time 150.0s
+PASS

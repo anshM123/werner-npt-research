@@ -1,0 +1,9 @@
+(N) letter-1 block of (R_inf)_3, k = 5: full block (singular) refused True; perturbed gauge-fixed block (v^T A v = -6.55e-05) refused True; gauge missing one kernel vector refused True
+(N) the same three matrices with pd_cert2: refused True, True, True
+(N) B scaled by 1001/1000, weight ratio 1/10: certified PD True (round 1, margin 1); pd_cert2 True (round 1)
+(N) B scaled by 1001/1000, weight ratio 1/4: certified PD True (round 1, margin 1); pd_cert2 True (round 1)
+(N) B scaled by 1001/1000, weight ratio 4: certified PD False (round 0: floating Cholesky failed; eigenvalues -1.8e-05 .. 4.19); pd_cert2 False (round 0: floating Cholesky failed even with a shift)
+(N) B scaled by 1001/1000, weight ratio 10: certified PD False (round 0: floating Cholesky failed; eigenvalues -0.00145 .. 4.18); pd_cert2 False (round 0: floating Cholesky failed even with a shift)
+(N) scaled blocks refused at 2 of 4 ratios by pd_cert and at 2 by pd_cert2 (at least one each needed)
+time 0.6s
+PASS

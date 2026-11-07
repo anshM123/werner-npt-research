@@ -1,0 +1,15 @@
+j5m4: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [1.6s]
+j5m5: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [2.0s]
+j6m0: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [89.0s]
+j6m1: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [147.8s]
+j6m2: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [184.7s]
+j6m3: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [196.8s]
+j6m4: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [200.3s]
+j6m5: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [201.5s]
+j6m6: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [202.0s]
+j7m2: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [203.3s]
+j7m3: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [204.3s]
+j7m4: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [205.1s]
+j7m5: 5 (configuration, q) points, known kernel exactly and gauge-fixed PD in two gauges: True [205.7s]
+time 205.7s
+PASS

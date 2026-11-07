@@ -1,0 +1,28 @@
+j3m0 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 1 <= 0), the true one is PD
+j3m1 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 57 <= 0), the true one is PD
+j3m2 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 43 <= 0), the true one is PD
+j3m3 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 19 <= 0), the true one is PD
+j4m0 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 1 <= 0), the true one is PD
+j4m1 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 71 <= 0), the true one is PD
+j4m2 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 71 <= 0), the true one is PD
+j4m3 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 46 <= 0), the true one is PD
+j4m4 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 21 <= 0), the true one is PD
+j5m0 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 1 <= 0), the true one is PD
+j5m1 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 57 <= 0), the true one is PD
+j5m2 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 71 <= 0), the true one is PD
+j5m3 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 61 <= 0), the true one is PD
+j5m4 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 41 <= 0), the true one is PD
+j5m5 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 21 <= 0), the true one is PD
+j6m0 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 1 <= 0), the true one is PD
+j6m1 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 29 <= 0), the true one is PD
+j6m2 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 43 <= 0), the true one is PD
+j6m3 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 46 <= 0), the true one is PD
+j6m4 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 41 <= 0), the true one is PD
+j6m5 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 31 <= 0), the true one is PD
+j6m6 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 19 <= 0), the true one is PD
+j7m2 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 15 <= 0), the true one is PD
+j7m3 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 19 <= 0), the true one is PD
+j7m4 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 21 <= 0), the true one is PD
+j7m5 (0, 1): at q = 1/1000000 the scaled gauge-fixed block is not PD (pivot 21 <= 0), the true one is PD
+time 4760.0s
+PASS

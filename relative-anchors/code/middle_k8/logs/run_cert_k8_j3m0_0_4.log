@@ -1,0 +1,25 @@
+family j3m0: (R_inf)_3, k = 8, T = (), configuration (0, 4): squared weights ['1', '1', '1', '1', 'q', 'q', 'q', 'q'], bscale 1
+  block over Q(q): 518 states [121.7s]
+  26 distinct entry denominators, all > 0 on (0, inf): True; lcm of degree 40
+  56 known kernel vectors annihilated identically in q: True
+  W: dimension 462 = 518 - 56: True
+  G = product of the symmetric groups of [[0, 1, 2, 3], [4, 5, 6, 7]]: states G-stable and block G-invariant: True
+  15 parts; sum dim(lam) dim(e_lam W) = 462 = dim W: True [157.5s]
+  part ((4,), (4,)) (dim 1): size 15, symmetric True, every leading minor > 0 on (0, inf): True [157.9s]
+  part ((4,), (3, 1)) (dim 3): size 16, symmetric True, every leading minor > 0 on (0, inf): True [158.7s]
+  part ((4,), (2, 2)) (dim 2): size 6, symmetric True, every leading minor > 0 on (0, inf): True [158.7s]
+  part ((4,), (2, 1, 1)) (dim 3): size 4, symmetric True, every leading minor > 0 on (0, inf): True [158.7s]
+  part ((3, 1), (4,)) (dim 3): size 16, symmetric True, every leading minor > 0 on (0, inf): True [159.5s]
+  part ((3, 1), (3, 1)) (dim 9): size 17, symmetric True, every leading minor > 0 on (0, inf): True [160.4s]
+  part ((3, 1), (2, 2)) (dim 6): size 6, symmetric True, every leading minor > 0 on (0, inf): True [160.4s]
+  part ((3, 1), (2, 1, 1)) (dim 9): size 3, symmetric True, every leading minor > 0 on (0, inf): True [160.4s]
+  part ((2, 2), (4,)) (dim 2): size 6, symmetric True, every leading minor > 0 on (0, inf): True [160.4s]
+  part ((2, 2), (3, 1)) (dim 6): size 6, symmetric True, every leading minor > 0 on (0, inf): True [160.4s]
+  part ((2, 2), (2, 2)) (dim 4): size 3, symmetric True, every leading minor > 0 on (0, inf): True [160.4s]
+  part ((2, 2), (2, 1, 1)) (dim 6): size 1, symmetric True, every leading minor > 0 on (0, inf): True [160.4s]
+  part ((2, 1, 1), (4,)) (dim 3): size 4, symmetric True, every leading minor > 0 on (0, inf): True [160.4s]
+  part ((2, 1, 1), (3, 1)) (dim 9): size 3, symmetric True, every leading minor > 0 on (0, inf): True [160.4s]
+  part ((2, 1, 1), (2, 2)) (dim 6): size 1, symmetric True, every leading minor > 0 on (0, inf): True [160.4s]
+  every leading minor of every part > 0 on (0, inf): True; all with only nonnegative coefficients: True; largest degrees: numerator 713, denominator 0
+time 166.0s
+PASS

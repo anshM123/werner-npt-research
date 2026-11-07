@@ -1,0 +1,10 @@
+finish_k8.sh started Fri Nov  6 15:44:36 EST 2026
+PASS  crosscheck_neg  (python crosscheck.py N; expect PASS; 2 s)
+PASS  crosscheck_blocks_a  (python crosscheck.py A 8 4 8208; expect PASS; 940 s)
+PASS  crosscheck_blocks_b  (python crosscheck.py A 8 4 8209; expect PASS; 980 s)
+PASS  crosscheck_blocks_c  (python crosscheck.py A 8 4 8210; expect PASS; 1172 s)
+FAIL  crosscheck_saved  (python crosscheck.py C logs 31; expect PASS; 2344 s)
+PASS  neg_points_first_k8  (python neg_points.py j3m0,j3m1,j3m2,j3m3,j4m0,j4m1,j4m2,j4m3,j4m4,j5m0,j5m1,j5m2,j5m3,j5m4,j5m5,j6m0,j6m1,j6m2,j6m3,j6m4,j6m5,j6m6,j7m2,j7m3,j7m4,j7m5 k=8 reps=1 first=1; expect PASS; 4762 s)
+FAIL  end2end_first_k8_h1  (python check_end2end.py j3m0,j3m1,j3m2,j3m3,j4m0,j4m1,j4m2,j4m3,j4m4,j5m0,j5m1,j5m2,j5m3 k=8 reps=1 first=1; expect PASS; 16692 s)
+PASS  end2end_first_k8_h2  (python check_end2end.py j5m4,j5m5,j6m0,j6m1,j6m2,j6m3,j6m4,j6m5,j6m6,j7m2,j7m3,j7m4,j7m5 k=8 reps=1 first=1; expect PASS; 206 s)
+SOME STEP FAILED (6 of 8 passed)

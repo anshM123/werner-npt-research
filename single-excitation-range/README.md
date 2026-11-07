@@ -36,8 +36,8 @@ because single excitations over a product are not anchors.
   2026) proves it whenever at most three weights are nonzero, by an exact certificate over Q(a, b, c). So every
   sector is nonnegative for every n whenever A_0 + A_1 + A_2 has the eigenvalue 1, and the same holds for the
   corresponding tangent planes (Corollary 17). Four nonzero weights are proved in `relative-anchors/` (Corollary 4
-  there, added 5 November 2026), and five, six or seven nonzero weights when they take at most two distinct
-  values (Corollaries 5₂, 6₂ and 7₂ there), and up to 29 nonzero weights when all of them but one are equal
+  there, added 5 November 2026), and five to eight nonzero weights when they take at most two distinct
+  values (Corollaries 5₂, 6₂, 7₂ and 8₂ there), and up to 29 nonzero weights when all of them but one are equal
   (Corollary I2 there). Larger supports hold in all numerical tests and at exact special points.
 
 Both classes are thick at every copy.
@@ -883,8 +883,8 @@ supported on at most four copies** (Corollary 4 there), so Corollary 17 holds wi
 The open part is the sectors 3 ≤ c ≤ n − 2 outside the cases above (W-planes, Propositions 5, 8, 9 and 10).
 - **The shortest route is Conjecture 12.** It concerns one vector Σ_t w_t |1⟩_t and would settle every sector of every
   single-excitation plane, and with Corollary 15 every tangent plane, for every n. It is proved for at most three
-  nonzero weights (Theorem 16), for four (`relative-anchors/`, Corollary 4), and for five, six or seven when the
-  nonzero weights take at most two distinct values (`relative-anchors/`, Corollaries 5₂, 6₂ and 7₂), and for up to
+  nonzero weights (Theorem 16), for four (`relative-anchors/`, Corollary 4), and for five to eight when the
+  nonzero weights take at most two distinct values (`relative-anchors/`, Corollaries 5₂, 6₂, 7₂ and 8₂), and for up to
   29 when all nonzero weights but one are equal (`relative-anchors/`, Corollary I2). The first open case is
   five nonzero weights with at least three distinct values: by Lemma 13, a family of finite matrix inequalities on
   five copies. Results for

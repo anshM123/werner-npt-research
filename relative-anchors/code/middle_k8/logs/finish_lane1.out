@@ -1,0 +1,5 @@
+PASS  crosscheck_neg  (python crosscheck.py N; expect PASS; 2 s)
+PASS  crosscheck_blocks_a  (python crosscheck.py A 8 4 8208; expect PASS; 940 s)
+PASS  crosscheck_blocks_b  (python crosscheck.py A 8 4 8209; expect PASS; 980 s)
+PASS  crosscheck_blocks_c  (python crosscheck.py A 8 4 8210; expect PASS; 1172 s)
+FAIL  crosscheck_saved  (python crosscheck.py C logs 31; expect PASS; 2344 s)

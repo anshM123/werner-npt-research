@@ -18,7 +18,7 @@ on a copies of T and on b copies outside T, and q elsewhere.
 | 3 | **Corollary 7₂.** Conjecture 12 of `single-excitation-range/` holds for every p ∈ H₁ supported on at most seven copies whose nonzero weights take at most two distinct values | **proved**, given row 2, Corollary 6₂ of `code/middle_k56/` and Lemma 13 with the remark that (R2) always holds (`single-excitation-range/`) |
 | 4 | The checks of `code/middle_k56/` at k = 7: coverage of every (block, level pattern) pair; every certified part and minor against the Lemma B block; the saved blocks against both builders; homogeneity; negative controls; end to end at points (with the faster exact routines of `fast/`, Section 3) | **exact checks** (Section 3); not proofs |
 | 5 | A second check written separately (`crosscheck.py`, as in `code/middle_k56/` Section 9): at 24 random two-value points at k = 7, every torus block of every (R∞)_j, j = −1, …, 7, is ⪰ 0 with exactly its known kernel; the 148 saved blocks at 31 values of q from 10⁻⁸ to 10⁸ | **exact check** at points (Section 5); not a proof |
-| 6 | k ≥ 8 at two weight values; three or more weight values; general weights | **open** |
+| 6 | k ≥ 9 at two weight values (k = 8 is done in `code/middle_k8/`); three or more weight values; general weights | **open** |
 
 ## 1. The families and the certificates
 

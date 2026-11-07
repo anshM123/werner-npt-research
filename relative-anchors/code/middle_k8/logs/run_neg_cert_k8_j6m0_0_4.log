@@ -1,0 +1,11 @@
+family j6m0: (R_inf)_6, k = 8, T = (), configuration (0, 4): squared weights ['1', '1', '1', '1', 'q', 'q', 'q', 'q'], bscale 1001/1000
+  block over Q(q): 232 states [82.7s]
+  17 distinct entry denominators, all > 0 on (0, inf): True; lcm of degree 11
+  W: dimension 203 = 232 - 29: True
+  G = product of the symmetric groups of [[0, 1, 2, 3], [4, 5, 6, 7]]: states G-stable and block G-invariant: True
+  12 parts; sum dim(lam) dim(e_lam W) = 203 = dim W: True [84.5s]
+     part ((4,), (4,)): minor 1 is not > 0 on (0, inf); nonpositive at q = 1000000
+  part ((4,), (4,)) (dim 1): size 8, symmetric True, every leading minor > 0 on (0, inf): False [84.5s]
+  every leading minor of every part > 0 on (0, inf): False; all with only nonnegative coefficients: False; largest degrees: numerator 16, denominator 0
+time 84.5s
+FAIL

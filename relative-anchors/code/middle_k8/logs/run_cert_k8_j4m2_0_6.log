@@ -1,0 +1,20 @@
+family j4m2: (R_inf)_4, k = 8, T = (0, 1), configuration (0, 6): squared weights ['q', 'q', '1', '1', '1', '1', '1', '1'], bscale 1
+  block over Q(q): 210 states [93.1s]
+  14 distinct entry denominators, all > 0 on (0, inf): True; lcm of degree 26
+  15 known kernel vectors annihilated identically in q: True
+  W: dimension 195 = 210 - 15: True
+  G = product of the symmetric groups of [[0, 1], [2, 3, 4, 5, 6, 7]]: states G-stable and block G-invariant: True
+  10 parts; sum dim(lam) dim(e_lam W) = 195 = dim W: True [97.0s]
+  part ((2,), (6,)) (dim 1): size 5, symmetric True, every leading minor > 0 on (0, inf): True [97.0s]
+  part ((2,), (5, 1)) (dim 5): size 7, symmetric True, every leading minor > 0 on (0, inf): True [97.0s]
+  part ((2,), (4, 2)) (dim 9): size 6, symmetric True, every leading minor > 0 on (0, inf): True [97.0s]
+  part ((2,), (4, 1, 1)) (dim 10): size 2, symmetric True, every leading minor > 0 on (0, inf): True [97.0s]
+  part ((2,), (3, 3)) (dim 5): size 3, symmetric True, every leading minor > 0 on (0, inf): True [97.0s]
+  part ((2,), (3, 2, 1)) (dim 16): size 1, symmetric True, every leading minor > 0 on (0, inf): True [97.0s]
+  part ((1, 1), (6,)) (dim 1): size 3, symmetric True, every leading minor > 0 on (0, inf): True [97.0s]
+  part ((1, 1), (5, 1)) (dim 5): size 3, symmetric True, every leading minor > 0 on (0, inf): True [97.0s]
+  part ((1, 1), (4, 2)) (dim 9): size 3, symmetric True, every leading minor > 0 on (0, inf): True [97.0s]
+  part ((1, 1), (3, 3)) (dim 5): size 1, symmetric True, every leading minor > 0 on (0, inf): True [97.0s]
+  every leading minor of every part > 0 on (0, inf): True; all with only nonnegative coefficients: True; largest degrees: numerator 183, denominator 0
+time 97.3s
+PASS

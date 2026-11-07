@@ -1,0 +1,22 @@
+family j4m2: (R_inf)_4, k = 8, T = (0, 1), configuration (0, 3): squared weights ['q', 'q', '1', '1', '1', 'q', 'q', 'q'], bscale 1
+  block over Q(q): 210 states [156.7s]
+  31 distinct entry denominators, all > 0 on (0, inf): True; lcm of degree 54
+  15 known kernel vectors annihilated identically in q: True
+  W: dimension 195 = 210 - 15: True
+  G = product of the symmetric groups of [[0, 1], [2, 3, 4], [5, 6, 7]]: states G-stable and block G-invariant: True
+  12 parts; sum dim(lam) dim(e_lam W) = 195 = dim W: True [160.4s]
+  part ((2,), (3,), (3,)) (dim 1): size 21, symmetric True, every leading minor > 0 on (0, inf): True [163.3s]
+  part ((2,), (3,), (2, 1)) (dim 2): size 16, symmetric True, every leading minor > 0 on (0, inf): True [164.4s]
+  part ((2,), (3,), (1, 1, 1)) (dim 1): size 2, symmetric True, every leading minor > 0 on (0, inf): True [164.5s]
+  part ((2,), (2, 1), (3,)) (dim 2): size 16, symmetric True, every leading minor > 0 on (0, inf): True [165.5s]
+  part ((2,), (2, 1), (2, 1)) (dim 4): size 13, symmetric True, every leading minor > 0 on (0, inf): True [166.0s]
+  part ((2,), (2, 1), (1, 1, 1)) (dim 2): size 1, symmetric True, every leading minor > 0 on (0, inf): True [166.0s]
+  part ((2,), (1, 1, 1), (3,)) (dim 1): size 2, symmetric True, every leading minor > 0 on (0, inf): True [166.0s]
+  part ((2,), (1, 1, 1), (2, 1)) (dim 2): size 1, symmetric True, every leading minor > 0 on (0, inf): True [166.0s]
+  part ((1, 1), (3,), (3,)) (dim 1): size 10, symmetric True, every leading minor > 0 on (0, inf): True [166.1s]
+  part ((1, 1), (3,), (2, 1)) (dim 2): size 6, symmetric True, every leading minor > 0 on (0, inf): True [166.1s]
+  part ((1, 1), (2, 1), (3,)) (dim 2): size 6, symmetric True, every leading minor > 0 on (0, inf): True [166.1s]
+  part ((1, 1), (2, 1), (2, 1)) (dim 4): size 4, symmetric True, every leading minor > 0 on (0, inf): True [166.1s]
+  every leading minor of every part > 0 on (0, inf): True; all with only nonnegative coefficients: True; largest degrees: numerator 1167, denominator 0
+time 167.0s
+PASS
