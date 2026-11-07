@@ -217,7 +217,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.12 | the two-copy Werner endpoint and the two-copy case of the map at 3/4 are the ends of one family | reduction **proved**; the range [1, 2] numerical |
 | 7.13 | 𝒫_{3/4}^{⊗n} is positive for n = 3, 4, 5, with least output eigenvalue exactly 4^{−n}; 𝒫_a^{⊗3} is positive for a ≥ 81/125 = 0.648 | **proved** (computer-assisted: exact rational certificates, two separate exact verifiers) |
 | 7.14 | a failure of tensor-stable positivity of 𝒫_{3/4} needs n ≥ 6 copies, with the input and the output vector thick at six or more common copies | **proved** |
-| 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n | numerical |
+| 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n; its threshold ℓ_n increases with n and is ≈ 0.720 at n = 5, so it probably reaches 3/4 near n = 6 | numerical (ℓ_{n+1} ≥ ℓ_n **proved**) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -491,9 +491,19 @@ PSD + Γ_A(PSD) + Γ_B(PSD) is not closed under tensor products: a product such 
 parts. And the symmetric subspace of (B₁B₂) ⊗ (B′₁B′₂) is not the product of the two one-copy symmetric subspaces: it
 also contains antisymmetric ⊗ antisymmetric. At n = 2 the second level is exact for every a ≥ a₂ (its value equals
 μ₂(a) = min{(a − ½)², (a − ¼)² − ⅛} at every a tested). At n = 3 it is not exact near the threshold: it certifies
-positivity only from a ≈ 0.64798 on, above a₃ ≈ 0.646850, and it is exact again from a ≈ 0.66 on. At n = 4 it needs the partial transpose on the outputs: with
-Γ_A alone the best t is 0.0029257 < 1/256. At n = 3 either partial transpose alone suffices, and with neither (the
-symmetric extension alone) the best t is −0.175. These numbers are floating point.
+positivity only from a ≈ 0.64798 on, above a₃ ≈ 0.646850, and it is exact again from a ≈ 0.66 on. At n = 4 it needs
+the partial transpose on the outputs: with Γ_A alone the best t is 0.0029257 < 1/256. At n = 3 either partial transpose
+alone suffices, and with neither (the symmetric extension alone) the best t is −0.175.
+
+Let ℓ_n be the least a at which the second level certifies positivity of 𝒫_a^{⊗n}. Then ℓ_{n+1} ≥ ℓ_n. Indeed, a
+feasible point of the dual program at n copies (a state ρ on A ⊗ B ⊗ B′ with PρP = ρ, Γ_A(ρ) ⪰ 0 and Γ_B(ρ) ⪰ 0),
+tensored with the state of the real product vector e₁ ⊗ e₁ ⊗ e₁ at one more copy, is feasible at n + 1 copies, and
+its value is multiplied by a − ½ > 0. The primal program is strictly feasible, so a negative optimum at n copies has a
+dual point of negative value, and this point stays negative at n + 1. Numerically ℓ₂ = a₂, ℓ₃ ≈ 0.6480, ℓ₄ ≈ 0.686 and
+ℓ₅ ≈ 0.720, while a₄ ≈ 0.6704 and a₅ ≈ 0.6853 (at n = 5 and a = 0.72 the best t is −5.8·10⁻⁵). The increments 0.044,
+0.038 and 0.034 shrink slowly, so ℓ_n probably reaches 3/4 at about six copies. If it does, the second level cannot
+certify 𝒫_{3/4}^{⊗n} from that n on, and Theorem 7.13 is close to the limit of the method. These numbers are floating
+point (`code/dps/logs/sdp/threshold*.log`).
 
 ## Checks
 

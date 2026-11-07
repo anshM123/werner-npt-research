@@ -149,3 +149,16 @@ transpose only: at n = 2, 3 either one reaches 4^{−n}; at n = 4 the transpose 
 the inputs only 0.0029257. With no partial transpose (the symmetric extension alone) the best t at n = 3 is −0.175.
 Five copies is the largest case this implementation handles. At n = 6 there are 15⁶ ≈ 1.1·10⁷ coordinates and sectors
 of size up to 729, which would need a reduction under the permutations of the copies.
+
+The threshold ℓ_n of the second level (the least a at which its best t is ≥ 0) increases with n (README, Remark 7.15):
+
+| n | a_n | ℓ_n (second level) | data |
+|---|---|---|---|
+| 2 | 0.603553 | = a₂ (exact at every a tested) | `logs/sdp/thresholds_n2_n3.log` |
+| 3 | 0.646850 | ≈ 0.64799 | `logs/sdp/thresholds_n2_n3.log` |
+| 4 | 0.670448 | ≈ 0.686 (best t from −0.00370 at a = 0.6705 to −0.00102 at a = 0.682) | `logs/sdp/threshold_n4_*.log` |
+| 5 | 0.685281 | ≈ 0.720 (best t = −5.8·10⁻⁵ at a = 0.72, SCS) | `logs/sdp/threshold_n5_a72000.log` |
+
+Commands: `python sym_sdp.py n p q maxt 0 1e-10 CLARABEL` (a = p/q; n = 2, 3; about a second each), the same with
+tolerance 1e-9 at n = 4 (two to three minutes each), and `python sym_sdp5.py 5 72 100 maxt 0 1e-6 SCS` at n = 5
+(25 minutes, 2.2 GB).

@@ -1,0 +1,32 @@
+== python sym_sdp.py 2 6036 10000 maxt 0 1e-10 CLARABEL
+status optimal value 3.295999816620787e-05 [0.1s]
+== python sym_sdp.py 2 6050 10000 maxt 0 1e-10 CLARABEL
+status optimal value 0.0010249999982640762 [0.1s]
+== python sym_sdp.py 2 6100 10000 maxt 0 1e-10 CLARABEL
+status optimal value 0.004599999997966718 [0.1s]
+== python sym_sdp.py 2 6200 10000 maxt 0 1e-10 CLARABEL
+status optimal value 0.0118999999945436 [0.1s]
+== python sym_sdp.py 2 6400 10000 maxt 0 1e-10 CLARABEL
+status optimal value 0.019599999998618448 [0.1s]
+== python sym_sdp.py 2 6600 10000 maxt 0 1e-10 CLARABEL
+status optimal_inaccurate value 0.025599999972708103 [0.1s]
+== python sym_sdp.py 3 64686 100000 maxt 0 1e-10 CLARABEL
+status optimal_inaccurate value -0.0004860145732334511 [0.5s]
+== python sym_sdp.py 3 64700 100000 maxt 0 1e-10 CLARABEL
+status optimal_inaccurate value -0.00042554807257047755 [0.5s]
+== python sym_sdp.py 3 64750 100000 maxt 0 1e-10 CLARABEL
+status optimal_inaccurate value -0.0002095199524972546 [0.5s]
+== python sym_sdp.py 3 64800 100000 maxt 0 1e-10 CLARABEL
+status optimal_inaccurate value 6.625441893814844e-06 [0.5s]
+== python sym_sdp.py 3 64850 100000 maxt 0 1e-10 CLARABEL
+status optimal_inaccurate value 0.00022286002207541495 [0.5s]
+== python sym_sdp.py 3 65000 100000 maxt 0 1e-10 CLARABEL
+status optimal_inaccurate value 0.0008713861892379951 [0.5s]
+== python sym_sdp.py 3 65500 100000 maxt 0 1e-10 CLARABEL
+status optimal_inaccurate value 0.0029633271185184147 [0.5s]
+== python sym_sdp.py 3 66000 100000 maxt 0 1e-10 CLARABEL
+status optimal value 0.004095999999786392 [0.5s]
+== python sym_sdp.py 3 68000 100000 maxt 0 1e-10 CLARABEL
+status optimal value 0.005832000000408131 [0.4s]
+== python sym_sdp.py 3 70000 100000 maxt 0 1e-10 CLARABEL
+status optimal value 0.008000000000014738 [0.4s]
