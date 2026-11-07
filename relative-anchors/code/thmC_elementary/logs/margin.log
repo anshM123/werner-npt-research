@@ -1,0 +1,2 @@
+150 weight vectors: min lambda_min(F) / (sigma/(12(sigma+S))) = 6.0000 (the theorem needs >= 1); largest |F(X) - F(X^T)|/|X|^2 = 2.5e-16
+PASS

@@ -363,7 +363,15 @@ Proposition U1; for u ≥ 2 it is open.
    with the constants moved (4/5 → 7/10 or 2, and (III) shifted by 1/100) fail as they should. ∎
 
 The same certificates with margins give F(X) ≥ 9·10⁻⁵ (σ/|s|)‖X‖², uniformly in u; numerically the constant is about
-0.42. The weighted block Gershgorin route of Proposition U1 for G ≻ 0 is numerically sound for u = 2…5 with the same
+0.42.
+
+**Theorem C′ (an elementary proof, with margin; `code/thmC_elementary/`, notes there).** For every weight vector,
+F(X) ≥ σ/(12(σ + S))‖X‖_F² with S = Σ_{h∈U} s_h. This replaces steps 2–4 above by identities and elementary
+inequalities: on symmetric X an exact sum of squares shows that the hard part, after the soft free variables are
+completed, is at least ½‖Y‖² (sharp); on antisymmetric X a covariance bound (Jung's theorem) and an explicit d
+completion give more than (4/9)‖Z‖²; normalised shells combine the two. The symmetric identity is checked exactly
+against our closed form at 90 rational configurations, the antisymmetric bound numerically, and every scalar step
+exactly. The weighted block Gershgorin route of Proposition U1 for G ≻ 0 is numerically sound for u = 2…5 with the same
 extreme constants (5/18 and 3/4) as for u = 1, but its blocks have no closed form yet.
 
 **Theorem U2 (two copies free of the letter 2).** For every k ≥ 3, every type I block of (R∞)_{k−1} with |U| = 2 is
@@ -1619,6 +1627,7 @@ it). Every script prints PASS; the logs are in `logs/`.
 | `typeI_G_m1_relax/` (notes in `typeI_G_m1_relax/NOTES.md`) | Lemma R1, Lemma F, Theorems R_EU and D, Conjecture R: the identities of Lemma R1 exactly against the closed form of the block, the reduced system D + U C Uᵀ against Ψ, pointwise certificates of Ψ (u ≤ 20), the symbolic certificate at equal U-weights, negative controls; the exact checks were rerun with other seeds |
 | `typeI_G_m1_all/` (`run_all.sh`, notes in `typeI_G_m1_all/NOTES.md`) | Theorem W, the energy theorem and Corollary R: the certificate program (nine vertex families, 45 minors, with its own checks and negative control), the energy model against the relaxed form of `typeI_G_m1_relax/`, and checks written separately from our construction of Ψ (exact equality of the energy model, the source decomposition and the rational identity; E ≻ 0 and Ψ − A/30 ≻ 0 at rational weights; the reduction at 40 random measures) |
 | `typeI_G_diag/` (`run_all.sh`, notes in `typeI_G_diag/NOTES.md`) | Theorem DG: the certificate program (nine vertex families, 54 minors, with its own guards and a negative control), a check of the diagonal bound on our own G at 240 random weight vectors, and a floating-point look at the open off-diagonal bound |
+| `thmC_elementary/` (`run_all.sh`, notes in `thmC_elementary/NOTES.md`) | Theorem C′: the symmetric sum-of-squares identity checked exactly against the closed form of the block (90 configurations), the antisymmetric hard bound (floating point, 200 configurations), the margin σ/(12(σ + S)) and transpose invariance (floating point, 150 weight vectors), and every scalar identity (exact) |
 | `typeI_G_u3/` (`run_all.sh`, notes in `typeI_G_u3/NOTES.md`) | Theorem U3₁: the exact Schur complement for u = 3, m = 1 over Q(s_0, …, s_3) and its agreement with direct elimination, the leading minors with factor stripping and expansion checks, the coefficient-sign certificate, the Z-matrix certificate, negative controls; the same minor certificate for (u, m) = (1, 1), (2, 1), (1, 2), (2, 2), (1, 3); numerical sweeps behind Conjectures P and M |
 | `typeI_G_em/` (`run_all.sh`, notes in `typeI_G_em/NOTES.md`) | Theorem EM: the closed forms of the invariant and standard parts at equal U-weights symbolic in u, against direct elimination (44 configurations) and the Lemma B builder (21), the five coefficient-sign certificates (H = 1/2, 2/5, 29/100, 7/10), negative controls, the exact witness that G is not a function of the first two power sums of the U-weights, numerical constants for general U-weights; the second check `emcheck.py` (every torus group of (R∞)_{k−1} from Lemma B, k = 5, …, 8) |
 | `typeI_G_tv/` (`run_all.sh`, notes in `typeI_G_tv/NOTES.md`) | Theorems M1 and TV: the splitting at two U-levels, the closed forms with the level sizes symbolic against exact elimination of whole blocks, Theorem M1 (exact splitting under the permutations of T, Sylvester), Theorem TV (weighted block Gershgorin, 129 certificates, and Proposition B3 by determinant and interpolation in u₁), end-to-end checks with the Lemma B builder, negative controls; `marked_copy/run_markall2.sh` (`markall2.py`): every torus group of (R∞)_{k−1} at two-valued weights, k = 10, …, 13 |
