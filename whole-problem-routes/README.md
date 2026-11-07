@@ -235,6 +235,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.18 | on a real plane (the Pauli family (1, t, 0, t) of Filippov and Magadov) the n-copy threshold is exactly a_n, every n, and positivity equals decomposability there | **proved** (explicit decomposition) |
 | 7.19 | on real planes with different parameters: 𝒬_{a₁} ⊗ ⋯ ⊗ 𝒬_{a_n} is positive iff decomposable iff ∏_{s∈S}(2a_s − ½) ≥ ½ for every S, every n | **proved** (explicit decomposition) |
 | QT_m | the same condition decides positivity of 𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n} | **open** for n ≥ 3 (necessity and n = 2 proved; n = 3, 4 numerical) |
+| PM | the least value of 𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n} (a_s ≥ ½) is attained on planes, with an explicit formula m(a); implies QT_m | **open** (n = 3, 4 numerical; at a = ¾ proved for n ≤ 5) |
 | 7.20 | the vertices of QT_m are 2-positivity: 𝒫_{1/2} ⊗ Φ is positive iff Φ is 2-positive on real inputs | **proved** |
 | 7.21 | the complex (half-plane, Lee–Yang) version of QT_m is false from n = 5 (with every Re a_s > 3/4, from n = 7) | **proved** (explicit zeros) |
 | 7.22 | at every point of the facet ∏(2a_s − ½) = ½, the plane witness is a second-order local minimum in the full qutrit space, every n | **proved** |
@@ -737,6 +738,24 @@ minimisation at 21 and 17 parameter vectors, some within 10⁻³ of the boundary
 of the predicted sign (`code/multiparam_numerics.py`, `logs/multiparam_real_n3.log` and `logs/multiparam_real_n4.log`;
 3000 random pairs for n = 2 in `logs/multiparam_two.log`).
 
+The searches suggest more: the least value itself seems to be attained on planes.
+
+**Conjecture PM (the least value is planar).** For a₁, …, a_n ≥ ½, the least value of ⟨y|𝒫_{a₁} ⊗ ⋯ ⊗ 𝒫_{a_n}(xxᵀ)|y⟩
+over unit x, y is
+
+    m(a) = min{ ∏_s (a_s − ½),  min_{|S|≥2} 2^{−|S|}[∏_{s∈S}(2a_s − ½) − ½] ∏_{s∉S} a_s },
+
+the value of aligned real products, or of the vectors of Theorem 7.1 on the copies in S with orthogonal real products at
+the others. In particular it is attained by vectors that lie on one real plane at every copy.
+
+Conjecture PM implies Conjecture QT_m, because m(a) ≥ 0 exactly when (iii) holds. At a_s = ¾ it says that the least
+value is 4^{−n}, which Theorem 7.13 proves for n ≤ 5. Alternating minimisation from random and thick starts (no planar
+seeds) never goes below m(a): at 11 parameter vectors for n = 3 and 8 for n = 4, from a_s = ½ (deep inside the
+non-positive region) to a_s = ¾, the least value found equals m(a) to 3·10⁻⁸. The minimisers found are thin at every
+copy, except at the vertex (½, ¾, ¾), where the least value 0 is attained on a large set (`code/planar_minimum.py`,
+`logs/planar_minimum_n3.log`, `logs/planar_minimum_n4.log`). At n = 5 the same search does not go below m(a) either, but
+it does not always reach it.
+
 **Proposition 7.20 (the vertices are 2-positivity).** Let Φ = 𝒫_{a₂} ⊗ ⋯ ⊗ 𝒫_{a_n} with real a_s. Then 𝒫_{1/2} ⊗ Φ is
 positive iff id₂ ⊗ Φ is positive on real inputs. In particular the point (½, ¾, …, ¾) satisfies Conjecture QT_m iff
 𝒫_{3/4}^{⊗(n−1)} is 2-positive on real inputs, and these statements hold for every n iff 𝒫_{3/4} is tensor-stable
@@ -897,7 +916,8 @@ n ≤ 4; explicit matrices for n ≤ 3; a control; the witness values; signs at 
 `logs/plane_products_check.log`). `code/multiparam_numerics.py` gives the numerics of Conjecture QT_m (modes `two`,
 `real 3 5`, `real 4 11`) and Remark 7.21 (mode `complex`), logs `logs/multiparam_*.log`.
 `code/plane_witness_hessian.py` checks Proposition 7.22 (full Hessians for n ≤ 6 against the closed form;
-`logs/plane_witness_hessian.log`).
+`logs/plane_witness_hessian.log`). `code/planar_minimum.py n starts seed` gives the numerics of Conjecture PM
+(`logs/planar_minimum_n3.log`, `logs/planar_minimum_n4.log`).
 
 Python with NumPy, SciPy (HiGHS) and SymPy; `code/dps/` and `code/symmetric_sector/` also use python-flint, and CVXPY
 with Clarabel and SCS for the semidefinite programs.

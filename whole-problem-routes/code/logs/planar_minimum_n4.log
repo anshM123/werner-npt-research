@@ -1,0 +1,9 @@
+a = [0.5, 0.5, 0.5, 0.5]: least value found -2.734375e-02; planar value m(a) = -2.734375e-02; found - m = -7.6e-17; least one-copy marginal eigenvalues of the minimiser [-0.  0.  0.  0.]
+a = [0.6, 0.6, 0.6, 0.6]: least value found -1.624375e-02; planar value m(a) = -1.624375e-02; found - m = -4.9e-17; least one-copy marginal eigenvalues of the minimiser [ 0.  0.  0. -0.]
+a = [0.62, 0.62, 0.62, 0.62]: least value found -1.250839e-02; planar value m(a) = -1.250839e-02; found - m = +9.9e-16; least one-copy marginal eigenvalues of the minimiser [0. 0. 0. 0.]
+a = [0.66, 0.66, 0.66, 0.66]: least value found -2.992389e-03; planar value m(a) = -2.992390e-03; found - m = +8.7e-10; least one-copy marginal eigenvalues of the minimiser [0. 0. 0. 0.]
+a = [0.75, 0.75, 0.75, 0.75]: least value found +3.906250e-03; planar value m(a) = +3.906250e-03; found - m = -7.8e-17; least one-copy marginal eigenvalues of the minimiser [-0. -0.  0. -0.]
+a = [0.52, 0.56, 0.6, 0.64]: least value found -2.125120e-02; planar value m(a) = -2.125120e-02; found - m = +1.2e-16; least one-copy marginal eigenvalues of the minimiser [ 0.  0. -0.  0.]
+a = [0.5, 0.5, 0.5, 0.75]: least value found -3.515625e-02; planar value m(a) = -3.515625e-02; found - m = -1.3e-16; least one-copy marginal eigenvalues of the minimiser [ 0.  0. -0. -0.]
+a = [0.55, 0.6, 0.7, 0.75]: least value found -1.143750e-02; planar value m(a) = -1.143750e-02; found - m = +2.4e-09; least one-copy marginal eigenvalues of the minimiser [ 0.  0.  0. -0.]
+n = 4: largest amount by which a found value lies below m(a): 1.3e-16 (rounding level means no violation)
