@@ -1,0 +1,20 @@
+n = 4, a = 3/4, product value (a - 1/2)^n = 0.00390625
+open AKLT chain, random boundary vectors: min ratio 20.7761; one-copy ranks [2, 3, 3, 2]
+random open MPS, bond dimension 2: min ratio 3.3082 over 6
+random open MPS, bond dimension 3: min ratio 7.7491 over 6
+ratios >= 1 expected for the AKLT chain and bond dimension two (Proposition 7.17)
+n = 5, a = 3/4, product value (a - 1/2)^n = 0.000976562
+open AKLT chain, random boundary vectors: min ratio 53.4194; one-copy ranks [2, 3, 3, 3, 2]
+random open MPS, bond dimension 2: min ratio 6.3517 over 6
+random open MPS, bond dimension 3: min ratio 13.1964 over 6
+ratios >= 1 expected for the AKLT chain and bond dimension two (Proposition 7.17)
+n = 6, a = 3/4, product value (a - 1/2)^n = 0.000244141
+open AKLT chain, random boundary vectors: min ratio 136.4629; one-copy ranks [2, 3, 3, 3, 3, 2]
+random open MPS, bond dimension 2: min ratio 10.4070 over 6
+random open MPS, bond dimension 3: min ratio 27.5636 over 6
+ratios >= 1 expected for the AKLT chain and bond dimension two (Proposition 7.17)
+n = 7, a = 3/4, product value (a - 1/2)^n = 6.10352e-05
+open AKLT chain, random boundary vectors: min ratio 321.8378; one-copy ranks [2, 3, 3, 3, 3, 3, 2]
+random open MPS, bond dimension 2: min ratio 12.8289 over 6
+random open MPS, bond dimension 3: min ratio 27.3167 over 6
+ratios >= 1 expected for the AKLT chain and bond dimension two (Proposition 7.17)

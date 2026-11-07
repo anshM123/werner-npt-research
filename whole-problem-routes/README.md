@@ -224,6 +224,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.14 | a failure of tensor-stable positivity of 𝒫_{3/4} needs n ≥ 6 copies, with the input and the output vector thick at six or more common copies | **proved** |
 | 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n; its threshold ℓ_n increases with n and is ≈ 0.720 at n = 5, so it probably reaches 3/4 near n = 6 | numerical (ℓ_{n+1} ≥ ℓ_n **proved**) |
 | 7.16 | on permutation-symmetric inputs and outputs: positivity fails below a_n for every n; at a = 3/4 the least value is exactly 4^{−n} for n ≤ 21, attained only at real products | **proved** (the first part every n; the second computer-assisted: n ≤ 9 by two separate exact checks, 10 ≤ n ≤ 21 by one); the threshold a_n on this sector numerical (n ≤ 7) |
+| 7.17 | for a ≥ 3/4 and every n, inputs that become thin one copy at a time (for example every open matrix product state of bond dimension two, such as the AKLT chain) have least output eigenvalue at least the product value (a − ½)^n | **proved** (by hand; with Theorem 7.13, up to five copies may stay thick) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -563,6 +564,43 @@ this kind cannot prove it near the threshold, though. On Sym^n ⊗ Sym^n at a = 
 −0.011, −0.014, −0.005 and −0.002 for n = 2, …, 5. At n = 2 the threshold is nevertheless a₂, by the singular value
 argument of Theorem 7.2.
 
+**Proposition 7.17 (inputs that thin out one copy at a time, every n).** Let a ≥ 3/4 and m ≤ 5. Call a pair (x, y) of
+vectors on n copies *reducible* if n ≤ m, or if one of the two vectors, say x, has a one-copy reduced state of rank at
+most 2 at some copy s and the pair (⟨e|_s x, ⟨f|_s y) on the other n − 1 copies is reducible for all e, f ∈ C³ (and the
+same with the roles of x and y exchanged). Here ⟨e|_s x is the contraction of x with e at copy s. For every reducible
+pair,
+
+    ⟨y| 𝒫_a^{⊗n}(xx*) |y⟩ ≥ (a − ½)^n |x|² |y|².
+
+With m ≤ 2 the proof uses only Theorem 7.2, and with m ≤ 5 it uses Theorem 7.13. In particular, if for some ordering of
+the copies x has Schmidt rank at most 2 across each cut {1, …, k} | {k + 1, …, n} with k ≤ n − m, then
+𝒫_a^{⊗n}(xx*) ⪰ (a − ½)^n |x|² I. This holds for every open matrix product state of bond dimension two, at every n. An
+example is the open AKLT chain. Its one-copy reduced states have full rank at every copy except the two ends, so
+Corollary 7.14 does not reach it.
+
+*Proof.* Induction on n. Let x be thin at copy s, let V be an isometry from C² onto a plane that contains the support of
+its reduced state there, and write x = (V ⊗ I)x′. By Lemma 7.7, Φ_V(Y) = 𝒫_a(VYV*) is entanglement breaking. So its
+Choi matrix is a finite sum of rank-one products, and Φ_V(Y) = Σ_i p_i ⟨α_i|Y|α_i⟩ |β_i⟩⟨β_i| with p_i > 0. Applying
+this at copy s,
+
+    ⟨y| 𝒫_a^{⊗n}(xx*) |y⟩ = Σ_i p_i ⟨y_i| 𝒫_a^{⊗(n−1)}(x_i x_i*) |y_i⟩,   x_i = ⟨Vα_i|_s x,   y_i = ⟨β_i|_s y.
+
+Each pair (x_i, y_i) is reducible, so by induction the right side is at least (a − ½)^{n−1} Σ_i p_i |x_i|² |y_i|². This
+sum equals Tr[σ Φ_V(ρ′)], where ρ′ and σ are the reduced states of x′ and y at copy s. It is at least (a − ½)|x|²|y|²,
+because Φ_V(Y) ⪰ (a − ½) Tr(Y) I for Y ⪰ 0 (proof of Proposition 7.8). If y is the thin vector, use
+⟨y|𝒫_a^{⊗n}(xx*)|y⟩ = ⟨x|𝒫_a^{⊗n}(yy*)|x⟩. For n ≤ m the bound is Theorem 7.2 (whose proof gives μ₂(a) = (a − ½)² for
+a ≥ 3/4) or Theorem 7.13, extended to a > 3/4 by the expansion 𝒫_a = 𝒫_{3/4} + (a − 3/4)D used there. For the
+statement about cuts: the Schmidt rank across {1} | {2, …, n} bounds the rank of the reduced state at copy 1, and
+contracting copy 1 with a vector does not raise the Schmidt rank across the later cuts. ∎
+
+This is the argument of [MRW, Thm. 9] (used in Proposition 7.8) applied once per copy, with the conditional states after
+each step pure, so that thinness only has to hold after the earlier copies have been contracted.
+A failure of tensor-stable positivity at a = 3/4 needs a pair that is not
+reducible. In particular, in every ordering of the copies, both x and y must have Schmidt rank at least three across
+some cut {1, …, k} | {k + 1, …, n} with k ≤ n − 5. `code/bond_two_check.py` (floating point, `logs/bond_two_check.log`)
+illustrates the bound for the open AKLT chain and random open matrix product states of bond dimension two, n = 4, …, 7.
+For the AKLT chain the least output eigenvalue is 20 to 320 times the product value.
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
@@ -635,6 +673,9 @@ n = 2, …, 8 and not positive semidefinite at n = 9. `many_n/run_many_n.sh` ver
 n = 9, …, 21 exactly in a coupled angular-momentum basis (`many_n/verify_exact.py`, logs `many_n/logs/`), and
 `many_n/verify_bosonic_cert.py` checks the n = 9 certificate a second way. The numerics of the proposition are
 `num_min.py`, `t3num.py`, `sdp_o3b.py` and `sosthr.py`.
+
+`code/bond_two_check.py n samples seed` illustrates Proposition 7.17 in floating point (the AKLT chain and random open
+matrix product states of bond dimension two and, for comparison, three; `logs/bond_two_check.log`, n = 4, …, 7).
 
 Python with NumPy, SciPy (HiGHS) and SymPy; `code/dps/` and `code/symmetric_sector/` also use python-flint, and CVXPY
 with Clarabel and SCS for the semidefinite programs.
