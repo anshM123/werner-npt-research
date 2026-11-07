@@ -162,6 +162,12 @@ positivity on real rank-one inputs, which extends to all positive inputs because
 The open step of this route is a lower bound μ_n(a) ≥ m^n for every n at one a < 1 (at a = 9/10: μ_n ≥ (2/5)^n).
 At a = 3/4 it is proved for n ≤ 5 (Theorem 7.13).
 
+[MRW, Thm. 3] also shows that a non-trivial tensor-stable positive map exists if and only if one exists in the
+one-parameter family 𝒲_p ⊗ (ϑ ∘ 𝒲_p) on M_d ⊗ M_d, p ∈ [−1, 0), where
+𝒲_p(X) = ((d − p) Tr(X) I − (1 − dp) Xᵀ)/(d² − 1) and ϑ is the transpose. The map 𝒫_a is a different candidate: it acts
+on one qutrit, it is invariant under the transpose on either side, and its tensor powers have the extra O(3)
+symmetry used throughout Section 7.
+
 For context: tensor-stable positive maps that are neither completely positive nor completely copositive are known to
 exist over the hypercomplex numbers, and tensor-stable positivity is undecidable for the matrix multiplication tensor
 (van der Eyden, Netzer, De las Cuevas, J. Phys. A 55, 264006 (2022), arXiv:2110.02113). Over the complex numbers no
