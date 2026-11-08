@@ -1,0 +1,11 @@
+maximise L1, start 0: +0.62500 (L1 +0.6250, L2 -0.0625, coupled -0.0000) [40s]
+maximise L1, start 1: +0.62500 (L1 +0.6250, L2 -0.0625, coupled -0.0000) [80s]
+maximise L1, start 2: +0.62500 (L1 +0.6250, L2 -0.0625, coupled +0.0000) [119s]
+maximise L2, start 0: +0.09375 (L1 -0.9375, L2 +0.0937, coupled -0.0000) [155s]
+maximise L2, start 1: +0.09375 (L1 -0.9375, L2 +0.0937, coupled -0.0000) [192s]
+maximise L2, start 2: +0.09375 (L1 -0.9375, L2 +0.0937, coupled -0.0000) [229s]
+maximise coupled, start 0: -0.00000 (L1 -0.0000, L2 -0.0000, coupled -0.0000) [269s]
+maximise coupled, start 1: +0.00000 (L1 -0.2744, L2 +0.0274, coupled +0.0000) [309s]
+maximise coupled, start 2: -0.00000 (L1 -0.0000, L2 -0.0000, coupled -0.0000) [349s]
+largest values found (positive = violation): {'L1': 0.625, 'L2': 0.09375, 'coupled': 0.0}
+(run as: python levelwise_n5.py 0 3)

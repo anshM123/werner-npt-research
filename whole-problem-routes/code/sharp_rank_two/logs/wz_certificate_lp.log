@@ -1,0 +1,12 @@
+extra generators: none
+n = 3: 6 WZ generators; LP status 0 (feasible: certificate exists)
+  nonzero WZ multipliers (traced set K, weight): [([0], np.float64(0.25)), ([1], np.float64(0.25)), ([2], np.float64(0.25))] 
+n = 5: 90 WZ generators; LP status 2 (infeasible)
+extra generators: first
+n = 3: 7 WZ generators; LP status 0 (feasible: certificate exists)
+  nonzero WZ multipliers (traced set K, weight): [([0], np.float64(0.25)), ([1], np.float64(0.25)), ([2], np.float64(0.25))] 
+n = 5: 171 WZ generators; LP status 2 (infeasible)
+extra generators: sharp
+n = 3: 7 WZ generators; LP status 0 (feasible: certificate exists)
+  nonzero WZ multipliers (traced set K, weight): [([0], np.float64(0.25)), ([1], np.float64(0.25)), ([2], np.float64(0.25))] 
+n = 5: 171 WZ generators; LP status 2 (infeasible)

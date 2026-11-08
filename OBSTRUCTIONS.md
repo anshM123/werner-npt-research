@@ -228,7 +228,17 @@ output have full support. The following do not reach every n (added 7 November 2
   together with those of its purification by a qubit, and the purity relations of that purification, allow the value
   −6 at three copies (−60 at five), so purity profiles alone cannot prove it. The simplest uniform Cauchy–Schwarz
   certificate, with the two-replica operator of the identity 2ⁿq_n(C) − 2TrC² + (TrC)² = Tr[(C ⊗ C)𝒟_n] as its own
-  kernel, already fails at three copies (`whole-problem-routes/code/sharp_rank_two/`, floating point).
+  kernel, already fails at three copies. In the form B_n(u, v) ≤ √(A_n(u)A_n(v)) for the two eigenvectors (B_n and A_n
+  are weighted sums of antisymmetric-sector weights over the levels), the levels are genuinely coupled: at five copies
+  each of the level-wise bounds 3p₃ − p₂ ≤ √(a₂(u)a₂(v)) and 3p₅ − p₄ ≤ √(a₄(u)a₄(v)) fails (by 0.625 and 0.094), at
+  points where the coupled bound holds with equality and the two levels compensate with the weight 10. Nor does Wu and
+  Zou's method extend. Their two lemmas (‖Tr_A X‖² + ‖Tr_B X‖² ≤ ‖X‖₁² + |Tr X|², and the exterior-square bound
+  ‖X‖₁² − ‖X‖₂² ≤ √(e(u)e(v)) for X = Tr_K|u⟩⟨v|), applied to every traced set K and every bipartition of the rest, our
+  first-order bound of `first-order-bound/` over every partition into three or more blocks, and even its conjectured
+  sharper form for traceless operators, combined linearly with the nonnegativity of all sector weights and one
+  weighted Cauchy–Schwarz step, give a certificate at three copies (the linear program returns exactly Wu and Zou's)
+  but none at five copies (infeasible). So the five-copy case needs inequalities of a different kind
+  (`whole-problem-routes/code/sharp_rank_two/`, floating point; the linear programs are exact up to solver tolerance).
 - **Self-similarity (added 8 November 2026).** One finite identity would settle the every-n question. If for some
   m > k the Choi matrix C_a^{⊗m} of 𝒫_a^{⊗m} were a positive combination of local filterings (A ⊗ B)C_a^{⊗k}(A ⊗ B)^*
   plus a separable operator, then 𝒫_a^{⊗mN} would be a sum of filtered copies of 𝒫_a^{⊗K}, K ≤ kN, tensored with
