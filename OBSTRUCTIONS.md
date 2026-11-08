@@ -102,6 +102,20 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
   `four-replica-notes/NOTES.md`, Section 6: the level-by-level and cut-by-cut forms of the Plücker inequality are
   already false at n = 4, and the four-replica relaxation that is exact at n = 4 gives −7.47 × 10^{−3} at n = 5.
 
+- **Bounded Schmidt number of the tensor powers (added 8 November 2026).** If the Schmidt number of ρ^{⊗n} grew more
+  slowly than every exponential in n, ρ would be undistillable: a positive distillation rate E_D turns n copies into
+  about nE_D ebits, which needs Schmidt number at least 2^{n(E_D − δ)}, and local operations cannot raise the Schmidt
+  number. So "SN(ρ^{⊗n}) = 2^{o(n)}" would give NPT bound entanglement directly. It cannot hold for any entangled ρ.
+  The entanglement cost of every entangled state is positive (Yang, Horodecki, Horodecki and Synak-Radtke, Phys. Rev.
+  Lett. 95, 190501 (2005)), and log SN(σ) ≥ E_F(σ), so SN(ρ^{⊗n}) ≥ 2^{n E_C(ρ)}. This matches the finite evidence in
+  `compression-notes/`, Section 9: ρ ⊗ ρ and ρ^{⊗3} have Schmidt number 2, but decompositions with at most one
+  antisymmetric factor per term must stop at six copies, where ρ^{⊗n} puts weight 3n/5 on antisymmetric copies.
+- **KL₁ through the first copy (added 8 November 2026).** For filters a, b : C³ → C³ ⊗ C³ write the two-copy Werner
+  operator as W₁ ⊗ W₂ and expand W₁ = ½P_S + (3/2)P_A on the first copy. The P_S part is a mixture of one-copy
+  filterings (P_S = 6∫|vv⟩⟨vv| dv), so it lies in K₁(3). The P_A part averages, over planes V of the first copy,
+  terms whose coefficient operator on V ⊗ V is P_S^{(V)} + (9/2)|s_V⟩⟨s_V| (s_V the singlet). That is a two-qubit
+  Werner operator with singlet fraction 3/5 > ½, so it is entangled. No decomposition that factors through the first
+  copy can therefore prove KL₁: like the dimension bound, this shows the 3 × 3 output bottleneck itself has to be used.
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
