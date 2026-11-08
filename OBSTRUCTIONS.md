@@ -143,6 +143,21 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
   H = F_1 + F_2 + (3/10)I separates W ⊗ W from 𝒦. The count suggests that each Werner factor carries one unit of negative
   swap, so certificates built from products of fewer than n Werner forms should not reach n copies
   (`whole-problem-routes/code/closure/`, floating point).
+- **Multiplicative norms (added 8 November 2026).** The endpoint is 2-positivity of every tensor power of the unital map
+  Δ(X) = (2/5) Tr(X) I − X/5. Suppose a quantity N satisfies N(Φ ⊗ Ψ) ≤ N(Φ)N(Ψ), N(id_k) ≤ 1 and N(Φ) ≥ ‖id₂ ⊗ Φ‖.
+  Applying the last bound to id_k ⊗ Φ gives N(Φ) ≥ ‖Φ‖_cb. But ‖Δ‖_cb = 17/15 exactly: Δ = Σ_g μ_g W_g · W_g* over the
+  nine Weyl operators, with μ = −1/15 at the identity and 2/15 elsewhere, so Σ|μ_g| = 17/15 is an upper bound, and the
+  maximally entangled input attains it. So no such N certifies Δ. A bound that holds for Δ ⊗ id_k as well as for Δ ⊗ Δ
+  cannot work; the argument has to use that every factor is Δ (`whole-problem-routes/code/four_slot/cb_norm.py`).
+- **Four-replica partial-transpose certificates (added 8 November 2026).** Put four slots on each copy, Φ = a ⊗ d ⊗ c ⊗ b.
+  Then crossed Cauchy–Schwarz at n copies says that A^{⊗n} − B^{⊗n} is positive on four-party product vectors, with
+  A = W₀₃W₁₂ and B = W₀₁W₂₃P₍₀₂₎₍₁₃₎ (81 × 81 per copy). Steps of the form (C′ ± C)^{Γ_S} ⪰ 0, with Γ_S a partial
+  transpose on a set of slots, tensorise, so a chain or tree of them from B to A would give every n. Any such certificate
+  makes A^{⊗n} − B^{⊗n} four-party decomposable, that is, a sum of partial transposes of positive operators. After an
+  exact reduction by the U(3) symmetry of each copy, decomposability holds at one copy exactly up to t = ½ (it fails at
+  t = 0.55, margin −1.25·10⁻²), but at two copies it holds only up to about t = 0.36. The margin is −3.4·10⁻⁴ at t = 0.40
+  and −9.18·10⁻³ at t = ½, although the two-copy endpoint itself is true. This is the decomposability barrier of the map
+  route, in four-replica form (`whole-problem-routes/code/four_slot/`, SDP, floating point).
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be

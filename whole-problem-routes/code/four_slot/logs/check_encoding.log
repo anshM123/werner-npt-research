@@ -1,0 +1,36 @@
+t=0.5: encoding check A 0.843616 vs 0.843616;  B 0.388236 vs 0.388236
+   min over product vectors of <Phi|A-B|Phi> (n=1): 3.773e-11
+   S=()             lam_min[(A+B)^G]=-1.5000  lam_min[(A-B)^G]=-1.7321
+   S=(0,)           lam_min[(A+B)^G]=-2.1418  lam_min[(A-B)^G]=-2.0000
+   S=(1,)           lam_min[(A+B)^G]=-2.1418  lam_min[(A-B)^G]=-2.0000
+   S=(2,)           lam_min[(A+B)^G]=-2.1418  lam_min[(A-B)^G]=-2.0000
+   S=(3,)           lam_min[(A+B)^G]=-2.1418  lam_min[(A-B)^G]=-2.0000
+   S=(0, 1)         lam_min[(A+B)^G]=-0.5000  lam_min[(A-B)^G]=-7.2749
+   S=(0, 2)         lam_min[(A+B)^G]=-1.0000  lam_min[(A-B)^G]=-1.0000
+   S=(0, 3)         lam_min[(A+B)^G]=-0.8508  lam_min[(A-B)^G]=-5.4641
+   S=(1, 2)         lam_min[(A+B)^G]=-0.8508  lam_min[(A-B)^G]=-5.4641
+   S=(1, 3)         lam_min[(A+B)^G]=-1.0000  lam_min[(A-B)^G]=-1.0000
+   S=(2, 3)         lam_min[(A+B)^G]=-0.5000  lam_min[(A-B)^G]=-7.2749
+   S=(0, 1, 2)      lam_min[(A+B)^G]=-2.1418  lam_min[(A-B)^G]=-2.0000
+   S=(0, 1, 3)      lam_min[(A+B)^G]=-2.1418  lam_min[(A-B)^G]=-2.0000
+   S=(0, 2, 3)      lam_min[(A+B)^G]=-2.1418  lam_min[(A-B)^G]=-2.0000
+   S=(1, 2, 3)      lam_min[(A+B)^G]=-2.1418  lam_min[(A-B)^G]=-2.0000
+   S=(0, 1, 2, 3)   lam_min[(A+B)^G]=-1.5000  lam_min[(A-B)^G]=-1.7321
+t=0.55: encoding check A 0.875534 vs 0.875534;  B 0.099806 vs 0.099806
+   min over product vectors of <Phi|A-B|Phi> (n=1): -1.000e-01
+   S=()             lam_min[(A+B)^G]=-1.7050  lam_min[(A-B)^G]=-1.9053
+   S=(0,)           lam_min[(A+B)^G]=-2.3241  lam_min[(A-B)^G]=-2.1147
+   S=(1,)           lam_min[(A+B)^G]=-2.3241  lam_min[(A-B)^G]=-2.1147
+   S=(2,)           lam_min[(A+B)^G]=-2.3241  lam_min[(A-B)^G]=-2.1147
+   S=(3,)           lam_min[(A+B)^G]=-2.3241  lam_min[(A-B)^G]=-2.1147
+   S=(0, 1)         lam_min[(A+B)^G]=-0.6500  lam_min[(A-B)^G]=-7.4535
+   S=(0, 2)         lam_min[(A+B)^G]=-1.3000  lam_min[(A-B)^G]=-1.3000
+   S=(0, 3)         lam_min[(A+B)^G]=-0.9809  lam_min[(A-B)^G]=-5.2297
+   S=(1, 2)         lam_min[(A+B)^G]=-0.9809  lam_min[(A-B)^G]=-5.2297
+   S=(1, 3)         lam_min[(A+B)^G]=-1.3000  lam_min[(A-B)^G]=-1.3000
+   S=(2, 3)         lam_min[(A+B)^G]=-0.6500  lam_min[(A-B)^G]=-7.4535
+   S=(0, 1, 2)      lam_min[(A+B)^G]=-2.3241  lam_min[(A-B)^G]=-2.1147
+   S=(0, 1, 3)      lam_min[(A+B)^G]=-2.3241  lam_min[(A-B)^G]=-2.1147
+   S=(0, 2, 3)      lam_min[(A+B)^G]=-2.3241  lam_min[(A-B)^G]=-2.1147
+   S=(1, 2, 3)      lam_min[(A+B)^G]=-2.3241  lam_min[(A-B)^G]=-2.1147
+   S=(0, 1, 2, 3)   lam_min[(A+B)^G]=-1.7050  lam_min[(A-B)^G]=-1.9053
