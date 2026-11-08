@@ -1,0 +1,4 @@
+n = 6, a = 3/4, mode center: t = 0.000000e+00; |z| max 1.198e-01; orbit identity residual 1.328e-08 (max |Sc| 7.91e-01) [9.6s]
+n = 6, a = 3/4, mode maxt: t = 1.374856e-04; |z| max 1.199e-01; orbit identity residual 1.792e-08 (max |Sc| 7.91e-01) [9.2s]
+
+[exited with code 0]

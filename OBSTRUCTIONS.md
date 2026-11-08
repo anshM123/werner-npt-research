@@ -117,9 +117,9 @@ includes:
 ## The map route (Section 7 of `whole-problem-routes/`)
 
 The second route asks for positivity of every tensor power of 𝒫_{3/4}(X) = ¾ Tr(X) I − ¼(X + Xᵀ) on qutrits. It is proved
-for five copies, on real planes for every n, on permutation-symmetric inputs up to 21 copies and on inputs of bond
-dimension two for every n. A failure would need six or more copies at which both the input and the output have full
-support. The following do not reach every n (added 7 November 2026).
+for six copies, on real planes for every n, on permutation-symmetric inputs up to 21 copies, on separable inputs and on
+inputs of bond dimension two for every n. A failure would need seven or more copies at which both the input and the
+output have full support. The following do not reach every n (added 7 November 2026).
 
 - **Decomposability, and every certificate that unrolls into it.** 𝒫_a^{⊗n} is not decomposable from n = 3 for any
   a < 0.7562 (Proposition 7.3), and for every a < 1 some tensor power is not decomposable, by a theorem of Müller-Hermes
@@ -132,8 +132,9 @@ support. The following do not reach every n (added 7 November 2026).
   together with the pure-state identities Tr(Z Z^{T_S}) = Tr Z_S² and a classical ancilla bit (so that the problem
   is a diagonal one), give exactly the decomposability bound: −3/832 at n = 3, the PPT state of Remark 7.15.
 - **Fixed-level symmetric extensions.** The second level is exact at a = ¾ for n ≤ 5, but its threshold ℓ_n increases
-  (0.6036, 0.648, 0.686, 0.720 for n = 2, …, 5, with increments shrinking only like n^{−1/2}), so it probably fails at
-  a = ¾ from about n = 6. No fixed level is expected to work for every n.
+  (0.6036, 0.648, 0.686, 0.720 for n = 2, …, 5, with increments shrinking only like n^{−1/2}). At six copies it still
+  certifies a = ¾ (Theorem 7.32), but only with t ≈ 0.563·4^{−6}, no longer the product value, so it has started to
+  lose ground. It probably fails at a = ¾ from about n = 7, and no fixed level is expected to work for every n.
 - **Word expansions.** 2C_{3/4} = M + P_an, with M = I − ½|Ω⟩⟨Ω| the Werner endpoint operator. But M ⊗ P_an is not
   positive on Schmidt-rank-two vectors (least value −1/6), and M ⊗ P_an ⊗ P_an is not block positive (−1/24). So
   neither 2-positivity of 𝒫_{3/4}^{⊗2} nor positivity of the powers splits into endpoint statements term by term.
@@ -165,7 +166,10 @@ support. The following do not reach every n (added 7 November 2026).
   bonus holds for every n and every input, in the stronger form 4^{−n}3^{2Σ_sτ_s} (Proposition 7.30, by Jensen's
   inequality). It cannot be extended to entangled test vectors in that form: the singlet pair of Observation 7.26 gives
   (151 − √6805)/1536 ≈ 0.0446 < 4^{−4}3^{8/3}, and no bound 4^{−n}exp(κΣ_sτ_s) with a single κ gives Conjecture TC from
-  four copies on (κ ≤ 1.83 there, κ ≥ 2 needed near thin inputs).
+  four copies on (κ ≤ 1.83 there, κ ≥ 2 needed near thin inputs). Averaging over a separable decomposition extends the
+  bound to every separable input against every test vector (Proposition 7.33), but no convexity argument goes further:
+  at the same singlet pair the bottom test vector is balanced, every separable input gives at least (¾)⁴3^{−4/3} ≈ 0.0731
+  there, and the true value is 0.0446, so 𝒫_{3/4}^{⊗4}(xxᵀ) dominates no separable image.
 - **Peeling the least eigenvalue (added 7 November 2026).** Splitting 𝒫_{3/4} = ¼D + 𝒫_{1/2} at one copy reduces
   Conjecture TC for mixed inputs exactly to a bound on the vertex map 𝒫_{1/2} ⊗ 𝒫_{3/4}^{⊗(n−1)} at a suitable copy
   (Remark 7.31). That bound fails at a fixed copy (0.947 at n = 2), and the simpler bound with the least eigenvalue of the

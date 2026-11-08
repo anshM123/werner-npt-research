@@ -1,0 +1,5 @@
+n = 6, a = 3/4, t = 1/16384; per-copy target coefficients: {((0, 3), (1, 4), (2, 5)): '3/4', ((0, 1), (2, 5), (3, 4)): '-1/4', ((0, 4), (1, 3), (2, 5)): '-1/4'} [0.0s]
+orbit identity: 1042 orbits, 0 mismatches [1.0s]
+Z >= 0: 217 reduced blocks, all positive definite (exact LDL^T) [141.3s]
+random rank-2 points: max relative mismatch 4.73e-15 [147.6s]
+PASS: P_a^(x)n is positive for n = 6, a = 3/4; <y|P(xx^T)|y> >= 1/16384 |x|^2 |y|^2 on real vectors [147.6s]

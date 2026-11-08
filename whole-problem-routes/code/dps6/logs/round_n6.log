@@ -1,0 +1,5 @@
+python cert_l2.py 6 3 4 round 50 1/16384 mix
+mix: t_max = 1.374855744e-04, theta = 0.443939 [0.8s]
+rounded to 2^-50; max orbit residual before correction 1.186e-08; common denominator 2251799813685248 (bits 52); orbit identity exact for t = 1/16384 [1.2s]
+python cert_l2.py 6 3 4 export cert_n6_a3_4_t1_16384.json.xz
+wrote cert_n6_a3_4_t1_16384.json.xz [1.4s]

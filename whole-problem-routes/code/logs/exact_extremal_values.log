@@ -1,0 +1,7 @@
+(a) eps/sqrt6: 192 * W has charpoly factors [('x + (-21)', 3), ('x + (-36)', 7), ('x + (-42)', 17)]
+(b) Dicke-over-pairs (2,1): 512 * W has the factor x^2 - 126x + 1940: True
+    least eigenvalue 0.035069487269100 = (63 - sqrt 2029)/512
+(c) Dicke-over-pairs (3,1): least eigenvalue 0.008789062500000, 9/1024 = 0.008789062500000
+(d) Proposition 7.33 at n = 3, 300 random separable inputs: least ratio 1.000000
+(e) singlet pair: lambda_min(W_x) = 0.044601286526978, (151 - sqrt 6805)/1536 = 0.044601286526978, overlap with y 1.000000000000; separable floor 0.073128
+PASS

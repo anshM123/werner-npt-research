@@ -16,8 +16,9 @@ threshold of the map from below at every n, and the exact threshold at two copie
 threshold at n copies is (1 + 2^{1−1/n})/4. That conjecture would settle the route, and so the existence of NPT bound
 entanglement. It is open from three copies on, and proved for every n on a real plane, where the threshold is exactly
 (1 + 2^{1−1/n})/4 (Theorem 7.18). At the parameter that matters, a = 3/4, inputs supported on a plane at a copy are
-entanglement broken there, so every copy where the input is thin can be removed (Proposition 7.8). Only inputs with full
-support at every copy, on at least six copies, remain (Corollary 7.14). With a different parameter at each copy, the
+entanglement broken there, so every copy where the input is thin can be removed (Proposition 7.8). The map is positive
+at six copies (Theorem 7.32, computer-assisted), so only inputs with full support at every copy, on at least seven
+copies, remain (Corollary 7.14). With a different parameter at each copy, the
 plane threshold becomes the rule ∏_{s∈S}(2a_s − ½) ≥ ½ for every set S of copies (Theorem 7.19). We conjecture the same
 rule for the qutrit map (Conjecture QT_m, proved for two copies), and more: that the least value is always attained on
 planes (Conjecture PM). The extreme points of this rule are exactly 2-positivity statements (Proposition 7.20), and the
@@ -247,8 +248,8 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.11 | 𝒫_a^{⊗n} is 2-positive for a ≥ 0.8602 (n = 2) and a ≥ 0.91, 0.93, 0.95 (n = 3, 4, 5) | **proved** (n = 2 by hand; n = 3–5 exact certificates) |
 | 7.12 | the two-copy Werner endpoint and the two-copy case of the map at 3/4 are the ends of one family | reduction **proved**; the range [1, 2] numerical |
 | 7.13 | 𝒫_{3/4}^{⊗n} is positive for n = 3, 4, 5, with least output eigenvalue exactly 4^{−n}; 𝒫_a^{⊗3} is positive for a ≥ 81/125 = 0.648 | **proved** (computer-assisted: exact rational certificates, two separate exact verifiers) |
-| 7.14 | a failure of tensor-stable positivity of 𝒫_{3/4} needs n ≥ 6 copies, with the input and the output vector thick at six or more common copies | **proved** |
-| 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n; its threshold ℓ_n increases with n and is ≈ 0.720 at n = 5, so it probably reaches 3/4 near n = 6 | numerical (ℓ_{n+1} ≥ ℓ_n **proved**) |
+| 7.14 | a failure of tensor-stable positivity of 𝒫_{3/4} needs n ≥ 7 copies, with the input and the output vector thick at seven or more common copies | **proved** (the step from six to seven uses Theorem 7.32) |
+| 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n; its threshold ℓ_n increases with n and is ≈ 0.720 at n = 5; at n = 6 it still certifies a = 3/4 but is no longer exact (Theorem 7.32) | numerical (ℓ_{n+1} ≥ ℓ_n **proved**) |
 | 7.16 | on permutation-symmetric inputs and outputs: positivity fails below a_n for every n; at a = 3/4 the least value is exactly 4^{−n} for n ≤ 21, attained only at real products | **proved** (the first part every n; the second computer-assisted: n ≤ 9 by two separate exact checks, 10 ≤ n ≤ 21 by one); the threshold a_n on this sector numerical (n ≤ 7) |
 | 7.17 | for a ≥ 3/4 and every n, inputs that become thin one copy at a time (for example every open matrix product state of bond dimension two, such as the AKLT chain) have least output eigenvalue at least the product value (a − ½)^n | **proved** (by hand; with Theorem 7.13, up to five copies may stay thick) |
 | 7.18 | on a real plane (the Pauli family (1, t, 0, t) of Filippov and Magadov) the n-copy threshold is exactly a_n, every n, and positivity equals decomposability there | **proved** (explicit decomposition) |
@@ -260,13 +261,15 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.22 | at every point of the facet ∏(2a_s − ½) = ½, the plane witness is a second-order local minimum in the full qutrit space, every n | **proved** |
 | 7.23 | from a joint critical point of the value, squeezing one copy toward a plane moves the normalised value monotonically all the way to the compression; one contraction inequality gives the sign; the trace of the one-copy squeeze Hessian has a closed form (every n, every a) | **proved** |
 | 7.24 | a smallest failure at a ≥ 3/4 would be a strict minimum along every one-copy squeeze (thick critical points of that kind exist, Observation 7.26, so this is not a reduction) | **proved** |
-| 7.25 | the thick critical points found at n = 3, 4 are saddles along a one-copy squeeze, and the squeeze Hessian trace is negative there; a one-copy compression never raised the least output eigenvalue (n = 2, 3, 4) | numerical (critical points found by search; a failure would need n ≥ 6) |
+| 7.25 | the thick critical points found at n = 3, 4 are saddles along a one-copy squeeze, and the squeeze Hessian trace is negative there; a one-copy compression never raised the least output eigenvalue (n = 2, 3, 4) | numerical (critical points found by search; a failure would need n ≥ 7) |
 | 7.26 | a balanced critical pair at n = 4 (spin singlets, value (151 − √6805)/1536) rises along every one-copy and every joint squeeze, yet is a saddle | identities **exact**, Hessians numerical |
 | 7.27 | inputs thick at every copy sit far above the product value; the per-copy factor under a thickness floor hardly depends on n; singlet minima are 7.7 to 109 times 4^{−n} for n ≤ 7 | numerical |
 | 7.28 | at two copies, λ_min(𝒫_{3/4}^{⊗2}(yyᵀ)) ≥ (¼ + ½τ)² for every input y of thickness τ | **proved** |
 | 7.29 | at three copies, λ_min(𝒫_{3/4}^{⊗3}(yyᵀ)) ≥ (1/64)(1 + (98/27)Σ_sτ_s) ≥ ∏_s(¼ + ½τ_s): Conjecture TC at n = 3 | **proved** (computer-assisted, exact rational certificate, two verifiers) |
 | 7.30 | for every input, pure or mixed, and every real product test vector, the value is at least 4^{−n}3^{2Σ_sτ_s} ≥ ∏_s(¼ + ½τ_s), every n; so TC holds whenever the least output eigenvalue is attained at a product vector (for example for inputs diagonal in a product basis) | **proved** |
 | 7.31 | peeling one copy (𝒫_{3/4} = ¼D + 𝒫_{1/2}): TC for mixed inputs at n follows from n − 1 and a bound on the vertex map 𝒫_{1/2} ⊗ 𝒫_{3/4}^{⊗(n−1)} at one copy; the operator form of the peeling is equivalent to real 2-positivity | identity **proved**; the bounds numerical (n ≤ 4); level 2 does not certify the first open vertex case |
+| 7.32 | 𝒫_{3/4}^{⊗6}(xx*) ⪰ 4^{−7}‖x‖² I for every x: 𝒫_{3/4}^{⊗6} is positive; the second level is not exact at six copies (optimum ≈ 0.563·4^{−6}) | **proved** (computer-assisted: exact rational certificate, two separate exact verifiers) |
+| 7.33 | Conjecture TC for every separable input, pure or mixed, every n: 𝒫_{3/4}^{⊗n}(σ) ⪰ 4^{−n}3^{2Σ_sτ_s(σ)} I; convexity cannot carry this to entangled inputs | **proved** |
 | TC | λ_min(𝒫_{3/4}^{⊗n}(yyᵀ)) ≥ ∏_s(¼ + ½τ_s(y)), τ_s(y) the least eigenvalue of y's one-copy marginal; it contains QT at 3/4 | **open** (n = 2, 3 proved: 7.28, 7.29; every n against product test vectors: 7.30; n = 4 adversarial searches) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
@@ -398,9 +401,9 @@ Since a_n < 3/4 for every n, Conjecture QT makes 𝒫_{3/4} tensor-stable positi
 proportional to 11I − 5F would then be NPT and undistillable from every number of copies. In words, the conjecture says
 that the only obstruction is the one on planes, where 𝒫_{3/4} is completely positive. Its case n = 2 is Theorem 7.2.
 The threshold is open for every n ≥ 3 (at n = 3 it lies in [a₃, 0.648], Theorem 7.13). At a = 3/4, where by
-Proposition 7.3 the positivity it asserts is not decomposable from n = 3 on, Theorem 7.13 proves it for n ≤ 5, and
-Corollaries 7.9 and 7.14 reduce the rest to six or more copies at which both the input and the output vector have full
-support.
+Proposition 7.3 the positivity it asserts is not decomposable from n = 3 on, Theorem 7.13 proves it for n ≤ 5 and
+Theorem 7.32 for n = 6, and Corollaries 7.9 and 7.14 reduce the rest to seven or more copies at which both the input and
+the output vector have full support.
 
 **Remark 7.5 (an exact sum over planes, and why it is not enough).** As maps on M₃(C),
 
@@ -456,7 +459,7 @@ entanglement breaking maps [MRW, Thm. 9]. ∎
 
 **Corollary 7.9.** 𝒫_{3/4} is tensor-stable positive, and then NPT bound entanglement exists, if and only if for every n
 the operator 𝒫_{3/4}^{⊗n}(ρ) is positive for every state ρ whose one-copy reduced states all have rank 3. A smallest
-failure, if there is one, needs n ≥ 3 copies and an input that is thick (rank 3) at every copy (n ≥ 6 by
+failure, if there is one, needs n ≥ 3 copies and an input that is thick (rank 3) at every copy (n ≥ 7 by
 Corollary 7.14).
 
 *Proof.* Induction on n. An input with a thin copy is covered by Proposition 7.8 and the case of fewer copies; n ≤ 2 is
@@ -556,12 +559,13 @@ copies, each term is 𝒫_{81/125}^{⊗k} ⊗ D^{⊗(3−k)}. It is positive bec
 certificate), k = 2 (Theorem 7.2, as 81/125 > (1 + √2)/4) and k = 1, and (Φ ⊗ D)(X) = Φ(Tr₂X) ⊗ I. ∎
 
 **Corollary 7.14.** For every n, 𝒫_{3/4}^{⊗n}(ρ) ⪰ 4^{−n} Tr(ρ) I for every state ρ whose one-copy reduced states have
-rank 3 at five copies or fewer. Also ⟨y|𝒫_{3/4}^{⊗n}(xx*)|y⟩ ≥ 0 whenever x and y are thick (one-copy marginal of
-rank 3) at five or fewer common copies. A smallest failure of tensor-stable positivity of 𝒫_{3/4}, if there is one,
-needs n ≥ 6 copies and an input and an output vector that are both thick at six or more common copies.
+rank 3 at five copies or fewer, and 𝒫_{3/4}^{⊗n}(ρ) ⪰ 4^{−n−1} Tr(ρ) I if they have rank 3 at exactly six copies. Also
+⟨y|𝒫_{3/4}^{⊗n}(xx*)|y⟩ ≥ 0 whenever x and y are thick (one-copy marginal of rank 3) at six or fewer common copies. A
+smallest failure of tensor-stable positivity of 𝒫_{3/4}, if there is one, needs n ≥ 7 copies and an input and an
+output vector that are both thick at seven or more common copies.
 
-*Proof.* Proposition 7.8 with μ_k(3/4) = 4^{−k} for k ≤ 5 (Theorem 7.2 for k ≤ 2, Theorem 7.13 for k = 3, 4, 5), and the
-thinning of the output vector after Corollary 7.9. ∎
+*Proof.* Proposition 7.8 with μ_k(3/4) = 4^{−k} for k ≤ 5 (Theorem 7.2 for k ≤ 2, Theorem 7.13 for k = 3, 4, 5) and
+μ₆(3/4) ≥ 4^{−7} (Theorem 7.32), and the thinning of the output vector after Corollary 7.9. ∎
 
 **Remark 7.15 (what the certificates suggest).** At a = 3/4 the second level of the hierarchy is exact for n ≤ 5: its
 optimal t is the true minimum 4^{−n}. The first level (decomposability, the linear program of Proposition 7.3 with the
@@ -588,9 +592,10 @@ tensored with the state of the real product vector e₁ ⊗ e₁ ⊗ e₁ at one
 its value is multiplied by a − ½ > 0. The primal program is strictly feasible, so a negative optimum at n copies has a
 dual point of negative value, and this point stays negative at n + 1. Numerically ℓ₂ = a₂, ℓ₃ ≈ 0.6480, ℓ₄ ≈ 0.686 and
 ℓ₅ ≈ 0.720, while a₄ ≈ 0.6704 and a₅ ≈ 0.6853 (at n = 5 and a = 0.72 the best t is −5.8·10⁻⁵). The increments 0.044,
-0.038 and 0.034 shrink slowly, so ℓ_n probably reaches 3/4 at about six copies. If it does, the second level cannot
-certify 𝒫_{3/4}^{⊗n} from that n on, and Theorem 7.13 is close to the limit of the method. These numbers are floating
-point (`code/dps/logs/sdp/threshold*.log`).
+0.038 and 0.034 shrink slowly. At six copies the second level still certifies positivity at a = 3/4, so ℓ₆ < 3/4
+(Theorem 7.32), but it is no longer exact there: its optimum is t ≈ 1.3749·10⁻⁴ ≈ 0.563·4^{−6}, below the value 4^{−6}
+of real products. So at a = 3/4 the method is close to its limit. These numbers are floating point
+(`code/dps/logs/sdp/threshold*.log`, `code/dps6/logs/`).
 
 **Proposition 7.16 (permutation-symmetric inputs and outputs).** Let Sym^n ⊂ (C³)^{⊗n} be the symmetric subspace.
 (i) For every n and every a < a_n there are x, y ∈ Sym^n with ⟨y|𝒫_a^{⊗n}(xx*)|y⟩ < 0.
@@ -959,7 +964,7 @@ thick critical point in `logs/squeeze_trace.log`, r_s ≤ 0.70 (eleven points at
 n = 4). At aligned products r_s = 1, and at the plane GHZ pairs of Theorem 7.1, which are thin, r_s = 4/3 at a = ¾ for
 every n (there the trace is positive, and these pairs descend in other directions). None of this shows that thick
 local minima cannot exist. The inequality r_s < 1 is checked only at the critical points that the searches happened
-to find, at n ≤ 4, while a failure would need n ≥ 6. It is not a general property of critical points, since it fails
+to find, at n ≤ 4, while a failure would need n ≥ 7. It is not a general property of critical points, since it fails
 at the plane GHZ pairs. And at the minimiser of a failure it would fail automatically, since there λ < (a − ½)^n while
 τ_s ≥ (a − ½)^{n−1}. Proving r_s < 1 at every thick critical point, for every n, is as hard as the problem itself.
 Descents from twelve random starts all end at thin points (eleven at 1/64). A stronger statement also held in
@@ -1018,6 +1023,15 @@ balanced pair we found (all one-copy marginals I/3) has a per-copy factor of at 
 ⟨y|𝒫_{3/4}^{⊗n}(xxᵀ)|y⟩ ≥ ∏_s(¼ + ½τ_s) held in adversarial searches from random, near-thin and structured starts. With
 a larger coefficient it fails: ¼ + 0.7τ_s at the pair of Observation 7.26, and ¼ + τ_s at the least balanced pair at
 n = 2 (value 11/36). Near thin pairs the gain is linear in τ: a bonus √τ_s/3 fails there.
+(d) *Exact values on balanced inputs.* At three copies, with ε the antisymmetric tensor, 𝒫_{3/4}^{⊗3}(εεᵀ/6) has
+spectrum 7/64 (three times), 12/64 (seven times) and 14/64 (seventeen times), from the exact characteristic polynomial;
+the per-copy factor is 0.4782. At six copies, group the copies into three pairs and put p = e₀ ⊗ e₀ and
+e = (e₁ ⊗ e₁ + e₂ ⊗ e₂)/√2 on a pair. The input y = (pee + epe + eep)/√3 is balanced, and its least output eigenvalue is
+9/1024 = 36·4^{−6} (floating point, fifteen digits), a per-copy factor of 0.4543. That is the lowest known for a
+balanced input, still about 9% above the factor 5/12 that Conjecture TC asks for there. Its bottom test vector is
+planar at every copy, so the pair is not balanced on both sides and (b) is unchanged. On two pairs the same
+construction gives (63 − √2029)/512, a root of x² − 126x + 1940 for 512W (exact). (`code/exact_extremal_values.py`,
+`logs/exact_extremal_values.log`.)
 
 **Proposition 7.28 (the bonus at two copies).** Let y be a real unit vector on two copies and τ the least eigenvalue of
 its one-copy reduced state. Then
@@ -1155,6 +1169,55 @@ has −4.6·10⁻³ (the complex value quoted after Proposition 7.20 is −4.7·
 accuracy (`code/peeling/vertex_level2.py`). So the reduction does not make Conjecture TC easier than tensor-stable
 positivity. It moves the whole difficulty into the vertex map.
 
+**Theorem 7.32 (six copies at a = 3/4; computer-assisted).** For all x, y ∈ C^{3^6},
+
+    ⟨y|𝒫_{3/4}^{⊗6}(xx*)|y⟩ ≥ 4^{−7} |x|² |y|².
+
+So 𝒫_{3/4}^{⊗6} is positive, and μ₆(3/4) lies in [4^{−7}, 4^{−6}].
+
+*Proof.* Real vectors suffice. For real x, y put ψ = x ⊗ y ⊗ y, with a second copy B′ of the outputs as in
+Theorem 7.13. The file `code/dps6/certs/cert_n6_a3_4_t1_16384.json.xz` gives a rational number z_μ for each of the
+38 760 multisets μ of six of the fifteen Brauer diagrams of one copy. Let Z = Σ_τ z_{sort(τ)} D_{τ₁} ⊗ ⋯ ⊗ D_{τ₆}, with τ
+running over ordered six-tuples. Then
+
+    ⟨ψ|Z|ψ⟩ = ⟨y|𝒫_{3/4}^{⊗6}(xxᵀ)|y⟩ |y|² − 4^{−7} |x|² |y|⁴   for all real x, y,   and   Z ⪰ 0.
+
+The identity is one between polynomials in (x, y). Two operators in the span of products of diagrams give the same
+polynomial exactly when their averages over S₂ × S₄ agree, where S₂ permutes the two x slots and S₄ the four y slots,
+at every copy at once. The fifteen diagrams are linearly independent on R³, so this is one linear equation for each
+orbit of multisets, 1042 in all, and they hold exactly. Z commutes with O(3) at every copy and with permutations of the
+copies. Compressing to the m = 0 vectors of each spin type (k₀, k₁, k₂, k₃) and reducing by S_{k₁} × S_{k₂} leaves 217
+rational matrices of size at most 48, and each has an exact LDLᵀ factorisation with positive pivots. Two separately
+written programs check all of this in exact arithmetic (`code/dps6/README.md`). ∎
+
+This is the second level used for Theorem 7.13, written for real vectors: the swap of the two x slots and the
+permutations of the four y slots do the work of Γ_A, Γ_B and P, and numerically the two versions have the same optimum.
+At six copies that optimum is t ≈ 1.3749·10⁻⁴ ≈ 0.563·4^{−6}, below the product value, so unlike n ≤ 5 the level is
+not exact. The certificate combines a solution at that optimum with one of largest margin at t = 0 (least block
+eigenvalue 1.378·10⁻⁴), rounded to 2^{−50} and then corrected exactly. A seventh copy is out of reach this way: the
+same reduction has 2889 orbits there, and the threshold ℓ_n of Remark 7.15 is probably above 3/4 by then.
+
+**Proposition 7.33 (separable inputs, every n).** Let σ = Σ_k p_k v^k v^{k*} be a separable state on (C³)^{⊗n}, with
+product vectors v^k = ⊗_s v^k_s, and let τ_s(σ) be the least eigenvalue of its one-copy marginal σ_s. Then
+
+    𝒫_{3/4}^{⊗n}(σ) ⪰ 4^{−n} 3^{2Σ_s τ_s(σ)} I ⪰ ∏_s(¼ + ½τ_s(σ)) I.
+
+So Conjecture TC holds for every separable input, pure or mixed.
+
+*Proof.* For a unit vector v_s, 𝒫_{3/4}(v_sv_s*) = ¾(I − ⅔R_s) with R_s = Re(v_sv_s*), so 0 ⪯ R_s ⪯ I and Tr R_s = 1. On
+[0, 1] the convex function 3^{−r} lies below its chord 1 − ⅔r, so I − ⅔R_s ⪰ 3^{−R_s}, and 𝒫_{3/4}^{⊗n}(vv*) ⪰ (¾)^n 3^{−N}
+with N = Σ_s R_s (one commuting term per copy). For a unit test vector x with one-copy marginals ρ^x_s, Jensen's
+inequality for the spectral measure of N in the state x gives ⟨x|𝒫_{3/4}^{⊗n}(vv*)|x⟩ ≥ (¾)^n 3^{−Σ_s Tr(ρ^x_s R_s)}.
+Averaging over k and using Jensen once more, ⟨x|𝒫_{3/4}^{⊗n}(σ)|x⟩ ≥ (¾)^n 3^{−Σ_s Tr(ρ^x_s Re σ_s)}. Finally
+Tr(ρ^x_s Re σ_s) ≤ λ_max(Re σ_s) ≤ λ_max(σ_s) ≤ 1 − 2τ_s(σ), and 3^{2τ} ≥ 1 + 2τ. ∎
+
+By self-adjointness this is Proposition 7.30 averaged over a separable decomposition. It does not reach entangled
+inputs, and no convexity argument can bring it there. A sufficient condition for TC at an input x would be
+𝒫_{3/4}^{⊗n}(xxᵀ) ⪰ 𝒫_{3/4}^{⊗n}(σ) for some separable σ with marginals at least as thick. This fails at the singlet
+pair of Observation 7.26: the bottom eigenvector y of 𝒫_{3/4}^{⊗4}(xxᵀ) is balanced, so every separable σ gives
+⟨y|𝒫_{3/4}^{⊗4}(σ)|y⟩ ≥ (¾)⁴3^{−4/3} ≈ 0.0731, while ⟨y|𝒫_{3/4}^{⊗4}(xxᵀ)|y⟩ = (151 − √6805)/1536 ≈ 0.0446. The
+coherent terms have to be handled with their signs (`code/exact_extremal_values.py`).
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
@@ -1219,6 +1282,14 @@ Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are no
   scripts (exact rational elimination; modular arithmetic with Sylvester's criterion; a memory-light modular version);
 - `run_checks.sh` runs all of these, plus negative controls (t raised above 4^{−n}, which must fail), in about ten
   minutes (`logs/run_checks.out`).
+
+`code/dps6/` proves Theorem 7.32 (details in `code/dps6/README.md`). `cert_l2.py 6 3 4 check CERT` checks the orbit
+identity exactly and positivity with integer spin bases, Young-symmetrizer blocks and exact LDLᵀ. `verify_l2.py CERT`
+is a separately written exact verifier: it rebuilds the target and the orbits from the 27 × 27 matrices, reduces with
+Jucys–Murphy eigenbases, and tests the identity at random points of tensor rank two. Both PASS (`code/dps6/logs/`), and
+`run_checks.sh` reruns them in about four minutes. `code/exact_extremal_values.py` checks Observation 7.27(d),
+Proposition 7.33 at three copies on random separable inputs, and the remark after it
+(`logs/exact_extremal_values.log`, PASS).
 
 `code/symmetric_sector/` checks Proposition 7.16 (details in its README): `verify_bosonic.py n` (exact, through
 coherent-state symbols and an exact null space for the rotation-invariant slice) and `exact_greedy.py` (exact, through an

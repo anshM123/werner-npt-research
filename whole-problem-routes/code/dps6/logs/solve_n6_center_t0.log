@@ -1,0 +1,1 @@
+n = 6, a = 0.75, mode center, solver CLARABEL: status optimal_inaccurate, t = 0.000000000e+00, s = 1.378e-04, max residual 1.33e-08, least block eigenvalue 1.378e-04, max |Sc| 7.91e-01  [974s]
