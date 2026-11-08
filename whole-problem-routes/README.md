@@ -29,7 +29,10 @@ Observation 7.26), so squeezes alone cannot finish the argument. In every search
 copy sit far above the product value (Observation 7.27), which suggests a multiplicative bonus for thickness
 (Conjecture TC). The bonus holds at two copies (Proposition 7.28) and, by an exact computer-assisted
 certificate with a variable for the least eigenvector of each marginal, at three copies (Theorem 7.29). It is open for
-every larger n, and Theorem 7.29 does not extend to more copies by itself.
+every larger n, and Theorem 7.29 does not extend to more copies by itself. For every n the bonus holds against product
+test vectors, for every input (Proposition 7.30). Peeling one copy at a time reduces its version for mixed inputs to a
+bound on the vertex map 𝒫_{1/2} ⊗ 𝒫_{3/4}^{⊗(n−1)} at a suitable copy. Positivity of that map is real 2-positivity of
+𝒫_{3/4}^{⊗(n−1)}, and that is where the whole difficulty of this route sits (Remark 7.31).
 
 ## 1. The cross ratio, and fusion of planes
 
@@ -185,7 +188,11 @@ For context: tensor-stable positive maps that are neither completely positive no
 exist over the hypercomplex numbers, and tensor-stable positivity is undecidable for the matrix multiplication tensor
 (van der Eyden, Netzer, De las Cuevas, J. Phys. A 55, 264006 (2022), arXiv:2110.02113). Over the complex numbers no
 such map is known; one would give NPT bound entanglement [MRW, Thm. 4].
-It does not need the Werner endpoint itself.
+It does not need the Werner endpoint itself. A related qutrit family was studied by Filippov and Magadov, who
+considered spin-1 maps that rescale the antisymmetric part of X and remove its traceless symmetric part, and showed
+that positivity of the tensor square forces the square of the map to be completely positive [S. N. Filippov,
+K. Yu. Magadov, Lobachevskii J. Math. 39, 65 (2018), arXiv:1907.11878]. The map 𝒫_a does the opposite: it removes the
+antisymmetric part and multiplies the traceless symmetric part by −½.
 
 ## 6. Numerical observations on the map route
 
@@ -258,7 +265,9 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.27 | inputs thick at every copy sit far above the product value; the per-copy factor under a thickness floor hardly depends on n; singlet minima are 7.7 to 109 times 4^{−n} for n ≤ 7 | numerical |
 | 7.28 | at two copies, λ_min(𝒫_{3/4}^{⊗2}(yyᵀ)) ≥ (¼ + ½τ)² for every input y of thickness τ | **proved** |
 | 7.29 | at three copies, λ_min(𝒫_{3/4}^{⊗3}(yyᵀ)) ≥ (1/64)(1 + (98/27)Σ_sτ_s) ≥ ∏_s(¼ + ½τ_s): Conjecture TC at n = 3 | **proved** (computer-assisted, exact rational certificate, two verifiers) |
-| TC | λ_min(𝒫_{3/4}^{⊗n}(yyᵀ)) ≥ ∏_s(¼ + ½τ_s(y)), τ_s(y) the least eigenvalue of y's one-copy marginal; it contains QT at 3/4 | **open** (n = 2, 3 proved: 7.28, 7.29; n = 4 adversarial searches) |
+| 7.30 | for every input, pure or mixed, and every real product test vector, the value is at least 4^{−n}3^{2Σ_sτ_s} ≥ ∏_s(¼ + ½τ_s), every n; so TC holds whenever the least output eigenvalue is attained at a product vector (for example for inputs diagonal in a product basis) | **proved** |
+| 7.31 | peeling one copy (𝒫_{3/4} = ¼D + 𝒫_{1/2}): TC for mixed inputs at n follows from n − 1 and a bound on the vertex map 𝒫_{1/2} ⊗ 𝒫_{3/4}^{⊗(n−1)} at one copy; the operator form of the peeling is equivalent to real 2-positivity | identity **proved**; the bounds numerical (n ≤ 4); level 2 does not certify the first open vertex case |
+| TC | λ_min(𝒫_{3/4}^{⊗n}(yyᵀ)) ≥ ∏_s(¼ + ½τ_s(y)), τ_s(y) the least eigenvalue of y's one-copy marginal; it contains QT at 3/4 | **open** (n = 2, 3 proved: 7.28, 7.29; every n against product test vectors: 7.30; n = 4 adversarial searches) |
 
 Section 6 was about 2-positivity. Here we look at positivity itself, copy by copy. Write
 
@@ -335,7 +344,11 @@ Solving this program (floating point, HiGHS) gives the decomposability threshold
 | decomposable from a = | 0.5 | 0.6703 | 0.7562 | 0.8069 | 0.8401 | 0.8637 | 0.8947 | 0.9142 | 0.9276 |
 | a_n | 0.5 | 0.6036 | 0.6468 | 0.6704 | 0.6853 | 0.6954 | 0.7085 | 0.7165 | 0.7219 |
 
-The thresholds increase toward 1. So from n = 3 on, 𝒫_{3/4}^{⊗n} is not decomposable, and a proof of tensor-stable
+The thresholds increase toward 1, and they have to. A map all of whose tensor powers are decomposable is completely
+positive or completely copositive [A. Müller-Hermes, J. Math. Phys. 59, 102203 (2018), arXiv:1805.11570, Theorem 1.1],
+and 𝒫_a is neither for a < 1. (Müller-Hermes's Section 4 also reduces decomposability of tensor products of
+Werner–Holevo maps to a linear program, by the same twirling argument as here.) So from n = 3 on, 𝒫_{3/4}^{⊗n} is not
+decomposable, and a proof of tensor-stable
 positivity at any a < 1 cannot go through decomposability of the tensor powers. Nor can it go through the step of
 Proposition M(4), which gives positivity of 𝒫_a^{⊗n} from 2-positivity of 𝒫_a^{⊗(n−1)}. The program with a qubit
 ancilla shows that 𝒫_a^{⊗k} ⊗ id₂ is decomposable only at a = 1, for every k ≤ 6. So that 2-positivity is never
@@ -1090,6 +1103,58 @@ as in Proposition 7.8, with Proposition 7.28 applied to the conditional vectors,
 9/256; the true value is 0.0774 (`code/tc3/tc3_numerics.py`). We have not tried four copies. There Z₁ would have about
 3·10⁵ block coordinates.
 
+**Proposition 7.30 (the bonus against product test vectors, every n).** Let ρ be any state on (C³)^{⊗n}, pure or mixed,
+with one-copy reduced states ρ_s and τ_s = λ_min(ρ_s). For every real unit product vector v = v₁ ⊗ ⋯ ⊗ v_n,
+
+    ⟨v|𝒫_{3/4}^{⊗n}(ρ)|v⟩ ≥ (¾)^n 3^{−Σ_s⟨v_s|ρ_s|v_s⟩} ≥ 4^{−n} 3^{2Σ_sτ_s} ≥ ∏_s (¼ + ½τ_s).
+
+In particular Conjecture TC holds, for mixed inputs too, whenever the least eigenvalue of 𝒫_{3/4}^{⊗n}(ρ) is attained
+at a real product vector. This covers every ρ that is diagonal in a real product basis, because the output is then
+diagonal in the same basis.
+
+*Proof.* 𝒫_{3/4} is self-adjoint for the Hilbert–Schmidt inner product, so the value is Tr ρ ⊗_s 𝒫_{3/4}(v_s v_sᵀ),
+and 𝒫_{3/4}(v_s v_sᵀ) = ¾(I − ⅔ v_s v_sᵀ) = ¾·3^{−v_s v_sᵀ}. The projectors v_s v_sᵀ act on different copies and
+commute, so the product is (¾)^n 3^{−N} with N = Σ_s v_s v_sᵀ. Jensen's inequality for the distribution of N in the
+state ρ gives Tr ρ 3^{−N} ≥ 3^{−Tr ρN}, and Tr ρN = Σ_s ⟨v_s|ρ_s|v_s⟩ ≤ Σ_s λ_max(ρ_s) ≤ Σ_s (1 − 2τ_s). Finally
+3^{2τ} ≥ 1 + 2τ. ∎
+
+The exponential form does not extend to entangled test vectors. At the singlet pair of Observation 7.26, where all
+one-copy marginals are I/3, the value (151 − √6805)/1536 ≈ 0.0446 is below 4^{−4}3^{8/3} ≈ 0.073. Padding that pair with
+real products shows that a bound 4^{−n} exp(κ Σ_s τ_s), for all inputs and test vectors, needs
+κ ≤ ¾ log((151 − √6805)/6) ≈ 1.83, while near thin inputs κ ≥ 2 would be needed to give Conjecture TC. So a failure of
+Conjecture TC needs an entangled test vector and an input with coherences in every product basis, and the coherent
+terms have to be controlled with their signs.
+
+**Remark 7.31 (peeling one copy).** Write D(X) = Tr(X)I, so that 𝒫_{3/4} = ¼D + 𝒫_{1/2}. For every state ρ and every
+copy s,
+
+    𝒫_{3/4}^{⊗n}(ρ) = ¼ I_s ⊗ 𝒫_{3/4}^{⊗(n−1)}(Tr_s ρ) + (𝒫_{1/2}^{(s)} ⊗ 𝒫_{3/4}^{⊗(n−1)})(ρ),
+
+where 𝒫_{1/2}^{(s)} acts on copy s and 𝒫_{3/4}^{⊗(n−1)} on the others.
+(i) The operator inequality 𝒫_{3/4}^{⊗n}(ρ) ⪰ ¼ I_s ⊗ 𝒫_{3/4}^{⊗(n−1)}(Tr_s ρ) for all ρ is positivity of
+𝒫_{1/2} ⊗ 𝒫_{3/4}^{⊗(n−1)}. By Proposition 7.20 it is equivalent to real 2-positivity of 𝒫_{3/4}^{⊗(n−1)}, and
+tensor-stable positivity is equivalent to it holding for every n. Iterated, it gives
+λ_min(𝒫_{3/4}^{⊗n}(ρ)) ≥ 4^{−k} λ_min(𝒫_{3/4}^{⊗(n−k)}(ρ_K)) for every set K of n − k copies.
+(ii) Conjecture TC for mixed inputs at n copies follows from Conjecture TC for mixed inputs at n − 1 copies, applied to
+Tr_s ρ, together with the bound λ_min((𝒫_{1/2}^{(s)} ⊗ 𝒫_{3/4}^{⊗(n−1)})(ρ)) ≥ ½τ_s ∏_{t≠s}(¼ + ½τ_t) at one suitable
+copy s. No thickness is lost, because the one-copy marginals of Tr_s ρ are those of ρ. The two factors add up to
+¼ + ½τ_s, which is where the coefficient ½ in Conjecture TC comes from.
+(iii) Numerically (adversarial searches over mixed states, floating point, `code/peeling/`): no violation of
+Conjecture TC for mixed inputs was found at n = 2, 3, 4. The smallest ratios found are 1, 1 and 1.22; at n = 2, 3 the
+searches end at pure products, where the ratio is exactly 1, and at n = 4 the search is weaker. The bound in (ii) holds
+at n = 2, 3 when s is chosen well (smallest ratios found 1.090 and 1.239), but fails for a fixed copy (0.947 at n = 2).
+The stronger peeling λ_min(𝒫_{3/4}^{⊗n}(ρ)) ≥ (¼ + ½τ_s) λ_min(𝒫_{3/4}^{⊗(n−1)}(Tr_s ρ)) fails (0.907 at n = 2, and
+0.954 even for the best copy). So an induction may carry the thickness of the marginals, but not the least eigenvalue
+of the marginal's output.
+(iv) With every τ_s = 0, the bound in (ii) contains the vertex positivity of (i). Its first open case, 2-positivity of
+𝒫_{3/4}^{⊗2}, is not certified by the second level of the hierarchy even when the vertex copy is restricted to a plane.
+For inputs and outputs in a plane, 𝒫_{1/2} acts as ½J Sym₂(·) Jᵀ, with J the rotation by a right angle and
+Sym₂(X) = (X + Xᵀ)/2. The real
+level-2 relaxation of Sym₂ ⊗ 𝒫_{3/4}^{⊗2} has best value −8.3·10⁻³, and that of 𝒫_{1/2} ⊗ 𝒫_{3/4}^{⊗2} on the full qutrit
+has −4.6·10⁻³ (the complex value quoted after Proposition 7.20 is −4.7·10⁻³); with one qutrit copy both are 0 to solver
+accuracy (`code/peeling/vertex_level2.py`). So the reduction does not make Conjecture TC easier than tensor-stable
+positivity. It moves the whole difficulty into the vertex map.
+
 ## Checks
 
 `code/route_checks.py` (`logs/route_checks.log`), written from the definitions (floating point to 10⁻¹⁰ unless marked
@@ -1183,7 +1248,10 @@ checks Observation 7.26 (exact identities and Hessians), the singlet minima and 
 coefficients and searches for violations of Conjecture TC at three and four copies (`logs/thickness_bonus.log`). `code/tc3/` proves Theorem 7.29: the certificate is
 `code/tc3/cert/tc3_certificate.json.xz`, `verify_tc3.py` is the separately written exact verifier, `check_float.py` the check
 at random points, and `run_checks.sh` reruns everything (`code/tc3/README.md`, logs in `code/tc3/logs/`). `code/planar_minimum.py n starts seed` gives the numerics of Conjecture PM
-(`logs/planar_minimum_n3.log`, `logs/planar_minimum_n4.log`).
+(`logs/planar_minimum_n3.log`, `logs/planar_minimum_n4.log`). `code/peeling/` checks Proposition 7.30 at random and
+locally optimised product test vectors (`product_probe.py`), runs the searches of Remark 7.31 (`peel_search.py`) and
+the level-2 relaxations of its part (iv) (`vertex_level2.py`); logs in `code/peeling/logs/`, and `run_checks.sh` reruns
+all of them in a few minutes.
 
 Python with NumPy, SciPy (HiGHS) and SymPy; `code/dps/` and `code/symmetric_sector/` also use python-flint, and CVXPY
 with Clarabel and SCS for the semidefinite programs.

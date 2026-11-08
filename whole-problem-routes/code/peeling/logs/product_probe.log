@@ -1,0 +1,25 @@
+n = 1, random rank 1                   : min over product probes of value / TC bound = 1.000000
+n = 1, random rank 2                   : min over product probes of value / TC bound = 1.209300
+n = 1, random rank 3                   : min over product probes of value / TC bound = 1.136536
+n = 1, near product                    : min over product probes of value / TC bound = 1.005138
+n = 2, random rank 1                   : min over product probes of value / TC bound = 2.733442
+n = 2, random rank 2                   : min over product probes of value / TC bound = 2.373399
+n = 2, random rank 9                   : min over product probes of value / TC bound = 1.891209
+n = 2, near product                    : min over product probes of value / TC bound = 1.351594
+n = 2, max entangled pair (x) product  : min over product probes of value / TC bound = 1.800000
+n = 3, random rank 1                   : min over product probes of value / TC bound = 3.771494
+n = 3, random rank 2                   : min over product probes of value / TC bound = 2.856206
+n = 3, random rank 27                  : min over product probes of value / TC bound = 2.855926
+n = 3, near product                    : min over product probes of value / TC bound = 2.486854
+n = 3, max entangled pair (x) product  : min over product probes of value / TC bound = 1.800000
+n = 4, random rank 1                   : min over product probes of value / TC bound = 3.974747
+n = 4, random rank 2                   : min over product probes of value / TC bound = 3.987597
+n = 4, random rank 81                  : min over product probes of value / TC bound = 3.921071
+n = 4, near product                    : min over product probes of value / TC bound = 5.182852
+n = 4, max entangled pair (x) product  : min over product probes of value / TC bound = 1.800000
+n = 5, random rank 1                   : min over product probes of value / TC bound = 5.982139
+n = 5, random rank 2                   : min over product probes of value / TC bound = 5.330432
+n = 5, random rank 243                 : min over product probes of value / TC bound = 5.425368
+n = 5, near product                    : min over product probes of value / TC bound = 7.259832
+n = 5, max entangled pair (x) product  : min over product probes of value / TC bound = 1.800002
+PASS

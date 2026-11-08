@@ -122,7 +122,9 @@ dimension two for every n. A failure would need six or more copies at which both
 support. The following do not reach every n (added 7 November 2026).
 
 - **Decomposability, and every certificate that unrolls into it.** 𝒫_a^{⊗n} is not decomposable from n = 3 for any
-  a < 0.7562 (Proposition 7.3). Suppose a certificate writes C^{⊗n} as local compressions of C^{⊗m} ⊗ (separable),
+  a < 0.7562 (Proposition 7.3), and for every a < 1 some tensor power is not decomposable, by a theorem of Müller-Hermes
+  (a map all of whose tensor powers are decomposable is completely positive or completely copositive; J. Math. Phys.
+  59, 102203 (2018), arXiv:1805.11570). Suppose a certificate writes C^{⊗n} as local compressions of C^{⊗m} ⊗ (separable),
   with m < n, plus decomposable terms. Substituting the certificates of the smaller powers repeatedly ends at
   C^{⊗2}, which is decomposable, so C^{⊗n} would be decomposable. This rules out "thin reductions": a compression onto
   a plane at one copy is a separable factor times C^{⊗(n−1)} (Lemma 7.7).
@@ -158,6 +160,19 @@ support. The following do not reach every n (added 7 November 2026).
   linear bonus, like that of Theorem 7.29, cannot give TC from four copies on; there the product form has to be
   certified directly. Without a variable for the least eigenvector, simple linear stand-ins for τ_s fail already at two
   copies.
+
+- **Exponential bonuses and product test vectors (added 7 November 2026).** Against real product test vectors the
+  bonus holds for every n and every input, in the stronger form 4^{−n}3^{2Σ_sτ_s} (Proposition 7.30, by Jensen's
+  inequality). It cannot be extended to entangled test vectors in that form: the singlet pair of Observation 7.26 gives
+  (151 − √6805)/1536 ≈ 0.0446 < 4^{−4}3^{8/3}, and no bound 4^{−n}exp(κΣ_sτ_s) with a single κ gives Conjecture TC from
+  four copies on (κ ≤ 1.83 there, κ ≥ 2 needed near thin inputs).
+- **Peeling the least eigenvalue (added 7 November 2026).** Splitting 𝒫_{3/4} = ¼D + 𝒫_{1/2} at one copy reduces
+  Conjecture TC for mixed inputs exactly to a bound on the vertex map 𝒫_{1/2} ⊗ 𝒫_{3/4}^{⊗(n−1)} at a suitable copy
+  (Remark 7.31). That bound fails at a fixed copy (0.947 at n = 2), and the simpler bound with the least eigenvalue of the
+  marginal's output in place of the thickness product fails even at the best copy (0.954 at n = 2). With all τ_s = 0 the
+  vertex bound is real 2-positivity of 𝒫_{3/4}^{⊗(n−1)}, which is equivalent to the whole route; its first open case
+  (two copies) is not certified by the second level of the hierarchy, even with the vertex copy restricted to a plane
+  (−8.3·10⁻³; full qutrit −4.6·10⁻³).
 
 What a proof of this route needs is a global inequality: some way to compare the value at a thick minimiser with the
 values of its contractions or compressions that does not hold trivially at every critical point. None of the tools
