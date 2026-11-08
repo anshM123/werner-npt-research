@@ -1,0 +1,6 @@
+(a) 4000 random operators of rank r <= 6: max [LHS - RHS of (9.4)]/||C||^2 = -2.641e-03
+    equality families P (x) |a><b| (a orthogonal to b) and X (x) |a><a| (X >= 0), r = 1, 2, 3: max relative defect 1.0e-15
+(b) 1500 random rank-two operators, random t in [0, 1/2]: min [Delta_2 - t(1/2 - t)(S^2 - T)]/||C||^2 = 1.118e-04
+(c) smallest eigenvalue of B minus (1-t)^(m-1)/2: max |.| = 1.7e-15;  crossed identity: max error 5.0e-16
+(d) 300 operators of Proposition 29 (2 to 4 sites, local dimensions 2 and 3): min (Delta_d - gamma Delta_d')/||C||^2 = 1.570e-05
+    sharpness: Delta_d / Delta_d' on (l1|00><00| - l2|11><11|) (x) |0><0| at t = 0.4: 0.100000000000  (gamma = 0.09999999999999998)

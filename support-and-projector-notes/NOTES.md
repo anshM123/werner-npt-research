@@ -41,10 +41,15 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   2^n q_n(C) ≥ (σ_1 − σ_2)² (Conjecture TN_n). It is attained for every ratio of singular values, implies the endpoint
   and the sharp curve, and forces every zero to have equal singular values (all known zeros do); random-start
   minimisation finds no violation for n ≤ 5 or with other local dimensions, and it is proved for every n when a
-  product vector is a common left and right singular vector (Proposition 26). Two natural inductions on it fail
+  product vector is a common left and right singular vector (Proposition 26). At two copies it holds for every
+  rank-two operator in all local dimensions, by a refined partial-trace inequality (Proposition 28, from an
+  independent audit). Two natural inductions on it fail
   (slice by slice, and through the cross term of two orthogonal pure states). Its qualitative part already suffices:
   if every rank-two zero has equal singular values, the endpoint holds (Corollary 25); all known zeros do. In a
-  purified form with a reference qubit, its one-copy case is Uhlmann's theorem.
+  purified form with a reference qubit, its one-copy case is Uhlmann's theorem. A sharp merging budget (Conjecture FB:
+  merging two sites loses at most the factor (1 − 2t)/2 of the gap) would give it for every n, and at any t in
+  (1/3, ½) NPT bound entanglement; FB is proved with two sites (Proposition 28) and for every number of sites on the
+  class of Proposition 26 (Proposition 29), and is open from three sites on.
 
 **None of this settles the all-copy problem.**
 
@@ -905,6 +910,7 @@ The general form matters for an induction on n: the slices and partial traces me
 is tight on a large set. What is known:
 
 - At n = 1 it is |Tr C| ≤ ‖C‖_1.
+- At n = 2 it holds for every rank-two operator, in all local dimensions (Proposition 28 below).
 - TN_n implies EP_n and the sharp curve of Section 8: for rank two, ‖C‖_1² ≤ 2‖C‖_F², so the right side of (9.1) is at
   least (1 − 2t)(1 − t)^{n−1} ‖C‖_F². At t = 1/3 it reads (3/2)^n ‖P_⊥^{⊗n} C‖_F² ≥ ‖C‖_F² − σ_1σ_2.
 - It is attained for every ratio σ_2/σ_1. If X ≥ 0 has rank two and a is a unit vector, then at
@@ -1033,6 +1039,64 @@ bracket equals 4 Tr[(C ⊗ C)(P_A ⊗ P_A)] by P_A = (I − F)/2 at each copy. �
 From three copies on, the rank matters even for positive operators: the n = 3 case of (9.3) is negative for some
 positive C of rank three (the smallest value found is −(8/9)(Tr C)²), while for rank two none was found.
 
+The two-copy case does not need positivity. The following is from an independent audit of this repository; it
+refines the partial-trace inequality of Fraser, Huber, Pozsgay and Vona [FHPV] by keeping a variance term that their
+balanced-decomposition argument drops. We checked the proof and give it in our words; we make no claim about whether
+(9.4) appears elsewhere.
+
+**Proposition 28 (two copies, every operator).** Let C act on C^{d_1} ⊗ C^{d_2} and have rank at most r. Then
+
+    ‖Tr_1 C‖_F² + ‖Tr_2 C‖_F² ≤ ‖C‖_F² + (1 − 1/r)‖C‖_1² + |Tr C|²/r.                                    (9.4)
+
+Both coefficients are sharp: P ⊗ |a⟩⟨b| (P a projector of rank r, a ⊥ b) and X ⊗ |a⟩⟨a| (X ≥ 0 of rank at most r)
+give equality. For r = 2 and 0 ≤ t ≤ ½,
+
+    q_2(t, C) − (1 − t)(‖C‖_F² − t‖C‖_1²) ≥ t(½ − t)(‖C‖_1² − |Tr C|²).                                  (9.5)
+
+So TN_2 holds for every rank-two operator in all local dimensions. At the endpoint 4q_2(C) ≥ (σ_1 − σ_2)², and every
+rank-two zero of q_2 has σ_1 = σ_2.
+
+*Proof.* From a singular value decomposition write C = Σ_{i=1}^r x_i y_i^* with x_i = √σ_i u_i and y_i = √σ_i v_i.
+Replacing the columns (x_i) and (y_i) by the same unitary combination does not change C and keeps the two Gram
+matrices equal; call the common one G = (g_ij), with g_ij = ⟨x_i, x_j⟩ = ⟨y_i, y_j⟩. Choose the combination so that
+y_i^* x_i = Tr C/r for every i. This is possible because every square matrix is unitarily similar to one with constant
+diagonal: the mean of the eigenvalues lies in the numerical range, so some unit vector has that expectation, and one
+repeats on its orthogonal complement. Put δ_i = g_ii. Then Σ_i δ_i = Tr G = ‖C‖_1 and
+‖C‖_F² = Tr G² = Σ_i δ_i² + 2Σ_{i<j}|g_ij|². With Φ(Z) = (Tr_1 Z, Tr_2 Z) we use two facts.
+- ‖Φ(uv^*)‖² ≤ ‖u‖²‖v‖² + |v^*u|². In the crossed form the difference is ⟨u ⊗ v|(I − F_1)(I − F_2)|u ⊗ v⟩ ≥ 0.
+- ⟨Φ(uv^*), Φ(st^*)⟩ = ⟨Φ(tv^*), Φ(su^*)⟩. For every set K of sites, ⟨Tr_K(uv^*), Tr_K(st^*)⟩ and
+  ⟨Tr_{K^c}(tv^*), Tr_{K^c}(su^*)⟩ are the same contraction of the four vectors, and at two sites the complement
+  exchanges the two single sites.
+
+The diagonal terms give ‖Φ(x_iy_i^*)‖² ≤ δ_i² + |Tr C|²/r². For i ≠ j, crossing and then Cauchy–Schwarz give
+|⟨Φ(x_iy_i^*), Φ(x_jy_j^*)⟩| = |⟨Φ(y_jy_i^*), Φ(x_jx_i^*)⟩| ≤ δ_iδ_j + |g_ij|², by the first fact applied to y_jy_i^*
+and to x_jx_i^*. Adding up,
+
+    ‖Φ(C)‖² ≤ ‖C‖_1² + |Tr C|²/r + 2Σ_{i<j}|g_ij|² = ‖C‖_F² + (1 − 1/r)‖C‖_1² + |Tr C|²/r − V,
+
+with V = Σ_i δ_i² − ‖C‖_1²/r ≥ 0. For (9.5), write N = ‖C‖_F², S = ‖C‖_1, T = |Tr C|² and P = ‖Φ(C)‖². Then
+q_2(t, C) − (1 − t)(N − tS²) = t[N − P + tT + (1 − t)S²], and (9.4) at r = 2 says P ≤ N + S²/2 + T/2. ∎
+
+[FHPV] prove ‖Tr_1 C‖_F² + ‖Tr_2 C‖_F² ≤ r‖C‖_F² + |Tr C|²/r for rank at most r; at r = 2 this is the two-copy
+endpoint q_2 ≥ 0 in every local dimension. (9.4) is sharper because ‖C‖_1² ≤ r‖C‖_F², and at the endpoint with r = 2
+it is exactly TN_2. Earlier in these notes TN_2 was proved only for positive operators (Proposition 24) and for real
+skew ones (the rectangular commutator inequality below). (9.5) is also the two-site case of the merging budget below. `code/trace_norm/refined_partial_trace.py` checks (9.4) on 4000 random operators of
+rank up to six, its two equality families, and (9.5) on random rank-two operators (log
+`logs/trace_norm/refined_partial_trace.log`).
+
+*More sites.* The n-site version of (9.4) at rank two,
+
+    Σ_s ‖Tr_s C‖_F² ≤ (n − 1)‖C‖_F² + ½‖C‖_1² + ½|Tr C|²,                                               (9.4′)
+
+holds for rank one: there it follows from Σ_s ‖Tr_s(uv^*)‖² ≤ (n − 1)‖u‖²‖v‖² + |v^*u|², since (n − 1)I + F − Σ_s F_s
+has the eigenvalue 2|T| − 1 + (−1)^{|T|} ≥ 0 on the sector antisymmetric exactly at the copies in T. For rank two we
+find no violation: random-start minimisation (`code/trace_norm/multisite_refined.py`, log
+`logs/trace_norm/multisite_refined.log`, 10 runs each) on (3,3,3), (3,3,3,3), (2,2,2), (2,2,2,2), (2,2,2,2,2), (4,4,4)
+and (2,3,4) ends at equality to rounding in every case. Equality holds on the product family X ⊗ |a⟩⟨a|^{⊗(n−1)} with X ≥ 0.
+TN_n to first order in t at t = 0 is the weaker Σ_s ‖Tr_s C‖² ≤ (n − 1)‖C‖² + ‖C‖_1², so (9.4′) is a separate
+conjecture, not a consequence of TN_n. The proof above does not extend to it as it stands: crossing sends a single
+site to the complement of that site.
+
 *Merging two copies (a sharp budget below the endpoint).* Allow arbitrary local dimensions, write
 Δ_d(t, C) = q_d(t, C) − (1 − t)^{m−1}(‖C‖_F² − t‖C‖_1²) for the gap in (9.1) on m sites of dimensions d = (d_1, …, d_m),
 and let d′ = (d_1 d_2, d_3, …, d_m) be the same system with the first two sites merged into one.
@@ -1043,7 +1107,9 @@ Merging the sites one at a time gives Δ_{(3,…,3)} ≥ ((1 − 2t)/2)^{n−1} 
 Δ_{(3^n)}(t, C) = t(‖C‖_1² − |Tr C|²) ≥ 0. So FB(t) for the dimension patterns (3^k, 3, …, 3) implies TN_n(t) for every n,
 and FB(t) at a single t in (1/3, ½) would therefore give n-copy undistillability of the Werner state at t for every n,
 that is, NPT bound entanglement. With two sites and nothing else, FB(t) is exactly the two-copy endpoint inequality
-2‖Tr_1 C‖² + 2‖Tr_2 C‖² ≤ 2‖C‖² + ‖C‖_1² + |Tr C|² in those dimensions, for every t. The constant is sharp:
+2‖Tr_1 C‖² + 2‖Tr_2 C‖² ≤ 2‖C‖² + ‖C‖_1² + |Tr C|² in those dimensions, for every t, so it holds by Proposition 28:
+Δ_{(d_1,d_2)} − ((1 − 2t)/2)Δ_{(d_1d_2)} = (t/2)(2‖C‖_F² + ‖C‖_1² + |Tr C|² − 2‖Tr_1 C‖_F² − 2‖Tr_2 C‖_F²) ≥ 0. The
+constant is sharp:
 C = P ⊗ |0⟩⟨1| gives Δ_{(3,3)} = t(2 − 4t) and Δ_{(9)} = 4t. Random-start minimisation of Δ_d − γΔ_{d′}
 (`code/trace_norm/fusion_budget.py`, log `logs/trace_norm/fusion_budget.log`) finds no violation for γ = (1 − 2t)/2 at
 (3,3,3) → (9,3) (t = 0.4 and 0.45), (9,3,3) → (27,3) and (3,3,3,3) → (9,3,3) (t = 0.4), with equality reached at
@@ -1053,8 +1119,8 @@ violation at n = 6, 8 (t = 0.4) and n = 10 (t = 0.45) with bond dimension two, o
 every run ends on the equality line Δ_d = ((1 − 2t)/2) Δ_{d′}. At those equality points the operator is a
 rank-two operator on qubit planes of the two merged copies, for example λ_1|00⟩⟨00| − λ_2|11⟩⟨11|, times a rank-one
 product on the remaining copies: the budget is tight exactly where the two-copy endpoint inequality is tight on the merged
-pair. FB(t) is still an m-site statement (the other sites enter through Φ_t^{⊗(m−2)}); we do not have a proof of it, even
-with two sites for general rank-two C.
+pair. From three sites on FB(t) is open: the other sites enter through Φ_t^{⊗(m−2)}, and the crossing step in the
+proof of Proposition 28 does not survive them (see the crossed form below).
 
 **Lemma 27 (merging identity).** With ρ = id − Tr(·) I on a site, for every C and every t,
 
@@ -1077,7 +1143,7 @@ the purified form at the scale of the product floor. We checked the lemma on ran
 (3,3,9), (2,2,4), (3,9,3), (2,4,4), (4,2,3), and at t = 0.34, 0.37, 0.49 for (3,3,3), found no violation; every run ended
 on the equality line.
 
-For real skew operators the two-site case is proved. If J = xyᵀ − yxᵀ with x, y real on R^{d_1} ⊗ R^{d_2}, then Tr J = 0,
+For real skew operators there is a second proof of the two-site case. If J = xyᵀ − yxᵀ with x, y real on R^{d_1} ⊗ R^{d_2}, then Tr J = 0,
 ‖J‖_1² = 2‖J‖_F² = 4h with h = ‖x‖²‖y‖² − ⟨x, y⟩², and the two partial traces are, up to sign, XYᵀ − YXᵀ and XᵀY − YᵀX
 for the matrices X, Y of x, y. An independent audit proves the rectangular commutator inequality
 
@@ -1091,6 +1157,57 @@ negative real skew rank-two operator after r added flag copies. Its error terms 
 on the Werner line (we redid the flag computation at general t), so that step works for every t ≤ ½; the realification
 step of `real-balanced-reduction/` was stated at the endpoint and we have not rechecked it below. With three or more sites
 the pairwise commutator bounds alone do not give FB or TN for real skew J.
+
+*The merging budget in the crossed form.* The following formulation and Proposition 29 are from the same independent
+audit as Proposition 28; we checked both. Put γ = (1 − 2t)/2 and
+
+    W_b = (I − tF_1)(I − tF_2) − γ(I − tF_1F_2) = ½(I − tF_1F_2) + 4tP_A^{(1)}P_A^{(2)},   B = W_b ⊗ ⊗_{s≥3}(I − tF_s).
+
+W_b has the eigenvalues (1 − t)/2, (1 + t)/2 and (1 + 7t)/2 on the sectors where both, one or neither of the first two
+sites is symmetric, so B ≥ λI with λ = (1 − t)^{m−1}/2. For C = σ_1u_1v_1^* + σ_2u_2v_2^* with orthonormal pairs,
+
+    Δ_d − γΔ_{d′} = σ_1²D_1 + σ_2²D_2 + 2σ_1σ_2(Re c + η),
+
+with D_i = ⟨u_i ⊗ v_i|B|u_i ⊗ v_i⟩ − λ ≥ 0, c = ⟨u_1 ⊗ v_2|B|u_2 ⊗ v_1⟩ and η = t(1 − t)^{m−2}/2. Since the ratio
+σ_2/σ_1 and the phase of u_2 are free, FB(t) is equivalent to
+
+    |c| ≤ η + (D_1D_2)^{1/2}   for all orthonormal pairs (u_1, u_2), (v_1, v_2),                         (9.6)
+
+which has the shape of (9.2). The crossing that proves Proposition 28 does not extend. In Σ_K (−t)^{|K|}⟨Tr_K(·), Tr_K(·)⟩
+crossing sends K to its complement, so on the sites beyond the first two the crossed weights are (−t)^{|R|−|K|}. They
+form the metric ⊗_s (D_s − t·id) with D_s(X) = Tr_s(X) I, which is negative (−t) already on a single off-diagonal matrix
+unit, so Cauchy–Schwarz is not available. This shows that the direct lift fails, not that FB fails.
+
+**Proposition 29 (the merging budget on the class of Proposition 26).** Let a be a unit product vector, u and v unit
+vectors orthogonal to a, σ_1, σ_2 ≥ 0 and C = σ_1e^{iφ}|a⟩⟨a| + σ_2uv^*. Then FB(t) holds for C for every number of
+sites, all local dimensions and 0 ≤ t ≤ ½.
+
+*Proof.* Take a = |0…0⟩ and use (9.6) with u_1 = e^{iφ}a, v_1 = a, u_2 = u, v_2 = v. Since a ⊗ a is symmetric at every
+site, D_1 = 0, and we must show |c| ≤ η. At one site, ⟨0 ⊗ y|(αI + βF)|x ⊗ 0⟩ = αδ_{x0}δ_{y0} + βδ_{xy} for basis vectors
+x, y, so c = e^{−iφ} Σ_w v̄_w u_w b(w), summed over basis words w, where b(w) is a
+product of local factors: on the first two sites (1 − t)/2 if both digits are zero, −t/2 if exactly one is, t/2 if
+neither is; on every other site 1 − t or −t according as the digit is zero or not. The word 0…0 does not occur, because
+u ⊥ a. If the first two digits are zero, another digit is not, and |b(w)| ≤ ((1 − t)/2) t (1 − t)^{m−3} = η; otherwise
+|b(w)| ≤ (t/2)(1 − t)^{m−2} = η (we used t ≤ 1 − t). Hence |c| ≤ η Σ_w |u_w||v_w| ≤ η. ∎
+
+The constant is attained for every m: (λ_1|00⟩⟨00| − λ_2|11⟩⟨11|) ⊗ |0⟩⟨0|^{⊗(m−2)} has
+Δ_d = 2tλ_1λ_2(1 − 2t)(1 − t)^{m−2} and Δ_{d′} = 4tλ_1λ_2(1 − t)^{m−2}. Proposition 29 strengthens Proposition 26 from
+TN to the merging budget on the same class; it does not reach entangled singular vectors, where D_1 and D_2 are both
+positive and correlated with c. `code/trace_norm/refined_partial_trace.py` checks the eigenvalue floor and the identity
+for Δ_d − γΔ_{d′} (to 5·10^{−16}), Proposition 29 on 300 random operators with two to four sites, and the sharp example.
+
+*A weaker comparison would do.* FB(t) asks for more than is needed. At one t in (1/3, ½) it is enough that
+
+    q_d(t, C) ≥ γ q_{d′}(t, C)                                                                          (9.7)
+
+for every rank-two C and the patterns d = (3^k, 3, …, 3): merging repeatedly gives
+q_n(t, C) ≥ γ^{n−1} q_{(3^n)}(t, C) ≥ (1 − 2t)γ^{n−1}‖C‖_F² > 0, with q_{(3^n)} the form on one site of dimension 3^n. At t = 2/5, for example, this would make
+ρ = (5I − 2F)/39 undistillable from any number of copies, while its partial transpose has the eigenvalue −1/39. With two
+sites (9.7) holds with room, q_2 − γq_1 ≥ γ‖C‖_F² + (t/2)(σ_1 − σ_2)². Even the approximate budget
+Δ_d − γΔ_{d′} ≥ −γ(1 − t)^{m−2}‖C‖_F² would do: it is equivalent to q_d ≥ γq_{d′} + (t/2)(1 − t)^{m−2}(σ_1 − σ_2)², which
+implies (9.7). By Lemma 27, (9.7) says ½q_{d′} + t⟨C, ρ_1 ⊗ ρ_2 ⊗ Φ_t^{⊗(m−2)}C⟩ ≥ 0. A proof for fixed m, for product
+singular vectors, or for finitely many merged dimensions does not complete this route; it needs an estimate uniform in
+the number of sites.
 
 *What does not work.*
 - Slice by slice. On local qubit planes the form is exactly self-similar: with M = CJ^{⊗n}, q_n(C) = ‖P_S^{⊗n} M‖_F²,
@@ -1132,9 +1249,8 @@ Every run ends at equality to rounding, mostly on the product family above (belo
 evaluation, objective divided by σ_1σ_2 so that the search stays away from rank one; logs `logs/trace_norm/mps_*.log`)
 every run ends either on the product family with σ_1 = σ_2 (t = 0.45; n = 8, 12, 16 at bond dimension two and
 n = 8, 12 at bond dimension three) or at a zero with σ_1 = σ_2 (t = ½; the same sizes, 40 runs in all); the differences are below 10^{−9}‖C‖_F² and none is
-negative. This is evidence, not a proof. For operators that are not
-positive, TN_n is open for every n ≥ 2 (at n = 2 and t = ½ it says 2‖Tr_1 C‖_F² + 2‖Tr_2 C‖_F² ≤ 2‖C‖_F² + ‖C‖_1² +
-|Tr C|², an inequality we have not proved for general rank-two C).
+negative. This is evidence, not a proof. TN_2 holds for every rank-two operator (Proposition 28); for operators
+that are not positive, TN_n is open for every n ≥ 3.
 
 ## Code
 
@@ -1182,7 +1298,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   local qubits), `tn_mps.py n chi t runs seed mode` (matrix-product inputs, any n), `product_singular_vector.py
   n t runs` (the identity in the proof of Proposition 26, and the bound on that class).
 - `code/trace_norm/fusion_budget.py t gamma runs seed d_1 ... d_m`: Conjecture FB (merging the first two sites). `fusion_budget_mps.py n chi t gamma runs seed`: the
-  same on matrix-product inputs.
+  same on matrix-product inputs. `refined_partial_trace.py [seed]`: Propositions 28 and 29 and the crossed form of the
+  merging budget. `multisite_refined.py runs seed d_1 ... d_n`: the n-site inequality (9.4′).
 
 ## Local positivity at the signed GHZ zero, every n (added 8 November 2026)
 
@@ -1204,6 +1321,8 @@ local statement at one zero family and says nothing about thick operators.
 ## References
 
 - [BCR] J. Bochnak, M. Coste, M.-F. Roy, Real Algebraic Geometry, Springer (1998).
+- [FHPV] T. C. Fraser, F. Huber, B. Pozsgay, I. Vona, On the two-copy distillability of Werner states and a new partial
+  trace inequality, arXiv:2607.24309.
 - [T1] T. S. Tomar, Undistillability of Werner states from three, four and five copies, Zenodo 23718035 (2026).
 - [T2] T. S. Tomar, Equality cases and every-copy results for the Werner endpoint inequality, Zenodo 23718037 (2026).
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.

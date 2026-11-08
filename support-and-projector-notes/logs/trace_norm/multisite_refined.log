@@ -1,0 +1,7 @@
+dims=[3, 3, 3] runs=10 seed=5: min [(n-1)|C|^2 + |C|_1^2/2 + |TrC|^2/2 - sum_s |Tr_s C|^2]/|C|^2 = 3.972e-15   (s1 s2/|C|^2 there: 0.079)
+dims=[3, 3, 3, 3] runs=10 seed=5: min [(n-1)|C|^2 + |C|_1^2/2 + |TrC|^2/2 - sum_s |Tr_s C|^2]/|C|^2 = 5.751e-10   (s1 s2/|C|^2 there: 0.000)
+dims=[2, 2, 2] runs=10 seed=5: min [(n-1)|C|^2 + |C|_1^2/2 + |TrC|^2/2 - sum_s |Tr_s C|^2]/|C|^2 = -4.096e-16   (s1 s2/|C|^2 there: 0.269)
+dims=[2, 2, 2, 2] runs=10 seed=5: min [(n-1)|C|^2 + |C|_1^2/2 + |TrC|^2/2 - sum_s |Tr_s C|^2]/|C|^2 = 6.524e-16   (s1 s2/|C|^2 there: 0.498)
+dims=[2, 2, 2, 2, 2] runs=10 seed=5: min [(n-1)|C|^2 + |C|_1^2/2 + |TrC|^2/2 - sum_s |Tr_s C|^2]/|C|^2 = 5.614e-12   (s1 s2/|C|^2 there: 0.323)
+dims=[4, 4, 4] runs=10 seed=5: min [(n-1)|C|^2 + |C|_1^2/2 + |TrC|^2/2 - sum_s |Tr_s C|^2]/|C|^2 = -1.099e-15   (s1 s2/|C|^2 there: 0.499)
+dims=[2, 3, 4] runs=10 seed=5: min [(n-1)|C|^2 + |C|_1^2/2 + |TrC|^2/2 - sum_s |Tr_s C|^2]/|C|^2 = 0.000e+00   (s1 s2/|C|^2 there: 0.499)
