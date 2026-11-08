@@ -1,0 +1,12 @@
+$ python quartic_sos_moment.py 3,1,1
+dims (3, 1, 1): 6 vars, moment matrix 21x21, 126 moments
+status optimal  min L(f) = -2.7700276100661725e-11
+check: L(f) = -2.7700276100661725e-11  L(|z|^4) = 0.9999999999999472  lambda_min(M_L) = -6.034817660600852e-11  lambda_max = 0.16667113613858658
+$ python quartic_sos_moment.py 3,2,1
+dims (3, 2, 1): 12 vars, moment matrix 78x78, 1365 moments
+status optimal  min L(f) = 5.200439640550003e-10
+check: L(f) = 5.200439640550003e-10  L(|z|^4) = 1.0000000000000013  lambda_min(M_L) = -5.212290944923986e-10  lambda_max = 0.08333759268356675
+$ python quartic_sos_moment.py 3,2,2
+dims (3, 2, 2): 24 vars, moment matrix 300x300, 17550 moments
+status optimal  min L(f) = -0.02500000674774698
+check: L(f) = -0.02500000674774698  L(|z|^4) = 1.0000000000000093  lambda_min(M_L) = -6.859576867822453e-08  lambda_max = 0.04166671616456222

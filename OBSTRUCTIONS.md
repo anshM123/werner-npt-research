@@ -195,6 +195,15 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   S = Σ_ij q_{n−1}(X_ij), which is negative at every zero of q_n with S > 0, for example at product zeros (checked by
   Monte Carlo, `compression-notes/code/qc_minimax/`). So a proof of QC has to use non-convex information about Q, such as
   the rank-two structure of the blocks. This is Proposition 2 of `compression-notes/` in another form.
+- **Degree-four sums of squares (added 8 November 2026).** For x, y ∈ (R³)^{⊗n} the endpoint quartic
+  f(x, y) = q_n(xxᵀ + yyᵀ) is nonnegative wherever the endpoint holds, so a Gram-matrix certificate would write it as a
+  sum of squares of quadratics in (x, y). This fails at three copies already on x, y ∈ R³ ⊗ R² ⊗ R²: a moment functional
+  with L(‖z‖⁴) = 1 and moment matrix positive semidefinite (to 10⁻⁷) gives L(f) = −0.025, while f > 0 there by the
+  three-copy theorem. Padding by a product vector (x ⊗ e, y ⊗ e) multiplies f by 2^{−(n−3)}, so f is not a sum of squares
+  for any n ≥ 3. On the smaller restrictions (3, 1, 1) and (3, 2, 1) it is one. An independent audit reports the same for
+  every n ≥ 3, also with a scalar purity correction. The four-replica relaxations of `four-replica-notes/` are not
+  ruled out by this, since they use the projector constraints (`whole-problem-routes/code/quartic_sos/`, SCS, floating
+  point).
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
