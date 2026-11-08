@@ -25,6 +25,16 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
    |X_E|² ≤ c²·(diagonal terms) with any c independent of N is equivalent to EP for every N. Crossed Cauchy–Schwarz
    for W_N ⊗ P^A alone is false already at N = 0 (take x1 = y1). So any induction must move slack from the symmetric
    part of the last copy to its antisymmetric part.
+6. **Randomized measurements** (added 8 November 2026). The per-copy operator 2F − I is the U(3)-twirl of the diagonal
+   kernel with weight 5 on equal outcomes and −3 on different ones. So for a rank-two projector P, measured twice in a
+   random local basis U = U_1 ⊗ ⋯ ⊗ U_N (independent outcomes s, s′ from ⟨s|UPU^*|s⟩/2),
+
+       E_U E_{s,s′} [(−3/5)^{d(s,s′)}] = (2/5)^N q_N(P)/4,   d = Hamming distance.
+
+   The usual purity estimator is the same statistic with base −1/3 instead of −3/5. For a fixed basis the statistic can
+   be negative (the uniform distribution gives (−1/15)^N at odd N), so the sign must come from averaging over bases,
+   which is where the rank-two and uncertainty constraints act (`whole-problem-routes/code/randomized_measurements/`,
+   Monte Carlo check at N = 2, 3).
 
 ## Three barriers (added 8 November 2026)
 
