@@ -176,6 +176,15 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   t = 0.55, margin −1.25·10⁻²), but at two copies it holds only up to about t = 0.36. The margin is −3.4·10⁻⁴ at t = 0.40
   and −9.18·10⁻³ at t = ½, although the two-copy endpoint itself is true. This is the decomposability barrier of the map
   route, in four-replica form (`whole-problem-routes/code/four_slot/`, SDP, floating point).
+- **Stochastic dominance of the antisymmetric count (added 8 November 2026).** For a real plane V = span{x, y}, measure
+  the local swap {P_S, P_A} at every copy of V ⊗ V and let R be the set of copies that come out antisymmetric. The
+  endpoint for the projector onto V is E_∧[3^{|R|}] ≤ 3 E_Sym[3^{|R|}], with x ∧ y on the left and the maximally mixed
+  state of Sym²V on the right. A coupling argument would need the stronger statement that |R| under x ∧ y is
+  stochastically dominated by 1 + |R| under Sym²V. At three copies the two are the same (so dominance holds), but at five
+  copies dominance fails by 3/8, already on planes supported on a qubit at every copy, where the endpoint is trivial.
+  There x ∧ y gives R uniform over the odd subsets (|R| ≥ 3 with probability 11/16), Sym²V gives |R| ≥ 2 with
+  probability 5/16, and both sides of the endpoint equal 33. The endpoint uses the exact weights 3^{|R|}, not a
+  comparison of tails (`whole-problem-routes/code/dominance/`, floating point).
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
