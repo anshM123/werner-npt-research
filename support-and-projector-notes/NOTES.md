@@ -40,7 +40,8 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   operator and the whole Werner line: q_n(t, C) ≥ (1 − t)^{n−1}(‖C‖_F² − t‖C‖_1²), at the endpoint
   2^n q_n(C) ≥ (σ_1 − σ_2)² (Conjecture TN_n). It is attained for every ratio of singular values, implies the endpoint
   and the sharp curve, and forces every zero to have equal singular values (all known zeros do); random-start
-  minimisation finds no violation for n ≤ 5 or with other local dimensions. Two natural inductions on it fail
+  minimisation finds no violation for n ≤ 5 or with other local dimensions, and it is proved for every n when a
+  product vector is a common left and right singular vector (Proposition 26). Two natural inductions on it fail
   (slice by slice, and through the cross term of two orthogonal pure states). Its qualitative part already suffices:
   if every rank-two zero has equal singular values, the endpoint holds (Corollary 25); all known zeros do. In a
   purified form with a reference qubit, its one-copy case is Uhlmann's theorem.
@@ -935,6 +936,32 @@ the concurrence of s = vec(S). The one-copy compression to a qubit plane, M = 2I
 the magic basis this is the spectral condition λ_1 + λ_2 ≥ 2 on its two smallest eigenvalues (together with λ_1 ≥ 0);
 in general it is not: the smallest value of λ_1 + λ_2 over two-copy compressions is 1.967 (floating point).
 
+**Proposition 26 (a product singular vector).** Let a = a_1 ⊗ ⋯ ⊗ a_n be a unit product vector, and let
+C = σ_1 e^{iφ} |a⟩⟨a| + σ_2 u v^* with σ_1, σ_2 ≥ 0 and unit vectors u, v orthogonal to a. Then (9.1) holds for C at
+every t with 0 ≤ t ≤ ½. These are the rank-two operators having a product vector as a common left and right singular
+vector; they include operators that are thick at every copy.
+
+*Proof.* Use (9.2) with u_1 = e^{iφ}a, v_1 = a, u_2 = u, v_2 = v. Since a ⊗ a is symmetric at every copy and
+G = Σ_{K≠∅} 2^{|K|} τ^{|K|−1} P_A^K (each P_A^K antisymmetric at the copies in K), G_11 = 0, so we must show
+|G_×| ≤ 1. At each copy take an orthonormal basis whose first vector is a_s, and split u = Σ_{K≠∅} u^{(K)}, where
+u^{(K)} is the part in which exactly the copies in K carry basis vectors orthogonal to a_s (K = ∅ is absent because
+u ⊥ a); split v the same way. At one copy, for basis vectors x (of u) and y (of v),
+
+    ⟨a_s ⊗ y|x ⊗ a_s⟩ = ⟨a_s, x⟩⟨y, a_s⟩,   ⟨a_s ⊗ y|P_A|x ⊗ a_s⟩ = ½(⟨a_s, x⟩⟨y, a_s⟩ − ⟨y, x⟩).
+
+The first is 1 if x = y = a_s and 0 otherwise; the second is −½⟨y, x⟩ if x and y are both orthogonal to a_s, and 0
+otherwise. Hence ⟨a ⊗ v|P_A^K|u ⊗ a⟩ = (−½)^{|K|}⟨v^{(K)}, u^{(K)}⟩, and
+
+    G_× = e^{−iφ} Σ_{K≠∅} (−1)^{|K|} τ^{|K|−1} ⟨v^{(K)}, u^{(K)}⟩.
+
+For t ≤ ½ we have τ ≤ 1, so |G_×| ≤ Σ_K ‖v^{(K)}‖ ‖u^{(K)}‖ ≤ 1 by Cauchy–Schwarz. ∎
+
+Equality needs τ^{|K|−1} = 1 on the support: below the endpoint u and v live on single excitations, as in the product
+family; at the endpoint any excitation sizes are allowed, as in the signed GHZ family. The class contains thick
+operators (for instance σ_1|0^n⟩⟨0^n| + σ_2 uv^* with generic u, v ⊥ |0^n⟩), so this is a genuine all-n case of TN_n,
+not a reduction to fewer copies. For positivity alone it is weaker than Wu and Zou's product-ray theorem, which needs a
+product vector only in the range; the point is the sharp quantitative form.
+
 *Purified form.* For C = Σ_{i=1,2} a_i b_i^* put α = Σ_i |i⟩ ⊗ a_i and β = Σ_i |i⟩ ⊗ b_i in C² ⊗ (C^3)^{⊗n}, with
 a reference qubit R, and let ρ, σ be the projectors onto α and β. Then ‖Tr_K C‖_F² = Tr(ρ_{RK} σ_{RK}), where the
 subscript means the marginal on R and the copies in K, so
@@ -1018,10 +1045,10 @@ divided by ‖C‖_F², from random complex factors (L-BFGS):
 | qubits: (2,2,2), (2,2,2,2), (2,2,2,2,2) | 0.50 | 10 each | −2·10^{−16} |
 
 Every run ends at equality to rounding, mostly on the product family above (below the endpoint) or on zeros with
-σ_1 = σ_2 (at the endpoint). None goes below rounding. On matrix-product inputs of bond dimension two (`code/trace_norm/tn_mps.py`,
-exact transfer-matrix evaluation, objective divided by σ_1σ_2 so that the search stays away from rank one; logs
-`logs/trace_norm/mps_*.log`) every run at t = 0.45 for n = 8, 12, 16 ends on the product family with σ_1 = σ_2, and
-every run at t = ½ for n = 8 and 12 ends at a zero with σ_1 = σ_2; the differences are below 10^{−9}‖C‖_F² and none is
+σ_1 = σ_2 (at the endpoint). None goes below rounding. On matrix-product inputs (`code/trace_norm/tn_mps.py`, exact transfer-matrix
+evaluation, objective divided by σ_1σ_2 so that the search stays away from rank one; logs `logs/trace_norm/mps_*.log`)
+every run ends either on the product family with σ_1 = σ_2 (t = 0.45; n = 8, 12, 16 at bond dimension two and
+n = 8, 12 at bond dimension three) or at a zero with σ_1 = σ_2 (t = ½; the same sizes, 40 runs in all); the differences are below 10^{−9}‖C‖_F² and none is
 negative. This is evidence, not a proof. For operators that are not
 positive, TN_n is open for every n ≥ 2 (at n = 2 and t = ½ it says 2‖Tr_1 C‖_F² + 2‖Tr_2 C‖_F² ≤ 2‖C‖_F² + ‖C‖_1² +
 |Tr C|², an inequality we have not proved for general rank-two C).
@@ -1069,7 +1096,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   (9.2), the odd-n equality family), `two_copy_psd.py` (Proposition 24 on random positive operators of every rank),
   `psd_rank.py n r runs` (rank three breaks the positive case at n = 3), `check_purified.py` (the purified form), `cross_term.py n runs seed ±1` (the cross
   term of two orthogonal pure states), `one_step_qubit.py D runs seed nth nph` (the failing one-step inequality on
-  local qubits), `tn_mps.py n chi t runs seed mode` (matrix-product inputs, any n).
+  local qubits), `tn_mps.py n chi t runs seed mode` (matrix-product inputs, any n), `product_singular_vector.py
+  n t runs` (the identity in the proof of Proposition 26, and the bound on that class).
 
 ## Local positivity at the signed GHZ zero, every n (added 8 November 2026)
 
