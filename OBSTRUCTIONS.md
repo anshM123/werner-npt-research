@@ -137,7 +137,8 @@ includes:
 **A numerically supported strengthening (added 8 November 2026).** Call X ≥ 0 *filter-realignable* if every local
 compression Y = (A ⊗ B)* X (A ⊗ B), brought to filter normal form Ỹ (local filters making both marginals multiples of
 the identity), satisfies the realignment bound ‖R(Ỹ)‖₁ ≤ Tr Ỹ. On 2 × 2 compressions in normal form (Bell-diagonal)
-this bound is equivalent to the PPT condition, so if W^{⊗n} is filter-realignable then the endpoint holds at n copies.
+this bound is equivalent to the PPT condition (for compressions that have a normal form, the generic case; the rest
+follow by continuity), so if W^{⊗n} is filter-realignable then the endpoint holds at n copies.
 The realignment bound is multiplicative on product compressions, and W_t = I − tF is filter-realignable exactly when
 t ≤ ½ (the full one-copy ratio is (3 + 7t)/(9 − 3t) = 13/15 at t = ½). Adversarial searches over complex filters
 never exceed 1: at two copies the largest ratio over 3 × 3 compressions is 1.000, reached at boundary points (other
