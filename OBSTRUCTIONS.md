@@ -177,6 +177,31 @@ output have full support. The following do not reach every n (added 7 November 2
   vertex bound is real 2-positivity of 𝒫_{3/4}^{⊗(n−1)}, which is equivalent to the whole route; its first open case
   (two copies) is not certified by the second level of the hierarchy, even with the vertex copy restricted to a plane
   (−8.3·10⁻³; full qutrit −4.6·10⁻³).
+- **Fixed levels of the hierarchy, again (added 8 November 2026).** The second-level thresholds ℓ_n (Remark 7.15) are
+  0.648, 0.686, 0.720 for n = 3, 4, 5, and our six-copy solves put ℓ₆ in (0.745, 0.75) (the value at a = 0.745 is
+  −2.9·10⁻⁴, and Theorem 7.32 holds at 3/4). Their increments shrink, which could suggest a limit near 0.9, so that one
+  n-independent second-level certificate at some a < 1 would settle the route. The same extrapolation fails for the
+  first level. The decomposability thresholds of Proposition 7.3 (exact linear program) are 0.756, 0.807, 0.840, 0.864
+  for n = 3, …, 6, which extrapolates the same way to about 0.92, yet they tend to 1 by the theorem of Müller-Hermes
+  (0.928 at n = 12, with increment ratios rising toward 1). So there is no evidence that any fixed level works for every
+  n at a fixed a < 1. The optimal six-copy dual point just below ℓ₆ is spread over many spin blocks (no block carries
+  more than 6% of its trace), so it does not suggest an explicit witness for every n either. All of this is floating
+  point.
+- **Descent at thick critical points (added 8 November 2026).** By Corollary 7.10 the route would follow if the least
+  value at every n were attained at an input that is thin somewhere, that is, if no input thick at every copy were a
+  local minimum. In our searches thick critical points escape in three different ways. If the bottom eigenvalue is
+  degenerate, a global squeeze splits it at first order (six copies, rotation-invariant inputs). If the partner test
+  vector is not itself optimal as an input, moving the input toward the partner's better input lowers the value (six
+  copies). At a mutual minimum, where each vector is the best response to the other, only the four-copy singlet pair
+  of Observation 7.26 is known. Its five descent directions (one spin-2 multiplet, Hessian eigenvalue −0.002845) are a
+  global squeeze ⊗_s(I + εQ) of the input, the same symmetric traceless Q at every copy, together with a response of the
+  test vector that has a two-copy part (31% of its squared norm). No one-copy move descends there, not even independent
+  one-copy filters on the input and on the test vector. From the partner input every global squeeze goes up. So a
+  descent proof would need two-copy moves chosen from the operator itself, and we have no rule for them. Along the four
+  global squeezes we followed, the value at the first input falls monotonically from 11.42·4^{−4} to the product value
+  4^{−4}, reached at an input supported on planes. Best-response iteration from random starts (n ≤ 5) and from inputs
+  with total J_z = 0 (n ≤ 6) only finds thin mutual minima; from rotation-invariant starts it finds the singlet pair
+  (n = 4) and a degenerate point (n = 6). All of this is floating point.
 
 What a proof of this route needs is a global inequality: some way to compare the value at a thick minimiser with the
 values of its contractions or compressions that does not hold trivially at every critical point. None of the tools
