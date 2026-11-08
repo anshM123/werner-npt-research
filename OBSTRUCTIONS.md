@@ -505,6 +505,16 @@ output have full support. The following do not reach every n (added 7 November 2
   it on random tensors), data that are physical on every single grouping give F_5 = −209. (iii) The three-block budget
   together with arbitrary quartic sums of squares cannot certify even F_5 ≥ 0 (an exact dual certificate in the audit's
   invariant model, which we did not re-derive). None of this refutes the budget or the route.
+- **A real skew criterion for the route, and why a scalar floor cannot close an induction (added 8 November 2026,
+  from an independent audit).** With K_n(x, y) = yᵀ𝒫_a^{⊗n}(xxᵀ)y − xᵀ𝒫_a^{⊗n}(xyᵀ)y (half the Choi form of 𝒫_a^{⊗n}
+  on vec(xyᵀ − yxᵀ)), for fixed a > 1/4 the following are equivalent: 𝒫_a is tensor-stable positive; K_n ≥ 0 for all n
+  and real x, y; the same on an unbounded set of n; K_N ≥ −ε_N a^N(‖x‖²‖y‖² − ⟨x, y⟩²) with ε_N → 0 on an unbounded set.
+  One direction uses the qubit-input theorem of Müller-Hermes, Reeb and Wolf; the other appends orthogonal product
+  flags, K_{n+k}(x ⊗ |0^k⟩, y ⊗ |1^k⟩) = a^k b_n − (−1/4)^k κ_n. So even a subexponential loss at the product scale,
+  K_N ≥ −A_N (a − ½)^N h with log A_N = o(N), would settle the route. At two copies, in any real dimensions,
+  K_2 ≥ (a + ¼)(a − ¾) h, sharp, via the rectangular commutator inequality recorded in Section 9 of
+  `support-and-projector-notes/`. A scalar product floor of a single map does not survive tensoring: S(X) = (X + Xᵀ)/2
+  has zᵀS(zzᵀ)z = ‖z‖⁴ for real z, yet zᵀ(𝒫_{3/4} ⊗ S)(zzᵀ)z = −1/12 on |Ω_3⟩/√3.
 
 What a proof of this route needs is a global inequality: some way to compare the value at a thick minimiser with the
 values of its contractions or compressions that does not hold trivially at every critical point. None of the tools

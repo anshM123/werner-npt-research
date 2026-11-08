@@ -1053,6 +1053,21 @@ product on the remaining copies: the budget is tight exactly where the two-copy 
 pair. FB(t) is still an m-site statement (the other sites enter through Φ_t^{⊗(m−2)}); we do not have a proof of it, even
 with two sites for general rank-two C.
 
+For real skew operators the two-site case is proved. If J = xyᵀ − yxᵀ with x, y real on R^{d_1} ⊗ R^{d_2}, then Tr J = 0,
+‖J‖_1² = 2‖J‖_F² = 4h with h = ‖x‖²‖y‖² − ⟨x, y⟩², and the two partial traces are, up to sign, XYᵀ − YXᵀ and XᵀY − YᵀX
+for the matrices X, Y of x, y. An independent audit proves the rectangular commutator inequality
+
+    ‖XYᵀ − YXᵀ‖_F² + ‖XᵀY − YᵀX‖_F² ≤ 4(‖X‖_F²‖Y‖_F² − ⟨X, Y⟩_F²)
+
+(remove the component of Y along X, use a singular-value decomposition of X, and bound each off-diagonal pair by
+2(s_i + s_j)²(Y_{ij}² + Y_{ji}²) ≤ 4‖X‖_F²(Y_{ij}² + Y_{ji}²)); we checked it on random rectangular pairs. This is exactly
+TN_2 at the endpoint for real skew J, in all dimensions, with equality at x = (|00⟩ + |11⟩)/√2, y = (|01⟩ − |10⟩)/√2.
+Real skew operators matter because of Proposition S of `whole-problem-routes/`: a negative real rank-two C becomes a
+negative real skew rank-two operator after r added flag copies. Its error terms carry the factors (1 − t)^r and (−t)^r
+on the Werner line (we redid the flag computation at general t), so that step works for every t ≤ ½; the realification
+step of `real-balanced-reduction/` was stated at the endpoint and we have not rechecked it below. With three or more sites
+the pairwise commutator bounds alone do not give FB or TN for real skew J.
+
 *What does not work.*
 - Slice by slice. On local qubit planes the form is exactly self-similar: with M = CJ^{⊗n}, q_n(C) = ‖P_S^{⊗n} M‖_F²,
   and peeling the last copy gives q_n(C) = 3 E_w q_{n−1}(M_w (J^{−1})^{⊗(n−1)}) with M_w = (I ⊗ w^T) M (I ⊗ w) of rank at most
