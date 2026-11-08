@@ -1,0 +1,8 @@
+t=0.5 d=3 N=3: relaxation min q_N(t,P)/||P||_F^2 = +7.500000e-01  [fixed]
+t=0.5 d=3 N=5: relaxation min q_N(t,P)/||P||_F^2 = +3.125000e-01  [optimal]
+t=0.5 d=3 N=7: relaxation min q_N(t,P)/||P||_F^2 = +1.159244e-01  [optimal]
+t=0.5 d=3 N=9: relaxation min q_N(t,P)/||P||_F^2 = -1.229812e-01  [optimal]
+t=0.4 d=3 N=5: relaxation min q_N(t,P)/||P||_F^2 = +4.337422e-01  [optimal]
+t=0.4 d=3 N=7: relaxation min q_N(t,P)/||P||_F^2 = +2.820926e-01  [optimal]
+t=0.4 d=3 N=9: relaxation min q_N(t,P)/||P||_F^2 = +9.154551e-02  [optimal]
+t=0.4 d=3 N=11: relaxation min q_N(t,P)/||P||_F^2 = -6.883633e-02  [optimal_inaccurate]

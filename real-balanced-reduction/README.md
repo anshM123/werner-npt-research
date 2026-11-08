@@ -121,8 +121,49 @@ is not proved. Two remarks:
 - Realification also shows that the merging comparison q_d(t, C) ≥ ((1 − 2t)/2) q_{d′}(t, C) of Section 9 is only needed
   for real rank-two C: a complex negative witness at qutrit copies gives a real one, and merging keeps C real.
 
+## Synchronous balancing (added 9 November 2026)
+
+Theorem B uses an independent rotation at every copy, so it needs 12^N branches and its error carries the factor
+g₀³ = 12^{3N}. An independent audit of this repository observed that one rotation, the same at every copy, already
+balances one-copy marginals. We checked the construction (`code/synchronous_check.py`, exact) and state it in our words.
+
+Let O_0, …, O_11 be the twelve matrices of the design above (the tetrahedral group) and R_j = O_j^{⊗N}. For an operator
+H on one copy s, (1/12) Σ_j R_j^T (H ⊗ I) R_j = (Tr H/3) I, because the rotations at the other copies cancel. Label the
+branches by the twelve vectors j ∈ F₂⁴ with j < 12 and use the simplex code c(j)_v = j·v mod 2, v ∈ F₂⁴ \ {0}: fifteen
+positions, any two codewords at distance 8. Put H_j = ⊗_v h_{c(j)_v} (fifteen flag pairs), F_j = H_j^{⊗ℓ} and
+
+    V_ℓ x = 12^{−1/2} Σ_j R_j x ⊗ F_j,
+
+a real isometry that adds 30ℓ copies. Its whole image is balanced: at an input copy the flags F_j are orthonormal and the
+twirl applies; at a flag copy two distinct labels still differ at seven other flag pairs, which removes the cross terms,
+and each flag has one-copy marginal I₃/3.
+
+**Theorem B_sync.** For every real C on N copies and every t, with a, b, c the flag constants of "Below the endpoint" and
+C_jk = R_j C R_k^T,
+
+    q_{N+30ℓ}(t, V_ℓ C V_ℓ^T) = (a^{15ℓ}/144) [ 12 q_N(t, C) + (b/a)^{8ℓ} Σ_{j≠k} b_N(t; C_jj, C_kk) + (c/a)^{8ℓ} Σ_{j≠k} q_N(t, C_jk) ],
+
+so |q_{N+30ℓ}(t, V_ℓ C V_ℓ^T) − a^{15ℓ} q_N(t, C)/12| ≤ (a^{15ℓ}/12) · 11[(|b|/a)^{8ℓ} + (c/a)^{8ℓ}] ‖C‖_F².
+
+*Proof.* Expand into the four branch labels. At each code position the flag Gram entry is a when the four bits agree,
+b when the two input bits agree, the two output bits agree and the pairs differ, c when the input pair equals the
+output pair with different bits, and 0 otherwise. Over all 12⁴ label quadruples this leaves three classes: all four
+labels equal (12 quadruples, a^{15}), j = k ≠ l = m (132, a⁷b⁸) and j = l ≠ k = m (132, a⁷c⁸); every other quadruple
+meets a zero. Local rotations do not change q_N. ∎
+
+The branch count stays 12 for every N, and the error has no factor depending on N. Combined with the dilation and
+Theorem R_t this gives a quantitative form of the Corollary: if q_n(t, C) = −δ‖C‖_F² for some C of rank at most two,
+there is a real balanced rank-two orthogonal projector Π on N = n + k + 2r + 30ℓ copies, N odd, with
+q_N(t, Π)/2 ≤ −a^{15ℓ+r} δ/768, where k, r and ℓ only have to satisfy m^k ≤ δ/16, 2(c/a)^r ≤ δ/16 and
+22(c/a)^{8ℓ} ≤ a^r δ/64 (and the parity of n + k). So the number of added copies is O(1 + log(1/δ)) and does not depend
+on n, and the new margin is a power of δ (independent audit; we checked the three steps).
+
 ## Checks
 
+- `code/synchronous_check.py` (`logs/synchronous_check.log`), exact: the twelve matrices form a group, the one-copy
+  twirl and the synchronous twirl on two copies (symbolic H), the simplex code (fifteen positions, distances 8), and the
+  four-index flag kernels of the Werner form and of the map 𝒫_a of `whole-problem-routes/` summed over all 12⁴ label
+  quadruples, class by class.
 - `code/below_endpoint_check.py` (`logs/below_endpoint_check.log`): the flag Gram matrices of (f, g) and (h₀, h₁) as
   exact polynomials in t (SymPy), and the design; the dilation identity, the projector property and the bound at
   t = 0.2, 0.35, 0.4, 0.5; Theorem R_t at the same t; the four-index expansion and the bound of Theorem B_t on a small

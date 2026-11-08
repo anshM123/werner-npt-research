@@ -1,0 +1,6 @@
+(1) flag kernel equals A, B, K, 0 by pattern, as polynomials in a: True
+(2) s_r(g_r) = [m^r + 2a^r + 4(-1/4)^r]/3 for r = 2..5 at a = 0.6, 0.75, 0.9: True
+(3) two-flag identity: max error 2.8e-14
+(4) a = 7/10, plane GHZ on 7 copies: s_7(x) = -217031/1280000000 (expected -217031/1280000000): True
+(5) A, B, K at 7/10 = 127/300, 77/300, -1/80: True; E_4(7/10)(8/5)^7 = 3.282590e-05 < 1.69555e-4: True; (7/2)(15/23)^4 < 1: True; 444(7/2)^3(15/23)^24 < 1: True; constants at 3/4 (17/27, 23/27): True
+PASS

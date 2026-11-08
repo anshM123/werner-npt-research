@@ -412,6 +412,20 @@ output have full support. The following do not reach every n (added 7 November 2
   two-copy proof does not lift either: it crosses the four vectors of a cross term, which exchanges a set of copies
   with its complement, and from three copies on the crossed weights (−t)^{n−|K|} form an indefinite metric, so the
   Cauchy–Schwarz step is lost (independent audit).
+- **Two-replica certificates run out early, below the endpoint too (added 9 November 2026).** (i) For general rank-two
+  C at three copies, fix the Gram matrix of the four vectors of a constant-diagonal factorisation (Proposition 28 of
+  `support-and-projector-notes/`) and allow any degree-four data ⟨Tr_K(ab^*), Tr_K(ce^*)⟩ whose Gram matrices,
+  Werner-sector Gram matrices and identity-component Gram matrices are positive and which obey the crossing relation
+  ⟨Tr_K(uv^*), Tr_K(st^*)⟩ = ⟨Tr_{K^c}(tv^*), Tr_{K^c}(su^*)⟩. These data contain the proof of Proposition 28, and at two
+  copies the minimum is nonnegative. At three copies the minimum of q_3 is about −0.08‖C‖_1² at t = ½ (−0.03 to −0.05
+  at t = 0.4), although q_3 ≥ 0 is true; adding the first-order bounds of `first-order-bound/` for every grouping of the
+  copies changes nothing (`support-and-projector-notes/code/trace_norm/degree4_relaxation.py`). (ii) On real balanced
+  rank-two projectors, the whole problem at every fixed t (`real-balanced-reduction/`), the copy-symmetric form of the
+  same relaxation reproduces the enumerator bounds of Proposition 19 at t = ½ (negative at N = 9), and at t = 2/5 it is
+  nonnegative for N ≤ 9 and negative at N = 11 (`support-and-projector-notes/code/global_reductions/two_replica_balanced.py`).
+  So the slack below the endpoint does not rescue two-replica data; the rank-two condition, which involves three or
+  more replicas, has to enter a proof for every n. (The four-replica relaxation of `four-replica-notes/` is exact for
+  projectors up to four copies.)
 - **Zero-free regions (added 8 November 2026).** For C of rank at most two let
   f_C(t₁, …, t_n) = Σ_J (∏_{s∈J} t_s) ‖Tr_J C‖², so the endpoint is f_C(−½, …, −½) ≥ 0. In our tests the diagonal
   polynomial f_C(t, …, t) has no root in |t| < ½ (random C, n ≤ 5: smallest root modulus 0.71 to 0.80), although it is

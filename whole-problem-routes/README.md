@@ -179,6 +179,42 @@ positivity on real rank-one inputs, which extends to all positive inputs because
 The open step of this route is a lower bound μ_n(a) ≥ m^n for every n at one a < 1 (at a = 9/10: μ_n ≥ (2/5)^n).
 At a = 3/4 it is proved for n ≤ 5 (Theorem 7.13).
 
+**Proposition M′ (balanced scalar inputs suffice; added 9 November 2026).** Fix a ≥ 1/2 and call a real vector z on
+N copies balanced if every one-copy marginal of zzᵀ/‖z‖² is I₃/3. The following are equivalent:
+1. 𝒫_a is tensor-stable positive;
+2. s_N(z) ≥ 0 for every odd N ≥ 3 and every balanced real z;
+3. β_N(a) := min{s_N(z)/a^N : z real, balanced, ‖z‖ = 1} satisfies β_N ≥ −ε_N along an unbounded set of odd N, for some
+   ε_N → 0.
+
+Moreover β_N(a) ≤ [s_3(g_3)/a³](A/a²)^{(N−3)/2} → 0 for a > 1/2, with g_r = (|0^r⟩ + |1^r⟩ + |2^r⟩)/√3 and A below; at
+a = 3/4 this reads β_N ≤ (17/27)(23/27)^{(N−3)/2}. So a lower bound β_N ≥ −o(1) at one a < 1 would give NPT bound
+entanglement. This is from an independent audit; we checked it (`code/balanced_scalar_check.py` and
+`real-balanced-reduction/code/synchronous_check.py`).
+
+*Proof.* Balancing. Use the twelve synchronous rotations R_j = O_j^{⊗n} and the simplex-code flags F_j of
+`real-balanced-reduction/` ("Synchronous balancing"), V_ℓ x = 12^{−1/2} Σ_j R_j x ⊗ F_j. For the map the flag kernel
+h_rᵀ𝒫_a^{⊗2}(h_p h_qᵀ)h_s equals A = a² − a/3 + 1/6 when the four bits agree, B = a² − a/3 when p = q, r = s and p ≠ r,
+K = (5 − 8a)/48 for the other two two-plus-two patterns, and 0 otherwise (exact as polynomials in a). For a ≥ 1/2,
+A > B > |K|. Summing over the 12⁴ label quadruples (four classes survive) gives, for real x, y,
+
+    | b_{n+30ℓ}(V_ℓx, V_ℓy) − (A^{15ℓ}/12) b_n(x, y) | ≤ (A^{15ℓ}/12) E_ℓ M^n ‖x‖²‖y‖²,
+    E_ℓ = 11 r^{8ℓ} + 22 h^{8ℓ} + 78 r^{4ℓ}h^{8ℓ},   r = B/A,  h = |K|/A,
+
+with M = 3a − 1/2 the norm of 𝒫_a on Hilbert–Schmidt space. So a negative real pair stays negative after balancing.
+1 ⇒ 2 is clear. For 2 ⇒ 1, a failure of 1 gives real x, y with b_n(x, y) < 0 (item 4 of Proposition M). The two-flag
+identity there makes s_{n+k}(z_k) < 0 for every large k of either parity; choose n + k odd, normalise, and balance z_k
+with the bound above (x = y = z_k), which adds an even number of copies. For 3: products are multiplicative,
+s(z ⊗ w) = s(z)s(w), g_r is balanced for r ≥ 2, s_r(g_r) = [m^r + 2a^r + 4(−1/4)^r]/3 and s_2(g_2) = A. If β_M = −δ < 0 at
+one odd M, then z ⊗ g_r (r even) gives β_{M+r} ≤ −(2/3)δ for every even r, so β_N cannot tend to 0 from below; the upper
+bound comes from g_3 ⊗ g_2^{⊗(N−3)/2}. ∎
+
+The balanced class is not positive for free. At a = 7/10 the real plane GHZ vector x = (p^{⊗7} + p̄^{⊗7})/√2,
+p = (e₀ + ie₁)/√2, has s_7(x) = −217031/1280000000 (exact, through the qubit compression of Theorem 7.18), and
+E_4(7/10)(8/5)^7 < 217031/1280000000 (exact), so V_4x is an explicit balanced real unit vector on 127 copies with s < 0.
+More generally, for 1/2 ≤ a < 3/4 there is a balanced negative witness on 16n + 45 copies, where n is odd with
+(2a − 1/2)^n ≤ 1/4 (the exact inequalities (7/2)(15/23)⁴ < 1 and 444(7/2)³(15/23)^{24} < 1 control the error). This only
+calibrates the class below 3/4; it says nothing at or above 3/4.
+
 [MRW, Thm. 3] also shows that a non-trivial tensor-stable positive map exists if and only if one exists in the
 one-parameter family 𝒲_p ⊗ (ϑ ∘ 𝒲_p) on M_d ⊗ M_d, p ∈ [−1, 0), where
 𝒲_p(X) = ((d − p) Tr(X) I − (1 − dp) Xᵀ)/(d² − 1) and ϑ is the transpose. The map 𝒫_a is a different candidate: it acts
@@ -1294,6 +1330,12 @@ exact):
   failing parameter.
 
 Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are not part of it (about 30 minutes).
+
+`code/balanced_scalar_check.py` (`logs/balanced_scalar_check.log`) checks Proposition M′: the flag kernel A, B, K, 0 as
+exact polynomials in a; s_r(g_r) for r = 2, …, 5; the two-flag identity (floating point); the exact value
+s_7(x) = −217031/1280000000 at a = 7/10 for the plane GHZ vector (rational arithmetic through the qubit compression);
+the exact inequality for E_4(7/10)(8/5)^7, the two uniform inequalities, and the constants 17/27 and 23/27 at a = 3/4.
+The four-index flag classification it relies on is checked in `real-balanced-reduction/code/synchronous_check.py`.
 
 `code/map_thresholds.py` checks Section 7, one mode at a time, each ending with PASS (logs in `code/logs/`):
 - `witness`: Theorem 7.1 in exact integer arithmetic on the planes for n = 1, …, 8 at six rational values of a, after

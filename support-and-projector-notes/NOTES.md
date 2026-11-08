@@ -1305,7 +1305,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   flag words); Theorem 14″ (the 729-state flag compression exactly at r = 2, the identity contracted with core data at
   k = 1, 2, isometry and marginals); Section 7 (the enumerator identities on random projectors at n = 2, 3, the
   three-copy code, and the certificates for n = 4, …, 9 in exact rational arithmetic); `check_enumerator_purity.py` (the
-  purity-two enumerators of Section 7, exact).
+  purity-two enumerators of Section 7, exact); `two_replica_balanced.py t d N ...` (the copy-symmetric
+  two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind
   (9.2), the odd-n equality family), `two_copy_psd.py` (Proposition 24 on random positive operators of every rank),
@@ -1315,7 +1316,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   n t runs` (the identity in the proof of Proposition 26, and the bound on that class).
 - `code/trace_norm/fusion_budget.py t gamma runs seed d_1 ... d_m`: Conjecture FB (merging the first two sites). `fusion_budget_mps.py n chi t gamma runs seed`: the
   same on matrix-product inputs. `refined_partial_trace.py [seed]`: Propositions 28 and 29 and the crossed form of the
-  merging budget. `multisite_refined.py runs seed d_1 ... d_n`: the n-site inequality (9.4′).
+  merging budget. `multisite_refined.py runs seed d_1 ... d_n`: the n-site inequality (9.4′). `degree4_relaxation.py n t samples seed tn|q`: the
+  two-replica relaxation of `OBSTRUCTIONS.md` (nonnegative at two copies, negative at three).
 
 ## Local positivity at the signed GHZ zero, every n (added 8 November 2026)
 
