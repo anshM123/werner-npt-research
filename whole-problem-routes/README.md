@@ -996,14 +996,18 @@ each onto a plane, lowers g by 3.80·4^{−4}, and by 4.30·4^{−4} for the two
 on y that tries to make every pair compression raise g (four runs of 60 steps, from near the partner and from random
 inputs) kept the best pair compression at least 1.9·4^{−4} below g(y); from random inputs it only moves y toward
 thinner vectors. At six copies, at the pair that minimises the value over spin singlets (48.28·4^{−6}, which is also
-the least value of g at that test vector over all inputs), a one-copy compression already lowers g, by 5.76·4^{−6}.
+the least value of g at that test vector over all inputs), a one-copy compression already lowers g, by 5.76·4^{−6},
+and an adversarial search over spin-singlet test vectors at six copies (four runs) found none at which every one-copy
+compression raises g (the largest gap found is −6.4·4^{−6}). So far the four-copy partner and its products are the only
+inputs we know that defeat one-copy compressions.
 If for every y some pair of copies could be compressed onto planes without raising g, induction on n would give
 μ_n = 4^{−n} for every n (Proposition 7.8 with two thin copies). But at the minimiser of a hypothetical failure every
 such compression would have to raise g, so this statement is no easier than the problem itself. We record it as a
 pattern, not as a route.
 `code/compression_rules/compression_rules_check.py` (`logs/` there, PASS) checks the four-copy counterexample (all copies,
 200 directions each, and one value in 30-digit arithmetic) and the two three-copy inputs (floating point);
-`compression_pairs_check.py` and `adversary_pairs_n4.py` there give the pair compressions (floating point).
+`compression_pairs_check.py`, `adversary_pairs_n4.py` and `singlet_search_n6.py` there give the pair compressions and the
+six-copy singlet search (floating point).
 `code/squeeze_paths.py` (`logs/squeeze_paths.log`, PASS) checks the formula of Proposition 7.23 at minima and at thick
 saddles for a = ¾ and 0.7 (agreement to 10⁻⁸, limited by the residual of the critical points), and the compression
 gaps at n = 2, 3, 4. `code/squeeze_trace.py` (`logs/squeeze_trace.log`, PASS) checks the trace of 7.23(ii) against

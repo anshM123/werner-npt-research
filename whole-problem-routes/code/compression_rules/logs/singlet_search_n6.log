@@ -1,0 +1,6 @@
+start 0: max one-copy gap -13.1743 x 4^-6 at g = 106.941 x 4^-6 [251s]
+start 1: max one-copy gap -6.3666 x 4^-6 at g = 64.883 x 4^-6 [502s]
+start 2: max one-copy gap -16.8704 x 4^-6 at g = 79.974 x 4^-6 [755s]
+start 3: max one-copy gap -17.0695 x 4^-6 at g = 114.879 x 4^-6 [1007s]
+0 singlet test vectors with every one-copy compression raising g
+(run as: python singlet_search_n6.py 0 4)
