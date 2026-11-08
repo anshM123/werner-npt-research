@@ -1,0 +1,21 @@
+$ python check_qc_fast.py 6 120
+  n = 6, random seed 0, it 0: max Delta/||C||^2 = +2.1372e-01, q_n/||C||^2 = +3.3398e-01
+  n = 6, random seed 0, it 50: max Delta/||C||^2 = +1.8831e-01, q_n/||C||^2 = +3.1314e-01
+  n = 6, random seed 0, it 100: max Delta/||C||^2 = +1.7304e-01, q_n/||C||^2 = +2.8899e-01
+  n = 6, random seed 0, it 119: max Delta/||C||^2 = +1.6631e-01, q_n/||C||^2 = +2.7849e-01
+n = 6, random seed 0: smallest max-Delta seen +1.6631e-01
+  n = 6, nearzero seed 1, it 0: max Delta/||C||^2 = +6.9235e-03, q_n/||C||^2 = +1.4632e-02
+  n = 6, nearzero seed 1, it 50: max Delta/||C||^2 = +5.3199e-04, q_n/||C||^2 = +1.5751e-03
+  n = 6, nearzero seed 1, it 100: max Delta/||C||^2 = +9.9252e-05, q_n/||C||^2 = +2.2558e-04
+  n = 6, nearzero seed 1, it 119: max Delta/||C||^2 = +7.5628e-05, q_n/||C||^2 = +1.5598e-04
+n = 6, nearzero seed 1: smallest max-Delta seen +5.4786e-05
+  n = 6, random seed 2, it 0: max Delta/||C||^2 = +2.1064e-01, q_n/||C||^2 = +3.3533e-01
+  n = 6, random seed 2, it 50: max Delta/||C||^2 = +1.8897e-01, q_n/||C||^2 = +3.1411e-01
+  n = 6, random seed 2, it 100: max Delta/||C||^2 = +1.7360e-01, q_n/||C||^2 = +2.9041e-01
+  n = 6, random seed 2, it 119: max Delta/||C||^2 = +1.6705e-01, q_n/||C||^2 = +2.8016e-01
+n = 6, random seed 2: smallest max-Delta seen +1.6705e-01
+  n = 6, nearzero seed 3, it 0: max Delta/||C||^2 = +6.7646e-03, q_n/||C||^2 = +1.4465e-02
+  n = 6, nearzero seed 3, it 50: max Delta/||C||^2 = +4.9018e-04, q_n/||C||^2 = +1.2793e-03
+  n = 6, nearzero seed 3, it 100: max Delta/||C||^2 = +1.0316e-04, q_n/||C||^2 = +2.2800e-04
+  n = 6, nearzero seed 3, it 119: max Delta/||C||^2 = +4.8475e-05, q_n/||C||^2 = +1.2459e-04
+n = 6, nearzero seed 3: smallest max-Delta seen +4.8475e-05
