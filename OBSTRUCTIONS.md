@@ -256,8 +256,10 @@ output have full support. The following do not reach every n (added 7 November 2
   n-independent second-level certificate at some a < 1 would settle the route. The same extrapolation fails for the
   first level. The decomposability thresholds of Proposition 7.3 (exact linear program) are 0.756, 0.807, 0.840, 0.864
   for n = 3, …, 6, which extrapolates the same way to about 0.92, yet they tend to 1 by the theorem of Müller-Hermes
-  (0.928 at n = 12, with increment ratios rising toward 1). So there is no evidence that any fixed level works for every
-  n at a fixed a < 1. The optimal six-copy dual point just below ℓ₆ is spread over many spin blocks (no block carries
+  (0.928 at n = 12, with increment ratios rising toward 1). This is now settled exactly (Remark 7.15′ of
+  `whole-problem-routes/`): a flag construction on the three-copy PPT seed of Remark 7.15 gives a feasible dual point of
+  negative value at seventeen copies, so ℓ₁₇ > 3/4, and the same construction defeats every fixed level, and every level
+  growing sublinearly in n, at every a in [3/4, 1). The optimal six-copy dual point just below ℓ₆ is spread over many spin blocks (no block carries
   more than 6% of its trace), so it does not suggest an explicit witness for every n either. All of this is floating
   point.
 - **Descent at thick critical points (added 8 November 2026).** By Corollary 7.10 the route would follow if the least

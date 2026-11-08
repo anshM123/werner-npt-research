@@ -249,7 +249,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.12 | the two-copy Werner endpoint and the two-copy case of the map at 3/4 are the ends of one family | reduction **proved**; the range [1, 2] numerical |
 | 7.13 | 𝒫_{3/4}^{⊗n} is positive for n = 3, 4, 5, with least output eigenvalue exactly 4^{−n}; 𝒫_a^{⊗3} is positive for a ≥ 81/125 = 0.648 | **proved** (computer-assisted: exact rational certificates, two separate exact verifiers) |
 | 7.14 | a failure of tensor-stable positivity of 𝒫_{3/4} needs n ≥ 7 copies, with the input and the output vector thick at seven or more common copies | **proved** (the step from six to seven uses Theorem 7.32) |
-| 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n; its threshold ℓ_n increases with n and is ≈ 0.720 at n = 5; at n = 6 it still certifies a = 3/4 (Theorem 7.32), and in floating point it is no longer exact there | numerical (ℓ_{n+1} ≥ ℓ_n **proved**) |
+| 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n; its threshold ℓ_n increases with n and is ≈ 0.720 at n = 5; at n = 6 it still certifies a = 3/4 (Theorem 7.32), and in floating point it is no longer exact there; it fails at a = 3/4 by n = 17, and every fixed level fails at some n (Remark 7.15′) | numerical (ℓ_{n+1} ≥ ℓ_n **proved**; ℓ₁₇ > 3/4 **proved**, exact) |
 | 7.16 | on permutation-symmetric inputs and outputs: positivity fails below a_n for every n; at a = 3/4 the least value is exactly 4^{−n} for n ≤ 21, attained only at real products | **proved** (the first part every n; the second computer-assisted: n ≤ 9 by two separate exact checks, 10 ≤ n ≤ 21 by one); the threshold a_n on this sector numerical (n ≤ 7) |
 | 7.17 | for a ≥ 3/4 and every n, inputs that become thin one copy at a time (for example every open matrix product state of bond dimension two, such as the AKLT chain) have least output eigenvalue at least the product value (a − ½)^n | **proved** (by hand; with Theorem 7.13, up to five copies may stay thick) |
 | 7.18 | on a real plane (the Pauli family (1, t, 0, t) of Filippov and Magadov) the n-copy threshold is exactly a_n, every n, and positivity equals decomposability there | **proved** (explicit decomposition) |
@@ -596,6 +596,29 @@ dual point of negative value, and this point stays negative at n + 1. Numericall
 (Theorem 7.32), but in floating point it is no longer exact there: the solver's optimum is t ≈ 1.3749·10⁻⁴ ≈
 0.563·4^{−6}, below the value 4^{−6} of real products. So at a = 3/4 the method appears to be close to its limit. These numbers are floating point
 (`code/dps/logs/sdp/threshold*.log`, `code/dps6/logs/`).
+
+**Remark 7.15′ (no fixed level works for every n).** At a = 3/4 the second level fails by seventeen copies, exactly.
+Take the three-copy state ρ of Remark 7.15, which has ρ_A = I/27 and Tr_B ρ² = (109/369603) I, and add k = 14 flag
+copies. On each output put Vb = b ⊗ |1^k⟩ and e = |000⟩ ⊗ |0^k⟩, fix the input flags to |0^k⟩, let
+Wb = (Vb ⊗ e + e ⊗ Vb)/√2 and let Q project onto Sym²(V C²⁷). Then
+
+    X = (I ⊗ W) ρ (I ⊗ W)* + α I ⊗ Q + β I ⊗ |ee⟩⟨ee|,   α = 1/3499200,  β = 2187/4,
+
+is a feasible point of the dual program. It is bosonic on the two outputs, and Γ_A(X) ⪰ 0 because ρ is PPT. After
+transposing one output, the only off-diagonal block joins the sector with no active output (diagonal β) to the sector
+with two active outputs (diagonal α(I + Ω)/2 ⪰ α/2). That block is T/2 with TT* = Tr_B ρ², and αβ = 1/6400 exceeds
+‖T‖²/2 = 109/739206, so a Schur complement gives positivity; the other cuts follow by symmetry. The value is
+
+    Tr[(C_{3/4}^{⊗17} ⊗ I) X] = −52542910001/4824107266867200 < 0,
+
+and symmetrizing the real indices gives a feasible point of the real polynomial version used for Theorem 7.32, with
+value −97742757347/28944643601203200. So ℓ₁₇ > 3/4, while ℓ₆ < 3/4. The same flag construction, with the active part of
+the symmetric projector damped by a factor that tends to zero slowly, shows that every fixed level fails at some finite
+number of copies, at every a in [3/4, 1). For a ≠ 3/4 the seed is a negative PPT point at some finite power, which exists
+by the theorem of Müller-Hermes, since 𝒫_a is neither completely positive nor completely copositive. Levels that grow
+sublinearly in n fail as well. This construction comes from an independent audit of this repository; the seed values,
+the Schur bound and both values at seventeen copies are checked exactly in `code/level2_flag_obstruction.py`. So the
+six-copy certificate cannot be continued to every n at any fixed level.
 
 **Proposition 7.16 (permutation-symmetric inputs and outputs).** Let Sym^n ⊂ (C³)^{⊗n} be the symmetric subspace.
 (i) For every n and every a < a_n there are x, y ∈ Sym^n with ⟨y|𝒫_a^{⊗n}(xx*)|y⟩ < 0.
