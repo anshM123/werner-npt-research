@@ -1,0 +1,8 @@
+$ python polydisk_search.py 2 6 multi
+run 0: ratio 0.500000  |t| = [0.33, 0.482]
+run 1: ratio 0.500000  |t| = [0.334, 0.298]
+run 2: ratio 0.500000  |t| = [0.156, 0.09]
+run 3: ratio 0.500000  |t| = [0.225, 0.418]
+run 4: ratio 0.500000  |t| = [0.315, 0.39]
+run 5: ratio 0.500021  |t| = [0.365, 0.499]
+min ratio 0.49999999999999994 (multi: need >= 0.5)

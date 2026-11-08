@@ -1,0 +1,5 @@
+$ for n in 2 3 4 5; do python univariate_roots.py $n 1 150; done
+n=2: 150 trials, nonreal-rooted 118, root inside |t|<1/2: 0, min |root| = 0.7071
+n=3: 150 trials, nonreal-rooted 144, root inside |t|<1/2: 0, min |root| = 0.7340
+n=4: 150 trials, nonreal-rooted 150, root inside |t|<1/2: 0, min |root| = 0.7692
+n=5: 150 trials, nonreal-rooted 150, root inside |t|<1/2: 0, min |root| = 0.8007

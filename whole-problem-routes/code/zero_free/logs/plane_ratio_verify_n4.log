@@ -1,0 +1,8 @@
+$ python plane_ratio_verify.py 4
+search run 0: |X/D| = 1.624265, |t| = 0.499698, arg t = 2.0560
+search run 1: |X/D| = 1.624520, |t| = 0.499734, arg t = 2.0560
+search run 2: |X/D| = 1.624388, |t| = 0.499715, arg t = 2.0560
+search run 3: |X/D| = 1.624473, |t| = 0.499728, arg t = 2.0560
+orthonormality check 1.0000000000000002 1.0 6.65158032819857e-17
+numpy: |t| = 0.499235, D = 0.336649+0.295565j, X = -0.663351+0.295565j, |X/D| = 1.621075
+max_theta lambda_min(Re e^(i th) G) = 6.945773e-01   (negative => some rank-2 C in the plane has F_C(t) = 0 with |t| < 1/2)

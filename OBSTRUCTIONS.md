@@ -239,6 +239,20 @@ output have full support. The following do not reach every n (added 7 November 2
   weighted Cauchy–Schwarz step, give a certificate at three copies (the linear program returns exactly Wu and Zou's)
   but none at five copies (infeasible). So the five-copy case needs inequalities of a different kind
   (`whole-problem-routes/code/sharp_rank_two/`, floating point; the linear programs are exact up to solver tolerance).
+- **Zero-free regions (added 8 November 2026).** For C of rank at most two let
+  f_C(t₁, …, t_n) = Σ_J (∏_{s∈J} t_s) ‖Tr_J C‖², so the endpoint is f_C(−½, …, −½) ≥ 0. In our tests the diagonal
+  polynomial f_C(t, …, t) has no root in |t| < ½ (random C, n ≤ 5: smallest root modulus 0.71 to 0.80), although it is
+  usually not real-rooted. A complex strengthening would allow a Lee–Yang argument through Asano contractions:
+  f_C(t) ≠ 0 whenever every |t_s| < ½. It survives adversarial search at two and three copies (the smallest root
+  ratio is exactly ½, attained at the product zeros; on balanced projectors at three copies it is 0.70), but it is
+  false. For a real plane with z = (u + iv)/√2, put D(t) = f_{zz*}(t) and X(t) = Σ_J (∏_{s∈J} t_s)⟨Tr_J zz*, Tr_J z̄zᵀ⟩.
+  Then f_P = 2(D + X) and f_J = 2(D − X) for P = uuᵀ + vvᵀ and J = uvᵀ − vuᵀ, and the endpoint for planes is
+  |X| ≤ D at t = −½ (Corollary F of `whole-problem-routes/`). On the complex disk this bound fails from four copies on:
+  at four copies there is a plane with |X/D| = 1.62 at t_s = t, |t| = 0.499 (five copies: 3.4). Fusion
+  (Proposition F) multiplies X/D, so by the open mapping theorem some power of that plane, at a common t with |t| < ½,
+  has X/D real and below −1, and then C = C_z + αC_z̄ with a suitable α > 0 has f_C = 0 there. So zero-freeness on
+  complex polydisks fails, and the endpoint holds, if at all, only for real parameters
+  (`whole-problem-routes/code/zero_free/`, floating point; the four-copy value is recomputed in plain numpy).
 - **Self-similarity (added 8 November 2026).** One finite identity would settle the every-n question. If for some
   m > k the Choi matrix C_a^{⊗m} of 𝒫_a^{⊗m} were a positive combination of local filterings (A ⊗ B)C_a^{⊗k}(A ⊗ B)^*
   plus a separable operator, then 𝒫_a^{⊗mN} would be a sum of filtered copies of 𝒫_a^{⊗K}, K ≤ kN, tensored with
