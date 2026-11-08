@@ -112,10 +112,11 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
   antisymmetric factor per term must stop at six copies, where ρ^{⊗n} puts weight 3n/5 on antisymmetric copies.
 - **KL₁ through the first copy (added 8 November 2026).** For filters a, b : C³ → C³ ⊗ C³ write the two-copy Werner
   operator as W₁ ⊗ W₂ and expand W₁ = ½P_S + (3/2)P_A on the first copy. The P_S part is a mixture of one-copy
-  filterings (P_S = 6∫|vv⟩⟨vv| dv), so it lies in K₁(3). The P_A part averages, over planes V of the first copy,
-  terms whose coefficient operator on V ⊗ V is P_S^{(V)} + (9/2)|s_V⟩⟨s_V| (s_V the singlet). That is a two-qubit
-  Werner operator with singlet fraction 3/5 > ½, so it is entangled. No decomposition that factors through the first
-  copy can therefore prove KL₁: like the dimension bound, this shows the 3 × 3 output bottleneck itself has to be used.
+  filterings (P_S = 6∫|vv⟩⟨vv| dv), so its contribution lies in K₁(3); the P_A part is not. Averaging over planes V of
+  the first copy, W₁ = E_V[P_S^{(V)} + (9/2)|s_V⟩⟨s_V|] (s_V the singlet of V ⊗ V), so even combining both parts plane
+  by plane leaves, on each V ⊗ V, a two-qubit Werner operator with singlet fraction 3/5 > ½, which is entangled.
+  A decomposition that factors through the first copy would need W₁ to be separable, and it is not. So, like the
+  dimension bound, this shows that a proof of KL₁ has to use the 3 × 3 output bottleneck itself.
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
