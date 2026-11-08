@@ -1047,7 +1047,10 @@ that is, NPT bound entanglement. With two sites and nothing else, FB(t) is exact
 C = P ⊗ |0⟩⟨1| gives Δ_{(3,3)} = t(2 − 4t) and Δ_{(9)} = 4t. Random-start minimisation of Δ_d − γΔ_{d′}
 (`code/trace_norm/fusion_budget.py`, log `logs/trace_norm/fusion_budget.log`) finds no violation for γ = (1 − 2t)/2 at
 (3,3,3) → (9,3) (t = 0.4 and 0.45), (9,3,3) → (27,3) and (3,3,3,3) → (9,3,3) (t = 0.4), with equality reached at
-nontrivial points, while γ = 0.11 at t = 0.4 already fails (−4.8·10^{−3}). At those equality points the operator is a
+nontrivial points, while γ = 0.11 at t = 0.4 already fails (−4.8·10^{−3}). On matrix-product inputs with the first two of
+n copies merged (`code/trace_norm/fusion_budget_mps.py`, logs `logs/trace_norm/fusion_budget_mps_*.log`) there is no
+violation at n = 6, 8 (t = 0.4) and n = 10 (t = 0.45) with bond dimension two, or at n = 6 with bond dimension three;
+every run ends on the equality line Δ_d = ((1 − 2t)/2) Δ_{d′}. At those equality points the operator is a
 rank-two operator on qubit planes of the two merged copies, for example λ_1|00⟩⟨00| − λ_2|11⟩⟨11|, times a rank-one
 product on the remaining copies: the budget is tight exactly where the two-copy endpoint inequality is tight on the merged
 pair. FB(t) is still an m-site statement (the other sites enter through Φ_t^{⊗(m−2)}); we do not have a proof of it, even
@@ -1157,7 +1160,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   term of two orthogonal pure states), `one_step_qubit.py D runs seed nth nph` (the failing one-step inequality on
   local qubits), `tn_mps.py n chi t runs seed mode` (matrix-product inputs, any n), `product_singular_vector.py
   n t runs` (the identity in the proof of Proposition 26, and the bound on that class).
-- `code/trace_norm/fusion_budget.py t gamma runs seed d_1 ... d_m`: Conjecture FB (merging the first two sites).
+- `code/trace_norm/fusion_budget.py t gamma runs seed d_1 ... d_m`: Conjecture FB (merging the first two sites). `fusion_budget_mps.py n chi t gamma runs seed`: the
+  same on matrix-product inputs.
 
 ## Local positivity at the signed GHZ zero, every n (added 8 November 2026)
 

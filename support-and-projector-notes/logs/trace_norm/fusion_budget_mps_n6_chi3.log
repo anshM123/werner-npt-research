@@ -1,0 +1,5 @@
+FB on MPS: n=6 chi=3 t=0.4 gamma=0.1
+run 0: (Df - g Dm)/|C|^2 1.072e-10   Df 6.262e-03  Dm 6.262e-02  s1s2/|C|^2 0.500
+run 1: (Df - g Dm)/|C|^2 4.352e-09   Df 6.915e-03  Dm 6.915e-02  s1s2/|C|^2 0.500
+run 2: (Df - g Dm)/|C|^2 2.772e-10   Df 9.477e-03  Dm 9.477e-02  s1s2/|C|^2 0.500
+smallest 1.072e-10
