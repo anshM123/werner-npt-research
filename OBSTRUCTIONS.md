@@ -117,6 +117,11 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
   by plane leaves, on each V ⊗ V, a two-qubit Werner operator with singlet fraction 3/5 > ½, which is entangled.
   A decomposition that factors through the first copy would need W₁ to be separable, and it is not. So, like the
   dimension bound, this shows that a proof of KL₁ has to use the 3 × 3 output bottleneck itself.
+- **Effective rank in place of rank (added 8 November 2026).** The condition ‖C‖₁² ≤ 2‖C‖₂² ("effective rank at most
+  two") is multiplicative under tensor products, and the one-copy argument works with it unchanged, so it would be a
+  natural tensor-stable substitute for rank two. It is not enough: at two copies an operator with
+  ‖C‖₁²/‖C‖₂² = 2.000 (singular values about 1, ¼, ¼) has q₂(½, C)/‖C‖² = −0.055
+  (`whole-problem-routes/code/filtered_ccnr/check_effective_rank.py`). Exact rank two has to be used.
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
@@ -128,6 +133,18 @@ includes:
 - tensor-network searches to 64 copies;
 - factored searches at 10 and 12 copies;
 - adversarial searches over single-excitation planes, where anchors fail.
+
+**A numerically supported strengthening (added 8 November 2026).** Call X ≥ 0 *filter-realignable* if every local
+compression Y = (A ⊗ B)* X (A ⊗ B), brought to filter normal form Ỹ (local filters making both marginals multiples of
+the identity), satisfies the realignment bound ‖R(Ỹ)‖₁ ≤ Tr Ỹ. On 2 × 2 compressions in normal form (Bell-diagonal)
+this bound is equivalent to the PPT condition, so if W^{⊗n} is filter-realignable then the endpoint holds at n copies.
+The realignment bound is multiplicative on product compressions, and W_t = I − tF is filter-realignable exactly when
+t ≤ ½ (the full one-copy ratio is (3 + 7t)/(9 − 3t) = 13/15 at t = ½). Adversarial searches over complex filters
+never exceed 1: at two copies the largest ratio over 3 × 3 compressions is 1.000, reached at boundary points (other
+local maxima 13/15 and 7/9); at three copies, over 2 × 2 and 3 × 3 compressions, every run ends exactly at 1.000. The
+same search finds 1.083 at t = 0.55, where one copy is already distillable. The open step is the same as everywhere
+else: compressions onto subspaces that are entangled across copies (`whole-problem-routes/code/filtered_ccnr/`,
+floating point).
 
 ## The map route (Section 7 of `whole-problem-routes/`)
 
