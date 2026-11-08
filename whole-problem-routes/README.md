@@ -986,11 +986,11 @@ marginals are not degenerate also has a positive gap at every copy (0.23 to 0.33
 an artefact of the symmetry. The failure reaches the range n ≥ 7 that an induction would need: for products,
 g(y ⊗ y′) = g(y) g(y′) (both outputs are positive semidefinite), and a one-copy compression acts inside one factor, so
 on y ⊗ y (eight copies, thick at every copy) every one-copy compression raises g as well. At three copies,
-compressing along a fixed eigenvector of the one-copy marginal already
-fails: along the middle eigenvector at an input with smallest marginal eigenvalues 0.06, 0.25 and 0.20 (gap +0.28·4^{−3}
-at every copy), and along the smallest eigenvector at a nearly thin input (+0.0017·4^{−3}). In adversarial searches the
-best of the three eigenvectors never failed at three copies. So the compression route, like the squeezes of
-Observation 7.26, ends at four copies.
+compressing along a fixed eigenvector of the one-copy marginal already fails: along the middle eigenvector at an input
+with smallest marginal eigenvalues 0.06, 0.25 and 0.20 (gap +0.28·4^{−3} at every copy), and along the smallest
+eigenvector at a nearly thin input (+0.0017·4^{−3}). In adversarial searches the best of the three eigenvectors never
+failed at three copies. So the one-copy compression route, like the squeezes of Observation 7.26, fails from four
+copies on.
 Compressing two copies at once survives these tests. At the partner vector the best compression of a pair of copies,
 each onto a plane, lowers g by 3.80·4^{−4}, and by 4.30·4^{−4} for the two copies of an Ω-pair of p₂. A gradient ascent
 on y that tries to make every pair compression raise g (four runs of 60 steps, from near the partner and from random
