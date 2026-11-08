@@ -1,0 +1,8 @@
+$ python fnf_ccnr.py 4 3 3 2
+run 0: filtered CCNR ratio 1.000000
+run 1: filtered CCNR ratio 1.000000
+n=4 r=3 r'=3 t=0.5: max ratio 1.000000
+$ python fnf_ccnr.py 4 2 3 2
+run 0: filtered CCNR ratio 0.867369
+run 1: filtered CCNR ratio 0.863325
+n=4 r=2 r'=3 t=0.5: max ratio 0.867369
