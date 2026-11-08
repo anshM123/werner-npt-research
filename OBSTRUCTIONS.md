@@ -154,7 +154,10 @@ t ≤ ½ (the full one-copy ratio is (3 + 7t)/(9 − 3t) = 13/15 at t = ½). Adv
 never exceed 1: at two copies the largest ratio over 3 × 3 compressions is 1.000, reached at boundary points (other
 local maxima 13/15 and 7/9); at three copies, over 2 × 2, 3 × 3, 5 × 5 and 6 × 6 compressions, every run ends exactly at 1.000 (4 × 6: 0.823); at
 four copies every run over 3 × 3 compressions ends at 1.000, and over 2 × 3 compressions the largest value found is 0.867. The
-same search finds 1.083 at t = 0.55, where one copy is already distillable. The open step is the same as everywhere
+value 1 is also reached by degenerate, nearly product compressions, so these runs mostly locate the trivial part of the
+boundary; the interior local maxima found (13/15, 7/9, 0.823, 0.867) are well below 1, and dropping the normal form
+(arbitrary local images) changes nothing in our runs. The same search finds 1.083 at t = 0.55, where one copy is already
+distillable. The open step is the same as everywhere
 else: compressions onto subspaces that are entangled across copies (`whole-problem-routes/code/filtered_ccnr/`,
 floating point).
 
