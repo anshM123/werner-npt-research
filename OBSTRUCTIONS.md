@@ -122,6 +122,16 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
   natural tensor-stable substitute for rank two. It is not enough: at two copies an operator with
   ‖C‖₁²/‖C‖₂² = 2.000 (singular values about 1, ¼, ¼) has q₂(½, C)/‖C‖² = −0.055
   (`whole-problem-routes/code/filtered_ccnr/check_effective_rank.py`). Exact rank two has to be used.
+- **Splitting the second rung (added 8 November 2026).** With e_a = ‖Tr_a C‖² − ‖C‖² and
+  f_ab = ‖Tr_ab C‖² − ‖Tr_a C‖² − ‖Tr_b C‖² + ‖C‖² (other copies untraced), the two-copy form on copies {a, b} is
+  exactly ¼(‖C‖² − e_a − e_b + f_ab), and the second Bernstein rung of `first-order-bound/` reads
+  (n − 1)(‖C‖² − Σ_a e_a) + Σ_{a<b} f_ab ≥ 0. It holds in adversarial searches at three and four copies, with
+  minimum 0 at product zeros. Single-copy monogamy is available: Σ_{a∈A} e_a ≤ ‖C‖² for every set A of copies and every
+  rank-two C. This follows from the first-order theorem applied block by block over the untraced copies, together with
+  Σ_xy ‖Z_xy‖₁² ≤ ‖Z‖₁² (write Z = PQ* with ‖P‖₂² = ‖Q‖₂² = ‖Z‖₁). But the matching two-copy bound
+  f_ab ≥ −(max(−e_a, 0) + max(−e_b, 0)), which together with monogamy would give the rung for every n, is false. The
+  anti-GHZ zero |00⟩⟨00| − |11⟩⟨11| has e₁ = e₂ = 0 and f₁₂ = −‖C‖², and there the rung is paid for entirely by the
+  first-rung slack (`whole-problem-routes/code/sharp_rank_two/rung2_split.py`, floating point).
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be

@@ -1,0 +1,23 @@
+$ python rung2_search.py 3 6
+run 0: R2/S0 = +1.981e-13   singular value ratio 1.0000
+run 1: R2/S0 = +1.872e-15   singular value ratio 1.0000
+run 2: R2/S0 = +1.228e-14   singular value ratio 1.0000
+run 3: R2/S0 = +0.000e+00   singular value ratio 1.0000
+run 4: R2/S0 = -2.423e-15   singular value ratio 1.0000
+run 5: R2/S0 = +3.554e-10   singular value ratio 1.0000
+min R2/S0 = -2.423191180604752e-15
+$ python rung2_search.py 4 4
+run 0: R2/S0 = +1.598e-08   singular value ratio 1.0000
+run 1: R2/S0 = -4.051e-15   singular value ratio 1.0000
+run 2: R2/S0 = +1.211e-09   singular value ratio 1.0000
+run 3: R2/S0 = +6.320e-08   singular value ratio 1.0000
+min R2/S0 = -4.0509174669580234e-15
+$ python rung2_split.py P1 3 3
+P1 n = 3 set (0, 1) max sum e_a/||C||^2 +1.000000
+P1 n = 3 set (0, 2) max sum e_a/||C||^2 +1.000000
+P1 n = 3 set (1, 2) max sum e_a/||C||^2 +1.000000
+P1 n = 3 set (0, 1, 2) max sum e_a/||C||^2 +1.000000
+$ python rung2_split.py P2 2 4
+P2 n = 2 set (0, 1) min f_ab + e_a^- + e_b^-  (/||C||^2) -1.000000
+$ python rung2_split.py P2 3 4
+P2 n = 3 set (0, 1) min f_ab + e_a^- + e_b^-  (/||C||^2) -1.000000
