@@ -1,0 +1,9 @@
+$ python ghz_zero_hessian.py 4
+n=1: F at zero = 0.00e+00
+  min eigenvalue -2.465e-15, kernel dim 14 (claim 14), smallest positive 8.0000
+n=2: F at zero = 0.00e+00
+  min eigenvalue -3.705e-15, kernel dim 26 (claim 26), smallest positive 4.0000
+n=3: F at zero = 0.00e+00
+  min eigenvalue -6.605e-15, kernel dim 46 (claim 46), smallest positive 4.0000
+n=4: F at zero = 0.00e+00
+  min eigenvalue -5.055e-14, kernel dim 82 (claim 82), smallest positive 4.0000

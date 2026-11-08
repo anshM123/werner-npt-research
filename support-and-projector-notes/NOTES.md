@@ -693,6 +693,23 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   k = 1, 2, isometry and marginals); Section 7 (the enumerator identities on random projectors at n = 2, 3, the
   three-copy code, and the certificates for n = 4, …, 9 in exact rational arithmetic).
 
+## Local positivity at the signed GHZ zero, every n (added 8 November 2026)
+
+Let C_n^0 = |0^n⟩⟨0^n| − (−1)^n |1^n⟩⟨1^n|, a zero of q_n for every n, and write rank-two operators as C = AB^* with A, B
+of size 3^n × 2. An independent audit of this repository computes the real Hessian of F_n(A, B) = 2^n q_n(AB^*) at
+(A, B) = ([|0^n⟩, |1^n⟩], [|0^n⟩, −(−1)^n |1^n⟩]) block by block for every n, and finds:
+- it is positive semidefinite;
+- its kernel has real dimension 4·2^n + 4n + 2;
+- its smallest positive eigenvalue is 8 at n = 1 and 4 for n ≥ 2.
+
+The kernel dimension equals the dimension of the "twisted-transpose" zero family K(u, v) = (uv^T − vu^T) J^{⊗n}
+(J = [[0, −1], [1, 0]]) placed on arbitrary local qubit planes, which is 4·2^n − 6 + 4n, plus the 8 real gauge directions of
+C = AB^*. So C_n^0 is a nondegenerate (Morse–Bott) minimum of the endpoint form on the rank-two variety, and q_n ≥ 0 in a
+neighbourhood of it, for every n. The audit gives the explicit radius ‖C − C_n^0‖ ≤ 2^{−n}/200, inside which
+q_n(C) ≥ 2^{−n−4} dist(C, zero family)²; we have not re-derived that estimate. We checked the three spectral statements by
+computing the full Hessian numerically for n = 1, …, 4 (`code/ghz_zero_hessian.py`, `logs/ghz_zero_hessian.log`). This is a
+local statement at one zero family and says nothing about thick operators.
+
 ## References
 
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.
