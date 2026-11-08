@@ -249,7 +249,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.12 | the two-copy Werner endpoint and the two-copy case of the map at 3/4 are the ends of one family | reduction **proved**; the range [1, 2] numerical |
 | 7.13 | 𝒫_{3/4}^{⊗n} is positive for n = 3, 4, 5, with least output eigenvalue exactly 4^{−n}; 𝒫_a^{⊗3} is positive for a ≥ 81/125 = 0.648 | **proved** (computer-assisted: exact rational certificates, two separate exact verifiers) |
 | 7.14 | a failure of tensor-stable positivity of 𝒫_{3/4} needs n ≥ 7 copies, with the input and the output vector thick at seven or more common copies | **proved** (the step from six to seven uses Theorem 7.32) |
-| 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n; its threshold ℓ_n increases with n and is ≈ 0.720 at n = 5; at n = 6 it still certifies a = 3/4 but is no longer exact (Theorem 7.32) | numerical (ℓ_{n+1} ≥ ℓ_n **proved**) |
+| 7.15 | the second level of the symmetric-extension hierarchy is exact at a = 3/4 for n ≤ 5, but not near a_n; its threshold ℓ_n increases with n and is ≈ 0.720 at n = 5; at n = 6 it still certifies a = 3/4 (Theorem 7.32), and in floating point it is no longer exact there | numerical (ℓ_{n+1} ≥ ℓ_n **proved**) |
 | 7.16 | on permutation-symmetric inputs and outputs: positivity fails below a_n for every n; at a = 3/4 the least value is exactly 4^{−n} for n ≤ 21, attained only at real products | **proved** (the first part every n; the second computer-assisted: n ≤ 9 by two separate exact checks, 10 ≤ n ≤ 21 by one); the threshold a_n on this sector numerical (n ≤ 7) |
 | 7.17 | for a ≥ 3/4 and every n, inputs that become thin one copy at a time (for example every open matrix product state of bond dimension two, such as the AKLT chain) have least output eigenvalue at least the product value (a − ½)^n | **proved** (by hand; with Theorem 7.13, up to five copies may stay thick) |
 | 7.18 | on a real plane (the Pauli family (1, t, 0, t) of Filippov and Magadov) the n-copy threshold is exactly a_n, every n, and positivity equals decomposability there | **proved** (explicit decomposition) |
@@ -268,7 +268,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.29 | at three copies, λ_min(𝒫_{3/4}^{⊗3}(yyᵀ)) ≥ (1/64)(1 + (98/27)Σ_sτ_s) ≥ ∏_s(¼ + ½τ_s): Conjecture TC at n = 3 | **proved** (computer-assisted, exact rational certificate, two verifiers) |
 | 7.30 | for every input, pure or mixed, and every real product test vector, the value is at least 4^{−n}3^{2Σ_sτ_s} ≥ ∏_s(¼ + ½τ_s), every n; so TC holds whenever the least output eigenvalue is attained at a product vector (for example for inputs diagonal in a product basis) | **proved** |
 | 7.31 | peeling one copy (𝒫_{3/4} = ¼D + 𝒫_{1/2}): TC for mixed inputs at n follows from n − 1 and a bound on the vertex map 𝒫_{1/2} ⊗ 𝒫_{3/4}^{⊗(n−1)} at one copy; the operator form of the peeling is equivalent to real 2-positivity | identity **proved**; the bounds numerical (n ≤ 4); level 2 does not certify the first open vertex case |
-| 7.32 | 𝒫_{3/4}^{⊗6}(xx*) ⪰ 4^{−7}‖x‖² I for every x: 𝒫_{3/4}^{⊗6} is positive; the second level is not exact at six copies (optimum ≈ 0.563·4^{−6}) | **proved** (computer-assisted: exact rational certificate, two separate exact verifiers) |
+| 7.32 | 𝒫_{3/4}^{⊗6}(xx*) ⪰ 4^{−7}‖x‖² I for every x: 𝒫_{3/4}^{⊗6} is positive; in floating point the second level is not exact at six copies (optimum ≈ 0.563·4^{−6}) | the bound **proved** (computer-assisted: exact rational certificate, two separate exact verifiers); the non-exactness numerical |
 | 7.33 | Conjecture TC for every separable input, pure or mixed, every n: 𝒫_{3/4}^{⊗n}(σ) ⪰ 4^{−n}3^{2Σ_sτ_s(σ)} I; convexity cannot carry this to entangled inputs | **proved** |
 | TC | λ_min(𝒫_{3/4}^{⊗n}(yyᵀ)) ≥ ∏_s(¼ + ½τ_s(y)), τ_s(y) the least eigenvalue of y's one-copy marginal; it contains QT at 3/4 | **open** (n = 2, 3 proved: 7.28, 7.29; every n against product test vectors: 7.30; n = 4 adversarial searches) |
 
@@ -593,8 +593,8 @@ its value is multiplied by a − ½ > 0. The primal program is strictly feasible
 dual point of negative value, and this point stays negative at n + 1. Numerically ℓ₂ = a₂, ℓ₃ ≈ 0.6480, ℓ₄ ≈ 0.686 and
 ℓ₅ ≈ 0.720, while a₄ ≈ 0.6704 and a₅ ≈ 0.6853 (at n = 5 and a = 0.72 the best t is −5.8·10⁻⁵). The increments 0.044,
 0.038 and 0.034 shrink slowly. At six copies the second level still certifies positivity at a = 3/4, so ℓ₆ < 3/4
-(Theorem 7.32), but it is no longer exact there: its optimum is t ≈ 1.3749·10⁻⁴ ≈ 0.563·4^{−6}, below the value 4^{−6}
-of real products. So at a = 3/4 the method is close to its limit. These numbers are floating point
+(Theorem 7.32), but in floating point it is no longer exact there: the solver's optimum is t ≈ 1.3749·10⁻⁴ ≈
+0.563·4^{−6}, below the value 4^{−6} of real products. So at a = 3/4 the method appears to be close to its limit. These numbers are floating point
 (`code/dps/logs/sdp/threshold*.log`, `code/dps6/logs/`).
 
 **Proposition 7.16 (permutation-symmetric inputs and outputs).** Let Sym^n ⊂ (C³)^{⊗n} be the symmetric subspace.
@@ -1192,8 +1192,9 @@ written programs check all of this in exact arithmetic (`code/dps6/README.md`). 
 
 This is the second level used for Theorem 7.13, written for real vectors: the swap of the two x slots and the
 permutations of the four y slots do the work of Γ_A, Γ_B and P, and numerically the two versions have the same optimum.
-At six copies that optimum is t ≈ 1.3749·10⁻⁴ ≈ 0.563·4^{−6}, below the product value, so unlike n ≤ 5 the level is
-not exact. The certificate combines a solution at that optimum with one of largest margin at t = 0 (least block
+At six copies the floating-point optimum is t ≈ 1.3749·10⁻⁴ ≈ 0.563·4^{−6}, below the product value, so unlike n ≤ 5 the
+level appears not to be exact. The solver reports this optimum as "optimal_inaccurate", and we have not proved it; the
+theorem uses only the exact certificate at t = 4^{−7}. The certificate combines a solution at that optimum with one of largest margin at t = 0 (least block
 eigenvalue 1.378·10⁻⁴), rounded to 2^{−50} and then corrected exactly. A seventh copy is out of reach this way: the
 same reduction has 2889 orbits there, and the threshold ℓ_n of Remark 7.15 is probably above 3/4 by then.
 

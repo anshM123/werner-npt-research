@@ -133,8 +133,8 @@ output have full support. The following do not reach every n (added 7 November 2
   is a diagonal one), give exactly the decomposability bound: −3/832 at n = 3, the PPT state of Remark 7.15.
 - **Fixed-level symmetric extensions.** The second level is exact at a = ¾ for n ≤ 5, but its threshold ℓ_n increases
   (0.6036, 0.648, 0.686, 0.720 for n = 2, …, 5, with increments shrinking only like n^{−1/2}). At six copies it still
-  certifies a = ¾ (Theorem 7.32), but only with t ≈ 0.563·4^{−6}, no longer the product value, so it has started to
-  lose ground. It probably fails at a = ¾ from about n = 7, and no fixed level is expected to work for every n.
+  certifies a = ¾ (Theorem 7.32), but in floating point only with t ≈ 0.563·4^{−6}, no longer the product value, so it
+  appears to have started to lose ground. It probably fails at a = ¾ from about n = 7, and no fixed level is expected to work for every n.
 - **Word expansions.** 2C_{3/4} = M + P_an, with M = I − ½|Ω⟩⟨Ω| the Werner endpoint operator. But M ⊗ P_an is not
   positive on Schmidt-rank-two vectors (least value −1/6), and M ⊗ P_an ⊗ P_an is not block positive (−1/24). So
   neither 2-positivity of 𝒫_{3/4}^{⊗2} nor positivity of the powers splits into endpoint statements term by term.

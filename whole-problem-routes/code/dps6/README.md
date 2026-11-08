@@ -65,7 +65,9 @@ How the six-copy certificate was made (floating point, Clarabel; logs in `logs/`
 
 - the reduced program has 20 412 variables, 217 blocks and 1042 equations (`build_n6.log`, 17 minutes);
 - maximising t gives t* = 1.374856·10⁻⁴ ≈ 0.563·4^{−6} (`solve_n6_maxt.log`). This is below the product value 4^{−6},
-  so the second level is not exact at six copies (it is for n ≤ 5, Theorem 7.13);
+  so in floating point the second level is not exact at six copies (it is for n ≤ 5, Theorem 7.13). Clarabel reports
+  this optimum as "optimal_inaccurate", so the non-exactness is numerical evidence, not a proof; the theorem uses
+  only the exact certificate;
 - at t = 0 the least block eigenvalue can be pushed to 1.378·10⁻⁴ (`solve_n6_center_t0.log`);
 - the certificate is θ·(first solution) + (1 − θ)·(second) with θ = 4^{−7}/t* = 0.4439. Its coefficients were rounded
   to 2^{−50}, which left orbit residuals of at most 1.2·10⁻⁸. Each residual was then put on one multiset of its orbit,
