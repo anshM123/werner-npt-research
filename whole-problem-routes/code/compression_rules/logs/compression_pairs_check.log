@@ -1,0 +1,13 @@
+(a) four copies, partner vector
+g(y) = 11.417929 x 4^-4; one-copy compression gap +0.314655
+  pair (0, 1): best two-copy compression gap -3.80313 x 4^-4
+  pair (0, 2): best two-copy compression gap -4.30266 x 4^-4
+  pair (0, 3): best two-copy compression gap -3.80313 x 4^-4
+  pair (1, 2): best two-copy compression gap -3.80313 x 4^-4
+  pair (1, 3): best two-copy compression gap -4.30266 x 4^-4
+  pair (2, 3): best two-copy compression gap -3.80313 x 4^-4
+(b) six copies, minimising singlet pair
+singlet-sector minimum 48.2787 x 4^-6; g(test vector) over all inputs 48.2787 x 4^-6
+one-copy compression gap -5.7628 x 4^-6
+pair (0, 3): best two-copy compression gap -22.0556 x 4^-6
+exit 0
