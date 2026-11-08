@@ -404,8 +404,8 @@ output have full support. The following do not reach every n (added 7 November 2
   positive or not, with the trace norm in place of the trace and along the whole Werner line:
   q_n(t, C) ≥ (1 − t)^{n−1}(‖C‖_F² − t‖C‖₁²) (Conjecture TN_n). Random-start minimisation finds no violation for n ≤ 5
   or with other local dimensions, and the bound is attained for every ratio of singular values. At two copies it is
-  proved for every rank-two operator (Proposition 28 there: an independent audit's refinement of the partial-trace
-  inequality of Fraser, Huber, Pozsgay and Vona, arXiv:2607.24309). Two inductions on it
+  proved for every rank-two operator (Proposition 28 there: the refinement of the partial-trace inequality of Fraser,
+  Huber, Pozsgay and Vona, arXiv:2607.24309, recorded in `first-order-bound/`). Two inductions on it
   fail. Applied slice by slice after peeling one qubit copy (where the peeling is exact), it needs a one-step
   inequality that is false by 0.05. And the cross term of two orthogonal pure states is not at least −2^{−n} from
   three copies on, so the positive case cannot be split into rank-one bounds plus a bound on the cross term. The

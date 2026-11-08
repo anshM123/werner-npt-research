@@ -42,8 +42,8 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   and the sharp curve, and forces every zero to have equal singular values (all known zeros do); random-start
   minimisation finds no violation for n ≤ 5 or with other local dimensions, and it is proved for every n when a
   product vector is a common left and right singular vector (Proposition 26). At two copies it holds for every
-  rank-two operator in all local dimensions, by a refined partial-trace inequality (Proposition 28, from an
-  independent audit). Two natural inductions on it fail
+  rank-two operator in all local dimensions, by the refined partial-trace inequality of `first-order-bound/`
+  (Proposition 28). Two natural inductions on it fail
   (slice by slice, and through the cross term of two orthogonal pure states). Its qualitative part already suffices:
   if every rank-two zero has equal singular values, the endpoint holds (Corollary 25); all known zeros do. In a
   purified form with a reference qubit, its one-copy case is Uhlmann's theorem. A sharp merging budget (Conjecture FB:
@@ -1039,10 +1039,11 @@ bracket equals 4 Tr[(C ⊗ C)(P_A ⊗ P_A)] by P_A = (I − F)/2 at each copy. �
 From three copies on, the rank matters even for positive operators: the n = 3 case of (9.3) is negative for some
 positive C of rank three (the smallest value found is −(8/9)(Tr C)²), while for rank two none was found.
 
-The two-copy case does not need positivity. The following is from an independent audit of this repository; it
-refines the partial-trace inequality of Fraser, Huber, Pozsgay and Vona [FHPV] by keeping a variance term that their
-balanced-decomposition argument drops. We checked the proof and give it in our words; we make no claim about whether
-(9.4) appears elsewhere.
+The two-copy case does not need positivity. The inequality (9.4) below, a refinement of the partial-trace inequality
+of Fraser, Huber, Pozsgay and Vona [FHPV], is already in `first-order-bound/` of this repository (with a
+sum-of-squares identity at r = 2, and the endpoint consequence 4q_2 ≥ (σ_1 − σ_2)²). An independent audit re-derived it
+by keeping a variance term that the balanced-decomposition argument of [FHPV] drops; we give that proof in our words,
+and add the consequences along the Werner line and for merging.
 
 **Proposition 28 (two copies, every operator).** Let C act on C^{d_1} ⊗ C^{d_2} and have rank at most r. Then
 
@@ -1079,16 +1080,18 @@ q_2(t, C) − (1 − t)(N − tS²) = t[N − P + tT + (1 − t)S²], and (9.4) 
 
 [FHPV] prove ‖Tr_1 C‖_F² + ‖Tr_2 C‖_F² ≤ r‖C‖_F² + |Tr C|²/r for rank at most r; at r = 2 this is the two-copy
 endpoint q_2 ≥ 0 in every local dimension. (9.4) is sharper because ‖C‖_1² ≤ r‖C‖_F², and at the endpoint with r = 2
-it is exactly TN_2. Earlier in these notes TN_2 was proved only for positive operators (Proposition 24) and for real
-skew ones (the rectangular commutator inequality below). (9.5) is also the two-site case of the merging budget below. `code/trace_norm/refined_partial_trace.py` checks (9.4) on 4000 random operators of
+it is exactly TN_2. This section had stated TN_2 only for positive operators (Proposition 24) and for real skew ones
+(the rectangular commutator inequality below); the endpoint case for every operator was already in
+`first-order-bound/`. (9.5) is also the two-site case of the merging budget below. `code/trace_norm/refined_partial_trace.py` checks (9.4) on 4000 random operators of
 rank up to six, its two equality families, and (9.5) on random rank-two operators (log
 `logs/trace_norm/refined_partial_trace.log`).
 
-*More sites.* The n-site version of (9.4) at rank two,
+*More sites.* The n-site version of (9.4) at rank two, stated as a conjecture in `first-order-bound/` and proved there
+for normal C,
 
     Σ_s ‖Tr_s C‖_F² ≤ (n − 1)‖C‖_F² + ½‖C‖_1² + ½|Tr C|²,                                               (9.4′)
 
-holds for rank one: there it follows from Σ_s ‖Tr_s(uv^*)‖² ≤ (n − 1)‖u‖²‖v‖² + |v^*u|², since (n − 1)I + F − Σ_s F_s
+holds for rank one (also in `first-order-bound/`): there it follows from Σ_s ‖Tr_s(uv^*)‖² ≤ (n − 1)‖u‖²‖v‖² + |v^*u|², since (n − 1)I + F − Σ_s F_s
 has the eigenvalue 2|T| − 1 + (−1)^{|T|} ≥ 0 on the sector antisymmetric exactly at the copies in T. For rank two we
 find no violation: random-start minimisation (`code/trace_norm/multisite_refined.py`, log
 `logs/trace_norm/multisite_refined.log`, 10 runs each) on (3,3,3), (3,3,3,3), (2,2,2), (2,2,2,2), (2,2,2,2,2), (4,4,4)
