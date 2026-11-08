@@ -1,0 +1,38 @@
+== python wz_dual_lp.py 5 none
+n=5: status 0, max B(c) - A(P) = 5.648148
+  |S|=0: c in [1.0, 1.0] distinct [np.float64(1.0)];  P distinct [np.float64(1.0)]
+  |S|=1: c in [0.2963, 0.2963] distinct [np.float64(0.2963)];  P distinct [np.float64(0.3333)]
+  |S|=2: c in [0.5556, 0.5556] distinct [np.float64(0.5556)];  P distinct [np.float64(0.0)]
+  |S|=3: c in [0.0, 0.0] distinct [np.float64(0.0)];  P distinct [np.float64(-0.0)]
+  |S|=4: c in [0.4074, 0.4074] distinct [np.float64(0.4074)];  P distinct [np.float64(0.3333)]
+  |S|=5: c in [0.0, 0.0] distinct [np.float64(0.0)];  P distinct [np.float64(1.0)]
+== python wz_dual_lp.py 5 dim
+n=5: status 0, max B(c) - A(P) = 5.267490
+  |S|=0: c in [1.0, 1.0] distinct [np.float64(1.0)];  P distinct [np.float64(1.0)]
+  |S|=1: c in [0.3128, 0.3128] distinct [np.float64(0.3128)];  P distinct [np.float64(0.4074)]
+  |S|=2: c in [0.5309, 0.5309] distinct [np.float64(0.5309)];  P distinct [np.float64(0.1111)]
+  |S|=3: c in [0.0, 0.0] distinct [np.float64(0.0)];  P distinct [np.float64(0.1111)]
+  |S|=4: c in [0.3745, 0.3745] distinct [np.float64(0.3745)];  P distinct [np.float64(0.4074)]
+  |S|=5: c in [0.0, 0.0] distinct [np.float64(0.0)];  P distinct [np.float64(1.0)]
+== python wz_dual_lp.py 5 dimcs
+n=5: status 0, max B(c) - A(P) = 4.285714
+  |S|=0: c in [1.0, 1.0] distinct [np.float64(1.0)];  P distinct [np.float64(1.0)]
+  |S|=1: c in [0.0, 0.0] distinct [np.float64(0.0)];  P distinct [np.float64(0.4286)]
+  |S|=2: c in [0.1429, 0.1429] distinct [np.float64(0.1429)];  P distinct [np.float64(0.1429)]
+  |S|=3: c in [0.0, 0.0] distinct [np.float64(0.0)];  P distinct [np.float64(0.1429)]
+  |S|=4: c in [0.4286, 0.4286] distinct [np.float64(0.4286)];  P distinct [np.float64(0.4286)]
+  |S|=5: c in [0.0, 0.0] distinct [np.float64(0.0)];  P distinct [np.float64(1.0)]
+== python wz_dual_lp.py 5 dimcslminuhl
+n=5: status 0, max B(c) - A(P) = 4.028409
+  |S|=0: c in [1.0, 1.0] distinct [np.float64(1.0)];  P distinct [np.float64(1.0)]
+  |S|=1: c in [0.1288, 0.1288] distinct [np.float64(0.1288)];  P distinct [np.float64(0.497)]
+  |S|=2: c in [0.2455, 0.2455] distinct [np.float64(0.2455)];  P distinct [np.float64(0.2455)]
+  |S|=3: c in [0.0273, 0.0273] distinct [np.float64(0.0273)];  P distinct [np.float64(0.2455)]
+  |S|=4: c in [0.3864, 0.3864] distinct [np.float64(0.3864)];  P distinct [np.float64(0.497)]
+  |S|=5: c in [0.0, 0.0] distinct [np.float64(0.0)];  P distinct [np.float64(1.0)]
+== python wz_dual_lp.py 3 dimcslminuhl
+n=3: status 0, max B(c) - A(P) = -0.000000
+  |S|=0: c in [1.0, 1.0] distinct [np.float64(1.0)];  P distinct [np.float64(1.0)]
+  |S|=1: c in [0.0, 0.0] distinct [np.float64(0.0)];  P distinct [np.float64(1.0)]
+  |S|=2: c in [0.0, 0.0] distinct [np.float64(0.0)];  P distinct [np.float64(1.0)]
+  |S|=3: c in [0.0, 0.0] distinct [np.float64(0.0)];  P distinct [np.float64(1.0)]

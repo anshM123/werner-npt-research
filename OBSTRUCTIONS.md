@@ -237,7 +237,11 @@ output have full support. The following do not reach every n (added 7 November 2
   first-order bound of `first-order-bound/` over every partition into three or more blocks, and even its conjectured
   sharper form for traceless operators, combined linearly with the nonnegativity of all sector weights and one
   weighted Cauchy–Schwarz step, give a certificate at three copies (the linear program returns exactly Wu and Zou's)
-  but none at five copies (infeasible). So the five-copy case needs inequalities of a different kind
+  but none at five copies (infeasible). The dual of that program shows how far off it is. It returns pseudo-profiles
+  (cross purities c_S and purities P_S) that obey every linearised constraint but exceed the bound by 5.65, and the
+  excess stays at 4.03 after adding four further families of valid constraints: the dimension bounds
+  P_S ≥ 3^{−min(|S|, n−|S|)}, c_S ≤ P_S, least-eigenvalue lower bounds on one-copy cross purities, and the Uhlmann bounds
+  c_{S^c} ≤ 3^{min(|S|, n−|S|)} c_S. So the five-copy case needs inequalities of a different kind
   (`whole-problem-routes/code/sharp_rank_two/`, floating point; the linear programs are exact up to solver tolerance).
 - **Zero-free regions (added 8 November 2026).** For C of rank at most two let
   f_C(t₁, …, t_n) = Σ_J (∏_{s∈J} t_s) ‖Tr_J C‖², so the endpoint is f_C(−½, …, −½) ≥ 0. In our tests the diagonal
