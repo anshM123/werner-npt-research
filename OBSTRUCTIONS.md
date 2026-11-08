@@ -185,6 +185,16 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   There x ∧ y gives R uniform over the odd subsets (|R| ≥ 3 with probability 11/16), Sym²V gives |R| ≥ 2 with
   probability 5/16, and both sides of the endpoint equal 33. The endpoint uses the exact weights 3^{|R|}, not a
   comparison of tails (`whole-problem-routes/code/dominance/`, floating point).
+- **Finite-dimensional forms of the compression conjecture (added 8 November 2026).** At a copy s, the 9 × 9 matrix
+  Q[(ab),(cd)] = q_{n−1}(X_ab, X_cd) of the blocks of C determines q_n(C) and every compression q_n(C_{w⊥})
+  (`compression-notes/`, Conjecture QC), and EP_{n−1} makes Q block-positive. So one might hope to get QC for every n
+  from one fixed statement: every Q in some convex set containing these matrices admits a direction w with
+  Δ_s(w) ≥ 0. No such statement works if the set is invariant under local unitaries. By the minimax theorem it is
+  equivalent to a single probability measure on directions whose average Δ is nonnegative on the whole set, and
+  twirling makes that measure uniform. The uniform average is E_w Δ_s(w) = ¾ q_n(C) − S/8 with
+  S = Σ_ij q_{n−1}(X_ij), which is negative at every zero of q_n with S > 0, for example at product zeros (checked by
+  Monte Carlo, `compression-notes/code/qc_minimax/`). So a proof of QC has to use non-convex information about Q, such as
+  the rank-two structure of the blocks. This is Proposition 2 of `compression-notes/` in another form.
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
