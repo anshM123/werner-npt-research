@@ -891,8 +891,11 @@ is tight on a large set. What is known:
 - TN_n implies EP_n and the sharp curve of Section 8: for rank two, ‖C‖_1² ≤ 2‖C‖_F², so the right side of (9.1) is at
   least (1 − 2t)(1 − t)^{n−1} ‖C‖_F². At t = 1/3 it reads (3/2)^n ‖P_⊥^{⊗n} C‖_F² ≥ ‖C‖_F² − σ_1σ_2.
 - It is attained for every ratio σ_2/σ_1. If X ≥ 0 has rank two and a is a unit vector, then at
-  C = X ⊗ |a⟩⟨a|^{⊗(n−1)} (with X at any copy) both sides equal (1 − t)^{n−1}(‖X‖_F² − t (Tr X)²). At the endpoint and
-  for odd n there is a second family: 2^n q_n(λ_1|0^n⟩⟨0^n| + λ_2|1^n⟩⟨1^n|) = (λ_1 − λ_2)² for λ_1, λ_2 ≥ 0.
+  C = X ⊗ |a⟩⟨a|^{⊗(n−1)} (with X at any copy) both sides equal (1 − t)^{n−1}(‖X‖_F² − t (Tr X)²). At the endpoint the
+  equality set is larger: for any set J of copies and λ_1, λ_2 ≥ 0, the operator
+  (λ_1|0^J⟩⟨0^J| − (−1)^{|J|} λ_2|1^J⟩⟨1^J|) ⊗ |a⟩⟨a|^{⊗(n−|J|)} has 2^n q_n = (λ_1 − λ_2)². For |J| = 1 this is the
+  product family, and λ_1 = λ_2 gives the signed GHZ zeros of Section 6. Below the endpoint only |J| = 1 attains the
+  bound: for |J| = m ≥ 2 the difference of the two sides is 2λ_1λ_2 t (1 − t)^{n−m}[(1 − t)^{m−1} − t^{m−1}] > 0.
 - At the endpoint TN_n says that every rank-two zero has σ_1 = σ_2. All zeros in 𝓑_J do: a rank-two antisymmetric
   matrix ab^T − ba^T has two equal nonzero singular values, and the unitary (J^{⊗|J|})^{−1}, the isometries V and the
   rank-one factor R_I keep them equal. So do all 100 zeros of the census (s_2/s_1 = 1 to four digits, n = 2, …, 6).
