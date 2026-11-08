@@ -217,6 +217,18 @@ output have full support. The following do not reach every n (added 7 November 2
   (`whole-problem-routes/code/compression_rules/`). Compressing two copies at once survives the same tests (an
   adversarial search at four copies, and the six-copy singlet minimum), but at the minimiser of a failure every such
   move would have to raise g as well, so a statement of this kind is a reformulation of the problem, not a route.
+- **The sharp rank-two bound (added 8 November 2026).** For C ⪰ 0 of rank at most two, the endpoint form satisfies
+  2ⁿ q_n(½, C) ≥ 2 Tr C² − (Tr C)² at three copies [WZ, Theorem 1.3]; for odd n this inequality would give the
+  endpoint by the odd-projector reduction of `support-and-projector-notes/`. At five copies, nine adversarial runs
+  (random, near qubit-supported and near product starts, gradient descent on the exact form) found no violation; the
+  minima are 0 to rounding. Its rank-one case holds for every n and every local dimension: for a unit vector u with
+  marginal purities p_K, the symmetry p_K = p_{K^c} gives 2ⁿ q_n(½, |u⟩⟨u|) = Σ_K (−1)^{n−|K|} 2^{|K|} p_K = Σ_S Sh(S),
+  where Sh(S) = Σ_{J⊆S} (−1)^{|J|} p_J ≥ 0 is Rains's shadow (positivity of tensor powers of the reduction map), and
+  Sh(∅) = 1. The rank-two case is the whole difficulty, and two natural relaxations of it fail. Rains's shadows of C
+  together with those of its purification by a qubit, and the purity relations of that purification, allow the value
+  −6 at three copies (−60 at five), so purity profiles alone cannot prove it. The simplest uniform Cauchy–Schwarz
+  certificate, with the two-replica operator of the identity 2ⁿq_n(C) − 2TrC² + (TrC)² = Tr[(C ⊗ C)𝒟_n] as its own
+  kernel, already fails at three copies (`whole-problem-routes/code/sharp_rank_two/`, floating point).
 - **Self-similarity (added 8 November 2026).** One finite identity would settle the every-n question. If for some
   m > k the Choi matrix C_a^{⊗m} of 𝒫_a^{⊗m} were a positive combination of local filterings (A ⊗ B)C_a^{⊗k}(A ⊗ B)^*
   plus a separable operator, then 𝒫_a^{⊗mN} would be a sum of filtered copies of 𝒫_a^{⊗K}, K ≤ kN, tensored with

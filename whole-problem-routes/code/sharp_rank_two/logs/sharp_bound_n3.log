@@ -1,0 +1,4 @@
+start 0: min normalised defect -1.409659e-15 [1s]
+start 1: min normalised defect -1.934186e-15 [1s]
+start 2: min normalised defect -1.281109e-15 [1s]
+n = 3: smallest sharp-bound defect found -1.934186e-15 (negative would refute the sharp bound)

@@ -1,0 +1,11 @@
+start 0: min normalised defect +5.765223e-14 [3s]
+start 1: min normalised defect +1.453197e-14 [4s]
+start 2: min normalised defect +1.391548e-10 [61s]
+start 3: min normalised defect -3.502652e-15 [63s]
+start 4: min normalised defect -2.495816e-15 [64s]
+start 5: min normalised defect +3.242253e-10 [65s]
+start 6: min normalised defect +7.168320e-14 [67s]
+start 7: min normalised defect +2.637953e-14 [67s]
+start 8: min normalised defect +3.366297e-14 [69s]
+n = 5: smallest sharp-bound defect found -3.502652e-15 (negative would refute the sharp bound)
+(run as: python sharp_bound_search.py 5 0 9)

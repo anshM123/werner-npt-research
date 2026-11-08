@@ -1,0 +1,7 @@
+start 0: min of gamma + sqrt(alpha beta) = +0.00000; min of gamma + |<uu|D|vv>| = -1.46412
+start 1: min of gamma + sqrt(alpha beta) = +0.00000; min of gamma + |<uu|D|vv>| = -2.35544
+start 2: min of gamma + sqrt(alpha beta) = +0.00000; min of gamma + |<uu|D|vv>| = -1.84502
+start 3: min of gamma + sqrt(alpha beta) = +0.00000; min of gamma + |<uu|D|vv>| = -0.00000
+start 4: min of gamma + sqrt(alpha beta) = +0.00000; min of gamma + |<uu|D|vv>| = -1.71722
+start 5: min of gamma + sqrt(alpha beta) = +0.00000; min of gamma + |<uu|D|vv>| = -2.24615
+n = 3: sharp bound worst +0.00000 (should be >= 0); G = D certificate worst -2.35544

@@ -1,0 +1,5 @@
+n = 3: LP minimum of 2^n q_n - (2 Tr C^2 - (Tr C)^2) over the relaxation: -6.000000
+n = 4: LP minimum of 2^n q_n - (2 Tr C^2 - (Tr C)^2) over the relaxation: -9.000000
+n = 5: LP minimum of 2^n q_n - (2 Tr C^2 - (Tr C)^2) over the relaxation: -60.000000
+n = 6: LP minimum of 2^n q_n - (2 Tr C^2 - (Tr C)^2) over the relaxation: -105.000000
+n = 7: LP minimum of 2^n q_n - (2 Tr C^2 - (Tr C)^2) over the relaxation: -714.000000
