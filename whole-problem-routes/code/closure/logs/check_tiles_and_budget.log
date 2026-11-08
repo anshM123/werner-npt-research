@@ -1,0 +1,4 @@
+$ python check_tiles_and_budget.py
+Tiles activation value -1769/9  |C|^2 = 10060
+budget: Tr W = 15/2, ||W^Gamma||_1 = 17/2; 17^6 = 24137569 > 2*15^6 = 22781250 True
+PASS
