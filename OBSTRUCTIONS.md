@@ -250,8 +250,11 @@ output have full support. The following do not reach every n (added 7 November 2
   |X| ≤ D at t = −½ (Corollary F of `whole-problem-routes/`). On the complex disk this bound fails from four copies on:
   at four copies there is a plane with |X/D| = 1.62 at t_s = t, |t| = 0.499 (five copies: 3.4). Fusion
   (Proposition F) multiplies X/D, so by the open mapping theorem some power of that plane, at a common t with |t| < ½,
-  has X/D real and below −1, and then C = C_z + αC_z̄ with a suitable α > 0 has f_C = 0 there. So zero-freeness on
-  complex polydisks fails, and the endpoint holds, if at all, only for real parameters
+  has X/D real and below −1, and then C = C_z + αC_z̄ with a suitable α > 0 has f_C = 0 there. The violating plane is
+  qubit-supported (every one-copy marginal of P/2 has spectrum (½, ½, 0)) and J = uvᵀ − vuᵀ has all its partial traces
+  zero, as for GHZ-type planes; on the real segment it is harmless (q₄(P) = ¼ at t = −½). So complex zero-freeness
+  fails already in the qubit sector, where the real endpoint is trivial (for qubits every coefficient (1 − 2t)^{|K|} of
+  the Fourier form is nonnegative). The endpoint holds, if at all, only for real parameters
   (`whole-problem-routes/code/zero_free/`, floating point; the four-copy value is recomputed in plain numpy).
 - **Self-similarity (added 8 November 2026).** One finite identity would settle the every-n question. If for some
   m > k the Choi matrix C_a^{⊗m} of 𝒫_a^{⊗m} were a positive combination of local filterings (A ⊗ B)C_a^{⊗k}(A ⊗ B)^*
