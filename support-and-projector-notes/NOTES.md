@@ -939,6 +939,17 @@ C are the square roots of the eigenvalues of G_A G_B, with G_A and G_B the Gram 
 right side of (9.1) depends only on the two reference marginals, while the left side compares the two purifications
 on every set of copies.
 
+*On local qubits.* For C supported on a product of local qubit planes the endpoint form is ‖Π^{⊗n}C‖_F², with Π the
+projection onto traceless 2 × 2 matrices, so 2^n q_n(C) = Σ_P |Tr(PC)|² over the full-weight Pauli strings
+P ∈ {X, Y, Z}^{⊗n}. There TN_n says that the full-weight Pauli correlations of a rank-two operator are at least
+(σ_1 − σ_2)². For a state ρ = p_1 ψ_1ψ_1^* + p_2 ψ_2ψ_2^* it reads ‖p_1 T_1 + p_2 T_2‖² ≥ (p_1 − p_2)², with T_i ∈ R^{3^n}
+the full-weight correlation vectors of the two orthogonal pure states: every positive combination of (1, T_1) and
+(−1, T_2) is spacelike for the form −x_0² + ‖x⃗‖². For one pure state this is ‖T‖² ≥ 1, the rank-one case (ψ ⊗ ψ has
+no weight on odd antisymmetry patterns). At odd n the GHZ pair (|0^n⟩ ± |1^n⟩)/√2 has ‖T_i‖² = 2^{n−1} and
+⟨T_1, T_2⟩ = −2^{n−1}, so ⟨T_1, T_2⟩ + 1 = −((‖T_1‖² − 1)(‖T_2‖² − 1))^{1/2}: the pair is extremal for (9.2), and its
+equal mixture is the GHZ zero. Random-start minimisation on three, four and five qubits finds no violation
+(`logs/trace_norm/tn_dims_2x2x2*_t0.5.log`).
+
 *Positive operators.* For Hermitian C, q_n(t, C) = Tr[(C ⊗ C) ⊗_s (F_s − t)], where F_s swaps copy s of the first
 factor with copy s of the second, and 2‖C‖_F² − (Tr C)² = Tr[(C ⊗ C)(2F − I)] with F = ⊗_s F_s. The F_s commute; on
 the range of Π_T = ⊗_{s∈T} P_A^{(s)} ⊗_{s∉T} P_S^{(s)} each 2F_s − I is 1 or −3. Hence
@@ -990,6 +1001,7 @@ divided by ‖C‖_F², from random complex factors (L-BFGS):
 | 4 | 0.45 / 0.50 | 6 / 8 | 2·10^{−15} / 1·10^{−15} |
 | 5 | 0.50 | 4 | 3·10^{−16} |
 | local dimensions (4,4), (2,4), (5,5), (4,4,2) | 0.50 | 8 each | −2·10^{−16} |
+| qubits: (2,2,2), (2,2,2,2), (2,2,2,2,2) | 0.50 | 10 each | −2·10^{−16} |
 
 Every run ends at equality to rounding, mostly on the product family above (below the endpoint) or on zeros with
 σ_1 = σ_2 (at the endpoint). None goes below rounding. This is evidence, not a proof. For operators that are not
