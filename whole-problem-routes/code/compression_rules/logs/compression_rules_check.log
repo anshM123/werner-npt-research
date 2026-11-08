@@ -1,0 +1,8 @@
+(a) four-copy partner vector
+g(y) = 11.417929350906 x 4^-4, (151 - sqrt 6805)/6 = 11.417929350906
+compressions at 4 copies x 200 directions: gap in [0.3146545306, 0.3146545306] x 4^-4 (all > 0)
+30-digit eigenvalues: g(y) = 11.4179293509064, g(Gy) = 11.7325838815152 (x 4^-4), gap 0.3146545306
+(b) three-copy failures of fixed eigenvector rules
+smallest eigenvector rule: g(y) = 4.407692 x 4^-3; rule gaps [0.001735 0.001735 0.001735]; best of the three eigenvectors [-2.3644 -2.292  -2.259 ]; best sampled direction [-2.3685 -2.2916 -2.2566] (x 4^-3)
+middle eigenvector rule: g(y) = 4.391643 x 4^-3; rule gaps [0.282519 0.282519 0.282519]; best of the three eigenvectors [-1.9987 -1.6354 -2.1637]; best sampled direction [-2.0035 -1.6373 -2.1727] (x 4^-3)
+PASS

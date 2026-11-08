@@ -261,7 +261,7 @@ reproduces these numbers: alternating minimisation over the two Schmidt pairs, r
 | 7.22 | at every point of the facet ∏(2a_s − ½) = ½, the plane witness is a second-order local minimum in the full qutrit space, every n | **proved** |
 | 7.23 | from a joint critical point of the value, squeezing one copy toward a plane moves the normalised value monotonically all the way to the compression; one contraction inequality gives the sign; the trace of the one-copy squeeze Hessian has a closed form (every n, every a) | **proved** |
 | 7.24 | a smallest failure at a ≥ 3/4 would be a strict minimum along every one-copy squeeze (thick critical points of that kind exist, Observation 7.26, so this is not a reduction) | **proved** |
-| 7.25 | the thick critical points found at n = 3, 4 are saddles along a one-copy squeeze, and the squeeze Hessian trace is negative there; a one-copy compression never raised the least output eigenvalue (n = 2, 3, 4) | numerical (critical points found by search; a failure would need n ≥ 7) |
+| 7.25 | the thick critical points found at n = 3, 4 are saddles along a one-copy squeeze, and the squeeze Hessian trace is negative there; some one-copy compression lowers the least output eigenvalue in random and adversarial tests (n = 2, 3, 4), but not at the four-copy partner vector of Observation 7.26, where every one-copy compression raises it | numerical (critical points found by search; a failure would need n ≥ 7) |
 | 7.26 | a balanced critical pair at n = 4 (spin singlets, value (151 − √6805)/1536) rises along every one-copy and every joint squeeze, yet is a saddle | identities **exact**, Hessians numerical |
 | 7.27 | inputs thick at every copy sit far above the product value; the per-copy factor under a thickness floor hardly depends on n; singlet minima are 7.7 to 109 times 4^{−n} for n ≤ 7 | numerical |
 | 7.28 | at two copies, λ_min(𝒫_{3/4}^{⊗2}(yyᵀ)) ≥ (¼ + ½τ)² for every input y of thickness τ | **proved** |
@@ -978,6 +978,18 @@ Keeping the optimal input and compressing it together with y also worked, but ad
 zero as y becomes thin. The direction cannot be found by averaging over an orthonormal basis {w_k} (this fails already
 at n = 2), although for every x, y and basis Σ_k f(G^{(k)}x, G^{(k)}y) = f(x, y) + (a − ½) Σ_k f_{n−1}(⟨w_k|_s x, ⟨w_k|_s y),
 with G^{(k)} the compression of copy s onto w_k^⊥ (this is Remark 7.5).
+The compression statement fails at four copies (added 8 November 2026). For the partner vector y = p₂ − c(p₁ + p₃) of Observation 7.26,
+g(y) = (151 − √6805)/6·4^{−4} ≈ 11.418·4^{−4}, and every one-copy compression, at any copy and in any direction (the
+input being re-optimised), gives g ≈ 11.733·4^{−4}. All compressions give the same value, because y is invariant under
+rotations of all copies at once and the copy permutations that fix it act transitively. A nearby vector whose one-copy
+marginals are not degenerate also has a positive gap at every copy (0.23 to 0.33 times 4^{−4}), so the failure is not
+an artefact of the symmetry. At three copies, compressing along a fixed eigenvector of the one-copy marginal already
+fails: along the middle eigenvector at an input with smallest marginal eigenvalues 0.06, 0.25 and 0.20 (gap +0.28·4^{−3}
+at every copy), and along the smallest eigenvector at a nearly thin input (+0.0017·4^{−3}). In adversarial searches the
+best of the three eigenvectors never failed at three copies. So the compression route, like the squeezes of
+Observation 7.26, ends at four copies.
+`code/compression_rules/compression_rules_check.py` (`logs/` there, PASS) checks the four-copy counterexample (all copies,
+200 directions each, and one value in 30-digit arithmetic) and the two three-copy inputs (floating point).
 `code/squeeze_paths.py` (`logs/squeeze_paths.log`, PASS) checks the formula of Proposition 7.23 at minima and at thick
 saddles for a = ¾ and 0.7 (agreement to 10⁻⁸, limited by the residual of the critical points), and the compression
 gaps at n = 2, 3, 4. `code/squeeze_trace.py` (`logs/squeeze_trace.log`, PASS) checks the trace of 7.23(ii) against

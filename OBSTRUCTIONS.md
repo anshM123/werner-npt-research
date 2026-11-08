@@ -207,6 +207,13 @@ output have full support. The following do not reach every n (added 7 November 2
   global squeezes, the second variation at the four-copy pair is −0.029, but bounding its resolvent term through
   (W − λ)⁺ ⪰ (λ_max − λ)^{−1} on the complement of the test vector gives the upper bound +0.127, so closed-form bounds
   of this kind cannot show descent. All of this is floating point.
+- **One-copy compressions (added 8 November 2026).** Observation 7.25 suggested an induction: for every test vector y,
+  some compression of one copy onto a plane does not raise g(y) = λ_min(𝒫_{3/4}^{⊗n}(yyᵀ))/|y|², and thin vectors are
+  controlled by fewer copies. This fails at four copies. At the partner vector of Observation 7.26 every one-copy
+  compression, in any direction and with the input re-optimised, raises g from 11.418·4^{−4} to 11.733·4^{−4}. At
+  three copies, the rules that compress along the middle or the smallest eigenvector of a one-copy marginal already
+  fail. So no compression of one copy onto a plane, chosen from y alone, works at every input
+  (`whole-problem-routes/code/compression_rules/`).
 - **Classical forms of the value (added 8 November 2026).** For every Hermitian X,
   𝒫_{3/4}(X) = ∫ 3⟨v|X|v⟩ [(I − vvᵀ) − ¼vvᵀ] dv, with v uniform on the real unit sphere. So 𝒫_{3/4} = 𝒩 − ¼ℳ with
   ℳ(X) = (Tr(X)I + 2 Sym X)/5 and 𝒩 = D − ℳ, both entanglement breaking, and for every n and all unit x, y
