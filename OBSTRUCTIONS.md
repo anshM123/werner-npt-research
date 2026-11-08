@@ -403,6 +403,12 @@ output have full support. The following do not reach every n (added 7 November 2
   fails already in the qubit sector, where the real endpoint is trivial (for qubits every coefficient (1 − 2t)^{|K|} of
   the Fourier form is nonnegative). The endpoint holds, if at all, only for real parameters
   (`whole-problem-routes/code/zero_free/`, floating point; the four-copy value is recomputed in plain numpy).
+  The map route has the same defect (independent audit; seed polynomials checked here). For x = |00⟩ + |11⟩ + |22⟩ and
+  y = |01⟩ − |10⟩ one has 16 xᵀ𝒫_a^{⊗2}(xxᵀ)x = 144a² − 48a + 24, 16 yᵀ𝒫_a^{⊗2}(yyᵀ)y = 64a² − 32a + 12,
+  16 yᵀ𝒫_a^{⊗2}(xxᵀ)y = 96a² − 32a − 4 and 16 xᵀ𝒫_a^{⊗2}(xyᵀ)y = 10. For flagged vectors x^{⊗n} ⊗ e₀ + c y^{⊗n} ⊗ e₁ on
+  2n + 1 copies, scaled so the two diagonal terms are equal at a real t ∈ [3/4, 1], those two terms cancel at complex a
+  within O(1/n) of t, while the cross terms decay because the 2 × 2 Gram determinant of the seed is positive there.
+  So complex zeros accumulate at every point of [3/4, 1], although these vectors stay positive on the real interval.
 - **Self-similarity (added 8 November 2026).** One finite identity would settle the every-n question. If for some
   m > k the Choi matrix C_a^{⊗m} of 𝒫_a^{⊗m} were a positive combination of local filterings (A ⊗ B)C_a^{⊗k}(A ⊗ B)^*
   plus a separable operator, then 𝒫_a^{⊗mN} would be a sum of filtered copies of 𝒫_a^{⊗K}, K ≤ kN, tensored with
