@@ -132,6 +132,17 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
   f_ab ≥ −(max(−e_a, 0) + max(−e_b, 0)), which together with monogamy would give the rung for every n, is false. The
   anti-GHZ zero |00⟩⟨00| − |11⟩⟨11| has e₁ = e₂ = 0 and f₁₂ = −‖C‖², and there the rung is paid for entirely by the
   first-rung slack (`whole-problem-routes/code/sharp_rank_two/rung2_split.py`, floating point).
+- **Closing a certificate cone under tensoring with W (added 8 November 2026).** For G = W^{⊗n} the endpoint is the
+  crossed Cauchy–Schwarz inequality |⟨a ⊗ d|G|c ⊗ b⟩|² ≤ ⟨a ⊗ b|G|a ⊗ b⟩⟨c ⊗ d|G|c ⊗ d⟩ (two replicas, all vectors).
+  It holds for every PPT operator G, for every filtered Werner form (M ⊗ M′)*(I − F/2)(M ⊗ M′) on any C^N, and for sums
+  of these. Call the cone they generate 𝒦. If W ⊗ W_N were in 𝒦 for every N (W_N the Werner form on C^N), induction would
+  put W^{⊗n} in 𝒦 for every n: W ⊗ I is a sum of N² filtered Werner forms on C^{3N}, so W ⊗ (separable) stays in 𝒦, and
+  filters of W ⊗ W_N stay in 𝒦. After twirling over U(3) × U(N) this is a four-dimensional cone question, and it fails
+  already at N = 3. Let F_1, F_2 be the swaps of the two copies. PPT operators have ⟨F_1⟩ + ⟨F_2⟩ ≥ 0, filtered Werner
+  forms on C⁹ have ⟨F_1⟩ + ⟨F_2⟩ ≥ −1/5 (six adversarial runs all end at −0.2), and W ⊗ W has −2/5. So
+  H = F_1 + F_2 + (3/10)I separates W ⊗ W from 𝒦. The count suggests that each Werner factor carries one unit of negative
+  swap, so certificates built from products of fewer than n Werner forms should not reach n copies
+  (`whole-problem-routes/code/closure/`, floating point).
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
