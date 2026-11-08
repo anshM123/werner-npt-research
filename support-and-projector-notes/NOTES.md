@@ -32,7 +32,9 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
 - **Section 8.** Zeros decide the sign. The endpoint at n holds if and only if every rank-two zero of q_n is a critical
   point, and it holds whenever the zeros form a set of codimension two (Proposition 20). So it follows from a
   classification of zeros: if every zero has the qubit form of Section 6 (Conjecture ZC_n, true at two copies), the
-  endpoint holds at n (Corollary 21). A random-start census finds only such zeros for n ≤ 4.
+  endpoint holds at n (Corollary 21). Off the endpoint, EP_n follows if the critical-point equations of
+  q_n(t, ·) have no rank-two solution for 0 < t < ½ (Proposition 22). A random-start census finds only zeros of the
+  qubit form for n ≤ 6.
 
 **None of this settles the all-copy problem.**
 
@@ -761,6 +763,35 @@ two 4·2^j − 6 (this condition depends only on the planes, since a change of b
 and the common scalar removes 2. The largest of these over j ≥ 1 is below 8·3^n − 10 = dim X₂ − 2 for every n ≥ 1
 (for n ≥ 3 it is 4·3^{n−1} + 2 or 4·2^n + 4n − 6). Proposition 20(a) applies. ∎
 
+**Proposition 22 (critical zeros along the Werner line).** For 0 ≤ t ≤ ½ put Φ_{n,t} = (id − t Tr(·) I)^{⊗n} and
+q_n(t, C) = ⟨C, Φ_{n,t}(C)⟩, so that q_n = q_n(½, ·). Suppose that for no t with 0 < t < ½ is there a rank-two
+C = AB^* with Φ_{n,t}(C)B = 0 and Φ_{n,t}(C)^*A = 0. Then EP_n holds. Conversely, if EP_k holds for every k ≤ n, there
+is no such C.
+
+*Proof.* Let m(t) be the least value of q_n(t, C) over operators of rank at most two with ‖C‖_F = 1; it is continuous
+in t. For t < 1/3 the one-copy map id − t Tr(·) I is positive definite on Hilbert–Schmidt space (eigenvalues 1 and
+1 − 3t), so m(t) > 0. Suppose m(½) < 0, and let t_* be the least t with m(t) ≤ 0; then 1/3 ≤ t_* < ½ and m(t_*) = 0. A
+minimiser C_* at t_* has rank two, because q_n(t, ab^*) = ⟨ā ⊗ b̄|(I − tF)^{⊗n}|ā ⊗ b̄⟩ ≥ (1 − t)^n ‖a‖²‖b‖². As a
+minimum with value zero it is a critical point of q_n(t_*, ·) on X₂, which is the excluded system. For the converse,
+write id − t Tr(·) I = (1 − 2t) id + 2t (id − ½ Tr(·) I) at each copy and expand:
+
+    q_n(t, C) = Σ_S (1 − 2t)^{n−|S|} (2t)^{|S|} Σ_{α,β} q_{|S|}(C^S_{αβ}),
+
+where C^S_{αβ} are the blocks of C with respect to a basis of the copies outside S; each block has rank at most two. By
+EP_{|S|} every term is nonnegative, and the term S = ∅ is (1 − 2t)^n ‖C‖² > 0. So q_n(t, ·) > 0 on nonzero operators of
+rank at most two for t < ½, and a zero, critical or not, cannot exist. ∎
+
+The system in Proposition 22 contains no inequality: it asks that the residual Φ_{n,t}(C) have range orthogonal to the
+range of C and co-range orthogonal to the co-range of C, and that this be impossible for rank-two C strictly inside the
+Werner line. At one copy it is immediate. P_A Φ_{1,t}(C) = 0 reads C = t Tr(C) P_A with P_A the range projector, so
+Tr C = 2t Tr C, and for t ≠ ½ this forces C = 0. At t = ½ the solutions include every zero of Section 6 and 𝓑_J.
+
+The same expansion localises what has to be excluded. Assume EP_{n−1}. Then every term with S ≠ [n] is nonnegative,
+so q_n(t, C) ≥ (1 − 2t)^n ‖C‖² + (2t)^n q_n(C). Hence a zero of q_n(t, ·) with t < ½ has q_n(C) < 0, and it is thick at
+every copy, because thin-copy removal gives q_n(C) ≥ 0 whenever the range or the co-range has local dimension at most
+two at some copy. So, given EP_{n−1}, EP_n is equivalent to: for 0 < t < ½, no critical point of q_n(t, ·) on X₂ with
+value zero is thick at every copy.
+
 **A census of zeros (floating point).** `code/zero_census.py` minimises q_n(AB^*)/‖AB^*‖_F² from random complex
 factors (L-BFGS) and classifies the end point by the rank of the one-copy marginal of range plus co-range at each copy,
 and by the operator Schmidt coefficients across every cut.
@@ -770,10 +801,16 @@ and by the operator Schmidt coefficients across every cut.
 | 2 | 12 | 4·10^{−16} | 12 | 0 | 0 |
 | 3 | 40 | 8·10^{−13} | 36 | 4 | 0 |
 | 4 | 24 | 5·10^{−13} | 15 | 9 | 0 |
+| 5 | 16 | 2·10^{−12} | 5 | 11 | 0 |
+| 6 | 8 | 4·10^{−14} | 0 | 8 | 0 |
 
-Every run ended at a zero of the conjectured form (to rounding). None ended at another local minimum, and none went
-negative. This is consistent with ZC_n at these n, where EP_n itself is known (see [T1] for three to five copies); it is
-evidence about where the zeros are, not a proof.
+Every run ended at a zero of the conjectured form (to rounding). One five-copy run stopped at 2·10^{−12} with best cut
+ratio 1.4·10^{−4}, just above the threshold the script uses; continuing it from the same start
+(`code/zero_census_continue.py`) brings it to 2·10^{−13} with ratio 4·10^{−5}, a rank-one factor on four copies times
+a qubit projector on the fifth, and it is counted that way above. None ended at another local minimum, and none went
+negative. As n grows the runs mostly end on the largest family (|J| = 1). For n ≤ 5, EP_n itself is known (see [T1]
+for three to five copies); six copies are beyond the proved range. This is evidence about where the zeros are, not a
+proof.
 
 ## Code
 
@@ -802,7 +839,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
 - `code/check_anchor_obstruction.py`: Propositions 7 and 8 in exact rational arithmetic for n = 3, …, 7: the rows of
   MV_p live on the vacuum column, the Gram matrix on (a_n, b_n), and the weighted identities at rational weights.
 - `code/zero_census.py`: Section 8, the census of zeros (`python zero_census.py n runs seed`; logs
-  `logs/zero_census_n2.log`, `_n3`, `_n4`, run with seeds 1, 7, 11).
+  `logs/zero_census_n2.log` to `_n6.log`, run with seeds 1, 7, 11, 13, 17); `code/zero_census_continue.py` continues one
+  start (log `logs/zero_census_n5_run5_continued.log`).
 - `code/global_reductions/` (`run_all.sh`): Proposition 4′ (the identity and the projector choice, k = 1, 2,
   r = 1, 2, 3); Theorem 14′ (the identity by direct partial traces on 9 and 10 copies, the 81-state flag compression
   exactly for r = 1, 2, 3, marginals); the Remark after it (the flag block structure at r = 1, over all 3^8 column

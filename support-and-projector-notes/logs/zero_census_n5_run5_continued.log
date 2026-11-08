@@ -1,0 +1,9 @@
+$ python zero_census_continue.py 5 13 5 8
+round 0: q/|C|^2 = 7.22e-11  joint local ranks [2, 3, 3, 3, 3]  best cut (1, 2, 3, 4) ratio 7.9e-04
+round 1: q/|C|^2 = 4.54e-12  joint local ranks [2, 3, 3, 3, 3]  best cut (0,) ratio 2.0e-04
+round 2: q/|C|^2 = 2.24e-13  joint local ranks [2, 3, 3, 3, 3]  best cut (1, 2, 3, 4) ratio 4.4e-05
+round 3: q/|C|^2 = 2.24e-13  joint local ranks [2, 3, 3, 3, 3]  best cut (1, 2, 3, 4) ratio 4.4e-05
+round 4: q/|C|^2 = 2.24e-13  joint local ranks [2, 3, 3, 3, 3]  best cut (1, 2, 3, 4) ratio 4.4e-05
+round 5: q/|C|^2 = 2.24e-13  joint local ranks [2, 3, 3, 3, 3]  best cut (1, 2, 3, 4) ratio 4.4e-05
+round 6: q/|C|^2 = 2.24e-13  joint local ranks [2, 3, 3, 3, 3]  best cut (1, 2, 3, 4) ratio 4.4e-05
+round 7: q/|C|^2 = 2.24e-13  joint local ranks [2, 3, 3, 3, 3]  best cut (1, 2, 3, 4) ratio 4.4e-05

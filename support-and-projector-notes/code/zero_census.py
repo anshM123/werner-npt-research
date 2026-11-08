@@ -85,6 +85,7 @@ for r in range(runs):
     vals.append(v.item()); kinds.append(kind)
     print(f"run {r:3d}: q/|C|^2 = {v.item(): .2e}  s/s1 = {np.round(sv, 4)}  joint local ranks {jr}  "
           f"best cut {best[0]} ratio {best[1]:.1e}  -> {kind}", flush=True)
-print(f"n = {n}: {runs} runs, largest |q|/|C|^2 = {max(abs(x) for x in vals):.1e}; "
-      f"local-qubit {kinds.count('local-qubit')}, rank-one tail {sum(k.startswith('rank-one') for k in kinds)}, "
-      f"other {kinds.count('OTHER')}")
+if vals:
+    print(f"n = {n}: {runs} runs, largest |q|/|C|^2 = {max(abs(x) for x in vals):.1e}; "
+          f"local-qubit {kinds.count('local-qubit')}, rank-one tail {sum(k.startswith('rank-one') for k in kinds)}, "
+          f"other {kinds.count('OTHER')}")
