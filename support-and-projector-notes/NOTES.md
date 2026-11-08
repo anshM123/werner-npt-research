@@ -1006,6 +1006,24 @@ TN_n is exactly
 (this formulation is from an independent audit; we checked the algebra). The excess of the symmetric part has to be
 kept: bounding B on its own is the cross-term route below, which fails.
 
+*An operator form.* Let Φ′_t(Z) = Tr(Z) I − tZ on one copy (the map whose n-th tensor power has Choi matrix
+((I − tF)^{⊗n})^Γ) and R(Z) = Tr(Z) I − Z the reduction map, so that Φ′_t = (1 − t) Tr(·) I + tR. In the purified form,
+⟨α ⊗ β|F_R ⊗ ⊗_s(I − tF_s)|α ⊗ β⟩ = ⟨β|(id_R ⊗ Φ′_t^{⊗n})(αα^*)|β⟩, and a factorisation that is not balanced only
+makes ‖α‖²‖β‖² larger than ‖C‖_1². So TN_n is equivalent to the operator inequality
+
+    (id_2 ⊗ Φ′_t^{⊗n})(ψψ^*) ⪰ (1 − t)^{n−1} (ρ_R − t I_2) ⊗ I   for every unit ψ ∈ C² ⊗ (C³)^{⊗n},
+
+with ρ_R the marginal of ψψ^* on the reference qubit. Expanding the tensor power in the two terms of Φ′_t and dividing by
+t(1 − t)^{n−1} gives, with τ = t/(1 − t) and ρ_{RK} the marginal of ψψ^* on R and the copies in K,
+
+    Σ_{K≠∅} τ^{|K|−1} (id ⊗ R^{⊗K})(ρ_{RK}) ⊗ I_{K^c} + (I_2 − ρ_R) ⊗ I ⪰ 0.                                     (9.8)
+
+At n = 1 this is I − ψψ^* ⪰ 0. When ρ_R = I_2/2 and t = ½ the right side above is 0 and the inequality is the endpoint
+itself in operator form; compare the operator hierarchy H_k(ψ) ⪰ 0 of Bharti, Gajjala and Haug for pure states with a
+maximally mixed qubit marginal [BGH]. (9.8) is the quantitative version for an arbitrary reference marginal. Its terms
+with K ≠ ∅ are not positive one by one (R is not 2-positive), and peeling one copy off (9.8) leaves exactly the slice
+term of the failed slice induction below. We checked the identity behind (9.8) numerically for n ≤ 3.
+
 *On local qubits.* For C supported on a product of local qubit planes the endpoint form is ‖Π^{⊗n}C‖_F², with Π the
 projection onto traceless 2 × 2 matrices, so 2^n q_n(C) = Σ_P |Tr(PC)|² over the full-weight Pauli strings
 P ∈ {X, Y, Z}^{⊗n}. There TN_n says that the full-weight Pauli correlations of a rank-two operator are at least
@@ -1317,7 +1335,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
 - `code/trace_norm/fusion_budget.py t gamma runs seed d_1 ... d_m`: Conjecture FB (merging the first two sites). `fusion_budget_mps.py n chi t gamma runs seed`: the
   same on matrix-product inputs. `refined_partial_trace.py [seed]`: Propositions 28 and 29 and the crossed form of the
   merging budget. `multisite_refined.py runs seed d_1 ... d_n`: the n-site inequality (9.4′). `degree4_relaxation.py n t samples seed tn|q`: the
-  two-replica relaxation of `OBSTRUCTIONS.md` (nonnegative at two copies, negative at three).
+  two-replica relaxation of `OBSTRUCTIONS.md` (nonnegative at two copies, negative at three). `operator_form.py`: the identity behind
+  the operator form (9.8).
 
 ## Local positivity at the signed GHZ zero, every n (added 8 November 2026)
 
@@ -1339,6 +1358,8 @@ local statement at one zero family and says nothing about thick operators.
 ## References
 
 - [BCR] J. Bochnak, M. Coste, M.-F. Roy, Real Algebraic Geometry, Springer (1998).
+- [BGH] K. Bharti, R. Gajjala, T. Haug, Two-copy nondistillability of Werner states: sharp partial-trace inequalities and
+  finite-copy extensions, arXiv:2607.24479.
 - [FHPV] T. C. Fraser, F. Huber, B. Pozsgay, I. Vona, On the two-copy distillability of Werner states and a new partial
   trace inequality, arXiv:2607.24309.
 - [T1] T. S. Tomar, Undistillability of Werner states from three, four and five copies, Zenodo 23718035 (2026).
