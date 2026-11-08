@@ -1,0 +1,33 @@
+(a) hit form
+aligned real product (n=2): value 0.06250000 = 1.0000 x 4^-n = E[(-1/4)^N] (diff 2.8e-17); P(N=k) [0.16 0.48 0.36]; hit probabilities [0.6 0.6]; pair covariances +0.0000 to +0.0000
+orthogonal real product (n=2): value 0.56250000 = 9.0000 x 4^-n = E[(-1/4)^N] (diff 1.1e-16); P(N=k) [0.64 0.32 0.04]; hit probabilities [0.2 0.2]; pair covariances -0.0000 to -0.0000
+maximally entangled pair, y = x (n=2): value 0.47916667 = 7.6667 x 4^-n = E[(-1/4)^N] (diff 1.1e-16); P(N=k) [0.53333 0.26667 0.2    ]; hit probabilities [0.3333 0.3333]; pair covariances +0.0889 to +0.0889
+antisymmetric tensor, bottom test vector (n=3): value 0.10937500 = 7.0000 x 4^-n = E[(-1/4)^N] (diff 0.0e+00); P(N=k) [0.23467 0.54933 0.19733 0.01867]; hit probabilities [0.3333 0.3333 0.3333]; pair covariances -0.0267 to -0.0267
+singlet pair of Observation 7.26 (n=4): value 0.04460129 = 11.4179 x 4^-n = E[(-1/4)^N] (diff 6.9e-18); P(N=k) [0.14348 0.46793 0.30764 0.07366 0.00728]; hit probabilities [0.3333 0.3333 0.3333 0.3333]; pair covariances -0.0337 to -0.0067
+random real pair 0 (n=3): value 0.20141004 = 12.8902 x 4^-n = E[(-1/4)^N] (diff 5.6e-17); P(N=k) [0.29309 0.42461 0.24164 0.04066]; hit probabilities [0.3041 0.3505 0.3753]; pair covariances -0.0049 to +0.0124
+random real pair 1 (n=3): value 0.18592870 = 11.8994 x 4^-n = E[(-1/4)^N] (diff 2.2e-16); P(N=k) [0.28097 0.43717 0.23877 0.04309]; hit probabilities [0.3368 0.3494 0.3578]; pair covariances -0.0008 to +0.0041
+random real pair 2 (n=3): value 0.22615931 = 14.4742 x 4^-n = E[(-1/4)^N] (diff 2.8e-17); P(N=k) [0.32017 0.42782 0.21612 0.0359 ]; hit probabilities [0.2952 0.3397 0.3328]; pair covariances -0.0003 to +0.0102
+(b) classical relaxation (exact rationals)
+three-copy law, conditional hit probabilities ['3/5', '1/5', '3/5'] given 0, 1, 2 hits elsewhere: E[(-1/4)^N] = -13/1472
+  two-copy block given 0 hit(s) at the third copy: 1/16
+  two-copy block given 1 hit(s) at the third copy: 23/48
+  n=2: worst exchangeable value +0.062500 (HL)
+  n=3: worst exchangeable value -0.008832 (HLH)
+  n=4: worst exchangeable value -0.037845 (HLLL)
+  n=5: worst exchangeable value -0.049196 (HLLLL)
+  n=6: worst exchangeable value -0.051788 (HLLLLL)
+  n=7: worst exchangeable value -0.050020 (HLLLLLL)
+  n=8: worst exchangeable value -0.046149 (HLLLLLLL)
+  n=9: worst exchangeable value -0.041393 (HLLLLLLLL)
+  n=10: worst exchangeable value -0.036424 (HLLLLLLLLL)
+  n=11: worst exchangeable value -0.031610 (HLLLLLLLLLL)
+  n=12: worst exchangeable value -0.027144 (HLLLLLLLLLLL)
+  n=13: worst exchangeable value -0.023115 (HLLLLLLLLLLLL)
+  n=14: worst exchangeable value -0.019549 (HLLLLLLLLLLLLL)
+  n=15: worst exchangeable value -0.016439 (HLLLLLLLLLLLLLL)
+  n=16: worst exchangeable value -0.013756 (HLLLLLLLLLLLLLLL)
+(c) spin-sector form
+singlet pair (n=4): value 0.04460129, spin-sector form 0.04460129; weighted sums by |S| [ 1.       0.      -0.43324 -0.17256 -0.00901]
+random real pair (n=4): value 0.11318720, spin-sector form 0.11318720; weighted sums by |S| [ 1.000e+00 -4.086e-02 -6.820e-03  2.433e-02  8.800e-04]
+AME(4,3) input, bottom test vector: value 0.08723958 = 22.3333 x 4^-4; weighted sums by |S| [ 1.       0.       0.      -0.32653  0.07997] (no terms with |S| <= 2: the input is 2-uniform)
+PASS

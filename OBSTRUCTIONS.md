@@ -201,7 +201,36 @@ output have full support. The following do not reach every n (added 7 November 2
   global squeezes we followed, the value at the first input falls monotonically from 11.42·4^{−4} to the product value
   4^{−4}, reached at an input supported on planes. Best-response iteration from random starts (n ≤ 5) and from inputs
   with total J_z = 0 (n ≤ 6) only finds thin mutual minima; from rotation-invariant starts it finds the singlet pair
-  (n = 4) and a degenerate point (n = 6). All of this is floating point.
+  (n = 4) and a degenerate point (n = 6). At eight copies, where two-copy responses span only a small part of the space
+  and the descent pattern would be a real test, the same iteration from rotation-invariant starts ended at thin pairs
+  in two of three starts (values 4^{−8} and 8·4^{−8}); the third had not converged after an hour. Summed over the five
+  global squeezes, the second variation at the four-copy pair is −0.029, but bounding its resolvent term through
+  (W − λ)⁺ ⪰ (λ_max − λ)^{−1} on the complement of the test vector gives the upper bound +0.127, so closed-form bounds
+  of this kind cannot show descent. All of this is floating point.
+- **Classical forms of the value (added 8 November 2026).** For every Hermitian X,
+  𝒫_{3/4}(X) = ∫ 3⟨v|X|v⟩ [(I − vvᵀ) − ¼vvᵀ] dv, with v uniform on the real unit sphere. So 𝒫_{3/4} = 𝒩 − ¼ℳ with
+  ℳ(X) = (Tr(X)I + 2 Sym X)/5 and 𝒩 = D − ℳ, both entanglement breaking, and for every n and all unit x, y
+
+      ⟨y|𝒫_{3/4}^{⊗n}(xx*)|y⟩ = E[(−¼)^N],
+
+  where v is drawn from the product measurement 3^n|⟨v|x⟩|² dv and N counts the copies at which the binary test
+  {v_s v_sᵀ, I − v_s v_sᵀ} on y returns v_s. This is the collision form of Remark 7.6 with the test vector read out by a
+  binary test instead of the design, which lowers r from 3/2 to ¼. Independent hits would make the value positive (a
+  negative factor needs a hit probability above 4/5), and aligned real products give 4^{−n} with independent hits at
+  3/5. Every hit probability, also conditional on any information about the other copies, lies in [1/5, 3/5], because
+  (Tr X/5) I ⪯ ℳ(X) ⪯ (3 Tr X/5) I for X ⪰ 0 and ℳ, 𝒩 and D are entanglement breaking. These constraints do not
+  suffice. The exchangeable law on three copies whose conditional hit probabilities are 3/5, 1/5 and 3/5 (given 0, 1
+  and 2 hits at the other copies) has E[(−¼)^N] = −13/1472, although each two-copy block, conditioned on the third copy,
+  has the positive values 1/16 and 23/48. For 3 ≤ n ≤ 16 the worst laws of this kind stay negative (from n = 4 on: a first
+  hit likely, every later one unlikely). At the thick extremal pairs the hits are anti-correlated (pair covariances down to
+  −0.034 at the four-copy singlet pair), and the values stay high because the hit probabilities there are 1/3. The
+  spin-sector form V = (7/12)^n Σ_S (−6/7)^{|S|} c_S, with c_S = ⟨Π₂^{⊗S}(σ_S), Π₂^{⊗S}(ρ_S)⟩ (Π₂ the projection onto
+  symmetric traceless matrices, ρ and σ the states of x and y), behaves the same way. Balanced inputs have no one-copy
+  terms, and k-uniform inputs no terms with 1 ≤ |S| ≤ k, but the bounds |c_S| ≤ ‖ρ_S‖₂‖σ_S‖₂ do not control the rest, and
+  the balanced inputs produced by the reductions of `real-balanced-reduction/` carry flag copies whose two-copy
+  marginals are far from maximally mixed. So a proof has to use quantum structure beyond one-copy conditional bounds and
+  two-copy blocks, at every n (`whole-problem-routes/code/hit_form/`, log in its `logs/`; the three-copy law is exact,
+  the rest floating point).
 
 What a proof of this route needs is a global inequality: some way to compare the value at a thick minimiser with the
 values of its contractions or compressions that does not hold trivially at every critical point. None of the tools
