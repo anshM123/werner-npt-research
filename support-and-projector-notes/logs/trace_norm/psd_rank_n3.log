@@ -1,0 +1,2 @@
+n=3 PSD rank<=2: min [2^n q_n - (2||C||^2 - (TrC)^2)]/(TrC)^2 = 2.1491e-16
+n=3 PSD rank<=3: min [2^n q_n - (2||C||^2 - (TrC)^2)]/(TrC)^2 = -8.8889e-01

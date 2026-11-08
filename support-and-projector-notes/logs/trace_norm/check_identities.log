@@ -1,0 +1,10 @@
+n=2: crossed form 325.502161914285 +9.8e-15i   direct 325.502161914285
+   Hermitian: Tr[(C x C) prod(F_s - t)] = 655.714485051072   direct 655.714485051072
+   (9.3): lhs 799.2475808021  rhs 799.2475808021
+   (9.2) bookkeeping: q - RHS = 237.5320330082   frame expression 237.5320330082
+n=3: crossed form 3064.501028349841 +5.3e-14i   direct 3064.501028349843
+   Hermitian: Tr[(C x C) prod(F_s - t)] = 6240.017633738533   direct 6240.017633738532
+   (9.3): lhs 24451.5696513446  rhs 24451.5696513446
+   (9.2) bookkeeping: q - RHS = 2562.8824934836   frame expression 2562.8824934836
+GHZ n=3: 2^n q_n = 0.250000000000   (l1-l2)^2 = 0.250000000000
+GHZ n=5: 2^n q_n = 0.250000000000   (l1-l2)^2 = 0.250000000000

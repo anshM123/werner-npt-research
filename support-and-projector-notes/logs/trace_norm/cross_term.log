@@ -1,0 +1,6 @@
+n=2 sign=1: min of (-1)^n q = -1.000000  (B_n needs >= -1)
+n=2 sign=-1: min of -(-1)^n q = -1.000000  (B_n needs >= -1)
+n=3 sign=1: min of (-1)^n q = -4.000000  (B_n needs >= -1)
+n=3 sign=-1: min of -(-1)^n q = -1.000000  (B_n needs >= -1)
+n=4 sign=1: min of (-1)^n q = -7.000000  (B_n needs >= -1)
+n=4 sign=-1: min of -(-1)^n q = -5.000000  (B_n needs >= -1)

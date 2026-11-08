@@ -1,0 +1,7 @@
+run 0: random start gap 1.0869 -> minimised gap -4.990e-02
+run 1: random start gap 0.6963 -> minimised gap -4.990e-02
+run 2: random start gap 0.4374 -> minimised gap -4.990e-02
+run 3: random start gap 0.4917 -> minimised gap -4.991e-02
+run 4: random start gap 0.5791 -> minimised gap -4.990e-02
+run 5: random start gap 0.6656 -> minimised gap -4.990e-02
+D=2: smallest OSI-Q gap -4.991e-02 (quadrature 24x48)

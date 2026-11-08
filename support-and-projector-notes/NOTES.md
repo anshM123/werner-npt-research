@@ -34,7 +34,14 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   classification of zeros: if every zero has the qubit form of Section 6 (Conjecture ZC_n, true at two copies), the
   endpoint holds at n (Corollary 21). Off the endpoint, EP_n follows if the critical-point equations of
   q_n(t, ·) have no rank-two solution for 0 < t < ½ (Proposition 22). A random-start census finds only zeros of the
-  qubit form for n ≤ 6. Given EP_{n−1}, it is enough that every zero be thin at some copy (Proposition 23).
+  qubit form for n ≤ 6. It is enough that every zero be thin at some copy (Proposition 23), with no assumption on
+  fewer copies.
+- **Section 9.** Wu and Zou's sharp rank-two bound for positive operators appears to extend to every rank-two
+  operator and the whole Werner line: q_n(t, C) ≥ (1 − t)^{n−1}(‖C‖_F² − t‖C‖_1²), at the endpoint
+  2^n q_n(C) ≥ (σ_1 − σ_2)² (Conjecture TN_n). It is attained for every ratio of singular values, implies the endpoint
+  and the sharp curve, and forces every zero to have equal singular values (all known zeros do); random-start
+  minimisation finds no violation for n ≤ 5 or with other local dimensions. Two natural inductions on it fail
+  (slice by slice, and through the cross term of two orthogonal pure states).
 
 **None of this settles the all-copy problem.**
 
@@ -787,18 +794,21 @@ two at some copy. So, given EP_{n−1}, EP_n is equivalent to: for 0 < t < ½, n
 value zero is thick at every copy.
 
 **Proposition 23 (thin zeros are enough).** Call C ∈ X₂ thick if at every copy both its range and its co-range have
-local dimension three, and thin otherwise. Let n ≥ 2 and assume EP_{n−1}. If every zero of q_n in X₂ is thin
-(Conjecture NT_n), then EP_n holds.
+local dimension three, and thin otherwise. Let n ≥ 2. If every zero of q_n in X₂ is thin (Conjecture NT_n), then
+EP_n holds.
 
 *Proof.* The operators whose range lies in Q ⊗ (C^3)^{⊗(n−1)} for some plane Q at a fixed copy form a set of real
 dimension 4 + 4(2·3^{n−1} − 2) + 4(3^n − 2) + 8 = 20·3^{n−1} − 4 (the plane Q, a range plane inside Q ⊗ (C^3)^{⊗(n−1)}, a
 co-range plane, and the 2 × 2 core), against dim X₂ = 24·3^{n−1} − 8; the same holds for the co-range. So the thin
 operators form a closed semialgebraic set of codimension at least 4·3^{n−1} − 4 ≥ 8, and the thick ones a connected
 open dense set (as in the proof of Proposition 20(a)). By NT_n, q_n has no zero on it, so it has one sign there. That
-sign is positive: ab^* + εcd^* is thick for generic vectors and small ε, and q_n(ab^*) > 0. On thin operators
-q_n ≥ 0 by thin-copy removal and EP_{n−1}. ∎
+sign is positive: ab^* + εcd^* is thick for generic vectors and small ε, and q_n(ab^*) > 0. Thin operators are limits
+of thick ones, so q_n ≥ 0 on them by continuity. ∎
 
-So the whole endpoint follows from NT_n for every n ≥ 2 (EP_1 is the one-copy inequality). Conjecture ZC_n implies
+Equivalently, under NT_n the zero set lies in the thin locus, of codimension at least 8, and Proposition 20(a)
+applies. An earlier version of the proposition also assumed EP_{n−1}, for the last step of the proof; an independent
+audit pointed out that continuity makes it unnecessary. So EP_n follows from NT_n alone, separately for each n ≥ 2
+(EP_1 is the one-copy inequality). Conjecture ZC_n implies
 NT_n, because an operator in 𝓑_J is thin at the copies in J. NT_n asks only that zeros be thin somewhere, not that
 they have the qubit form. Nothing in the argument excludes a thick operator at which q_n is positive but small.
 
@@ -856,6 +866,108 @@ and 0.47 against ½), and the four-copy endpoint is proved here only for Hermiti
 census is evidence for EP_n as well as for ZC_n. It is evidence about where the zeros are, not a proof. (An earlier
 version of this paragraph said EP_n was known for n ≤ 5; an independent audit that read [T1] corrected this.)
 
+## 9. The sharp rank-two bound for every rank-two operator (added 8 November 2026)
+
+For positive C of rank at most two, Wu and Zou prove 2^n q_n(C) ≥ 2 Tr C² − (Tr C)² at three copies [WZ, Thm. 1.3].
+`OBSTRUCTIONS.md` ("The sharp rank-two bound") records what is known about this bound for more copies; for odd n it
+would give the endpoint through the projector reductions (Proposition 4 and `real-balanced-reduction/`). Here we
+observe that the same bound appears to hold for every rank-two operator, positive or not, once Tr C is replaced by
+the trace norm, and along the whole Werner line. In this section C has rank at most two, with singular values
+σ_1 ≥ σ_2 and trace norm ‖C‖_1 = σ_1 + σ_2, and q_n(t, ·) is the Werner-line form of Proposition 22.
+
+**Conjecture TN_n.** For 0 ≤ t ≤ ½ and every C of rank at most two on (C^3)^{⊗n},
+
+    q_n(t, C) ≥ (1 − t)^{n−1} (‖C‖_F² − t ‖C‖_1²).                                          (9.1)
+
+At the endpoint this reads 2^n q_n(C) ≥ 2‖C‖_F² − ‖C‖_1² = (σ_1 − σ_2)². For positive C it is the bound of Wu and
+Zou, so TN_3 holds at t = ½ for positive C.
+
+The general form matters for an induction on n: the slices and partial traces met there are not positive, and (9.1)
+is tight on a large set. What is known:
+
+- At n = 1 it is |Tr C| ≤ ‖C‖_1.
+- TN_n implies EP_n and the sharp curve of Section 8: for rank two, ‖C‖_1² ≤ 2‖C‖_F², so the right side of (9.1) is at
+  least (1 − 2t)(1 − t)^{n−1} ‖C‖_F². At t = 1/3 it reads (3/2)^n ‖P_⊥^{⊗n} C‖_F² ≥ ‖C‖_F² − σ_1σ_2.
+- It is attained for every ratio σ_2/σ_1. If X ≥ 0 has rank two and a is a unit vector, then at
+  C = X ⊗ |a⟩⟨a|^{⊗(n−1)} (with X at any copy) both sides equal (1 − t)^{n−1}(‖X‖_F² − t (Tr X)²). At the endpoint and
+  for odd n there is a second family: 2^n q_n(λ_1|0^n⟩⟨0^n| + λ_2|1^n⟩⟨1^n|) = (λ_1 − λ_2)² for λ_1, λ_2 ≥ 0.
+- At the endpoint TN_n says that every rank-two zero has σ_1 = σ_2. All zeros in 𝓑_J do: a rank-two antisymmetric
+  matrix ab^T − ba^T has two equal nonzero singular values, and the unitary (J^{⊗|J|})^{−1}, the isometries V and the
+  rank-one factor R_I keep them equal.
+
+*A form without singular values.* For C = Σ_i a_i b_i^* one has the crossed form
+q_n(t, C) = Σ_{i,j} ⟨a_i ⊗ b_j|(I − tF)^{⊗n}|a_j ⊗ b_i⟩, where F swaps the two factors at each copy. With τ = t/(1 − t)
+and P_A the antisymmetric projector, I − tF = (1 − t)(I + 2τP_A); put G = τ^{−1}((I + 2τP_A)^{⊗n} − I), which is
+positive semidefinite. Write C = σ_1 u_1 v_1^* + σ_2 u_2 v_2^* with orthonormal pairs (u_1, u_2) and (v_1, v_2). Since
+⟨u_1 ⊗ v_2, u_2 ⊗ v_1⟩ = 0, the difference of the two sides of (9.1) is
+
+    (1 − t)^n τ [σ_1² G_11 + σ_2² G_22 + 2σ_1σ_2 (Re G_× + 1)],
+
+with G_ii = ⟨u_i ⊗ v_i|G|u_i ⊗ v_i⟩ and G_× = ⟨u_1 ⊗ v_2|G|u_2 ⊗ v_1⟩. The ratio σ_2/σ_1 and the phase of u_2 are free,
+so TN_n is equivalent to
+
+    |⟨u_1 ⊗ v_2|G|u_2 ⊗ v_1⟩| ≤ 1 + (⟨u_1 ⊗ v_1|G|u_1 ⊗ v_1⟩ ⟨u_2 ⊗ v_2|G|u_2 ⊗ v_2⟩)^{1/2}           (9.2)
+
+for all orthonormal pairs. At the endpoint (τ = 1), EP_n is the same inequality with the right side replaced by the
+larger ((1 + G_11)(1 + G_22))^{1/2}. At n = 1, G = 2P_A and the left side of (9.2) is |⟨u_1, v_1⟩⟨v_2, u_2⟩| ≤ 1.
+
+*Positive operators.* For Hermitian C, q_n(t, C) = Tr[(C ⊗ C) ⊗_s (F_s − t)], where F_s swaps copy s of the first
+factor with copy s of the second, and 2‖C‖_F² − (Tr C)² = Tr[(C ⊗ C)(2F − I)] with F = ⊗_s F_s. The F_s commute; on
+the range of Π_T = ⊗_{s∈T} P_A^{(s)} ⊗_{s∉T} P_S^{(s)} each 2F_s − I is 1 or −3. Hence
+
+    2^n q_n(C) − (2‖C‖_F² − (Tr C)²) = Σ_T c_{|T|} Tr[(C ⊗ C) Π_T],   c_k = (−3)^k − 2(−1)^k + 1,          (9.3)
+
+with c_0 = c_1 = 0, c_2 = 8, c_3 = −24, c_4 = 80; this is the two-replica identity used in `OBSTRUCTIONS.md`, with its
+coefficients written out. Every trace on the right is nonnegative when C ≥ 0, and then ‖C‖_1 = Tr C.
+
+**Proposition 24.** For every positive semidefinite C on C^{d_1} ⊗ C^{d_2}, of any rank, and every t ≥ 0,
+
+    q_2(t, C) = (1 − t)(‖C‖_F² − t (Tr C)²) + 4t Tr[(C ⊗ C)(P_A ⊗ P_A)] ≥ (1 − t)(‖C‖_F² − t (Tr C)²).
+
+In particular TN_2 holds for positive semidefinite C (at every t, and in any local dimensions). This two-copy case
+is elementary; we record it because the identity is exact for every t and every rank.
+
+*Proof.* Expand: q_2(t, C) − (1 − t)(‖C‖_F² − t (Tr C)²) = t[‖C‖_F² + (Tr C)² − ‖Tr_1 C‖_F² − ‖Tr_2 C‖_F²], and the
+bracket equals 4 Tr[(C ⊗ C)(P_A ⊗ P_A)] by P_A = (I − F)/2 at each copy. ∎
+
+From three copies on, the rank matters even for positive operators: the n = 3 case of (9.3) is negative for some
+positive C of rank three (the smallest value found is −(8/9)(Tr C)²), while for rank two none was found.
+
+*What does not work.*
+- Slice by slice. On local qubit planes the form is exactly self-similar: with M = CJ^{⊗n}, q_n(C) = ‖P_S^{⊗n} M‖_F²,
+  and peeling the last copy gives q_n(C) = 3 E_w q_{n−1}(M_w (J^{−1})^{⊗(n−1)}) with M_w = (I ⊗ w^T) M (I ⊗ w) of rank at most
+  two and w uniform on the unit sphere of C². Applying TN_{n−1} to every M_w would need the one-step inequality
+  ‖M‖_1² ≥ ‖M_{01} − M_{10}‖_F² + 12 E_w σ_1σ_2(M_w), with M_{ab} the blocks of the last copy. It fails: the minimum
+  is −0.0499 ‖M‖_F² when the other factor is C² and −0.0570 ‖M‖_F² when it is C^4 (deterministic quadrature on the
+  Bloch sphere; the minimisers give the same values at 64 × 128 nodes). The slices of an extremal operator are not
+  extremal together.
+- Through the cross term of two orthogonal pure states. For C = λ_1 ψ_1ψ_1^* + λ_2 ψ_2ψ_2^* with λ_i ≥ 0, (9.1) at the
+  endpoint would follow from q_n(ψψ^*) ≥ 2^{−n} (rank-one positivity) if also ⟨ψ_1ψ_1^*, Φ_n(ψ_2ψ_2^*)⟩ ≥ −2^{−n}.
+  That holds at n = 2 (it is ‖Tr_1 X‖_F² + ‖Tr_2 X‖_F² ≤ 1 for X = ψ_1ψ_2^*, which follows from
+  (I − F_1)(I − F_2) ≥ 0), but not at n = 3, where the cross term reaches −4·2^{−3}, nor at n = 4 (−7·2^{−4} and
+  +5·2^{−4}). So the bound uses the excess of q_n(ψ_iψ_i^*) over 2^{−n} for entangled ψ_i. This is the simplest
+  case of the failure of uniform Cauchy–Schwarz certificates recorded in `OBSTRUCTIONS.md`.
+- Merging two copies into one site is not monotone either: q_2(t, P ⊗ |0⟩⟨1|) = 2 − 4t, less than (1 − t) times the
+  one-site value 2 of the same operator on C^9. Yet (9.1) holds there, with room for 0 < t < ½, because ‖C‖_1 = 2
+  while Tr C = 0. The trace norm, not the trace, is what survives merging (compare the fusion obstruction for the map
+  route found by an independent audit, in `OBSTRUCTIONS.md`).
+
+**Evidence (floating point).** `code/trace_norm/tn_bound.py` minimises the difference of the two sides of (9.1),
+divided by ‖C‖_F², from random complex factors (L-BFGS):
+
+| copies | t | runs | smallest difference found |
+|---|---|---|---|
+| 2 | 0.40, 0.45, 0.50 | 12 each | −2·10^{−16} |
+| 3 | 0.42, 0.50 | 10 each | 8·10^{−17} |
+| 4 | 0.45 / 0.50 | 6 / 8 | 2·10^{−15} / 1·10^{−15} |
+| 5 | 0.50 | 4 | 3·10^{−16} |
+| local dimensions (4,4), (2,4), (5,5), (4,4,2) | 0.50 | 8 each | −2·10^{−16} |
+
+Every run ends at equality to rounding, mostly on the product family above (below the endpoint) or on zeros with
+σ_1 = σ_2 (at the endpoint). None goes below rounding. This is evidence, not a proof. For operators that are not
+positive, TN_n is open for every n ≥ 2 (at n = 2 and t = ½ it says 2‖Tr_1 C‖_F² + 2‖Tr_2 C‖_F² ≤ 2‖C‖_F² + ‖C‖_1² +
+|Tr C|², an inequality we have not proved for general rank-two C).
+
 ## Code
 
 Python 3 with NumPy and SymPy. `code/check_pair_anchor.py` uses python-flint for the exact characteristic polynomials;
@@ -894,6 +1006,12 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   k = 1, 2, isometry and marginals); Section 7 (the enumerator identities on random projectors at n = 2, 3, the
   three-copy code, and the certificates for n = 4, …, 9 in exact rational arithmetic); `check_enumerator_purity.py` (the
   purity-two enumerators of Section 7, exact).
+- `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
+  `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind
+  (9.2), the odd-n equality family), `two_copy_psd.py` (Proposition 24 on random positive operators of every rank),
+  `psd_rank.py n r runs` (rank three breaks the positive case at n = 3), `cross_term.py n runs seed ±1` (the cross
+  term of two orthogonal pure states), `one_step_qubit.py D runs seed nth nph` (the failing one-step inequality on
+  local qubits).
 
 ## Local positivity at the signed GHZ zero, every n (added 8 November 2026)
 

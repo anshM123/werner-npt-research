@@ -233,6 +233,13 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   it gives −9 on 64 s_3. Padding by |0⟩ multiplies s_n by 4^{−1} per copy, so this holds for every n ≥ 3. We checked
   the identity on random z and the separation arithmetic; the list of six blocks is taken from the audit. Three-copy
   positivity itself is proved by the higher-degree certificate of `whole-problem-routes/`.
+  For the real skew rank-two forms of `whole-problem-routes/` (Section 3), to which the endpoint reduces, the failure
+  starts at two copies. An independent audit observes that for real skew J on R³ ⊗ R³,
+  q_2(J) = ‖J_stiff‖² − ½‖J_soft‖², where J_soft = (Tr_B J) ⊗ I/3 + I/3 ⊗ (Tr_A J) and J_stiff = J − J_soft are
+  O(3) × O(3)-isotypic. A square in such a sum must vanish where y = tx, so it is the square of a linear functional of
+  x ∧ y; averaging the Gram matrix over the symmetry would then give the two components nonnegative weights, but the
+  decomposable tests (x, y) = (e₀₀, e₁₁) and (e₀₀, e₁₀) force the weights 1 and −½. Padding by a product vector carries
+  this to every n ≥ 2. We checked the identity on random J and the two test values.
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
@@ -393,6 +400,13 @@ output have full support. The following do not reach every n (added 7 November 2
   P_S ≥ 3^{−min(|S|, n−|S|)}, c_S ≤ P_S, least-eigenvalue lower bounds on one-copy cross purities, and the Uhlmann bounds
   c_{S^c} ≤ 3^{min(|S|, n−|S|)} c_S. So the five-copy case needs inequalities of a different kind
   (`whole-problem-routes/code/sharp_rank_two/`, floating point; the linear programs are exact up to solver tolerance).
+  Section 9 of `support-and-projector-notes/` (added 8 November 2026) states the bound for every rank-two operator,
+  positive or not, with the trace norm in place of the trace and along the whole Werner line:
+  q_n(t, C) ≥ (1 − t)^{n−1}(‖C‖_F² − t‖C‖₁²) (Conjecture TN_n). Random-start minimisation finds no violation for n ≤ 5
+  or with other local dimensions, and the bound is attained for every ratio of singular values. Two inductions on it
+  fail. Applied slice by slice after peeling one qubit copy (where the peeling is exact), it needs a one-step
+  inequality that is false by 0.05. And the cross term of two orthogonal pure states is not at least −2^{−n} from
+  three copies on, so the positive case cannot be split into rank-one bounds plus a bound on the cross term.
 - **Zero-free regions (added 8 November 2026).** For C of rank at most two let
   f_C(t₁, …, t_n) = Σ_J (∏_{s∈J} t_s) ‖Tr_J C‖², so the endpoint is f_C(−½, …, −½) ≥ 0. In our tests the diagonal
   polynomial f_C(t, …, t) has no root in |t| < ½ (random C, n ≤ 5: smallest root modulus 0.71 to 0.80), although it is
@@ -461,6 +475,17 @@ output have full support. The following do not reach every n (added 7 November 2
   marginals are far from maximally mixed. So a proof has to use quantum structure beyond one-copy conditional bounds and
   two-copy blocks, at every n (`whole-problem-routes/code/hit_form/`, log in its `logs/`; the three-copy law is exact,
   the rest floating point).
+- **Transfer coordinates and block fusion (added 8 November 2026, from an independent audit).** For a periodic
+  matrix-product input z_N(i_1 … i_N) = Tr(A_{i_1} ⋯ A_{i_N}) the scalar s_{N,a}(z) = zᵀ𝒫_a^{⊗N}(zzᵀ)z is Tr(E_a^N), with
+  T = Σ_i A_i ⊗ A_i, K = T ⊗ T and E_a = aK − ¼(B + C), where B and C are K with replicas 2, 3 and 2, 4 exchanged; and
+  |z_N|² = Tr(T^N). Averaging over the 24 permutations of the four replicas gives E_a = (a + ¼)K − ¾ΠK, so when T is
+  symmetric (for example A_iᵀ = ±A_i) the triangle inequality for Schatten norms yields s_{N,a}(z_N) ≥ (a − ½)^N|z_N|⁴
+  for every even N and every bond dimension, including inputs that are thick at every copy. This positive result does
+  not reach the route. Odd N fail already below a = ¾ (the planar GHZ witnesses of Theorem 7.1), and merging two sites
+  into one is not monotone: for the real input with amplitudes 2 on 000 and −2 on 011, 101, 110, 4³s_3 = 1024 at
+  a = ¾, while the same map on one merged nine-dimensional site and a qutrit gives 4²s = 1536 (the product floor is
+  256). We checked the transfer identity and the even-N bound on random symmetric and mixed symmetric/skew collections
+  (N = 2, 4) and the three fusion values.
 
 What a proof of this route needs is a global inequality: some way to compare the value at a thick minimiser with the
 values of its contractions or compressions that does not hold trivially at every critical point. None of the tools
