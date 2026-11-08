@@ -1,0 +1,4 @@
+n = 2, t = 0.34: min found 0.211200   thin product (1-2t)(1-t)^(n-1) = 0.211200   ratio 1.0000
+n = 2, t = 0.4: min found 0.120000   thin product (1-2t)(1-t)^(n-1) = 0.120000   ratio 1.0000
+n = 2, t = 0.45: min found 0.055000   thin product (1-2t)(1-t)^(n-1) = 0.055000   ratio 1.0000
+n = 2, t = 0.49: min found 0.010200   thin product (1-2t)(1-t)^(n-1) = 0.010200   ratio 1.0000

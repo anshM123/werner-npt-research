@@ -814,6 +814,26 @@ smallest ratios q_n/(θ‖C‖_F²) found are 0.295, 0.234 and 0.190 at n = 2, 3
 statement about exact zeros. Thick operators come exponentially close to zero, and a proof cannot go through a margin
 that is uniform in n.
 
+**Below the endpoint (floating point).** On the Werner line q_n(t, ·) of Proposition 22, random-start minimisation
+reproduces to six digits the sharp curve conjectured in `contraction-notes/`,
+
+    min over rank-two C of q_n(t, C)/‖C‖_F² = (1 − 2t)(1 − t)^{n−1}, attained at P ⊗ |a⟩⟨a|^{⊗(n−1)},
+
+at n = 2 and 3 for t = 0.34, 0.4, 0.45 and 0.49, and at n = 4 for t = 0.45 (`code/below_endpoint/`, logs in
+`logs/below_endpoint/`). Below the endpoint the landscape is simple. Every local minimum found (52 runs: n = 3 at
+t = 0.40, 0.45, 0.49 and n = 4 at t = 0.45) is thin: it is supported on local qubits at the copies of some J and is a
+product of rank-one projectors elsewhere, so it is a deformation of a family 𝓑_J. The values are ordered by |J|; at
+n = 3, t = 0.45 they are 1, 1.818 and 2.488 times the sharp value for |J| = 1, 2, 3. Thick critical points located
+directly (by driving the invariant residual of the critical-point equations to zero; values 0.17 to 0.64 at n = 3,
+t = 0.45) are all saddles. By Proposition 22 and the remark after it, EP_n follows from EP_{n−1} together with:
+
+  (TLM_n) for 1/3 < t < ½, q_n(t, ·) has no local minimum on rank-two operators that is thick at every copy.
+
+The descent at thick critical points is analysed in `orbit-notes/`: averaging over the squeezes of one copy cannot
+find it, and at the low critical points most of the curvature comes from coupling between copies. At t = 1/3 the sharp
+curve would say ‖P_⊥^{⊗n} C‖_F² ≥ ½ (2/3)^n ‖C‖_F² for rank-two C, with P_⊥ the projection onto traceless operators. That
+is a quantitative form of the fact that no rank-two operator is a sum Σ_s I_s ⊗ X_s.
+
 **A census of zeros (floating point).** `code/zero_census.py` minimises q_n(AB^*)/‖AB^*‖_F² from random complex
 factors (L-BFGS) and classifies the end point by the rank of the one-copy marginal of range plus co-range at each copy,
 and by the operator Schmidt coefficients across every cut.
@@ -862,6 +882,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   (k, r) = (1, 2) and (2, 2), the marginals of encoded vectors, and the numbers 387, 961 and −1087/198144.
 - `code/check_anchor_obstruction.py`: Propositions 7 and 8 in exact rational arithmetic for n = 3, …, 7: the rows of
   MV_p live on the vacuum column, the Gram matrix on (a_n, b_n), and the weighted identities at rational weights.
+- `code/below_endpoint/` (`sharp_curve.py n runs seed t1,t2,...`, `landscape.py n runs seed t`): Section 8, the Werner line
+  below the endpoint (logs in `logs/below_endpoint/`).
 - `code/zero_census.py`: Section 8, the census of zeros (`python zero_census.py n runs seed`; logs
   `logs/zero_census_n2.log` to `_n6.log`, run with seeds 1, 7, 11, 13, 17); `code/zero_census_continue.py` continues one
   start (log `logs/zero_census_n5_run5_continued.log`).

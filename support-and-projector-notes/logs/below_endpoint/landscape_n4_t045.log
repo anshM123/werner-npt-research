@@ -1,0 +1,12 @@
+run 0: value/SC = 1.000000  joint ranks [1, 1, 1, 2]  s2/s1 = 1.0000
+run 1: value/SC = 1.000000  joint ranks [1, 1, 1, 2]  s2/s1 = 1.0000
+run 2: value/SC = 1.000000  joint ranks [1, 1, 1, 2]  s2/s1 = 1.0000
+run 3: value/SC = 1.000000  joint ranks [1, 2, 1, 1]  s2/s1 = 1.0000
+run 4: value/SC = 1.000000  joint ranks [1, 1, 2, 1]  s2/s1 = 1.0000
+run 5: value/SC = 1.000000  joint ranks [1, 1, 1, 2]  s2/s1 = 1.0000
+run 6: value/SC = 1.000000  joint ranks [1, 1, 2, 1]  s2/s1 = 1.0000
+run 7: value/SC = 1.000000  joint ranks [2, 1, 1, 1]  s2/s1 = 1.0000
+run 8: value/SC = 1.000000  joint ranks [1, 1, 2, 1]  s2/s1 = 1.0000
+run 9: value/SC = 1.000000  joint ranks [2, 1, 1, 1]  s2/s1 = 1.0000
+run 10: value/SC = 1.000000  joint ranks [1, 1, 2, 1]  s2/s1 = 1.0000
+run 11: value/SC = 1.000000  joint ranks [1, 1, 1, 2]  s2/s1 = 1.0000
