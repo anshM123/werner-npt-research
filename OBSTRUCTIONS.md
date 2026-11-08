@@ -392,8 +392,16 @@ output have full support. The following do not reach every n (added 7 November 2
   already at first order in 1 − a (heuristically: on the vectors with a factor φ at one copy the first-order part of
   the target is negative definite, and a filtering of fewer copies can reproduce it only by mapping the φ of every copy
   to a φ). This is the map's analogue of the uncompressed test in `compression-notes/` (ρ ⊗ ρ is not in the cone of
-  filterings of one Werner copy). Larger m, k were not tested (`whole-problem-routes/code/self_similarity/`, floating
-  point).
+  filterings of one Werner copy). Larger m, k were not tested numerically (`whole-problem-routes/code/self_similarity/`,
+  floating point). An exact argument (from an independent audit of this repository) rules out every such identity whose
+  base C_a^{⊗k} is strictly block-positive. If δ_k > 0 is its least value on product vectors and M_k its largest
+  eigenvalue, then every Y in the cone of local filterings of C_a^{⊗k} plus separable operators has
+  ‖Y‖₁ ≤ (M_k/δ_k) Tr Y: for X = (A ⊗ B)C_a^{⊗k}(A ⊗ B)^*, Tr X ≥ δ_k ‖A‖₂²‖B‖₂² (expand A^*A and B^*B into rank-one terms)
+  and ‖X‖₁ ≤ M_k ‖A‖₂²‖B‖₂² (Hölder). The identity would put every C_a^{⊗N} in that cone, but
+  ‖C_a^{⊗N}‖₁/Tr C_a^{⊗N} = (‖C_a‖₁/Tr C_a)^N grows without bound because C_a has a negative eigenvalue. At a = 3/4 the
+  ratio is (23/4)/(21/4) = 23/21, Theorem 7.32 gives δ_k ≥ 4^{−7}(4/3)^{6−k} for k ≤ 6 (pad with |0⟩|1⟩), and M_k = 1, so
+  the bound fails from N = 107 on: no fixed-base identity with k ≤ 6 exists. A working identity would need a base with an
+  exact product zero.
 - **Classical forms of the value (added 8 November 2026).** For every Hermitian X,
   𝒫_{3/4}(X) = ∫ 3⟨v|X|v⟩ [(I − vvᵀ) − ¼vvᵀ] dv, with v uniform on the real unit sphere. So 𝒫_{3/4} = 𝒩 − ¼ℳ with
   ℳ(X) = (Tr(X)I + 2 Sym X)/5 and 𝒩 = D − ℳ, both entanglement breaking, and for every n and all unit x, y
