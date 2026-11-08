@@ -30,7 +30,7 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   q_n > 0 for n ≤ 8 (Proposition 19, exact certificates). They cannot give it at n = 9, and two-copy balance does not
   help (an exact negative enumerator at n = 10).
 - **Section 8.** Zeros decide the sign. The endpoint at n holds if and only if every rank-two zero of q_n is a critical
-  point, and it holds whenever the zeros form a set of codimension two (Proposition 20). So it follows from a
+  point, and if and only if the zeros form a set of codimension two (Proposition 20). So it follows from a
   classification of zeros: if every zero has the qubit form of Section 6 (Conjecture ZC_n, true at two copies), the
   endpoint holds at n (Corollary 21). Off the endpoint, EP_n follows if the critical-point equations of
   q_n(t, ·) have no rank-two solution for 0 < t < ½ (Proposition 22). A random-start census finds only zeros of the
@@ -691,32 +691,26 @@ these zeros. The tangent space of X₂ at C is {XC + CY}, so C = AB^* is a criti
 Φ_n(C)B = 0 and Φ_n(C)^*A = 0, that is, when CΦ_n(C)^* = 0 and Φ_n(C)^*C = 0.
 
 **Proposition 20 (zeros decide the sign).** Fix n.
-- (a) If Z_n has codimension at least two in X₂, then EP_n holds.
+- (a) EP_n holds if and only if Z_n has codimension at least two in X₂.
 - (b) EP_n holds if and only if every zero is critical: q_n(C) = 0 with C of rank two implies CΦ_n(C)^* = 0 and
   Φ_n(C)^*C = 0.
 
 *Proof of (a).* Z_n is a closed semialgebraic subset of X₂, a finite union of smooth submanifolds of dimension at most
 dim X₂ − 2. Two points of X₂ \ Z_n are joined by a path in X₂, and a generic perturbation of that path with the same
 ends misses every one of these submanifolds, since 1 + (dim X₂ − 2) < dim X₂. So X₂ \ Z_n is connected. The form has no
-zeros there, and it is positive at ab^* + εcd^* for small ε ≠ 0, so it is positive on all of X₂ \ Z_n. ∎
+zeros there, and it is positive at ab^* + εcd^* for small ε ≠ 0, so it is positive on all of X₂ \ Z_n. For the
+converse (pointed out by an independent audit), let C be a zero and take a unit rank-one D = ub^* with b in the
+co-range of C. The complex line C + wD stays in rank at most two, and q_n(C + wD) = 2 Re(w̄ β) + α|w|² with
+α = q_n(D) ≥ 2^{−n}. If EP_n holds, C is a minimum, so β = 0 and the two real gradient components along this line have
+independent differentials at C (their Hessian block is 2α I₂). Near C every zero solves these two equations, so Z_n
+has codimension at least two there. ∎
 
-*Proof of (b).* At a zero of a nonnegative function the derivative vanishes, which gives "only if". For "if", let
-F(A, B) = q_n(AB^*) on pairs of 3^n × 2 complex matrices. It is a real polynomial in the real and imaginary parts,
-of degree two in A and of degree two in B, and its gradient is (2Φ_n(C)B, 2Φ_n(C)^*A) with C = AB^*. Suppose F takes a
-negative value. It also takes positive values, so some irreducible real factor f of odd multiplicity e changes sign
-(otherwise F would have one sign wherever no factor vanishes, which is a dense set).
-
-The multiplicity is one. If e ≥ 3, then f is linear and F = f³ℓ with ℓ linear. Split f = f_A + f_B and ℓ = ℓ_A + ℓ_B
-by the variables they use. F has only terms of degree (2, 2) in (A, B), so its terms of degree (4, 0), (0, 4), (3, 1)
-and (1, 3) vanish: f_A³ℓ_A = 0, f_B³ℓ_B = 0, f_A³ℓ_B + 3f_A²f_Bℓ_A = 0 and 3f_Af_B²ℓ_B + f_B³ℓ_A = 0. If f_A ≠ 0 the first
-and third give ℓ = 0; if f_A = 0 and f_B ≠ 0 the second and fourth do. Either way F = 0, which is absurd.
-
-A sign-changing irreducible polynomial generates a real ideal [BCR, Theorem 4.5.1], so f divides every polynomial
-that vanishes on {f = 0}, and {f = 0} is an irreducible algebraic set of dimension one less than the ambient space. Neither ∂f/∂x_i (for some i) nor the cofactor F/f is divisible by f, so
-both vanish only on proper algebraic subsets of {f = 0}, which have smaller dimension. Pick a point (A, B) of {f = 0}
-outside both. There F = 0 and ∇F ≠ 0. Then C = AB^* is not 0 (the gradient vanishes when C = 0) and not of rank one
-(q_n > 0 there). So A and B have full column rank, the map (A, B) ↦ AB^* is a submersion onto X₂ near them, and C is a
-rank-two zero at which q_n has a nonzero derivative along X₂. ∎
+*Proof of (b).* At a zero of a nonnegative function the derivative vanishes, which gives "only if". For "if" (this
+short argument is due to an independent audit; an earlier version used real algebraic geometry), suppose
+q_n(C) = −η < 0 for some C of rank two. With D = ub^* as above (b in the co-range of C, ‖u‖ = ‖b‖ = 1), every C + sD,
+s real, has rank at most two, and q_n(C + sD) = αs² + 2βs − η with α = q_n(D) ≥ 2^{−n} > 0. This quadratic has two
+distinct real roots. At a root, C + sD is not zero and not of rank one (rank-one operators have q_n > 0), so it lies in
+X₂, and the derivative of q_n along the curve, 2(αs + β), is not zero. So C + sD is a zero that is not critical. ∎
 
 So the endpoint is a statement about zeros only: there is no zero at which the form has a nonzero derivative. Every
 zero in Section 6 is critical (Propositions 15 and 17), and by Proposition 17 the second variation at zeros already
@@ -836,9 +830,11 @@ Every run ended at a zero of the conjectured form (to rounding). One five-copy r
 ratio 1.4·10^{−4}, just above the threshold the script uses; continuing it from the same start
 (`code/zero_census_continue.py`) brings it to 2·10^{−13} with ratio 4·10^{−5}, a rank-one factor on four copies times
 a qubit projector on the fifth, and it is counted that way above. None ended at another local minimum, and none went
-negative. As n grows the runs mostly end on the largest family (|J| = 1). For n ≤ 5, EP_n itself is known (see [T1]
-for three to five copies); six copies are beyond the proved range. This is evidence about where the zeros are, not a
-proof.
+negative. As n grows the runs mostly end on the largest family (|J| = 1). EP_n itself is proved only for n ≤ 3 (the
+three-copy case is [T1]); at four and five copies [T1] reaches Werner parameters just short of the endpoint (0.4979
+and 0.47 against ½), and the four-copy endpoint is proved here only for Hermitian operators. So at n = 4, 5, 6 the
+census is evidence for EP_n as well as for ZC_n. It is evidence about where the zeros are, not a proof. (An earlier
+version of this paragraph said EP_n was known for n ≤ 5; an independent audit that read [T1] corrected this.)
 
 ## Code
 
