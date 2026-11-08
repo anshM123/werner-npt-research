@@ -99,6 +99,22 @@ at two copies (`data/`):
 - the top eigenvector of M_s: value −0.0974, where the best w gives +0.0062. (An earlier version reported −0.0077: the
   polarisation in `quad_part` built the transpose of M_s. The script now also checks w^* M_s w against the formula at
   complex w.)
+- **Systematic search (added 8 November 2026).** We tried 27 covariant 3 × 3 matrices per copy: the one-copy marginals
+  of CC^* + C^*C, CC^*, C^*C, of the range and co-range projectors and of |C|, |C^*|; their products and geometric
+  means; the Gram matrices of the blocks under q_{n−1}; and partial traces of |Q|, Q_±, |Q^Γ|, (Q^Γ)_−. The direction w was
+  the least eigenvector, an eigenvalue-weighted average over the eigenbasis, or the best of the three eigenvectors,
+  and the copy was the best one or a canonical one (the thinnest). Gradient adversaries killed:
+  - Every single-eigenvector rule, at two copies. Sixteen die on the same operator, where the least eigenvector of the
+    marginal of CC^* + C^*C gives Δ/‖C‖² = −0.15451 ≈ (1 − √5)/8 at both copies, the other two eigenvectors give
+    +0.386 and +0.384, and q_2/‖C‖² = 0.388.
+  - Eigenvalue-weighted averages, at two copies.
+  - Best of three eigenvectors at a canonically chosen copy, at three copies. At the thinnest copy (thinner by a hair)
+    all three eigenvectors of the marginal give Δ < 0 (−0.011, −0.093, −0.017 times ‖C‖², with
+    q_3/‖C‖² = 0.086), while the other copies have good eigenvectors.
+
+  Only "best of the three eigenvectors of a marginal, at the best copy" survived at two and three copies. That is a
+  list of 3n candidates, not a rule. At the killed operators the best w is close to an even mix of the least and largest
+  eigenvectors. The two operators above are checked with dense q_n in `code/qc_rules/check_rule_kills.py`.
 
 **No basis average works at zeros (proved).** By the trace identity, QC would follow if at some copy some
 orthonormal basis had Σ_k q_{n−1}(⟨e_k|C|e_k⟩) ≤ 4 q_n(C). This fails for every n ≥ 2 on the zero
