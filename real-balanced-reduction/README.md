@@ -158,6 +158,24 @@ q_N(t, Π)/2 ≤ −a^{15ℓ+r} δ/768, where k, r and ℓ only have to satisfy 
 22(c/a)^{8ℓ} ≤ a^r δ/64 (and the parity of n + k). So the number of added copies is O(1 + log(1/δ)) and does not depend
 on n, and the new margin is a power of δ (independent audit; we checked the three steps).
 
+**Corollary (a vanishing error is enough).** Fix t in (0, ½] and, for odd N ≥ 3, let β_N(t) be the minimum of
+q_N(t, P)/‖P‖_F² over real rank-two orthogonal projectors P on N copies with balanced range. Then q_n(t, C) ≥ 0 for every
+n and every C of rank at most two if and only if β_N(t) ≥ −ε_N along some unbounded set of odd N, for some ε_N → 0.
+
+*Proof.* Let g_r = (|0^r⟩ + |1^r⟩ + |2^r⟩)/√3. It is balanced for r ≥ 2, and
+
+    q_r(t, g_r g_r^*) = (2/3)(1 + (−t)^r) + (1 − t)^r/3 ≥ 2/3   for even r,
+
+since every partial trace of g_r g_r^* other than the full and the empty one has squared norm 1/3. If the endpoint at t
+fails, the Corollary above gives a real balanced projector P on some odd M with q_M(t, P) = −δ‖P‖_F² < 0. For every
+even r, P ⊗ g_r g_r^* is again a real rank-two projector with balanced range, and q is multiplicative, so
+β_{M+r}(t) ≤ −(2/3)δ for every even r ≥ 2, which contradicts β_N ≥ −ε_N → 0. ∎
+
+The products P ⊗ g_2^{⊗j}, with q_2(t, g_2g_2^*) = 1 − 2t/3 + t² < 1, show that β_N(t) is at most a quantity that tends
+to 0, so the criterion asks only that the balanced minimum not stay below a fixed negative number. This is the analogue
+of the vanishing-error criterion that the same audit gives for the map route (Proposition M′ of `whole-problem-routes/`);
+for the Werner form it follows in the same way.
+
 ## Checks
 
 - `code/synchronous_check.py` (`logs/synchronous_check.log`), exact: the twelve matrices form a group, the one-copy

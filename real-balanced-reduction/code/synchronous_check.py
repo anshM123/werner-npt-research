@@ -9,7 +9,10 @@
 (4) the same classification for the kernel of the map P_a (A, B as above, K for both remaining two-plus-two patterns):
     classes (A^15) x 12, (A^7 B^8) x 132, (A^7 K^8) x 264, (A^3 B^4 K^8) x 936, and zero otherwise;
 (5) the balance of the image at a flag site: for j != k the flags F_j, F_k stay orthogonal after one flag qutrit is
-    traced (every pair of codewords differs in at least 7 further positions).
+    traced (every pair of codewords differs in at least 7 further positions);
+(6) floating point, for the vanishing-error Corollary: q_r(t, g_r g_r^*) = (2/3)(1 + (-t)^r) + (1 - t)^r/3 for
+    g_r = (|0^r> + |1^r> + |2^r>)/sqrt3, r = 2..5; and for the balanced Latin-square plane on three copies, P (x) g_2 g_2^*
+    is a balanced rank-two projector with q multiplicative.
 usage: python synchronous_check.py"""
 import itertools
 import sympy as sp
@@ -81,4 +84,45 @@ for name, ker, want in [('Werner', werner_kernel, 12 * al ** 15 + 132 * al ** 7 
 # (5) flag orthogonality after tracing one flag qutrit: distinct codewords differ in >= 8 positions, so >= 7 untouched
 ok &= min(dists) - 1 >= 1
 print(f"(5) distinct labels differ at >= {min(dists)} flag pairs, so >= {min(dists) - 1} remain after one flag qutrit is traced")
+import numpy as np
+
+
+def qnum(C, n, t):
+    tot = 0.0
+    for r in range(n + 1):
+        for K in itertools.combinations(range(n), r):
+            X, rem = C.reshape([3] * 2 * n), list(range(n))
+            for s_ in sorted(K, reverse=True):
+                i = rem.index(s_); X = np.trace(X, axis1=i, axis2=len(rem) + i); rem.pop(i)
+            tot += (-t) ** r * np.sum(np.abs(X) ** 2)
+    return tot
+
+
+err = 0.0
+for r in (2, 3, 4, 5):
+    g = np.zeros(3 ** r)
+    for k in range(3):
+        g[int(str(k) * r, 3)] = 1 / np.sqrt(3)
+    for t in (0.35, 0.4, 0.5):
+        err = max(err, abs(qnum(np.outer(g, g), r, t) - ((2 / 3) * (1 + (-t) ** r) + (1 - t) ** r / 3)))
+v = np.zeros(27); w = np.zeros(27)
+for (x, y, z) in [(0, 1, 2), (1, 2, 0), (2, 0, 1)]:
+    v[9 * x + 3 * y + z] = 1 / np.sqrt(3)
+for (x, y, z) in [(0, 2, 1), (1, 0, 2), (2, 1, 0)]:
+    w[9 * x + 3 * y + z] = 1 / np.sqrt(3)
+g2 = np.zeros(9); g2[[0, 4, 8]] = 1 / np.sqrt(3)
+P = np.outer(v, v) + np.outer(w, w)
+for t in (0.4, 0.5):
+    err = max(err, abs(qnum(np.kron(P, np.outer(g2, g2)), 5, t) - qnum(P, 3, t) * qnum(np.outer(g2, g2), 2, t)))
+Vm = np.column_stack([np.kron(v, g2), np.kron(w, g2)])
+rng = np.random.default_rng(1)
+for s_ in range(5):
+    Hc = rng.normal(size=(3, 3)) + 1j * rng.normal(size=(3, 3))
+    ops = [np.eye(3)] * 5; ops[s_] = Hc
+    Hs = ops[0]
+    for o in ops[1:]:
+        Hs = np.kron(Hs, o)
+    err = max(err, np.abs(Vm.conj().T @ Hs @ Vm - np.trace(Hc) / 3 * np.eye(2)).max())
+ok &= err < 1e-12
+print(f"(6) GHZ padding formula, multiplicativity and balance of P (x) g_2: max error {err:.1e}; q_3 of the Latin-square plane at t = 1/2: {qnum(P, 3, 0.5):.6f}")
 print("PASS" if ok else "FAIL")

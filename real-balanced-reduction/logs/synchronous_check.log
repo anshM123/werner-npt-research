@@ -3,4 +3,5 @@
 (3/4) Werner flag kernel summed over 12^4 quadruples matches the stated class sum: True; nonzero classes {'all equal': 12, 'j=k!=l=m': 132, 'j=l!=k=m': 132}
 (3/4) map P_a flag kernel summed over 12^4 quadruples matches the stated class sum: True; nonzero classes {'all equal': 12, 'j=k!=l=m': 132, 'j=l!=k=m': 132, 'j=m!=k=l': 132, 'four distinct': 936}
 (5) distinct labels differ at >= 8 flag pairs, so >= 7 remain after one flag qutrit is traced
+(6) GHZ padding formula, multiplicativity and balance of P (x) g_2: max error 1.1e-15; q_3 of the Latin-square plane at t = 1/2: 1.500000
 PASS
