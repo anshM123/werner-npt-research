@@ -1078,6 +1078,13 @@ and to x_jx_i^*. Adding up,
 with V = Σ_i δ_i² − ‖C‖_1²/r ≥ 0. For (9.5), write N = ‖C‖_F², S = ‖C‖_1, T = |Tr C|² and P = ‖Φ(C)‖². Then
 q_2(t, C) − (1 − t)(N − tS²) = t[N − P + tT + (1 − t)S²], and (9.4) at r = 2 says P ≤ N + S²/2 + T/2. ∎
 
+At r = 2 the proof is an exact sum-of-squares identity: the sum-of-squares lemma of `two-copy-thickness/` writes the
+slack of (9.4) as ½(δ_1 − δ_2)² plus the four contraction defects 4‖P_A^{(1)}P_A^{(2)}(a ⊗ b)‖² (for (a, b) = (x_1, y_1),
+(x_2, y_2), (x_1, x_2), (y_1, y_2)) plus ‖Φ(x_2x_1^* − y_2y_1^*)‖². When σ_1 = σ_2, G is a multiple of I_2 in every
+gauge, the first term vanishes, and all of the slack sits in the defects (an observation of an independent audit).
+This matters because the all-copy problem at a fixed t reduces to rank-two orthogonal projectors, where σ_1 = σ_2
+(`real-balanced-reduction/`).
+
 [FHPV] prove ‖Tr_1 C‖_F² + ‖Tr_2 C‖_F² ≤ r‖C‖_F² + |Tr C|²/r for rank at most r; at r = 2 this is the two-copy
 endpoint q_2 ≥ 0 in every local dimension. (9.4) is sharper because ‖C‖_1² ≤ r‖C‖_F², and at the endpoint with r = 2
 it is exactly TN_2. This section had stated TN_2 only for positive operators (Proposition 24) and for real skew ones
@@ -1142,7 +1149,10 @@ problem,
 
 so TN_n(t) says that this weighted sum of two-site terms is at least −(1 − t)^{n−1}(‖C‖_1² − |Tr C|²), the Uhlmann gap of
 the purified form at the scale of the product floor. We checked the lemma on random operators for dimension patterns
-(3,3), (3,3,3), (2,3,4), (3,3,3,3). Further random-start tests of FB at t = 0.4 with spectator and merged dimensions
+(3,3), (3,3,3), (2,3,4), (3,3,3,3). The individual two-site terms can be negative even when q_n is not small: for
+C = a_1|0^N⟩⟨0^N| + a_2|1^N⟩⟨1^N| the weighted sum of the two-site terms is 2a_1a_2[(1 − t)^{N−1} − (−t)^{N−1}] ≥ 0
+(zero at the endpoint for odd N), while for N = 3 and a_1 = a_2 = 1 the first term is −2t and the second 2 (independent
+audit; `real-balanced-reduction/code/below_endpoint_check.py`). Further random-start tests of FB at t = 0.4 with spectator and merged dimensions
 (3,3,9), (2,2,4), (3,9,3), (2,4,4), (4,2,3), and at t = 0.34, 0.37, 0.49 for (3,3,3), found no violation; every run ended
 on the equality line.
 
@@ -1157,8 +1167,9 @@ for the matrices X, Y of x, y. An independent audit proves the rectangular commu
 TN_2 at the endpoint for real skew J, in all dimensions, with equality at x = (|00⟩ + |11⟩)/√2, y = (|01⟩ − |10⟩)/√2.
 Real skew operators matter because of Proposition S of `whole-problem-routes/`: a negative real rank-two C becomes a
 negative real skew rank-two operator after r added flag copies. Its error terms carry the factors (1 − t)^r and (−t)^r
-on the Werner line (we redid the flag computation at general t), so that step works for every t ≤ ½; the realification
-step of `real-balanced-reduction/` was stated at the endpoint and we have not rechecked it below. With three or more sites
+on the Werner line (we redid the flag computation at general t), so that step works for every t ≤ ½; the dilation,
+realification and balancing steps of `real-balanced-reduction/` also work at every fixed t ≤ ½ (its section "Below the
+endpoint"). With three or more sites
 the pairwise commutator bounds alone do not give FB or TN for real skew J.
 
 *The merging budget in the crossed form.* The following formulation and Proposition 29 are from the same independent
@@ -1208,7 +1219,9 @@ q_n(t, C) ≥ γ^{n−1} q_{(3^n)}(t, C) ≥ (1 − 2t)γ^{n−1}‖C‖_F² > 0
 ρ = (5I − 2F)/39 undistillable from any number of copies, while its partial transpose has the eigenvalue −1/39. With two
 sites (9.7) holds with room, q_2 − γq_1 ≥ γ‖C‖_F² + (t/2)(σ_1 − σ_2)². Even the approximate budget
 Δ_d − γΔ_{d′} ≥ −γ(1 − t)^{m−2}‖C‖_F² would do: it is equivalent to q_d ≥ γq_{d′} + (t/2)(1 − t)^{m−2}(σ_1 − σ_2)², which
-implies (9.7). By Lemma 27, (9.7) says ½q_{d′} + t⟨C, ρ_1 ⊗ ρ_2 ⊗ Φ_t^{⊗(m−2)}C⟩ ≥ 0. A proof for fixed m, for product
+implies (9.7). By Lemma 27, (9.7) says ½q_{d′} + t⟨C, ρ_1 ⊗ ρ_2 ⊗ Φ_t^{⊗(m−2)}C⟩ ≥ 0. Real C suffice: by
+Theorem R_t of `real-balanced-reduction/`, a complex negative witness at qutrit copies gives a real one on more copies,
+and merging keeps C real (independent audit). A proof for fixed m, for product
 singular vectors, or for finitely many merged dimensions does not complete this route; it needs an estimate uniform in
 the number of sites.
 
