@@ -983,7 +983,10 @@ g(y) = (151 − √6805)/6·4^{−4} ≈ 11.418·4^{−4}, and every one-copy co
 input being re-optimised), gives g ≈ 11.733·4^{−4}. All compressions give the same value, because y is invariant under
 rotations of all copies at once and the copy permutations that fix it act transitively. A nearby vector whose one-copy
 marginals are not degenerate also has a positive gap at every copy (0.23 to 0.33 times 4^{−4}), so the failure is not
-an artefact of the symmetry. At three copies, compressing along a fixed eigenvector of the one-copy marginal already
+an artefact of the symmetry. The failure reaches the range n ≥ 7 that an induction would need: for products,
+g(y ⊗ y′) = g(y) g(y′) (both outputs are positive semidefinite), and a one-copy compression acts inside one factor, so
+on y ⊗ y (eight copies, thick at every copy) every one-copy compression raises g as well. At three copies,
+compressing along a fixed eigenvector of the one-copy marginal already
 fails: along the middle eigenvector at an input with smallest marginal eigenvalues 0.06, 0.25 and 0.20 (gap +0.28·4^{−3}
 at every copy), and along the smallest eigenvector at a nearly thin input (+0.0017·4^{−3}). In adversarial searches the
 best of the three eigenvectors never failed at three copies. So the compression route, like the squeezes of

@@ -210,7 +210,8 @@ output have full support. The following do not reach every n (added 7 November 2
 - **One-copy compressions (added 8 November 2026).** Observation 7.25 suggested an induction: for every test vector y,
   some compression of one copy onto a plane does not raise g(y) = λ_min(𝒫_{3/4}^{⊗n}(yyᵀ))/|y|², and thin vectors are
   controlled by fewer copies. This fails at four copies. At the partner vector of Observation 7.26 every one-copy
-  compression, in any direction and with the input re-optimised, raises g from 11.418·4^{−4} to 11.733·4^{−4}. At
+  compression, in any direction and with the input re-optimised, raises g from 11.418·4^{−4} to 11.733·4^{−4}, and
+  since g is multiplicative on products, so does every one-copy compression of y ⊗ y at eight copies. At
   three copies, the rules that compress along the middle or the smallest eigenvector of a one-copy marginal already
   fail. So no compression of one copy onto a plane, chosen from y alone, works at every input
   (`whole-problem-routes/code/compression_rules/`). Compressing two copies at once survives the same tests (an
