@@ -928,6 +928,13 @@ so TN_n is equivalent to
 for all orthonormal pairs. At the endpoint (τ = 1), EP_n is the same inequality with the right side replaced by the
 larger ((1 + G_11)(1 + G_22))^{1/2}. At n = 1, G = 2P_A and the left side of (9.2) is |⟨u_1, v_1⟩⟨v_2, u_2⟩| ≤ 1.
 
+In distillability language: let M = (U ⊗ V)^*(2I − F)^{⊗n}(U ⊗ V) be the compression of the n-copy Werner operator
+to a 2 ⊗ 2 subspace (U, V isometries from C² into (C^3)^{⊗n}). EP_n says that M^Γ ≥ 0 for every such M. TN_n at the
+endpoint says more: ⟨s|M^Γ|s⟩ ≥ |s|² − Conc(s) for every s ∈ C² ⊗ C², where Conc(s) = |⟨s̄|σ_y ⊗ σ_y|s⟩| = 2|det S| is
+the concurrence of s = vec(S). The one-copy compression to a qubit plane, M = 2I − F, attains it. When M^Γ is real in
+the magic basis this is the spectral condition λ_1 + λ_2 ≥ 2 on its two smallest eigenvalues (together with λ_1 ≥ 0);
+in general it is not: the smallest value of λ_1 + λ_2 over two-copy compressions is 1.967 (floating point).
+
 *Purified form.* For C = Σ_{i=1,2} a_i b_i^* put α = Σ_i |i⟩ ⊗ a_i and β = Σ_i |i⟩ ⊗ b_i in C² ⊗ (C^3)^{⊗n}, with
 a reference qubit R, and let ρ, σ be the projectors onto α and β. Then ‖Tr_K C‖_F² = Tr(ρ_{RK} σ_{RK}), where the
 subscript means the marginal on R and the copies in K, so
@@ -989,6 +996,10 @@ positive C of rank three (the smallest value found is −(8/9)(Tr C)²), while f
   (I − F_1)(I − F_2) ≥ 0), but not at n = 3, where the cross term reaches −4·2^{−3}, nor at n = 4 (−7·2^{−4} and
   +5·2^{−4}). So the bound uses the excess of q_n(ψ_iψ_i^*) over 2^{−n} for entangled ψ_i. This is the simplest
   case of the failure of uniform Cauchy–Schwarz certificates recorded in `OBSTRUCTIONS.md`.
+- An operator-norm shortcut on local qubits. There the cross term of (9.2) is ⟨v_2|Y_1|u_2⟩ with Y_1 the full-weight
+  part of v_1u_1^* (scaled by 2^n), so (9.2) would follow from ‖P_{v_1^⊥} Y_1 P_{u_1^⊥}‖ ≤ Σ_P |⟨v_1|P|u_1⟩|² for every
+  rank-one operator. This holds at n = 1 and fails from n = 2 on (excess 0.25, 0.73, 1.70 at n = 2, 3, 4). If one of the
+  two rank-one parts is a product projector, Y is a product of reflections and (9.2) does hold.
 - Merging two copies into one site is not monotone either: q_2(t, P ⊗ |0⟩⟨1|) = 2 − 4t, less than (1 − t) times the
   one-site value 2 of the same operator on C^9. Yet (9.1) holds there, with room for 0 < t < ½, because ‖C‖_1 = 2
   while Tr C = 0. The trace norm, not the trace, is what survives merging (compare the fusion obstruction for the map
