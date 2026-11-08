@@ -1056,6 +1056,27 @@ product on the remaining copies: the budget is tight exactly where the two-copy 
 pair. FB(t) is still an m-site statement (the other sites enter through Φ_t^{⊗(m−2)}); we do not have a proof of it, even
 with two sites for general rank-two C.
 
+**Lemma 27 (merging identity).** With ρ = id − Tr(·) I on a site, for every C and every t,
+
+    q_d(t, C) = (1 − t) q_{d′}(t, C) + t ⟨C, ρ_1 ⊗ ρ_2 ⊗ Φ_t^{⊗(m−2)} C⟩.
+
+*Proof.* On the two copies of sites 1 and 2, (I − tF_1)(I − tF_2) = (1 − t)(I − tF_1F_2) + 4t P_A^{(1)} P_A^{(2)}: both
+sides are diagonal in the symmetric/antisymmetric splitting at each site, with values (1 − t)², (1 − t)(1 + t) and
+(1 + t)². The first term is the crossed form of the merged site, the second that of ρ ⊗ ρ (whose natural representation
+has partial transpose (I − F_1)(I − F_2)). ∎
+
+So FB(t) is equivalent to ½Δ_{d′} + t⟨C, ρ_1 ⊗ ρ_2 ⊗ Φ_t^{⊗(m−2)} C⟩ ≥ 0: merging costs exactly the two-site term, which
+can be negative. Merging sites 1, …, k into one block B_k (k = 1, …, n − 1) and iterating gives an exact form of the whole
+problem,
+
+    q_n(t, C) = (1 − t)^{n−1}(‖C‖_F² − t|Tr C|²) + t Σ_{k=1}^{n−1} (1 − t)^{k−1} ⟨C, ρ_{B_k} ⊗ ρ_{k+1} ⊗ Φ_t^{⊗(n−k−1)} C⟩,
+
+so TN_n(t) says that this weighted sum of two-site terms is at least −(1 − t)^{n−1}(‖C‖_1² − |Tr C|²), the Uhlmann gap of
+the purified form at the scale of the product floor. We checked the lemma on random operators for dimension patterns
+(3,3), (3,3,3), (2,3,4), (3,3,3,3). Further random-start tests of FB at t = 0.4 with spectator and merged dimensions
+(3,3,9), (2,2,4), (3,9,3), (2,4,4), (4,2,3), and at t = 0.34, 0.37, 0.49 for (3,3,3), found no violation; every run ended
+on the equality line.
+
 For real skew operators the two-site case is proved. If J = xyᵀ − yxᵀ with x, y real on R^{d_1} ⊗ R^{d_2}, then Tr J = 0,
 ‖J‖_1² = 2‖J‖_F² = 4h with h = ‖x‖²‖y‖² − ⟨x, y⟩², and the two partial traces are, up to sign, XYᵀ − YXᵀ and XᵀY − YᵀX
 for the matrices X, Y of x, y. An independent audit proves the rectangular commutator inequality
