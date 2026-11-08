@@ -486,6 +486,25 @@ output have full support. The following do not reach every n (added 7 November 2
   a = ¾, while the same map on one merged nine-dimensional site and a qutrit gives 4²s = 1536 (the product floor is
   256). We checked the transfer identity and the even-N bound on random symmetric and mixed symmetric/skew collections
   (N = 2, 4) and the three fusion values.
+- **A repaired fusion budget, and three certificate methods that cannot prove the route (added 8 November 2026, from
+  two independent audits; checked as stated).** With L_d(X) = 3 Tr(X) I − X − Xᵀ and F_d(z) = zᵀ(⊗_s L_{d_s})(zzᵀ)z
+  (for qutrits 4^N s_{N,3/4}), the inequality H_N = 5F_d − 3F_coarse − 2‖z‖⁴ ≥ 0, where F_coarse merges the first two
+  sites, would give the product floor F ≥ ‖z‖⁴ by merging sites one at a time, provided it holds in every merged
+  dimension. The constant 3/5 is the largest possible: for z = |000⟩ − |011⟩ − |101⟩ − |110⟩, F_{(3,3,3)} = 64,
+  F_{(9,3)} = 96 and ‖z‖⁴ = 16. The comparison map L_3 ⊗ L_3 − γL_9 is not 2-positive for any γ > 0 (on the
+  Schmidt-rank-two vector Σ_{i=0,1} |i0⟩|i1⟩ the two Choi values are 0 and 6), so 2-positivity cannot certify it. The
+  audit proves H_N ≥ 0 near the product orbit and near the orbit of that parity-GHZ state with any number of product
+  tails (exact Hessian inertia), and finds no violation in dense searches up to five sites or in transfer searches up to
+  81 copies; the global inequality is open. Three proof methods are excluded for every N. (i) Sums of nonnegative
+  circuit polynomials, even after multiplying by any even polynomial with nonnegative coefficients: the comparison
+  polynomial at the all-ones vector is negative, −7047 at three sites (coefficient sums 9153, 3888, −12312, which we
+  recomputed) and at least 9 times more negative per added site. (ii) Nonnegative combinations of quartic inequalities
+  each valid on a single grouping into at most three blocks: via the exact expansion
+  F_N = [3^N + 2(−1)^N]‖z‖⁴ + Σ_{cuts} 2(−1)^N[(−3)^{|A|} + (−3)^{|B|} + 1] p_A
+  + Σ_{triples} 2(−1)^N[(−3)^{|A|} + (−3)^{|B|} + (−3)^{|C|}] T_{A,B,C} (purities and tetrahedral invariants; we checked
+  it on random tensors), data that are physical on every single grouping give F_5 = −209. (iii) The three-block budget
+  together with arbitrary quartic sums of squares cannot certify even F_5 ≥ 0 (an exact dual certificate in the audit's
+  invariant model, which we did not re-derive). None of this refutes the budget or the route.
 
 What a proof of this route needs is a global inequality: some way to compare the value at a thick minimiser with the
 values of its contractions or compressions that does not hold trivially at every critical point. None of the tools

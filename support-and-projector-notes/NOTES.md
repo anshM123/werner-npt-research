@@ -842,6 +842,22 @@ t = 0.45) are all saddles. By Proposition 22 and the remark after it, EP_n follo
 
   (TLM_n) for 1/3 < t < ½, q_n(t, ·) has no local minimum on rank-two operators that is thick at every copy.
 
+**An elementary bound at t = 1/3 for every n (from an independent audit).** Let Q_d(X) = X − Tr(X) I/d. For every
+operator C of rank at most r < d on n local d-dimensional factors, ‖Q_d^{⊗n} C‖_F² ≥ (1 − r/d)^n ‖C‖_F². As
+superoperators on Hilbert–Schmidt space,
+
+    Q_d = (1/d) Σ_{i<j, θ} |A_{ijθ}⟩⟨A_{ijθ}| + (1 − 1/d) Σ_{i≠j} |E_{ij}⟩⟨E_{ij}|,
+
+with A_{ijθ} = uv^*, u, v = (e_i ± e^{iθ} e_j)/√2, θ ∈ {0, π/2, π, 3π/2}, and E_{ij} = |i⟩⟨j|: every atom has rank one
+and trace zero. Contracting C with a rank-one atom at one copy, (u^* ⊗ I) C (v ⊗ I), keeps the rank at most r, so by
+induction ‖Q_d^{⊗n} C‖² ≥ (1 − r/d)^{n−1} ‖(Q_d ⊗ I) C‖² = (1 − r/d)^{n−1}(‖C‖² − ‖Tr_1 C‖²/d) ≥ (1 − r/d)^n ‖C‖², using
+‖Tr_1 C‖_F ≤ ‖C‖_1 ≤ √r ‖C‖_F. For qutrits of rank two this gives q_n(1/3, C) ≥ 3^{−n} ‖C‖_F² (the sharp curve
+predicts ½ (2/3)^n). Each map id − t Tr(·) I has norm at most one for 1/3 ≤ t ≤ ½, so telescoping gives
+q_n(t, C)/‖C‖_F² ≥ 3^{−n} − 3n(t − 1/3): positivity on an interval that shrinks with n, which proves nothing about NPT
+bound entanglement but confirms that a first zero on the Werner line cannot sit at t = 1/3. We checked the frame
+identity for d = 2, 3, 4. The same frame proof applied to the rank-sensitive bound of Section 9 needs a one-step
+inequality of the kind that fails there.
+
 The descent at thick critical points is analysed in `orbit-notes/`: averaging over the squeezes of one copy cannot
 find it, and at the low critical points most of the curvature comes from coupling between copies. At t = 1/3 the sharp
 curve would say ‖P_⊥^{⊗n} C‖_F² ≥ ½ (2/3)^n ‖C‖_F² for rank-two C, with P_⊥ the projection onto traceless operators. That
@@ -974,7 +990,15 @@ Moreover ‖C‖_F² = Tr(ρ_R σ_R), Tr C = ⟨β, α⟩, and ‖C‖_1 = F(ρ_
 C are the square roots of the eigenvalues of G_A G_B, with G_A and G_B the Gram matrices of the a_i and of the b_i, and
 ρ_R, σ_R are their transposes. In this language TN_1 is Uhlmann's theorem |⟨β, α⟩| ≤ F(ρ_R, σ_R). For n copies the
 right side of (9.1) depends only on the two reference marginals, while the left side compares the two purifications
-on every set of copies.
+on every set of copies. With balanced factors a_i = √σ_i u_i, b_i = √σ_i v_i both reference marginals equal diag(σ_1, σ_2).
+Put W = ⊗_s (I − tF_s), A = ⟨α ⊗ β|I_R ⊗ W|α ⊗ β⟩ and B = ⟨α ⊗ β|P_A^R ⊗ W|α ⊗ β⟩, the part on the reference singlet,
+whose vector has squared norm σ_1σ_2. Then q_n = A − 2B, rank-one positivity gives A ≥ (1 − t)^n (σ_1 + σ_2)², and
+TN_n is exactly
+
+    B ≤ (1 − t)^{n−1} σ_1σ_2 + ½ (A − (1 − t)^n (σ_1 + σ_2)²)
+
+(this formulation is from an independent audit; we checked the algebra). The excess of the symmetric part has to be
+kept: bounding B on its own is the cross-term route below, which fails.
 
 *On local qubits.* For C supported on a product of local qubit planes the endpoint form is ‖Π^{⊗n}C‖_F², with Π the
 projection onto traceless 2 × 2 matrices, so 2^n q_n(C) = Σ_P |Tr(PC)|² over the full-weight Pauli strings
