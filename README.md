@@ -69,6 +69,14 @@ scripts need PyTorch.
 
 `OBSTRUCTIONS.md` lists the exact equivalent forms of the every-n statement and the reasons the natural approaches fail.
 
+- **Where every-n proofs stand (8 November 2026).** `OBSTRUCTIONS.md` now opens with three barriers that any every-n
+  proof has to get past: no decomposable certificate at a fixed level (the level-two hierarchy fails exactly by
+  seventeen copies, Remark 7.15′ of `whole-problem-routes/`), no bound that would also hold for Δ ⊗ id (the cb-norm is
+  17/15), and no fixed finite set of building blocks. Degree-four sums of squares in the plane vectors also fail from
+  three copies on. What survives is an induction on n that handles inputs thick at every copy. The leading candidate
+  for its step is Conjecture QC of `compression-notes/` (no violation found up to six copies); by a minimax argument a
+  proof of it has to use non-convex information about the operator.
+
 - The endpoint for every n. `compression-notes/` states a compression conjecture that would give it, with evidence up to five copies.
   `orbit-notes/` reduces it to a local statement on squeeze orbits (no thick squeeze-orbit minimum), supported numerically for n ≤ 7.
   Every one-copy version of that statement is false at three copies, and so are the versions restricted to the
