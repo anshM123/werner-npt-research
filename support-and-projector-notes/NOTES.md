@@ -738,6 +738,15 @@ f_2 = hb. Then a g_1 = −b g_2, so g_1 = bk and g_2 = −ak. Factors of multiho
 and every degree is 0 or 1, so the copies split into I, where h and k have degree one, and J, where a and b do; J is
 nonempty because f_1 and f_2 are independent. Hence CJ^{⊗n} = (hk^T)_I ⊗ (ab^T − ba^T)_J, which is of the form above.
 
+The same audit extends this to an arbitrary co-range. If only the range lies in a product of local qubit planes, then
+on each copy the endpoint operator restricted to rows in the plane, I − ½|Ω_Q⟩⟨Ω_Q| on Q ⊗ C^3 with
+Ω_Q = Σ_j q_j ⊗ q̄_j over an orthonormal basis of Q, is an orthogonal projection of rank five. So q_n(C) ≥ 0 for every
+such C of any rank. For a fixed range plane span{h_I a_J, h_I b_J} with gcd(a_J, b_J) = 1, the zeros form a linear
+space of dimension exactly 3^{|I|}, consisting of the operators
+|h_I⟩⟨y_I| ⊗ K_J with y_I an arbitrary vector on the copies in I. We checked the kernel dimensions numerically (1 and 3
+at two copies, 1 and 9 at three, for generic and factorised planes). So every zero whose range, or co-range, lies in a
+product of local qubit planes is in some 𝓑_J.
+
 **Conjecture ZC_n.** Every rank-two zero of q_n lies in some 𝓑_J.
 
 At two copies this holds: Tomar's classification of equality cases places every two-copy zero in a product of local

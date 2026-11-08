@@ -225,7 +225,14 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   every n ≥ 3, also after adding any multiple of 2 Tr C² − (Tr C)² and modulo the equal-norm, orthogonal-column
   constraints, with an exact separation certificate. The four-replica relaxations of `four-replica-notes/` are not ruled
   out by this, since they use fourth moments of the projector, which have degree eight in the plane vectors
-  (`whole-problem-routes/code/quartic_sos/`, SCS, floating point).
+  (`whole-problem-routes/code/quartic_sos/`, SCS, floating point). The map route fails the same test. Its three-copy
+  scalar s_3(z) = zᵀ 𝒫_{3/4}^{⊗3}(zzᵀ) z (z real) satisfies 64 s_3 = 25‖z‖⁴ − 42Φ_1 + 18Φ_2, with Φ_1 the average of
+  Tr ρ_s² over the three one-copy marginals and Φ_2 = Σ z_{abc} z_{ab′c′} z_{a′bc′} z_{a′b′c}. The independent audit
+  separates s_3 from the sums of squares of quadratics by an O(3)³ × S_3-invariant moment functional with values
+  (39, 23, −1) on (‖z‖⁴, Φ_1, Φ_2). It is nonnegative on each of the six invariant blocks of quadratic features, and
+  it gives −9 on 64 s_3. Padding by |0⟩ multiplies s_n by 4^{−1} per copy, so this holds for every n ≥ 3. We checked
+  the identity on random z and the separation arithmetic; the list of six blocks is taken from the audit. Three-copy
+  positivity itself is proved by the higher-degree certificate of `whole-problem-routes/`.
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
