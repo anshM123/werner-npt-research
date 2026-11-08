@@ -1,0 +1,7 @@
+run 0: q/(theta |C|^2) = 0.5049   q/|C|^2 = 2.500e-01   theta = 4.952e-01
+run 1: q/(theta |C|^2) = 0.2952   q/|C|^2 = 1.464e-01   theta = 4.961e-01
+run 2: q/(theta |C|^2) = 0.2946   q/|C|^2 = 1.464e-01   theta = 4.972e-01
+run 3: q/(theta |C|^2) = 0.2946   q/|C|^2 = 1.464e-01   theta = 4.970e-01
+run 4: q/(theta |C|^2) = 0.2947   q/|C|^2 = 1.464e-01   theta = 4.969e-01
+run 5: q/(theta |C|^2) = 0.2957   q/|C|^2 = 1.465e-01   theta = 4.952e-01
+n = 2: smallest ratio found 0.2946

@@ -34,7 +34,7 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   classification of zeros: if every zero has the qubit form of Section 6 (Conjecture ZC_n, true at two copies), the
   endpoint holds at n (Corollary 21). Off the endpoint, EP_n follows if the critical-point equations of
   q_n(t, ·) have no rank-two solution for 0 < t < ½ (Proposition 22). A random-start census finds only zeros of the
-  qubit form for n ≤ 6.
+  qubit form for n ≤ 6. Given EP_{n−1}, it is enough that every zero be thin at some copy (Proposition 23).
 
 **None of this settles the all-copy problem.**
 
@@ -791,6 +791,34 @@ so q_n(t, C) ≥ (1 − 2t)^n ‖C‖² + (2t)^n q_n(C). Hence a zero of q_n(t, 
 every copy, because thin-copy removal gives q_n(C) ≥ 0 whenever the range or the co-range has local dimension at most
 two at some copy. So, given EP_{n−1}, EP_n is equivalent to: for 0 < t < ½, no critical point of q_n(t, ·) on X₂ with
 value zero is thick at every copy.
+
+**Proposition 23 (thin zeros are enough).** Call C ∈ X₂ thick if at every copy both its range and its co-range have
+local dimension three, and thin otherwise. Let n ≥ 2 and assume EP_{n−1}. If every zero of q_n in X₂ is thin
+(Conjecture NT_n), then EP_n holds.
+
+*Proof.* The operators whose range lies in Q ⊗ (C^3)^{⊗(n−1)} for some plane Q at a fixed copy form a set of real
+dimension 4 + 4(2·3^{n−1} − 2) + 4(3^n − 2) + 8 = 20·3^{n−1} − 4 (the plane Q, a range plane inside Q ⊗ (C^3)^{⊗(n−1)}, a
+co-range plane, and the 2 × 2 core), against dim X₂ = 24·3^{n−1} − 8; the same holds for the co-range. So the thin
+operators form a closed semialgebraic set of codimension at least 4·3^{n−1} − 4 ≥ 8, and the thick ones a connected
+open dense set (as in the proof of Proposition 20(a)). By NT_n, q_n has no zero on it, so it has one sign there. That
+sign is positive: ab^* + εcd^* is thick for generic vectors and small ε, and q_n(ab^*) > 0. On thin operators
+q_n ≥ 0 by thin-copy removal and EP_{n−1}. ∎
+
+So the whole endpoint follows from NT_n for every n ≥ 2 (EP_1 is the one-copy inequality). Conjecture ZC_n implies
+NT_n, because an operator in 𝓑_J is thin at the copies in J. NT_n asks only that zeros be thin somewhere, not that
+they have the qubit form. Nothing in the argument excludes a thick operator at which q_n is positive but small.
+
+**No margin uniform in n.** Let θ(C) be the least eigenvalue of the one-copy marginals of the range and co-range
+projectors of C, minimised over copies; it vanishes exactly on thin operators and is at most 2/3. A bound
+q_n(C) ≥ c θ(C) ‖C‖_F² with c independent of n is false. Take the one-copy zero P = |0⟩⟨0| + |1⟩⟨1|. Theorem 14′ gives
+q_N(E_r P F_r^*) = (1/9)·2^{−3r} Σ_{ν≠0} q_1(P U_ν) = (5/3)·2^{−3r} on N = 1 + 8r copies (the eight values q_1(P U_ν) are
+3/2 twice and 2 six times), while ‖E_r P F_r^*‖_F² = 2 and θ = 2/3, because every vector in either image has maximally
+mixed marginals. So any such c_N is at most (5/4)·2^{−3(N−1)/8}. In floating point (`code/thickness_margin.py`) the
+smallest ratios q_n/(θ‖C‖_F²) found are 0.295, 0.234 and 0.190 at n = 2, 3, 4 (at two copies this is close to
+1 − 1/√2 ≈ 0.293, the constant `two-copy-thickness/` finds for its measure). The minimisers are strongly thick
+(θ between 0.35 and 0.65), unbalanced and far from Hermitian, and they are not near the zero families. So NT_n is a
+statement about exact zeros. Thick operators come exponentially close to zero, and a proof cannot go through a margin
+that is uniform in n.
 
 **A census of zeros (floating point).** `code/zero_census.py` minimises q_n(AB^*)/‖AB^*‖_F² from random complex
 factors (L-BFGS) and classifies the end point by the rank of the one-copy marginal of range plus co-range at each copy,
