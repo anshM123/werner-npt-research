@@ -41,7 +41,9 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   2^n q_n(C) ≥ (σ_1 − σ_2)² (Conjecture TN_n). It is attained for every ratio of singular values, implies the endpoint
   and the sharp curve, and forces every zero to have equal singular values (all known zeros do); random-start
   minimisation finds no violation for n ≤ 5 or with other local dimensions. Two natural inductions on it fail
-  (slice by slice, and through the cross term of two orthogonal pure states).
+  (slice by slice, and through the cross term of two orthogonal pure states). Its qualitative part already suffices:
+  if every rank-two zero has equal singular values, the endpoint holds (Corollary 25); all known zeros do. In a
+  purified form with a reference qubit, its one-copy case is Uhlmann's theorem.
 
 **None of this settles the all-copy problem.**
 
@@ -893,7 +895,19 @@ is tight on a large set. What is known:
   for odd n there is a second family: 2^n q_n(λ_1|0^n⟩⟨0^n| + λ_2|1^n⟩⟨1^n|) = (λ_1 − λ_2)² for λ_1, λ_2 ≥ 0.
 - At the endpoint TN_n says that every rank-two zero has σ_1 = σ_2. All zeros in 𝓑_J do: a rank-two antisymmetric
   matrix ab^T − ba^T has two equal nonzero singular values, and the unitary (J^{⊗|J|})^{−1}, the isometries V and the
-  rank-one factor R_I keep them equal.
+  rank-one factor R_I keep them equal. So do all 100 zeros of the census (s_2/s_1 = 1 to four digits, n = 2, …, 6).
+  This qualitative consequence of TN_n already implies EP_n:
+
+**Corollary 25.** If every rank-two zero of q_n has σ_1 = σ_2, then EP_n holds. Equivalently (given EP_n), q_n(C) > 0
+for every rank-two C with σ_1(C) ≠ σ_2(C).
+
+*Proof.* The rank-two operators with σ_1 = σ_2 are the positive multiples of rank-two partial isometries. They are
+fixed by a range plane and a co-range plane (real dimension 4(D − 2) each, D = 3^n), a unitary between them (4) and the
+scale (1): 8D − 11 in all, against dim X₂ = 8D − 8. So they form a closed semialgebraic set of codimension 3, and
+Proposition 20(a) applies. ∎
+
+Like Corollary 21 and Proposition 23, this asks only that the zeros lie in a small set; here the set is defined by the
+singular values alone, and every zero known lies in it.
 
 *A form without singular values.* For C = Σ_i a_i b_i^* one has the crossed form
 q_n(t, C) = Σ_{i,j} ⟨a_i ⊗ b_j|(I − tF)^{⊗n}|a_j ⊗ b_i⟩, where F swaps the two factors at each copy. With τ = t/(1 − t)
@@ -910,6 +924,20 @@ so TN_n is equivalent to
 
 for all orthonormal pairs. At the endpoint (τ = 1), EP_n is the same inequality with the right side replaced by the
 larger ((1 + G_11)(1 + G_22))^{1/2}. At n = 1, G = 2P_A and the left side of (9.2) is |⟨u_1, v_1⟩⟨v_2, u_2⟩| ≤ 1.
+
+*Purified form.* For C = Σ_{i=1,2} a_i b_i^* put α = Σ_i |i⟩ ⊗ a_i and β = Σ_i |i⟩ ⊗ b_i in C² ⊗ (C^3)^{⊗n}, with
+a reference qubit R, and let ρ, σ be the projectors onto α and β. Then ‖Tr_K C‖_F² = Tr(ρ_{RK} σ_{RK}), where the
+subscript means the marginal on R and the copies in K, so
+
+    q_n(t, C) = Σ_K (−t)^{|K|} Tr(ρ_{RK} σ_{RK}) = ⟨α ⊗ β|F_R ⊗ ⊗_s (I − tF_s)|α ⊗ β⟩,
+
+where F_R and F_s exchange the reference qubits and the copies s of the two factors.
+
+Moreover ‖C‖_F² = Tr(ρ_R σ_R), Tr C = ⟨β, α⟩, and ‖C‖_1 = F(ρ_R, σ_R) = Tr|ρ_R^{1/2} σ_R^{1/2}|: the singular values of
+C are the square roots of the eigenvalues of G_A G_B, with G_A and G_B the Gram matrices of the a_i and of the b_i, and
+ρ_R, σ_R are their transposes. In this language TN_1 is Uhlmann's theorem |⟨β, α⟩| ≤ F(ρ_R, σ_R). For n copies the
+right side of (9.1) depends only on the two reference marginals, while the left side compares the two purifications
+on every set of copies.
 
 *Positive operators.* For Hermitian C, q_n(t, C) = Tr[(C ⊗ C) ⊗_s (F_s − t)], where F_s swaps copy s of the first
 factor with copy s of the second, and 2‖C‖_F² − (Tr C)² = Tr[(C ⊗ C)(2F − I)] with F = ⊗_s F_s. The F_s commute; on
@@ -1009,7 +1037,7 @@ without it, it falls back to floating point. Outputs are in `logs/`.
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind
   (9.2), the odd-n equality family), `two_copy_psd.py` (Proposition 24 on random positive operators of every rank),
-  `psd_rank.py n r runs` (rank three breaks the positive case at n = 3), `cross_term.py n runs seed ±1` (the cross
+  `psd_rank.py n r runs` (rank three breaks the positive case at n = 3), `check_purified.py` (the purified form), `cross_term.py n runs seed ±1` (the cross
   term of two orthogonal pure states), `one_step_qubit.py D runs seed nth nph` (the failing one-step inequality on
   local qubits).
 
