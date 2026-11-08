@@ -218,7 +218,7 @@ output have full support. The following do not reach every n (added 7 November 2
   adversarial search at four copies, and the six-copy singlet minimum), but at the minimiser of a failure every such
   move would have to raise g as well, so a statement of this kind is a reformulation of the problem, not a route.
 - **The sharp rank-two bound (added 8 November 2026).** For C ⪰ 0 of rank at most two, the endpoint form satisfies
-  2ⁿ q_n(½, C) ≥ 2 Tr C² − (Tr C)² at three copies [WZ, Theorem 1.3]; for odd n this inequality would give the
+  2ⁿ q_n(½, C) ≥ 2 Tr C² − (Tr C)² at three copies (Wu and Zou, arXiv:2608.02647, Theorem 1.3); for odd n this inequality would give the
   endpoint by the odd-projector reduction of `support-and-projector-notes/`. At five copies, nine adversarial runs
   (random, near qubit-supported and near product starts, gradient descent on the exact form) found no violation; the
   minima are 0 to rounding. Its rank-one case holds for every n and every local dimension: for a unit vector u with
