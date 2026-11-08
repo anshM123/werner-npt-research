@@ -1,0 +1,5 @@
+t=0.4 gamma=0.1 dims=[3, 3, 3]->[9, 3]: min (Delta_full - gamma Delta_merged)/|C|^2 = 4.639e-16   (Delta_full, Delta_merged) there = (1.180e-02, 1.180e-01)
+t=0.4 gamma=0.11 dims=[3, 3, 3]->[9, 3]: min (Delta_full - gamma Delta_merged)/|C|^2 = -4.800e-03   (Delta_full, Delta_merged) there = (4.800e-02, 4.800e-01)
+t=0.45 gamma=0.05 dims=[3, 3, 3]->[9, 3]: min (Delta_full - gamma Delta_merged)/|C|^2 = 4.229e-16   (Delta_full, Delta_merged) there = (1.762e-02, 3.524e-01)
+t=0.4 gamma=0.1 dims=[9, 3, 3]->[27, 3]: min (Delta_full - gamma Delta_merged)/|C|^2 = 3.782e-16   (Delta_full, Delta_merged) there = (2.852e-02, 2.852e-01)
+t=0.4 gamma=0.1 dims=[3, 3, 3, 3]->[9, 3, 3]: min (Delta_full - gamma Delta_merged)/|C|^2 = 8.866e-16   (Delta_full, Delta_merged) there = (2.880e-02, 2.880e-01)

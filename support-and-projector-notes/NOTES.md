@@ -1033,6 +1033,26 @@ bracket equals 4 Tr[(C ⊗ C)(P_A ⊗ P_A)] by P_A = (I − F)/2 at each copy. �
 From three copies on, the rank matters even for positive operators: the n = 3 case of (9.3) is negative for some
 positive C of rank three (the smallest value found is −(8/9)(Tr C)²), while for rank two none was found.
 
+*Merging two copies (a sharp budget below the endpoint).* Allow arbitrary local dimensions, write
+Δ_d(t, C) = q_d(t, C) − (1 − t)^{m−1}(‖C‖_F² − t‖C‖_1²) for the gap in (9.1) on m sites of dimensions d = (d_1, …, d_m),
+and let d′ = (d_1 d_2, d_3, …, d_m) be the same system with the first two sites merged into one.
+
+**Conjecture FB(t).** For every rank-two C and all local dimensions, Δ_d(t, C) ≥ ((1 − 2t)/2) Δ_{d′}(t, C).
+
+Merging the sites one at a time gives Δ_{(3,…,3)} ≥ ((1 − 2t)/2)^{n−1} Δ_{(3^n)}, and on a single site
+Δ_{(3^n)}(t, C) = t(‖C‖_1² − |Tr C|²) ≥ 0. So FB(t) for the dimension patterns (3^k, 3, …, 3) implies TN_n(t) for every n,
+and FB(t) at a single t in (1/3, ½) would therefore give n-copy undistillability of the Werner state at t for every n,
+that is, NPT bound entanglement. With two sites and nothing else, FB(t) is exactly the two-copy endpoint inequality
+2‖Tr_1 C‖² + 2‖Tr_2 C‖² ≤ 2‖C‖² + ‖C‖_1² + |Tr C|² in those dimensions, for every t. The constant is sharp:
+C = P ⊗ |0⟩⟨1| gives Δ_{(3,3)} = t(2 − 4t) and Δ_{(9)} = 4t. Random-start minimisation of Δ_d − γΔ_{d′}
+(`code/trace_norm/fusion_budget.py`, log `logs/trace_norm/fusion_budget.log`) finds no violation for γ = (1 − 2t)/2 at
+(3,3,3) → (9,3) (t = 0.4 and 0.45), (9,3,3) → (27,3) and (3,3,3,3) → (9,3,3) (t = 0.4), with equality reached at
+nontrivial points, while γ = 0.11 at t = 0.4 already fails (−4.8·10^{−3}). At those equality points the operator is a
+rank-two operator on qubit planes of the two merged copies, for example λ_1|00⟩⟨00| − λ_2|11⟩⟨11|, times a rank-one
+product on the remaining copies: the budget is tight exactly where the two-copy endpoint inequality is tight on the merged
+pair. FB(t) is still an m-site statement (the other sites enter through Φ_t^{⊗(m−2)}); we do not have a proof of it, even
+with two sites for general rank-two C.
+
 *What does not work.*
 - Slice by slice. On local qubit planes the form is exactly self-similar: with M = CJ^{⊗n}, q_n(C) = ‖P_S^{⊗n} M‖_F²,
   and peeling the last copy gives q_n(C) = 3 E_w q_{n−1}(M_w (J^{−1})^{⊗(n−1)}) with M_w = (I ⊗ w^T) M (I ⊗ w) of rank at most
@@ -1122,6 +1142,7 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   term of two orthogonal pure states), `one_step_qubit.py D runs seed nth nph` (the failing one-step inequality on
   local qubits), `tn_mps.py n chi t runs seed mode` (matrix-product inputs, any n), `product_singular_vector.py
   n t runs` (the identity in the proof of Proposition 26, and the bound on that class).
+- `code/trace_norm/fusion_budget.py t gamma runs seed d_1 ... d_m`: Conjecture FB (merging the first two sites).
 
 ## Local positivity at the signed GHZ zero, every n (added 8 November 2026)
 
