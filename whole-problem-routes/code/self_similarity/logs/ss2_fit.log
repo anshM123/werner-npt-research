@@ -1,0 +1,8 @@
+control (random cone element at a = 0.85): residual 6.96e-05 [25s]
+a = 1.0: C_a (x) C_a residual 3.79e-05 with 40 filterings + 120 products; (1 filtering + products: nan) [64s]
+a = 0.99: C_a (x) C_a residual 6.18e-03 with 40 filterings + 120 products; (1 filtering + products: 6.39e-03) [116s]
+a = 0.95: C_a (x) C_a residual 2.76e-02 with 40 filterings + 120 products; (1 filtering + products: 3.21e-02) [167s]
+a = 0.9: C_a (x) C_a residual 4.91e-02 with 40 filterings + 120 products; (1 filtering + products: 6.78e-02) [218s]
+a = 0.85: C_a (x) C_a residual 5.99e-02 with 40 filterings + 120 products; (1 filtering + products: 1.07e-01) [271s]
+a = 0.75: C_a (x) C_a residual 1.05e-01 with 40 filterings + 120 products; (1 filtering + products: 2.00e-01) [324s]
+(run as: python ss2_fit.py 40 120)

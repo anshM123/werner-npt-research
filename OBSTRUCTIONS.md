@@ -217,6 +217,19 @@ output have full support. The following do not reach every n (added 7 November 2
   (`whole-problem-routes/code/compression_rules/`). Compressing two copies at once survives the same tests (an
   adversarial search at four copies, and the six-copy singlet minimum), but at the minimiser of a failure every such
   move would have to raise g as well, so a statement of this kind is a reformulation of the problem, not a route.
+- **Self-similarity (added 8 November 2026).** One finite identity would settle the every-n question. If for some
+  m > k the Choi matrix C_a^{⊗m} of 𝒫_a^{⊗m} were a positive combination of local filterings (A ⊗ B)C_a^{⊗k}(A ⊗ B)^*
+  plus a separable operator, then 𝒫_a^{⊗mN} would be a sum of filtered copies of 𝒫_a^{⊗K}, K ≤ kN, tensored with
+  entanglement-breaking maps, and strong induction (from positivity below m copies) would make 𝒫_a tensor-stable
+  positive; at any a < 1 this gives NPT bound entanglement. For m = 2, k = 1 it fails numerically at every a < 1 we
+  tried. Fits of C_a ⊗ C_a by 40 filterings of C_a and 120 products leave relative residuals 6.2·10⁻³, 2.8·10⁻²,
+  4.9·10⁻², 6.0·10⁻² and 0.105 at a = 0.99, 0.95, 0.9, 0.85 and 0.75, against 7·10⁻⁵ for a random element of the cone
+  and 4·10⁻⁵ at a = 1, where C₁ ⊗ C₁ is separable. The residual grows like 0.6(1 − a), which suggests an obstruction
+  already at first order in 1 − a (heuristically: on the vectors with a factor φ at one copy the first-order part of
+  the target is negative definite, and a filtering of fewer copies can reproduce it only by mapping the φ of every copy
+  to a φ). This is the map's analogue of the uncompressed test in `compression-notes/` (ρ ⊗ ρ is not in the cone of
+  filterings of one Werner copy). Larger m, k were not tested (`whole-problem-routes/code/self_similarity/`, floating
+  point).
 - **Classical forms of the value (added 8 November 2026).** For every Hermitian X,
   𝒫_{3/4}(X) = ∫ 3⟨v|X|v⟩ [(I − vvᵀ) − ¼vvᵀ] dv, with v uniform on the real unit sphere. So 𝒫_{3/4} = 𝒩 − ¼ℳ with
   ℳ(X) = (Tr(X)I + 2 Sym X)/5 and 𝒩 = D − ℳ, both entanglement breaking, and for every n and all unit x, y
