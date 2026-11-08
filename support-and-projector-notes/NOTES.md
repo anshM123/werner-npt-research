@@ -27,7 +27,12 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   and m(L) ≤ 2σ(L) for every plane (Theorem 16); at projector-core zeros the second variation is equivalent to the
   endpoint on one copy fewer (Proposition 17); Kronecker forms of flattenings do not detect anchors (Proposition 18).
 - **Section 7.** For balanced rank-two projectors, the standard weight-enumerator relations of quantum codes alone give
-  q_n > 0 for n ≤ 8 (Proposition 19, exact certificates). They cannot give it at n = 9.
+  q_n > 0 for n ≤ 8 (Proposition 19, exact certificates). They cannot give it at n = 9, and two-copy balance does not
+  help (an exact negative enumerator at n = 10).
+- **Section 8.** Zeros decide the sign. The endpoint at n holds if and only if every rank-two zero of q_n is a critical
+  point, and it holds whenever the zeros form a set of codimension two (Proposition 20). So it follows from a
+  classification of zeros: if every zero has the qubit form of Section 6 (Conjecture ZC_n, true at two copies), the
+  endpoint holds at n (Corollary 21). A random-start census finds only such zeros for n ≤ 4.
 
 **None of this settles the all-copy problem.**
 
@@ -660,6 +665,107 @@ Proposition 19 gives the endpoint at no copy number. The negative optimum at n =
 projector is constructed. Rank-two codes satisfy further constraints that these relations do not see, for instance
 that Λ²(ran Π) is one-dimensional.
 
+More purity does not rescue the relations (added 8 November 2026). If every vector of ran Π also has maximally mixed
+two-copy marginals, then A_2 = B_2 = 0 as well, and still the relations do not imply q_10(Π) ≥ 0: the enumerator
+
+    A = (1, 0, 0, 489/14, 315, 405, 201, 1467/14, 74601/14, 118019/7, 43920/7)
+
+satisfies all of them and gives q_10 = −101/1792 (at n = 11 the value is −661705/3319296). Written for rank-three
+projectors (A_j = 1/9 Σ|Tr ΠE|², B_j = 1/3 Σ Tr(ΠEΠE^*), B(x, y) = (3/3^n) A(x + 8y, x − y)), the same relations reach
+−196723/472064 at n = 10, so per unit ‖Π‖_F² the rank-two relations are only about five times stronger. Weight
+enumerators are two-replica data, while rank two is a three-replica condition. A floating-point linear program proposes
+each vertex; the vertex is then recomputed from its active constraints and every relation is checked in exact arithmetic
+(`code/global_reductions/check_enumerator_purity.py`).
+
+## 8. Zeros decide the sign (added 8 November 2026)
+
+Write X₂ for the set of operators of rank exactly two on (C^3)^{⊗n}. It is a connected real manifold of dimension
+8·3^n − 8 (one orbit of GL × GL). Rank-one operators are strictly positive:
+
+    q_n(ab^*) = ⟨ā ⊗ b̄| (I − ½F)^{⊗n} |ā ⊗ b̄⟩ ≥ 2^{−n} ‖a‖² ‖b‖²,
+
+because M^Γ = I − ½F ≥ ½ I. So every nonzero zero of q_n of rank at most two lies in X₂. Let Z_n ⊂ X₂ be the set of
+these zeros. The tangent space of X₂ at C is {XC + CY}, so C = AB^* is a critical point of q_n on X₂ exactly when
+Φ_n(C)B = 0 and Φ_n(C)^*A = 0, that is, when CΦ_n(C)^* = 0 and Φ_n(C)^*C = 0.
+
+**Proposition 20 (zeros decide the sign).** Fix n.
+- (a) If Z_n has codimension at least two in X₂, then EP_n holds.
+- (b) EP_n holds if and only if every zero is critical: q_n(C) = 0 with C of rank two implies CΦ_n(C)^* = 0 and
+  Φ_n(C)^*C = 0.
+
+*Proof of (a).* Z_n is a closed semialgebraic subset of X₂, a finite union of smooth submanifolds of dimension at most
+dim X₂ − 2. Two points of X₂ \ Z_n are joined by a path in X₂, and a generic perturbation of that path with the same
+ends misses every one of these submanifolds, since 1 + (dim X₂ − 2) < dim X₂. So X₂ \ Z_n is connected. The form has no
+zeros there, and it is positive at ab^* + εcd^* for small ε ≠ 0, so it is positive on all of X₂ \ Z_n. ∎
+
+*Proof of (b).* At a zero of a nonnegative function the derivative vanishes, which gives "only if". For "if", let
+F(A, B) = q_n(AB^*) on pairs of 3^n × 2 complex matrices. It is a real polynomial in the real and imaginary parts,
+of degree two in A and of degree two in B, and its gradient is (2Φ_n(C)B, 2Φ_n(C)^*A) with C = AB^*. Suppose F takes a
+negative value. It also takes positive values, so some irreducible real factor f of odd multiplicity e changes sign
+(otherwise F would have one sign wherever no factor vanishes, which is a dense set).
+
+The multiplicity is one. If e ≥ 3, then f is linear and F = f³ℓ with ℓ linear. Split f = f_A + f_B and ℓ = ℓ_A + ℓ_B
+by the variables they use. F has only terms of degree (2, 2) in (A, B), so its terms of degree (4, 0), (0, 4), (3, 1)
+and (1, 3) vanish: f_A³ℓ_A = 0, f_B³ℓ_B = 0, f_A³ℓ_B + 3f_A²f_Bℓ_A = 0 and 3f_Af_B²ℓ_B + f_B³ℓ_A = 0. If f_A ≠ 0 the first
+and third give ℓ = 0; if f_A = 0 and f_B ≠ 0 the second and fourth do. Either way F = 0, which is absurd.
+
+A sign-changing irreducible polynomial generates a real ideal [BCR, Theorem 4.5.1], so f divides every polynomial
+that vanishes on {f = 0}, and {f = 0} is an irreducible algebraic set of dimension one less than the ambient space. Neither ∂f/∂x_i (for some i) nor the cofactor F/f is divisible by f, so
+both vanish only on proper algebraic subsets of {f = 0}, which have smaller dimension. Pick a point (A, B) of {f = 0}
+outside both. There F = 0 and ∇F ≠ 0. Then C = AB^* is not 0 (the gradient vanishes when C = 0) and not of rank one
+(q_n > 0 there). So A and B have full column rank, the map (A, B) ↦ AB^* is a submersion onto X₂ near them, and C is a
+rank-two zero at which q_n has a nonzero derivative along X₂. ∎
+
+So the endpoint is a statement about zeros only: there is no zero at which the form has a nonzero derivative. Every
+zero in Section 6 is critical (Propositions 15 and 17), and by Proposition 17 the second variation at zeros already
+contains the whole problem. Part (b) shows that the first variation does too. Neither part bounds how negative q_n
+could be, and a proof that all zeros are critical cannot assume EP_n, since it must also exclude zeros at which q_n
+changes sign.
+
+**The known zeros.** For disjoint I, J with I ∪ J = [n] and J ≠ ∅, let 𝓑_J be the set of operators
+
+    C = R_I ⊗ V K V^*,   K = (ab^T − ba^T)(J^{⊗|J|})^{−1},
+
+with R_I of rank one on the copies in I (its vectors may be entangled), a, b ∈ (C^2)^{⊗|J|}, and V = ⊗_{s∈J} V_s a
+product of isometries C^2 → C^3. They are zeros for every n: q_n factorises over tensor products, and q_{|J|}(VKV^*) = 0
+by Proposition 15. An independent audit of this repository proves the converse for operators supported on a product of
+local qubit planes, for every n. We checked the argument; in our words: on such operators Φ_n acts as the projection
+Π^{⊗n} onto locally traceless operators (the parts of Φ_n(C) outside the qubit block are orthogonal to C), and right
+multiplication by J^{⊗n} turns locally traceless into locally symmetric. So q_n(C) = 0 exactly when the polynomial
+z^T CJ^{⊗n} z (z = z_1 ⊗ ⋯ ⊗ z_n, z_s ∈ C²) vanishes identically. With CJ^{⊗n} = f_1 g_1^T + f_2 g_2^T this says
+f_1 g_1 + f_2 g_2 = 0 for multilinear polynomials, of degree one in each pair z_s. Put h = gcd(f_1, f_2), f_1 = ha,
+f_2 = hb. Then a g_1 = −b g_2, so g_1 = bk and g_2 = −ak. Factors of multihomogeneous polynomials are multihomogeneous,
+and every degree is 0 or 1, so the copies split into I, where h and k have degree one, and J, where a and b do; J is
+nonempty because f_1 and f_2 are independent. Hence CJ^{⊗n} = (hk^T)_I ⊗ (ab^T − ba^T)_J, which is of the form above.
+
+**Conjecture ZC_n.** Every rank-two zero of q_n lies in some 𝓑_J.
+
+At two copies this holds: Tomar's classification of equality cases places every two-copy zero in a product of local
+planes [T2] (as quoted in `four-replica-notes/`; we have not re-checked [T2]), and the argument above then applies.
+From three copies on it is open.
+
+**Corollary 21.** ZC_n implies EP_n.
+
+*Proof.* 𝓑_J has real dimension at most 4·3^i + 4·2^j + 4j − 10, with i = |I| and j = |J|: the rank-one factor gives
+4·3^i − 2, the local planes 4j, the operators on a fixed product of planes whose product with J^{−1} is skew of rank
+two 4·2^j − 6 (this condition depends only on the planes, since a change of basis in a plane multiplies J by a phase),
+and the common scalar removes 2. The largest of these over j ≥ 1 is below 8·3^n − 10 = dim X₂ − 2 for every n ≥ 1
+(for n ≥ 3 it is 4·3^{n−1} + 2 or 4·2^n + 4n − 6). Proposition 20(a) applies. ∎
+
+**A census of zeros (floating point).** `code/zero_census.py` minimises q_n(AB^*)/‖AB^*‖_F² from random complex
+factors (L-BFGS) and classifies the end point by the rank of the one-copy marginal of range plus co-range at each copy,
+and by the operator Schmidt coefficients across every cut.
+
+| n | runs | largest end value | on local qubit planes | rank-one factor ⊗ qubit zero (factor thick at its copies) | other |
+|---|---|---|---|---|---|
+| 2 | 12 | 4·10^{−16} | 12 | 0 | 0 |
+| 3 | 40 | 8·10^{−13} | 36 | 4 | 0 |
+| 4 | 24 | 5·10^{−13} | 15 | 9 | 0 |
+
+Every run ended at a zero of the conjectured form (to rounding). None ended at another local minimum, and none went
+negative. This is consistent with ZC_n at these n, where EP_n itself is known (see [T1] for three to five copies); it is
+evidence about where the zeros are, not a proof.
+
 ## Code
 
 Python 3 with NumPy and SymPy. `code/check_pair_anchor.py` uses python-flint for the exact characteristic polynomials;
@@ -686,12 +792,15 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   (k, r) = (1, 2) and (2, 2), the marginals of encoded vectors, and the numbers 387, 961 and −1087/198144.
 - `code/check_anchor_obstruction.py`: Propositions 7 and 8 in exact rational arithmetic for n = 3, …, 7: the rows of
   MV_p live on the vacuum column, the Gram matrix on (a_n, b_n), and the weighted identities at rational weights.
+- `code/zero_census.py`: Section 8, the census of zeros (`python zero_census.py n runs seed`; logs
+  `logs/zero_census_n2.log`, `_n3`, `_n4`, run with seeds 1, 7, 11).
 - `code/global_reductions/` (`run_all.sh`): Proposition 4′ (the identity and the projector choice, k = 1, 2,
   r = 1, 2, 3); Theorem 14′ (the identity by direct partial traces on 9 and 10 copies, the 81-state flag compression
   exactly for r = 1, 2, 3, marginals); the Remark after it (the flag block structure at r = 1, over all 3^8 column
   flag words); Theorem 14″ (the 729-state flag compression exactly at r = 2, the identity contracted with core data at
   k = 1, 2, isometry and marginals); Section 7 (the enumerator identities on random projectors at n = 2, 3, the
-  three-copy code, and the certificates for n = 4, …, 9 in exact rational arithmetic).
+  three-copy code, and the certificates for n = 4, …, 9 in exact rational arithmetic); `check_enumerator_purity.py` (the
+  purity-two enumerators of Section 7, exact).
 
 ## Local positivity at the signed GHZ zero, every n (added 8 November 2026)
 
@@ -712,4 +821,7 @@ local statement at one zero family and says nothing about thick operators.
 
 ## References
 
+- [BCR] J. Bochnak, M. Coste, M.-F. Roy, Real Algebraic Geometry, Springer (1998).
+- [T1] T. S. Tomar, Undistillability of Werner states from three, four and five copies, Zenodo 23718035 (2026).
+- [T2] T. S. Tomar, Equality cases and every-copy results for the Werner endpoint inequality, Zenodo 23718037 (2026).
 - [WZ] T. Wu, Q. Zou, Sharp Plücker geometry for three-copy Werner distillation, arXiv:2608.02647.

@@ -1,0 +1,6 @@
+n = 10, rank 2, purity 2: exact feasible enumerator True; q_n = -101/1792 = -0.056362; q_n/||Pi||^2 = -0.0282 (LP optimum, floating point: -0.056362)
+   A = ['1', '0', '0', '489/14', '315', '405', '201', '1467/14', '74601/14', '118019/7', '43920/7']
+n = 11, rank 2, purity 2: exact feasible enumerator True; q_n = -661705/3319296 = -0.199351; q_n/||Pi||^2 = -0.0997 (LP optimum, floating point: -0.199351)
+n = 10, rank 3, purity 2: exact feasible enumerator True; q_n = -196723/472064 = -0.416730; q_n/||Pi||^2 = -0.1389 (LP optimum, floating point: -0.416730)
+n = 11, rank 3, purity 2: exact feasible enumerator True; q_n = -3705211/4425728 = -0.837198; q_n/||Pi||^2 = -0.2791 (LP optimum, floating point: -0.837198)
+purity-two enumerator relations allow q_n < 0 (exact): True

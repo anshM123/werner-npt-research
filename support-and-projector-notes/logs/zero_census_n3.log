@@ -1,0 +1,41 @@
+run   0: q/|C|^2 =  5.27e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1,) ratio 5.7e-01  -> local-qubit
+run   1: q/|C|^2 =  1.37e-13  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1, 2) ratio 3.5e-02  -> local-qubit
+run   2: q/|C|^2 =  2.16e-15  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0, 1) ratio 2.5e-01  -> local-qubit
+run   3: q/|C|^2 =  2.52e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (2,) ratio 5.1e-01  -> local-qubit
+run   4: q/|C|^2 =  4.85e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1,) ratio 5.5e-01  -> local-qubit
+run   5: q/|C|^2 =  3.55e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0,) ratio 2.9e-01  -> local-qubit
+run   6: q/|C|^2 =  7.17e-15  s/s1 = [1. 1. 0.]  joint local ranks [3, 3, 2]  best cut (2,) ratio 4.8e-07  -> rank-one tail on (0, 1)
+run   7: q/|C|^2 =  8.39e-13  s/s1 = [1. 1. 0.]  joint local ranks [3, 3, 2]  best cut (0, 1) ratio 5.3e-05  -> rank-one tail on (0, 1)
+run   8: q/|C|^2 =  5.08e-17  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (2,) ratio 7.4e-01  -> local-qubit
+run   9: q/|C|^2 =  3.31e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0, 2) ratio 7.6e-01  -> local-qubit
+run  10: q/|C|^2 =  3.26e-15  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1,) ratio 3.2e-01  -> local-qubit
+run  11: q/|C|^2 =  4.37e-15  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0,) ratio 3.2e-01  -> local-qubit
+run  12: q/|C|^2 =  3.70e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0, 2) ratio 4.3e-01  -> local-qubit
+run  13: q/|C|^2 =  2.37e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (2,) ratio 6.2e-01  -> local-qubit
+run  14: q/|C|^2 =  6.36e-17  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0, 1) ratio 5.6e-01  -> local-qubit
+run  15: q/|C|^2 =  7.14e-14  s/s1 = [1. 1. 0.]  joint local ranks [3, 2, 3]  best cut (0, 2) ratio 5.0e-06  -> rank-one tail on (0, 2)
+run  16: q/|C|^2 =  1.85e-15  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (2,) ratio 3.6e-01  -> local-qubit
+run  17: q/|C|^2 = -1.01e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1,) ratio 6.9e-01  -> local-qubit
+run  18: q/|C|^2 =  5.62e-15  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0, 2) ratio 5.3e-07  -> local-qubit
+run  19: q/|C|^2 =  0.00e+00  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1, 2) ratio 6.9e-01  -> local-qubit
+run  20: q/|C|^2 =  1.94e-15  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1,) ratio 2.7e-01  -> local-qubit
+run  21: q/|C|^2 =  5.79e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (2,) ratio 6.3e-01  -> local-qubit
+run  22: q/|C|^2 =  5.80e-17  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1,) ratio 8.3e-01  -> local-qubit
+run  23: q/|C|^2 = -7.05e-17  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0, 2) ratio 6.5e-01  -> local-qubit
+run  24: q/|C|^2 =  2.85e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1,) ratio 7.7e-01  -> local-qubit
+run  25: q/|C|^2 =  3.62e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0, 2) ratio 5.3e-01  -> local-qubit
+run  26: q/|C|^2 =  3.22e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0, 2) ratio 4.8e-01  -> local-qubit
+run  27: q/|C|^2 = -1.64e-17  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1, 2) ratio 6.6e-01  -> local-qubit
+run  28: q/|C|^2 =  7.66e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0,) ratio 5.9e-01  -> local-qubit
+run  29: q/|C|^2 =  2.27e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0, 1) ratio 5.0e-01  -> local-qubit
+run  30: q/|C|^2 =  1.37e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0,) ratio 2.3e-01  -> local-qubit
+run  31: q/|C|^2 =  4.07e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (2,) ratio 6.4e-01  -> local-qubit
+run  32: q/|C|^2 =  3.74e-15  s/s1 = [1. 1. 0.]  joint local ranks [3, 3, 2]  best cut (0, 1) ratio 4.6e-07  -> rank-one tail on (0, 1)
+run  33: q/|C|^2 =  2.96e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (2,) ratio 6.2e-01  -> local-qubit
+run  34: q/|C|^2 = -6.48e-17  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (2,) ratio 7.8e-01  -> local-qubit
+run  35: q/|C|^2 =  4.10e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1,) ratio 6.4e-01  -> local-qubit
+run  36: q/|C|^2 =  3.94e-17  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1,) ratio 7.7e-01  -> local-qubit
+run  37: q/|C|^2 =  6.34e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (0, 1) ratio 5.0e-01  -> local-qubit
+run  38: q/|C|^2 =  2.13e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (2,) ratio 6.8e-01  -> local-qubit
+run  39: q/|C|^2 =  7.08e-16  s/s1 = [1. 1. 0.]  joint local ranks [2, 2, 2]  best cut (1,) ratio 3.7e-01  -> local-qubit
+n = 3: 40 runs, largest |q|/|C|^2 = 8.4e-13; local-qubit 36, rank-one tail 4, other 0
