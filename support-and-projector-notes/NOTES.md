@@ -1004,7 +1004,11 @@ divided by ‖C‖_F², from random complex factors (L-BFGS):
 | qubits: (2,2,2), (2,2,2,2), (2,2,2,2,2) | 0.50 | 10 each | −2·10^{−16} |
 
 Every run ends at equality to rounding, mostly on the product family above (below the endpoint) or on zeros with
-σ_1 = σ_2 (at the endpoint). None goes below rounding. This is evidence, not a proof. For operators that are not
+σ_1 = σ_2 (at the endpoint). None goes below rounding. On matrix-product inputs of bond dimension two (`code/trace_norm/tn_mps.py`,
+exact transfer-matrix evaluation, objective divided by σ_1σ_2 so that the search stays away from rank one; logs
+`logs/trace_norm/mps_*.log`) every run at t = 0.45 for n = 8, 12, 16 ends on the product family with σ_1 = σ_2, and
+every run at t = ½ for n = 8 ends at a zero with σ_1 = σ_2; the differences are below 10^{−9}‖C‖_F² and none is
+negative. This is evidence, not a proof. For operators that are not
 positive, TN_n is open for every n ≥ 2 (at n = 2 and t = ½ it says 2‖Tr_1 C‖_F² + 2‖Tr_2 C‖_F² ≤ 2‖C‖_F² + ‖C‖_1² +
 |Tr C|², an inequality we have not proved for general rank-two C).
 
@@ -1051,7 +1055,7 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   (9.2), the odd-n equality family), `two_copy_psd.py` (Proposition 24 on random positive operators of every rank),
   `psd_rank.py n r runs` (rank three breaks the positive case at n = 3), `check_purified.py` (the purified form), `cross_term.py n runs seed ±1` (the cross
   term of two orthogonal pure states), `one_step_qubit.py D runs seed nth nph` (the failing one-step inequality on
-  local qubits).
+  local qubits), `tn_mps.py n chi t runs seed mode` (matrix-product inputs, any n).
 
 ## Local positivity at the signed GHZ zero, every n (added 8 November 2026)
 
