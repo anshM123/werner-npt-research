@@ -7,3 +7,5 @@ N=5 t=0.5 (sample): max |S(d,v)|/S(d,0) over v != 0 = 1.0000000000; min S(d,0) =
 N=3 t=0.45 (all): max |S(d,v)|/S(d,0) over v != 0 = 0.8181818182; min S(d,0) = 4.4921; equality cases 0
 N=4 t=0.45 (all): max |S(d,v)|/S(d,0) over v != 0 = 0.8181818182; min S(d,0) = 7.4120; equality cases 0
 N=3 t=0.35 (all): max |S(d,v)|/S(d,0) over v != 0 = 0.5384615385; min S(d,0) = 7.4149; equality cases 0
+N=6 t=0.5: 40 random graphs, all d and v: max |S(d,v)|/S(d,0) = 0.6000000000; equality cases 0
+N=7 t=0.5: 12 random graphs, all d and v: max |S(d,v)|/S(d,0) = 0.3902093983; equality cases 0

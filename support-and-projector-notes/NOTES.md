@@ -741,7 +741,9 @@ zeros give equality at the endpoint. SD_t implies the sharp bound of Section 9 o
 q(Π) = 2q(G) + 2 Re S(0, u)/3^N ≥ 2(1 − τ) q(G) ≥ 2(1 − 2t)(1 − t)^{N−1} for Π the projector onto span{|g⟩, Z^u|g⟩}. Evidence (`code/global_reductions/
 stabilizer_domination.py` and `graph_cut_rank.py`, log `logs/stabilizer_domination.log`): exhaustive over all Γ, d, v
 at N = 2, 3, 4 for t = ½ (largest ratio exactly 1, thousands of equality cases), t = 0.45 and 0.4 (largest ratio exactly
-τ = 9/11 and 2/3), and t = 0.35 at N = 3 (τ = 7/13); 300 random graphs with all d, v at N = 5 and t = ½ (largest ratio 1).
+τ = 9/11 and 2/3), and t = 0.35 at N = 3 (τ = 7/13); at t = ½ with all d and v, 300 random graphs at N = 5 and 40 at
+N = 6 (largest ratio 1, attained), and 12 at N = 7 (largest ratio 0.39; `stabilizer_domination_fft.py`, a fast Fourier
+transform over Z_3^N).
 The class contains the minimisers of q_5 over balanced projectors (subspaces of the five-qutrit code) and every known
 zero, so SD_t for every N would give the endpoint, and the sharp bound, on all of them. We have no proof beyond N = 4;
 the cycle graphs are covered for every N by the transfer-matrix argument of `cyclic-code-planes/` (on their code spaces).
@@ -1413,7 +1415,7 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   purity-two enumerators of Section 7, exact); `perfect_code_check.py` (Proposition 19 attained at n = 5 by the
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
   `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
-  and `graph_cut_rank.py check|search N ...` (Conjecture SD_t); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `two_replica_balanced.py t d N ...` (the copy-symmetric
+  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD_t); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind
