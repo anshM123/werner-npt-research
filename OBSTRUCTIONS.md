@@ -294,6 +294,13 @@ for six copies, on real planes for every n, on permutation-symmetric inputs up t
 inputs of bond dimension two for every n. A failure would need seven or more copies at which both the input and the
 output have full support. The following do not reach every n (added 7 November 2026).
 
+- **Completely positive left factors (added 9 November 2026).** 𝒫_a = (D − T) ∘ Γ_a with
+  Γ_a = ¼(id + T) + (a/2 − ¼)D, and D − T is completely positive, so tensor-stable positivity of Γ_a would give that
+  of 𝒫_a; within span{D, id, T}, the factors D − T and D − id leave the most positive Γ. But Γ_a is not tensor-stable
+  positive for any a < 1: its compression to a qubit input has the Choi eigenvalue (a − 1)/2 on the singlet, and so does
+  the compression composed with the transpose (Γ_a ∘ T = Γ_a), so that compression is neither completely positive nor
+  completely copositive, which [MRW, Thm. 2] excludes for tensor-stable positive maps.
+
 - **Norm bounds and quadratic references (added 9 November 2026, from an independent audit; checked here).** The
   map route is equivalent to subexponential growth of τ_n = max ‖P^{⊗n}(ρ)‖₁ for the normalised map P = 𝒫_{3/4}/(7/4)
   (Proposition N of `whole-problem-routes/`). The exact output purity (19/49)^n gives only τ_n ≤ (√57/7)^n. Bounding
@@ -440,6 +447,14 @@ output have full support. The following do not reach every n (added 7 November 2
   two-copy proof does not lift either: it crosses the four vectors of a cross term, which exchanges a set of copies
   with its complement, and from three copies on the crossed weights (−t)^{n−|K|} form an indefinite metric, so the
   Cauchy–Schwarz step is lost (independent audit).
+  The merging budget FB of Section 9 does not follow from itself with one spectator fewer either (added 9 November
+  2026). Merging two spectators with Lemma 27 there leaves t times the crossed form of Y ⊗ (I − F_3)(I − F_4), with
+  Y = ½(I − tF_1F_2) + t(I − F_1)(I − F_2) on the merged pair, and this residual is not positive: at
+  C = |00⟩⟨11| ⊗ (|01⟩⟨01| − |10⟩⟨10|) it equals −(½ + t)‖C‖_F², and adversarial searches on four qubits and on four
+  qutrits (t = 0.40, 0.45) reach this value and nothing lower. A spectator also cannot be cut into rank-one slices:
+  its crossed operator I + 2τP_A (τ = t/(1 − t)) is separable on qubits for every t ≤ ½, but on qutrits only for
+  t ≤ 1/3, and for t > 1/3 it is not a positive combination of its compressions to qubit pairs and separable
+  operators. So FB with qutrit spectators has to use the rank-two structure of C at the spectators.
 - **Two-replica certificates run out early, below the endpoint too (added 9 November 2026).** (i) For general rank-two
   C at three copies, fix the Gram matrix of the four vectors of a constant-diagonal factorisation (Proposition 28 of
   `support-and-projector-notes/`) and allow any degree-four data ⟨Tr_K(ab^*), Tr_K(ce^*)⟩ whose Gram matrices,
