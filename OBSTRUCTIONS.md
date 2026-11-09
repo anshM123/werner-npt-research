@@ -470,7 +470,9 @@ output have full support. The following do not reach every n (added 7 November 2
   two-positive, |F| = (3D + 2id + T)/12 and F² are entanglement breaking, and (F + T∘F)/2 = 𝒫_{5/6}/2. If every
   output of F^{⊗n} had positive partial transpose across every cut, 𝒫_{5/6} would be tensor-stable positive and
   Section 7 of `whole-problem-routes/` would give NPT bound entanglement. That is unproved, and stronger than what is
-  needed (`support-and-projector-notes/code/global_reductions/audit92_98_checks.py`, log `logs/audit92_98_checks.log`).
+  needed. Numerically it holds with the exact product margin, λ_min(T_S∘F^{⊗n}(ρ)) = 6^{−n} for n ≤ 6 and every cut,
+  and it holds at n = 2 because F has rank-two Kraus operators and T∘F is two-positive (Section 5 of
+  `whole-problem-routes/`, remark after Proposition M) (`support-and-projector-notes/code/global_reductions/audit92_98_checks.py`, log `logs/audit92_98_checks.log`).
 
 - **Decomposability, and every certificate that unrolls into it.** 𝒫_a^{⊗n} is not decomposable from n = 3 for any
   a < 0.7562 (Proposition 7.3), and for every a < 1 some tensor power is not decomposable, by a theorem of Müller-Hermes

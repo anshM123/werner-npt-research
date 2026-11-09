@@ -179,6 +179,37 @@ positivity on real rank-one inputs, which extends to all positive inputs because
 The open step of this route is a lower bound μ_n(a) ≥ m^n for every n at one a < 1 (at a = 9/10: μ_n ≥ (2/5)^n).
 At a = 3/4 it is proved for n ≤ 5 (Theorem 7.13).
 
+**Remark (a completely positive half of 𝒫_{5/6}; added 9 November 2026).** Put F = (5D − id − 2T)/12. Then
+T∘F = (5D − 2id − T)/12 and F + T∘F = 𝒫_{5/6}, so 𝒫_{5/6}^{⊗n} = Σ_S T_S∘F^{⊗n}, the sum over subsets S of the copies.
+An independent audit found that a splitting 𝒫_a = F + T∘F with F completely positive and T∘F two-positive exists
+exactly when a ≥ 5/6, with this F at a = 5/6, and asked whether every output of F^{⊗n} has positive partial transpose
+across every cut. That would make 𝒫_{5/6} tensor-stable positive and, by item 3, give NPT bound entanglement.
+Numerically a sharper statement holds:
+
+    (MP)  λ_min(T_S∘F^{⊗n}(ρ)) ≥ 6^{−n} Tr ρ  for every state ρ, every n and every S,
+
+with equality at real product inputs. Alternating minimisation over inputs and test vectors, from random starts and
+from GHZ, singlet-pair, W and Levi-Civita starts, returns exactly 6^{−n} for every n ≤ 6 and every size of S
+(`code/completion_five_sixths.py`; logs `logs/completion_five_sixths.log` for n ≤ 5 and `logs/completion_five_sixths_n6.log`
+for n = 6).
+(MP) would give μ_n(5/6) ≥ 2^n·6^{−n} = 3^{−n}, which is item 4 with m = 1/3. What we can say about it:
+- **n = 2 holds.** Choi(F) = ¼(I − P_Φ) + ⅓P_anti, a separable operator plus the antisymmetric projector, so F has
+  Kraus operators of rank two, F(X) = (1/24)Σ_{i<j}[3S_ij X S_ij + 2D_ij X D_ij + 7A_ij X A_ijᵀ] with S_ij = E_ij + E_ji,
+  D_ij = E_ii − E_jj and A_ij = E_ij − E_ji, and (id ⊗ F)(ρ) has Schmidt number at most two. As T∘F is
+  two-positive, (T∘F ⊗ F)(ρ) = (T∘F ⊗ id)((id ⊗ F)(ρ)) ⪰ 0.
+- **A segment of maps.** F commutes with T, so T_S∘F^{⊗n} = F^{⊗n}∘T_S. Write P_0, P_1, P_2 for the projections of M_3
+  onto I, the antisymmetric and the traceless symmetric matrices (spins 0, 1, 2 under orthogonal conjugation) and
+  Φ_μ = P_0 − ¼P_2 + μP_1 = (5/12)D + (μ/2 − 1/8)id − (μ/2 + 1/8)T. Then F = Φ_{1/12} and T∘F = Φ_{−1/12}; Φ_μ is
+  completely positive exactly for 1/12 ≤ μ ≤ 7/12 and completely copositive exactly for −7/12 ≤ μ ≤ −1/12. By
+  multilinearity (MP) is equivalent to positivity of every ⊗_s Φ_{μ_s} with |μ_s| ≤ 1/12: the whole segment between a
+  completely positive map and a completely copositive one would be jointly tensor-stable positive. Every Φ_μ on it has
+  least output eigenvalue 1/6, attained at real pure inputs.
+- **The obvious splitting fails.** F = D/6 + G with G = (3D − id − 2T)/12 positive, but G ⊗ G is not positive (least
+  output eigenvalue −1/72), so the 6^{−n} cannot come term by term.
+- **No decomposable certificate works for every n.** Some 𝒫_{5/6}^{⊗n} is not decomposable (Müller-Hermes, below
+  Proposition 7.3), and a sum of decomposable maps is decomposable, so some T_S∘F^{⊗n} is not decomposable.
+(MP) is stronger than tensor-stable positivity of 𝒫_{5/6} and implies it. We have no proof for n ≥ 3.
+
 **Proposition M′ (balanced scalar inputs suffice; added 9 November 2026).** Fix a ≥ 1/2 and call a real vector z on
 N copies balanced if every one-copy marginal of zzᵀ/‖z‖² is I₃/3. The following are equivalent:
 1. 𝒫_a is tensor-stable positive;
@@ -1381,6 +1412,8 @@ exact):
 
 Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are not part of it (about 30 minutes).
 
+`code/completion_five_sixths.py` (`logs/completion_five_sixths.log`) checks the remark after Proposition M: the Choi
+spectra and the decomposition of Choi(F), the segment Φ_μ, the one-copy minima, G ⊗ G and the least values for n ≤ 5.
 `code/norm_bounds_check.py` (`logs/norm_bounds_check.log`) checks Proposition N: the absolute value and its Choi matrix,
 the product identity, the purity maximum and the four-linear bound at n = 1, 2 (local optimisation), the negative
 Choi index and total for n ≤ 3, and the two vectors of item 5 against the directly built two-copy Choi matrix.

@@ -231,6 +231,24 @@ Write 𝓔_n for the average over all permutations of the copies and Q_n for the
 Check: `support-and-projector-notes/code/global_reductions/audit92_98_checks.py`, rounds 97 and 98 (log
 `logs/audit92_98_checks.log`).
 
+## 6. Anchors inside the bosonic sector (added 9 November 2026; numerical)
+
+The Schur-complement (anchor) argument of `support-and-projector-notes/`, Section 5, restricts to the bosonic sector.
+For p ∈ Sym^n(C^3) let M be the matrix of q_n(1/2, ·) on vec(C), C ∈ End(Sym^n), and put V_p = p ⊗ I,
+D_p = V_p^* M V_p and Y_p = M − M V_p D_p^{−1} V_p^* M. Minimising q_n(|p⟩⟨v| + |u⟩⟨w|) over v ∈ Sym^n leaves
+(u ⊗ w̄)^* Y_p (u ⊗ w̄). Since Y_p V_p = 0, λ_min(Y_p^Γ) ≤ 0 always (Γ the transpose on the row factor). Call p a
+bosonic anchor if Y_p^Γ ⪰ 0. Then every bosonic operator of rank two whose range plane contains p has q_n ≥ 0, whatever
+its bosonic co-range. For n ≤ 4:
+- random p, coherent states, the W state |n−1, 1, 0⟩, |n−2, 1, 1⟩ and the GHZ vector are bosonic anchors
+  (λ_min(Y_p^Γ) = 0 to rounding). For distinguishable copies the W state is not an anchor once n ≥ 3 (Proposition 8 of
+  `support-and-projector-notes/`); restricting the co-range to Sym^n removes that obstruction.
+- the Dicke state |2, 2, 0⟩ at n = 4 is not a bosonic anchor (λ_min(Y_p^Γ) = −0.0174), although Y_p is still
+  nonnegative on product vectors there.
+
+So, at least for small n, the anchor condition fails in the bosonic sector only on special vectors. If every bosonic
+plane contained a bosonic anchor, the bosonic sector would follow for every n. We prove neither part.
+Check: `code/check_bosonic_anchors.py`, log `logs/check_bosonic_anchors.log`.
+
 ## References
 
 - [DSSTT] D. P. DiVincenzo, P. W. Shor, J. A. Smolin, B. M. Terhal, A. V. Thapliyal, Phys. Rev. A 61, 062312 (2000).
@@ -256,3 +274,4 @@ The scripts need Python 3 with NumPy and SciPy.
 - `code/check_large_n.py`, `code/check_large_n_formula.py`: Section 3, large n.
 - `../support-and-projector-notes/code/global_reductions/audit92_98_checks.py`: the closed spectrum of Section 1 and
   Section 5.
+- `code/check_bosonic_anchors.py`: Section 6.

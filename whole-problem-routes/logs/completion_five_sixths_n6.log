@@ -1,0 +1,15 @@
+(a) 12 x Choi spectrum of F: [np.float64(0.0), np.float64(3.0), np.float64(7.0)], of T.F: [np.float64(-2.0), np.float64(4.0), np.float64(6.0)]; Choi(F) = (I - P_Phi)/4 + P_anti/3: True
+(a) Phi_mu = (5/12)D + (mu/2 - 1/8)id - (mu/2 + 1/8)T is CP exactly for 1/12 <= mu <= 7/12: True (F = Phi_(1/12), T.F = Phi_(-1/12))
+(b) one copy: least output eigenvalue of F 0.166666666667, of T.F 0.166666666667 (1/6 = 0.166666666667)
+(c) G = F - D/6 = (3D - id - 2T)/12: least output eigenvalue of G (x) G = -0.013888888889 (-1/72 = -0.013888888889)
+(d) n = 2, |S| = 1: least value found 2.777778e-02, times 6^n = 1.000000000
+(d) n = 3, |S| = 1: least value found 4.629630e-03, times 6^n = 1.000000000
+(d) n = 4, |S| = 1: least value found 7.716049e-04, times 6^n = 1.000000000
+(d) n = 4, |S| = 2: least value found 7.716049e-04, times 6^n = 1.000000000
+(d) n = 5, |S| = 1: least value found 1.286008e-04, times 6^n = 1.000000000
+(d) n = 5, |S| = 2: least value found 1.286008e-04, times 6^n = 1.000000000
+(d) n = 6, |S| = 1: least value found 2.143347e-05, times 6^n = 1.000000000
+(d) n = 6, |S| = 2: least value found 2.143347e-05, times 6^n = 1.000000000
+(d) n = 6, |S| = 3: least value found 2.143347e-05, times 6^n = 1.000000000
+
+13 of 13 checks as stated
