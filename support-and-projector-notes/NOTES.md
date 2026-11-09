@@ -743,6 +743,13 @@ such simplex words for two hyperplanes would differ on fewer than 3^{m−1} poin
 involved all contain the support of z minus that word; at most 3^{m−1} − 1 of the 3^m − 1 values of b are special.
 Hence the b ≠ 0 terms give at least 2^{3^{m−1}−N}(3^{m−1} + 1) > 0, which beats the b = 0 term (at most
 2^{−N} 3^{m+1} in size). The weights with β ≠ 0 we only checked numerically.
+Without gauge fixing the code is the [[13, 7, 3]]_3 code CSS(Hamming ⊇ simplex), and its logical form is far from
+positive: 2289 of the 3^{14} logical weights are negative, among them the stabilizer sum itself,
+|S|^{−1} Σ_{E∈S} (−½)^{13−wt E} = −0.419 (so the projector onto the whole code has q_13 < 0, as a rank-2187 operator
+may). Rank two still protects: local minimisation over rank-two operators on the whole 2187-dimensional encoded space
+stays at about 0.062 (six starts; the gauge-fixed subspaces above reach 0.060), while random rank-one operators give
+0.093 (`code/global_reductions/hamming13_full.py`, which computes all 3^{14} weights by a subset-sum transform over
+supports and checks Parseval, the identity and rank one; log `logs/hamming13_full.log`).
 
 **Stabilizer domination (added 9 November 2026).** Every stabilizer state is a graph state up to local Cliffords,
 which do not change weights, and a Pauli acting on a graph state |g⟩ (adjacency Γ over F_3) is a Z-shift of it up to
@@ -1624,7 +1631,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   purity-two enumerators of Section 7, exact); `perfect_code_check.py` (Proposition 19 attained at n = 5 by the
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
   `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
-  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, (7.1′) and FB on stars); `star_descent.py k m eps steps seed` (descent from star near-zeros, PyTorch); `qc_star.py k m restarts seed` (Conjecture QC on stars); `fb_class.py N t family i j` and `fb_class_check.py` (FB on stabilizer pairs). `pg_codes.py m trials seed` (gauge-fixed projective Hamming codes). `code/bell_diagonal/`: `one_qutrit_lines.py iters seed` (line conditions versus 2-block-positivity on one qutrit) `two_qutrit_witness.py` (the two-qutrit witness, from `data/bell_k2_witness_*.txt`) and `two_qutrit_witness_exact.py`
+  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, (7.1′) and FB on stars); `star_descent.py k m eps steps seed` (descent from star near-zeros, PyTorch); `qc_star.py k m restarts seed` (Conjecture QC on stars); `fb_class.py N t family i j` and `fb_class_check.py` (FB on stabilizer pairs). `pg_codes.py m trials seed` (gauge-fixed projective Hamming codes) and `hamming13_full.py restarts seed` (the whole
+[[13, 7, 3]]_3 code). `code/bell_diagonal/`: `one_qutrit_lines.py iters seed` (line conditions versus 2-block-positivity on one qutrit) `two_qutrit_witness.py` (the two-qutrit witness, from `data/bell_k2_witness_*.txt`) and `two_qutrit_witness_exact.py`
 (the same witness in exact rational and Eisenstein-integer arithmetic); `code/identity_count/`: `polytope.py N ndir restarts seed` (support points and hull of the identity-count polytope, PyTorch), `pibar_numpy.py` (the same with NumPy) and `check_vertices.py` (exact vertices); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs

@@ -1,0 +1,13 @@
+zeta transform done (1s)
+weights done (1s): min -4.1907e-01, max 1.4583e-01, negative entries 2289 of 4782969
+check: identity weight formula -4.190674e-01 vs direct -4.190674e-01
+Parseval: sum|c|^2 / (D ||C||^2) = 1.000000000000
+identity: value -4.190674e-01 (should equal h[0,0] = -4.190674e-01)
+random rank-one values (must be > 0): ['+9.322e-02', '+9.321e-02', '+9.323e-02', '+9.322e-02', '+9.325e-02']
+restart 0: q_13/||C||^2 = +6.196021e-02 (10s)
+restart 1: q_13/||C||^2 = +6.182206e-02 (16s)
+restart 2: q_13/||C||^2 = +6.191557e-02 (22s)
+restart 3: q_13/||C||^2 = +6.184218e-02 (29s)
+restart 4: q_13/||C||^2 = +6.188126e-02 (36s)
+restart 5: q_13/||C||^2 = +6.184027e-02 (42s)
+smallest q_13/||C||^2 over encoded rank-two operators: +6.182206e-02  (no counterexample)
