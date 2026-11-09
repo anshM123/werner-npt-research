@@ -86,10 +86,11 @@ scripts need PyTorch.
   - *No general stabilizer extremality.* The n-copy endpoint is 2-block-positivity of a Bell-diagonal operator. On one
     qutrit the stabilizer (line) conditions appear to decide 2-block-positivity of every Bell-diagonal operator, but on
     two qutrits they do not (explicit witness). So a proof has to use the tensor-power form of the Werner weights.
-  - *The endpoint is a facet.* After twirling over U ⊗ Ū at every copy, the endpoint is a linear inequality on the
-    polytope of identity-count distributions of rank-two operators (exact at two copies, ten vertices at three). Its zero
-    face contains every Π_2 ⊗ R with R of rank one, so it is a facet for every n, and no linear certificate in Pauli
-    weights can avoid proving it directly.
+  - *The endpoint as a facet.* After twirling over U ⊗ Ū at every copy, the endpoint is a linear inequality on the convex
+    set of identity-count distributions of rank-two operators (exactly a quadrilateral at two copies; ten candidate
+    vertices found numerically at three). The known zeros Π_2 ⊗ R (R of rank one) span a face of dimension n − 1, so if
+    the endpoint holds at n copies it is a facet there (this is equivalent to the endpoint, not a proof of it), and then
+    no finite positive combination of other valid linear inequalities in Pauli weights can produce it.
 - The endpoint for every n. `compression-notes/` states a compression conjecture that would give it, with evidence up to five copies.
   `orbit-notes/` reduces it to a local statement on squeeze orbits (no thick squeeze-orbit minimum), supported numerically for n ≤ 7.
   Every one-copy version of that statement is false at three copies, and so are the versions restricted to the

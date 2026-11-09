@@ -1,0 +1,26 @@
+(1) a=0.6000: | |P_a| - formula | = 3.3e-16, | Choi - formula | = 3.3e-16, least Choi eigenvalue +0.0167 (a - 7/12 = +0.0167)
+(1) a=0.5833: | |P_a| - formula | = 6.1e-16, | Choi - formula | = 6.1e-16, least Choi eigenvalue -0.0000 (a - 7/12 = +0.0000)
+(1) a=0.7000: | |P_a| - formula | = 2.2e-16, | Choi - formula | = 2.2e-16, least Choi eigenvalue +0.1167 (a - 7/12 = +0.1167)
+(1) a=0.7500: | |P_a| - formula | = 6.7e-16, | Choi - formula | = 5.6e-16, least Choi eigenvalue +0.1667 (a - 7/12 = +0.1667)
+(1) a=0.9000: | |P_a| - formula | = 3.3e-16, | Choi - formula | = 3.3e-16, least Choi eigenvalue +0.3167 (a - 7/12 = +0.3167)
+(1) product identity I + F + Om = 2 sum|ii><ii| + (1/4) sum |ee><ee|: error 0.0e+00
+(2) a=0.6, n=1: max purity found 0.73000000, formula (3a^2-a+1/4)^n = 0.73000000
+(3) a=0.6, n=1: max four-linear value found 0.600000, bound c_a^n = 0.766667
+(2) a=0.6, n=2: max purity found 0.53290000, formula (3a^2-a+1/4)^n = 0.53290000
+(3) a=0.6, n=2: max four-linear value found 0.360000, bound c_a^n = 0.587778
+(2) a=0.75, n=1: max purity found 1.18750000, formula (3a^2-a+1/4)^n = 1.18750000
+(3) a=0.75, n=1: max four-linear value found 0.750000, bound c_a^n = 0.916667
+(2) a=0.75, n=2: max purity found 1.41015625, formula (3a^2-a+1/4)^n = 1.41015625
+(3) a=0.75, n=2: max four-linear value found 0.562500, bound c_a^n = 0.840278
+(2) a=0.9, n=1: max purity found 1.78000000, formula (3a^2-a+1/4)^n = 1.78000000
+(3) a=0.9, n=1: max four-linear value found 0.900000, bound c_a^n = 1.066667
+(2) a=0.9, n=2: max purity found 3.16840000, formula (3a^2-a+1/4)^n = 3.16840000
+(3) a=0.9, n=2: max four-linear value found 0.810000, bound c_a^n = 1.137778
+(4) one-copy Choi eigenvalues at a=0.8: [-0.2, 0.55, 0.55, 0.55, 0.55, 0.55, 1.05, 1.05, 1.05] (expect a-1 once, a-1/4 x5, a+1/4 x3)
+(4) n=1: negative Choi eigenvalues 1 (formula 1), their total 0.200000 (formula 0.200000)
+(4) n=2: negative Choi eigenvalues 16 (formula 16), their total 2.360000 (formula 2.360000)
+(4) n=3: negative Choi eigenvalues 193 (formula 193), their total 20.894000 (formula 20.894000)
+(5) global Choi of P_a (x) P_a = reordered kron(Choi, Choi): error 5.6e-17
+(5) omega x symmetric: Choi value -0.11000, <v|F|v> = +1.00, <v|global Omega> = +0.0e+00
+(5) omega x antisymmetric: Choi value -0.21000, <v|F|v> = -1.00, <v|global Omega> = +0.0e+00
+(5) expected (a-1)(a-1/4) = -0.11000 and (a-1)(a+1/4) = -0.21000; adding lambda id + mu T needs mu >= 0.1100 and mu <= -0.2100: impossible

@@ -252,10 +252,11 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   every copy and over permutations, the endpoint value of a rank-two C depends only on its identity-count distribution
   π̄_C (the weights of C on the parts that are the identity on exactly k copies), and the endpoint is a linear
   inequality on the convex hull 𝒮_n of these distributions. The zeros Π_2 ⊗ R (R of rank one) already span an
-  (n − 1)-dimensional face, so if the endpoint holds it is a facet of 𝒮_n for every n, and it is not a positive
-  combination of other valid linear inequalities in these coordinates. Every linear-programming certificate in Pauli
-  weights therefore has to contain the endpoint inequality itself (`support-and-projector-notes/`, Section 7, which also
-  gives 𝒮_2 exactly and the ten vertices of 𝒮_3).
+  (n − 1)-dimensional affine set on the endpoint hyperplane (unconditionally). So if the endpoint holds at n copies, it
+  is a facet of 𝒮_n, and it is not a finite positive combination of other valid linear inequalities in these
+  coordinates: every finite linear-programming certificate in Pauli weights has to contain the endpoint inequality
+  itself. Nonlinear arguments, finer coordinates and limits of inequality families are not excluded
+  (`support-and-projector-notes/`, Section 7, which also gives 𝒮_2 exactly and ten numerical candidate vertices of 𝒮_3).
 
 ## What remains
 
@@ -292,6 +293,16 @@ The second route asks for positivity of every tensor power of 𝒫_{3/4}(X) = ¾
 for six copies, on real planes for every n, on permutation-symmetric inputs up to 21 copies, on separable inputs and on
 inputs of bond dimension two for every n. A failure would need seven or more copies at which both the input and the
 output have full support. The following do not reach every n (added 7 November 2026).
+
+- **Norm bounds and quadratic references (added 9 November 2026, from an independent audit; checked here).** The
+  map route is equivalent to subexponential growth of τ_n = max ‖P^{⊗n}(ρ)‖₁ for the normalised map P = 𝒫_{3/4}/(7/4)
+  (Proposition N of `whole-problem-routes/`). The exact output purity (19/49)^n gives only τ_n ≤ (√57/7)^n. Bounding
+  ‖Y‖₁² by Tr(YZ^{−1}Y) with a positive reference Z does not remove the exponential loss for three natural choices of
+  Z, all on inputs whose outputs are positive: products of marginals on blocks of bounded size (GHZ products), tensor
+  powers of any completely positive map that agrees with P on symmetric matrices (Bell-pair products, gap 1/7203 per
+  pair), and products of three such maps chosen per site after seeing the input (antisymmetric three-qutrit vector,
+  gap 3/235298 per triple). Nor can a global shift λ id + μT make the Choi matrix of P^{⊗n} positive, for n ≥ 2.
+  Correlated references, nonlinear comparisons and direct control of the sign are not excluded.
 
 - **Decomposability, and every certificate that unrolls into it.** 𝒫_a^{⊗n} is not decomposable from n = 3 for any
   a < 0.7562 (Proposition 7.3), and for every a < 1 some tensor power is not decomposable, by a theorem of Müller-Hermes

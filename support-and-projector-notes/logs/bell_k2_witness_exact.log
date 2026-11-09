@@ -1,0 +1,5 @@
+det M = -39946199375514 + -81495288979980 w (nonzero); upper-left 2x2 minor of C~ = det(M)^3: rank of C~ is exactly 2
+full local support of range at copies 0, 1: [True, True] ; of co-range: [True, True]
+Weyl Parseval exact; all 81 coefficients nonzero: True
+<vec C~|K_h'|vec C~>/||C~||^2 = -0.0033427396615  (exact rational; < -1/300: True)
+1440 cone conditions: smallest total 3.204969 > 0, smallest e_2 = 2.380e-03 > 0: True

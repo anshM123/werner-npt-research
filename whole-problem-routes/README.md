@@ -203,7 +203,8 @@ A > B > |K|. Summing over the 12⁴ label quadruples (four classes survive) give
 with M = 3a − 1/2 the norm of 𝒫_a on Hilbert–Schmidt space. So a negative real pair stays negative after balancing.
 (The same audit later sharpened M to a + 1/4: the four-linear form y_1ᵀ𝒫_a^{⊗n}(x_1x_2ᵀ)y_2 is the Choi matrix element
 ⟨x_1 ⊗ y_1, C_a^{⊗n}(x_2 ⊗ y_2)⟩ and ‖C_a‖ = a + 1/4 for a ≥ 1/2. At a = 3/4 the factor is 1 for every n, so a negative
-witness of margin δ becomes a balanced scalar witness after O(log(1/δ)) added copies, independently of n.)
+witness of margin δ becomes a balanced scalar witness after O(log(1/δ)) added copies, independently of n. Proposition N
+below lowers the factor again, to (11/12)^n at a = ¾.)
 1 ⇒ 2 is clear. For 2 ⇒ 1, a failure of 1 gives real x, y with b_n(x, y) < 0 (item 4 of Proposition M). The two-flag
 identity there makes s_{n+k}(z_k) < 0 for every large k of either parity; choose n + k odd, normalise, and balance z_k
 with the bound above (x = y = z_k), which adds an even number of copies. For 3: products are multiplicative,
@@ -219,6 +220,49 @@ does it (exact).
 More generally, for 1/2 ≤ a < 3/4 there is a balanced negative witness on 16n + 45 copies, where n is odd with
 (2a − 1/2)^n ≤ 1/4 (the exact inequalities (7/2)(15/23)⁴ < 1 and 444(7/2)³(15/23)^{24} < 1 control the error). This only
 calibrates the class below 3/4; it says nothing at or above 3/4.
+
+**Proposition N (norm bounds; added 9 November 2026).** Put t_a = 3a − ½, so Tr 𝒫_a(X) = t_a Tr X, and
+P_a = 𝒫_a/t_a. On scalar, traceless symmetric and antisymmetric matrices 𝒫_a acts as t_a, −½ and 0. Let a ≥ ½.
+1. The Hilbert–Schmidt absolute value |𝒫_a| = (a − ⅓)D + ¼(id + T) has Choi matrix (a − 7/12)I + ¼(I + F + |Ω⟩⟨Ω|),
+   and I + F + |Ω⟩⟨Ω| = 2 Σ_i |ii⟩⟨ii| + ¼ Σ_e |ee⟩⟨ee| with e ∈ {(1,1,1), (1,−1,−1), (−1,1,−1), (−1,−1,1)}. So |𝒫_a| is
+   entanglement breaking exactly when a ≥ 7/12, and then so is |𝒫_a^{⊗n}| = |𝒫_a|^{⊗n} for every n. This alone cannot
+   give positivity: a = 7/10 is in the range, and 𝒫_{7/10}^{⊗7} is not positive (the plane GHZ example above).
+2. (Four-linear bound.) |y_1*𝒫_a^{⊗n}(x_1x_2*)y_2| ≤ c_a^n ‖x_1‖‖x_2‖‖y_1‖‖y_2‖ with c_a = max(a + 1/6, ¾). At a = ¾
+   this is 11/12, against the Choi norm a + ¼ = 1 used in Proposition M′.
+3. (Output purity.) max over unit x of ‖𝒫_a^{⊗n}(xx*)‖₂² is exactly (3a² − a + ¼)^n, attained at real product inputs.
+4. (Trace-norm form of the open step.) τ_n(a) = max_ρ ‖P_a^{⊗n}(ρ)‖₁ over states satisfies τ_n ≥ 1, with equality iff
+   𝒫_a^{⊗n} is positive, and τ_{m+n} ≥ τ_m τ_n. So 𝒫_a is tensor-stable positive iff log τ_N(a) = o(N) along some
+   unbounded sequence. Item 3 and ‖Y‖₁ ≤ 3^{n/2}‖Y‖₂ give only τ_n ≤ R_a^n with R_a² = 1 + 1/(2t_a²); at a = ¾,
+   R = √57/7 ≈ 1.0785.
+5. (Global repairs.) For ¼ < a < 1 and n ≥ 2, 𝒫_a^{⊗n} + λ id + μT, with the identity and the transpose of all of
+   (C³)^{⊗n}, is not completely positive for any real λ, μ. The Choi matrix C_a^{⊗n} has exactly (9^n − 7^n)/2 negative
+   eigenvalues, of total size [(7a + ½)^n − (9a − 3/2)^n]/2; a positive semidefinite R with C_a^{⊗n} + R ⪰ 0 has at least
+   that rank and that trace, and the negative part attains both.
+
+*Proof.* 1. The spectra are direct; the identity is checked entry by entry. It writes I + F + |Ω⟩⟨Ω| as a positive
+combination of product projectors, so the Choi matrix is separable for a ≥ 7/12; below, the antisymmetric eigenvalue
+a − 7/12 is negative. Absolute values of superoperators multiply under tensor products.
+2. For a selfadjoint superoperator S, |⟨Y, SX⟩|² ≤ ⟨X, |S|X⟩⟨Y, |S|Y⟩. By item 1, |𝒫_a|^{⊗n} = Σ_B w_B |B)(B| with
+w_B ≥ 0 and B ⪰ 0, so for X = uv*, ⟨X, |S|X⟩ = Σ w_B |v*Bu|² ≤ Σ w_B (u*Bu)(v*Bv) ≤ (⟨uu*, |S|uu*⟩⟨vv*, |S|vv*⟩)^{1/2}.
+For an entanglement-breaking E and a positive G, ‖(E ⊗ G)(ρ)‖_∞ ≤ ν(E)ν(G), where ν is the largest output operator
+norm on states, and ν(|𝒫_a|) = a + 1/6, at real inputs. Below 7/12 use |𝒫_a| ≤ |𝒫_{7/12}|.
+3. 𝒫_a ∘ 𝒫_a = (3a² − a)D + ⅛(id + T) is entanglement breaking for a ≥ ½, by the identity in item 1, with
+ν = 3a² − a + ¼, and ‖𝒫_a^{⊗n}(X)‖₂² = ⟨X, (𝒫_a ∘ 𝒫_a)^{⊗n}X⟩. On a real unit x, 𝒫_a(xxᵀ) has eigenvalues a − ½, a, a.
+4. P_a is trace preserving, product inputs give supermultiplicativity, and τ_m > 1 forces τ_{km+r} ≥ τ_m^k.
+5. Put ω at one copy, a traceless symmetric Choi vector at a second, and traceless symmetric vectors elsewhere. The
+product is orthogonal to the global Ω, has global swap eigenvalue +1 and Choi value (a − 1)(a − ¼)^{n−1} < 0. With an
+antisymmetric vector at the second copy the swap eigenvalue is −1 and the value (a − 1)(a + ¼)(a − ¼)^{n−2} < 0. The
+shift would need μ > 0 and μ < 0. The count and the total come from the one-copy spectrum. ∎
+
+These are from an independent audit; we re-derived them and checked them numerically (`code/norm_bounds_check.py`,
+log `logs/norm_bounds_check.log`). They bound the size of the output, not its sign. The same audit asked whether the
+loss in item 4 can be removed with ‖Y‖₁² ≤ Tr(YZ^{−1}Y) for a positive reference Z, and found that natural references
+fail on inputs whose actual outputs are positive: products of marginals on blocks of bounded size b lose a factor
+(2433/2401)^{N/(b+1)} on products of GHZ_{b+1} vectors; for every completely positive Q equal to P_a on symmetric
+matrices, ‖(Q ⊗ Q)(φφ*) − (P_a ⊗ P_a)(φφ*)‖₂² ≥ e⁴/3 with e = (1 − a)/t_a (1/7203 at a = ¾), so identical CP tensor
+references lose exponentially on products of Bell pairs; and on the antisymmetric three-qutrit vector the gap
+(3/8)r²e⁴, r = 1/(2t_a), holds for any three such Q_1, Q_2, Q_3, even chosen after seeing the input
+(`code/reference_obstructions_check.py`; summary in `OBSTRUCTIONS.md`).
 
 [MRW, Thm. 3] also shows that a non-trivial tensor-stable positive map exists if and only if one exists in the
 one-parameter family 𝒲_p ⊗ (ϑ ∘ 𝒲_p) on M_d ⊗ M_d, p ∈ [−1, 0), where
@@ -1335,6 +1379,13 @@ exact):
   failing parameter.
 
 Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are not part of it (about 30 minutes).
+
+`code/norm_bounds_check.py` (`logs/norm_bounds_check.log`) checks Proposition N: the absolute value and its Choi matrix,
+the product identity, the purity maximum and the four-linear bound at n = 1, 2 (local optimisation), the negative
+Choi index and total for n ≤ 3, and the two vectors of item 5 against the directly built two-copy Choi matrix.
+`code/reference_obstructions_check.py` (`logs/reference_obstructions_check.log`) checks the reference obstructions after
+it: the Bell-pair and GHZ numbers, the covariant extension (6D − id − 3T)/14, and the lower bounds e⁴/3 and (3/8)r²e⁴
+against random completely positive extensions.
 
 `code/balanced_scalar_check.py` (`logs/balanced_scalar_check.log`) checks Proposition M′: the flag kernel A, B, K, 0 as
 exact polynomials in a; s_r(g_r) for r = 2, …, 5; the two-flag identity (floating point); the exact value

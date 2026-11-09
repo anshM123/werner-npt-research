@@ -756,15 +756,19 @@ other m ≥ 1 leaves, and v = v_c e_c supported at the centre. Summing over the 
 ratio is |x + ω + ω²y|/(x + 1 + y). It is below 1 for all x, y > 0, but it tends to 1 as k and m grow, so for every
 t < ½ it exceeds τ once N is large. At t = 2/5 the star with N = 8, k = 3, m = 4 gives ratio 1.0368 τ (exact rational
 arithmetic: S(d, 0) = 1721169/625 and |S(d, e_c)|² = 1415452713984/390625), and N = 10 gives 1.197 τ. On the same
-family (7.1′) holds for every t ≤ ½: after squaring it reduces to 3x²y² + x + y − xy − 2xy(x + y) ≥ 0 on [0, 1]². So the
+family (7.1′) holds for every t ≤ ½. Its right side divided by 3^n is 1 + x + y − 3sxy with s = (1 − 2t)/(1 − t) ∈ [0, 1],
+so it is at least 1 + x + y − 3xy ≥ 0, and (1 + x + y − 3xy)² − |x + ω + ω²y|² = 3g(x, y) with
+g = x(1 − y)² + y(1 − x)² + 3xy(1 − x)(1 − y) ≥ 0 on [0, 1]² (this sum-of-squares form is from an independent audit). So the
 stars are not counterexamples to the sharp bound or to the endpoint. They show that the ratio |S(d, v)|/S(d, 0) is the
 wrong normalisation below the endpoint, because S(d, 0) can lie far above the floor 3^N (1 − t)^N. At the endpoint they
 make (7.1) asymptotically tight: with k + 1 = m the ratio is (1 − x)/(1 + 2x) → 1. The endpoint on these operators was
 already known for every n: after local Cliffords their ranges and co-ranges lie in spans of three product vectors that
 are orthogonal at every copy, the "three sectors" class of `two-sector-class/`.
 
-*The stars as test cases.* The stars are thick at every copy (every vector in their ranges has maximally mixed one-copy
-marginals) and come exponentially close to zero at the endpoint: the best phase gives q_N/‖C‖_F² = 2^{−(k+1)} when
+*The stars as test cases.* The stars are thick at every copy: their range planes have full local support, and the
+range projectors have maximally mixed one-copy marginals. (Not every vector of the plane is balanced. With g the star
+graph state, u = (g − Z_c g)/√2 has one-copy marginal spectrum (0, ½, ½) at every copy; an independent audit pointed
+this out, and we checked it at N = 3, 4, 5.) They come exponentially close to zero at the endpoint: the best phase gives q_N/‖C‖_F² = 2^{−(k+1)} when
 k + 1 = m. So they are natural tests for the other conjectures of this repository. In each case the conjecture
 survives:
 - Local descent of q_N/‖C‖_F² over all rank-two operators, started at a slightly perturbed star (N = 4, 6, 7), ends at a
@@ -782,8 +786,10 @@ thousands of equality cases); at t = ½ with all d and v, 300 random graphs at N
 N = 6 (largest ratio 0.6) and 12 at N = 7 (largest ratio 0.39; `stabilizer_domination_fft.py`, a fast Fourier transform
 over Z_3^N); stars up to N = 10 (largest ratio 0.912). The exhaustive runs at t = 0.45, 0.4 and 0.35 for N ≤ 4 found
 largest ratio exactly τ; they cannot see the stars, which need N ≥ 8 at t = 2/5.
-The class contains the minimisers of q_5 over balanced projectors (subspaces of the five-qutrit code) and every known
-zero, so (7.1) for every N would give the endpoint on all of them. We have no proof beyond N = 4; the cycle graphs are
+The class contains the minimisers of q_5 over balanced projectors (subspaces of the five-qutrit code) and the GHZ and
+product zeros, so (7.1) for every N would give the endpoint on all of them. It does not contain every known zero: the
+qubit-type zeros 𝓑_J of Section 8 built from generic vectors a, b are not stabilizer operators. (An earlier version
+said every known zero; corrected after an independent audit.) We have no proof beyond N = 4; the cycle graphs are
 covered for every N by the transfer-matrix argument of `cyclic-code-planes/` (on their code spaces).
 Two exact tools for an induction. Expanding each site factor in characters of (Γa + d)_i gives the dual form
 S(d, v) = Σ_{s∈F_3^N} ω^{s·d} Π_i (3[s_i = 0 and (v + Γs)_i = 0] − t), in which d becomes a character and v a shift.
@@ -873,6 +879,11 @@ We asked whether these conditions decide 2-block-positivity of every Bell-diagon
   `data/bell_k2_witness_C_*.txt` gives ⟨vec C|K_h|vec C⟩/‖C‖_F² = −3.44·10^{−3}
   (`code/bell_diagonal/two_qutrit_witness.py` recomputes both facts from the data; log `logs/bell_k2_witness.log`). The
   minimiser is thick at both copies, and its Pauli distribution is spread over 19 points rather than a Lagrangian coset.
+  An independent audit made the witness exact, and we re-implemented its construction: rational weights h′ (the
+  given ones rounded to 10^{−6} and raised by 10^{−4}) and an operator C̃ = A adj(M) R with Eisenstein-integer entries,
+  of rank exactly two, whose range and co-range have full local support at both copies. All 1440 conditions hold with
+  smallest e₂ = 2.38·10^{−3}, and ⟨vec C̃|K_{h′}|vec C̃⟩/‖C̃‖_F² = −0.0033427… < −1/300, in exact arithmetic
+  (`code/bell_diagonal/two_qutrit_witness_exact.py`, log `logs/bell_k2_witness_exact.log`).
 
 So (7.1) cannot give the endpoint through a general extremality of stabilizer vectors for Bell-diagonal witnesses. From
 two copies on, an argument has to use the product form h = λ^{#identity sites} of the Werner weights. Those weights pass
@@ -890,21 +901,24 @@ the convex set 𝒮_n = conv{π̄_C : rank C ≤ 2}, a set of dimension n.
   projector onto span{Σ_a |aa⟩, Σ_a |a, a+1⟩}. Its facets are π̄_1 ≥ 0, π̄_2 ≥ 0, the trace bound π̄_2 ≤ 2/9 (from
   |Tr C|² ≤ 2‖C‖_F²) and the endpoint inequality π̄_0 − ½π̄_1 + ¼π̄_2 ≥ 0 itself. All four inequalities are known and the
   four vertices are realised, so this description is exact.
-- Three copies. Support points over 200 directions (`code/identity_count/polytope.py`, log
-  `logs/identity_count_polytope_n3.log`) give a polytope with ten vertices. In units of 1/27:
+- Three copies (numerical). Locally optimised support points over 200 directions (`code/identity_count/polytope.py`,
+  log `logs/identity_count_polytope_n3.log`), followed by the hull of the returned points, give ten candidate vertices.
+  Completeness and the absence of curved boundary are not proved. In units of 1/27:
   - (27, 0, 0, 0), (9, 18, 0, 0), (6, 15, 6, 0), (4, 12, 9, 2) and (21, 0, 6, 0) are products of two-copy vertices with
     |0⟩⟨1| or |0⟩⟨0|;
   - (8, 16, 1, 2) is Π_2 ⊗ |Φ⟩⟨Φ|, with Φ maximally entangled on the other two copies;
   - (9, 9, 9, 0) is |000⟩⟨000| − |111⟩⟨111|, and (13, 12, 0, 2) is the projector onto span{GHZ, Z·GHZ};
   - (22, 3, 0, 2) is any plane of the [[3, 1, 2]] qutrit code;
   - (33/2, 3, 15/2, 0) comes from a partial isometry that is thin at one copy (q_3/‖C‖_F² = 5/8).
-  The face π̄_3 = 0 is an exact hexagon over 90 directions, with no curved part. The endpoint functional is a facet. It
-  vanishes on the quadrilateral spanned by (4, 12, 9, 2), (6, 15, 6, 0), (8, 16, 1, 2) and (9, 18, 0, 0), and the GHZ
+  On the face π̄_3 = 0, 90 directions return only six points, the corners of a hexagon (evidence, not a proof that the
+  face has no curved part). Given EP_3 (known), the endpoint functional is a facet. It vanishes on the quadrilateral spanned by (4, 12, 9, 2), (6, 15, 6, 0), (8, 16, 1, 2) and (9, 18, 0, 0), and the GHZ
   zero (7, 15, 3, 2) lies on its edge. The other facets include π̄_3 ≤ (2/3)π̄_1.
 - Four copies (support points; the hull may be incomplete). Every one of the 19 hull vertices found from 401
   directions has G(−½) ≥ 0 (log `logs/identity_count_polytope_n4.log`). The zero vertices are again of the form
   Π_2 ⊗ R. For example, (20, 46, 12, 1, 2)/81 has G = ((1 + 2x)/3)·((x³ + 6x + 20)/27), which is Π_2 ⊗ |GHZ_3⟩⟨GHZ_3|.
-  The smallest positive value at a vertex is 1/8, at (17, 28, 30, 4, 2)/81; it was 5/6 at two copies and 1/4 at three.
+  Among the rational candidates the smallest positive value is 1/8, at (17, 28, 30, 4, 2)/81 (5/6 at two copies and 1/4
+  at three). An earlier 121-direction run also returned a non-rational support point (26.111, 46.308, 2.581, 6, 0)/81 with
+  value 0.035, probably on an edge; the hull is not certified, so this is not a statement about the vertex set.
 
 In every case found, the zero vertices are products Π_2 ⊗ R with R of rank one on the other copies (R may be
 entangled), so that G factors as ((1 + 2x)/3)·G_R(x). The other vertices are product or stabilizer operators with
@@ -915,11 +929,13 @@ decide the endpoint; we do not have one.
 G = ((1 + 2x)/3)·G_R, which vanishes at x = −½. Products of one-copy rank-one factors |u⟩⟨w| have
 G_R(x) = Π_s (1 − i_s + i_s x) with i_s = |⟨w_s|u_s⟩|²/3 ∈ [0, 1/3], and these polynomials span all polynomials of
 degree at most n − 1 with G(1) = 1. So the zeros Π_2 ⊗ R alone span an affine set of dimension n − 1 inside the
-hyperplane G(−½) = 0. If EP_n holds, that hyperplane supports 𝒮_n, and the face it cuts out is a facet. A facet
-inequality is not a positive combination of other valid linear inequalities, except multiples of itself. So in
-identity-count coordinates (equivalently, after the local-unitary twirl, in any coordinates linear in the Pauli weights
-of C) no certificate assembled from other valid linear inequalities can give the endpoint. It has to prove the
-endpoint inequality itself, or use information about C beyond π̄_C. This is the precise form, in these coordinates,
+hyperplane G(−½) = 0; this part is unconditional. If EP_n holds, that hyperplane supports 𝒮_n, and the face it cuts out
+is a facet (given the known points, the supporting assertion is equivalent to EP_n, not a proof of it). A facet
+inequality is not a finite positive combination of other valid linear inequalities, except multiples of itself. So in
+identity-count coordinates (equivalently, after the local-unitary twirl, for valid inequalities linear in the Pauli
+weights of C) no finite certificate assembled from other valid linear inequalities can give the endpoint. This does
+not rule out nonlinear arguments, finer coordinates (phases, more replicas), or limits of inequality families (the
+endpoint inequalities at t < ½, if valid, converge to it); an independent audit asked for this scope to be stated. This is the precise form, in these coordinates,
 of the failure of the weight-enumerator and two-replica linear programs (Section 7 and `OBSTRUCTIONS.md`). `code/identity_count/check_vertices.py` recomputes the identified vertices in
 exact arithmetic (log `logs/identity_count_vertices.log`).
 
@@ -1430,8 +1446,8 @@ margin over all d and v is 0.30 on the star, 0.54 on the path, 0.64 on the cycle
 random graphs at N = 7; at N = 9 it is 0.21, 0.17 and 0.14 on the star and 0.27, 0.22 and 0.19 on K_{2,7} for
 t = 0.4, 0.45 and 0.49. Stars are the hardest case, and there FB is asymptotically
 tight. Merging the centre with a leaf only changes the closed form of Section 7: x becomes x/(1 − t), and so does y
-if the merged leaf is shifted. The relative margin is positive for every k < 40, 1 ≤ m < 40 and t in [0.34, ½] (closed
-form), but it tends to 0 as k and m grow; when the merged leaf is shifted it is (3/2)(u + w) to first order, with
+if the merged leaf is shifted. From the closed form, the relative margin is positive for every k < 40 and 1 ≤ m < 40 at
+33 values of t in [0.34, ½] (a grid, not a proof over the interval), and it tends to 0 as k and m grow; when the merged leaf is shifted it is (3/2)(u + w) to first order, with
 u = x/(2(1 − t)) and w = y/(2(1 − t)) (`star_family.py`, part (5)).
 
 For real skew operators there is a second proof of the two-site case. If J = xyᵀ − yxᵀ with x, y real on R^{d_1} ⊗ R^{d_2}, then Tr J = 0,
@@ -1586,7 +1602,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   purity-two enumerators of Section 7, exact); `perfect_code_check.py` (Proposition 19 attained at n = 5 by the
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
   `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
-  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, (7.1′) and FB on stars); `star_descent.py k m eps steps seed` (descent from star near-zeros, PyTorch); `qc_star.py k m restarts seed` (Conjecture QC on stars); `fb_class.py N t family i j` and `fb_class_check.py` (FB on stabilizer pairs). `code/bell_diagonal/`: `one_qutrit_lines.py iters seed` (line conditions versus 2-block-positivity on one qutrit) and `two_qutrit_witness.py` (the two-qutrit witness, from `data/bell_k2_witness_*.txt`); `code/identity_count/`: `polytope.py N ndir restarts seed` (support points and hull of the identity-count polytope, PyTorch), `pibar_numpy.py` (the same with NumPy) and `check_vertices.py` (exact vertices); `two_replica_balanced.py t d N ...` (the copy-symmetric
+  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, (7.1′) and FB on stars); `star_descent.py k m eps steps seed` (descent from star near-zeros, PyTorch); `qc_star.py k m restarts seed` (Conjecture QC on stars); `fb_class.py N t family i j` and `fb_class_check.py` (FB on stabilizer pairs). `code/bell_diagonal/`: `one_qutrit_lines.py iters seed` (line conditions versus 2-block-positivity on one qutrit) `two_qutrit_witness.py` (the two-qutrit witness, from `data/bell_k2_witness_*.txt`) and `two_qutrit_witness_exact.py`
+(the same witness in exact rational and Eisenstein-integer arithmetic); `code/identity_count/`: `polytope.py N ndir restarts seed` (support points and hull of the identity-count polytope, PyTorch), `pibar_numpy.py` (the same with NumPy) and `check_vertices.py` (exact vertices); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind
