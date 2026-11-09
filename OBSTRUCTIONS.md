@@ -270,11 +270,12 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   fixed points with positive margin. So deep encodings move away from the endpoint, not towards a failure.
 - **Filter-realignment as an inductive invariant (added 9 November 2026).** The strengthening below survives
   mixing: mixtures of up to nine compressions of one Werner copy (3 × 3 and 4 × 4, i.e. compressions of
-  (separable) ⊗ W) never exceed realignment ratio 1 at t = ½, while the same search finds 1.069 at t = 0.55. But it
-  cannot be closed under ⊗ W for every operator that has it: by Vollbrecht and Wolf (PRL 88, 247901 (2002)) every NPT
-  state, the endpoint state included, is made distillable by suitable PPT entangled states arbitrarily close to
-  separable, and such states very likely pass the test. An inductive class would have to contain all Werner powers and
-  exclude every activator, which is the original problem.
+  (separable) ⊗ W) never exceed realignment ratio 1 at t = ½, while the same search finds 1.069 at t = 0.55. It is
+  probably not closed under ⊗ W for every operator that has it: by Vollbrecht and Wolf (PRL 88, 247901 (2002)) every
+  NPT state, the endpoint state included, is made distillable by suitable PPT entangled states arbitrarily close to
+  separable, and such states very likely pass the test. We have not exhibited an activator that provably passes it,
+  so this is a reason for doubt, not a proof of the no-go. An inductive class would have to contain all Werner powers
+  and exclude every activator, which is the original problem.
 
 - **Zero-free disks (added 9 November 2026, from an independent audit; checked here).** A proof by continuity from
   G_C(0) > 0 through a complex zero-free disk |x| < r of the identity-count polynomial would need r ≥ ½. No disk of any
@@ -282,9 +283,15 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   u_n ∝ √(3^n)|0^n⟩ + √(2^n)|1^n⟩,
   G_{P_n}(x) = ½[(2 − B_n)R^n + B_n + (2 + B_n)S^n], R = (x + 2)/3, S = (x − 1)/3, B_n = 2·6^n/(3^n + 2^n)²,
   and Rouché's theorem gives zeros x_n with n x_n → 2πi (at n = 20 a zero at −0.0247 + 0.3129i). The real values
-  G_{P_n}(−½) stay positive for every n ≥ 2; these planes contain a product vector, so strongly balanced planes are not
-  covered by the example. Lee–Yang type zero-free regions are therefore not a route
-  (`support-and-projector-notes/code/global_reductions/audit89_checks.py`, log `logs/audit89_checks.log`).
+  G_{P_n}(−½) stay positive for every n ≥ 2. These planes contain a product vector, but the same audit then pushed them
+  through the synchronous balancing isometry of `real-balanced-reduction/` (continued to complex x, where the flag
+  ratios stay below 1 on |x| ≤ 1/16), and obtained, for every large N, strongly balanced real rank-two projectors with
+  zeros N x_N → 32πi and positive endpoint values. With weights a_n b_n = R_0^n in u_n, the zeros can be made to
+  approach any fixed interior point x_0 ∈ (−½, 0), with N(x_N − x_0) → (1 + 30K)iπ(x_0 + 2). So no fixed complex
+  neighbourhood of 0, or of any interior Werner parameter, is zero-free, even on the class to which the endpoint
+  reduces; copy-dependent shrinking domains and direct real-sign methods are not excluded. Lee–Yang type zero-free
+  regions are therefore not a route (`support-and-projector-notes/code/global_reductions/audit89_checks.py` and
+  `audit90_91_checks.py`, logs `logs/audit89_checks.log`, `logs/audit90_91_checks.log`).
 - **Termwise nonnegativity of mixed contractions on the map route (added 9 November 2026, from the same audit; checked
   here).** In the three-copy expansion F_3(z) = 25‖z‖⁴ − 14(p_A + p_B + p_C) + 18T(z) of the critical scalar for
   L_3 = 3D − id − T, with p the one-copy purities and T(z) = Tr(ρρ^{T_A}), ρ = Tr_B zz^T, the mixed term can be negative
@@ -305,10 +312,14 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   for instance Σ_{i,i′} Tr((B_i(e_a)B_{i′}(e_b))²) when the 3 sits on the pairing (13)(24), equals 3κ. Since
   Tr((XY)²) ≤ Tr(X²Y²) for symmetric X, Y (and Cauchy–Schwarz for the other two placements), it is at most
   Tr(M_a M_b) ≤ Tr M_a Tr M_b ≤ c² with M_k = Σ_i B_i(e_k)² ⪰ 0. So c²/κ ≥ 3 for every family, and dropping Q_h never
-  gives an error below ½·3^n‖z‖⁴, the scale of the critical scalar itself. Keeping Q_h = Tr(M²), M = Σ_I 𝔹_I², does
-  not help: the vanishing-error scale would need Tr(M²) ≥ (½ − o(1))(Tr M)², an effective rank of at most two, while
-  M(z) generically has rank growing with n; and rank-one M forces every B_i(e_k) to be a multiple of one projector,
-  so the j-tensor factors as G_{k1k3}G_{k2k4} and cannot be the critical pattern (κ at (a,a,a,a), 3κ at (a,b,a,b)).
+  gives an error below ½·3^n‖z‖⁴, the scale of the critical scalar itself. (The audit proves the same bound
+  independently, with strict inequality.) Keeping Q_h = Tr(M²), M = Σ_I 𝔹_I², would need Tr(M²) ≥ (½ − o(1))(Tr M)²,
+  an effective rank of at most two. For the audit's matrices this fails for every input at every n ≥ 2 (independent
+  audit; checked here): M = 𝒦_t^{⊗n}(zz^T) for the completely positive 𝒦_t(X) = (1 + t²)Tr(X)I + (5 + 2t)X + 2tX^T,
+  whose normalised fourth power is entanglement breaking with largest output norm β < ½ at both roots (β = 0.409 and
+  0.494), so Q_h ≤ c^{2n}‖z‖⁴β^{n/2} < ½c^{2n}‖z‖⁴. For a general family we have no proof; rank-one M is impossible,
+  since it forces every B_i(e_k) to be a multiple of one projector and the j-tensor then factors as G_{k1k3}G_{k2k4},
+  which is not the critical pattern (κ at (a,a,a,a), 3κ at (a,b,a,b)).
 
 ## What remains
 
@@ -348,11 +359,33 @@ output have full support. The following do not reach every n (added 7 November 2
 
 - **Completely positive left factors (added 9 November 2026).** 𝒫_a = (D − T) ∘ Γ_a with
   Γ_a = ¼(id + T) + (a/2 − ¼)D, and D − T is completely positive, so tensor-stable positivity of Γ_a would give that
-  of 𝒫_a; within span{D, id, T}, the factors D − T and D − id leave the most positive Γ. But Γ_a is not tensor-stable
+  of 𝒫_a. But Γ_a is not tensor-stable
   positive for any a < 1: its compression to a qubit input has the Choi eigenvalue (a − 1)/2 on the singlet, and so does
   the compression composed with the transpose (Γ_a ∘ T = Γ_a), so that compression is neither completely positive nor
   completely copositive, which [MRW, Thm. 2] excludes for tensor-stable positive maps.
 
+- **Image constraints (added 9 November 2026, from an independent audit; checked here).** The critical map
+  P = (3D − id − T)/7 factors as P = G ∘ W, with W = (D − T)/2 completely positive (its Choi matrix is the antisymmetric
+  projector), its inverse Λ = D − 2T, and G = (D + 2id + 2T)/7. So tensor-stable positivity of P is positivity of G^{⊗N}
+  on images of W^{⊗N}, which are characterised by Λ^{⊗N}(σ) ⪰ 0. Weaker image conditions do not suffice: for every
+  large N there are states σ with ‖3^Nσ − I‖_∞ → 0 that satisfy every inverse constraint Λ_S(σ) ⪰ 0 with |S| ≤ N/80,
+  every reduction inequality σ ⪯ I_S ⊗ σ_{S^c} and every marginal purity bound of images, yet G^{⊗N}(σ) has a negative
+  expectation. They are built from the three-site identity 343 G^{⊗3}(P_z) = B^{⊗3} + 32(P_z − P_y), B = diag(3, 3, 1),
+  with z and y the real and imaginary parts of u^{⊗3}, u = (e_0 + ie_1)/√2 (single negative eigenvalue −5/343, trace
+  norm 353/343), and the exact inequality 2·353^{80} > 19·343^{80}. These states are not images, so they say nothing
+  about P itself: a proof has to use the full image condition (`support-and-projector-notes/code/global_reductions/audit90_91_checks.py`, log `logs/audit90_91_checks.log`).
+- **Local bases and diagonal dominance (same audit; checked here).** No choice of one-qutrit bases makes the outputs of
+  P^{⊗N} scaled diagonally dominant, already on real pure inputs with maximally mixed one-copy marginals, for every
+  N ≥ 38. For e the normalised Levi-Civita vector, Y = P^{⊗3}(ee^T) has spectrum {1/49, 12/343, 2/49} and two-copy
+  marginal (17I − F − Ω)/147, whose off-diagonal part survives every local basis change; twelve copies push the Perron
+  bound past 2 (17^{12} > 2·16^{12}). The outputs are positive; only this proof shell fails. General local filters and
+  correlated comparisons are not excluded.
+- **The two-copy sandwich does not iterate (same audit).** For a ≥ ¾, 𝒫_a is 2-entanglement breaking (its outputs with
+  a qubit reference are PPT in 2 × 3, hence separable), and compositions of two such qutrit maps are entanglement
+  breaking [Aubrun and Müller-Hermes, Commun. Math. Phys. (2023), doi:10.1007/s00220-022-04621-5, Appendix B]. So
+  𝒫_a ∘ Q ∘ 𝒫_a is entanglement breaking for every positive Q. This is not an induction: acting on part of a larger
+  state enlarges the reference, PPT implies separability only in 2 × 3, not 2 × 3^n, and 𝒫_a is not 3-positive for
+  a < 1.
 - **Norm bounds and quadratic references (added 9 November 2026, from an independent audit; checked here).** The
   map route is equivalent to subexponential growth of τ_n = max ‖P^{⊗n}(ρ)‖₁ for the normalised map P = 𝒫_{3/4}/(7/4)
   (Proposition N of `whole-problem-routes/`). The exact output purity (19/49)^n gives only τ_n ≤ (√57/7)^n. Bounding
@@ -501,9 +534,9 @@ output have full support. The following do not reach every n (added 7 November 2
   Cauchy–Schwarz step is lost (independent audit).
   The merging budget FB of Section 9 does not follow from itself with one spectator fewer either (added 9 November
   2026). Merging two spectators with Lemma 27 there leaves t times the crossed form of Y ⊗ (I − F_3)(I − F_4), with
-  Y = ½(I − tF_1F_2) + t(I − F_1)(I − F_2) on the merged pair, and this residual is not positive: at
-  C = |00⟩⟨11| ⊗ (|01⟩⟨01| − |10⟩⟨10|) it equals −(½ + t)‖C‖_F², and adversarial searches on four qubits and on four
-  qutrits (t = 0.40, 0.45) reach this value and nothing lower. A spectator also cannot be cut into rank-one slices:
+  Y = ½(I − tF_1F_2) + t(I − F_1)(I − F_2) on the merged pair, and that crossed form is not positive: at
+  C = |00⟩⟨11| ⊗ (|01⟩⟨01| − |10⟩⟨10|) it equals −(½ + t)‖C‖_F² (so the residual is −t(½ + t)‖C‖_F²), and
+  adversarial searches on four qubits and on four qutrits (t = 0.40, 0.45) reach this value and nothing lower. A spectator also cannot be cut into rank-one slices:
   its crossed operator I + 2τP_A (τ = t/(1 − t)) is separable on qubits for every t ≤ ½, but on qutrits only for
   t ≤ 1/3, and for t > 1/3 it is not a positive combination of its compressions to qubit pairs and separable
   operators. So FB with qutrit spectators has to use the rank-two structure of C at the spectators.

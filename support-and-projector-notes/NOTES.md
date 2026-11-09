@@ -726,7 +726,7 @@ positive.
 (m × N, N = (3^m − 1)/2) have the points of PG(m − 1, 3) as columns; its rows generate the simplex code, whose nonzero
 words all have weight 3^{m−1}. Take the simplex code as Z-stabilizers and X′ = Hamming ∩ z^⊥ as X-stabilizers, for a
 vector z outside the simplex code: an [[N, 1]]_3 code with logical Z = z and logical X = x (Gx = 0, z·x = 1), of
-distance 3 and balanced for generic z. By the MacWilliams identity in the X part, the logical weights
+distance 3 and balanced for generic z (not for every z: z = e_i, for instance, is a logical Z of weight one). By the MacWilliams identity in the X part, the logical weights
 h_ℓ = |S|^{−1} Σ_{E∈ℓ+S} (−½)^{N−wt E} are
 
     h(α, β) = 3^{−m} Σ_{b ∈ βz + simplex} 2^{|b|−N} Σ_{d ∈ ⟨simplex, z⟩, d = 0 on supp b} ω^{−α x·d} (−1)^{|d|},
@@ -734,8 +734,9 @@ h_ℓ = |S|^{−1} Σ_{E∈ℓ+S} (−½)^{N−wt E} are
 and an encoded rank-two operator has q_N(C)/‖C‖_F² = Σ_ℓ h_ℓ |Tr(C_L W_ℓ^*)|²/(3‖C_L‖_F²). The formula agrees with a
 brute-force sum over all 3^{12} stabilizers at N = 13 to 10^{−17}. Minimising over rank-two logical operators for random
 z (`code/global_reductions/pg_codes.py`, log `logs/pg_codes.log`, floating point) gives q_N/‖C‖_F² = 6.0·10^{−2},
-1.2·10^{−4} and 2.4·10^{−11} at N = 13, 40 and 121: balanced operators come exponentially close to the endpoint, about
-as 2^{−N/3}, far below the value 0.1497 of the RM_3(2, 2) code at nine copies. They do not cross it. In every run all
+1.2·10^{−4} and 2.4·10^{−11} at N = 13, 40 and 121. These are local minima, so upper bounds for the minimum over the
+family; over these three sizes they decrease roughly like 2^{−N/3}, far below the value 0.1497 of the RM_3(2, 2) code
+at nine copies (the rate is read off three sizes, not proved). They do not cross it. In every run all
 nine weights are positive, so the logical form is positive; for the weights with β = 0 this holds for every z and
 every m ≥ 2. Indeed, for b ≠ 0 in the simplex code (|b| = 3^{m−1}, vanishing on a hyperplane H_b) the inner sum is 1
 unless z agrees with a multiple of a simplex word off H_b, and then it is 1 + 2(−1)^w or 1 − (−1)^w (α = 0 or α ≠ 0). Two
@@ -1634,7 +1635,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
   and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, (7.1′) and FB on stars); `star_descent.py k m eps steps seed` (descent from star near-zeros, PyTorch); `qc_star.py k m restarts seed` (Conjecture QC on stars); `fb_class.py N t family i j` and `fb_class_check.py` (FB on stabilizer pairs). `pg_codes.py m trials seed` (gauge-fixed projective Hamming codes) and `hamming13_full.py restarts seed` (the whole
 [[13, 7, 3]]_3 code). `audit89_checks.py` (zeros of the identity-count polynomial near 0, the
-negative mixed contraction, the DDVV construction). `code/bell_diagonal/`: `one_qutrit_lines.py iters seed` (line conditions versus 2-block-positivity on one qutrit) `two_qutrit_witness.py` (the two-qutrit witness, from `data/bell_k2_witness_*.txt`) and `two_qutrit_witness_exact.py`
+negative mixed contraction, the DDVV construction). `audit90_91_checks.py` (the retained DDVV term, the image-constraint seed,
+the local-gauge seed, interior-point zeros). `code/bell_diagonal/`: `one_qutrit_lines.py iters seed` (line conditions versus 2-block-positivity on one qutrit) `two_qutrit_witness.py` (the two-qutrit witness, from `data/bell_k2_witness_*.txt`) and `two_qutrit_witness_exact.py`
 (the same witness in exact rational and Eisenstein-integer arithmetic); `code/identity_count/`: `polytope.py N ndir restarts seed` (support points and hull of the identity-count polytope, PyTorch), `pibar_numpy.py` (the same with NumPy) and `check_vertices.py` (exact vertices); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
