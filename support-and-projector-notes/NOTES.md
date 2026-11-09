@@ -708,7 +708,14 @@ weak to reach them, so it says little there. The most uniform codes are not witn
 fixed by the parameters; if the eight logical cosets have equal enumerators (as for the five-qutrit code), two-dimensional
 subspaces of [[7,1,4]]_3 and [[9,1,5]]_3 codes, should such codes exist, have q_7/‖Π‖_F² = 21/64 and
 q_9/‖Π‖_F² = 127/768 at the endpoint (`code/global_reductions/mds_code_values.py`, exact). So the negative enumerator of
-Proposition 19 at n = 9 is not that of an MDS code.
+Proposition 19 at n = 9 is not that of an MDS code. A code built to make the weight-three terms large does not give one either. The CSS
+code with both classical codes equal to the ternary Reed–Muller code RM_3(2, 2) on the nine points of the affine plane
+AG(2, 3) is a [[9, 3, 3]]_3 code whose normalizer has 96 elements of weight three (the lines of the plane) and whose
+stabilizer sum Σ_{E∈S} (−½)^{9−wt E} = −28 is negative. Encoded rank-two operators C = Enc(C_L) have
+q_9(C) = 3^{−9} Σ_{L} W_{L+S} |Tr(C_L L)|² over the 729 logical Weyl operators L, and minimising over rank-two C_L gives
+q_9 ≥ 0.1497‖C‖_F² at the endpoint (`code/global_reductions/rm_code.py`, log `logs/rm_code.log`; floating point,
+eight starts). So at nine copies, where the relaxation of Proposition 19 is negative, this balanced code stays clearly
+positive.
 
 These are bounds for balanced projectors at a fixed n ≤ 8. Theorems 14′ and 14″ need N ≥ k + 18 copies, so
 Proposition 19 gives the endpoint at no copy number. The negative optimum at n = 9 is the value of a relaxation; no
@@ -1358,7 +1365,7 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   three-copy code, and the certificates for n = 4, …, 9 in exact rational arithmetic); `check_enumerator_purity.py` (the
   purity-two enumerators of Section 7, exact); `perfect_code_check.py` (Proposition 19 attained at n = 5 by the
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
-  `mds_code_values.py`; `two_replica_balanced.py t d N ...` (the copy-symmetric
+  `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind
