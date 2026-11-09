@@ -908,7 +908,18 @@ the convex set 𝒮_n = conv{π̄_C : rank C ≤ 2}, a set of dimension n.
 In every case found, the zero vertices are products Π_2 ⊗ R with R of rank one on the other copies (R may be
 entangled), so that G factors as ((1 + 2x)/3)·G_R(x). The other vertices are product or stabilizer operators with
 G(−½) > 0, approaching the zero face roughly like 2^{−(n−1)}. A description of the vertices of 𝒮_n for every n would
-decide the endpoint; we do not have one. `code/identity_count/check_vertices.py` recomputes the identified vertices in
+decide the endpoint; we do not have one.
+
+*The endpoint is a facet, for every n (given EP_n).* For R of rank one on n − 1 copies, Π_2 ⊗ R has rank two and
+G = ((1 + 2x)/3)·G_R, which vanishes at x = −½. Products of one-copy rank-one factors |u⟩⟨w| have
+G_R(x) = Π_s (1 − i_s + i_s x) with i_s = |⟨w_s|u_s⟩|²/3 ∈ [0, 1/3], and these polynomials span all polynomials of
+degree at most n − 1 with G(1) = 1. So the zeros Π_2 ⊗ R alone span an affine set of dimension n − 1 inside the
+hyperplane G(−½) = 0. If EP_n holds, that hyperplane supports 𝒮_n, and the face it cuts out is a facet. A facet
+inequality is not a positive combination of other valid linear inequalities, except multiples of itself. So in
+identity-count coordinates (equivalently, after the local-unitary twirl, in any coordinates linear in the Pauli weights
+of C) no certificate assembled from other valid linear inequalities can give the endpoint. It has to prove the
+endpoint inequality itself, or use information about C beyond π̄_C. This is the precise form, in these coordinates,
+of the failure of the weight-enumerator and two-replica linear programs (Section 7 and `OBSTRUCTIONS.md`). `code/identity_count/check_vertices.py` recomputes the identified vertices in
 exact arithmetic (log `logs/identity_count_vertices.log`).
 
 These are bounds for balanced projectors at a fixed n ≤ 8. Theorems 14′ and 14″ need N ≥ k + 18 copies, so

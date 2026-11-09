@@ -248,6 +248,15 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   `support-and-projector-notes/`, Section 7). So no argument valid for all Weyl-covariant witnesses can reduce the
   endpoint to the stabilizer class (Conjecture SD); it has to use the product form of the Werner weights.
 
+- **The endpoint is a facet of the identity-count polytope (added 9 November 2026).** After twirling over U ⊗ Ū at
+  every copy and over permutations, the endpoint value of a rank-two C depends only on its identity-count distribution
+  π̄_C (the weights of C on the parts that are the identity on exactly k copies), and the endpoint is a linear
+  inequality on the convex hull 𝒮_n of these distributions. The zeros Π_2 ⊗ R (R of rank one) already span an
+  (n − 1)-dimensional face, so if the endpoint holds it is a facet of 𝒮_n for every n, and it is not a positive
+  combination of other valid linear inequalities in these coordinates. Every linear-programming certificate in Pauli
+  weights therefore has to contain the endpoint inequality itself (`support-and-projector-notes/`, Section 7, which also
+  gives 𝒮_2 exactly and the ten vertices of 𝒮_3).
+
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
