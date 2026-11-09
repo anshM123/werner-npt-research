@@ -19,3 +19,7 @@ N=9 t=0.45 star merge(0,1): min rank-one term +0.89307, min pair margin +0.16687
 N=9 t=0.45 star merge(1,2): min rank-one term +0.89307, min pair margin +0.16687 at d=[0, 0, 1, 0, 0, 0, 1, 1, 1]
 N=9 t=0.45 bip2 merge(0,2): min rank-one term +0.90015, min pair margin +0.22693 at d=[0, 0, 1, 2, 2, 2, 1, 1, 2]
 N=9 t=0.45 bip2 merge(2,3): min rank-one term +0.89405, min pair margin +0.22417 at d=[0, 0, 1, 2, 1, 1, 1, 2, 2]
+N=9 t=0.49 star merge(0,1): min rank-one term +0.96634, min pair margin +0.13568 at d=[0, 1, 1, 1, 0, 0, 0, 1, 1]
+N=9 t=0.49 star merge(1,2): min rank-one term +0.96634, min pair margin +0.13568 at d=[0, 0, 1, 0, 0, 1, 1, 1, 1]
+N=9 t=0.49 bip2 merge(0,2): min rank-one term +0.96910, min pair margin +0.18864 at d=[0, 0, 1, 1, 1, 2, 2, 2, 2]
+N=9 t=0.49 bip2 merge(2,3): min rank-one term +0.96673, min pair margin +0.18816 at d=[0, 0, 1, 2, 1, 1, 2, 1, 2]

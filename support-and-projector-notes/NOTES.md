@@ -1357,7 +1357,8 @@ these pairs reduces to two scalar inequalities per shift d (the rank-one case, a
 phase), checked by a fast Fourier transform over the characters (`code/global_reductions/fb_class.py`, which
 `fb_class_check.py` compares with the dense forms; log `logs/fb_class.log`). At t = 0.4, with sites 1 and 2 merged, the smallest relative
 margin over all d and v is 0.30 on the star, 0.54 on the path, 0.64 on the cycle, 0.39 on K_{2,5} and 0.65 on two
-random graphs at N = 7, and 0.21 on the star at N = 9. Stars are the hardest case, and there FB is asymptotically
+random graphs at N = 7; at N = 9 it is 0.21, 0.17 and 0.14 on the star and 0.27, 0.22 and 0.19 on K_{2,7} for
+t = 0.4, 0.45 and 0.49. Stars are the hardest case, and there FB is asymptotically
 tight. Merging the centre with a leaf only changes the closed form of Section 7: x becomes x/(1 − t), and so does y
 if the merged leaf is shifted. The relative margin is positive for every k < 40, 1 ≤ m < 40 and t in [0.34, ½] (closed
 form), but it tends to 0 as k and m grow; when the merged leaf is shifted it is (3/2)(u + w) to first order, with
