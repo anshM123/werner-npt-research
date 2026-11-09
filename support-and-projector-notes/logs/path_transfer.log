@@ -1,0 +1,10 @@
+N=6: transfer vs brute force, max |difference| = 4.21e-14
+N=10 t=0.5: random (c,d,v): max |S(d,v)|/S(d,0) = 0.0865616153 (tau = 1.0000000000); min S(d,0) = 8.3740e+03
+N=20 t=0.5: random (c,d,v): max |S(d,v)|/S(d,0) = 0.0028936748 (tau = 1.0000000000); min S(d,0) = 7.5065e+07
+N=30 t=0.5: random (c,d,v): max |S(d,v)|/S(d,0) = 0.0000236219 (tau = 1.0000000000); min S(d,0) = 7.0195e+11
+N=2 t=0.5: annealed max |S(d,v)|/S(d,0) = 0.5000000000 (tau = 1.0000000000)
+N=3 t=0.5: annealed max |S(d,v)|/S(d,0) = 0.6000000000 (tau = 1.0000000000)
+N=4 t=0.5: annealed max |S(d,v)|/S(d,0) = 0.5183609369 (tau = 1.0000000000)
+N=6 t=0.5: annealed max |S(d,v)|/S(d,0) = 0.3505904044 (tau = 1.0000000000)
+N=8 t=0.5: annealed max |S(d,v)|/S(d,0) = 0.3587730907 (tau = 1.0000000000)
+N=16 t=0.5: annealed max |S(d,v)|/S(d,0) = 0.2697139021 (tau = 1.0000000000)

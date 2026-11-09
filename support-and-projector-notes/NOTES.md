@@ -754,7 +754,15 @@ state of Γ′ = Γ − n) and using the one-copy recursion for the slices gives
 
 (`code/global_reductions/graph_recursion.py`, log `logs/graph_recursion.log`: relative error below 10^{−13} on random
 graphs). Bounding the two sums in (7.2) separately with SD_t on Γ′ does not close: the second sum lowers S_N(d, 0) by about
-t S′(d′, 0), and an induction has to keep the joint values S′(d′ + mγ, v′ + m′γ) for all m, m′.
+t S′(d′, 0), and an induction has to keep the joint values S′(d′ + mγ, v′ + m′γ) for all m, m′. On a path, deleting an end vertex shifts
+only its neighbour, so (7.2) closes on the five values S(d + k e_n, v) and S(d, v + k e_n) at the current end vertex n, and
+S(d, v) is a product of 5 × 5 matrices; equivalently it is a trace of 9 × 9 transfer matrices on pairs (a_i, a_{i+1}), as
+for the cycles of `cyclic-code-planes/`. On paths with arbitrary edge weights SD_t holds with room: the largest ratio
+found at t = ½ is 0.6 (N = 3), annealing gives 0.52, 0.35, 0.36 and 0.27 at N = 4, 6, 8, 16, and random weights, shifts
+and characters give at most 0.087, 0.0029 and 2·10^{−5} at N = 10, 20, 30 (`code/global_reductions/path_transfer.py`, log
+`logs/path_transfer.log`; the transfer evaluation agrees with the direct sum). Paths contain no GHZ or product
+configuration, which is where τ is attained. An invariant cone for these 5 × 5 products would prove SD_t on paths for
+every N; we have not found one.
 
 These are bounds for balanced projectors at a fixed n ≤ 8. Theorems 14′ and 14″ need N ≥ k + 18 copies, so
 Proposition 19 gives the endpoint at no copy number. The negative optimum at n = 9 is the value of a relaxation; no
@@ -1405,7 +1413,7 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   purity-two enumerators of Section 7, exact); `perfect_code_check.py` (Proposition 19 attained at n = 5 by the
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
   `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
-  and `graph_cut_rank.py check|search N ...` (Conjecture SD_t); `graph_recursion.py` (the recursion (7.2)); `two_replica_balanced.py t d N ...` (the copy-symmetric
+  and `graph_cut_rank.py check|search N ...` (Conjecture SD_t); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind
