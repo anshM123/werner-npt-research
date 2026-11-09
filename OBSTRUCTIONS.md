@@ -305,7 +305,10 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   for instance Σ_{i,i′} Tr((B_i(e_a)B_{i′}(e_b))²) when the 3 sits on the pairing (13)(24), equals 3κ. Since
   Tr((XY)²) ≤ Tr(X²Y²) for symmetric X, Y (and Cauchy–Schwarz for the other two placements), it is at most
   Tr(M_a M_b) ≤ Tr M_a Tr M_b ≤ c² with M_k = Σ_i B_i(e_k)² ⪰ 0. So c²/κ ≥ 3 for every family, and dropping Q_h never
-  gives an error below ½·3^n‖z‖⁴, the scale of the critical scalar itself. A DDVV argument has to keep Q_h.
+  gives an error below ½·3^n‖z‖⁴, the scale of the critical scalar itself. Keeping Q_h = Tr(M²), M = Σ_I 𝔹_I², does
+  not help: the vanishing-error scale would need Tr(M²) ≥ (½ − o(1))(Tr M)², an effective rank of at most two, while
+  M(z) generically has rank growing with n; and rank-one M forces every B_i(e_k) to be a multiple of one projector,
+  so the j-tensor factors as G_{k1k3}G_{k2k4} and cannot be the critical pattern (κ at (a,a,a,a), 3κ at (a,b,a,b)).
 
 ## What remains
 
