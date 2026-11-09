@@ -1,0 +1,15 @@
+N = 13: formula versus brute force over 3^12 stabilizers: max difference 1.4e-17
+N = 13, trial 0: smallest weight 6.004e-02, largest 9.621e-02, min q_N/||C||^2 over encoded rank-two C = 6.0041e-02
+N = 13, trial 1: smallest weight 5.999e-02, largest 9.418e-02, min q_N/||C||^2 over encoded rank-two C = 6.0031e-02
+N = 13, trial 2: smallest weight 6.004e-02, largest 9.621e-02, min q_N/||C||^2 over encoded rank-two C = 6.0041e-02
+N = 13, trial 3: smallest weight 6.004e-02, largest 9.317e-02, min q_N/||C||^2 over encoded rank-two C = 6.0041e-02
+N = 13: smallest value 6.0031e-02 (positive; 2^(-N/3) = 4.961e-02)
+N = 40, trial 0: smallest weight 1.206e-04, largest 1.984e-03, min q_N/||C||^2 over encoded rank-two C = 1.2056e-04
+N = 40, trial 1: smallest weight 1.206e-04, largest 6.833e-04, min q_N/||C||^2 over encoded rank-two C = 1.2056e-04
+N = 40, trial 2: smallest weight 1.206e-04, largest 4.931e-04, min q_N/||C||^2 over encoded rank-two C = 1.2056e-04
+N = 40, trial 3: smallest weight 1.206e-04, largest 6.350e-04, min q_N/||C||^2 over encoded rank-two C = 1.2056e-04
+N = 40: smallest value 1.2056e-04 (positive; 2^(-N/3) = 9.689e-05)
+N = 121, trial 0: smallest weight 9.058e-13, largest 1.733e-10, min q_N/||C||^2 over encoded rank-two C = 5.3746e-11
+N = 121, trial 1: smallest weight 9.058e-13, largest 5.772e-11, min q_N/||C||^2 over encoded rank-two C = 2.3885e-11
+N = 121, trial 2: smallest weight 9.058e-13, largest 6.178e-11, min q_N/||C||^2 over encoded rank-two C = 2.6505e-11
+N = 121: smallest value 2.3885e-11 (positive; 2^(-N/3) = 7.219e-13)
