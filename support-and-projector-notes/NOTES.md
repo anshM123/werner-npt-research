@@ -843,7 +843,13 @@ and (7.1′) subtracts 3^N (1 − t)^{N−1}(1 − 2t) on the right for 0 ≤ t 
 enumerators of self-dual additive codes over F_3. For t ≤ 1/3 (λ ≥ 0) the bound with right side Σ λ^{N − wt} is the
 triangle inequality; the content is at λ < 0, just as the Werner problem is trivial up to the PPT boundary. Through the
 dual form the case x = 0 also reads |W_{L+y}(−5)| ≤ |W_L(−5)| with W_X(z) = Σ_{u∈X} z^{N − wt(u)}: among its cosets, a
-self-dual code has the largest weight enumerator at −5 in absolute value.
+self-dual code has the largest weight enumerator at −5 in absolute value. Splitting L + x into the three cosets of
+I = L ∩ y^⊥ and writing A_0, A_1, A_2 for the sums of λ^{N − wt} over them, (7.1) says A_0A_1 + A_1A_2 + A_0A_2 ≥ 0,
+that is, (A_0, A_1, A_2) lies in the circular cone Σ_c A_c ≥ ‖A‖_2 around (1, 1, 1). Each A_c is a sum over an
+isotropic coset of dimension N − 1 (a rank-three code quantity, which can be negative), while sums over Lagrangian
+cosets are positive by rank-one positivity. For fixed L, x and y the condition is convex in the weight function, but
+the weight function λ^{N − wt} is a tensor power whose one-copy factor (λ, 1, 1) on a line through the origin lies on
+the boundary of the cone, so no decomposition into pieces strictly inside it is available.
 
 These are bounds for balanced projectors at a fixed n ≤ 8. Theorems 14′ and 14″ need N ≥ k + 18 copies, so
 Proposition 19 gives the endpoint at no copy number. The negative optimum at n = 9 is the value of a relaxation; no
