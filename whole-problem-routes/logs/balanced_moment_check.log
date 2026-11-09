@@ -1,0 +1,6 @@
+(a) M fully symmetric: True; min eigenvalue -1.77e-16; rank 168; trace 39.000000
+    L(|z|^4) = 1.000000, L(p_s) = [23.0, 23.0, 23.0]/39, L(T_tetra) = -1.000000/39; identity error 9.1e-12; L(s_3) = -0.0036057692 (-3/832 = -0.0036057692): True
+(b) class counts {'main': 12, 'B': 132, 'K': 264, 'four': 936}; class sums {'main': -14580, 'B': 9369540, 'K': -303480, 'four': 3585384} (stated {'main': -14580, 'B': 9369540, 'K': -303480, 'four': 3585384}): True; R_1 > 0 > R_2: True; L_2(s_63)/(3/4)^63 = -1.808410e-06
+(c) Choi eigenvalues a-1, a-1/4, a+1/4 and the four-linear identity y1^T P_a(x1 x2^T) y2 = <x1 (x) y1, C_a (x2 (x) y2)>: checked
+    E_3(7/10) (19/20)^7 = 4.676770e-05 < 1.69555e-4: True  (97 = 7 + 30*3 copies)
+PASS

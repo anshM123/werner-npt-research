@@ -426,6 +426,23 @@ output have full support. The following do not reach every n (added 7 November 2
   So the slack below the endpoint does not rescue two-replica data; the rank-two condition, which involves three or
   more replicas, has to enter a proof for every n. (The four-replica relaxation of `four-replica-notes/` is exact for
   projectors up to four copies.)
+- **Balance does not rescue fixed-degree certificates on the map route (added 9 November 2026, from an independent
+  audit; the finite instance checked exactly).** Proposition M′ of `whole-problem-routes/` reduces the map route to a
+  lower bound s_N(z) ≥ −ε_N a^N‖z‖⁴ (ε_N → 0) for real z whose one-copy marginals are all I₃/3. A degree-four certificate
+  modulo the balance equations Q(z) = Σ_r z_{α,r}z_{β,r} − (δ_{αβ}/3)‖z‖² is impossible for every odd N ≥ 63 at a = 3/4, even
+  with ε = 10⁻⁶. On three copies let D_0, D_1, D_2 be the three pairings of four indices and
+  M = [3(D_0 + D_1 + D_2)^{⊗3} − 10 Σ_{π∈S_3} D_{π0} ⊗ D_{π1} ⊗ D_{π2}]/135. M is fully symmetric in its four global
+  indices and positive semidefinite (rank 168, trace 39), and L = M/39 gives L(‖z‖⁴) = 1, L(p_s) = 23/39,
+  L(T_tetra) = −1/39 and L(s_3) = −3/832 (this is the three-copy separator above). Pushing L through the synchronous
+  balancing isometry of `real-balanced-reduction/` with ℓ = 2 gives a positive quartic moment that kills every balance
+  multiple and has L(s_63)/(3/4)^63 = −1.8084·10⁻⁶; its four code classes contribute exactly −14580, 9369540, −303480
+  and 3585384 (in units of 1/(144·135·64·39·48^{15ℓ})), and the sign is an integer comparison. Padding with GHZ vectors
+  carries a gap of at least 10⁻⁶ to every odd N ≥ 63 (`whole-problem-routes/code/balanced_moment_check.py`). The audit
+  also states the general form: for every fixed radial degree, certificates modulo the balance equations fail from some
+  N₀ on with a uniform gap; its proof uses the audit's earlier result that fixed-degree certificates fail for the plain
+  scalar problem, which we have not re-derived. The moment above satisfies every balance consequence and is not
+  representable by z ⊗ z; that rank-one structure is what a proof has to use. Our two-replica relaxations of the Werner
+  form fail in the same way (the bullet above).
 - **Zero-free regions (added 8 November 2026).** For C of rank at most two let
   f_C(t₁, …, t_n) = Σ_J (∏_{s∈J} t_s) ‖Tr_J C‖², so the endpoint is f_C(−½, …, −½) ≥ 0. In our tests the diagonal
   polynomial f_C(t, …, t) has no root in |t| < ½ (random C, n ≤ 5: smallest root modulus 0.71 to 0.80), although it is

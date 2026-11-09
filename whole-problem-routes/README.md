@@ -201,6 +201,9 @@ A > B > |K|. Summing over the 12⁴ label quadruples (four classes survive) give
     E_ℓ = 11 r^{8ℓ} + 22 h^{8ℓ} + 78 r^{4ℓ}h^{8ℓ},   r = B/A,  h = |K|/A,
 
 with M = 3a − 1/2 the norm of 𝒫_a on Hilbert–Schmidt space. So a negative real pair stays negative after balancing.
+(The same audit later sharpened M to a + 1/4: the four-linear form y_1ᵀ𝒫_a^{⊗n}(x_1x_2ᵀ)y_2 is the Choi matrix element
+⟨x_1 ⊗ y_1, C_a^{⊗n}(x_2 ⊗ y_2)⟩ and ‖C_a‖ = a + 1/4 for a ≥ 1/2. At a = 3/4 the factor is 1 for every n, so a negative
+witness of margin δ becomes a balanced scalar witness after O(log(1/δ)) added copies, independently of n.)
 1 ⇒ 2 is clear. For 2 ⇒ 1, a failure of 1 gives real x, y with b_n(x, y) < 0 (item 4 of Proposition M). The two-flag
 identity there makes s_{n+k}(z_k) < 0 for every large k of either parity; choose n + k odd, normalise, and balance z_k
 with the bound above (x = y = z_k), which adds an even number of copies. For 3: products are multiplicative,
@@ -211,6 +214,8 @@ bound comes from g_3 ⊗ g_2^{⊗(N−3)/2}. ∎
 The balanced class is not positive for free. At a = 7/10 the real plane GHZ vector x = (p^{⊗7} + p̄^{⊗7})/√2,
 p = (e₀ + ie₁)/√2, has s_7(x) = −217031/1280000000 (exact, through the qubit compression of Theorem 7.18), and
 E_4(7/10)(8/5)^7 < 217031/1280000000 (exact), so V_4x is an explicit balanced real unit vector on 127 copies with s < 0.
+With the Choi norm a + 1/4 = 19/20 in place of 8/5, E_3(7/10)(19/20)^7 < 217031/1280000000 already, so V_3x on 97 copies
+does it (exact).
 More generally, for 1/2 ≤ a < 3/4 there is a balanced negative witness on 16n + 45 copies, where n is odd with
 (2a − 1/2)^n ≤ 1/4 (the exact inequalities (7/2)(15/23)⁴ < 1 and 444(7/2)³(15/23)^{24} < 1 control the error). This only
 calibrates the class below 3/4; it says nothing at or above 3/4.
@@ -1336,6 +1341,10 @@ exact polynomials in a; s_r(g_r) for r = 2, …, 5; the two-flag identity (float
 s_7(x) = −217031/1280000000 at a = 7/10 for the plane GHZ vector (rational arithmetic through the qubit compression);
 the exact inequality for E_4(7/10)(8/5)^7, the two uniform inequalities, and the constants 17/27 and 23/27 at a = 3/4.
 The four-index flag classification it relies on is checked in `real-balanced-reduction/code/synchronous_check.py`.
+`code/balanced_moment_check.py` (`logs/balanced_moment_check.log`) checks the balanced degree-four obstruction of
+`OBSTRUCTIONS.md`: the moment M (symmetry, positivity, rank, trace, its values and L(s_3) = −3/832), the four code-class
+contractions through the twelve synchronous rotations and the simplex flags, the sign R_1 > 0 > R_2 and the value at 63
+copies, the Choi eigenvalues and the four-linear identity, and the 97-copy calibration.
 
 `code/map_thresholds.py` checks Section 7, one mode at a time, each ending with PASS (logs in `code/logs/`):
 - `witness`: Theorem 7.1 in exact integer arithmetic on the planes for n = 1, …, 8 at six rational values of a, after
