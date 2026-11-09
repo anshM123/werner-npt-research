@@ -79,6 +79,17 @@ scripts need PyTorch.
   endpoint at n is equivalent to "every rank-two zero is a critical point", and it follows from any classification
   showing that the zeros form a set of codimension two (Section 8 of `support-and-projector-notes/`).
 
+- **Structural findings of 9 November 2026** (`support-and-projector-notes/`, Section 7, and `OBSTRUCTIONS.md`).
+  - *A correction.* The factor-τ form of stabilizer domination that we had conjectured is false below the endpoint:
+    star graphs refute it exactly (eight copies, t = 2/5). The endpoint form (7.1) and the sharp form (7.1′) remain
+    open, and stars make every main inequality asymptotically tight.
+  - *No general stabilizer extremality.* The n-copy endpoint is 2-block-positivity of a Bell-diagonal operator. On one
+    qutrit the stabilizer (line) conditions appear to decide 2-block-positivity of every Bell-diagonal operator, but on
+    two qutrits they do not (explicit witness). So a proof has to use the tensor-power form of the Werner weights.
+  - *The endpoint is a facet.* After twirling over U ⊗ Ū at every copy, the endpoint is a linear inequality on the
+    polytope of identity-count distributions of rank-two operators (exact at two copies, ten vertices at three). Its zero
+    face contains every Π_2 ⊗ R with R of rank one, so it is a facet for every n, and no linear certificate in Pauli
+    weights can avoid proving it directly.
 - The endpoint for every n. `compression-notes/` states a compression conjecture that would give it, with evidence up to five copies.
   `orbit-notes/` reduces it to a local statement on squeeze orbits (no thick squeeze-orbit minimum), supported numerically for n ≤ 7.
   Every one-copy version of that statement is false at three copies, and so are the versions restricted to the
