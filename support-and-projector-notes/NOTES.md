@@ -720,6 +720,32 @@ q_9 ≥ 0.1497‖C‖_F² at the endpoint (`code/global_reductions/rm_code.py`, 
 eight starts). So at nine copies, where the relaxation of Proposition 19 is negative, this balanced code stays clearly
 positive.
 
+**Stabilizer domination (added 9 November 2026).** Every stabilizer state is a graph state up to local Cliffords,
+which do not change weights, and a Pauli acting on a graph state |g⟩ (adjacency Γ over F_3) is a Z-shift of it up to
+phase. So the rank-two operators whose range and co-range are spanned by Pauli images of one stabilizer state are, up to
+local unitaries, C = Σ_{i,j} c_{ij} Z^{x_i} G Z^{−y_j} with G = |g⟩⟨g|. In the Weyl expansion, Z^x G Z^{−y} is supported
+on the coset Z^{y−x}T of the stabilizer group T, so q(C) splits over these cosets and is nonnegative for all such C
+exactly when, for every shift d and every character v,
+
+    |S(d, v)| ≤ S(d, 0),   S(d, v) = Σ_{a∈F_3^N} ω^{v·a} (1 − 3t)^{N − w_d(a)},   w_d(a) = |supp a ∪ supp(Γa + d)|.   (7.1)
+
+Here S(d, 0) = 3^N q_N(t, Z^xGZ^{−y}) for any x, y with y − x = d, and S(d, v) is 3^N times the cross term between
+Z^xGZ^{−y} and its conjugate by Z^v. In cut-rank form (r_J the F_3-rank of Γ restricted to rows J and columns J^c),
+S(d, v) = 3^N Σ_J (−t)^{|J|} 3^{−r_J} [d_J ∈ col Γ_{J,J^c}] [v_{J^c} ∈ col Γ_{J^c,J}] ω^{θ_J}, a phase θ_J; for the plane
+spanned by |g⟩ and Z^u|g⟩ this gives q/‖Π‖_F² = Σ_J (−t)^{|J|} 3^{−r_J} (1 + [u_{J^c} ∈ col Γ_{J^c,J}]).
+
+**Conjecture SD_t.** For every N, every Γ, every d and every v ≠ 0, |S(d, v)| ≤ τ S(d, 0) with τ = t/(1 − t).
+
+At t = ½ this is (7.1). Product states attain τ (a single-copy shift gives ratio exactly τ), and the GHZ and product
+zeros give equality at the endpoint. SD_t implies the sharp bound of Section 9 on this class: for the plane,
+q(Π) = 2q(G) + 2 Re S(u, ·)/3^N ≥ 2(1 − τ) q(G) ≥ 2(1 − 2t)(1 − t)^{N−1}. Evidence (`code/global_reductions/
+stabilizer_domination.py` and `graph_cut_rank.py`, log `logs/stabilizer_domination.log`): exhaustive over all Γ, d, v
+at N = 2, 3, 4 for t = ½ (largest ratio exactly 1, thousands of equality cases), t = 0.45 and 0.4 (largest ratio exactly
+τ = 9/11 and 2/3), and t = 0.35 at N = 3 (τ = 7/13); 300 random graphs with all d, v at N = 5 and t = ½ (largest ratio 1).
+The class contains the minimisers of q_5 over balanced projectors (subspaces of the five-qutrit code) and every known
+zero, so SD_t for every N would give the endpoint, and the sharp bound, on all of them. We have no proof beyond N = 4;
+the cycle graphs are covered for every N by the transfer-matrix argument of `cyclic-code-planes/` (on their code spaces).
+
 These are bounds for balanced projectors at a fixed n ≤ 8. Theorems 14′ and 14″ need N ≥ k + 18 copies, so
 Proposition 19 gives the endpoint at no copy number. The negative optimum at n = 9 is the value of a relaxation; no
 projector is constructed. Rank-two codes satisfy further constraints that these relations do not see, for instance
@@ -1368,7 +1394,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   three-copy code, and the certificates for n = 4, …, 9 in exact rational arithmetic); `check_enumerator_purity.py` (the
   purity-two enumerators of Section 7, exact); `perfect_code_check.py` (Proposition 19 attained at n = 5 by the
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
-  `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `two_replica_balanced.py t d N ...` (the copy-symmetric
+  `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
+  and `graph_cut_rank.py check|search N ...` (Conjecture SD_t); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind

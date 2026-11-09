@@ -1,0 +1,9 @@
+N=4: cut-rank form vs a-sum, max difference 3.33e-16
+N=5: cut-rank form vs a-sum, max difference 3.89e-16
+N=3 t=0.5 (all): max |S(d,v)|/S(d,0) over v != 0 = 1.0000000000; min S(d,0) = 3.3750; equality cases 206
+N=4 t=0.5 (all): max |S(d,v)|/S(d,0) over v != 0 = 1.0000000000; min S(d,0) = 5.0625; equality cases 6592
+N=4 t=0.4 (all): max |S(d,v)|/S(d,0) over v != 0 = 0.6666666667; min S(d,0) = 10.4976; equality cases 0
+N=5 t=0.5 (sample): max |S(d,v)|/S(d,0) over v != 0 = 1.0000000000; min S(d,0) = 48.0938; equality cases 3726
+N=3 t=0.45 (all): max |S(d,v)|/S(d,0) over v != 0 = 0.8181818182; min S(d,0) = 4.4921; equality cases 0
+N=4 t=0.45 (all): max |S(d,v)|/S(d,0) over v != 0 = 0.8181818182; min S(d,0) = 7.4120; equality cases 0
+N=3 t=0.35 (all): max |S(d,v)|/S(d,0) over v != 0 = 0.5384615385; min S(d,0) = 7.4149; equality cases 0
