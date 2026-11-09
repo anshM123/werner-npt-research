@@ -224,7 +224,12 @@ for n = 6).
   Werner state with antisymmetric weight 7/12, inside the endpoint value 3/5.
 - Numerically (MP₂) holds for every S at m ≤ 4, with least value 0 (attained, since T∘F is two-positive and no more).
   Three-positivity fails already for T∘F ⊗ F (least value −0.0231 with a qutrit reference). (MP) itself holds with the
-  exact margin 6^{−n} for every S at n ≤ 7 (at n = 7 with Lanczos eigensolvers, `code/completion_five_sixths_n7.py`).
+  exact margin 6^{−n} for every S at n ≤ 7 (at n = 7 with Lanczos eigensolvers, `code/completion_five_sixths_n7.py`),
+  and ρ_F passes the five-copy test (m = 5, S = all copies; least value 0 to rounding; `code/completion_mp2_check.py`,
+  `logs/completion_five_sixths_mp2_m5.log`). The exact product minimum is
+  not special to a = 5/6: for the other completions F_{a,t} = (𝒫_a + t(id − T)/2)/(3a − ½) with T∘F_{a,t} two-positive
+  (1 − a ≤ t ≤ 2a − 3/2), the least value of T_S∘F_{a,t}^{⊗n} found at n = 3, 4 is ((a − ½)/(3a − ½))^n for a = 0.9,
+  t = 0.1, 0.2, 0.3 and a = 0.95, t = 0.05, 0.4 (`code/completion_family_check.py`).
 - The reduction does not iterate by itself. Peeling a copy off (MP₂) at m needs four-positivity at m − 1, which fails,
   and expanding F ⊗ Φ twice produces G ⊗ G ⊗ F^{⊗m}, which is never positive (least value −(5/864)(5/12)^{m−1} for
   m ≤ 3).

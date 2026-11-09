@@ -246,7 +246,10 @@ its bosonic co-range. For n ≤ 4:
   nonnegative on product vectors there.
 
 So, at least for small n, the anchor condition fails in the bosonic sector only on special vectors. If every bosonic
-plane contained a bosonic anchor, the bosonic sector would follow for every n. We prove neither part.
+plane contained a bosonic anchor, the bosonic sector would follow for every n. Planes inside some Sym^n(K), K a
+qubit, need no anchor: their range lies in K^{⊗n}, so q_n ≥ 0 for every co-range by [T2, Lemma 2.6]. The plane spanned
+by the two non-anchors |2, 2, 0⟩ and |0, 2, 2⟩ (n = 4), which lies in no such Sym^n(K), still contains anchors
+(a local search over its points finds λ_min(Y_p^Γ) = 0). We prove neither part.
 Check: `code/check_bosonic_anchors.py`, log `logs/check_bosonic_anchors.log`.
 
 ## References
