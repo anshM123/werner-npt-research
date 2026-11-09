@@ -300,8 +300,12 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   h = (3t⁴ + 8t³ + 16t² + 8t + 13, 8t² + 20t, 8t² + 20t + 25) and j = (8t² + 20t + 9, 3t⁴ + 8t³ + 16t² + 8t + 2,
   8t² + 20t + 9). At the roots of 3t⁴ + 8t³ + 40t² + 68t + 29 the j-term is a positive multiple κ^n of the critical
   scalar. Dropping Q_h ≥ 0 leaves an error with base c²/κ (18.6 and 69.9 at the two roots, at least 800/63 in general),
-  while a vanishing-error criterion needs control at the scale 3^n. A correlated lower bound for Q_h, or another
-  combination, would be needed.
+  while a vanishing-error criterion needs control at the scale 3^n. No choice of local matrices does better than 3
+  (added 9 November 2026; ours). If the j-tensor is κ times the critical pattern, then for a ≠ b one of its entries,
+  for instance Σ_{i,i′} Tr((B_i(e_a)B_{i′}(e_b))²) when the 3 sits on the pairing (13)(24), equals 3κ. Since
+  Tr((XY)²) ≤ Tr(X²Y²) for symmetric X, Y (and Cauchy–Schwarz for the other two placements), it is at most
+  Tr(M_a M_b) ≤ Tr M_a Tr M_b ≤ c² with M_k = Σ_i B_i(e_k)² ⪰ 0. So c²/κ ≥ 3 for every family, and dropping Q_h never
+  gives an error below ½·3^n‖z‖⁴, the scale of the critical scalar itself. A DDVV argument has to keep Q_h.
 
 ## What remains
 
