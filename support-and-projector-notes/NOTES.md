@@ -878,6 +878,39 @@ So (7.1) cannot give the endpoint through a general extremality of stabilizer ve
 two copies on, an argument has to use the product form h = λ^{#identity sites} of the Werner weights. Those weights pass
 both tests at two copies (margin 0, least rank-two value 0), as they must.
 
+*The identity-count polytope (added 9 November 2026).* The Werner operator is invariant under U ⊗ Ū at every copy, for
+every unitary U. Twirling a Schmidt-rank-two vector ψ = vec C over these local unitaries and over permutations of the
+copies keeps its endpoint value and its Schmidt number, and leaves a state that depends only on the identity-count
+distribution π̄_C(k) = Σ_{|K|=k} ‖C_K‖_F²/‖C‖_F², where C_K is the part of C that is the identity exactly on the copies
+in K. The value is the generating function G_C(x) = Σ_k π̄_C(k) x^k at x = −½; more generally
+q_n(t, C)/‖C‖_F² = G_C(1 − 3t). So the endpoint at n copies says that the linear functional π̄ ↦ G(−½) is nonnegative on
+the convex set 𝒮_n = conv{π̄_C : rank C ≤ 2}, a set of dimension n.
+- Two copies (exact). 𝒮_2 is the quadrilateral with vertices (9, 0, 0)/9, (3, 6, 0)/9, (2, 5, 2)/9 and (7, 0, 2)/9,
+  realised by |0⟩⟨1| ⊗ |0⟩⟨1|, Π_2 ⊗ |0⟩⟨1|, Π_2 ⊗ |0⟩⟨0| (Π_2 a rank-two projector on one copy) and the balanced
+  projector onto span{Σ_a |aa⟩, Σ_a |a, a+1⟩}. Its facets are π̄_1 ≥ 0, π̄_2 ≥ 0, the trace bound π̄_2 ≤ 2/9 (from
+  |Tr C|² ≤ 2‖C‖_F²) and the endpoint inequality π̄_0 − ½π̄_1 + ¼π̄_2 ≥ 0 itself. All four inequalities are known and the
+  four vertices are realised, so this description is exact.
+- Three copies. Support points over 200 directions (`code/identity_count/polytope.py`, log
+  `logs/identity_count_polytope_n3.log`) give a polytope with ten vertices. In units of 1/27:
+  - (27, 0, 0, 0), (9, 18, 0, 0), (6, 15, 6, 0), (4, 12, 9, 2) and (21, 0, 6, 0) are products of two-copy vertices with
+    |0⟩⟨1| or |0⟩⟨0|;
+  - (8, 16, 1, 2) is Π_2 ⊗ |Φ⟩⟨Φ|, with Φ maximally entangled on the other two copies;
+  - (9, 9, 9, 0) is |000⟩⟨000| − |111⟩⟨111|, and (13, 12, 0, 2) is the projector onto span{GHZ, Z·GHZ};
+  - (22, 3, 0, 2) is any plane of the [[3, 1, 2]] qutrit code;
+  - (33/2, 3, 15/2, 0) comes from a partial isometry that is thin at one copy (q_3/‖C‖_F² = 5/8).
+  The face π̄_3 = 0 is an exact hexagon over 90 directions, with no curved part. The endpoint functional is a facet. It
+  vanishes on the quadrilateral spanned by (4, 12, 9, 2), (6, 15, 6, 0), (8, 16, 1, 2) and (9, 18, 0, 0), and the GHZ
+  zero (7, 15, 3, 2) lies on its edge. The other facets include π̄_3 ≤ (2/3)π̄_1.
+- Four copies (support points; the hull is incomplete). Every one of the fourteen hull vertices found from 121
+  directions has G(−½) ≥ 0 (log `logs/identity_count_polytope_n4.log`). The smallest positive value at a vertex is 1/8;
+  it was 5/6 at two copies and 1/4 at three.
+
+In every case found, the zero vertices are products Π_2 ⊗ R with R of rank one on the other copies (R may be
+entangled), so that G factors as ((1 + 2x)/3)·G_R(x). The other vertices are product or stabilizer operators with
+G(−½) > 0, approaching the zero face roughly like 2^{−(n−1)}. A description of the vertices of 𝒮_n for every n would
+decide the endpoint; we do not have one. `code/identity_count/check_vertices.py` recomputes the identified vertices in
+exact arithmetic (log `logs/identity_count_vertices.log`).
+
 These are bounds for balanced projectors at a fixed n ≤ 8. Theorems 14′ and 14″ need N ≥ k + 18 copies, so
 Proposition 19 gives the endpoint at no copy number. The negative optimum at n = 9 is the value of a relaxation; no
 projector is constructed. Rank-two codes satisfy further constraints that these relations do not see, for instance
@@ -1541,7 +1574,7 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   purity-two enumerators of Section 7, exact); `perfect_code_check.py` (Proposition 19 attained at n = 5 by the
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
   `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
-  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, (7.1′) and FB on stars); `star_descent.py k m eps steps seed` (descent from star near-zeros, PyTorch); `qc_star.py k m restarts seed` (Conjecture QC on stars); `fb_class.py N t family i j` and `fb_class_check.py` (FB on stabilizer pairs). `code/bell_diagonal/`: `one_qutrit_lines.py iters seed` (line conditions versus 2-block-positivity on one qutrit) and `two_qutrit_witness.py` (the two-qutrit witness, from `data/bell_k2_witness_*.txt`); `two_replica_balanced.py t d N ...` (the copy-symmetric
+  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, (7.1′) and FB on stars); `star_descent.py k m eps steps seed` (descent from star near-zeros, PyTorch); `qc_star.py k m restarts seed` (Conjecture QC on stars); `fb_class.py N t family i j` and `fb_class_check.py` (FB on stabilizer pairs). `code/bell_diagonal/`: `one_qutrit_lines.py iters seed` (line conditions versus 2-block-positivity on one qutrit) and `two_qutrit_witness.py` (the two-qutrit witness, from `data/bell_k2_witness_*.txt`); `code/identity_count/`: `polytope.py N ndir restarts seed` (support points and hull of the identity-count polytope, PyTorch), `pibar_numpy.py` (the same with NumPy) and `check_vertices.py` (exact vertices); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind

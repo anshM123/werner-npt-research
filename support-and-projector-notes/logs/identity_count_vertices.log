@@ -1,0 +1,13 @@
+Two copies (vertices of S_2):
+  |0><1| (x) |0><1|  (traceless)                   pibar x9 = ['9', '0', '0']   endpoint = 1
+  Pi_2 (x) |0><1|                                  pibar x9 = ['3', '6', '0']   endpoint = 0
+  Pi_2 (x) |0><0|                                  pibar x9 = ['2', '5', '2']   endpoint = 0
+  balanced projector span{Phi, X-shifted Phi}      pibar x9 = ['7', '0', '2']   endpoint = 5/6
+Three copies:
+  Pi_2 (x) |Phi><Phi|  (zero vertex)               pibar x27 = ['8', '16', '1', '2']   endpoint = 0
+  |000><000| + |111><111|  (GHZ zero)              pibar x27 = ['7', '15', '3', '2']   endpoint = 0
+  |000><000| - |111><111|                          pibar x27 = ['9', '9', '9', '0']   endpoint = 1/4
+  Pi_2 (x) |0><1| (x) |0><1|                       pibar x27 = ['9', '18', '0', '0']   endpoint = 0
+  Pi_2 (x) |0><0| (x) |0><1|                       pibar x27 = ['6', '15', '6', '0']   endpoint = 0
+  Pi_2 (x) |0><0| (x) |0><0|                       pibar x27 = ['4', '12', '9', '2']   endpoint = 0
+  balanced 2-copy projector (x) |0><1|             pibar x27 = ['21', '0', '6', '0']   endpoint = 5/6
