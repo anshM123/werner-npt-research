@@ -38,7 +38,16 @@ A(C) = Σ_i a_i C a_i^*. For bosonic C every partial trace over j sites equals (
   - γ_{n,n} = 1;
   - γ_{n,n−1} = −1/(2n) and γ_{n,n−2} = 1/(2(n−1));
   - γ_{n,0} = 2^{−n−2} (1 + (−1)^n (2n+3)).
-- The sign of γ_{n,k} is (−1)^{n−k}. We checked this exactly for n ≤ 39; we have not proved it for all n.
+- The sign of γ_{n,k} is (−1)^{n−k} for every n and k (added 9 November 2026, from an independent audit; checked
+  here). The finite sum is γ_{n,k} = ∫_0^1 (t − ½)^{n−k} t^k (1 − t)^{k+1} dt / B(n + 1, k + 2), and pairing t with
+  1 − t gives
+
+      γ_{n,n−2l} = (2l)! (n − l + 1)! / (4^l l! n! (n − 2l + 1)),
+      γ_{n,n−2l−1} = −(2l + 1)! (n − l)! / (2·4^l l! n! (n − 2l)).
+
+- The negative values first decrease and then increase in l, so the most negative one sits at an end. Hence
+  min_k γ_{n,k} = −1/(2n) for every n ≥ 4 (the minima are −1/2, −1/4, −1/4 at n = 1, 2, 3), and
+  q_n(1/2, C) ≥ −‖C‖²/(2n) for every bosonic C of any rank when n ≥ 4.
 - The form is indefinite on End(Sym^n) for every n ≥ 1, since γ_{n,n−1} < 0 < γ_{n,n}. So a proof must use the rank.
 
 **(c) Pair form.** Pair site i of the range with site i of the co-range, so that |C⟩⟩ ∈ (C^3 ⊗ C^3)^{⊗n}. Put
@@ -193,6 +202,35 @@ diagonal. For each spectator configuration σ, this interference is the quadrati
 Sym^N(B_T) on the vector of amplitudes ⟨⟨a, N − a, σ|C⟩⟩. At t = 1/2 the eigenvalues of this power are (−1/2)^j. The
 rank-two condition has to keep these vectors away from the eigenvectors with j odd.
 
+## 5. Copy averaging and linear bosonization (added 9 November 2026, from an independent audit; checked here)
+
+Write 𝓔_n for the average over all permutations of the copies and Q_n for the projector onto Sym^n(C^3).
+- **Twirls concentrate on the bosonic block.** For P ⪰ 0, 𝓔_n(P) = A + B with A = Q_n P Q_n and B ⪰ 0 supported off
+  the bosonic block. For n ≥ 5 every nontrivial irreducible representation of S_n with at most three rows has
+  dimension at least n − 1, so ‖B‖₂ ≤ Tr B/√(n − 1). For a Hilbert–Schmidt contraction the quadratic form then moves
+  by at most (Tr P)²/(2√(n − 1) − 1). For a rank-two projector P, A has rank at most two, and with Section 1
+  q_n(P) ≥ q_n(P − 𝓔_n P) − 1/n − 4/(2√(n − 1) − 1).
+  So bosonic rank-two positivity would make the averaged part nonnegative up to O(n^{−1/2}).
+- **The fluctuation does not vanish.** For f = (1, 1, 1)/√3, K = I − P_f and g_r = (|0^r⟩ + |1^r⟩ + |2^r⟩)/√3, the
+  real rank-two projector P_n = K ⊗ P_{g_{n−1}} has q_n(P_n) = 0 (since q_1(K) = 0), while
+
+      q_n(𝓔_n P_n) = ((n − 1)/(27n)) [2 + 2^{−(n−2)} + 2(−1/2)^{n−2}] → 2/27,
+
+  so q_n(P_n − 𝓔_n P_n) → −2/27 for every n ≥ 3. A smaller exact example at four copies has fluctuation
+  −0.2719 < −1/4 with q_4(P) = 0.0382. Any argument through this splitting must keep the cancellation.
+- **Linear bosonization costs a factor N.** Six rank-two operators built from P_{|i⟩} ⊗ (|0⟩⟨1|)^{⊗(m−1)} have
+  q_m(A_i + A_j) = 0 and q_m(A_i − A_j) = 2, while their sum Z (rank three) has q_m(Z) = −3/2 and ‖Z‖² = 3. Through
+  the polarisation identity f(Z) = ¾Σ f(A_i + A_j) − ¼Σ f(A_i − A_j) and the bound above, any linear
+  E : M_{3^m} → End(Sym^N C^3) with |q_N(EC) − q_m(C)| ≤ ε‖C‖² on rank at most two has ‖E‖² ≥ N(1 − 4ε). For
+  m = 1 the best distortion among Hilbert–Schmidt isometries is exactly (1 − 1/N)/4, and (1 − 1/N)/6 if only positive
+  semidefinite inputs of rank at most two are required. The simplest rank-preserving encoding, one logical
+  excitation over N − 1 spectators in a third mode, gives q_{N,t}(V C V^*) = a_N‖C‖² + b_N|Tr C|² with
+  a_N = (1 − t)^{N−2}(1 − t/N) and b_N = t(1 − t)^{N−2}(t − 1/N); it sends the rank-two zero I_2 at t = ½ to positive
+  values.
+
+Check: `support-and-projector-notes/code/global_reductions/audit92_98_checks.py`, rounds 97 and 98 (log
+`logs/audit92_98_checks.log`).
+
 ## References
 
 - [DSSTT] D. P. DiVincenzo, P. W. Shor, J. A. Smolin, B. M. Terhal, A. V. Thapliyal, Phys. Rev. A 61, 062312 (2000).
@@ -216,3 +254,5 @@ The scripts need Python 3 with NumPy and SciPy.
 - `code/check_sector_theorem.py`: Section 2.
 - `code/check_numerics.py`, `code/check_zeros_and_thickness.py` and `code/check_negative_results.py`: Section 3.
 - `code/check_large_n.py`, `code/check_large_n_formula.py`: Section 3, large n.
+- `../support-and-projector-notes/code/global_reductions/audit92_98_checks.py`: the closed spectrum of Section 1 and
+  Section 5.

@@ -290,7 +290,7 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   approach any fixed interior point x_0 ∈ (−½, 0), with N(x_N − x_0) → (1 + 30K)iπ(x_0 + 2). So no fixed complex
   neighbourhood of 0, or of any interior Werner parameter, is zero-free, even on the class to which the endpoint
   reduces; copy-dependent shrinking domains and direct real-sign methods are not excluded. Lee–Yang type zero-free
-  regions are therefore not a route (`support-and-projector-notes/code/global_reductions/audit89_checks.py` and
+  regions of fixed size are therefore not a route (`support-and-projector-notes/code/global_reductions/audit89_checks.py` and
   `audit90_91_checks.py`, logs `logs/audit89_checks.log`, `logs/audit90_91_checks.log`).
 - **Termwise nonnegativity of mixed contractions on the map route (added 9 November 2026, from the same audit; checked
   here).** In the three-copy expansion F_3(z) = 25‖z‖⁴ − 14(p_A + p_B + p_C) + 18T(z) of the critical scalar for
@@ -317,9 +317,54 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   an effective rank of at most two. For the audit's matrices this fails for every input at every n ≥ 2 (independent
   audit; checked here): M = 𝒦_t^{⊗n}(zz^T) for the completely positive 𝒦_t(X) = (1 + t²)Tr(X)I + (5 + 2t)X + 2tX^T,
   whose normalised fourth power is entanglement breaking with largest output norm β < ½ at both roots (β = 0.409 and
-  0.494), so Q_h ≤ c^{2n}‖z‖⁴β^{n/2} < ½c^{2n}‖z‖⁴. For a general family we have no proof; rank-one M is impossible,
-  since it forces every B_i(e_k) to be a multiple of one projector and the j-tensor then factors as G_{k1k3}G_{k2k4},
-  which is not the critical pattern (κ at (a,a,a,a), 3κ at (a,b,a,b)).
+  0.494), so Q_h ≤ c^{2n}‖z‖⁴β^{n/2} < ½c^{2n}‖z‖⁴. The audit then closed the route for every family. With K the
+  channel with Kraus matrices c^{−1/2}B_α(e_a)e_b, DDVV at one copy and 3κ ≤ c² give Tr K(vvᵀ)² ≤ ½ + κ/c² ≤ 5/6 for
+  unit v; the complementary channel gives the same cap for ‖K(vwᵀ)‖₂²; and on g_n = (|0^n⟩ + |1^n⟩ + |2^n⟩)/√3 this
+  yields Q_h(g_n) ≤ 9(5/6)^n c^{2n}. The lower bound is then negative for every n ≥ 16 (18·5^16 < 6^16), even when the
+  pencils are chosen per site, per n or per input. The outputs themselves are positive: L_3^{⊗n}(vvᵀ),
+  v = 0^n + 1^n + 2^n, splits into positive definite blocks, with diagonal Σ_i 3^{n−c_i} (c_i the number of letters i)
+  and entries 2(−1)^n between a word over two letters and its image under exchanging them. Rank-one M for every
+  input is impossible, since it forces every B_i(e_k) onto one projector and the j-tensor then factors as
+  G_{k1k3}G_{k2k4}, which is not the critical pattern (κ at (a,a,a,a), 3κ at (a,b,a,b)). (We checked the purity cap,
+  the integer cutoff and the block formula: `support-and-projector-notes/code/global_reductions/audit92_98_checks.py`, log `logs/audit92_98_checks.log`.)
+- **Spectral growth of matrix-product families (added 9 November 2026, from an independent audit; checked here).**
+  For triples A, B, C, D of real b × b matrices with periodic trace vectors x_{A,n}(i_1 … i_n) = Tr(A_{i_1} ⋯ A_{i_n})
+  and C_0 = x_A x_Bᵀ, C_1 = x_C x_Dᵀ, the partial-trace expansion gives 2^n q_n(C_0, C_1) = Tr 𝒯^n with
+  𝒯 = 2Σ_{ij} A_i ⊗ B_j ⊗ C_i ⊗ D_j − Σ_{ij} A_i ⊗ B_i ⊗ C_j ⊗ D_j. If ρ(𝒯_01)² > ρ(𝒯_00)ρ(𝒯_11), the 2 × 2 Gram
+  matrix fails to be positive at infinitely many n, so this spectral inequality (SG) is necessary for every bond
+  dimension. We do not know that it is sufficient (ours). Periodic trace vectors are invariant under cyclic shifts,
+  and when an n-copy pair is written with a period-n clock the transfer matrices acquire sectors in which the clocks
+  of the four legs are misaligned. The aligned sector reproduces 2^n h_ab, but misaligned ones can have larger
+  spectral radius: over 200 random two-copy pairs, ρ(𝒯_aa)² reaches 1.78 times 4h_aa
+  (`support-and-projector-notes/code/global_reductions/sg_clock_sectors.py`). So a proof of (SG) would not by
+  itself give the endpoint. The same audit proved a positive case at every odd n. For the cyclic triples (i, j, k),
+  A_i(p) = E_jk + pE_kj and B_i = A_iᵀ are covariant under the real tetrahedral group, so every vector in
+  span{z_n, w_n} has scalar one-site cross operators (strongly balanced), and q_n(z_n w_nᵀ − w_n z_nᵀ) ≥ 0 for every
+  odd n and every real p. In the 81-dimensional transfer only one 15-dimensional strongly connected component has
+  odd cycles; on it the returns between the three constant words obey G_{k+2} = G_{k+1} + 4G_k with nonnegative
+  entries, a block-determinant identity makes every Laurent coefficient of the odd traces nonnegative, and
+  reciprocity p ↔ 1/p finishes the comparison. Even n are not covered (`support-and-projector-notes/code/global_reductions/audit92_98_checks.py`, log `logs/audit92_98_checks.log`).
+- **Inverse maps (added 9 November 2026, from an independent audit; checked here).** For odd N,
+  −(R^{⊗N})^{−1} = (D − id)^{⊗N} is completely copositive, and the form is positive on rank-one operators at every N.
+  These two properties do not give rank-two positivity, even with strict local margins. For
+  R_α = α id + (5/3)Z − D, with Z the diagonal part and α = 1001/1000, the physical operator
+  αI + (5/3)Δ − F has eigenvalues 5003/3000, 1/1000, 2001/1000, the negative inverse is strictly completely
+  copositive, q ≥ (1009/9000)‖C‖² on rank two at one copy, and still a real rank-two projector on nine copies has
+  q = −1.0907 (exact rational value), and on every odd N ≥ 9 after padding with |0⟩⟨0|. It starts from a sparse
+  three-copy pair (Tabia, Chen and Hsieh, arXiv:2608.08836, App. E.2) and is lifted to a projector with the flags
+  f = (1, 1, 1)/√3 and g = (1, −1, 0)/√2, whose coherence pairing dominates. This is not a Werner witness: the same
+  three-copy operator has Werner value 1.
+- **Copy averaging (added 9 November 2026, from an independent audit; checked here).** Split a rank-two projector as
+  P = 𝓔_n P + (P − 𝓔_n P) with 𝓔_n the full permutation twirl. The averaged part is controlled for every n: its
+  value is within (Tr P)²/(2√(n − 1) − 1) of a rank-two bosonic operator, so q_n(𝓔_n P) ≥ −1/n − 4/(2√(n − 1) − 1)
+  (`bosonic-sector-notes/`, Section 5). The fluctuation is not: P_n = (I − P_f) ⊗ P_{g_{n−1}}, with f = (1, 1, 1)/√3
+  and g the GHZ vector, has q_n(P_n) = 0 and q_n(𝓔_n P_n) → 2/27, so q_n(P_n − 𝓔_n P_n) → −2/27. An argument
+  through this splitting has to keep the cancellation between the two terms.
+- **Linear bosonization (added 9 November 2026, from an independent audit; checked here).** The bosonic bound
+  q_N(X) ≥ −‖X‖²/(2N) cannot be transported back linearly. A linear map E into End(Sym^N C³) with
+  |q_N(EC) − q_m(C)| ≤ ε‖C‖² on rank at most two must have ‖E‖² ≥ N(1 − 4ε), which cancels the 1/N. For one source
+  copy the best distortion among Hilbert–Schmidt isometries is exactly (1 − 1/N)/4, and (1 − 1/N)/6 if only positive
+  semidefinite inputs of rank at most two have to be preserved.
 
 ## What remains
 
@@ -368,7 +413,7 @@ output have full support. The following do not reach every n (added 7 November 2
   P = (3D − id − T)/7 factors as P = G ∘ W, with W = (D − T)/2 completely positive (its Choi matrix is the antisymmetric
   projector), its inverse Λ = D − 2T, and G = (D + 2id + 2T)/7. So tensor-stable positivity of P is positivity of G^{⊗N}
   on images of W^{⊗N}, which are characterised by Λ^{⊗N}(σ) ⪰ 0. Weaker image conditions do not suffice: for every
-  large N there are states σ with ‖3^Nσ − I‖_∞ → 0 that satisfy every inverse constraint Λ_S(σ) ⪰ 0 with |S| ≤ N/80,
+  N ≥ 6240 there are states σ with ‖3^Nσ − I‖_∞ → 0 that satisfy every inverse constraint Λ_S(σ) ⪰ 0 with |S| ≤ N/80,
   every reduction inequality σ ⪯ I_S ⊗ σ_{S^c} and every marginal purity bound of images, yet G^{⊗N}(σ) has a negative
   expectation. They are built from the three-site identity 343 G^{⊗3}(P_z) = B^{⊗3} + 32(P_z − P_y), B = diag(3, 3, 1),
   with z and y the real and imaginary parts of u^{⊗3}, u = (e_0 + ie_1)/√2 (single negative eigenvalue −5/343, trace
@@ -395,6 +440,37 @@ output have full support. The following do not reach every n (added 7 November 2
   pair), and products of three such maps chosen per site after seeing the input (antisymmetric three-qutrit vector,
   gap 3/235298 per triple). Nor can a global shift λ id + μT make the Choi matrix of P^{⊗n} positive, for n ≥ 2.
   Correlated references, nonlinear comparisons and direct control of the sign are not excluded.
+- **A family with the same one-copy structure (added 9 November 2026, from an independent audit; checked here).** For
+  a unit vector of Schmidt rank at most k on C^d ⊗ C^d, the correlation matrix ⟨ψ|S_i ⊗ S_j|ψ⟩ of a real symmetric
+  traceless orthonormal basis has nuclear norm at most (k + 1)/2 − 1/d, with equality at the real maximally
+  entangled vector of rank k. Hence Φ_{r,O}(X) = Tr(X)I/d + r O((X + Xᵀ)/2 − Tr(X)I/d) is k-positive for every real
+  Hilbert–Schmidt contraction O when 0 ≤ r ≤ 2/(d(k + 1) − 2), and for orthogonal O its absolute value is
+  entanglement breaking when r ≤ 2/(d + 2). At d = 3, k = 2, r = 2/7 and O = −id this is P. So two-positivity with an
+  entanglement-breaking absolute value holds for a whole family of maps, and an abstract implication from these
+  properties to tensor-stable positivity would have to cover all of them.
+- **Product spectra and fractional norms (added 9 November 2026, from an independent audit; checked here).** The
+  outputs of P^{⊗n} are not majorized by the product of the one-copy output spectra. For
+  x_m = (m|00⟩ + |11⟩ + |22⟩)/√(m² + 2), m > 17, and Q the rank-five projector onto
+  span{|11⟩, |12⟩, |21⟩, |22⟩, (|01⟩ + |10⟩)/√2}, Tr[Q P^{⊗2}(x_m x_mᵀ)] = (39m² + 2m + 44)/(49(m² + 2)) > 39/49, the sum of
+  the five largest product eigenvalues. These outputs are positive definite. With ν_p(n) the largest Schatten
+  p-norm of an output, tensor-stable positivity is equivalent to ν_{p_j}(N_j) ≤ e^{ε_j N_j} along some p_j ↓ 1,
+  N_j → ∞, ε_j → 0, and follows from bounds ν_{p_j}(n) ≤ C_j uniform in n. The exact ν_2(n) = (√19/7)^n gives
+  ν_p(n) ≤ 1 only for p ≥ 1.0739. The product bound ν_p(n) ≤ b(p)^n, b(p) = (1 + 2·3^p)^{1/p}/7 (the one-copy value),
+  would suffice as p ↓ 1 but asks more than positivity: to first order in p − 1 it also gives additivity of the
+  minimum output entropy of P.
+- **Completely positive completions (added 9 November 2026, from an independent audit; checked here).** If F is
+  completely positive with (F + T∘F)/2 = P, then P^{⊗n} = 2^{−n}Σ_S T_S F^{⊗n}. The triangle inequality over this
+  sum cannot give subexponential trace norms for any F. Averaging over orthogonal conjugation reduces F to
+  F_u = (6D + (u − 2)id − (u + 2)T)/14, 1 ≤ u ≤ 4, and for g = (|+⟩^{⊗22} + |−⟩^{⊗22})/√2, |±⟩ = (|0⟩ ± i|1⟩)/√2,
+  every balanced partial transpose of F_u^{⊗22}(gg^*) has the eigenvalue ((16 − u²)^{11} − 2^{43})/14^{22} < 0, since
+  2·15^{11} < 16^{11}. The averaged bound is at least 1 + δ at 22 copies (explicit δ > 0) and grows exponentially, also
+  for Schatten exponents slightly above 1; at u = 2 six copies already give −5/117649. The outputs P^{⊗n}(gg^*) are
+  positive definite. For the weaker maps 𝒫_a a completion F with T∘F two-positive exists if and only if a ≥ 5/6. At
+  a = 5/6, F = (5D − id − 2T)/12 is completely positive and 2-entanglement breaking, T∘F = (5D − 2id − T)/12 is
+  two-positive, |F| = (3D + 2id + T)/12 and F² are entanglement breaking, and (F + T∘F)/2 = 𝒫_{5/6}/2. If every
+  output of F^{⊗n} had positive partial transpose across every cut, 𝒫_{5/6} would be tensor-stable positive and
+  Section 7 of `whole-problem-routes/` would give NPT bound entanglement. That is unproved, and stronger than what is
+  needed (`support-and-projector-notes/code/global_reductions/audit92_98_checks.py`, log `logs/audit92_98_checks.log`).
 
 - **Decomposability, and every certificate that unrolls into it.** 𝒫_a^{⊗n} is not decomposable from n = 3 for any
   a < 0.7562 (Proposition 7.3), and for every a < 1 some tensor power is not decomposable, by a theorem of Müller-Hermes

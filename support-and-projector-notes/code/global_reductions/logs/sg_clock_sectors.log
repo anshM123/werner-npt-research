@@ -1,0 +1,5 @@
+trial 0: clock vectors = symmetrised vectors: True; rho(T_00)^2 = 76.208 vs 4 h_00 = 68.116; rho(T_11)^2 = 29.360 vs 4 h_11 = 27.974
+trial 1: clock vectors = symmetrised vectors: True; rho(T_00)^2 = 385.915 vs 4 h_00 = 326.445; rho(T_11)^2 = 223.213 vs 4 h_11 = 223.213
+trial 2: clock vectors = symmetrised vectors: True; rho(T_00)^2 = 395.273 vs 4 h_00 = 377.650; rho(T_11)^2 = 206.022 vs 4 h_11 = 186.899
+4 h_aa is an eigenvalue of T_aa^2 in every trial: True
+largest ratio rho(T_aa)^2 / (4 h_aa) over 200 random two-copy pairs: 1.780 (> 1: a misaligned sector dominates)
