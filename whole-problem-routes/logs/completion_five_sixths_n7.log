@@ -1,0 +1,24 @@
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 22s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 47s
+  start done: 2.679184e-05 (x 6^7 = 7.500000), elapsed 73s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 89s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 106s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 123s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 140s
+n = 7, |S| = 1: least value found 3.572245e-06; 6^-7 = 3.572245e-06; ratio 1.000000
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 19s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 39s
+  start done: 2.857796e-05 (x 6^7 = 8.000000), elapsed 67s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 84s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 101s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 118s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 134s
+n = 7, |S| = 2: least value found 3.572245e-06; 6^-7 = 3.572245e-06; ratio 1.000000
+  start done: 6.697960e-06 (x 6^7 = 1.875000), elapsed 28s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 48s
+  start done: 2.679184e-05 (x 6^7 = 7.500000), elapsed 73s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 91s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 108s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 124s
+  start done: 3.572245e-06 (x 6^7 = 1.000000), elapsed 142s
+n = 7, |S| = 3: least value found 3.572245e-06; 6^-7 = 3.572245e-06; ratio 1.000000

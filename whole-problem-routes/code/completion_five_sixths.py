@@ -6,7 +6,9 @@ F = (5D - id - 2T)/12 and T.F = (5D - 2id - T)/12, so F + T.F = P_{5/6} = (5/6)D
  (c) the split F = D/6 + G does not work termwise: G (x) G is not positive (least value -1/72).
  (d) alternating minimisation of <phi| T_S F^(x)n (psi psi^*) |phi> over unit psi, phi (random and structured starts):
      the least value found equals 6^-n.
-usage: python completion_five_sixths.py [n_max (default 5)] [random starts (default 8)]"""
+ (e) (MP2): two-positivity of T_S F^(x)m (a qubit reference attached), m <= m2_max, every |S|; three-positivity fails
+     already at m = 2.
+usage: python completion_five_sixths.py [n_max (default 5)] [random starts (default 8)] [m2_max (default 3)]"""
 import sys, itertools
 import numpy as np
 
@@ -103,4 +105,36 @@ for n in range(2, nmax + 1):
         val = least(n, [TF] * k + [F] * (n - k), starts)
         ok.append(abs(val * 6 ** n - 1) < 1e-8)
         print(f"(d) n = {n}, |S| = {k}: least value found {val:.6e}, times 6^n = {val * 6 ** n:.9f}", flush=True)
+
+
+def apply_ref(X, m, maps, r):
+    T = X.reshape([r] + [3] * m + [r] + [3] * m)
+    for s_ in range(m):
+        a_, b_ = 1 + s_, 2 + m + s_
+        Tp = np.moveaxis(T, [a_, b_], [-2, -1]); T = np.moveaxis(maps[s_](Tp), [-2, -1], [a_, b_])
+    return T.reshape(r * 3 ** m, r * 3 ** m)
+
+
+def least_ref(m, maps, r, starts):
+    D = r * 3 ** m; best = np.inf
+    for _ in range(starts):
+        psi = rng.normal(size=D) + 1j * rng.normal(size=D); psi /= np.linalg.norm(psi); old = np.inf
+        for _ in range(500):
+            Y = apply_ref(np.outer(psi, psi.conj()), m, maps, r); e1, U1 = np.linalg.eigh((Y + Y.conj().T) / 2); phi = U1[:, 0]
+            Z = apply_ref(np.outer(phi, phi.conj()), m, maps, r); e2, U2 = np.linalg.eigh((Z + Z.conj().T) / 2); psi = U2[:, 0]
+            if abs(e2[0] - old) < 1e-15: break
+            old = e2[0]
+        best = min(best, e2[0])
+    return best
+
+
+m2max = int(sys.argv[3]) if len(sys.argv) > 3 else 3
+for m in range(1, m2max + 1):
+    for k in range(1, m + 1):
+        val = least_ref(m, [TF] * k + [F] * (m - k), 2, 12 if m < 4 else 8)
+        ok.append(val > -1e-12)
+        print(f"(e) two-positivity, m = {m}, |S| = {k}: least value with a qubit reference {val:+.3e}", flush=True)
+v3 = least_ref(2, [TF, F], 3, 12)
+ok.append(v3 < -1e-3)
+print(f"(e) three-positivity fails at m = 2: least value with a qutrit reference {v3:+.6f}")
 print(f"\n{sum(ok)} of {len(ok)} checks as stated")

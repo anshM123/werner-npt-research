@@ -8,5 +8,16 @@
 (d) n = 4, |S| = 2: least value found 7.716049e-04, times 6^n = 1.000000000
 (d) n = 5, |S| = 1: least value found 1.286008e-04, times 6^n = 1.000000000
 (d) n = 5, |S| = 2: least value found 1.286008e-04, times 6^n = 1.000000000
+(e) two-positivity, m = 1, |S| = 1: least value with a qubit reference +4.959e-18
+(e) two-positivity, m = 2, |S| = 1: least value with a qubit reference +1.318e-15
+(e) two-positivity, m = 2, |S| = 2: least value with a qubit reference +1.577e-17
+(e) two-positivity, m = 3, |S| = 1: least value with a qubit reference +5.258e-17
+(e) two-positivity, m = 3, |S| = 2: least value with a qubit reference +9.490e-17
+(e) two-positivity, m = 3, |S| = 3: least value with a qubit reference +1.511e-17
+(e) two-positivity, m = 4, |S| = 1: least value with a qubit reference -2.469e-17
+(e) two-positivity, m = 4, |S| = 2: least value with a qubit reference +3.648e-17
+(e) two-positivity, m = 4, |S| = 3: least value with a qubit reference +2.526e-17
+(e) two-positivity, m = 4, |S| = 4: least value with a qubit reference +2.505e-17
+(e) three-positivity fails at m = 2: least value with a qutrit reference -0.023148
 
-10 of 10 checks as stated
+21 of 21 checks as stated

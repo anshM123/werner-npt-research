@@ -210,6 +210,25 @@ for n = 6).
   Proposition 7.3), and a sum of decomposable maps is decomposable, so some T_S∘F^{⊗n} is not decomposable.
 (MP) is stronger than tensor-stable positivity of 𝒫_{5/6} and implies it. We have no proof for n ≥ 3.
 
+*Two-positivity takes (MP) one copy further.* Write (MP₂) for the statement that every T_S∘F^{⊗m} is two-positive.
+- (MP) at m and (MP₂) at m give (MP) at m + 1, with the margin. For Φ = T_S∘F^{⊗m}, F ⊗ Φ = (1/6)D ⊗ Φ + G ⊗ Φ, and
+  the first term is ⪰ 6^{−m−1} I by (MP) at m. For the second, G = (2W + T∘W)/6 with W = (D − T)/2, whose Choi matrix
+  is the antisymmetric projector and whose Kraus operators E_ij − E_ji have rank two. So W ⊗ Φ = (id ⊗ Φ)∘(W ⊗ id) is
+  positive when Φ is two-positive, and (T∘W) ⊗ Φ is positive because its global transpose is W ⊗ T_{S^c}∘F^{⊗m}. The
+  same works with T∘F on the new copy (T∘G = (2T∘W + W)/6). Positivity alone is even simpler: F has rank-two Kraus
+  operators, so T_S∘F^{⊗(m+1)} = (id ⊗ T_S∘F^{⊗m})∘(F ⊗ id) on a copy outside S.
+- (MP₂) at m for S = all copies is a statement about one state. ρ_F = Choi(F)/3 = (I − P_Φ)/12 + P_anti/9 is invariant
+  under O ⊗ O, and (T∘F)^{⊗m} is two-positive exactly when Choi((T∘F)^{⊗m}) = (3ρ_F^Γ)^{⊗m} is positive on
+  Schmidt-rank-two vectors, that is, when ρ_F is m-copy undistillable. ρ_F is NPT (ρ_F^Γ has the eigenvalue −1/18 on
+  Φ), so (MP₂) for every m would exhibit NPT bound entanglement directly, with this state. Its U ⊗ U twirl is the
+  Werner state with antisymmetric weight 7/12, inside the endpoint value 3/5.
+- Numerically (MP₂) holds for every S at m ≤ 4, with least value 0 (attained, since T∘F is two-positive and no more).
+  Three-positivity fails already for T∘F ⊗ F (least value −0.0231 with a qutrit reference). (MP) itself holds with the
+  exact margin 6^{−n} for every S at n ≤ 7 (at n = 7 with Lanczos eigensolvers, `code/completion_five_sixths_n7.py`).
+- The reduction does not iterate by itself. Peeling a copy off (MP₂) at m needs four-positivity at m − 1, which fails,
+  and expanding F ⊗ Φ twice produces G ⊗ G ⊗ F^{⊗m}, which is never positive (least value −(5/864)(5/12)^{m−1} for
+  m ≤ 3).
+
 **Proposition M′ (balanced scalar inputs suffice; added 9 November 2026).** Fix a ≥ 1/2 and call a real vector z on
 N copies balanced if every one-copy marginal of zzᵀ/‖z‖² is I₃/3. The following are equivalent:
 1. 𝒫_a is tensor-stable positive;
