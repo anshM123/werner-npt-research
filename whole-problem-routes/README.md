@@ -258,8 +258,9 @@ These are from an independent audit; we re-derived them and checked them numeric
 log `logs/norm_bounds_check.log`). They bound the size of the output, not its sign. The same audit asked whether the
 loss in item 4 can be removed with ‖Y‖₁² ≤ Tr(YZ^{−1}Y) for a positive reference Z, and found that natural references
 fail on inputs whose actual outputs are positive: products of marginals on blocks of bounded size b lose a factor
-(2433/2401)^{N/(b+1)} on products of GHZ_{b+1} vectors; for every completely positive Q equal to P_a on symmetric
-matrices, ‖(Q ⊗ Q)(φφ*) − (P_a ⊗ P_a)(φφ*)‖₂² ≥ e⁴/3 with e = (1 − a)/t_a (1/7203 at a = ¾), so identical CP tensor
+(2433/2401)^{N/(b+1)} on products of GHZ_{b+1} vectors; for ¾ ≤ a < 1 and every bistochastic (unital and trace-preserving)
+completely positive Q equal to P_a on symmetric matrices (for a ≥ 1, Q = P_a is itself completely positive and there is
+no gap), ‖(Q ⊗ Q)(φφ*) − (P_a ⊗ P_a)(φφ*)‖₂² ≥ e⁴/3 with e = (1 − a)/t_a (1/7203 at a = ¾), so identical CP tensor
 references lose exponentially on products of Bell pairs; and on the antisymmetric three-qutrit vector the gap
 (3/8)r²e⁴, r = 1/(2t_a), holds for any three such Q_1, Q_2, Q_3, even chosen after seeing the input
 (`code/reference_obstructions_check.py`; summary in `OBSTRUCTIONS.md`).

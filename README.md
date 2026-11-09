@@ -88,7 +88,7 @@ scripts need PyTorch.
     two qutrits they do not (explicit witness). So a proof has to use the tensor-power form of the Werner weights.
   - *The endpoint as a facet.* After twirling over U ⊗ Ū at every copy, the endpoint is a linear inequality on the convex
     set of identity-count distributions of rank-two operators (exactly a quadrilateral at two copies; ten candidate
-    vertices found numerically at three). The known zeros Π_2 ⊗ R (R of rank one) span a face of dimension n − 1, so if
+    vertices found numerically at three). The known zeros Π_2 ⊗ R (R of rank one) span an affine set of dimension n − 1 on that hyperplane, so if
     the endpoint holds at n copies it is a facet there (this is equivalent to the endpoint, not a proof of it), and then
     no finite positive combination of other valid linear inequalities in Pauli weights can produce it.
 - The endpoint for every n. `compression-notes/` states a compression conjecture that would give it, with evidence up to five copies.

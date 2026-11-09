@@ -941,7 +941,8 @@ the convex set 𝒮_n = conv{π̄_C : rank C ≤ 2}, a set of dimension n.
   - (33/2, 3, 15/2, 0) comes from a partial isometry that is thin at one copy (q_3/‖C‖_F² = 5/8).
   On the face π̄_3 = 0, 90 directions return only six points, the corners of a hexagon (evidence, not a proof that the
   face has no curved part). Given EP_3 (known), the endpoint functional is a facet. It vanishes on the quadrilateral spanned by (4, 12, 9, 2), (6, 15, 6, 0), (8, 16, 1, 2) and (9, 18, 0, 0), and the GHZ
-  zero (7, 15, 3, 2) lies on its edge. The other facets include π̄_3 ≤ (2/3)π̄_1.
+  zero (7, 15, 3, 2) lies on its edge. The numerical hull also suggests further facets, such as π̄_3 ≤ (2/3)π̄_1;
+  these are not proved.
 - Four copies (support points; the hull may be incomplete). Every one of the 19 hull vertices found from 401
   directions has G(−½) ≥ 0 (log `logs/identity_count_polytope_n4.log`). The zero vertices are again of the form
   Π_2 ⊗ R. For example, (20, 46, 12, 1, 2)/81 has G = ((1 + 2x)/3)·((x³ + 6x + 20)/27), which is Π_2 ⊗ |GHZ_3⟩⟨GHZ_3|.
@@ -1632,7 +1633,8 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
   `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
   and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, (7.1′) and FB on stars); `star_descent.py k m eps steps seed` (descent from star near-zeros, PyTorch); `qc_star.py k m restarts seed` (Conjecture QC on stars); `fb_class.py N t family i j` and `fb_class_check.py` (FB on stabilizer pairs). `pg_codes.py m trials seed` (gauge-fixed projective Hamming codes) and `hamming13_full.py restarts seed` (the whole
-[[13, 7, 3]]_3 code). `code/bell_diagonal/`: `one_qutrit_lines.py iters seed` (line conditions versus 2-block-positivity on one qutrit) `two_qutrit_witness.py` (the two-qutrit witness, from `data/bell_k2_witness_*.txt`) and `two_qutrit_witness_exact.py`
+[[13, 7, 3]]_3 code). `audit89_checks.py` (zeros of the identity-count polynomial near 0, the
+negative mixed contraction, the DDVV construction). `code/bell_diagonal/`: `one_qutrit_lines.py iters seed` (line conditions versus 2-block-positivity on one qutrit) `two_qutrit_witness.py` (the two-qutrit witness, from `data/bell_k2_witness_*.txt`) and `two_qutrit_witness_exact.py`
 (the same witness in exact rational and Eisenstein-integer arithmetic); `code/identity_count/`: `polytope.py N ndir restarts seed` (support points and hull of the identity-count polytope, PyTorch), `pibar_numpy.py` (the same with NumPy) and `check_vertices.py` (exact vertices); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs

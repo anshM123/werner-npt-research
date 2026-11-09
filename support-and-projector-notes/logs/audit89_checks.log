@@ -1,0 +1,13 @@
+(A) formula (89.1) versus partial traces, n = 2..6: max difference 2.6e-15
+(A) n = 20: zero x = -0.024653+0.312864j, |x - (-1/40 + 0.313i)| = 3.73e-04, |x| = 0.3138
+(A) n = 40: zero x_n with n x_n = -0.24661+6.27673j (2 pi i = 0.00000+6.28319j)
+(A) n = 80: zero x_n with n x_n = -0.12335+6.28157j (2 pi i = 0.00000+6.28319j)
+(A) n = 160: zero x_n with n x_n = -0.06168+6.28278j (2 pi i = 0.00000+6.28319j)
+(A) endpoint values G(-1/2) > 0 for n = 2..199 (exact): True; formula vs direct at n = 5: 0.096396694215 vs 0.096396694215
+(B) ||z||^2 = 7, T = Tr(rho rho^TA) = -1.000000, marginal purities [17.0, 17.0, 17.0], spectra [[2.0, 2.0, 3.0], [2.0, 2.0, 3.0], [2.0, 2.0, 3.0]]
+(B) critical scalar z^T L3^(x3)(zz^T) z = 493.000000 (audit: 493)
+(B) bound (89.2), d = 3, k = 4: smallest ratio over 20000 random real PSD = 0.23704 >= 2/3 - 1 = -0.33333
+(B) quaternion equality case: purity 36.0, overlap -12.0, ratio -0.33333
+(C) DDVV identities (n = 1, 2; four t; random z): max error 1.1e-08; DDVV inequality holds: True
+(C) root t = -1.334845: j = [-3.442411, 10.327233, -3.442411] -> j/(-j_1) = [-1.0, 3.0, -1.0], error base c^2/kappa = 18.6198
+(C) root t = -0.651690: j = [-0.636202, 1.908607, -0.636202] -> j/(-j_1) = [-1.0, 3.0, -1.0], error base c^2/kappa = 69.8731

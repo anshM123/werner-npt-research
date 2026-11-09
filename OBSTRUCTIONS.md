@@ -274,6 +274,33 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   separable, and such states very likely pass the test. An inductive class would have to contain all Werner powers and
   exclude every activator, which is the original problem.
 
+- **Zero-free disks (added 9 November 2026, from an independent audit; checked here).** A proof by continuity from
+  G_C(0) > 0 through a complex zero-free disk |x| < r of the identity-count polynomial would need r ≥ ½. No disk of any
+  radius works, even for real rank-two orthogonal projectors. For P_n = |u_n⟩⟨u_n| + |2^n⟩⟨2^n| with
+  u_n ∝ √(3^n)|0^n⟩ + √(2^n)|1^n⟩,
+  G_{P_n}(x) = ½[(2 − B_n)R^n + B_n + (2 + B_n)S^n], R = (x + 2)/3, S = (x − 1)/3, B_n = 2·6^n/(3^n + 2^n)²,
+  and Rouché's theorem gives zeros x_n with n x_n → 2πi (at n = 20 a zero at −0.0247 + 0.3129i). The real values
+  G_{P_n}(−½) stay positive for every n ≥ 2; these planes contain a product vector, so strongly balanced planes are not
+  covered by the example. Lee–Yang type zero-free regions are therefore not a route
+  (`support-and-projector-notes/code/global_reductions/audit89_checks.py`, log `logs/audit89_checks.log`).
+- **Termwise nonnegativity of mixed contractions on the map route (added 9 November 2026, from the same audit; checked
+  here).** In the three-copy expansion F_3(z) = 25‖z‖⁴ − 14(p_A + p_B + p_C) + 18T(z) of the critical scalar for
+  L_3 = 3D − id − T, with p the one-copy purities and T(z) = Tr(ρρ^{T_A}), ρ = Tr_B zz^T, the mixed term can be negative
+  on a full-support tensor: z = |000⟩ + |101⟩ + |202⟩ − |011⟩ + |110⟩ − |022⟩ + |220⟩ has ‖z‖² = 7, T(z) = −1 and all
+  one-copy spectra (3, 2, 2), while F_3(z) = 493 > 0. The sharp replacement Tr(ρρ^{T_A}) ≥ (2/d − 1) Tr ρ² for real
+  positive semidefinite ρ on R^d ⊗ R^k (equality at d = 3 from three 4 × 4 quaternion matrices) is a quartic sum of
+  squares, so the fixed-degree obstruction applies to it.
+- **A DDVV inequality valid for every n (added 9 November 2026, from the same audit; checked here).** The DDVV
+  theorem Σ_{α,β} ‖[B_α, B_β]‖² ≤ (Σ_α ‖B_α‖²)² for real symmetric matrices (Lu; Ge and Tang), applied to
+  𝔹_I(z) = Σ_K z_K ⊗_s B_{i_s}(e_{k_s}) with B_i(v) = e_i vᵀ + v e_iᵀ + t v_i I_3, gives
+  c(t)^{2n}‖z‖⁴ − 2Q_{h(t)}(z) + 2Q_{j(t)}(z) ≥ 0 for every real z on n copies and every n, where Q_{(a,b,c)} is the
+  four-copy contraction with local pairing weights (a, b, c), c(t) = 3t² + 4t + 8,
+  h = (3t⁴ + 8t³ + 16t² + 8t + 13, 8t² + 20t, 8t² + 20t + 25) and j = (8t² + 20t + 9, 3t⁴ + 8t³ + 16t² + 8t + 2,
+  8t² + 20t + 9). At the roots of 3t⁴ + 8t³ + 40t² + 68t + 29 the j-term is a positive multiple κ^n of the critical
+  scalar. Dropping Q_h ≥ 0 leaves an error with base c²/κ (18.6 and 69.9 at the two roots, at least 800/63 in general),
+  while a vanishing-error criterion needs control at the scale 3^n. A correlated lower bound for Q_h, or another
+  combination, would be needed.
+
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
@@ -322,7 +349,7 @@ output have full support. The following do not reach every n (added 7 November 2
   (Proposition N of `whole-problem-routes/`). The exact output purity (19/49)^n gives only τ_n ≤ (√57/7)^n. Bounding
   ‖Y‖₁² by Tr(YZ^{−1}Y) with a positive reference Z does not remove the exponential loss for three natural choices of
   Z, all on inputs whose outputs are positive: products of marginals on blocks of bounded size (GHZ products), tensor
-  powers of any completely positive map that agrees with P on symmetric matrices (Bell-pair products, gap 1/7203 per
+  powers of any bistochastic completely positive map that agrees with P on symmetric matrices (Bell-pair products, gap 1/7203 per
   pair), and products of three such maps chosen per site after seeing the input (antisymmetric three-qutrit vector,
   gap 3/235298 per triple). Nor can a global shift λ id + μT make the Choi matrix of P^{⊗n} positive, for n ≥ 2.
   Correlated references, nonlinear comparisons and direct control of the sign are not excluded.
