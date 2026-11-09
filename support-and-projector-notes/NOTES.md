@@ -901,9 +901,10 @@ the convex set 𝒮_n = conv{π̄_C : rank C ≤ 2}, a set of dimension n.
   The face π̄_3 = 0 is an exact hexagon over 90 directions, with no curved part. The endpoint functional is a facet. It
   vanishes on the quadrilateral spanned by (4, 12, 9, 2), (6, 15, 6, 0), (8, 16, 1, 2) and (9, 18, 0, 0), and the GHZ
   zero (7, 15, 3, 2) lies on its edge. The other facets include π̄_3 ≤ (2/3)π̄_1.
-- Four copies (support points; the hull is incomplete). Every one of the fourteen hull vertices found from 121
-  directions has G(−½) ≥ 0 (log `logs/identity_count_polytope_n4.log`). The smallest positive value at a vertex is 1/8;
-  it was 5/6 at two copies and 1/4 at three.
+- Four copies (support points; the hull may be incomplete). Every one of the 19 hull vertices found from 401
+  directions has G(−½) ≥ 0 (log `logs/identity_count_polytope_n4.log`). The zero vertices are again of the form
+  Π_2 ⊗ R. For example, (20, 46, 12, 1, 2)/81 has G = ((1 + 2x)/3)·((x³ + 6x + 20)/27), which is Π_2 ⊗ |GHZ_3⟩⟨GHZ_3|.
+  The smallest positive value at a vertex is 1/8, at (17, 28, 30, 4, 2)/81; it was 5/6 at two copies and 1/4 at three.
 
 In every case found, the zero vertices are products Π_2 ⊗ R with R of rank one on the other copies (R may be
 entangled), so that G factors as ((1 + 2x)/3)·G_R(x). The other vertices are product or stabilizer operators with
