@@ -741,9 +741,10 @@ zeros give equality at the endpoint. SD_t implies the sharp bound of Section 9 o
 q(Π) = 2q(G) + 2 Re S(0, u)/3^N ≥ 2(1 − τ) q(G) ≥ 2(1 − 2t)(1 − t)^{N−1} for Π the projector onto span{|g⟩, Z^u|g⟩}. Evidence (`code/global_reductions/
 stabilizer_domination.py` and `graph_cut_rank.py`, log `logs/stabilizer_domination.log`): exhaustive over all Γ, d, v
 at N = 2, 3, 4 for t = ½ (largest ratio exactly 1, thousands of equality cases), t = 0.45 and 0.4 (largest ratio exactly
-τ = 9/11 and 2/3), and t = 0.35 at N = 3 (τ = 7/13); at t = ½ with all d and v, 300 random graphs at N = 5 and 40 at
-N = 6 (largest ratio 1, attained), and 12 at N = 7 (largest ratio 0.39; `stabilizer_domination_fft.py`, a fast Fourier
-transform over Z_3^N).
+τ = 9/11 and 2/3), and t = 0.35 at N = 3 (τ = 7/13); at t = ½ with all d and v, 300 random graphs at N = 5 (largest
+ratio 1, attained), 40 at N = 6 (largest ratio 0.6) and 12 at N = 7 (largest ratio 0.39; `stabilizer_domination_fft.py`,
+a fast Fourier transform over Z_3^N). Random dense graphs stay far from τ; it is attained on graphs with isolated or
+GHZ-like parts.
 The class contains the minimisers of q_5 over balanced projectors (subspaces of the five-qutrit code) and every known
 zero, so SD_t for every N would give the endpoint, and the sharp bound, on all of them. We have no proof beyond N = 4;
 the cycle graphs are covered for every N by the transfer-matrix argument of `cyclic-code-planes/` (on their code spaces).
