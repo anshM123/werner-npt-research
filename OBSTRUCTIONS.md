@@ -263,7 +263,9 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   with weights h_L = |S|^{−1} Σ_{E ∈ L+S} (−½)^{#identities(E)}. With two logical qutrits the stabilizer-plane
   conditions do not decide 2-block-positivity (Section 7 of `support-and-projector-notes/`), so codes are a natural
   place for a counterexample; annealed searches over [[N, 2]]_3 codes reach 0 at N ≤ 6 (known zeros) and stay
-  positive at N = 7, 8, 9. Concatenating a one-qutrit code with itself iterates h ↦ h′: for the [[5, 1, 3]]_3 code the
+  positive at N = 7, 8, 9; general stabilizer codes with three and four logical qutrits give minima between 0.036
+  and 0.082 at N = 7 to 11 (`support-and-projector-notes/code/global_reductions/k_codes.py`, log
+  `logs/k_codes.log`). Concatenating a one-qutrit code with itself iterates h ↦ h′: for the [[5, 1, 3]]_3 code the
   flow is one-dimensional, −½ ↦ 71/128 ↦ … → uniform, and thirty random codes all flow to the uniform weights or to
   fixed points with positive margin. So deep encodings move away from the endpoint, not towards a failure.
 - **Filter-realignment as an inductive invariant (added 9 November 2026).** The strengthening below survives

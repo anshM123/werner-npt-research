@@ -1,0 +1,6 @@
+N=7 k=3: smallest +3.645833e-02  (no counterexample)
+N=8 k=3: smallest +4.600695e-02  (no counterexample)
+N=9 k=3: smallest +8.203125e-02  (no counterexample)
+N=9 k=4: smallest +5.453482e-02  (no counterexample)
+N=10 k=4: smallest +7.435500e-02  (no counterexample)
+N=11 k=4: smallest +6.960118e-02  (no counterexample)
