@@ -1,0 +1,3 @@
+perfect code: dimension 3; q_5(1/2) on five random 2-dim subspaces: [np.float64(0.625), np.float64(0.625), np.float64(0.625), np.float64(0.625), np.float64(0.625)] (5/8); max deviation of one- and two-copy marginals from maximally mixed 3.9e-16: True
+enumerator formula for code subspaces vs direct partial traces (4 random codes, 3 logical classes, t = 1/2, 2/5): max error 2.4e-15
+PASS

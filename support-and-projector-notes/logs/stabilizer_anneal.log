@@ -1,0 +1,12 @@
+N=5 t=0.5 restart 0: best q/||Pi||^2 = 0.000000
+N=5 t=0.5 restart 1: best q/||Pi||^2 = 0.000000
+N=5 t=0.5 restart 2: best q/||Pi||^2 = 0.000000
+N=5 t=0.5: overall best q/||Pi||^2 over annealed code subspaces = 0.000000
+N=7 t=0.5 restart 0: best q/||Pi||^2 = 0.000000
+N=7 t=0.5 restart 1: best q/||Pi||^2 = 0.000000
+N=7 t=0.5 restart 2: best q/||Pi||^2 = 0.000000
+N=7 t=0.5: overall best q/||Pi||^2 over annealed code subspaces = 0.000000
+N=9 t=0.5 restart 0: best q/||Pi||^2 = 0.107060
+N=9 t=0.5 restart 1: best q/||Pi||^2 = 0.097222
+N=9 t=0.5 restart 2: best q/||Pi||^2 = 0.108218
+N=9 t=0.5: overall best q/||Pi||^2 over annealed code subspaces = 0.097222
