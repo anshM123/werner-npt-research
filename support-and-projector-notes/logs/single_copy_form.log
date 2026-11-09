@@ -1,0 +1,24 @@
+N=3 t=0.5: (1) max |3^N <Z^v g|B_d|Z^-v g> - S(d,v)| = 9.93e-15
+           (1') max |<Z^x g|B_d|Z^y g> - S(d-x-y, y-x)/3^N| over random x, y = 3.16e-16
+           (2) max |Gram - S-array| = 4.58e-16, least Gram eigenvalue = -0.0000 (PSD)
+           (3) Pauli images Z^d g        : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 1.000000   (tau = 1.000000)
+           (3) random P-symmetric states : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 2.008771   (tau = 1.000000)
+           (3) random states             : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 0.796013   (tau = 1.000000)
+N=3 t=0.4: (1) max |3^N <Z^v g|B_d|Z^-v g> - S(d,v)| = 7.62e-15
+           (1') max |<Z^x g|B_d|Z^y g> - S(d-x-y, y-x)/3^N| over random x, y = 3.01e-16
+           (2) max |Gram - S-array| = 5.21e-16, least Gram eigenvalue = -0.0000 (PSD)
+           (3) Pauli images Z^d g        : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 0.666667   (tau = 0.666667)
+           (3) random P-symmetric states : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 1.137120   (tau = 0.666667)
+           (3) random states             : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 0.713864   (tau = 0.666667)
+N=4 t=0.5: (1) max |3^N <Z^v g|B_d|Z^-v g> - S(d,v)| = 1.63e-14
+           (1') max |<Z^x g|B_d|Z^y g> - S(d-x-y, y-x)/3^N| over random x, y = 1.86e-16
+           (2) max |Gram - S-array| = 6.85e-16, least Gram eigenvalue = -0.0000 (PSD)
+           (3) Pauli images Z^d g        : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 1.000000   (tau = 1.000000)
+           (3) random P-symmetric states : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 1.002140   (tau = 1.000000)
+           (3) random states             : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 0.577423   (tau = 1.000000)
+N=4 t=0.45: (1) max |3^N <Z^v g|B_d|Z^-v g> - S(d,v)| = 1.62e-14
+           (1') max |<Z^x g|B_d|Z^y g> - S(d-x-y, y-x)/3^N| over random x, y = 2.43e-16
+           (2) max |Gram - S-array| = 5.57e-16, least Gram eigenvalue = 0.3396 (PSD)
+           (3) Pauli images Z^d g        : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 0.432615   (tau = 0.818182)
+           (3) random P-symmetric states : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 0.618753   (tau = 0.818182)
+           (3) random states             : max |<Z^v h|B_0|Z^-v h>| / <h|B_0|h> = 0.660124   (tau = 0.818182)

@@ -1,0 +1,23 @@
+N=2 t=0.5 (all): 2 connected graphs, max |S(d,v)|/S(d,0) = 0.5000000000, tau = 1.000000, ratio/tau = 0.500000, min S(d,0) = 6.0000e+00
+  extremal graph: [[0, 1], [1, 0]]  d: [0, 1]
+N=2 t=0.45 (all): 2 connected graphs, max |S(d,v)|/S(d,0) = 0.4285714286, tau = 0.818182, ratio/tau = 0.523810, min S(d,0) = 6.3000e+00
+  extremal graph: [[0, 1], [1, 0]]  d: [1, 0]
+N=2 t=0.4 (all): 2 connected graphs, max |S(d,v)|/S(d,0) = 0.3636363636, tau = 0.666667, ratio/tau = 0.545455, min S(d,0) = 6.6000e+00
+  extremal graph: [[0, 1], [1, 0]]  d: [0, 1]
+N=3 t=0.5 (all): 20 connected graphs, max |S(d,v)|/S(d,0) = 0.6000000000, tau = 1.000000, ratio/tau = 0.600000, min S(d,0) = 1.3500e+01
+  extremal graph: [[0, 0, 1], [0, 0, 1], [1, 1, 0]]  d: [0, 0, 0]
+N=3 t=0.45 (all): 20 connected graphs, max |S(d,v)|/S(d,0) = 0.5120015120, tau = 0.818182, ratio/tau = 0.625780, min S(d,0) = 1.4850e+01
+  extremal graph: [[0, 0, 1], [0, 0, 1], [1, 1, 0]]  d: [0, 0, 0]
+N=3 t=0.4 (all): 20 connected graphs, max |S(d,v)|/S(d,0) = 0.4367816092, tau = 0.666667, ratio/tau = 0.655172, min S(d,0) = 1.6200e+01
+  extremal graph: [[0, 0, 1], [0, 0, 1], [1, 1, 0]]  d: [0, 0, 0]
+N=4 t=0.5 (all): 624 connected graphs, max |S(d,v)|/S(d,0) = 0.5183609369, tau = 1.000000, ratio/tau = 0.518361, min S(d,0) = 3.2062e+01
+  extremal graph: [[0, 0, 0, 1], [0, 0, 1, 0], [0, 1, 0, 1], [1, 0, 1, 0]]  d: [0, 0, 0, 1]
+N=4 t=0.45 (all): 624 connected graphs, max |S(d,v)|/S(d,0) = 0.4630577908, tau = 0.818182, ratio/tau = 0.565960, min S(d,0) = 3.6815e+01
+  extremal graph: [[0, 0, 0, 1], [0, 0, 0, 1], [0, 0, 0, 1], [1, 1, 1, 0]]  d: [0, 0, 0, 1]
+N=4 t=0.4 (all): 624 connected graphs, max |S(d,v)|/S(d,0) = 0.4258555133, tau = 0.666667, ratio/tau = 0.638783, min S(d,0) = 4.1602e+01
+  extremal graph: [[0, 0, 0, 1], [0, 0, 0, 1], [0, 0, 0, 1], [1, 1, 1, 0]]  d: [0, 0, 0, 1]
+# N = 5 runs (all connected graphs, 55248 of them)
+N=5 t=0.5 (all): 55248 connected graphs, max |S(d,v)|/S(d,0) = 0.5961307749, tau = 1.000000, ratio/tau = 0.596131, min S(d,0) = 8.1000e+01
+  extremal graph: [[0, 0, 0, 0, 1], [0, 0, 0, 0, 1], [0, 0, 0, 0, 1], [0, 0, 0, 0, 1], [1, 1, 1, 1, 0]]  d: [0, 0, 1, 1, 0]
+N=5 t=0.4 (all): 55248 connected graphs, max |S(d,v)|/S(d,0) = 0.4586540913, tau = 0.666667, ratio/tau = 0.687981, min S(d,0) = 1.0692e+02
+  extremal graph: [[0, 0, 0, 0, 1], [0, 0, 0, 0, 1], [0, 0, 0, 0, 1], [0, 0, 0, 0, 1], [1, 1, 1, 1, 0]]  d: [0, 0, 1, 1, 0]

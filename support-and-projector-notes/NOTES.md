@@ -28,7 +28,9 @@ These notes record four facts about the n-copy endpoint form, and some numerics:
   endpoint on one copy fewer (Proposition 17); Kronecker forms of flattenings do not detect anchors (Proposition 18).
 - **Section 7.** For balanced rank-two projectors, the standard weight-enumerator relations of quantum codes alone give
   q_n > 0 for n ≤ 8 (Proposition 19, exact certificates). They cannot give it at n = 9, and two-copy balance does not
-  help (an exact negative enumerator at n = 10).
+  help (an exact negative enumerator at n = 10). For rank-two operators built from Pauli images of one stabilizer state
+  the endpoint is a bound on twisted coset weight enumerators of self-dual codes (Conjecture SD), with a one-copy form;
+  a stronger bound we had stated below the endpoint is false (stars, exact counterexample at eight copies).
 - **Section 8.** Zeros decide the sign. The endpoint at n holds if and only if every rank-two zero of q_n is a critical
   point, and if and only if the zeros form a set of codimension two (Proposition 20). So it follows from a
   classification of zeros: if every zero has the qubit form of Section 6 (Conjecture ZC_n, true at two copies), the
@@ -734,20 +736,40 @@ Z^xGZ^{−y} and its conjugate by Z^v. In cut-rank form (r_J the F_3-rank of Γ 
 S(d, v) = 3^N Σ_J (−t)^{|J|} 3^{−r_J} [d_J ∈ col Γ_{J,J^c}] [v_{J^c} ∈ col Γ_{J^c,J}] ω^{θ_J}, a phase θ_J; for the plane
 spanned by |g⟩ and Z^u|g⟩ this gives q/‖Π‖_F² = Σ_J (−t)^{|J|} 3^{−r_J} (1 + [u_{J^c} ∈ col Γ_{J^c,J}]).
 
-**Conjecture SD_t.** For every N, every Γ, every d and every v ≠ 0, |S(d, v)| ≤ τ S(d, 0) with τ = t/(1 − t).
+**Conjecture SD.** For every N, every Γ, every d, every v ≠ 0 and 0 ≤ t ≤ ½,
 
-At t = ½ this is (7.1). Product states attain τ (a single-copy shift gives ratio exactly τ), and the GHZ and product
-zeros give equality at the endpoint. SD_t implies the sharp bound of Section 9 on this class: for the plane,
-q(Π) = 2q(G) + 2 Re S(0, u)/3^N ≥ 2(1 − τ) q(G) ≥ 2(1 − 2t)(1 − t)^{N−1} for Π the projector onto span{|g⟩, Z^u|g⟩}. Evidence (`code/global_reductions/
-stabilizer_domination.py` and `graph_cut_rank.py`, log `logs/stabilizer_domination.log`): exhaustive over all Γ, d, v
-at N = 2, 3, 4 for t = ½ (largest ratio exactly 1, thousands of equality cases), t = 0.45 and 0.4 (largest ratio exactly
-τ = 9/11 and 2/3), and t = 0.35 at N = 3 (τ = 7/13); at t = ½ with all d and v, 300 random graphs at N = 5 (largest
-ratio 1, attained), 40 at N = 6 (largest ratio 0.6) and 12 at N = 7 (largest ratio 0.39; `stabilizer_domination_fft.py`,
-a fast Fourier transform over Z_3^N). Random dense graphs stay far from τ; it is attained on graphs with isolated or
-GHZ-like parts.
+    |S(d, v)| ≤ S(d, 0) − 3^N (1 − t)^{N−1} (1 − 2t).                                                   (7.1′)
+
+At t = ½ this is (7.1). Below the endpoint it is exactly the sharp bound (9.1) of Section 9 on the operators
+C = αC_1 + βC_2, where C_1 = Z^xGZ^{−y} and C_2 is its conjugate by Z^v. These have singular values |α| and |β|, with
+q(C_1) = q(C_2) = S(d, 0)/3^N and |q(C_1, C_2)| = |S(d, v)|/3^N. After minimising over the phase, q(C_i) ≥ (1 − t)^N reduces
+(9.1) for all α, β to the case |α| = |β|, which is (7.1′). The GHZ and product zeros give equality at the endpoint.
+
+*Correction (9 November 2026).* An earlier version of this section stated the stronger bound |S(d, v)| ≤ τ S(d, 0),
+τ = t/(1 − t), as "Conjecture SD_t". It implies (7.1′) and holds with equality on products, but it is false below the
+endpoint. Stars refute it. Take the star K_{1,n} with unit weights, d = 0 at the centre and on k leaves, d = 1 on the
+other m ≥ 1 leaves, and v = v_c e_c supported at the centre. Summing over the centre label first gives
+
+    S(d, v_c e_c) = 3^n [ (1 − t)^{k+1} + ω^{v_c} + ω^{2v_c} (1 − t)^m ]
+
+(checked against the defining sum; `code/global_reductions/star_family.py`). With x = (1 − t)^{k+1} and y = (1 − t)^m the
+ratio is |x + ω + ω²y|/(x + 1 + y). It is below 1 for all x, y > 0, but it tends to 1 as k and m grow, so for every
+t < ½ it exceeds τ once N is large. At t = 2/5 the star with N = 8, k = 3, m = 4 gives ratio 1.0368 τ (exact rational
+arithmetic: S(d, 0) = 1721169/625 and |S(d, e_c)|² = 1415452713984/390625), and N = 10 gives 1.197 τ. On the same
+family (7.1′) holds for every t ≤ ½: after squaring it reduces to 3x²y² + x + y − xy − 2xy(x + y) ≥ 0 on [0, 1]². So the
+stars are not counterexamples to the sharp bound or to the endpoint. They show that the ratio |S(d, v)|/S(d, 0) is the
+wrong normalisation below the endpoint, because S(d, 0) can lie far above the floor 3^N (1 − t)^N. At the endpoint they
+make (7.1) asymptotically tight: with k + 1 = m the ratio is (1 − x)/(1 + 2x) → 1.
+
+Evidence for (7.1) (`code/global_reductions/stabilizer_domination.py` and `graph_cut_rank.py`, log
+`logs/stabilizer_domination.log`): exhaustive over all Γ, d, v at N = 2, 3, 4 for t = ½ (largest ratio exactly 1,
+thousands of equality cases); at t = ½ with all d and v, 300 random graphs at N = 5 (largest ratio 1, attained), 40 at
+N = 6 (largest ratio 0.6) and 12 at N = 7 (largest ratio 0.39; `stabilizer_domination_fft.py`, a fast Fourier transform
+over Z_3^N); stars up to N = 10 (largest ratio 0.912). The exhaustive runs at t = 0.45, 0.4 and 0.35 for N ≤ 4 found
+largest ratio exactly τ; they cannot see the stars, which need N ≥ 8 at t = 2/5.
 The class contains the minimisers of q_5 over balanced projectors (subspaces of the five-qutrit code) and every known
-zero, so SD_t for every N would give the endpoint, and the sharp bound, on all of them. We have no proof beyond N = 4;
-the cycle graphs are covered for every N by the transfer-matrix argument of `cyclic-code-planes/` (on their code spaces).
+zero, so (7.1) for every N would give the endpoint on all of them. We have no proof beyond N = 4; the cycle graphs are
+covered for every N by the transfer-matrix argument of `cyclic-code-planes/` (on their code spaces).
 Two exact tools for an induction. Expanding each site factor in characters of (Γa + d)_i gives the dual form
 S(d, v) = Σ_{s∈F_3^N} ω^{s·d} Π_i (3[s_i = 0 and (v + Γs)_i = 0] − t), in which d becomes a character and v a shift.
 Deleting a vertex n (measure it in the Z basis: |g⟩ = 3^{−1/2} Σ_k |k⟩_n ⊗ Z^{kγ}|g′⟩ with γ = Γ_{n,·} and g′ the graph
@@ -756,16 +778,59 @@ state of Γ′ = Γ − n) and using the one-copy recursion for the slices gives
     S_N(d, v) = Σ_{m∈F_3} [ ω^{m v_n} S′(d′ + mγ, v′) − t ω^{m d_n} S′(d′, v′ + mγ) ]                    (7.2)
 
 (`code/global_reductions/graph_recursion.py`, log `logs/graph_recursion.log`: relative error below 10^{−13} on random
-graphs). Bounding the two sums in (7.2) separately with SD_t on Γ′ does not close: the second sum lowers S_N(d, 0) by about
+graphs). Bounding the two sums in (7.2) separately with (7.1) on Γ′ does not close: the second sum lowers S_N(d, 0) by about
 t S′(d′, 0), and an induction has to keep the joint values S′(d′ + mγ, v′ + m′γ) for all m, m′. On a path, deleting an end vertex shifts
 only its neighbour, so (7.2) closes on the five values S(d + k e_n, v) and S(d, v + k e_n) at the current end vertex n, and
 S(d, v) is a product of 5 × 5 matrices; equivalently it is a trace of 9 × 9 transfer matrices on pairs (a_i, a_{i+1}), as
-for the cycles of `cyclic-code-planes/`. On paths with arbitrary edge weights SD_t holds with room: the largest ratio
+for the cycles of `cyclic-code-planes/`. On paths with arbitrary edge weights (7.1) holds with room: the largest ratio
 found at t = ½ is 0.6 (N = 3), annealing gives 0.52, 0.35, 0.36 and 0.27 at N = 4, 6, 8, 16, and random weights, shifts
 and characters give at most 0.087, 0.0029 and 2·10^{−5} at N = 10, 20, 30 (`code/global_reductions/path_transfer.py`, log
 `logs/path_transfer.log`; the transfer evaluation agrees with the direct sum). Paths contain no GHZ or product
-configuration, which is where τ is attained. An invariant cone for these 5 × 5 products would prove SD_t on paths for
-every N; we have not found one.
+configuration, where the ratio reaches or approaches 1. An invariant cone for these 5 × 5 products would prove (7.1) on
+paths for every N; we have not found one.
+
+*Components, one copy, and a coding form (added 9 November 2026).* Three exact reformulations of (7.1).
+
+(i) *Only connected graphs matter.* S factorises over connected components: if Γ is the direct sum of Γ_1 and Γ_2,
+then S(d, v) = S_1(d_1, v_1) S_2(d_2, v_2). An isolated vertex has S(d, v) = 3[v = 0] − 3t[d = 0], so at t = ½ its ratio
+is 1 (at d = 0) or 0. Hence (7.1) holds for every graph if and only if it holds for every connected graph, and equality
+comes from isolated vertices. Exhaustively over all connected Γ, all d and all v ≠ 0
+(`code/global_reductions/connected_domination.py`, log `logs/connected_domination.log`), the largest ratio at t = ½ is
+1/2, 3/5, 0.5184 and 0.5961 for N = 2, 3, 4, 5 (55 248 connected graphs at N = 5). The three-vertex path with d = 0 and v
+at its middle vertex gives exactly τ(1 − t + t²)/(1 + t²), which is 3/5 at the endpoint. There is no uniform room on
+connected graphs, though: along the stars of the correction above the largest ratio at t = ½ is 0.6, 0.5, 0.596, 0.7,
+0.765, 0.833, 0.872, 0.912 for N = 3, …, 10 (`star_family.py`, log `logs/star_family.log`), tending to 1.
+
+(ii) *One copy.* At each copy write the labels a, b ∈ F_3 of the two factors as σ = a + b and δ = b − a. This permutes the
+computational basis of C³ ⊗ C³, turns the swap into I ⊗ P with P|x⟩ = |−x⟩, and turns Z^x ⊗ Z^y into
+Z^{−(x+y)} ⊗ Z^{x−y}. For a graph state, g(x) = 3^{−N/2} ω^{Q(x)} with Q(x) = Σ_{i<j} Γ_{ij} x_i x_j, the parallelogram law
+Q(σ − δ) + Q(σ + δ) = 2Q(σ) + 2Q(δ) makes g ⊗ g the product ḡ ⊗ ḡ in the new coordinates. In the crossed form the four
+σ-factors then coincide exactly when the two shifts agree, and what is left lives on one copy:
+
+    ⟨Z^x g| B_d |Z^y g⟩ = S(d − x − y, y − x) / 3^N,   B_d = ⊗_s (I − t Z^{d_s} P_s),                    (7.3)
+
+in particular S(d, v) = 3^N ⟨Z^v g|B_d|Z^{−v} g⟩. Each factor of B_d has eigenvalues 1 − t, 1 − t, 1 + t, so B_d is
+positive definite. In the orthonormal basis {Z^x g}, (7.1) says that at t = ½ every off-diagonal entry of B_d between
+two points of an affine line {x − u, x, x + u} of F_3^N is at most the diagonal entry at the third point. This uses the
+stabilizer structure: for random states h with P^{⊗N} h = h the ratio |⟨Z^v h|B_0|Z^{−v} h⟩| / ⟨h|B_0|h⟩ already
+exceeds 1 at N = 3 and t = ½ (1.085). Positivity of the Gram matrix of the three vectors Z^{jv} g gives only
+|S(d, v)|² ≤ S(d + v, 0) S(d − v, 0), and an operator-norm bound cannot work either: per copy,
+‖(I − tP)^{−1/2}(Z − tP)(I − tP)^{−1/2}‖ = 1 + √2 at t = ½.
+`code/global_reductions/single_copy_form.py` checks (7.3) on random graphs to 10^{−14}, the Gram identity, and the
+failures for general states (log `logs/single_copy_form.log`).
+
+(iii) *A coding form.* In the discrete phase space F_3^{2N}, with the symplectic form and the symplectic weight wt, the
+stabilizer group of |g⟩ is the Lagrangian subspace L = {(a, Γa)}, a self-dual additive code. Every character of L is
+u ↦ ω^{⟨y, u⟩}, trivial exactly when y ∈ L, and every coset of L contains exactly one vector (0, d). So (7.1) says: for
+every Lagrangian L ⊂ F_3^{2N}, every x and every y ∉ L,
+
+    |Σ_{u∈L} ω^{⟨y, u⟩} λ^{N − wt(u + x)}| ≤ Σ_{u∈L} λ^{N − wt(u + x)},   λ = 1 − 3t = −½,
+
+and (7.1′) subtracts 3^N (1 − t)^{N−1}(1 − 2t) on the right for 0 ≤ t ≤ ½. It is a bound on twisted coset weight
+enumerators of self-dual additive codes over F_3. For t ≤ 1/3 (λ ≥ 0) the bound with right side Σ λ^{N − wt} is the
+triangle inequality; the content is at λ < 0, just as the Werner problem is trivial up to the PPT boundary. Through the
+dual form the case x = 0 also reads |W_{L+y}(−5)| ≤ |W_L(−5)| with W_X(z) = Σ_{u∈X} z^{N − wt(u)}: among its cosets, a
+self-dual code has the largest weight enumerator at −5 in absolute value.
 
 These are bounds for balanced projectors at a fixed n ≤ 8. Theorems 14′ and 14″ need N ≥ k + 18 copies, so
 Proposition 19 gives the endpoint at no copy number. The negative optimum at n = 9 is the value of a relaxation; no
@@ -1416,7 +1481,7 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   purity-two enumerators of Section 7, exact); `perfect_code_check.py` (Proposition 19 attained at n = 5 by the
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
   `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
-  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD_t); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `two_replica_balanced.py t d N ...` (the copy-symmetric
+  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, and (7.1′) on stars); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind

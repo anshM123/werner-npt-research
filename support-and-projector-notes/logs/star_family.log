@@ -1,0 +1,9 @@
+(1) closed form vs defining sum (k <= 3, 1 <= m <= 3, t in {0.3, 0.4, 0.5}, all v_c): max error 3.06e-13
+(2) t = 0.5: largest ratio over star shift patterns and all v != 0:
+      N=3: 0.6000 (0.6000 tau); N=4: 0.5000 (0.5000 tau); N=5: 0.5961 (0.5961 tau); N=6: 0.7000 (0.7000 tau); N=7: 0.7645 (0.7645 tau); N=8: 0.8333 (0.8333 tau); N=9: 0.8718 (0.8718 tau); N=10: 0.9118 (0.9118 tau)
+(2) t = 0.4: largest ratio over star shift patterns and all v != 0:
+      N=3: 0.4368 (0.6552 tau); N=4: 0.4259 (0.6388 tau); N=5: 0.4587 (0.6880 tau); N=6: 0.5475 (0.8212 tau); N=7: 0.6173 (0.9259 tau); N=8: 0.6912 (1.0368 tau); N=9: 0.7433 (1.1150 tau); N=10: 0.7981 (1.1972 tau)
+(3) t = 2/5, N = 8, k = 3, m = 4: S(d,0) = 1721169/625, |S(d,e_c)|^2 = 1415452713984/390625
+    |S(d,e_c)|^2 - tau^2 S(d,0)^2 = 98820391068/390625 > 0 : True;  |S(d,e_c)| < S(d,0) : True
+(4) (7.1') on stars, k < 30, 1 <= m < 30, 51 values of t in [0, 1/2]: min of (right side - left side)/3^n = -3.511e-16
+    g(x, y) on a 401 x 401 grid of [0,1]^2: min = 0.000e+00
