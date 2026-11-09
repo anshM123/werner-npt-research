@@ -240,6 +240,14 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   x ∧ y; averaging the Gram matrix over the symmetry would then give the two components nonnegative weights, but the
   decomposable tests (x, y) = (e₀₀, e₁₁) and (e₀₀, e₁₀) force the weights 1 and −½. Padding by a product vector carries
   this to every n ≥ 2. We checked the identity on random J and the two test values.
+- **Stabilizer vectors are not extremal for Bell-diagonal witnesses (added 9 November 2026).** The n-copy endpoint is
+  2-block-positivity of a Bell-diagonal operator on (C³)^{⊗n} ⊗ (C³)^{⊗n}. On one qutrit, the stabilizer (line)
+  conditions appear to decide 2-block-positivity of every Bell-diagonal operator (adversarial searches find no
+  exception). On two qutrits they do not: there are Bell-diagonal operators that satisfy all 1440 stabilizer-plane
+  conditions but are negative on a thick, non-stabilizer rank-two operator (explicit witness and script in
+  `support-and-projector-notes/`, Section 7). So no argument valid for all Weyl-covariant witnesses can reduce the
+  endpoint to the stabilizer class (Conjecture SD); it has to use the product form of the Werner weights.
+
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be

@@ -1,0 +1,4 @@
+Lagrangian planes: 40; stabilizer conditions: 1440; smallest margin 1.155e-14
+rank of C: 2 (singular values [0.707132 0.707082 0.      ])
+<vec C|K_h|vec C> / ||C||^2 = -3.442772e-03  (negative: K_h is not 2-block-positive)
+Pauli distribution of C: 19 points above 1e-3 (not supported on a Lagrangian coset)

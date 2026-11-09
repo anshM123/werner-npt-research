@@ -853,6 +853,31 @@ cosets are positive by rank-one positivity. For fixed L, x and y the condition i
 the weight function λ^{N − wt} is a tensor power whose one-copy factor (λ, 1, 1) on a line through the origin lies on
 the boundary of the cone, so no decomposition into pieces strictly inside it is available.
 
+*Bell-diagonal operators: where the stabilizer conditions stop (added 9 November 2026).* The n-copy Werner operator is
+Bell-diagonal: in the basis b_z = vec(D_z)/3^{n/2}, z ∈ F_3^{2n}, it is K_h = Σ_z h(z)|b_z⟩⟨b_z| with
+h(z) = λ^{#identity sites of z}, and the endpoint at n copies is 2-block-positivity of K_h. For a Bell-diagonal operator,
+positivity on the Schmidt-rank-two vectors built from Pauli images of one stabilizer state is exactly the cone condition
+of (iii): inside every Lagrangian coset, the three sums of h over the cosets of an index-three subgroup lie in the cone.
+We asked whether these conditions decide 2-block-positivity of every Bell-diagonal operator.
+- One qutrit (z ∈ F_3², where the Lagrangian cosets are the twelve affine lines). We found no exception: adversarial
+  searches over weights h satisfying all twelve line conditions, minimising the least value over rank-two C, end at 0
+  (two runs of 120 and 150 steps; `code/bell_diagonal/one_qutrit_lines.py`, log `logs/bell_one_qutrit.log`). If this
+  holds, then for every stabilizer code with one logical qutrit the endpoint on all rank-two operators whose range and
+  co-range lie in Pauli images of the code space follows from (7.1). Such operators reduce to a one-qutrit Bell-diagonal
+  operator whose nine eigenvalues are the logical coset weight enumerators, and its line conditions are instances of
+  (7.1). A naive certificate (one MUB direction whose three lines all satisfy the dual cone condition) fails for some
+  rank-two C, so we have no proof, and we do not know whether the statement is in the literature on Bell-diagonal
+  qutrit states.
+- Two qutrits (z ∈ F_3^4: 40 Lagrangian planes, 1440 conditions). Here the statement is false. The weights in
+  `data/bell_k2_witness_h.txt` satisfy every condition (smallest margin 10^{−14}), but the rank-two operator in
+  `data/bell_k2_witness_C_*.txt` gives ⟨vec C|K_h|vec C⟩/‖C‖_F² = −3.44·10^{−3}
+  (`code/bell_diagonal/two_qutrit_witness.py` recomputes both facts from the data; log `logs/bell_k2_witness.log`). The
+  minimiser is thick at both copies, and its Pauli distribution is spread over 19 points rather than a Lagrangian coset.
+
+So (7.1) cannot give the endpoint through a general extremality of stabilizer vectors for Bell-diagonal witnesses. From
+two copies on, an argument has to use the product form h = λ^{#identity sites} of the Werner weights. Those weights pass
+both tests at two copies (margin 0, least rank-two value 0), as they must.
+
 These are bounds for balanced projectors at a fixed n ≤ 8. Theorems 14′ and 14″ need N ≥ k + 18 copies, so
 Proposition 19 gives the endpoint at no copy number. The negative optimum at n = 9 is the value of a relaxation; no
 projector is constructed. Rank-two codes satisfy further constraints that these relations do not see, for instance
@@ -1516,7 +1541,7 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   purity-two enumerators of Section 7, exact); `perfect_code_check.py` (Proposition 19 attained at n = 5 by the
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
   `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
-  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, (7.1′) and FB on stars); `star_descent.py k m eps steps seed` (descent from star near-zeros, PyTorch); `qc_star.py k m restarts seed` (Conjecture QC on stars); `fb_class.py N t family i j` and `fb_class_check.py` (FB on stabilizer pairs); `two_replica_balanced.py t d N ...` (the copy-symmetric
+  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, (7.1′) and FB on stars); `star_descent.py k m eps steps seed` (descent from star near-zeros, PyTorch); `qc_star.py k m restarts seed` (Conjecture QC on stars); `fb_class.py N t family i j` and `fb_class_check.py` (FB on stabilizer pairs). `code/bell_diagonal/`: `one_qutrit_lines.py iters seed` (line conditions versus 2-block-positivity on one qutrit) and `two_qutrit_witness.py` (the two-qutrit witness, from `data/bell_k2_witness_*.txt`); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind
