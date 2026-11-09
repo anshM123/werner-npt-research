@@ -261,6 +261,15 @@ naive Cauchy–Schwarz bound loses an exponential factor (4^N on the GHZ plane),
 The rank-one scale 2^{−N} is the natural one: the zeros of Section 1 are approached at that scale. This criterion is
 in the spirit of the tube-radius equivalences that circulate for this problem. It does not prove positivity.
 
+**Remark (added 9 November 2026: a negative margin never decays).** Padding with GHZ states is cheaper than flattening.
+For g_r = (|0^r⟩ + |1^r⟩ + |2^r⟩)/√3 every partial trace of g_rg_r^* other than the empty and the full one has squared
+norm 1/3, so q_r(g_rg_r^*) = (2/3)(1 + (−½)^r) + 2^{−r}/3 ≥ 0.6 for r ≥ 2. Since C ⊗ g_rg_r^* has the rank and the norm
+of C and q is multiplicative, a witness with q_n(C) = −δ‖C‖_F² gives m_N ≤ −0.6δ for every N ≥ n + 2. Hence the
+endpoint holds for every number of copies if and only if m_N ≥ −ε_N along some unbounded set of N with ε_N → 0; the
+bound m_N ≥ −K·2^{−N} above is far more than needed. The same holds on the Werner line (q_r(t, g_rg_r^*) ≥ 2/3 for even
+r) and inside the class of real balanced projectors, since g_r is balanced (`real-balanced-reduction/`, Corollary
+"a vanishing error is enough"). This reformulates the problem; it proves nothing.
+
 ## 5. Universal anchors
 
 Section 1 used only one vector of the plane. Here is the general version. For a unit vector p let
