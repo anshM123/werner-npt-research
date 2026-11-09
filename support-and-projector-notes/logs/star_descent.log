@@ -1,0 +1,16 @@
+star N=4 (k=1, m=2): start value q/||C||^2 = 2.500000e-01 (phase 5.236); 2^-(k+1) = 2.500000e-01
+  round 0: q/||C||^2 = 2.539587e-01
+  round 1: q/||C||^2 = 2.270908e-09
+  round 2: q/||C||^2 = 1.456942e-09
+  final singular values [20.20101 20.2008   0.     ], least local eigenvalue range 0.0000, co-range 0.0000
+star N=6 (k=2, m=3): start value q/||C||^2 = 1.250000e-01 (phase 5.236); 2^-(k+1) = 1.250000e-01
+  round 0: q/||C||^2 = 1.523295e-01
+  round 1: q/||C||^2 = 3.928583e-15
+  round 2: q/||C||^2 = 2.942230e-15
+  final singular values [12.14521 12.14521  0.     ], least local eigenvalue range 0.0000, co-range 0.0000
+# N = 7 (separate run)
+star N=7 (k=3, m=3): start value q/||C||^2 = 9.375000e-02 (phase 5.236); 2^-(k+1) = 6.250000e-02
+  round 0: q/||C||^2 = 1.008841e-01
+  round 1: q/||C||^2 = 2.045924e-13
+  round 2: q/||C||^2 = 1.332981e-13
+  final singular values [17.71239 17.71239  0.     ], least local eigenvalue range 0.0000, co-range 0.0000

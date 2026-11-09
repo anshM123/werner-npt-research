@@ -7,3 +7,4 @@
     |S(d,e_c)|^2 - tau^2 S(d,0)^2 = 98820391068/390625 > 0 : True;  |S(d,e_c)| < S(d,0) : True
 (4) (7.1') on stars, k < 30, 1 <= m < 30, 51 values of t in [0, 1/2]: min of (right side - left side)/3^n = -3.511e-16
     g(x, y) on a 401 x 401 grid of [0,1]^2: min = 0.000e+00
+(5) FB on star pairs (closed form), t in [0.34, 0.5], k < 40, 1 <= m < 40: min relative margin 4.093e-12 at (t, k, m) = (0.5, 39, 39)

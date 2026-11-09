@@ -81,3 +81,20 @@ X, Y = np.meshgrid(np.linspace(0, 1, 401), np.linspace(0, 1, 401))
 g = 3 * X ** 2 * Y ** 2 + X + Y - X * Y - 2 * X * Y * (X + Y)
 print(f"(4) (7.1') on stars, k < 30, 1 <= m < 30, 51 values of t in [0, 1/2]: min of (right side - left side)/3^n = {worst:.3e}")
 print(f"    g(x, y) on a 401 x 401 grid of [0,1]^2: min = {g.min():.3e}")
+
+# (5) the merging budget FB(t) on star pairs, from the closed form (centre merged with an unshifted or a shifted leaf):
+#     merging replaces x by x/(1-t) (and y by y/(1-t) if the merged leaf is shifted)
+worst = np.inf; arg = None
+for t in np.linspace(0.34, 0.5, 33):
+    gm = (1 - 2 * t) / 2
+    for k in range(40):
+        for m in range(1, 40):
+            N = k + m + 1; x, y = (1 - t) ** (k + 1), (1 - t) ** m
+            Q, X = (x + 1 + y) / 3, (x + om + om ** 2 * y) / 3
+            cases = ([((1 - t) ** k, y)] if k >= 1 else []) + [((1 - t) ** k, (1 - t) ** (m - 1))]
+            for xp, yp in cases:
+                Qp, Xp = (xp + 1 + yp) / 3, (xp + om + om ** 2 * yp) / 3
+                marg = (Q - gm * Qp - (1 - t) ** (N - 1) / 2) - (abs(X - gm * Xp) - t * (1 - t) ** (N - 2) / 2)
+                if marg / Q < worst:
+                    worst, arg = marg / Q, (round(float(t), 3), k, m)
+print(f"(5) FB on star pairs (closed form), t in [0.34, 0.5], k < 40, 1 <= m < 40: min relative margin {worst:.3e} at (t, k, m) = {arg}")

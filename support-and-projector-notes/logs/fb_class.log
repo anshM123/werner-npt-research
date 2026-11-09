@@ -1,0 +1,15 @@
+N=7 t=0.4 star merge(0,1): min rank-one term +0.77395, min pair margin +0.30180 at d=[0, 1, 0, 0, 0, 1, 1]
+N=7 t=0.4 star merge(1,2): min rank-one term +0.77395, min pair margin +0.30180 at d=[0, 0, 1, 0, 0, 1, 1]
+N=7 t=0.4 path merge(0,1): min rank-one term +0.79543, min pair margin +0.54601 at d=[0, 0, 1, 1, 1, 1, 0]
+N=7 t=0.4 path merge(1,2): min rank-one term +0.80048, min pair margin +0.54254 at d=[0, 0, 1, 1, 1, 1, 0]
+N=7 t=0.4 cycle merge(0,1): min rank-one term +0.80236, min pair margin +0.64242 at d=[0, 1, 0, 1, 1, 1, 1]
+N=7 t=0.4 bip2 merge(0,2): min rank-one term +0.78748, min pair margin +0.38940 at d=[0, 0, 1, 1, 2, 2, 2]
+N=7 t=0.4 rand1 merge(0,1): min rank-one term +0.80477, min pair margin +0.64781 at d=[0, 1, 0, 0, 1, 2, 1]
+N=7 t=0.4 rand2 merge(0,1): min rank-one term +0.80389, min pair margin +0.66590 at d=[0, 1, 2, 1, 0, 1, 0]
+N=3 t=0.4: Q' dense 0.733333 vs sum 0.733333;  |X'| dense 0.133333 vs sums 0.133333, 0.133333
+N=3 t=0.45: Q' dense 0.550000 vs sum 0.550000;  |X'| dense 0.000000 vs sums 0.000000, 0.000000
+N=4 t=0.4: Q' dense 0.706667 vs sum 0.706667;  |X'| dense 0.100958 vs sums 0.100958, 0.100958
+N=4 t=0.45: Q' dense 0.700000 vs sum 0.700000;  |X'| dense 0.000000 vs sums 0.000000, 0.000000
+# N = 9 (separate runs)
+N=9 t=0.4 star merge(0,1): min rank-one term +0.80825, min pair margin +0.20702 at d=[0, 1, 0, 0, 0, 1, 1, 1, 1]
+N=9 t=0.4 star merge(1,2): min rank-one term +0.80825, min pair margin +0.20702 at d=[0, 1, 0, 0, 0, 1, 1, 1, 1]

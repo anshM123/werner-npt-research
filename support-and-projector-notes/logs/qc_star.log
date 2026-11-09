@@ -1,0 +1,14 @@
+star N=4 (k=1, m=2): q11 = 5.000000e-01, |q12| = 2.500000e-01, q_N(C)/||C||^2 = 2.500000e-01
+  copy 0: max_w Delta = +2.916667e-01
+  copy 1: max_w Delta = +3.171943e-01
+  copy 2: max_w Delta = +3.333333e-01
+  copy 3: max_w Delta = +3.333333e-01
+  max over copies and w of Delta = +3.333333e-01  (QC needs >= 0); q_N(C) = 5.000000e-01
+star N=6 (k=2, m=3): q11 = 4.166667e-01, |q12| = 2.916667e-01, q_N(C)/||C||^2 = 1.250000e-01
+  copy 0: max_w Delta = +1.458333e-01
+  copy 1: max_w Delta = +1.666667e-01
+  copy 2: max_w Delta = +1.666667e-01
+  copy 3: max_w Delta = +1.666667e-01
+  copy 4: max_w Delta = +1.666667e-01
+  copy 5: max_w Delta = +1.643697e-01
+  max over copies and w of Delta = +1.666667e-01  (QC needs >= 0); q_N(C) = 2.500000e-01

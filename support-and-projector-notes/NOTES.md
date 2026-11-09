@@ -761,6 +761,19 @@ stars are not counterexamples to the sharp bound or to the endpoint. They show t
 wrong normalisation below the endpoint, because S(d, 0) can lie far above the floor 3^N (1 − t)^N. At the endpoint they
 make (7.1) asymptotically tight: with k + 1 = m the ratio is (1 − x)/(1 + 2x) → 1.
 
+*The stars as test cases.* The stars are thick at every copy (every vector in their ranges has maximally mixed one-copy
+marginals) and come exponentially close to zero at the endpoint: the best phase gives q_N/‖C‖_F² = 2^{−(k+1)} when
+k + 1 = m. So they are natural tests for the other conjectures of this repository. In each case the conjecture
+survives:
+- Local descent of q_N/‖C‖_F² over all rank-two operators, started at a slightly perturbed star (N = 4, 6, 7), ends at an
+  zero (value 1.5·10^{−9} at N = 4 and below 10^{−12} at N = 6, 7) with σ_1 = σ_2 to five digits, whose range and
+  co-range are thin at every copy, as Conjectures ZC_n and NT_n of Section 8 predict
+  (`code/global_reductions/star_descent.py`, PyTorch, log `logs/star_descent.log`).
+- Conjecture QC of `compression-notes/` holds on them with room. The best one-copy compression lowers q_N by about two
+  thirds of its value: Δ = 1/3 against q_4 = 1/2, and Δ = 1/6 against q_6 = 1/4 (`qc_star.py`, log `logs/qc_star.log`).
+- The merging budget FB(t) of Section 9 holds on them, but only asymptotically: its margin tends to 0 (see the end of
+  Section 9).
+
 Evidence for (7.1) (`code/global_reductions/stabilizer_domination.py` and `graph_cut_rank.py`, log
 `logs/stabilizer_domination.log`): exhaustive over all Γ, d, v at N = 2, 3, 4 for t = ½ (largest ratio exactly 1,
 thousands of equality cases); at t = ½ with all d and v, 300 random graphs at N = 5 (largest ratio 1, attained), 40 at
@@ -1329,6 +1342,19 @@ audit; `real-balanced-reduction/code/below_endpoint_check.py`). Further random-s
 (3,3,9), (2,2,4), (3,9,3), (2,4,4), (4,2,3), and at t = 0.34, 0.37, 0.49 for (3,3,3), found no violation; every run ended
 on the equality line.
 
+*FB on stabilizer pairs (added 9 November 2026).* On the pairs C = αC_1 + βC_2 of Section 7 (Pauli images of one
+graph state) both forms in FB are exact sums over the stabilizer group: the merged site carries the weight 1 − 9t when
+the Pauli is the identity on both merged copies, and 1 otherwise. Because the singular values are |α| and |β|, FB on
+these pairs reduces to two scalar inequalities per shift d (the rank-one case, and the case |α| = |β| at the worst
+phase), checked by a fast Fourier transform over the characters (`code/global_reductions/fb_class.py`, which
+`fb_class_check.py` compares with the dense forms; log `logs/fb_class.log`). At t = 0.4, with sites 1 and 2 merged, the smallest relative
+margin over all d and v is 0.30 on the star, 0.54 on the path, 0.64 on the cycle, 0.39 on K_{2,5} and 0.65 on two
+random graphs at N = 7, and 0.21 on the star at N = 9. Stars are the hardest case, and there FB is asymptotically
+tight. Merging the centre with a leaf only changes the closed form of Section 7: x becomes x/(1 − t), and so does y
+if the merged leaf is shifted. The relative margin is positive for every k < 40, 1 ≤ m < 40 and t in [0.34, ½] (closed
+form), but it tends to 0 as k and m grow; when the merged leaf is shifted it is (3/2)(u + w) to first order, with
+u = x/(2(1 − t)) and w = y/(2(1 − t)) (`star_family.py`, part (5)).
+
 For real skew operators there is a second proof of the two-site case. If J = xyᵀ − yxᵀ with x, y real on R^{d_1} ⊗ R^{d_2}, then Tr J = 0,
 ‖J‖_1² = 2‖J‖_F² = 4h with h = ‖x‖²‖y‖² − ⟨x, y⟩², and the two partial traces are, up to sign, XYᵀ − YXᵀ and XᵀY − YᵀX
 for the matrices X, Y of x, y. An independent audit proves the rectangular commutator inequality
@@ -1481,7 +1507,7 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   purity-two enumerators of Section 7, exact); `perfect_code_check.py` (Proposition 19 attained at n = 5 by the
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
   `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
-  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, and (7.1′) on stars); `two_replica_balanced.py t d N ...` (the copy-symmetric
+  and `graph_cut_rank.py check|search N ...` and `stabilizer_domination_fft.py N t graphs seed` (Conjecture SD, (7.1) and (7.1′)); `graph_recursion.py` (the recursion (7.2)); `path_transfer.py check|random|anneal N trials seed t` (paths); `connected_domination.py N t all|sample count seed` (connected graphs); `single_copy_form.py N t trials seed` (the one-copy form (7.3)); `star_family.py` (the star closed form, the exact counterexample to the τ-bound at t = 2/5, (7.1′) and FB on stars); `star_descent.py k m eps steps seed` (descent from star near-zeros, PyTorch); `qc_star.py k m restarts seed` (Conjecture QC on stars); `fb_class.py N t family i j` and `fb_class_check.py` (FB on stabilizer pairs); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind
