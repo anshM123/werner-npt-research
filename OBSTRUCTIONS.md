@@ -258,6 +258,22 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   itself. Nonlinear arguments, finer coordinates and limits of inequality families are not excluded
   (`support-and-projector-notes/`, Section 7, which also gives 𝒮_2 exactly and ten numerical candidate vertices of 𝒮_3).
 
+- **Encoded and concatenated operators (added 9 November 2026; numerical, no counterexample).** For an operator
+  encoded in an [[N, k]]_3 stabilizer code the endpoint form becomes a Bell-diagonal form on the k logical qutrits,
+  with weights h_L = |S|^{−1} Σ_{E ∈ L+S} (−½)^{#identities(E)}. With two logical qutrits the stabilizer-plane
+  conditions do not decide 2-block-positivity (Section 7 of `support-and-projector-notes/`), so codes are a natural
+  place for a counterexample; annealed searches over [[N, 2]]_3 codes reach 0 at N ≤ 6 (known zeros) and stay
+  positive at N = 7, 8, 9. Concatenating a one-qutrit code with itself iterates h ↦ h′: for the [[5, 1, 3]]_3 code the
+  flow is one-dimensional, −½ ↦ 71/128 ↦ … → uniform, and thirty random codes all flow to the uniform weights or to
+  fixed points with positive margin. So deep encodings move away from the endpoint, not towards a failure.
+- **Filter-realignment as an inductive invariant (added 9 November 2026).** The strengthening below survives
+  mixing: mixtures of up to nine compressions of one Werner copy (3 × 3 and 4 × 4, i.e. compressions of
+  (separable) ⊗ W) never exceed realignment ratio 1 at t = ½, while the same search finds 1.069 at t = 0.55. But it
+  cannot be closed under ⊗ W for every operator that has it: by Vollbrecht and Wolf (PRL 88, 247901 (2002)) every NPT
+  state, the endpoint state included, is made distillable by suitable PPT entangled states arbitrarily close to
+  separable, and such states very likely pass the test. An inductive class would have to contain all Werner powers and
+  exclude every activator, which is the original problem.
+
 ## What remains
 
 A proof has to keep the crossing in 2 and use rank two in an essential way. The certificates it needs must be
