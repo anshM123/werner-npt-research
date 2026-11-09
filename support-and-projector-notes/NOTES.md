@@ -759,13 +759,15 @@ arithmetic: S(d, 0) = 1721169/625 and |S(d, e_c)|² = 1415452713984/390625), and
 family (7.1′) holds for every t ≤ ½: after squaring it reduces to 3x²y² + x + y − xy − 2xy(x + y) ≥ 0 on [0, 1]². So the
 stars are not counterexamples to the sharp bound or to the endpoint. They show that the ratio |S(d, v)|/S(d, 0) is the
 wrong normalisation below the endpoint, because S(d, 0) can lie far above the floor 3^N (1 − t)^N. At the endpoint they
-make (7.1) asymptotically tight: with k + 1 = m the ratio is (1 − x)/(1 + 2x) → 1.
+make (7.1) asymptotically tight: with k + 1 = m the ratio is (1 − x)/(1 + 2x) → 1. The endpoint on these operators was
+already known for every n: after local Cliffords their ranges and co-ranges lie in spans of three product vectors that
+are orthogonal at every copy, the "three sectors" class of `two-sector-class/`.
 
 *The stars as test cases.* The stars are thick at every copy (every vector in their ranges has maximally mixed one-copy
 marginals) and come exponentially close to zero at the endpoint: the best phase gives q_N/‖C‖_F² = 2^{−(k+1)} when
 k + 1 = m. So they are natural tests for the other conjectures of this repository. In each case the conjecture
 survives:
-- Local descent of q_N/‖C‖_F² over all rank-two operators, started at a slightly perturbed star (N = 4, 6, 7), ends at an
+- Local descent of q_N/‖C‖_F² over all rank-two operators, started at a slightly perturbed star (N = 4, 6, 7), ends at a
   zero (value 1.5·10^{−9} at N = 4 and below 10^{−12} at N = 6, 7) with σ_1 = σ_2 to five digits, whose range and
   co-range are thin at every copy, as Conjectures ZC_n and NT_n of Section 8 predict
   (`code/global_reductions/star_descent.py`, PyTorch, log `logs/star_descent.log`).
