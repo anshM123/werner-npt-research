@@ -745,6 +745,16 @@ at N = 2, 3, 4 for t = ½ (largest ratio exactly 1, thousands of equality cases)
 The class contains the minimisers of q_5 over balanced projectors (subspaces of the five-qutrit code) and every known
 zero, so SD_t for every N would give the endpoint, and the sharp bound, on all of them. We have no proof beyond N = 4;
 the cycle graphs are covered for every N by the transfer-matrix argument of `cyclic-code-planes/` (on their code spaces).
+Two exact tools for an induction. Expanding each site factor in characters of (Γa + d)_i gives the dual form
+S(d, v) = Σ_{s∈F_3^N} ω^{s·d} Π_i (3[s_i = 0 and (v + Γs)_i = 0] − t), in which d becomes a character and v a shift.
+Deleting a vertex n (measure it in the Z basis: |g⟩ = 3^{−1/2} Σ_k |k⟩_n ⊗ Z^{kγ}|g′⟩ with γ = Γ_{n,·} and g′ the graph
+state of Γ′ = Γ − n) and using the one-copy recursion for the slices gives, with d = (d′, d_n) and v = (v′, v_n),
+
+    S_N(d, v) = Σ_{m∈F_3} [ ω^{m v_n} S′(d′ + mγ, v′) − t ω^{m d_n} S′(d′, v′ + mγ) ]                    (7.2)
+
+(`code/global_reductions/graph_recursion.py`, log `logs/graph_recursion.log`: relative error below 10^{−13} on random
+graphs). Bounding the two sums in (7.2) separately with SD_t on Γ′ does not close: the second sum lowers S_N(d, 0) by about
+t S′(d′, 0), and an induction has to keep the joint values S′(d′ + mγ, v′ + m′γ) for all m, m′.
 
 These are bounds for balanced projectors at a fixed n ≤ 8. Theorems 14′ and 14″ need N ≥ k + 18 copies, so
 Proposition 19 gives the endpoint at no copy number. The negative optimum at n = 9 is the value of a relaxation; no
@@ -1395,7 +1405,7 @@ without it, it falls back to floating point. Outputs are in `logs/`.
   purity-two enumerators of Section 7, exact); `perfect_code_check.py` (Proposition 19 attained at n = 5 by the
   five-qutrit code, and the enumerator formula for code subspaces); `stabilizer_anneal.py N t steps restarts seed`;
   `mds_code_values.py`; `rm_code.py t runs seed` (the Reed–Muller code of AG(2, 3)); `stabilizer_domination.py N t all|sample count seed`
-  and `graph_cut_rank.py check|search N ...` (Conjecture SD_t); `two_replica_balanced.py t d N ...` (the copy-symmetric
+  and `graph_cut_rank.py check|search N ...` (Conjecture SD_t); `graph_recursion.py` (the recursion (7.2)); `two_replica_balanced.py t d N ...` (the copy-symmetric
   two-replica relaxation on real balanced projectors at any t; it reproduces Proposition 19 at t = ½).
 - `code/trace_norm/`: Section 9. `tn_bound.py t runs seed d_1 ... d_n` (the random-start test of (9.1); logs
   `logs/trace_norm/tn_*.log`), `check_identities.py` (crossed form, the Hermitian formula, (9.3), the bookkeeping behind
