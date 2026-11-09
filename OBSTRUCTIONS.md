@@ -332,12 +332,18 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   and C_0 = x_A x_Bᵀ, C_1 = x_C x_Dᵀ, the partial-trace expansion gives 2^n q_n(C_0, C_1) = Tr 𝒯^n with
   𝒯 = 2Σ_{ij} A_i ⊗ B_j ⊗ C_i ⊗ D_j − Σ_{ij} A_i ⊗ B_i ⊗ C_j ⊗ D_j. If ρ(𝒯_01)² > ρ(𝒯_00)ρ(𝒯_11), the 2 × 2 Gram
   matrix fails to be positive at infinitely many n, so this spectral inequality (SG) is necessary for every bond
-  dimension. We do not know that it is sufficient (ours). Periodic trace vectors are invariant under cyclic shifts,
-  and when an n-copy pair is written with a period-n clock the transfer matrices acquire sectors in which the clocks
-  of the four legs are misaligned. The aligned sector reproduces 2^n h_ab, but misaligned ones can have larger
-  spectral radius: over 200 random two-copy pairs, ρ(𝒯_aa)² reaches 1.78 times 4h_aa
-  (`support-and-projector-notes/code/global_reductions/sg_clock_sectors.py`). So a proof of (SG) would not by
-  itself give the endpoint. The same audit proved a positive case at every odd n. For the cyclic triples (i, j, k),
+  dimension. It is also sufficient, so (SG) for all bond dimensions is equivalent to the endpoint for every n (a later
+  round of the same audit; we checked the argument by hand). The plain period-n clock does not show this: the
+  transfer matrices acquire sectors in which the clocks of the four legs are misaligned, and these can have larger
+  spectral radius than the aligned one (over 200 random two-copy pairs, ρ(𝒯_aa)² reaches 1.78 times 4h_aa;
+  `support-and-projector-notes/code/global_reductions/sg_clock_sectors.py`). The repair is a marker. Take the period
+  N = 84m + 256 and a binary word s whose cyclic shifts all differ from it in at least N/4 places (a random word
+  works). On the N − m marker phases the two range legs emit e_{s_p} and the two co-range legs emit e_{1−s_p}. The
+  local weight is then 2 when the four bits agree and at most 1 in absolute value otherwise, so every misaligned
+  monodromy has norm below 2^{N−m−64}, while the aligned one equals 2^{N−m}h_ab with |h_ab| ≥ 1 (unit vectors, and
+  |h_01| > 1 at a violation). Hence ρ(𝒯_ab)^N = 2^{N−m}|h_ab| and (SG) returns |h_01|² ≤ h_00h_11. The bond
+  dimension is exponential in m, so no fixed bond dimension suffices. The same audit proved a positive case at every
+  odd n. For the cyclic triples (i, j, k),
   A_i(p) = E_jk + pE_kj and B_i = A_iᵀ are covariant under the real tetrahedral group, so every vector in
   span{z_n, w_n} has scalar one-site cross operators (strongly balanced), and q_n(z_n w_nᵀ − w_n z_nᵀ) ≥ 0 for every
   odd n and every real p. In the 81-dimensional transfer only one 15-dimensional strongly connected component has

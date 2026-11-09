@@ -245,7 +245,11 @@ its bosonic co-range. For n ≤ 4:
 - the Dicke state |2, 2, 0⟩ at n = 4 is not a bosonic anchor (λ_min(Y_p^Γ) = −0.0174), although Y_p is still
   nonnegative on product vectors there.
 
-So, at least for small n, the anchor condition fails in the bosonic sector only on special vectors. If every bosonic
+The non-anchors are not a thin set. λ_min(Y_p^Γ) is continuous in p (D_p is positive definite), so a strict negative
+value persists on an open neighbourhood; our 40 random samples per n simply missed it. An independent audit gave an
+exact certificate at p = |2, 2, 0⟩: on the vector |040⟩|400⟩ + 2|130⟩|310⟩ − 2|310⟩|130⟩ − |400⟩|040⟩ (normalised
+occupation basis) the Rayleigh quotient of Y_p^Γ is −19/1260. So almost-everywhere anchoring is false in the bosonic
+sector too, as it is for distinguishable copies. What survives is the question about planes: if every bosonic
 plane contained a bosonic anchor, the bosonic sector would follow for every n. Planes inside some Sym^n(K), K a
 qubit, need no anchor: their range lies in K^{⊗n}, so q_n ≥ 0 for every co-range by [T2, Lemma 2.6]. The plane spanned
 by the two non-anchors |2, 2, 0⟩ and |0, 2, 2⟩ (n = 4), which lies in no such Sym^n(K), still contains anchors

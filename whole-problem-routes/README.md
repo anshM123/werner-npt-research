@@ -203,9 +203,19 @@ for n = 6).
   onto I, the antisymmetric and the traceless symmetric matrices (spins 0, 1, 2 under orthogonal conjugation) and
   Φ_μ = P_0 − ¼P_2 + μP_1 = (5/12)D + (μ/2 − 1/8)id − (μ/2 + 1/8)T. Then F = Φ_{1/12} and T∘F = Φ_{−1/12}; Φ_μ is
   completely positive exactly for 1/12 ≤ μ ≤ 7/12 and completely copositive exactly for −7/12 ≤ μ ≤ −1/12. By
-  multilinearity (MP) is equivalent to positivity of every ⊗_s Φ_{μ_s} with |μ_s| ≤ 1/12: the whole segment between a
-  completely positive map and a completely copositive one would be jointly tensor-stable positive. Every Φ_μ on it has
-  least output eigenvalue 1/6, attained at real pure inputs.
+  multilinearity, positivity of every T_S∘F^{⊗n} is equivalent to positivity of every ⊗_s Φ_{μ_s} with |μ_s| ≤ 1/12: the
+  whole segment between a completely positive map and a completely copositive one would be jointly tensor-stable
+  positive. That plain positivity already suffices for the route. The margin in (MP) is the same statement for
+  ⊗_s Φ_{μ_s} − 6^{−n}D^{⊗n}, and does not follow from plain positivity by multilinearity (an independent audit pointed
+  this out). Every Φ_μ on the segment has least output eigenvalue 1/6, attained at real pure inputs.
+- **S = ∅ and S = all copies hold at every n, with the margin (independent audit; checked here).** F = E + Q with
+  E = (3D − id)/12 = ∫(I − uu^*)⟨u|·|u⟩dμ(u) entanglement breaking, E(σ) ⪰ (1/6)Tr(σ)I, and Q = (D − T)/6 completely
+  positive. If E(X) = Σ_k Tr(M_kX)σ_k and Ψ(ρ) ⪰ c Tr(ρ)I, then (E ⊗ Ψ)(ρ) = Σ_k σ_k ⊗ Ψ(ρ_k) ⪰ c E(ρ_1) ⊗ I ⪰ (c/6)Tr(ρ)I,
+  so E^{⊗n}(ρ) ⪰ 6^{−n}, and F^{⊗n} − E^{⊗n} is completely positive. The global transpose gives S = all copies. For a
+  mixed cut the same expansion leaves the terms that contain both Q and T∘Q = (D − id)/6, and those are not positive.
+  With T∘E = (3D − T)/12 (also entanglement breaking) one more case follows: if ρ_F below is (n − 1)-copy
+  undistillable, then (MP) holds at n copies for |S| = 1 and |S| = n − 1, since
+  (T∘F)^{⊗(n−1)} ⊗ (E + Q) is then a sum of two positive maps and the E-term carries the margin.
 - **The obvious splitting fails.** F = D/6 + G with G = (3D − id − 2T)/12 positive, but G ⊗ G is not positive (least
   output eigenvalue −1/72), so the 6^{−n} cannot come term by term.
 - **No decomposable certificate works for every n.** Some 𝒫_{5/6}^{⊗n} is not decomposable (Müller-Hermes, below
