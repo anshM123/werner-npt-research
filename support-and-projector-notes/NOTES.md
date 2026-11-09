@@ -738,7 +738,7 @@ spanned by |g⟩ and Z^u|g⟩ this gives q/‖Π‖_F² = Σ_J (−t)^{|J|} 3^{�
 
 At t = ½ this is (7.1). Product states attain τ (a single-copy shift gives ratio exactly τ), and the GHZ and product
 zeros give equality at the endpoint. SD_t implies the sharp bound of Section 9 on this class: for the plane,
-q(Π) = 2q(G) + 2 Re S(u, ·)/3^N ≥ 2(1 − τ) q(G) ≥ 2(1 − 2t)(1 − t)^{N−1}. Evidence (`code/global_reductions/
+q(Π) = 2q(G) + 2 Re S(0, u)/3^N ≥ 2(1 − τ) q(G) ≥ 2(1 − 2t)(1 − t)^{N−1} for Π the projector onto span{|g⟩, Z^u|g⟩}. Evidence (`code/global_reductions/
 stabilizer_domination.py` and `graph_cut_rank.py`, log `logs/stabilizer_domination.log`): exhaustive over all Γ, d, v
 at N = 2, 3, 4 for t = ½ (largest ratio exactly 1, thousands of equality cases), t = 0.45 and 0.4 (largest ratio exactly
 τ = 9/11 and 2/3), and t = 0.35 at N = 3 (τ = 7/13); 300 random graphs with all d, v at N = 5 and t = ½ (largest ratio 1).
