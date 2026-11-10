@@ -6,3 +6,4 @@ python route_checks.py > ../logs/route_checks.log 2>&1; tail -n 1 ../logs/route_
 python norm_bounds_check.py > ../logs/norm_bounds_check.log 2>&1; tail -n 1 ../logs/norm_bounds_check.log
 python reference_obstructions_check.py > ../logs/reference_obstructions_check.log 2>&1; tail -n 1 ../logs/reference_obstructions_check.log
 python completion_five_sixths.py > ../logs/completion_five_sixths.log 2>&1; tail -n 1 ../logs/completion_five_sixths.log
+python segment_check.py --n4 > ../logs/segment_check.log 2>&1; tail -n 1 ../logs/segment_check.log

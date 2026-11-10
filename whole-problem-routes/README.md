@@ -249,6 +249,36 @@ for n = 6).
   and expanding F ⊗ Φ twice produces G ⊗ G ⊗ F^{⊗m}, which is never positive (least value −(5/864)(5/12)^{m−1} for
   m ≤ 3).
 
+**Remark (one segment for the three open statements; added 10 November 2026).** On C³ ⊗ C³ let P_0, P_1, P_2 project
+onto the maximally entangled vector, the antisymmetric vectors and the traceless symmetric vectors, and put
+
+    X_w = −P_0 + wP_1 + 2P_2 = (1 + w/2) I + (1 − w/2) F − |Ω⟩⟨Ω|.
+
+X_2 is twice the Werner endpoint operator, X_3 = 6 Choi(T∘F) for the F of the previous remark (so ρ_F ∝ X_3^Γ), and
+X_4 = 4C_{3/4}; X_w = ((4 − w)/2) X_2 + ((w − 2)/2) X_4. As a form on matrices,
+⟨vec C|X_w^{⊗n}|vec C⟩ = 2^n Σ_E (w/2)^{|E|} r_E(C): C_E is the part of C that is skew under the transpose at the copies
+in E and symmetric at the others, and r_E(C) = ⟨C_E, (id_E ⊗ R^{⊗E^c}) C_E⟩ is the Werner form of that part
+(R = id − D/2).
+- **The window (numerical).** For n = 2, 3, 4 the least value over rank-two C is 0 at w = 2, 3, 4 and negative at
+  w = 1.8 and w = 4.2. Below 2 the form fails at one copy, on complex rank-two projectors. Above 4 it fails from two
+  copies on, linearly in w (least value about −¼(w − 4) at n = 2), although X_w − X_4 is positive semidefinite: more
+  antisymmetric weight destroys two-positivity of the tensor square. So in this direction C_{3/4} is an end point as
+  well, and it has rank-two zeros at two copies that are not zeros of the Werner operator.
+- **One statement for all three.** The endpoint (w = 2), undistillability of ρ_F (w = 3) and two-positivity of
+  𝒫_{3/4}^{⊗n} (w = 4, equivalent to tensor-stable positivity by items 3 and 4) all follow if every mixed product
+  X_2^{⊗S} ⊗ X_4^{⊗S^c} is positive on Schmidt-rank-two vectors. We have no proof.
+- **The two ends are linked exactly.** With Λ = D − ½id (Choi matrix the Werner endpoint operator) and
+  W = (D − T)/2 (Choi matrix the antisymmetric projector; W(X) = ½Σ_{i<j} A_ij X A_ijᵀ, A_ij = E_ij − E_ji),
+  2𝒫_{3/4} = Λ + W. A map Φ is two-positive if and only if Φ ⊗ W is positive: each Kraus term of W is a
+  two-positivity test on a coordinate plane, and for an input on one coordinate plane the other two Kraus terms land
+  on the third basis vector, in an orthogonal block. Hence the endpoint at n copies ⟺ Λ^{⊗n} ⊗ W is positive ⟺
+  every τ = (Γ^{⊗n} ⊗ id)(ρ), with Γ = D − ½T the Werner channel and a qutrit reference, satisfies the reduction
+  criterion τ ⪯ τ_{1…n} ⊗ I. In (2𝒫_{3/4})^{⊗N} = Σ_S Λ^{⊗S} ⊗ W^{⊗S^c} the term without W is positive, the terms with
+  one W are positive exactly when the endpoint holds at N − 1 copies, and the terms with two or more W are not
+  positive (least output eigenvalue −1/24 for Λ ⊗ W^{⊗2} and Λ^{⊗2} ⊗ W^{⊗2}, −1/48 for Λ ⊗ W^{⊗3}).
+
+`code/segment_check.py`, log `logs/segment_check.log`.
+
 **Proposition M′ (balanced scalar inputs suffice; added 9 November 2026).** Fix a ≥ 1/2 and call a real vector z on
 N copies balanced if every one-copy marginal of zzᵀ/‖z‖² is I₃/3. The following are equivalent:
 1. 𝒫_a is tensor-stable positive;
@@ -1451,6 +1481,7 @@ exact):
 
 Run `bash code/run_all.sh` (Python with NumPy). The numerics of Section 6 are not part of it (about 30 minutes).
 
+`code/segment_check.py` (`logs/segment_check.log`) scans the segment X_w for n ≤ 4 and the mixed products of Λ and W.
 `code/completion_five_sixths.py` (`logs/completion_five_sixths.log`) checks the remark after Proposition M: the Choi
 spectra and the decomposition of Choi(F), the segment Φ_μ, the one-copy minima, G ⊗ G and the least values for n ≤ 5.
 `code/norm_bounds_check.py` (`logs/norm_bounds_check.log`) checks Proposition N: the absolute value and its Choi matrix,

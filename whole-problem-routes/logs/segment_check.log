@@ -1,0 +1,12 @@
+(a) least value of the X_w form on rank-two C
+  n = 1: w = 1.8: -0.05125, w = 2.0: -0.00000, w = 3.0: -0.00000, w = 4.0: -0.00000, w = 4.2: -0.00000, w = 5.0: -0.00000
+  n = 2: w = 1.8: -0.10250, w = 2.0: -0.00000, w = 3.0: -0.00000, w = 4.0: -0.00000, w = 4.2: -0.05060, w = 5.0: -0.26247
+  n = 3: w = 1.8: -0.20500, w = 2.0: -0.00000, w = 3.0: -0.00000, w = 4.0: +0.00000, w = 4.2: -0.20976, w = 5.0: -1.22544
+  n = 4: w = 2.0: +0.00000, w = 3.0: +0.00000, w = 4.0: +0.00000, w = 4.2: -0.65661
+(b) 2 P_(3/4) = Lambda + W: True; W(X) = (1/2) sum_(i<j) A_ij X A_ij^T, A_ij = E_ij - E_ji: True
+  Lambda^1 (x) W^1: least output eigenvalue -0.000000
+  Lambda^2 (x) W^1: least output eigenvalue -0.000000
+  Lambda^3 (x) W^1: least output eigenvalue -0.000000
+  Lambda^1 (x) W^2: least output eigenvalue -0.041667
+  Lambda^2 (x) W^2: least output eigenvalue -0.041667
+  Lambda^1 (x) W^3: least output eigenvalue -0.020833
