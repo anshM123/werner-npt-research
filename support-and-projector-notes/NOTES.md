@@ -667,6 +667,26 @@ nonnegative (this polynomial is (6^n/4) Tr[(Π ⊗ Π) ⊗_ν (xP_+ + yP_−)], 
 projectors on two replicas). If every vector of ran Π has maximally mixed one-copy marginals, then ΠEΠ = 0 for every E
 of weight one, so A_1 = B_1 = 0; the MacWilliams identity then gives Σ_j jA_j = 4n·3^{n−2}.
 
+**Dual form (added 9 November 2026).** Inserting the MacWilliams identity into the formula for q_n gives
+
+    q_n(Π) = 2 (5/6)^n Σ_j (−1/5)^j B_j,
+
+with B_0 = 1 and B_j the sum of the nonnegative numbers ½‖ΠEΠ‖_F² over the Weyl operators of weight j. If the range
+is k-uniform, B_1 = … = B_k = 0 and q_n(Π) = 2(5/6)^n [1 + Σ_{j>k} (−1/5)^j B_j]: every k-uniform projector starts from
+the positive floor 2(5/6)^n, and a negative value needs Σ_{j odd} B_j 5^{−j} > 1 + Σ_{j even, j>0} B_j 5^{−j}. In the
+language of Section 3 of `bosonic-sector-notes/` (pair form): if 1_ν is the indicator that copy ν of vec Π is found in
+the maximally entangled state, then E[∏_{ν∈T}(1_ν − 1/9)] = 9^{−|T|} Σ_{supp E = T} ½‖ΠEΠ‖_F² ≥ 0 for every set T of
+copies, and q_n(Π)/2 = E[∏_ν (5/6 − (3/2)(1_ν − 1/9))].
+For a plane spanned by a stabilizer state c (group M, a self-dual code in F_3^{2n}) and xc, x a Pauli operator with
+xc ⊥ c, the two inequalities q_n(P_c ± P_{xc}) ≥ 0 read
+
+    |W_{x+M}| ≤ W_M,   W_A = Σ_{y∈A} (−1/5)^{wt y}:
+
+the coset enumerators of a self-dual code at −1/5 are bounded by the enumerator of the code itself. On M this is
+|Σ_{h∈M} (−½)^{z(h)} χ(h)| ≤ Σ_{h∈M} (−½)^{z(h)} for every character χ of M, z(h) the number of copies where h is
+trivial. It holds on every coset of 216 random self-dual codes with n ≤ 8, with equality in some cases
+(`code/global_reductions/dual_form_check.py`, log `logs/dual_form_check.log`). We have no proof for every n.
+
 **Proposition 19.** Let Π be a rank-two orthogonal projector on n copies whose range consists of vectors with maximally
 mixed one-copy marginals. Then q_3(Π) = 3/2 and
 

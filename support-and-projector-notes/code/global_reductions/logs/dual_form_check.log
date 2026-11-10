@@ -1,0 +1,2 @@
+(a) dual form, random rank-two projectors n = 2, 3: max error 6.7e-16
+(b) 216 random Lagrangians, N = 2..8, all 3^N characters each: min of (u_hat(1) - max|u_hat(chi)|)/u_hat(1) = 0.000e+00 (>= 0 means the inequality holds)

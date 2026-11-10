@@ -197,8 +197,11 @@ for n = 6).
   Kraus operators of rank two, F(X) = (1/24)Σ_{i<j}[3S_ij X S_ij + 2D_ij X D_ij + 7A_ij X A_ijᵀ] with S_ij = E_ij + E_ji,
   D_ij = E_ii − E_jj and A_ij = E_ij − E_ji, and (id ⊗ F)(ρ) has Schmidt number at most two. As T∘F is
   two-positive, (T∘F ⊗ F)(ρ) = (T∘F ⊗ id)((id ⊗ F)(ρ)) ⪰ 0. The margin holds too: with W = (D − T)/2 (completely
-  positive, Kraus operators E_ij − E_ji) and T∘W = (D − id)/2 (two-positive), G = F − D/6 = (2W + T∘W)/6 and
-  T∘G = (2T∘W + W)/6 give G ⊗ F ⪰ 0 and T∘G ⊗ F ⪰ 0 as maps, so F ⊗ F and T∘F ⊗ F are ⪰ (1/6) I ⊗ F(ρ_2) ⪰ I/36.
+  positive, Kraus operators E_ij − E_ji) and T∘W = (D − id)/2 (the reduction map: positive, not two-positive),
+  G = F − D/6 = (2W + T∘W)/6 and T∘G = (2T∘W + W)/6. W ⊗ F is completely positive, and (T∘W) ⊗ F is positive because
+  its global transpose is W ⊗ T∘F (rank-two Kraus operators of W, two-positivity of T∘F). So G ⊗ F ⪰ 0 and
+  T∘G ⊗ F ⪰ 0 as maps, and F ⊗ F and T∘F ⊗ F are ⪰ (1/6) I ⊗ F(ρ_2) ⪰ I/36. (An earlier version of this line called
+  T∘W two-positive, which is false; an independent audit caught it.)
 - **A segment of maps.** F commutes with T, so T_S∘F^{⊗n} = F^{⊗n}∘T_S. Write P_0, P_1, P_2 for the projections of M_3
   onto I, the antisymmetric and the traceless symmetric matrices (spins 0, 1, 2 under orthogonal conjugation) and
   Φ_μ = P_0 − ¼P_2 + μP_1 = (5/12)D + (μ/2 − 1/8)id − (μ/2 + 1/8)T. Then F = Φ_{1/12} and T∘F = Φ_{−1/12}; Φ_μ is
