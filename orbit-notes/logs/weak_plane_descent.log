@@ -1,0 +1,17 @@
+critical_n2_R0.2.npy               t=0.5 n=2 R=+0.2000  weak-plane PT: discrete -0.8311, polar -1.2555;  random planes: 0.00 with PT<0
+    check: cross second derivative -0.129519 vs X/2 = -0.129519
+variety_critical_n2_low.npy        t=0.5 n=2 R=+0.1298  weak-plane PT: discrete -2.9664, polar -3.2234;  random planes: 0.05 with PT<0
+levi_positive_n2.npy               t=0.5 n=2 R=+0.1435  weak-plane PT: discrete -0.8791, polar -0.5424;  random planes: 0.05 with PT<0
+copywise_min_n3.npy                t=0.5 n=3 R=+0.2623  weak-plane PT: discrete -1.0009, polar -1.3241;  random planes: 0.50 with PT<0
+variety_critical_n3_golden.npy     t=0.5 n=3 R=+0.0955  weak-plane PT: discrete -0.3393, polar -0.3636;  random planes: 0.00 with PT<0
+variety_critical_n3_low.npy        t=0.5 n=3 R=+0.0868  weak-plane PT: discrete -0.1950, polar -0.1985;  random planes: 0.00 with PT<0
+torus_pd_n3.npy                    t=0.5 n=3 R=+0.2573  weak-plane PT: discrete -0.4517, polar -0.6483;  random planes: 0.80 with PT<0
+suk_pd_n3.npy                      t=0.5 n=3 R=+0.3177  weak-plane PT: discrete +0.6855, polar +0.6194;  random planes: 1.00 with PT<0
+copywise_min_n4.npy                t=0.5 n=4 R=+0.2277  weak-plane PT: discrete -0.3421, polar -0.3478;  random planes: 0.90 with PT<0
+critical_n4_R0.05.npy              t=0.5 n=4 R=+0.0500  weak-plane PT: discrete -0.0706, polar -0.1039;  random planes: 0.15 with PT<0
+critical_n5_R0.05.npy              t=0.5 n=5 R=+0.0500  weak-plane PT: discrete -0.0484, polar -0.0704;  random planes: 0.90 with PT<0
+critical_t0.7_n2_neg_a.npy         t=0.7 n=2 R=-0.0500  weak-plane PT: discrete -5.0756, polar -9.9511;  random planes: 0.10 with PT<0
+    check: cross second derivative +0.843847 vs X/2 = +0.843847
+critical_t0.7_n2_neg_b.npy         t=0.7 n=2 R=-0.1500  weak-plane PT: discrete -6.7256, polar -8.6194;  random planes: 0.05 with PT<0
+critical_t0.7_n3_neg_a.npy         t=0.7 n=3 R=-0.0300  weak-plane PT: discrete -1.7923, polar -3.5857;  random planes: 0.10 with PT<0
+critical_t0.7_n3_neg_b.npy         t=0.7 n=3 R=-0.1000  weak-plane PT: discrete -3.5981, polar -6.3917;  random planes: 0.15 with PT<0

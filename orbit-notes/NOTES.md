@@ -439,6 +439,75 @@ Numerics (`code/orbm_descent.py`, `code/orbm_hard_starts.py`, `code/orbm_perturb
 These are descents, not an adversarial search for local minima of m; see `povm-minimum-principle/` for such a search
 on single-excitation planes.
 
+## Weak planes and the residual sandwich (added 10 November 2026)
+
+We looked for the descent direction itself at every thick squeeze-critical point we could produce: the ten points saved
+above, 35 new ones at t = 1/2 (n = 2, 3, 4, 5; R from 0.05 to 0.6) and 14 at t = 0.7 with negative values (n = 2, 3;
+R from −0.03 to −0.15). That is 59 points in all: 28 at n = 2, 24 at n = 3, 6 at n = 4 and one at n = 5. Six of the new
+ones are in `data/` (`critical_n4_R0.05.npy`, `critical_n5_R0.05.npy`, `critical_t0.7_n2_neg_a.npy`,
+`critical_t0.7_n2_neg_b.npy`, `critical_t0.7_n3_neg_a.npy`, `critical_t0.7_n3_neg_b.npy`), and
+`code/weak_plane_descent.py` reproduces the numbers below on the saved points (`logs/weak_plane_descent.log`).
+
+**The cross term, exactly.** Let C be squeeze-critical with ‖C‖ = 1, r = R_t(C) and Y = Φ_t(C) − rC, where
+Φ_t = (id − tD)^{⊗n}. For H = A + B with A at copy s and B at copy s′ (G = e^{εH}), the cross entry of the squeeze
+Hessian is X(A, B)/2 with
+
+    X(A, B) = 4 Re B_r({A, C}, {B, C}) + 4 Re⟨Y, {AB, C}⟩ + 4 Re⟨Y, ACB + BCA⟩,    B_r(U, V) = ⟨U, Φ_t(V) − rV⟩,
+
+and the diagonal entry is S(A) = 2 q_r({A, C}) + 2 Re⟨Y, A²C + 2ACA + CA²⟩. The script checks the cross entry against
+finite differences of R along e^{εH} C e^{εH} (−0.129519 against −0.129519 at t = 1/2, +0.843847 against +0.843847 at
+t = 0.7). The middle term involves the two-copy operator AB. At a critical point of the whole rank-two variety it
+vanishes, because Y is then orthogonal to every XC + CX′. The last term, the *sandwich*, pairs Y with C multiplied on
+the left at one copy and on the right at the other. It is the cross-copy part of b in "Two-sided filters" above.
+
+At a critical point of the whole variety the two-sided second variation also simplifies. There Φ_t(C) = rC + L, with
+L mapping the orthogonal complement of the co-range into the orthogonal complement of the range. So ⟨L, X²C⟩ =
+⟨L, CY²⟩ = 0, and along e^{εX} C e^{εY} the second variation of q_r is exactly q_r(XC + CY) + 2 Re⟨L, XCY⟩. At a global
+minimum, XC and CY have rank two, so q_r(XC) ≥ 0 and q_r(CY) ≥ 0. Rescaling X and Y and choosing a phase shows that
+the absence of two-sided descent is equivalent to
+
+    |B_r(XC, CY) + ⟨L, XCY⟩|² ≤ q_r(XC) q_r(CY)    for all 1-local X (acting on the left) and Y (on the right).
+
+A thick global minimum with r < 0 is therefore excluded exactly when some pair (X, Y) violates this inequality.
+
+**Where the descent lives.** Let K_s be the plane of the two smallest eigenvectors of the local support operator
+μ_s = Tr_other(CC^* + C^*C) (the *weak plane* at copy s), and σ_μ (μ = 1, 2, 3) its Pauli matrices in that
+eigenbasis. Pair two copies,
+
+    H^μ = σ_μ^{(s)} + (Oσ)_μ^{(s′)},    O ∈ diag(±1, ±1, ±1) · {1, (σ_1 ↔ σ_2)}    (16 identifications),
+
+and let PT = Σ_μ (second variation along H^μ) = Σ_μ [S(σ_μ^{(s)}) + S((Oσ)_μ^{(s′)}) + X(σ_μ, (Oσ)_μ)].
+- **The paired weak-plane squeeze descends at 58 of the 59 points**, for some pair of copies and some O, including all
+  14 points with negative value. The exception is `data/suk_pd_n3.npy`, which was constructed so that every
+  weak-plane squeeze block is positive semidefinite (R = 0.318). Choosing O instead by the polar decomposition of the
+  sandwich matrix N_{μν} = 4 Re⟨Y, σ_μ C σ′_ν + σ′_ν C σ_μ⟩ also works at 57 of them.
+- **The sandwich drives it.** Splitting PT (polar identification) into the single-copy part, the B_r part, the
+  two-copy Y part and the sandwich, the sandwich is negative at every point and is the largest negative contribution at most of them. The
+  single-copy part is negative at the exact critical points of the whole variety but positive at several points near
+  the thin boundary.
+- **The weak planes matter at the hard points.** With random planes in place of the weak ones (20 choices per point),
+  the same construction descends for at most 15% of the choices at the exact critical points
+  `variety_critical_n2_low`, `variety_critical_n3_golden`, `variety_critical_n3_low` and at the points with negative
+  value. At some other points random planes do about as well (up to 90%).
+- **Averaged and simpler versions fail.**
+  - No linear combination of 14 natural local features descends at every point. The features were range and co-range
+    marginals, their products and inverses, partial traces and residual marginals, with the same coefficients at
+    every copy.
+  - Summing over all nine Weyl operators at two copies gives a closed form for the single-copy factors,
+    Σ_W q_r(W^{(s)} C) = (15/2) Σ_ab q_{n−1}(X_ab) − 9r at t = 1/2. But the resulting criterion fails at every low
+    point tested, with ratio 0.27 to 0.78 against the threshold 1.
+  - Multiplying C on either side by a swap of two copies, plain or twisted between the weak planes, never lowers R at a
+    point with R ≤ 0.15.
+  - "Some direction inside the block-diagonal family su(K_s) ⊕ ℝ(P_{K_s} − 2P_{d_s}) descends" holds at every point,
+    but so does the same statement for random four-dimensional families. Only the explicit paired direction says
+    something.
+
+So the descent at thick critical points is concrete. Squeeze the weak planes of two copies along matched Pauli
+directions, and the residual L, paired with the range leakage at one copy and the co-range leakage at the other, does
+the rest. A proof that this paired squeeze (or the polar version) always descends at thick critical points with
+r ≤ 0 would prove ORB_n at the points that matter, and with it EP_n for every n. We have no such proof. The weak planes
+are spectral subspaces of the marginals, so any argument has to control them at an unknown point.
+
 ## Status
 
 Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 7. The weaker ORB_m, with the co-range
@@ -464,6 +533,9 @@ prove NPT bound entanglement; we do not have one.
   `data/variety_critical_n3_low.npy`): the exact low thick critical points on the rank-two variety.
 * `code/orbm_descent.py`, `code/orbm_hard_starts.py`, `code/orbm_perturbed.py`: the co-range-optimised orbit property
   ORB_m (logs `logs/orbm_*.log`).
+* `code/weak_plane_descent.py` (with the saved critical points, including `data/critical_n4_R0.05.npy`,
+  `data/critical_n5_R0.05.npy` and `data/critical_t0.7_n*_neg_*.npy`): the cross second variation and the paired
+  weak-plane squeeze of the section above (`logs/weak_plane_descent.log`).
 * `code/restricted_families.py` (with `data/torus_pd_n3.npy`, `data/suk_pd_n3.npy`): three-copy critical points at which
   the torus, resp. the weak-plane family, has no descent.
 * `logs/`: the runs in the tables and the control.
