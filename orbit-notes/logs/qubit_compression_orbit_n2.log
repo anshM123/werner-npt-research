@@ -1,0 +1,8 @@
+trial 0: R(C) = +0.7208 -> orbit minimum +1.58e-11, |p| = 12.3, smallest local eigenvalue per copy 1.6e-15 7.5e-12
+trial 1: R(C) = +0.5632 -> orbit minimum +5.23e-03, |p| = 9.2, smallest local eigenvalue per copy 4.6e-10 7.3e-13
+trial 2: R(C) = +0.6215 -> orbit minimum +1.26e-10, |p| = 12.3, smallest local eigenvalue per copy 6.3e-11 -2.3e-17
+trial 3: R(C) = +0.6732 -> orbit minimum +1.12e-10, |p| = 12.9, smallest local eigenvalue per copy -7.1e-17 5.6e-11
+trial 4: R(C) = +0.6532 -> orbit minimum +nan, |p| = nan, smallest local eigenvalue per copy nan nan
+trial 5: R(C) = +0.7454 -> orbit minimum +2.50e-01, |p| = 10.7, smallest local eigenvalue per copy -2.5e-16 9.9e-19
+trial 6: R(C) = +0.6623 -> orbit minimum +6.26e-09, |p| = 9.1, smallest local eigenvalue per copy 6.2e-11 1.1e-10
+trial 7: R(C) = +0.7283 -> orbit minimum +2.56e-11, |p| = 13.1, smallest local eigenvalue per copy 1.1e-11 -4.8e-17

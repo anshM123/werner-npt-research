@@ -1,0 +1,30 @@
+zero P_01 (x) |0><1|: R = +0.0e+00
+   trial 0 eps  0.10: R(C) = +1.194e-01  min_Q R(C_Q) = +6.639e-03  ratio = 0.056
+   trial 0 eps  0.03: R(C) = +1.265e-02  min_Q R(C_Q) = +7.068e-04  ratio = 0.056
+   trial 0 eps  0.01: R(C) = +1.435e-03  min_Q R(C_Q) = +8.869e-05  ratio = 0.062
+   trial 1 eps  0.10: R(C) = +1.798e-01  min_Q R(C_Q) = +1.852e-02  ratio = 0.103
+   trial 1 eps  0.03: R(C) = +2.254e-02  min_Q R(C_Q) = +2.576e-03  ratio = 0.114
+   trial 1 eps  0.01: R(C) = +2.660e-03  min_Q R(C_Q) = +3.283e-04  ratio = 0.123
+   trial 2 eps  0.10: R(C) = +1.795e-01  min_Q R(C_Q) = +3.126e-03  ratio = 0.017
+   trial 2 eps  0.03: R(C) = +1.781e-02  min_Q R(C_Q) = +2.321e-04  ratio = 0.013
+   trial 2 eps  0.01: R(C) = +1.975e-03  min_Q R(C_Q) = +3.043e-05  ratio = 0.015
+zero |00><00| - |11><11|: R = +0.0e+00
+   trial 0 eps  0.10: R(C) = +1.379e-01  min_Q R(C_Q) = +1.220e-02  ratio = 0.088
+   trial 0 eps  0.03: R(C) = +1.661e-02  min_Q R(C_Q) = +1.413e-03  ratio = 0.085
+   trial 0 eps  0.01: R(C) = +1.947e-03  min_Q R(C_Q) = +1.637e-04  ratio = 0.084
+   trial 1 eps  0.10: R(C) = +2.022e-01  min_Q R(C_Q) = +3.578e-02  ratio = 0.177
+   trial 1 eps  0.03: R(C) = +2.495e-02  min_Q R(C_Q) = +1.542e-03  ratio = 0.062
+   trial 1 eps  0.01: R(C) = +2.917e-03  min_Q R(C_Q) = +1.189e-04  ratio = 0.041
+   trial 2 eps  0.10: R(C) = +1.790e-01  min_Q R(C_Q) = +3.499e-02  ratio = 0.195
+   trial 2 eps  0.03: R(C) = +1.889e-02  min_Q R(C_Q) = +3.247e-03  ratio = 0.172
+   trial 2 eps  0.01: R(C) = +2.118e-03  min_Q R(C_Q) = +3.568e-04  ratio = 0.168
+zero |10><10| - |01><01|: R = +0.0e+00
+   trial 0 eps  0.10: R(C) = +1.937e-01  min_Q R(C_Q) = +2.641e-02  ratio = 0.136
+   trial 0 eps  0.03: R(C) = +2.164e-02  min_Q R(C_Q) = +2.370e-03  ratio = 0.109
+   trial 0 eps  0.01: R(C) = +2.459e-03  min_Q R(C_Q) = +2.493e-04  ratio = 0.101
+   trial 1 eps  0.10: R(C) = +1.320e-01  min_Q R(C_Q) = +1.830e-02  ratio = 0.139
+   trial 1 eps  0.03: R(C) = +1.545e-02  min_Q R(C_Q) = +2.207e-03  ratio = 0.143
+   trial 1 eps  0.01: R(C) = +1.819e-03  min_Q R(C_Q) = +2.654e-04  ratio = 0.146
+   trial 2 eps  0.10: R(C) = +3.383e-01  min_Q R(C_Q) = +2.858e-02  ratio = 0.084
+   trial 2 eps  0.03: R(C) = +3.353e-02  min_Q R(C_Q) = +2.217e-03  ratio = 0.066
+   trial 2 eps  0.01: R(C) = +3.565e-03  min_Q R(C_Q) = +2.054e-04  ratio = 0.058

@@ -371,6 +371,21 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   |q_N(EC) − q_m(C)| ≤ ε‖C‖² on rank at most two must have ‖E‖² ≥ N(1 − 4ε), which cancels the 1/N. For one source
   copy the best distortion among Hilbert–Schmidt isometries is exactly (1 − 1/N)/4, and (1 − 1/N)/6 if only positive
   semidefinite inputs of rank at most two have to be preserved.
+- **Product-qubit compression (added 10 November 2026).** On operators whose rows and columns lie in a product of
+  planes Q_1 ⊗ ⋯ ⊗ Q_n the endpoint form is positive semidefinite. So "every rank-two C has a compression PCP,
+  P = ⊗_s P_{Q_s}, with R(PCP) ≤ R(C)" would prove the endpoint with no induction. It holds at one copy (take Q to be
+  the range of C). It fails at three copies, by 0.0032, next to the critical point (67 − √2329)/216 of the rank-two
+  variety, and compressing one copy at a time fails already at two copies (`orbit-notes/`, section "Product-qubit
+  compressions"). With independent planes for rows and columns it survives, but its minimum then sits close to 0 and it
+  says little beyond the endpoint itself.
+- **Weak-plane descent in the bulk (added 10 November 2026).** For independent Haar vectors u, v one has
+  E‖Tr_K(uv*)‖² = 3^{−|K|}, so the average of q_n over random rank-two C is (5/6)^n‖C‖², and the single-copy
+  marginals are close to I/3 (numerically R = 0.3348 ± 0.0010 at n = 6). Small values of R at large n therefore occur
+  among spread operators, where the weak planes of `orbit-notes/` are nearly degenerate, so the paired weak-plane
+  squeeze cannot be the general mechanism. An independent audit also reports an orthogonally invariant relaxation
+  with negative score that no product congruence lowers (not re-derived here). If that holds, a proof of squeeze descent
+  that is linear in vec(C) vec(C)* has to use constraints of genuine rank-two operators beyond the ones that relaxation
+  satisfies.
 
 ## What remains
 

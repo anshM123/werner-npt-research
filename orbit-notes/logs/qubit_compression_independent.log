@@ -1,0 +1,4 @@
+compression_counterexample_n3.npy    n=3 R(C) = +0.094531  min over independent row/column planes of R(P_A C P_B) = +0.015453  (40 starts)
+variety_critical_n3_low.npy          n=3 R(C) = +0.086761  min over independent row/column planes of R(P_A C P_B) = +0.000036  (40 starts)
+variety_critical_n3_golden.npy       n=3 R(C) = +0.095492  min over independent row/column planes of R(P_A C P_B) = +0.073223  (40 starts)
+variety_critical_n2_low.npy          n=2 R(C) = +0.129844  min over independent row/column planes of R(P_A C P_B) = +0.035795  (40 starts)

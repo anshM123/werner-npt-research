@@ -1,0 +1,7 @@
+CC start 0: R(C) = +0.27396  min R(compressed) = +0.18558  gap = -0.08838
+CC start 1: R(C) = +0.26472  min R(compressed) = +0.10607  gap = -0.15865
+CC start 2: R(C) = +0.15765  min R(compressed) = +0.04634  gap = -0.11131
+CC start 3: R(C) = +0.26097  min R(compressed) = +0.12362  gap = -0.13734
+CC start 4: R(C) = +0.29594  min R(compressed) = +0.09425  gap = -0.20169
+CC start 5: R(C) = +0.26179  min R(compressed) = +0.11356  gap = -0.14823
+CC n = 2: largest gap found = -0.088377  (positive refutes the statement)

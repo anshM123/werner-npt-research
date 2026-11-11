@@ -1,0 +1,9 @@
+critical_n2_R0.2.npy           n=2 R(C) = +0.20000  min_Q R(C_Q) = +0.03121  gap = -0.16879
+variety_critical_n2_low.npy    n=2 R(C) = +0.12984  min_Q R(C_Q) = +0.05033  gap = -0.07951
+variety_critical_n3_low.npy    n=3 R(C) = +0.08676  min_Q R(C_Q) = +0.07340  gap = -0.01336
+variety_critical_n3_golden.npy n=3 R(C) = +0.09549  min_Q R(C_Q) = +0.07322  gap = -0.02227
+suk_pd_n3.npy                  n=3 R(C) = +0.31772  min_Q R(C_Q) = +0.04681  gap = -0.27090
+torus_pd_n3.npy                n=3 R(C) = +0.25732  min_Q R(C_Q) = +0.04529  gap = -0.21202
+copywise_min_n3.npy            n=3 R(C) = +0.26227  min_Q R(C_Q) = +0.05657  gap = -0.20570
+critical_n4_R0.05.npy          n=4 R(C) = +0.05000  min_Q R(C_Q) = +0.01005  gap = -0.03995
+critical_n5_R0.05.npy          n=5 R(C) = +0.05000  min_Q R(C_Q) = +0.00390  gap = -0.04610

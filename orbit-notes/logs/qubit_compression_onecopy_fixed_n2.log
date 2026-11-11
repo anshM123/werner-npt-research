@@ -1,0 +1,7 @@
+one-copy fixed start 0: R(C) = +0.48454  min R(compressed) = +0.47867  gap = -0.00586
+one-copy fixed start 1: R(C) = +0.41089  min R(compressed) = +0.40651  gap = -0.00438
+one-copy fixed start 2: R(C) = +0.49017  min R(compressed) = +0.47361  gap = -0.01657
+one-copy fixed start 3: R(C) = +0.41286  min R(compressed) = +0.40184  gap = -0.01103
+one-copy fixed start 4: R(C) = +0.42459  min R(compressed) = +0.41709  gap = -0.00750
+one-copy fixed start 5: R(C) = +0.31844  min R(compressed) = +0.33946  gap = +0.02102
+one-copy fixed n = 2: largest gap found = +0.021021  (positive refutes the statement)

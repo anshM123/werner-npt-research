@@ -1,0 +1,2 @@
+compression_counterexample_n3.npy: n = 3, R(C) = 0.0945311529
+min of R(P C P) over 1581 inner runs (81 eigenvector starts, 1500 random) = 0.0977396233; gap = +0.0032084704; five smallest [0.097739623, 0.097739623, 0.097739623, 0.097739623, 0.097739623]

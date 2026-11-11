@@ -1,0 +1,9 @@
+one-copy stage2 start 0: R(C) = +0.18912  min R(compressed) = +0.21392  gap = +0.02480
+one-copy stage2 start 1: R(C) = +0.14973  min R(compressed) = +0.17991  gap = +0.03018
+one-copy stage2 start 2: R(C) = +0.30829  min R(compressed) = +0.30414  gap = -0.00415
+one-copy stage2 start 3: R(C) = +0.26516  min R(compressed) = +0.26844  gap = +0.00329
+one-copy stage2 start 4: R(C) = +0.34562  min R(compressed) = +0.34189  gap = -0.00373
+one-copy stage2 start 5: R(C) = +0.31231  min R(compressed) = +0.31030  gap = -0.00201
+one-copy stage2 start 6: R(C) = +0.21263  min R(compressed) = +0.21547  gap = +0.00284
+one-copy stage2 start 7: R(C) = +0.41431  min R(compressed) = +0.41146  gap = -0.00285
+one-copy stage2 n = 2: largest gap found = +0.030178  (positive refutes the statement)

@@ -508,11 +508,54 @@ the rest. A proof that this paired squeeze (or the polar version) always descend
 r ≤ 0 would prove ORB_n at the points that matter, and with it EP_n for every n. We have no such proof. The weak planes
 are spectral subspaces of the marginals, so any argument has to control them at an unknown point.
 
+## Product-qubit compressions (added 10 November 2026)
+
+At copy s let Q_s ⊂ C^3 be a plane with unit normal ℓ_s and put P = P_{Q_1} ⊗ ⋯ ⊗ P_{Q_n}. On an operator X whose
+rows and columns lie in Q_1 ⊗ ⋯ ⊗ Q_n the endpoint form sees, at each copy, only the compression of I − ½|Ω⟩⟨Ω|
+(Ω = Σ_a |aa⟩) to Q_s ⊗ Q̄_s. That compression is I − ½|Ω_Q⟩⟨Ω_Q|, with eigenvalues 1, 1, 1, 0, so q_n(1/2, X) ≥ 0
+for every such X, of any rank. The same holds when the rows lie in a plane A_s and the columns in a plane B_s: the
+compression is then I − ½|vec(P_A P_B)⟩⟨vec(P_A P_B)| and ‖P_A P_B‖_F² ≤ 2. This suggests a strengthening of EP_n
+that needs no induction,
+
+    (CC_n)   every rank-two C has planes Q_1, …, Q_n with PCP ≠ 0 and R(PCP) ≤ R(C).
+
+Here PCP is the limit of G_λ C G_λ with G_λ = ⊗_s (P_{Q_s} + λ P_{ℓ_s}) as λ → 0, so CC_n asks for a point of the
+squeeze-orbit closure of C that lives on a product of qubits and is no worse than C.
+
+- **One copy: true.** Take Q to be the range of C. Then PCP = C P_Q, and the rest C − C P_Q = C P_ℓ has its rows in Q
+  and its column along ℓ. On those entries the form is the identity and does not couple to C P_Q, and ⟨ℓ|C = 0. So
+  q(C) = q(C P_Q) + ‖C P_ℓ‖² and ‖C‖² = ‖C P_Q‖² + ‖C P_ℓ‖², and R(C) ≥ R(C P_Q) because R ≤ 1. (C P_Q ≠ 0 because
+  two planes in C^3 meet.)
+- **Three copies: false.** `data/compression_counterexample_n3.npy` has R = 0.0945311529, while every product-qubit
+  compression has R ≥ 0.0977396233. That minimum is reached repeatedly by 1581 L-BFGS runs, including all 81 starts at
+  eigenvectors of the one-copy marginals of CC^*, C^*C and their sum, and again by 400 BFGS runs in an angle
+  parametrisation with q computed from partial traces (`logs/qubit_compression_verify_n3.log`,
+  `logs/qubit_compression_check_n3.log`). The point was found by maximising min_Q R(PCP) − R(C) from
+  `data/variety_critical_n3_low.npy`, the critical point of the rank-two variety with R = (67 − √2329)/216, where the
+  margin is already down to −0.013 (`logs/qubit_compression_points.log`).
+- **Searches from random starts miss it.** Gradient ascents of the same gap reach −0.0013 at n = 2, −0.025 at n = 3
+  and −0.20 at n = 4, and near the zeros at n = 2 the best compression stays 0.013 to 0.195 times R(C) as C → zero
+  (`logs/qubit_compression_adversary*.log`, `logs/qubit_compression_nearzero_n2.log`). Every saved critical point,
+  n = 2 to 5, has a negative gap.
+- **One copy at a time fails already at two copies.** Ascents find rank-two C for which every compression of copy 0
+  raises R (by 0.021), every compression of the rows of copy 0 raises R (0.096), every compression of either single copy
+  raises R (0.006), and, with copy 0 already a qubit, every compression of copy 1 raises R (0.030)
+  (`logs/qubit_compression_onecopy_*.log`).
+- **Independent planes for rows and columns** survive at the counterexample, where the best such compression has
+  R = 0.0155. But this version is weak: at `data/variety_critical_n3_low.npy` the best one already has
+  R = 3.6·10⁻⁵ (`logs/qubit_compression_independent.log`), so its minimum sits near zero and it says little beyond
+  EP_n. Arbitrary rank-two filters are weaker still: along the squeeze orbit of a random rank-two C at n = 2, descent
+  runs to operators thin at both copies, with R below 10⁻⁸ in five of eight trials
+  (`logs/qubit_compression_orbit_n2.log`; of the others, two stalled at points thin at both copies and one overflowed).
+
+So the same-plane compression is not a route to EP_n, and the independent-plane version is not a lever.
+
 ## Status
 
 Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 7. The weaker ORB_m, with the co-range
 optimised first, also suffices; it is a conjecture, tested by descents for n ≤ 4. A proof of either for all n would
 prove NPT bound entanglement; we do not have one.
+The product-qubit compression inequality CC_n (section above) holds at one copy and is false at three.
 
 ## Files
 
@@ -536,6 +579,8 @@ prove NPT bound entanglement; we do not have one.
 * `code/weak_plane_descent.py` (with the saved critical points, including `data/critical_n4_R0.05.npy`,
   `data/critical_n5_R0.05.npy` and `data/critical_t0.7_n*_neg_*.npy`): the cross second variation and the paired
   weak-plane squeeze of the section above (`logs/weak_plane_descent.log`).
+* `code/qubit_compression.py`, `code/qubit_compression_check.py` (with `data/compression_counterexample_n3.npy`): the
+  product-qubit compressions of the section above (`logs/qubit_compression_*.log`).
 * `code/restricted_families.py` (with `data/torus_pd_n3.npy`, `data/suk_pd_n3.npy`): three-copy critical points at which
   the torus, resp. the weak-plane family, has no descent.
 * `logs/`: the runs in the tables and the control.
