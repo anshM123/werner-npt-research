@@ -526,11 +526,12 @@ squeeze-orbit closure of C that lives on a product of qubits and is no worse tha
   and its column along ℓ. On those entries the form is the identity and does not couple to C P_Q, and ⟨ℓ|C = 0. So
   q(C) = q(C P_Q) + ‖C P_ℓ‖² and ‖C‖² = ‖C P_Q‖² + ‖C P_ℓ‖², and R(C) ≥ R(C P_Q) because R ≤ 1. (C P_Q ≠ 0 because
   two planes in C^3 meet.)
-- **Three copies: false.** `data/compression_counterexample_n3.npy` has R = 0.0945311529, while every product-qubit
-  compression has R ≥ 0.0977396233. That minimum is reached repeatedly by 1581 L-BFGS runs, including all 81 starts at
-  eigenvectors of the one-copy marginals of CC^*, C^*C and their sum, and again by 400 BFGS runs in an angle
-  parametrisation with q computed from partial traces (`logs/qubit_compression_verify_n3.log`,
-  `logs/qubit_compression_check_n3.log`). The point was found by maximising min_Q R(PCP) − R(C) from
+- **Three copies: false numerically.** `data/compression_counterexample_n3.npy` has R = 0.0945311529, while the
+  smallest value of R over product-qubit compressions that we find is 0.0977396233. That value is reached repeatedly
+  by 1581 L-BFGS runs, including all 81 starts at eigenvectors of the one-copy marginals of CC^*, C^*C and their sum,
+  and again by 400 BFGS runs in an angle parametrisation with q computed from partial traces
+  (`logs/qubit_compression_verify_n3.log`, `logs/qubit_compression_check_n3.log`). These are local searches in
+  floating point; we have no certified global lower bound over the twelve-dimensional set of compressions. The point was found by maximising min_Q R(PCP) − R(C) from
   `data/variety_critical_n3_low.npy`, the critical point of the rank-two variety with R = (67 − √2329)/216, where the
   margin is already down to −0.013 (`logs/qubit_compression_points.log`).
 - **Searches from random starts miss it.** Gradient ascents of the same gap reach −0.0013 at n = 2, −0.025 at n = 3
@@ -555,7 +556,8 @@ So the same-plane compression is not a route to EP_n, and the independent-plane 
 Reduction proved (above). ORB_n is a conjecture, tested numerically for n ≤ 7. The weaker ORB_m, with the co-range
 optimised first, also suffices; it is a conjecture, tested by descents for n ≤ 4. A proof of either for all n would
 prove NPT bound entanglement; we do not have one.
-The product-qubit compression inequality CC_n (section above) holds at one copy and is false at three.
+The product-qubit compression inequality CC_n (section above) holds at one copy and fails numerically at three
+(local searches, not certified).
 
 ## Files
 

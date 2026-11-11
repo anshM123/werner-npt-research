@@ -374,8 +374,9 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
 - **Product-qubit compression (added 10 November 2026).** On operators whose rows and columns lie in a product of
   planes Q_1 ⊗ ⋯ ⊗ Q_n the endpoint form is positive semidefinite. So "every rank-two C has a compression PCP,
   P = ⊗_s P_{Q_s}, with R(PCP) ≤ R(C)" would prove the endpoint with no induction. It holds at one copy (take Q to be
-  the range of C). It fails at three copies, by 0.0032, next to the critical point (67 − √2329)/216 of the rank-two
-  variety, and compressing one copy at a time fails already at two copies (`orbit-notes/`, section "Product-qubit
+  the range of C). It fails numerically at three copies, by 0.0032, next to the critical point (67 − √2329)/216 of the
+  rank-two variety (agreeing local searches, no certified global bound), and compressing one copy at a time fails
+  already at two copies (`orbit-notes/`, section "Product-qubit
   compressions"). With independent planes for rows and columns it survives, but its minimum then sits close to 0 and it
   says little beyond the endpoint itself.
 - **Weak-plane descent in the bulk (added 10 November 2026).** For independent Haar vectors u, v one has
