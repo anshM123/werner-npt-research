@@ -35,6 +35,15 @@ EP_N means q_N(C) ≥ 0 for every C of rank at most two on (C^3)^{⊗N}, where q
    be negative (the uniform distribution gives (−1/15)^N at odd N), so the sign must come from averaging over bases,
    which is where the rank-two and uncertainty constraints act (`whole-problem-routes/code/randomized_measurements/`,
    Monte Carlo check at N = 2, 3).
+7. **Counting form** (added 11 November 2026, from an independent audit; checked here, `counting-form/`). EP for
+   every N holds iff, for all N and all disjoint U, V ⊆ {0, 1, 2}^N,
+   Σ_S (−1)^{|S|} 2^{N−|S|} Σ_{i,j} (N_S^{UV}(i, j) − N_S^{VU}(i, j))² ≥ 0, where N_S^{UV}(i, j) counts the
+   assignments s on S with (i, s) ∈ U and (j, s) ∈ V. The left side is 2^N q_N(1_U 1_V^T − 1_V 1_U^T).
+8. **Window form** (same source). It suffices that, for each fixed B and all large N, the inequality in 7 holds when
+   every cross-distance between U and V lies in [N/2 − B, N/2 + B].
+9. **Near a product of qubits** (same source). A counterexample gives witnesses at squared distance at most C 2^{−N/2}
+   from one product-binary subspace with 2^N q_N ≤ −c < 0. It can sit there as a small, almost decoupled piece next to
+   a binary zero, so no argument that controls only finitely many orders in the leakage can settle the problem.
 
 ## Three barriers (added 8 November 2026)
 

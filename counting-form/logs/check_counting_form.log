@@ -1,0 +1,35 @@
+1. counting identity
+   N=2 |U|=  2 |V|=  1: counting        8   2^N q =       8.0000
+   N=2 |U|=  5 |V|=  4: counting      120   2^N q =     120.0000
+   N=2 |U|=  3 |V|=  4: counting       68   2^N q =      68.0000
+   N=3 |U|=  9 |V|=  7: counting      664   2^N q =     664.0000
+   N=3 |U|= 10 |V|= 14: counting     1176   2^N q =    1176.0000
+   N=3 |U|=  8 |V|=  8: counting      672   2^N q =     672.0000
+   N=4 |U|= 25 |V|= 35: counting    12724   2^N q =   12724.0000
+   N=4 |U|= 22 |V|= 29: counting     9308   2^N q =    9308.0000
+   N=4 |U|= 28 |V|= 27: counting    12108   2^N q =   12108.0000
+   U=['02'] V=['10', '20', '01', '11']: counting 28
+   U=['20', '02', '22'] V=['00', '21']: counting 32
+2. flag constants on a binary code
+   m=2: d(x,x) = 0.250000 [0.250000]  d(x,y) = 0.562500, d(y,x) = 0.562500 [0.562500]  d(y,y) = 0.750000 [0.750000]
+   m=4: d(x,x) = 0.062500 [0.062500]  d(x,y) = 0.316406, d(y,x) = 0.316406 [0.316406]  d(y,y) = 0.562500 [0.562500]
+   m=6: d(x,x) = 0.015625 [0.015625]  d(x,y) = 0.177979, d(y,x) = 0.177979 [0.177979]  d(y,y) = 0.515625 [0.515625]
+3. |<ab,H cd>| <= sqrt(d(a,d) d(c,b))
+   largest ratio over 200 random real quadruples (m = 2): 0.4207
+4. disjoint binary flags
+   <ab,H ab> = 0.500000, <ab,H ba> = 0.500000
+   wedge with the flags: 21.323418 vs q_1/2 = 21.323418
+5. window flags
+   one flag: direct +0.500000, crossed -0.500000
+   two flags: direct +0.250000, crossed +0.250000
+   wedge with two flags: 10.661709 vs q_1/4 = 10.661709
+6. near-binary tags (L = 4)
+   Gram in the order (11,12,21,22):
+[[0.5625 0.     0.     0.0625]
+ [0.     0.25   0.25   0.    ]
+ [0.     0.25   0.25   0.    ]
+ [0.0625 0.     0.     0.5625]]
+   expected b = 0.25, d = 0.5625, b^2 = 0.0625
+   t=0.05: score +0.039837, main terms +0.002191, |difference| 0.037646 <= 20 b t = 0.250000
+   t=0.2: score +0.161864, main terms +0.035057, |difference| 0.126806 <= 20 b t = 1.000000
+   t=0.5: score +0.417242, main terms +0.219108, |difference| 0.198135 <= 20 b t = 2.500000
