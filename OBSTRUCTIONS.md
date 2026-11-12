@@ -425,6 +425,13 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   q_2 = ½ Σ_s (‖Λ²X_(s)‖² + ½‖X_(s)X_(s)ᵀ‖²) whenever xᵀx = 0. From three copies on it is not: the sector (1, 2, 0)
   gives −½ at n = 3, and the least eigenvalue is −3/2 at n = 4 (numerical check of the compressed operator agrees).
   Such a certificate has to see that x ⊗ x has rank one, not just that it is orthogonal to Ω̂^{⊗n}.
+- **Cauchy–Schwarz in the swap geometry (added 12 November 2026).** With ⟨a, b⟩_K = ⟨a|(I − F/2)^{⊗n}|b⟩ on two
+  replicas (K positive definite), q_n(uvᵀ) = ‖u ⊗ v‖²_K and the cross term is ⟨u ⊗ u, v ⊗ v⟩_K, so the real skew
+  endpoint is ⟨u ⊗ u, v ⊗ v⟩_K ≤ ‖u ⊗ v‖²_K (numerically exact identities, n ≤ 3). Cauchy–Schwarz would give it
+  from ‖u ⊗ v‖²_K ≥ ‖u ⊗ u‖_K ‖v ⊗ v‖_K. That holds at one copy and on products, but fails at two and three copies
+  (least value of the difference over |u| = |v| = 1: −1/4 and −1/8). Cauchy–Schwarz with
+  T = K^{−1}(F − Ω/2) = diag(−1, 2, −2/3) on (Ω̂, sym₀, anti) loses the factor 2 per copy on the symmetric traceless
+  sector.
 - **A vanishing additive error is not a weaker target.** By μ_{n+1} ≤ μ_n (append |0⟩⟨1|), a bound μ_n ≥ −ε_n with
   ε_n → 0 gives the endpoint, but a failure at one n₀ also gives μ_n ≤ μ_{n₀} < 0 for every n ≥ n₀. So such a bound,
   for instance μ_n ≥ −1/√n, is equivalent to the endpoint itself. Bounds on the separate probabilities
