@@ -407,7 +407,11 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
 
       2(‖u∧v‖² − ‖Tr_S(u∧v)‖²) = 2‖Λ²X‖² + ‖XXᵀ‖² − |xᵀx|²,
 
-  and a choice of basis of the plane with xᵀx = 0 makes the right side a sum of squares.
+  and a choice of basis of the plane with xᵀx = 0 makes the right side a sum of squares. One degree higher the
+  obstruction disappears at two copies: ‖p‖² q_2(p) = (sum of squares of quadratics in p) + (quadratic multiples of
+  the Plücker quadrics) is feasible numerically (SCS reports a solution at tolerance 10⁻⁷; Gram 666 × 666, 83 916
+  multiplier coefficients; not an exact certificate). From three copies on this test needs a 61 776-dimensional Gram
+  matrix and has not been run, so whether a copy-uniform certificate of this degree exists is open.
 - **Sums of squares in x = u + iv modulo xᵀx = 0 (added 12 November 2026).** For real u, v and x = u + iv,
 
       q_n(u∧v) = ½ ⟨x ⊗ x| A^{⊗n} − B^{⊗n} |x ⊗ x⟩,   A = I − F/2,   B = Ω − I/2,
