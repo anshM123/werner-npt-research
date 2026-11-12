@@ -58,9 +58,41 @@ something about method. A counterexample can sit next to a binary zero as a smal
 argument that controls only a fixed number of orders in the distance to the binary subspace therefore cannot settle
 the problem.
 
+## 4. Pairs separated by a ternary hyperplane (every N)
+
+Added 12 November 2026, from an independent derivation; checked here (`code/check_coset_separation.py`).
+
+**Proposition.** Let a ∈ F₃^N and α ≠ β in F₃. If u is supported on {x : a·x = α} and v on {x : a·x = β}, with
+arbitrary real or complex entries, then
+
+    2^N q_N(uv^T − vu^T) = 2 Σ_{S ⊆ [N]} 2^{|S|} ‖P₋^{(S)}(u ⊗ v)‖² ≥ 2 ‖u‖² ‖v‖²,
+
+where P₋^{(S)} antisymmetrises the two factors at the copies in S. In particular the counting inequality of Section 1
+holds, with margin 2|U||V|, at every N, for any two sets U, V lying in two distinct parallel affine hyperplanes of
+F₃^N. Equivalently, U and V lie in distinct cosets of a ternary linear code L (take a ∈ L^⊥ with a·(p − q) ≠ 0), and
+U, V may be arbitrary nonempty subsets of their cosets.
+
+*Proof.* Let Z|x⟩ = ω^x|x⟩ with ω = e^{2πi/3}, and Z_a = Z^{a_1} ⊗ ⋯ ⊗ Z^{a_N}, a product unitary. The form q_N is
+invariant under C ↦ Z_a C Z_a^†. Since Z_a u = ω^α u and Z_a v = ω^β v, the two terms transform as
+Z_a(uv^T)Z_a^† = ω^{α−β} uv^T and Z_a(vu^T)Z_a^† = ω^{β−α} vu^T. These characters differ because 2(α − β) ≠ 0 in F₃,
+so the cross term ⟨vec(uv^T), H_N vec(vu^T)⟩ vanishes and q_N(uv^T − vu^T) = q_N(uv^T) + q_N(vu^T). For rank one,
+‖Tr_J(xy^T)‖² = ⟨x ⊗ y, F_J (x ⊗ y)⟩ with F_J the swap of the two factors at the copies in J, so
+q_N(xy^T) = ⟨x ⊗ y, (I − F/2)^{⊗N} x ⊗ y⟩, and 2(I − F/2) = I + 2P₋. The term S = ∅ gives the bound. ∎
+
+The argument needs the third root of unity. Over F₂ the two characters are both −1, and indeed U = {00, 11},
+V = {01, 10} (separated by the binary parity x₁ + x₂, but by no ternary hyperplane) has a nonzero cross term
+(−2, against the value 32 for 4q₂). The binary wedge zeros of the endpoint live exactly where this cancellation is
+unavailable.
+
+Scope: this is an every-N result for a structured class. Generic disjoint pairs lie in no pair of parallel
+hyperplanes (a set with more than 3^{N−1} points lies in no hyperplane at all), and the integer inequality for them
+stays open. In the
+checks the ratio 2^N q_N / (2‖u‖²‖v‖²) was never below 2, so the stated margin is probably not sharp.
+
 ## What this does not do
 
-These are reformulations. None of them proves positivity, and the integer inequality of Section 1 is open.
+Sections 1–3 are reformulations and Section 4 covers a special class. None of them proves positivity in general,
+and the integer inequality of Section 1 is open.
 
 ## Checks
 
@@ -71,3 +103,7 @@ These are reformulations. None of them proves positivity, and the integer inequa
 4. the disjoint flags and the halving of the score;
 5. the window flags and the factor 1/4;
 6. the tag Gram at L = 4 and the decomposition of the score, with its error below 20bt.
+
+`python code/check_coset_separation.py` (Section 4; `logs/check_coset_separation.log`): 326 random coset pairs at
+N = 2, …, 5 (indicator vectors and random real vectors), cross term zero, identity to 7·10⁻¹⁶, and the control pair
+above.

@@ -1,0 +1,4 @@
+1. coset pairs: 326 cases, N = 2..5
+   max |cross term| = 0.00e+00, max rel. identity error = 6.67e-16
+   min 2^N q / (2 |u|^2 |v|^2) = 2.0000  (claim: >= 1)
+2. control U={00,11}, V={01,10}: cross term = -2.0000, 4 q = 32.0000, 2 sum = 16.0000 (identity fails, as it should)
