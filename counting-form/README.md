@@ -79,20 +79,53 @@ so the cross term ⟨vec(uv^T), H_N vec(vu^T)⟩ vanishes and q_N(uv^T − vu^T)
 ‖Tr_J(xy^T)‖² = ⟨x ⊗ y, F_J (x ⊗ y)⟩ with F_J the swap of the two factors at the copies in J, so
 q_N(xy^T) = ⟨x ⊗ y, (I − F/2)^{⊗N} x ⊗ y⟩, and 2(I − F/2) = I + 2P₋. The term S = ∅ gives the bound. ∎
 
-The argument needs the third root of unity. Over F₂ the two characters are both −1, and indeed U = {00, 11},
-V = {01, 10} (separated by the binary parity x₁ + x₂, but by no ternary hyperplane) has a nonzero cross term
-(−2, against the value 32 for 4q₂). The binary wedge zeros of the endpoint live exactly where this cancellation is
-unavailable.
+**Any separating product symmetry works.** Only the characters were used. Let 𝒰 = U₁ ⊗ ⋯ ⊗ U_N be a product
+unitary with 𝒰u = λu and 𝒰v = μv. If λμ̄ ∉ {1, −1}, the same computation gives the identity and the bound. With
+𝒰 = ⊗_s diag(e^{iφ_s(0)}, e^{iφ_s(1)}, e^{iφ_s(2)}) this covers any U, V lying in two level sets of an additive phase
+Φ(x) = Σ_s φ_s(x_s) mod 2π whose values θ_U, θ_V satisfy θ_U − θ_V ∉ πZ. Two instances:
+- ternary hyperplanes, with φ_s = 2πa_s x_s/3;
+- two different level sets of any real additive function F(x) = Σ_s f_s(x_s), with φ_s = t f_s and t small. For
+  example U ⊆ {Σ_s x_s = c₁} and V ⊆ {Σ_s x_s = c₂} with integers c₁ ≠ c₂, sets of up to about 3^N/√N points.
 
-Scope: this is an every-N result for a structured class. Generic disjoint pairs lie in no pair of parallel
-hyperplanes (a set with more than 3^{N−1} points lies in no hyperplane at all), and the integer inequality for them
-stays open. In the
-checks the ratio 2^N q_N / (2‖u‖²‖v‖²) was never below 2, so the stated margin is probably not sharp.
+The ratio must avoid −1. A binary parity gives θ_U − θ_V = π. Indeed U = {00, 11}, V = {01, 10}, which are separated
+by x₁ + x₂ mod 2 but by no ternary hyperplane and no additive real function, have a nonzero cross term (−2, against
+the value 32 for 4q₂). This matches the binary wedge zeros of the endpoint, where no such cancellation is available.
+
+Scope: an every-N result for a structured class. Generic large disjoint pairs lie on no such pair of level sets,
+and the integer inequality for them stays open. In the checks the ratio 2^N q_N/(2‖u‖²‖v‖²) was never below 2, so
+the stated margin is probably not sharp.
+
+## 5. Peeling a copy at which the plane contains a product vector
+
+Added 12 November 2026; checked in `code/check_coset_separation.py` (part 4).
+
+**Lemma.** Let u, v be real vectors on N copies, and suppose span{u, v} contains a vector w ⊗ ũ, with w ∈ R³ at one
+copy s and ũ arbitrary on the other N − 1 copies. Take u = w ⊗ ũ with |w| = 1, and rotate copy s by a real orthogonal
+matrix that sends w to e₀. Write v = Σ_k e_k ⊗ ṽ_k at that copy, and x∧y = xy^T − yx^T. Then
+
+    q_N(u∧v) = ½ q_{N−1}(ũ∧ṽ₀) + 2 Σ_{k=1,2} q_{N−1}(ũ ṽ_k^T),
+
+and the rank-one scores are at least 2^{1−N}‖ũ‖²‖ṽ_k‖². So the real skew endpoint at N − 1 copies implies it at N
+copies on every such plane. A first failure needs a range plane with no vector of Schmidt rank one across any single
+copy.
+
+*Proof.* q_N is invariant under real orthogonal conjugation at one copy. Split C = u∧v into copy-s blocks C_{jk}.
+The nonzero ones are C₀₀ = ũ∧ṽ₀, C_{0k} = ũṽ_k^T and C_{k0} = −ṽ_kũ^T (k = 1, 2). Since H₁ = I − ½|Ω⟩⟨Ω|,
+
+    q_N(C) = Σ_{j≠k} q_{N−1}(C_{jk}) + Σ_j q_{N−1}(C_{jj}) − ½ q_{N−1}(Σ_j C_{jj}).
+
+Only C₀₀ survives on the diagonal, which gives the factor ½, and transposed rank-one blocks have equal scores. ∎
+
+Iterating gives an unconditional every-N class: planes that keep containing such a vector after each peel. It
+includes every plane through a fully product vector, which is the skew case of the Wu–Zou product-ray theorem
+(`support-and-projector-notes/`). The step does not extend to planes that are only thin at copy s, that is, planes
+containing a vector of Schmidt rank two there. The diagonal part is then ½ q_{N−1}(C₀₀ − C₁₁), a skew operator of
+rank up to four that the endpoint does not control; compare the dephasing counterexample in `contraction-notes/`.
 
 ## What this does not do
 
-Sections 1–3 are reformulations and Section 4 covers a special class. None of them proves positivity in general,
-and the integer inequality of Section 1 is open.
+Sections 1–3 are reformulations, and Sections 4 and 5 cover special classes. None of them proves positivity in
+general, and the integer inequality of Section 1 is open.
 
 ## Checks
 
@@ -104,6 +137,9 @@ and the integer inequality of Section 1 is open.
 5. the window flags and the factor 1/4;
 6. the tag Gram at L = 4 and the decomposition of the score, with its error below 20bt.
 
-`python code/check_coset_separation.py` (Section 4; `logs/check_coset_separation.log`): 326 random coset pairs at
-N = 2, …, 5 (indicator vectors and random real vectors), cross term zero, identity to 7·10⁻¹⁶, and the control pair
-above.
+`python code/check_coset_separation.py` (Sections 4 and 5; `logs/check_coset_separation.log`):
+1. 326 random coset pairs at N = 2, …, 5 (indicator vectors and random real vectors): cross term zero, identity to
+   7·10⁻¹⁶;
+2. the binary-parity control above;
+3. 100 pairs on level sets of random integer additive functions, N = 2, 3, 4: cross term zero;
+4. the peel identity of Section 5 on 60 random planes, N = 2, 3, 4, to 9·10⁻¹⁶.

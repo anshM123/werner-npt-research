@@ -1,4 +1,4 @@
-"""Checks for Section 4 of counting-form/README.md (floating point; the identities are exact algebra).
+"""Checks for Sections 4 and 5 of counting-form/README.md (floating point; the identities are exact algebra).
 
 Claim. Let a in F_3^N and alpha != beta. If u is supported on {x : a.x = alpha} and v on {x : a.x = beta}
 (any real or complex entries), then the cross term <vec(uv^T), H_N vec(vu^T)> vanishes and
@@ -12,6 +12,8 @@ cosets of a ternary linear code are the special case used in the counting form.
    (indicator vectors) and random real vectors on the cosets, N = 2..5.
 2. Controls: N = 2, U = {00, 11}, V = {01, 10} (separated only by a binary parity, not by a ternary hyperplane):
    the cross term is nonzero and the identity fails.
+3. Level sets of random integer additive functions F(x) = sum_s f_s(x_s), N = 2..4 (product phase unitary).
+4. Section 5 peel: u = w (x) ut at one copy, q_N(u^v) = 1/2 q_{N-1}(ut^vt_0) + 2 sum_{k=1,2} q_{N-1}(ut vt_k^T).
 usage: python check_coset_separation.py"""
 import itertools
 import numpy as np
@@ -91,3 +93,47 @@ for x in ('01', '10'):
 A = np.outer(u, v); B = np.outer(v, u)
 print(f"2. control U={{00,11}}, V={{01,10}}: cross term = {cross(A, B, 2):.4f}, "
       f"4 q = {4 * q(A - B, 2):.4f}, 2 sum = {2 * antisym_sum(u, v, 2):.4f} (identity fails, as it should)")
+
+# 3. Level sets of an integer additive function F(x) = sum_s f_s(x_s) (phase unitary prod_s diag(e^{i t f_s})).
+stats = {'cases': 0, 'cross': 0.0, 'ident': 0.0, 'ratio': np.inf}
+for N in (2, 3, 4):
+    for trial in range(40):
+        f = rng.integers(-2, 3, size=(N, 3))
+        pts = list(itertools.product(range(3), repeat=N))
+        F = {x: int(sum(f[s, x[s]] for s in range(N))) for x in pts}
+        levels = sorted(set(F.values()))
+        if len(levels) < 2:
+            continue
+        c1, c2 = rng.choice(levels, 2, replace=False)
+        u = np.zeros(3 ** N); v = np.zeros(3 ** N)
+        for x in pts:
+            if F[x] == c1 and rng.random() < 0.7:
+                u[index(''.join(map(str, x)))] = rng.normal()
+            if F[x] == c2 and rng.random() < 0.7:
+                v[index(''.join(map(str, x)))] = rng.normal()
+        if not u.any() or not v.any():
+            continue
+        A = np.outer(u, v); B = np.outer(v, u)
+        lhs = 2 ** N * q(A - B, N); rhs = 2 * antisym_sum(u, v, N)
+        stats['cases'] += 1
+        stats['cross'] = max(stats['cross'], abs(cross(A, B, N)))
+        stats['ident'] = max(stats['ident'], abs(lhs - rhs) / max(1.0, abs(lhs)))
+        stats['ratio'] = min(stats['ratio'], lhs / (2 * np.dot(u, u) * np.dot(v, v)))
+print(f"3. integer additive level sets: {stats['cases']} cases, N = 2..4, max |cross| = {stats['cross']:.2e}, "
+      f"identity error {stats['ident']:.2e}, min ratio {stats['ratio']:.4f}")
+
+# 4. One-copy product peel (Section 5): u = w (x) ut at copy s; rotate w to e_0 at that copy:
+#    q_N(u^v) = 1/2 q_{N-1}(ut ^ vt_0) + 2 sum_{k=1,2} q_{N-1}(ut vt_k^T).
+worst = 0.0; count = 0
+for N in (2, 3, 4):
+    for trial in range(20):
+        s = int(rng.integers(0, N)); w = rng.normal(size=3); w /= np.linalg.norm(w); ut = rng.normal(size=3 ** (N - 1))
+        u = np.moveaxis(np.einsum('a,b->ab', w, ut).reshape((3,) * N), 0, s).reshape(-1)
+        v = rng.normal(size=3 ** N)
+        Q, _ = np.linalg.qr(np.column_stack([w, rng.normal(size=(3, 2))])); R = Q.T
+        R[0] = w
+        Vt = np.tensordot(R, np.moveaxis(v.reshape((3,) * N), s, 0), axes=(1, 0)).reshape(3, -1)
+        lhs = q(np.outer(u, v) - np.outer(v, u), N)
+        rhs = 0.5 * q(np.outer(ut, Vt[0]) - np.outer(Vt[0], ut), N - 1) + 2 * sum(q(np.outer(ut, Vt[k]), N - 1) for k in (1, 2))
+        worst = max(worst, abs(lhs - rhs) / max(1.0, abs(lhs))); count += 1
+print(f"4. one-copy product peel: {count} cases, N = 2..4, max rel. error {worst:.2e}")

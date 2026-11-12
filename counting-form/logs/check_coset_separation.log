@@ -2,3 +2,5 @@
    max |cross term| = 0.00e+00, max rel. identity error = 6.67e-16
    min 2^N q / (2 |u|^2 |v|^2) = 2.0000  (claim: >= 1)
 2. control U={00,11}, V={01,10}: cross term = -2.0000, 4 q = 32.0000, 2 sum = 16.0000 (identity fails, as it should)
+3. integer additive level sets: 100 cases, N = 2..4, max |cross| = 0.00e+00, identity error 8.50e-16, min ratio 2.0000
+4. one-copy product peel: 60 cases, N = 2..4, max rel. error 8.79e-16
