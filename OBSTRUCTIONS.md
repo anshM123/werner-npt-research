@@ -396,6 +396,36 @@ tried so far (thin-copy removal, one-copy compressions, squeeze descent) all sto
   with negative score that no product congruence lowers (not re-derived here). If that holds, a proof of squeeze descent
   that is linear in vec(C) vec(C)* has to use constraints of genuine rank-two operators beyond the ones that relaxation
   satisfies.
+- **Quadratic certificates modulo the Plücker relations (added 12 November 2026, from an independent audit; checked
+  here).** In the real skew form, write p = u∧v = uvᵀ − vuᵀ as a bivector. A Finsler–Thorpe certificate
+  q_n(p) = (sum of squares of linear forms in p) + (linear combination of Plücker quadrics) is impossible at every
+  n ≥ 2. The six rank-six skew matrices J_ab ⊗ I and I ⊗ J_ab (J_ab = |a⟩⟨b| − |b⟩⟨a|, a < b) each have q_2 = −3,
+  and their 4-forms p∧p sum to zero coordinate by coordinate (all 126 Plücker coordinates, exact). Summing the
+  certificate over them would give 0 ≤ −18. Tensoring with the spectator |0⟩⟨0| keeps both facts at every n.
+  What survives is the contraction inequality ‖Tr_S(u∧v)‖² ≤ ‖u∧v‖² for every subsystem S, which gives the
+  two-copy skew endpoint. With x = u + iv and X the reshaping of x with the traced system as rows,
+
+      2(‖u∧v‖² − ‖Tr_S(u∧v)‖²) = 2‖Λ²X‖² + ‖XXᵀ‖² − |xᵀx|²,
+
+  and a choice of basis of the plane with xᵀx = 0 makes the right side a sum of squares.
+- **Sums of squares in x = u + iv modulo xᵀx = 0 (added 12 November 2026).** For real u, v and x = u + iv,
+
+      q_n(u∧v) = ½ ⟨x ⊗ x| A^{⊗n} − B^{⊗n} |x ⊗ x⟩,   A = I − F/2,   B = Ω − I/2,
+
+  on two replicas, with F the swap and Ω = |Σ_j jj⟩⟨Σ_j jj| at each copy. On (Ω̂, sym₀, anti) A is (½, ½, 3/2) and B
+  is (5/2, −½, −½), so M_n = A^{⊗n} − B^{⊗n} is diagonal in the product sector basis, with eigenvalue
+  2^{−(k₀+k_s)}(3/2)^{k_a} − (5/2)^{k₀}(−½)^{k_s+k_a} on k₀ copies in Ω̂, k_s in sym₀ and k_a in anti. A certificate
+  of bidegree (2, 2) in x, modulo xᵀx = 0, exists exactly when M_n is positive semidefinite on the symmetric
+  two-replica space orthogonal to Ω̂^{⊗n} (in bidegree (2, 2) the forms vanishing on the cone xᵀx = 0 are exactly
+  ⟨x ⊗ x|(|Ω^{⊗n}⟩⟨W| + |W⟩⟨Ω^{⊗n}|)|x ⊗ x⟩). At two copies it is (least eigenvalue 0), and then
+  q_2 = ½ Σ_s (‖Λ²X_(s)‖² + ½‖X_(s)X_(s)ᵀ‖²) whenever xᵀx = 0. From three copies on it is not: the sector (1, 2, 0)
+  gives −½ at n = 3, and the least eigenvalue is −3/2 at n = 4 (numerical check of the compressed operator agrees).
+  Such a certificate has to see that x ⊗ x has rank one, not just that it is orthogonal to Ω̂^{⊗n}.
+- **A vanishing additive error is not a weaker target.** By μ_{n+1} ≤ μ_n (append |0⟩⟨1|), a bound μ_n ≥ −ε_n with
+  ε_n → 0 gives the endpoint, but a failure at one n₀ also gives μ_n ≤ μ_{n₀} < 0 for every n ≥ n₀. So such a bound,
+  for instance μ_n ≥ −1/√n, is equivalent to the endpoint itself. Bounds on the separate probabilities
+  p_S = ‖Tr_S C‖²/(3^{|S|}‖C‖²) ≤ 2/3^{|S|} cannot give it: q_n/‖C‖² = Σ_S (−3/2)^{|S|} p_S, and the pattern
+  p₁ = p₂ = ½, p₁₂ = 0 respects every such bound with value −½ at two copies.
 
 ## What remains
 
