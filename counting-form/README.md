@@ -87,6 +87,26 @@ unitary with 𝒰u = λu and 𝒰v = μv. If λμ̄ ∉ {1, −1}, the same comp
 - two different level sets of any real additive function F(x) = Σ_s f_s(x_s), with φ_s = t f_s and t small. For
   example U ⊆ {Σ_s x_s = c₁} and V ⊆ {Σ_s x_s = c₂} with integers c₁ ≠ c₂, sets of up to about 3^N/√N points.
 
+**The general form: balanced rectangles** (added 12 November 2026, from an independent derivation; checked here).
+Using all diagonal product unitaries at once gives the sharpest version. Per copy,
+⟨ab|F − I/2|cd⟩ = [a = d][b = c] − ½[a = c][b = d], so the cross term is
+
+    ⟨vec(uvᵀ), H_N vec(vuᵀ)⟩ = Σ u_x u_{x′} v_y v_{y′} ∏_s c_s,
+
+summed over x, x′ ∈ U and y, y′ ∈ V with {y_s, y′_s} = {x_s, x′_s} as multisets at every copy s (a balanced
+rectangle). Here c_s = 1 where (y_s, y′_s) = (x′_s, x_s) ≠ (x_s, x′_s), c_s = −½ where (y_s, y′_s) = (x_s, x′_s) with
+x_s ≠ x′_s, and c_s = ½ where all four letters agree. Hence:
+- if U and V admit no balanced rectangle, then q_N(u∧v) = 2q_N(uvᵀ) ≥ 2^{1−N}‖u‖²‖v‖², for arbitrary real
+  entries;
+- in general q_N(u∧v) ≥ 2(2^{−N}‖u‖²‖v‖² − 𝓔), with 𝓔 the same sum taken with absolute values.
+
+A separating phase excludes balanced rectangles, because summing Φ over a rectangle gives 2θ_U ≡ 2θ_V. The converse
+fails. U = {200, 222, 102, 221} and V = {021, 202, 120, 211} have no balanced rectangle and no real additive
+separator. Every one-copy marginal of their span has rank three, the span contains no vector that is a product across
+any single copy (so Section 5 does not apply either), and q₃(1_U ∧ 1_V) = 33/2. The full endpoint is exactly the
+statement that the signed rectangle sum never exceeds q_N(uvᵀ). This section settles the pairs for which the sum is
+empty.
+
 The ratio must avoid −1. A binary parity gives θ_U − θ_V = π. Indeed U = {00, 11}, V = {01, 10}, which are separated
 by x₁ + x₂ mod 2 but by no ternary hyperplane and no additive real function, have a nonzero cross term (−2, against
 the value 32 for 4q₂). This matches the binary wedge zeros of the endpoint, where no such cancellation is available.
@@ -142,4 +162,6 @@ general, and the integer inequality of Section 1 is open.
    7·10⁻¹⁶;
 2. the binary-parity control above;
 3. 100 pairs on level sets of random integer additive functions, N = 2, 3, 4: cross term zero;
-4. the peel identity of Section 5 on 60 random planes, N = 2, 3, 4, to 9·10⁻¹⁶.
+4. the peel identity of Section 5 on 60 random planes, N = 2, 3, 4, to 9·10⁻¹⁶;
+5. the balanced-rectangle formula against the cross term on 80 random pairs (N = 2, 3, to 10⁻¹⁶), zero cross term on
+   all 69 rectangle-free pairs, and the 3-copy example (no rectangle, q₃ = 33/2).

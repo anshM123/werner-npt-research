@@ -4,3 +4,5 @@
 2. control U={00,11}, V={01,10}: cross term = -2.0000, 4 q = 32.0000, 2 sum = 16.0000 (identity fails, as it should)
 3. integer additive level sets: 100 cases, N = 2..4, max |cross| = 0.00e+00, identity error 8.50e-16, min ratio 2.0000
 4. one-copy product peel: 60 cases, N = 2..4, max rel. error 8.79e-16
+5. rectangle formula vs cross term: 80 random pairs (N = 2, 3), max rel. difference 1.2e-16; 69 pairs without rectangles, cross term zero in 69
+   example: balanced rectangles 0, cross term 0.000, q_3 = 16.5000 (33/2 = 16.5)

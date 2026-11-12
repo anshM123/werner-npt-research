@@ -14,6 +14,7 @@ cosets of a ternary linear code are the special case used in the counting form.
    the cross term is nonzero and the identity fails.
 3. Level sets of random integer additive functions F(x) = sum_s f_s(x_s), N = 2..4 (product phase unitary).
 4. Section 5 peel: u = w (x) ut at one copy, q_N(u^v) = 1/2 q_{N-1}(ut^vt_0) + 2 sum_{k=1,2} q_{N-1}(ut vt_k^T).
+5. Balanced rectangles: the cross term equals the signed rectangle sum; rectangle-free pairs give zero; the 3-copy example.
 usage: python check_coset_separation.py"""
 import itertools
 import numpy as np
@@ -137,3 +138,49 @@ for N in (2, 3, 4):
         rhs = 0.5 * q(np.outer(ut, Vt[0]) - np.outer(Vt[0], ut), N - 1) + 2 * sum(q(np.outer(ut, Vt[k]), N - 1) for k in (1, 2))
         worst = max(worst, abs(lhs - rhs) / max(1.0, abs(lhs))); count += 1
 print(f"4. one-copy product peel: {count} cases, N = 2..4, max rel. error {worst:.2e}")
+
+# 5. Balanced rectangles: the cross term equals the signed rectangle sum; it vanishes when there is none;
+#    the 3-copy example U = {200,222,102,221}, V = {021,202,120,211}.
+def rect_sum(u, v, N):
+    pts = list(itertools.product(range(3), repeat=N)); tot = 0.0
+    U = [x for x in pts if u[index(''.join(map(str, x)))] != 0]; V = [y for y in pts if v[index(''.join(map(str, y)))] != 0]
+    val = lambda w, x: w[index(''.join(map(str, x)))]
+    rects = 0
+    for x in U:
+        for xp in U:
+            for y in V:
+                for yp in V:
+                    c = 1.0
+                    for s in range(N):
+                        a, b, cc, d = x[s], xp[s], y[s], yp[s]
+                        c *= (1.0 if (a == d and b == cc) else 0.0) - 0.5 * (1.0 if (a == cc and b == d) else 0.0)
+                        if c == 0.0:
+                            break
+                    if c != 0.0:
+                        tot += val(u, x) * val(u, xp) * val(v, y) * val(v, yp) * c; rects += 1
+    return tot, rects
+worst = 0.0; empty = 0; empty_zero = 0; count = 0
+for N in (2, 3):
+    pts = list(itertools.product(range(3), repeat=N))
+    for trial in range(40):
+        k = int(rng.integers(1, 5)); sel = rng.choice(len(pts), 2 * k, replace=False)
+        u = np.zeros(3 ** N); v = np.zeros(3 ** N)
+        for i in sel[:k]:
+            u[index(''.join(map(str, pts[i])))] = rng.normal()
+        for i in sel[k:]:
+            v[index(''.join(map(str, pts[i])))] = rng.normal()
+        rs, nrect = rect_sum(u, v, N); cr = cross(np.outer(u, v), np.outer(v, u), N); count += 1
+        worst = max(worst, abs(rs - cr) / max(1.0, abs(cr)))
+        if nrect == 0:
+            empty += 1; empty_zero += abs(cr) < 1e-12
+U5 = ['200', '222', '102', '221']; V5 = ['021', '202', '120', '211']
+u = np.zeros(27); v = np.zeros(27)
+for x in U5:
+    u[index(x)] = 1
+for y in V5:
+    v[index(y)] = 1
+rs, nrect = rect_sum(u, v, 3)
+print(f"5. rectangle formula vs cross term: {count} random pairs (N = 2, 3), max rel. difference {worst:.1e}; "
+      f"{empty} pairs without rectangles, cross term zero in {empty_zero}")
+print(f"   example: balanced rectangles {nrect}, cross term {cross(np.outer(u, v), np.outer(v, u), 3):.3f}, "
+      f"q_3 = {q(np.outer(u, v) - np.outer(v, u), 3):.4f} (33/2 = 16.5)")
